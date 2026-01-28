@@ -1,0 +1,8 @@
+{
+  "term_id": "PER_010",
+  "coding_standards": {
+    "ICD_11": "MB27.4",
+    "comment": "No usar MB27.2x (alucinaciones). Ilusión implica estímulo real presente."
+  },
+  "version": "1.0.1"
+}

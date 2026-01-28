@@ -1,0 +1,81 @@
+{
+  "term_id": "AFF_003",
+  "canonical_name": "Labilidad afectiva",
+  "term_kind": "pattern",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Patrón de regulación afectiva caracterizado por cambios rápidos, intensos y poco predecibles del afecto.",
+    "required_features": [
+      "fluctuaciones emocionales rápidas",
+      "desproporción estímulo-respuesta",
+      "inestabilidad basal"
+    ],
+    "subjective_marker": "El paciente refiere cambios emocionales súbitos difíciles de controlar.",
+    "behavioral_marker": "Risa y llanto alternantes, irritabilidad súbita."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion"],
+    "time_relation": ["episodica", "recurrente"],
+    "pharmacological_link": true,
+    "computable_markers": [
+      {
+        "marker": "affect_variability",
+        "type": "ordinal_0_3",
+        "anchors": ["baja", "moderada", "alta", "extrema"],
+        "expected": "alta"
+      },
+      {
+        "marker": "trigger_threshold",
+        "type": "ordinal_0_3",
+        "anchors": ["alto", "medio", "bajo", "minimo"],
+        "expected": "bajo"
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "AFF_001",
+      "canonical_name": "Ánimo depresivo",
+      "reason": "El ánimo depresivo es estable y sostenido.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "AFF_002",
+      "canonical_name": "Ánimo elevado",
+      "reason": "El ánimo elevado es persistente, no oscilante.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "NEU_00X",
+      "canonical_name": "Afecto pseudobulbar",
+      "reason": "En el afecto pseudobulbar hay risa/llanto estereotipados de origen neurológico.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "diagnostic_clue",
+      "message": "La labilidad afectiva sugiere disfunción regulatoria (p. ej., TLP, daño frontal, abstinencia)."
+    }
+  ],
+
+  "teaching_notes": [
+    "No equivale a bipolaridad por sí sola.",
+    "Evaluar frecuencia, duración y detonantes."
+  ],
+
+  "cognitive_pitfalls": [
+    "Diagnosticar manía solo por cambios emocionales rápidos."
+  ],
+
+  "version": "1.0.0"
+}

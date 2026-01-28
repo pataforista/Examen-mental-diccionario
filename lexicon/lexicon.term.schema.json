@@ -1,0 +1,54 @@
+{
+  "term_id": "",
+  "canonical_name": "",
+  "synonyms_and_slang": [],
+  "term_kind": "",
+  "granularity": "atomic",
+  "risk_weight": 0,
+
+  "definition_clinical": {
+    "core": "",
+    "required_features": [],
+    "subjective_marker": "",
+    "behavioral_marker": ""
+  },
+
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false
+  },
+
+  "domain_links": [
+    {
+      "domain_id": "",
+      "relation": "",
+      "context": ""
+    }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "",
+      "reason": ""
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "",
+      "message": ""
+    }
+  ],
+
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+
+  "version": "1.0.0",
+
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": []
+  }
+}

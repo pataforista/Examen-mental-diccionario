@@ -1,0 +1,227 @@
+[
+  {
+    case_id OSCE_004,
+    level 3,
+    difficulty_variant 3A,
+    stem {
+      setting consulta_externa,
+      age_range adulto_joven,
+      sex femenino,
+      contextual_notes refiere voces internas desde estrés laboral
+    },
+    domains {
+      DOM-01 {nivel_de_concienciaalerta,claridad_del_sensoriosensorio_claro,curso_temporalestable,orientacionorientacion_integra},
+      DOM-02 {higienehigiene_adecuada,vestimenta_y_alinoadecuados_al_contexto,posturaerguida,faciesnormomimica,adecuacion_al_contextoadecuacion_conservada},
+      DOM-03 {actitudcolaboradora,cooperacioncooperacion_conservada,contacto_visualcontacto_visual_adecuado,rapportrapport_adecuado},
+      DOM-04 {actividad_psicomotoranormocinesia,movimientos_anormalesausentes,fenomenos_catatonicosausentes,iniciativainiciativa_conservada,impulsividad_inhibicion_y_compulsioncontrol_conductual_conservado},
+      DOM-05 {velocidad_y_ritmovelocidad_normal,volumen_y_tonovolumen_adecuado,articulacionarticulacion_clara,lenguaje_simbolicolenguaje_conservado},
+      DOM-06 {velocidad_del_pensamientovelocidad_conservada,asociacion_de_ideasasociaciones_logicas,densidad_y_continuidadcurso_fluido,direccionalidaddirigido_a_meta},
+      DOM-07 {ideas_delirantesausentes,ideas_sobrevaloradasausentes,pensamiento_magicoausente,obsesionesausentes,ideacion_fobicaausente,rumiacionesrumiaciones_preocupacion,preocupaciones_dominantespreocupaciones_laborales,temas_recurrentesninguno},
+      DOM-08 {tipo_de_fenomenopseudoalucinacion,modalidad_sensorial[auditiva],caracteristicas_auditivasno_aplica,caracteristicas_visuales_tactilesno_aplica,distorsiones_perceptivasausentes},
+      DOM-09 {animo_subjetivoansioso_o_angustiado,afecto_observableafecto_sintonico,reactividad_afectivareactivo,rango_afectivorango_amplio,regulacion_afectivaestable,congruencia_afectivacongruente},
+      DOM-10 {atencion_complejaeuprosexia,memoriamemoria_conservada,memoria_de_trabajoconservada,funciones_ejecutivasconservadas,lenguaje_pragmaticoadecuado,visuoconstruccionconservadas,gnosiasconservadas,abstraccionconservada},
+      DOM-11 {juicio_practicojuicio_practico_conservado,juicio_socialjuicio_social_adecuado,juicio_de_realidadjuicio_realidad_conservado,insight_de_enfermedadinsight_emocional,atribucion_causalatribucion_psicologica_exclusiva},
+      DOM-12 {riesgo_suicida_actualriesgo_nulo,caracteristicas_ideacion_suicidaausente,conducta_autolesiva_no_suicidaausentes,riesgo_heteroagresivoriesgo_nulo,riesgo_vulnerabilidad_gravecapacidad_autocuidado_conservada,factores_protectoresalianza_terapeutica_solida}
+    },
+    expected_engine_output {
+      primary_syndrome sindrome_ansioso_obsesivo,
+      confidence_band probable,
+      critical_flags [],
+      mandatory_checks [DOM-11.juicio_de_realidad]
+    },
+    assessment_keys {
+      errors_to_avoid [diagnosticar psicosis],
+      key_discriminators [espacio_intrapsiquico,juicio_conservado]
+    }
+  },
+
+  {
+    case_id OSCE_005,
+    level 3,
+    difficulty_variant 3B,
+    stem {
+      setting urgencias_psiquiatricas,
+      age_range adulto_joven,
+      sex masculino,
+      contextual_notes voces externas que ordenan conductas
+    },
+    domains {
+      DOM-01 {nivel_de_concienciaalerta,claridad_del_sensoriosensorio_claro,curso_temporalsubacute,orientacionorientacion_integra},
+      DOM-02 {higienehigiene_descuidada,vestimenta_y_alinopoco_adecuados_al_contexto,posturarigida,faciesfacies_perpleja,adecuacion_al_contextoadecuacion_parcial},
+      DOM-03 {actitudsuspicaz,cooperacioncooperacion_parcial,contacto_visualcontacto_visual_evitativo,rapportrapport_dificil},
+      DOM-04 {actividad_psicomotorainquietud_psicomotriz,movimientos_anormalesausentes,fenomenos_catatonicosausentes,iniciativahipobulia,impulsividad_inhibicion_y_compulsioncontrol_conductual_conservado},
+      DOM-05 {velocidad_y_ritmolatencia_aumentada,volumen_y_tonovolumen_adecuado,articulacionarticulacion_clara,lenguaje_simbolicolenguaje_conservado},
+      DOM-06 {velocidad_del_pensamientovelocidad_conservada,asociacion_de_ideasasociaciones_laxas,densidad_y_continuidadcurso_fluido,direccionalidadpobremente_dirigido},
+      DOM-07 {ideas_delirantesdelirio_persecutorio,ideas_sobrevaloradasausentes,pensamiento_magicoausente,obsesionesausentes,ideacion_fobicaausente,rumiacionesausentes,preocupaciones_dominantesausentes,temas_recurrentespersecucion},
+      DOM-08 {tipo_de_fenomenoalucinacion_verdadera,modalidad_sensorial[auditiva],caracteristicas_auditivasvoces_imperativas,caracteristicas_visuales_tactilesno_aplica,distorsiones_perceptivasausentes},
+      DOM-09 {animo_subjetivoansioso_o_angustiado,afecto_observableperplejidad,reactividad_afectivahiporreactivo,rango_afectivorango_restringido,regulacion_afectivaestable,congruencia_afectivaincongruente_o_paratimico},
+      DOM-10 {atencion_complejahipoprosexia,memoriamemoria_conservada,memoria_de_trabajodificultad_series_inversas,funciones_ejecutivasperdida_flexibilidad_cognitiva,lenguaje_pragmaticoadecuado,visuoconstruccionconservadas,gnosiasconservadas,abstracciondificultad_abstraccion},
+      DOM-11 {juicio_practicojuicio_desviado_por_creencias_patologicas,juicio_socialconducta_social_inapropiada,juicio_de_realidadjuicio_realidad_perdido,insight_de_enfermedadinsight_nulo,atribucion_causalatribucion_delirante_o_magica},
+      DOM-12 {riesgo_suicida_actualriesgo_bajo,caracteristicas_ideacion_suicidaausente,conducta_autolesiva_no_suicidaausentes,riesgo_heteroagresivoamenazas_inespecificas,riesgo_vulnerabilidad_gravecapacidad_autocuidado_conservada,factores_protectoresausencia_de_factores_protectores}
+    },
+    expected_engine_output {
+      primary_syndrome sindrome_psicotico,
+      confidence_band strong,
+      critical_flags [alucinaciones_imperativas],
+      mandatory_checks [DOM-12]
+    },
+    assessment_keys {
+      errors_to_avoid [minimizar voces imperativas],
+      key_discriminators [espacio_externo,juicio_perdido]
+    }
+  },
+
+  {
+    case_id OSCE_006,
+    level 3,
+    difficulty_variant 3A,
+    stem {
+      setting consulta_externa,
+      age_range adulto_joven,
+      sex femenino,
+      contextual_notes miedo a perder el control y dañar a otros
+    },
+    domains {
+      DOM-01 {nivel_de_concienciaalerta,claridad_del_sensoriosensorio_claro,curso_temporalchronic,orientacionorientacion_integra},
+      DOM-02 {higienehigiene_adecuada,vestimenta_y_alinoadecuados_al_contexto,posturaerguida,faciesnormomimica,adecuacion_al_contextoadecuacion_conservada},
+      DOM-03 {actituddefensiva,cooperacioncooperacion_conservada,contacto_visualcontacto_visual_adecuado,rapportrapport_adecuado},
+      DOM-04 {actividad_psicomotoranormocinesia,movimientos_anormalesausentes,fenomenos_catatonicosausentes,iniciativainiciativa_conservada,impulsividad_inhibicion_y_compulsioncontrol_conductual_conservado},
+      DOM-05 {velocidad_y_ritmovelocidad_normal,volumen_y_tonovolumen_adecuado,articulacionarticulacion_clara,lenguaje_simbolicolenguaje_conservado},
+      DOM-06 {velocidad_del_pensamientovelocidad_conservada,asociacion_de_ideasasociaciones_logicas,densidad_y_continuidadcurso_fluido,direccionalidaddirigido_a_meta},
+      DOM-07 {ideas_delirantesausentes,ideas_sobrevaloradasausentes,pensamiento_magicoausente,obsesionesobsesiones_agresion,ideacion_fobicafobia_de_impulsion,rumiacionesrumiaciones_preocupacion,preocupaciones_dominantesausentes,temas_recurrentesninguno},
+      DOM-08 {tipo_de_fenomenosin_alteraciones,modalidad_sensorial[],caracteristicas_auditivasno_aplica,caracteristicas_visuales_tactilesno_aplica,distorsiones_perceptivasausentes},
+      DOM-09 {animo_subjetivoansioso_o_angustiado,afecto_observableafecto_sintonico,reactividad_afectivareactivo,rango_afectivorango_amplio,regulacion_afectivaestable,congruencia_afectivacongruente},
+      DOM-10 {atencion_complejaeuprosexia,memoriamemoria_conservada,memoria_de_trabajoconservada,funciones_ejecutivasconservadas,lenguaje_pragmaticoadecuado,visuoconstruccionconservadas,gnosiasconservadas,abstraccionconservada},
+      DOM-11 {juicio_practicojuicio_practico_conservado,juicio_socialjuicio_social_adecuado,juicio_de_realidadjuicio_realidad_conservado,insight_de_enfermedadinsight_emocional,atribucion_causalatribucion_psicologica_exclusiva},
+      DOM-12 {riesgo_suicida_actualriesgo_nulo,caracteristicas_ideacion_suicidaausente,conducta_autolesiva_no_suicidaausentes,riesgo_heteroagresivoriesgo_nulo,riesgo_vulnerabilidad_gravecapacidad_autocuidado_conservada,factores_protectoresresponsabilidad_familiar}
+    },
+    expected_engine_output {
+      primary_syndrome sindrome_ansioso_obsesivo,
+      confidence_band strong,
+      critical_flags [guardrail_fobia_impulsion],
+      mandatory_checks [DOM-11.juicio_de_realidad]
+    },
+    assessment_keys {
+      errors_to_avoid [confundir con ideacion homicida],
+      key_discriminators [egodistonia,juicio_conservado]
+    }
+  },
+
+  {
+    case_id OSCE_007,
+    level 3,
+    difficulty_variant 3B,
+    stem {
+      setting consulta_externa,
+      age_range adulto_joven,
+      sex masculino,
+      contextual_notes historia de dificultades sociales desde infancia
+    },
+    domains {
+      DOM-01 {nivel_de_concienciaalerta,claridad_del_sensoriosensorio_claro,curso_temporalchronic,orientacionorientacion_integra},
+      DOM-02 {higienehigiene_adecuada,vestimenta_y_alinoadecuados_al_contexto,posturaerguida,faciesnormomimica,adecuacion_al_contextoadecuacion_conservada},
+      DOM-03 {actitudindiferente,cooperacioncooperacion_conservada,contacto_visualcontacto_visual_escaso,rapportrapport_superficial},
+      DOM-04 {actividad_psicomotoranormocinesia,movimientos_anormalesestereotipias,fenomenos_catatonicosausentes,iniciativainiciativa_conservada,impulsividad_inhibicion_y_compulsioncontrol_conductual_conservado},
+      DOM-05 {velocidad_y_ritmovelocidad_normal,volumen_y_tonotono_monotono,articulacionarticulacion_clara,lenguaje_simbolicouso_pragmatico_inadecuado},
+      DOM-06 {velocidad_del_pensamientovelocidad_conservada,asociacion_de_ideasasociaciones_logicas,densidad_y_continuidadcurso_fluido,direccionalidaddirigido_a_meta},
+      DOM-07 {ideas_delirantesausentes,ideas_sobrevaloradasausentes,pensamiento_magicoausente,obsesionesausentes,ideacion_fobicaausente,rumiacionesausentes,preocupaciones_dominantesausentes,temas_recurrentesninguno},
+      DOM-08 {tipo_de_fenomenosin_alteraciones,modalidad_sensorial[],caracteristicas_auditivasno_aplica,caracteristicas_visuales_tactilesno_aplica,distorsiones_perceptivasausentes},
+      DOM-09 {animo_subjetivoeutimico,afecto_observableafecto_sintonico,reactividad_afectivareactivo,rango_afectivorango_restringido,regulacion_afectivaestable,congruencia_afectivacongruente},
+      DOM-10 {atencion_complejaeuprosexia,memoriamemoria_conservada,memoria_de_trabajoconservada,funciones_ejecutivasconservadas,lenguaje_pragmaticodificultad_inferencias_sociales,visuoconstruccionconservadas,gnosiasconservadas,abstraccionconservada},
+      DOM-11 {juicio_practicojuicio_practico_conservado,juicio_socialjuicio_social_adecuado,juicio_de_realidadjuicio_realidad_conservado,insight_de_enfermedadconciencia_de_sintoma,atribucion_causalatribucion_psicologica_exclusiva},
+      DOM-12 {riesgo_suicida_actualriesgo_nulo,caracteristicas_ideacion_suicidaausente,conducta_autolesiva_no_suicidaausentes,riesgo_heteroagresivoriesgo_nulo,riesgo_vulnerabilidad_gravecapacidad_autocuidado_conservada,factores_protectoressoporte_familiar_presente}
+    },
+    expected_engine_output {
+      primary_syndrome sindrome_cognitivo,
+      confidence_band possible,
+      critical_flags [patron_neurodesarrollativo],
+      mandatory_checks [DOM-03,DOM-05,DOM-10]
+    },
+    assessment_keys {
+      errors_to_avoid [diagnosticar personalidad evitativa],
+      key_discriminators [inicio_infancia,literalidad,estereotipias]
+    }
+  },
+
+  {
+    case_id OSCE_008,
+    level 3,
+    difficulty_variant 3C,
+    stem {
+      setting consulta_externa,
+      age_range adulto_joven,
+      sex femenino,
+      contextual_notes rituales mentales extensos; duda constante
+    },
+    domains {
+      DOM-01 {nivel_de_concienciaalerta,claridad_del_sensoriosensorio_claro,curso_temporalchronic,orientacionorientacion_integra},
+      DOM-02 {higienehigiene_adecuada,vestimenta_y_alinoadecuados_al_contexto,posturaerguida,faciesnormomimica,adecuacion_al_contextoadecuacion_conservada},
+      DOM-03 {actitudcolaboradora,cooperacioncooperacion_conservada,contacto_visualcontacto_visual_adecuado,rapportrapport_adecuado},
+      DOM-04 {actividad_psicomotoranormocinesia,movimientos_anormalesausentes,fenomenos_catatonicosausentes,iniciativainiciativa_conservada,impulsividad_inhibicion_y_compulsionactos_compulsivos},
+      DOM-05 {velocidad_y_ritmovelocidad_normal,volumen_y_tonovolumen_adecuado,articulacionarticulacion_clara,lenguaje_simbolicolenguaje_conservado},
+      DOM-06 {velocidad_del_pensamientovelocidad_conservada,asociacion_de_ideaspensamiento_circunstancial,densidad_y_continuidadperseveracion,direccionalidaddirigido_a_meta},
+      DOM-07 {
+        ideas_delirantesausentes,
+        ideas_sobrevaloradasausentes,
+        pensamiento_magicopensamiento_magico,
+        obsesionesobsesiones_duda,
+        ideacion_fobicaausente,
+        rumiacionesrumiaciones_preocupacion,
+        preocupaciones_dominantesausentes,
+        temas_recurrentesninguno,
+        notes_rituales_mentalesneutralizacion_mental_repetitiva (rezosrepasos) como compulsión encubierta
+      },
+      DOM-08 {tipo_de_fenomenosin_alteraciones,modalidad_sensorial[],caracteristicas_auditivasno_aplica,caracteristicas_visuales_tactilesno_aplica,distorsiones_perceptivasausentes},
+      DOM-09 {animo_subjetivoansioso_o_angustiado,afecto_observableafecto_sintonico,reactividad_afectivareactivo,rango_afectivorango_amplio,regulacion_afectivaestable,congruencia_afectivacongruente},
+      DOM-10 {atencion_complejafatigabilidad_atencional,memoriamemoria_conservada,memoria_de_trabajofallos_manipulacion_mental,funciones_ejecutivasperseveracion,lenguaje_pragmaticoadecuado,visuoconstruccionconservadas,gnosiasconservadas,abstraccionconservada},
+      DOM-11 {juicio_practicojuicio_practico_conservado,juicio_socialjuicio_social_adecuado,juicio_de_realidadjuicio_realidad_conservado,insight_de_enfermedadinsight_emocional,atribucion_causalatribucion_psicologica_exclusiva},
+      DOM-12 {riesgo_suicida_actualriesgo_bajo,caracteristicas_ideacion_suicidaausente,conducta_autolesiva_no_suicidaausentes,riesgo_heteroagresivoriesgo_nulo,riesgo_vulnerabilidad_gravecapacidad_autocuidado_conservada,factores_protectoresalianza_terapeutica_solida}
+    },
+    expected_engine_output {
+      primary_syndrome sindrome_ansioso_obsesivo,
+      confidence_band strong,
+      critical_flags [],
+      mandatory_checks [DOM-04.actos_compulsivos]
+    },
+    assessment_keys {
+      errors_to_avoid [confundir con pensamiento delirante],
+      key_discriminators [egodistonia,rituales_mentales]
+    }
+  },
+
+  {
+    case_id OSCE_009,
+    level 3,
+    difficulty_variant 3B,
+    stem {
+      setting consulta_externa,
+      age_range adulto_joven,
+      sex masculino,
+      contextual_notes aislamiento social progresivo, ideas raras
+    },
+    domains {
+      DOM-01 {nivel_de_concienciaalerta,claridad_del_sensoriosensorio_claro,curso_temporalchronic,orientacionorientacion_integra},
+      DOM-02 {higienehigiene_adecuada,vestimenta_y_alinoadecuados_al_contexto,posturaerguida,faciesnormomimica,adecuacion_al_contextoadecuacion_conservada},
+      DOM-03 {actitudindiferente,cooperacioncooperacion_conservada,contacto_visualcontacto_visual_escaso,rapportrapport_dificil},
+      DOM-04 {actividad_psicomotoranormocinesia,movimientos_anormalesmanierismos,fenomenos_catatonicosausentes,iniciativahipobulia,impulsividad_inhibicion_y_compulsioncontrol_conductual_conservado},
+      DOM-05 {velocidad_y_ritmovelocidad_normal,volumen_y_tonotono_monotono,articulacionarticulacion_clara,lenguaje_simbolicoconcretismo},
+      DOM-06 {velocidad_del_pensamientovelocidad_conservada,asociacion_de_ideasasociaciones_laxas,densidad_y_continuidadpobreza_de_contenido,direccionalidadpobremente_dirigido},
+      DOM-07 {ideas_delirantesausentes,ideas_sobrevaloradasideas_sobrevaloradas_misticas,pensamiento_magicopensamiento_magico,obsesionesausentes,ideacion_fobicaausente,rumiacionesausentes,preocupaciones_dominantesausentes,temas_recurrentesreligion},
+      DOM-08 {tipo_de_fenomenosin_alteraciones,modalidad_sensorial[],caracteristicas_auditivasno_aplica,caracteristicas_visuales_tactilesno_aplica,distorsiones_perceptivasausentes},
+      DOM-09 {animo_subjetivoapatico,afecto_observableafecto_sintonico,reactividad_afectivahiporreactivo,rango_afectivorango_restringido,regulacion_afectivaestable,congruencia_afectivacongruente},
+      DOM-10 {atencion_complejaeuprosexia,memoriamemoria_conservada,memoria_de_trabajoconservada,funciones_ejecutivasconservadas,lenguaje_pragmaticointerpretacion_literal,visuoconstruccionconservadas,gnosiasconservadas,abstracciondificultad_abstraccion},
+      DOM-11 {juicio_practicojuicio_practico_conservado,juicio_socialjuicio_social_adecuado,juicio_de_realidadduda_sobre_realidad,insight_de_enfermedadinsight_intelectual,atribucion_causalatribucion_psicologica_exclusiva},
+      DOM-12 {riesgo_suicida_actualriesgo_nulo,caracteristicas_ideacion_suicidaausente,conducta_autolesiva_no_suicidaausentes,riesgo_heteroagresivoriesgo_nulo,riesgo_vulnerabilidad_gravecapacidad_autocuidado_conservada,factores_protectoressoporte_familiar_presente}
+    },
+    expected_engine_output {
+      primary_syndrome sindrome_psicotico,
+      confidence_band possible,
+      critical_flags [rasgos_esquizotipicos,prodromo_potencial],
+      mandatory_checks [DOM-11.juicio_de_realidad]
+    },
+    assessment_keys {
+      errors_to_avoid [confundir con autismo,confundir con ansiedad_social],
+      key_discriminators [pensamiento_magico,manierismos,asociaciones_laxas]
+    }
+  }
+]

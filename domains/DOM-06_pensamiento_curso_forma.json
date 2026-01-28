@@ -1,0 +1,95 @@
+{
+  "domain_id": "DOM-06",
+  "label_es": "Pensamiento: curso y forma",
+  "version": "1.1.0",
+  "definition_es": "Evalúa la organización formal del pensamiento, incluyendo su velocidad, asociaciones, continuidad y densidad informativa. Describe cómo se encadenan y desarrollan las ideas, sin valorar su contenido, veracidad ni carga afectiva.",
+  "evaluates": [
+    "velocidad_del_pensamiento",
+    "asociacion_de_ideas",
+    "densidad_y_continuidad",
+    "direccionalidad"
+  ],
+  "excludes": [
+    "contenido_del_pensamiento",
+    "lenguaje",
+    "afecto",
+    "estado_de_animo",
+    "juicio_de_realidad"
+  ],
+  "subcomponents": [
+    {
+      "id": "velocidad_del_pensamiento",
+      "label_es": "Velocidad del pensamiento",
+      "accepted_terms": [
+        "velocidad_conservada",
+        "taquipsiquia",
+        "bradipsiquia"
+      ],
+      "notes": "Describe el tempo interno del pensamiento. No implica por sí misma alteración de la lógica."
+    },
+    {
+      "id": "asociacion_de_ideas",
+      "label_es": "Asociación de ideas",
+      "accepted_terms": [
+        "asociaciones_logicas",
+        "asociaciones_laxas",
+        "descarrilamiento",
+        "pensamiento_tangencial",
+        "pensamiento_circunstancial",
+        "resonancia_o_rimas",
+        "ensalada_de_palabras"
+      ],
+      "notes": "Evalúa el nexo entre ideas sucesivas. 'Resonancia': asociación por sonido (rimas, aliteraciones). 'Circunstancialidad' conserva meta final; 'tangencialidad' no."
+    },
+    {
+      "id": "densidad_y_continuidad",
+      "label_es": "Densidad y continuidad del pensamiento",
+      "accepted_terms": [
+        "curso_fluido",
+        "bloqueo_del_pensamiento",
+        "mente_en_blanco",
+        "perseveracion",
+        "pobreza_de_contenido"
+      ],
+      "notes": "La pobreza de contenido implica discurso aparentemente fluido pero con escasa información real. El bloqueo es una interrupción brusca y observable; la mente en blanco es subjetiva."
+    },
+    {
+      "id": "direccionalidad",
+      "label_es": "Direccionalidad del pensamiento",
+      "accepted_terms": [
+        "dirigido_a_meta",
+        "pobremente_dirigido",
+        "sin_direccion_aparente",
+        "fuga_de_ideas"
+      ],
+      "notes": "La fuga de ideas combina aceleración, distractibilidad y asociaciones superficiales; es típica de la manía."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "observation_type",
+    "time_course"
+  ],
+  "recommended_wording": [
+    "Pensamiento dirigido a meta, con asociaciones lógicas.",
+    "Taquipsiquia con fuga de ideas y resonancia por rimas.",
+    "Pensamiento circunstancial, logra responder tras rodeos.",
+    "Descarrilamiento con ensalada de palabras.",
+    "Discurso fluido pero con marcada pobreza de contenido.",
+    "Bloqueo del pensamiento durante la entrevista."
+  ],
+  "forbidden_wording": [
+    "Pensamiento raro.",
+    "Ideas ilógicas (especificar forma).",
+    "Lenguaje desorganizado (si es afasia va en DOM-05; si es descarrilamiento va aquí).",
+    "Delirante (corresponde a DOM-07)."
+  ],
+  "clinical_notes": [
+    "Separar siempre forma del pensamiento de contenido ideacional.",
+    "La resonancia es un marcador clásico de manía.",
+    "Diferenciar pobreza del habla (DOM-05) de pobreza de contenido (DOM-06).",
+    "El bloqueo del pensamiento puede ser interpretado por el paciente como 'robo de pensamiento'."
+  ]
+}

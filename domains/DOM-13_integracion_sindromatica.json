@@ -1,0 +1,133 @@
+{
+  "domain_id": "DOM-13",
+  "label_es": "Integración clínica (anti-omisión)",
+  "version": "1.2.0",
+  "definition_es": "Módulo automatizado de integración que cruza los dominios del examen mental para identificar síndromes probables, banderas críticas, omisiones frecuentes y conflictos internos. Su objetivo es reducir errores y omisiones clínicas. No genera narrativa clínica ni texto copiable.",
+  "is_output_only": true,
+  "inputs_required": [
+    "DOM-01",
+    "DOM-02",
+    "DOM-03",
+    "DOM-04",
+    "DOM-05",
+    "DOM-06",
+    "DOM-07",
+    "DOM-08",
+    "DOM-09",
+    "DOM-10",
+    "DOM-11",
+    "DOM-12"
+  ],
+  "subcomponents": [
+    {
+      "id": "sindromes_sugeridos",
+      "label_es": "Síndromes sugeridos",
+      "type": "calculated_array",
+      "item_schema": {
+        "syndrome_id": "string",
+        "score": "number",
+        "confidence_band": "string",
+        "priority": "string"
+      },
+      "notes": "Resultado jerarquizado del motor de reglas. No equivale a diagnóstico nosológico."
+    },
+    {
+      "id": "banderas_criticas",
+      "label_es": "Banderas críticas",
+      "type": "calculated_array",
+      "item_schema": {
+        "flag_id": "string",
+        "severity": "string",
+        "trigger": "string",
+        "action_hint": "string"
+      },
+      "notes": "Alertas clínicas de alto impacto (ej. riesgo inminente, delirium probable, catatonía)."
+    },
+    {
+      "id": "chequeos_obligatorios",
+      "label_es": "Chequeos obligatorios pendientes",
+      "type": "calculated_array",
+      "item_schema": {
+        "check_id": "string",
+        "rationale": "string",
+        "domains_needed": "array"
+      },
+      "notes": "Dominios o subcomponentes que deben completarse para consistencia o seguridad."
+    },
+    {
+      "id": "omisiones_probables",
+      "label_es": "Omisiones probables",
+      "type": "calculated_array",
+      "item_schema": {
+        "omission_id": "string",
+        "likely_missing": "string",
+        "why_it_matters": "string",
+        "where_to_check": "array"
+      },
+      "notes": "Huecos clínicos frecuentes detectados por patrones incompletos."
+    },
+    {
+      "id": "conflictos_de_consistencia",
+      "label_es": "Conflictos internos",
+      "type": "calculated_array",
+      "item_schema": {
+        "conflict_id": "string",
+        "pattern": "string",
+        "interpretation": "string",
+        "resolution_hint": "string"
+      },
+      "notes": "Incongruencias entre dominios que reducen la confianza del motor."
+    },
+    {
+      "id": "trazabilidad",
+      "label_es": "Trazabilidad del motor",
+      "type": "object",
+      "fields": [
+        {
+          "id": "scores",
+          "type": "map",
+          "notes": "Mapa syndrome_id → puntaje final (0–100)."
+        },
+        {
+          "id": "matched_rules",
+          "type": "array",
+          "notes": "Reglas disparadas con evidencia y peso.",
+          "item_schema": {
+            "rule_id": "string",
+            "syndrome_id": "string",
+            "add_score": "number",
+            "evidence": "array",
+            "domains_used": "array"
+          }
+        },
+        {
+          "id": "guardrails_triggered",
+          "type": "array",
+          "notes": "Protecciones semánticas activadas (ej. fobia de impulsión ≠ riesgo)."
+        },
+        {
+          "id": "conflict_resolutions",
+          "type": "array",
+          "notes": "Bloqueos o jerarquizaciones aplicadas por prioridad clínica."
+        }
+      ]
+    }
+  ],
+  "output_safety": {
+    "no_narrative": true,
+    "no_copy_ready_text": true,
+    "display_mode": "checklist_and_flags",
+    "export_disabled": true
+  },
+  "forbidden_outputs": [
+    "narrativa clínica continua",
+    "texto listo para copiar/pegar",
+    "diagnóstico DSM o CIE",
+    "recomendaciones terapéuticas automáticas"
+  ],
+  "clinical_notes": [
+    "DOM-13 está diseñado para apoyar la integración y reducir omisiones, no para documentar.",
+    "La ausencia de datos se interpreta como posible omisión, no como normalidad.",
+    "Las banderas críticas obligan a revisión activa del caso."
+  ]
+}

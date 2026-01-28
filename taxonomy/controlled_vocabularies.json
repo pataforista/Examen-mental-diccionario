@@ -1,0 +1,33 @@
+{
+  "term_kind": ["symptom", "sign", "syndrome", "state"],
+  "granularity": ["atomic", "composite"],
+  "risk_weight": [0, 1, 2],
+  "alert_type": ["safety_critical", "suicide_risk", "iatrogenic_risk", "diagnostic_error"],
+  "domain_relation": ["primary_expression", "secondary_expression", "frequent_misclassification", "differential_anchor", "risk_factor"]
+}
+"alert_type": [
+  "safety_critical",
+  "suicide_risk",
+  "iatrogenic_risk",
+  "diagnostic_error",
+  "management_warning"
+]
+{
+  "taxonomy_id": "RISK_CLASSIFICATION_V1",
+  "version": "1.0.0",
+  "axes": {
+    "risk_target": ["self", "other", "vulnerability"],
+    "phenotype_stage": ["ideation", "plan", "behaviour", "attempt", "death"],
+    "intent_to_die": ["none", "uncertain", "inferred", "declared"],
+    "planning": ["none", "vague", "structured"],
+    "access_to_means": ["none", "possible", "present"],
+    "lethality_assessment": ["low", "moderate", "high"],
+    "temporality": ["static", "dynamic"],
+    "protective_factor_load": ["present", "weak", "absent"],
+    "ideation_specifiers": ["frequency", "hopelessness", "ambivalence"]
+  },
+  "notes": [
+    "Mantener separado ideation vs suicidal behaviour.",
+    "Permitir compatibilidad NSSI vs self-harm usando intent_to_die."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "term_id": "RSK_003",
+  "coding_standards": {
+    "ICD_11": "MB23.R",
+    "ICD_10": "T14.91",
+    "SNOMED_CT": null
+  },
+  "version": "1.0.0",
+  "note": "ICD-11 MB23.R define intento suicida. Para ICD-10-CM se usa comúnmente T14.91 (Suicide attempt)."
+}

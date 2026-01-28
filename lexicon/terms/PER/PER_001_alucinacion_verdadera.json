@@ -1,0 +1,90 @@
+{
+  "term_id": "PER_001",
+  "canonical_name": "Alucinación verdadera",
+  "synonyms_and_slang": [
+    { "term": "alucinación", "context": "clinical" },
+    { "term": "voces externas", "context": "patient_report" }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 2,
+
+  "definition_clinical": {
+    "core": "Experiencia perceptiva vívida, con cualidad de realidad externa, que ocurre en ausencia de estímulo correspondiente.",
+    "required_features": [
+      "atribución externa del fenómeno",
+      "convicción de realidad",
+      "independencia del control voluntario"
+    ],
+    "subjective_marker": "El paciente experimenta la percepción como proveniente del mundo externo y no de su mente.",
+    "behavioral_marker": "Conductas de respuesta a estímulos inexistentes (hablar con voces, mirar fuentes no presentes)."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion_clinica"],
+    "time_relation": ["persistente", "episodica"],
+    "pharmacological_link": false,
+    "computable_markers": [
+      { "marker": "external_attribution", "type": "boolean", "expected": true },
+      {
+        "marker": "reality_conviction",
+        "type": "ordinal_0_3",
+        "anchors": ["0=duda", "1=parcial", "2=alta", "3=delirante"]
+      },
+      {
+        "marker": "sensory_modality",
+        "type": "categorical",
+        "options": ["auditiva", "visual", "olfatoria", "gustativa", "tactil", "somatica", "mixta", "no_especificada"]
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
+    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "riesgo_psicotico" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "PER_004",
+      "canonical_name": "Pseudoalucinación",
+      "reason": "En la pseudoalucinación existe atribución interna y juicio de realidad conservado.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "PER_010",
+      "canonical_name": "Ilusión",
+      "reason": "La ilusión requiere un estímulo real malinterpretado.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Confirmar atribución externa, convicción de realidad y modalidad sensorial antes de codificar."
+    },
+    {
+      "type": "organic_warning",
+      "trigger_condition": "sensory_modality == 'visual'",
+      "message": "ALERTA: Alucinaciones visuales verdaderas sugieren etiología orgánica (p. ej., delirium o demencias) antes que psiquiátrica pura."
+    }
+  ],
+
+  "teaching_notes": [
+    "La clave no es el contenido, sino el locus y la convicción.",
+    "Registrar modalidad sensorial y grado de insight."
+  ],
+
+  "cognitive_pitfalls": [
+    "Confundir pseudoalucinaciones o intrusiones con alucinaciones verdaderas.",
+    "No especificar modalidad, perdiendo información diagnóstica y de riesgo."
+  ],
+
+  "version": "1.0.1",
+
+  "provenance": {
+    "phenomenology": ["Jaspers"],
+    "clinical_tradition": []
+  }
+}

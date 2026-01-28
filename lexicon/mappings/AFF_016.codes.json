@@ -1,0 +1,10 @@
+{
+  "term_id": "AFF_016",
+  "coding_standards": {
+    "ICD_11": "MB24.0",
+    "ICD_10": "R45",
+    "SNOMED_CT": null
+  },
+  "version": "1.0.0",
+  "note": "ICD-11 incluye Ambivalence (MB24.0). Para ICD-10 suele mapearse a R45 (síntomas del estado emocional) por falta de granularidad. SNOMED depende del set local disponible."
+}

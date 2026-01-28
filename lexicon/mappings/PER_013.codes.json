@@ -1,0 +1,8 @@
+{
+  "term_id": "PER_013",
+  "coding_standards": {
+    "ICD_11_parent": "MB27.4",
+    "comment": "Pareidolia se modela como subcaso computable de ilusión (estímulo ambiguo real + interpretación)."
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,110 @@
+{
+  "registry_version": "1.1.0",
+  "description": "Registro canónico de síndromes para el motor de inferencia del examen mental. Jerarquizado por prioridad clínica y seguridad. No corresponde a diagnósticos DSM/CIE.",
+  "syndromes": [
+    {
+      "syndrome_id": "sindrome_riesgo",
+      "label_es": "Síndrome de riesgo",
+      "category": "seguridad",
+      "priority": 110,
+      "variants": [
+        "riesgo_autolesivo",
+        "riesgo_heteroagresivo",
+        "riesgo_vulnerabilidad"
+      ],
+      "notes": "Precedencia absoluta. Dispara banderas críticas y chequeos obligatorios en DOM-13."
+    },
+    {
+      "syndrome_id": "sindrome_confusional",
+      "label_es": "Síndrome confusional",
+      "category": "neuropsiquiatrico",
+      "priority": 100,
+      "variants": [
+        "delirium_hiperactivo",
+        "delirium_hipoactivo",
+        "delirium_mixto"
+      ],
+      "notes": "Prioridad alta por seguridad. Penaliza interpretaciones psiquiátricas primarias cuando hay alteración del sensorio/atención."
+    },
+    {
+      "syndrome_id": "sindrome_catatonico",
+      "label_es": "Síndrome catatónico",
+      "category": "neuropsiquiatrico",
+      "priority": 95,
+      "variants": [
+        "catatonia_estuporosa",
+        "catatonia_agitada",
+        "catatonia_maligna"
+      ],
+      "notes": "Emergencia médica potencial. 'Maligna' requiere datos de severidad sistémica (fiebre/inestabilidad autonómica/rigidez) si están disponibles."
+    },
+    {
+      "syndrome_id": "sindrome_psicotico",
+      "label_es": "Síndrome psicótico",
+      "category": "psiquiatrico",
+      "priority": 80,
+      "variants": [
+        "psicotico_con_alucinaciones",
+        "psicotico_con_delirios",
+        "psicotico_desorganizado"
+      ],
+      "notes": "El marcador cardinal es juicio de realidad perdido o suspendido (DOM-11), contextualizado por DOM-08/DOM-07."
+    },
+    {
+      "syndrome_id": "sindrome_cognitivo",
+      "label_es": "Síndrome cognitivo",
+      "category": "neuropsiquiatrico",
+      "priority": 70,
+      "variants": [
+        "deterioro_mnesico",
+        "deterioro_ejecutivo",
+        "deterioro_conductual_frontal",
+        "deterioro_multidominio"
+      ],
+      "notes": "Prioridad sobre afectivo para reducir el riesgo de atribuir a depresión cuadros orgánicos o demencias."
+    },
+    {
+      "syndrome_id": "sindrome_afectivo",
+      "label_es": "Síndrome afectivo",
+      "category": "psiquiatrico",
+      "priority": 60,
+      "variants": [
+        "depresivo",
+        "maniaco",
+        "mixto",
+        "hipomaniaco"
+      ],
+      "notes": "El estado mixto se asocia a mayor riesgo clínico; se integra con DOM-12 (riesgo) y DOM-04 (psicomotricidad)."
+    },
+    {
+      "syndrome_id": "sindrome_disociativo",
+      "label_es": "Síndrome disociativo/funcional",
+      "category": "psiquiatrico",
+      "priority": 55,
+      "variants": [
+        "despersonalizacion_desrealizacion",
+        "amnesia_disociativa",
+        "funcional_conversivo"
+      ],
+      "notes": "Fenómenos disociativos o síntomas funcionales con juicio de realidad globalmente conservado. Requiere descarte clínico de causas médicas según contexto."
+    },
+    {
+      "syndrome_id": "sindrome_ansioso_obsesivo",
+      "label_es": "Síndrome ansioso–obsesivo",
+      "category": "psiquiatrico",
+      "priority": 50,
+      "variants": [
+        "ansioso",
+        "obsesivo_compulsivo",
+        "mixto_ansioso_obsesivo"
+      ],
+      "notes": "Suele ser diagnóstico sindromático tras excluir confusional/catatónico/psicótico y ponderar afectivo/disociativo."
+    }
+  ],
+  "confidence_bands": {
+    "strong": "≥70",
+    "probable": "40–69",
+    "possible": "20–39",
+    "absent": "<20"
+  }
+}

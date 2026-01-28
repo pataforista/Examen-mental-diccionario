@@ -1,0 +1,122 @@
+{
+  "domain_id": "DOM-09",
+  "label_es": "Estado afectivo (ánimo y afecto)",
+  "version": "1.1.0",
+  "definition_es": "Evalúa el estado emocional del paciente distinguiendo el ánimo como experiencia subjetiva sostenida y el afecto como la expresión emocional observable, incluyendo su regulación, rango, reactividad y congruencia.",
+  "evaluates": [
+    "animo_subjetivo",
+    "afecto_observable",
+    "reactividad_afectiva",
+    "rango_afectivo",
+    "regulacion_afectiva",
+    "congruencia_afectiva"
+  ],
+  "excludes": [
+    "pensamiento_contenido",
+    "sensopercepcion",
+    "actitud",
+    "rasgos_de_personalidad",
+    "juicio",
+    "ideacion_suicida"
+  ],
+  "subcomponents": [
+    {
+      "id": "animo_subjetivo",
+      "label_es": "Ánimo (subjetivo / autorreporte)",
+      "accepted_terms": [
+        "eutimico",
+        "triste_o_depresivo",
+        "ansioso_o_angustiado",
+        "irritable",
+        "euforico",
+        "expansivo",
+        "disforico",
+        "apatico",
+        "anhedonico",
+        "alexitimico",
+        "sentimiento_de_vacio"
+      ],
+      "notes": "Estado emocional sostenido (días–semanas). Alexitimia: incapacidad para identificar o describir emociones propias."
+    },
+    {
+      "id": "afecto_observable",
+      "label_es": "Afecto (expresión observable)",
+      "accepted_terms": [
+        "afecto_sintonico",
+        "hipomimia_o_embotamiento",
+        "aplanamiento_afectivo",
+        "afecto_labil",
+        "afecto_pueril",
+        "moria",
+        "perplejidad",
+        "afecto_dramatico_o_teatral"
+      ],
+      "notes": "Moria: jocosidad insulsa/desinhibida típica de daño frontal. Aplanamiento: ausencia casi total de expresión emocional."
+    },
+    {
+      "id": "reactividad_afectiva",
+      "label_es": "Reactividad afectiva",
+      "accepted_terms": [
+        "reactivo",
+        "hiporreactivo",
+        "hiperreactivo",
+        "no_reactivo"
+      ],
+      "notes": "Capacidad del afecto para modificarse ante estímulos o contenidos emocionales."
+    },
+    {
+      "id": "rango_afectivo",
+      "label_es": "Rango afectivo",
+      "accepted_terms": [
+        "rango_amplio",
+        "rango_restringido",
+        "rango_pobre"
+      ],
+      "notes": "Variedad de emociones expresadas durante la entrevista."
+    },
+    {
+      "id": "regulacion_afectiva",
+      "label_es": "Regulación y estabilidad afectiva",
+      "accepted_terms": [
+        "estable",
+        "labilidad_afectiva",
+        "incontinencia_afectiva",
+        "viscosidad_afectiva"
+      ],
+      "notes": "Labilidad: cambios rápidos. Incontinencia: incapacidad de frenar risa/llanto (pseudobulbar). Viscosidad: dificultad para salir de un estado afectivo."
+    },
+    {
+      "id": "congruencia_afectiva",
+      "label_es": "Congruencia afectiva (Paratimia)",
+      "accepted_terms": [
+        "congruente",
+        "incongruente_o_paratimico"
+      ],
+      "notes": "Paratimia: discordancia ideo-afectiva (p. ej., reír al relatar hechos tristes)."
+    }
+  ],
+  "allowed_features": [
+    "severity",
+    "time_course",
+    "congruence_check",
+    "observer_vs_self_report"
+  ],
+  "recommended_wording": [
+    "Ánimo alexitímico con afecto restringido.",
+    "Moria y desinhibición, sugestivo de compromiso frontal.",
+    "Incontinencia afectiva con llanto espasmódico ante estímulos mínimos.",
+    "Disforia con afecto irritable e hiporreactivo."
+  ],
+  "forbidden_wording": [
+    "Es bipolar.",
+    "Está maniaco.",
+    "Histeria.",
+    "Llorón."
+  ],
+  "clinical_notes": [
+    "Ánimo = CLIMA (sostenido); Afecto = TIEMPO (momentáneo).",
+    "La incontinencia afectiva sugiere daño de vías cortico-bulbares.",
+    "La moria orienta a lesión frontal.",
+    "La disforia combina tristeza, ansiedad e irritabilidad."
+  ]
+}

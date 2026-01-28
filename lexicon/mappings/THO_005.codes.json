@@ -1,0 +1,8 @@
+{
+  "term_id": "THO_005",
+  "coding_standards": {
+    "ICD_11": "MB25.00",
+    "ICD_10_CM": "R46.7"
+  },
+  "version": "1.0.0"
+}

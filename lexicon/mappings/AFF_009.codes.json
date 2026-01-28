@@ -1,0 +1,13 @@
+{
+  "term_id": "AFF_009",
+  "coding_standards": {
+    "ICD_11": "MB24.2",
+    "ICD_10": "R45.84",
+    "SNOMED_CT": "28669007"
+  },
+  "mapping_notes": {
+    "ICD_11_label": "Anhedonia",
+    "scope": "síntoma/estado afectivo"
+  },
+  "version": "1.0.1"
+}

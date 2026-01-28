@@ -1,0 +1,121 @@
+{
+  "domain_id": "DOM-12",
+  "label_es": "Evaluación de riesgo",
+  "version": "1.1.0",
+  "definition_es": "Evalúa la probabilidad actual o potencial de que el paciente se cause daño a sí mismo o a terceros, o sufra daño grave por incapacidad de autocuidado. Integra ideación, planificación, intención, conducta previa y factores moduladores.",
+  "evaluates": [
+    "riesgo_suicida_actual",
+    "caracteristicas_ideacion_suicida",
+    "conducta_autolesiva_no_suicida",
+    "riesgo_heteroagresivo",
+    "riesgo_vulnerabilidad_grave",
+    "factores_protectores"
+  ],
+  "excludes": [
+    "fobia_de_impulsion (ver DOM-07)",
+    "contenido_del_pensamiento_no_lesivo",
+    "rasgos_de_personalidad",
+    "juicio_e_insight"
+  ],
+  "subcomponents": [
+    {
+      "id": "riesgo_suicida_actual",
+      "label_es": "Nivel de riesgo suicida estimado",
+      "accepted_terms": [
+        "riesgo_nulo",
+        "riesgo_bajo",
+        "riesgo_medio",
+        "riesgo_alto",
+        "riesgo_inminente"
+      ],
+      "notes": "Síntesis clínica integrada. 'Riesgo inminente' implica necesidad de intervención o contención inmediata."
+    },
+    {
+      "id": "caracteristicas_ideacion_suicida",
+      "label_es": "Características de la ideación suicida",
+      "accepted_terms": [
+        "ausente",
+        "deseo_de_muerte_pasivo",
+        "ideacion_activa_sin_plan",
+        "ideacion_planificada_inespecifica",
+        "plan_estructurado_y_letal",
+        "intencionalidad_declarada"
+      ],
+      "notes": "La progresión desde deseo pasivo a plan estructurado marca incremento exponencial del riesgo."
+    },
+    {
+      "id": "conducta_autolesiva_no_suicida",
+      "label_es": "Conducta autolesiva no suicida (NSSI)",
+      "accepted_terms": [
+        "ausentes",
+        "cutting_superficial",
+        "quemaduras",
+        "golpes_autoinfligidos",
+        "mordeduras"
+      ],
+      "notes": "Conductas destinadas a regular malestar emocional sin intención letal. Diferenciar de intento suicida fallido."
+    },
+    {
+      "id": "riesgo_heteroagresivo",
+      "label_es": "Riesgo de heteroagresión",
+      "accepted_terms": [
+        "riesgo_nulo",
+        "irritabilidad_verbal",
+        "amenazas_inespecificas",
+        "amenazas_a_persona_especifica",
+        "violencia_fisica_reciente"
+      ],
+      "notes": "La amenaza dirigida a terceros específicos activa deber de protección/advertencia (criterio Tarasoff)."
+    },
+    {
+      "id": "riesgo_vulnerabilidad_grave",
+      "label_es": "Riesgo por vulnerabilidad o abandono",
+      "accepted_terms": [
+        "capacidad_autocuidado_conservada",
+        "descuido_personal_grave",
+        "inanicion_o_deshidratacion",
+        "vulnerabilidad_social_extrema"
+      ],
+      "notes": "Riesgo pasivo para sí mismo. Base legal frecuente de internación en demencia, catatonía o manía exhaustiva."
+    },
+    {
+      "id": "factores_protectores",
+      "label_es": "Factores protectores",
+      "accepted_terms": [
+        "soporte_familiar_presente",
+        "creencias_religiosas_disuasivas",
+        "temor_al_dano",
+        "responsabilidad_familiar",
+        "alianza_terapeutica_solida",
+        "ausencia_de_factores_protectores"
+      ],
+      "notes": "La ausencia de factores protectores aumenta de forma significativa el riesgo clínico."
+    }
+  ],
+  "allowed_features": [
+    "risk_temporality (estatico_vs_dinamico)",
+    "lethality_assessment",
+    "impulsivity_multiplier",
+    "history_of_attempts",
+    "intervention_required"
+  ],
+  "recommended_wording": [
+    "Niega ideación suicida actual o pasiva.",
+    "Deseos de muerte pasivos sin planificación ni intención autolítica.",
+    "Riesgo suicida alto con plan estructurado y medios accesibles.",
+    "Conducta autolesiva no suicida recurrente con función reguladora.",
+    "Riesgo heteroagresivo elevado con amenaza dirigida a tercero específico."
+  ],
+  "forbidden_wording": [
+    "Riesgo positivo.",
+    "Llamada de atención.",
+    "Chantaje emocional.",
+    "No tiene riesgo porque promete no hacerlo."
+  ],
+  "clinical_notes": [
+    "El antecedente de intento suicida previo es el predictor estático más robusto de suicidio consumado.",
+    "Angustia intensa + agitación + insomnio constituyen un síndrome presuicida de alto riesgo.",
+    "Diferenciar siempre NSSI de intento suicida.",
+    "La intoxicación aguda multiplica el riesgo por desinhibición y alteración del juicio."
+  ]
+}

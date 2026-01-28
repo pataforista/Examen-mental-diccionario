@@ -1,0 +1,13 @@
+{
+  "term_id": "AFF_001",
+  "coding_standards": {
+    "ICD_11": "MB24.5",
+    "ICD_10": "R45.2",
+    "SNOMED_CT": "366979004"
+  },
+  "coding_notes": [
+    "ICD-11 MB24.5 corresponde a 'Depressed mood'.",
+    "ICD-10 R45.2 se usa como aproximación sindromática de 'unhappiness' (síntoma)."
+  ],
+  "version": "1.0.0"
+}

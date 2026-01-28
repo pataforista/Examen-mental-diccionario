@@ -1,0 +1,217 @@
+[
+  {
+    "case_id": "OSCE_010",
+    "level": 3,
+    "difficulty_variant": "3B",
+    "stem": {
+      "setting": "urgencias_psiquiatricas",
+      "age_range": "adulto_medio",
+      "sex": "masculino",
+      "contextual_notes": "24–48 h sin alcohol; insomnio, ansiedad, temblor, diaforesis"
+    },
+    "domains": {
+      "DOM-01": {"nivel_de_conciencia":"alerta","claridad_del_sensorio":"sensorio_claro","curso_temporal":"subacute","orientacion":"orientacion_integra"},
+      "DOM-02": {"higiene":"higiene_adecuada","vestimenta_y_alino":"adecuados_al_contexto","postura":"inquieta","facies":"facies_ansiosa","adecuacion_al_contexto":"adecuacion_conservada"},
+      "DOM-03": {"actitud":"colaboradora","cooperacion":"cooperacion_conservada","contacto_visual":"contacto_visual_adecuado","rapport":"rapport_adecuado"},
+      "DOM-04": {"actividad_psicomotora":"inquietud_psicomotriz","movimientos_anormales":"temblor_fino","fenomenos_catatonicos":"ausentes","iniciativa":"iniciativa_conservada","impulsividad_inhibicion_y_compulsion":"control_conductual_conservado"},
+      "DOM-05": {"velocidad_y_ritmo":"velocidad_normal","volumen_y_tono":"volumen_adecuado","articulacion":"articulacion_clara","lenguaje_simbolico":"lenguaje_conservado"},
+      "DOM-06": {"velocidad_del_pensamiento":"taquipsiquia","asociacion_de_ideas":"asociaciones_logicas","densidad_y_continuidad":"curso_fluido","direccionalidad":"dirigido_a_meta"},
+      "DOM-07": {"ideas_delirantes":"ausentes","ideas_sobrevaloradas":"ausentes","pensamiento_magico":"ausente","obsesiones":"ausentes","ideacion_fobica":"ausente","rumiaciones":"rumiaciones_preocupacion","preocupaciones_dominantes":"preocupaciones_salud","temas_recurrentes":"ninguno"},
+      "DOM-08": {"tipo_de_fenomeno":"sin_alteraciones","modalidad_sensorial":[],"caracteristicas_auditivas":"no_aplica","caracteristicas_visuales_tactiles":"no_aplica","distorsiones_perceptivas":"ausentes"},
+      "DOM-09": {"animo_subjetivo":"ansioso_o_angustiado","afecto_observable":"afecto_sintonico","reactividad_afectiva":"hiperreactivo","rango_afectivo":"rango_amplio","regulacion_afectiva":"labilidad_afectiva","congruencia_afectiva":"congruente"},
+      "DOM-10": {"atencion_compleja":"fatigabilidad_atencional","memoria":"memoria_conservada","memoria_de_trabajo":"conservada","funciones_ejecutivas":"conservadas","lenguaje_pragmatico":"adecuado","visuoconstruccion":"conservadas","gnosias":"conservadas","abstraccion":"conservada"},
+      "DOM-11": {"juicio_practico":"juicio_practico_conservado","juicio_social":"juicio_social_adecuado","juicio_de_realidad":"juicio_realidad_conservado","insight_de_enfermedad":"conciencia_de_sintoma","atribucion_causal":"atribucion_somatica_exclusiva"},
+      "DOM-12": {"riesgo_suicida_actual":"riesgo_nulo","caracteristicas_ideacion_suicida":"ausente","conducta_autolesiva_no_suicida":"ausentes","riesgo_heteroagresivo":"riesgo_nulo","riesgo_vulnerabilidad_grave":"riesgo_medico_agudo","factores_protectores":"soporte_familiar_presente"}
+    },
+    "expected_engine_output": {
+      "primary_syndrome": "sindrome_ansioso_obsesivo",
+      "confidence_band": "probable",
+      "critical_flags": ["abstinencia_alcohol_sospechada","riesgo_medico_no_trivial"],
+      "mandatory_checks": ["DOM-12.riesgo_vulnerabilidad_grave","DOM-01.curso_temporal"]
+    },
+    "assessment_keys": {
+      "errors_to_avoid": ["tratar como ansiedad pura y dar alta","benzodiacepina sin plan de vigilancia/etiologia","omitir vigilancia de progresion a delirium"],
+      "key_discriminators": ["temblor_fino","diaforesis","insomnio","curso_subagudo"]
+    }
+  },
+
+  {
+    "case_id": "OSCE_011",
+    "level": 3,
+    "difficulty_variant": "3C",
+    "stem": {
+      "setting": "hospitalizacion_medica",
+      "age_range": "adulto_medio",
+      "sex": "masculino",
+      "contextual_notes": "72 h sin alcohol; agitación nocturna, desorientación, alucinaciones visuales"
+    },
+    "domains": {
+      "DOM-01": {"nivel_de_conciencia":"alerta","claridad_del_sensorio":"sensorio_nublado","curso_temporal":"fluctuante","orientacion":"desorientacion_global"},
+      "DOM-02": {"higiene":"higiene_descuidada","vestimenta_y_alino":"poco_adecuados_al_contexto","postura":"rigida","facies":"facies_perpleja","adecuacion_al_contexto":"adecuacion_no_conservada"},
+      "DOM-03": {"actitud":"defensiva","cooperacion":"cooperacion_parcial","contacto_visual":"contacto_visual_fijo","rapport":"rapport_dificil"},
+      "DOM-04": {"actividad_psicomotora":"agitacion_psicomotora","movimientos_anormales":"temblor_grueso","fenomenos_catatonicos":"ausentes","iniciativa":"iniciativa_conservada","impulsividad_inhibicion_y_compulsion":"desinhibicion"},
+      "DOM-05": {"velocidad_y_ritmo":"taquilalia","volumen_y_tono":"volumen_alto","articulacion":"articulacion_clara","lenguaje_simbolico":"lenguaje_conservado"},
+      "DOM-06": {"velocidad_del_pensamiento":"taquipsiquia","asociacion_de_ideas":"asociaciones_logicas","densidad_y_continuidad":"curso_fluido","direccionalidad":"pobremente_dirigido"},
+      "DOM-07": {"ideas_delirantes":"delirio_persecutorio","ideas_sobrevaloradas":"ausentes","pensamiento_magico":"ausente","obsesiones":"ausentes","ideacion_fobica":"ausente","rumiaciones":"ausentes","preocupaciones_dominantes":"ausentes","temas_recurrentes":"persecucion"},
+      "DOM-08": {"tipo_de_fenomeno":"alucinacion_verdadera","modalidad_sensorial":["visual","tactil"],"caracteristicas_auditivas":"no_aplica","caracteristicas_visuales_tactiles":"zoopsias_y_formicacion","distorsiones_perceptivas":"ilusiones"},
+      "DOM-09": {"animo_subjetivo":"ansioso_o_angustiado","afecto_observable":"afecto_labil","reactividad_afectiva":"hiperreactivo","rango_afectivo":"rango_amplio","regulacion_afectiva":"labilidad_afectiva","congruencia_afectiva":"congruente"},
+      "DOM-10": {"atencion_compleja":"hipoprosexia","memoria":"fallos_memoria_inmediata","memoria_de_trabajo":"fallos_manipulacion_mental","funciones_ejecutivas":"impulsividad_cognitiva","lenguaje_pragmatico":"adecuado","visuoconstruccion":"conservadas","gnosias":"conservadas","abstraccion":"dificultad_abstraccion"},
+      "DOM-11": {"juicio_practico":"conducta_de_riesgo_fisico","juicio_social":"conducta_social_inapropiada","juicio_de_realidad":"juicio_realidad_suspendido","insight_de_enfermedad":"insight_nulo","atribucion_causal":"atribucion_somatica_exclusiva"},
+      "DOM-12": {"riesgo_suicida_actual":"riesgo_nulo","caracteristicas_ideacion_suicida":"ausente","conducta_autolesiva_no_suicida":"ausentes","riesgo_heteroagresivo":"amenazas_inespecificas","riesgo_vulnerabilidad_grave":"riesgo_medico_agudo","factores_protectores":"entorno_hospitalario_supervisado"}
+    },
+    "expected_engine_output": {
+      "primary_syndrome": "sindrome_confusional",
+      "confidence_band": "strong",
+      "critical_flags": ["delirium_probable","abstinencia_alcohol_sospechada","emergencia_medica"],
+      "mandatory_checks": ["DOM-01.curso_temporal","DOM-01.claridad_del_sensorio","DOM-10.atencion_compleja","DOM-12.riesgo_vulnerabilidad_grave"]
+    },
+    "assessment_keys": {
+      "errors_to_avoid": ["diagnosticar psicosis primaria","ignorar fluctuacion y atencion","omitir signos autonomicos/etiologia"],
+      "key_discriminators": ["curso_fluctuante","hipoprosexia","zoopsias","sensorio_nublado"]
+    }
+  },
+
+  {
+    "case_id": "OSCE_012",
+    "level": 3,
+    "difficulty_variant": "3B",
+    "stem": {
+      "setting": "urgencias_psiquiatricas",
+      "age_range": "adulto_joven",
+      "sex": "masculino",
+      "contextual_notes": "uso reciente de cocaína; paranoia intensa; irritabilidad"
+    },
+    "domains": {
+      "DOM-01": {"nivel_de_conciencia":"alerta","claridad_del_sensorio":"sensorio_claro","curso_temporal":"acute","orientacion":"orientacion_integra"},
+      "DOM-02": {"higiene":"higiene_adecuada","vestimenta_y_alino":"adecuados_al_contexto","postura":"inquieta","facies":"facies_perpleja","adecuacion_al_contexto":"adecuacion_parcial"},
+      "DOM-03": {"actitud":"suspicaz","cooperacion":"cooperacion_parcial","contacto_visual":"contacto_visual_fijo","rapport":"rapport_dificil"},
+      "DOM-04": {"actividad_psicomotora":"agitacion_psicomotora","movimientos_anormales":"ausentes","fenomenos_catatonicos":"ausentes","iniciativa":"iniciativa_conservada","impulsividad_inhibicion_y_compulsion":"desinhibicion"},
+      "DOM-05": {"velocidad_y_ritmo":"taquilalia","volumen_y_tono":"volumen_alto","articulacion":"articulacion_clara","lenguaje_simbolico":"lenguaje_conservado"},
+      "DOM-06": {"velocidad_del_pensamiento":"taquipsiquia","asociacion_de_ideas":"asociaciones_logicas","densidad_y_continuidad":"curso_fluido","direccionalidad":"pobremente_dirigido"},
+      "DOM-07": {"ideas_delirantes":"delirio_persecutorio","ideas_sobrevaloradas":"ausentes","pensamiento_magico":"ausente","obsesiones":"ausentes","ideacion_fobica":"ausente","rumiaciones":"ausentes","preocupaciones_dominantes":"ausentes","temas_recurrentes":"persecucion"},
+      "DOM-08": {"tipo_de_fenomeno":"alucinacion_verdadera","modalidad_sensorial":["tactil"],"caracteristicas_auditivas":"no_aplica","caracteristicas_visuales_tactiles":"formicacion","distorsiones_perceptivas":"ausentes"},
+      "DOM-09": {"animo_subjetivo":"disforico","afecto_observable":"afecto_labil","reactividad_afectiva":"hiperreactivo","rango_afectivo":"rango_amplio","regulacion_afectiva":"labilidad_afectiva","congruencia_afectiva":"incongruente_o_paratimico"},
+      "DOM-10": {"atencion_compleja":"distractibilidad","memoria":"memoria_conservada","memoria_de_trabajo":"dificultad_series_inversas","funciones_ejecutivas":"impulsividad_cognitiva","lenguaje_pragmatico":"adecuado","visuoconstruccion":"conservadas","gnosias":"conservadas","abstraccion":"conservada"},
+      "DOM-11": {"juicio_practico":"juicio_desviado_por_creencias_patologicas","juicio_social":"conducta_social_inapropiada","juicio_de_realidad":"juicio_realidad_perdido","insight_de_enfermedad":"insight_nulo","atribucion_causal":"atribucion_delirante_o_magica"},
+      "DOM-12": {"riesgo_suicida_actual":"riesgo_nulo","caracteristicas_ideacion_suicida":"ausente","conducta_autolesiva_no_suicida":"ausentes","riesgo_heteroagresivo":"amenazas_inespecificas","riesgo_vulnerabilidad_grave":"riesgo_medico_agudo","factores_protectores":"entorno_hospitalario_supervisado"}
+    },
+    "expected_engine_output": {
+      "primary_syndrome": "sindrome_psicotico",
+      "confidence_band": "probable",
+      "critical_flags": ["sustancia_inducida_probable","formicacion"],
+      "mandatory_checks": ["DOM-01.claridad_del_sensorio","DOM-12.riesgo_heteroagresivo"]
+    },
+    "assessment_keys": {
+      "errors_to_avoid": ["atribuir a esquizofrenia sin temporalidad","omitir riesgo heteroagresivo por irritabilidad"],
+      "key_discriminators": ["inicio_agudo","formicacion","contexto_sustancia"]
+    }
+  },
+
+  {
+    "case_id": "OSCE_013",
+    "level": 3,
+    "difficulty_variant": "3B",
+    "stem": {
+      "setting": "consulta_externa",
+      "age_range": "adulto_joven",
+      "sex": "femenino",
+      "contextual_notes": "dificultad de atención desde la infancia; bajo rendimiento sostenido; sin episodios afectivos mayores"
+    },
+    "domains": {
+      "DOM-01": {"nivel_de_conciencia":"alerta","claridad_del_sensorio":"sensorio_claro","curso_temporal":"chronic","orientacion":"orientacion_integra"},
+      "DOM-02": {"higiene":"higiene_adecuada","vestimenta_y_alino":"adecuados_al_contexto","postura":"erguida","facies":"normomimica","adecuacion_al_contexto":"adecuacion_conservada"},
+      "DOM-03": {"actitud":"colaboradora","cooperacion":"cooperacion_conservada","contacto_visual":"contacto_visual_adecuado","rapport":"rapport_adecuado"},
+      "DOM-04": {"actividad_psicomotora":"normocinesia","movimientos_anormales":"ausentes","fenomenos_catatonicos":"ausentes","iniciativa":"iniciativa_conservada","impulsividad_inhibicion_y_compulsion":"inquietud_interna"},
+      "DOM-05": {"velocidad_y_ritmo":"velocidad_normal","volumen_y_tono":"volumen_adecuado","articulacion":"articulacion_clara","lenguaje_simbolico":"lenguaje_conservado"},
+      "DOM-06": {"velocidad_del_pensamiento":"velocidad_conservada","asociacion_de_ideas":"asociaciones_logicas","densidad_y_continuidad":"curso_fluido","direccionalidad":"dirigido_a_meta"},
+      "DOM-07": {"ideas_delirantes":"ausentes","ideas_sobrevaloradas":"ausentes","pensamiento_magico":"ausente","obsesiones":"ausentes","ideacion_fobica":"ausente","rumiaciones":"ausentes","preocupaciones_dominantes":"preocupaciones_laborales","temas_recurrentes":"fracaso"},
+      "DOM-08": {"tipo_de_fenomeno":"sin_alteraciones","modalidad_sensorial":[],"caracteristicas_auditivas":"no_aplica","caracteristicas_visuales_tactiles":"no_aplica","distorsiones_perceptivas":"ausentes"},
+      "DOM-09": {"animo_subjetivo":"eutimico","afecto_observable":"afecto_sintonico","reactividad_afectiva":"reactivo","rango_afectivo":"rango_amplio","regulacion_afectiva":"estable","congruencia_afectiva":"congruente"},
+      "DOM-10": {"atencion_compleja":"distractibilidad","memoria":"memoria_conservada","memoria_de_trabajo":"fallos_manipulacion_mental","funciones_ejecutivas":"fallo_planificacion","lenguaje_pragmatico":"adecuado","visuoconstruccion":"conservadas","gnosias":"conservadas","abstraccion":"conservada"},
+      "DOM-11": {"juicio_practico":"juicio_practico_conservado","juicio_social":"juicio_social_adecuado","juicio_de_realidad":"juicio_realidad_conservado","insight_de_enfermedad":"conciencia_de_sintoma","atribucion_causal":"atribucion_biopsicosocial_realista"},
+      "DOM-12": {"riesgo_suicida_actual":"riesgo_nulo","caracteristicas_ideacion_suicida":"ausente","conducta_autolesiva_no_suicida":"ausentes","riesgo_heteroagresivo":"riesgo_nulo","riesgo_vulnerabilidad_grave":"capacidad_autocuidado_conservada","factores_protectores":"alianza_terapeutica_solida"}
+    },
+    "expected_engine_output": {
+      "primary_syndrome": "sindrome_cognitivo",
+      "confidence_band": "possible",
+      "critical_flags": ["TDAH_sospechado"],
+      "mandatory_checks": ["DOM-10.atencion_compleja","DOM-10.funciones_ejecutivas"]
+    },
+    "assessment_keys": {
+      "errors_to_avoid": ["atribuir a depresion sin datos afectivos nucleares","confundir con ansiedad pura"],
+      "key_discriminators": ["inicio_infancia","distractibilidad","fallo_planificacion"]
+    }
+  },
+
+  {
+    "case_id": "OSCE_014",
+    "level": 3,
+    "difficulty_variant": "3C",
+    "stem": {
+      "setting": "consulta_externa",
+      "age_range": "adulto_joven",
+      "sex": "masculino",
+      "contextual_notes": "impulsividad y verborrea desde adolescencia; hoy llega 'acelerado' pero sin disminución marcada de sueño"
+    },
+    "domains": {
+      "DOM-01": {"nivel_de_conciencia":"alerta","claridad_del_sensorio":"sensorio_claro","curso_temporal":"chronic","orientacion":"orientacion_integra"},
+      "DOM-02": {"higiene":"higiene_adecuada","vestimenta_y_alino":"adecuados_al_contexto","postura":"inquieta","facies":"normomimica","adecuacion_al_contexto":"adecuacion_conservada"},
+      "DOM-03": {"actitud":"familiar","cooperacion":"cooperacion_conservada","contacto_visual":"contacto_visual_adecuado","rapport":"rapport_adecuado"},
+      "DOM-04": {"actividad_psicomotora":"inquietud_psicomotriz","movimientos_anormales":"ausentes","fenomenos_catatonicos":"ausentes","iniciativa":"iniciativa_conservada","impulsividad_inhibicion_y_compulsion":"desinhibicion"},
+      "DOM-05": {"velocidad_y_ritmo":"taquilalia","volumen_y_tono":"volumen_adecuado","articulacion":"articulacion_clara","lenguaje_simbolico":"lenguaje_conservado"},
+      "DOM-06": {"velocidad_del_pensamiento":"taquipsiquia","asociacion_de_ideas":"asociaciones_logicas","densidad_y_continuidad":"curso_fluido","direccionalidad":"dirigido_a_meta"},
+      "DOM-07": {"ideas_delirantes":"ausentes","ideas_sobrevaloradas":"ausentes","pensamiento_magico":"ausente","obsesiones":"ausentes","ideacion_fobica":"ausente","rumiaciones":"ausentes","preocupaciones_dominantes":"preocupaciones_laborales","temas_recurrentes":"ninguno"},
+      "DOM-08": {"tipo_de_fenomeno":"sin_alteraciones","modalidad_sensorial":[],"caracteristicas_auditivas":"no_aplica","caracteristicas_visuales_tactiles":"no_aplica","distorsiones_perceptivas":"ausentes"},
+      "DOM-09": {"animo_subjetivo":"eutimico","afecto_observable":"afecto_sintonico","reactividad_afectiva":"hiperreactivo","rango_afectivo":"rango_amplio","regulacion_afectiva":"labilidad_afectiva","congruencia_afectiva":"congruente"},
+      "DOM-10": {"atencion_compleja":"distractibilidad","memoria":"memoria_conservada","memoria_de_trabajo":"fallos_manipulacion_mental","funciones_ejecutivas":"impulsividad_cognitiva","lenguaje_pragmatico":"adecuado","visuoconstruccion":"conservadas","gnosias":"conservadas","abstraccion":"conservada"},
+      "DOM-11": {"juicio_practico":"conducta_de_riesgo_fisico","juicio_social":"desinhibicion_social","juicio_de_realidad":"juicio_realidad_conservado","insight_de_enfermedad":"conciencia_de_sintoma","atribucion_causal":"atribucion_biopsicosocial_realista"},
+      "DOM-12": {"riesgo_suicida_actual":"riesgo_nulo","caracteristicas_ideacion_suicida":"ausente","conducta_autolesiva_no_suicida":"ausentes","riesgo_heteroagresivo":"riesgo_nulo","riesgo_vulnerabilidad_grave":"capacidad_autocuidado_conservada","factores_protectores":"responsabilidad_familiar"}
+    },
+    "expected_engine_output": {
+      "primary_syndrome": "sindrome_cognitivo",
+      "confidence_band": "possible",
+      "critical_flags": ["TDAH_sospechado","ruleout_hipomania"],
+      "mandatory_checks": ["DOM-09.animo_subjetivo","DOM-01.curso_temporal"]
+    },
+    "assessment_keys": {
+      "errors_to_avoid": ["diagnosticar hipomania sin curso episodico","ignorar deterioro funcional crónico"],
+      "key_discriminators": ["curso_cronico","sin_disminucion_marcada_de_sueno","juicio_realidad_conservado"]
+    }
+  },
+
+  {
+    "case_id": "OSCE_015",
+    "level": 3,
+    "difficulty_variant": "3B",
+    "stem": {
+      "setting": "consulta_externa",
+      "age_range": "adulto_medio",
+      "sex": "masculino",
+      "contextual_notes": "episodios breves de agresión desproporcionada; arrepentimiento posterior; funcionamiento basal estable"
+    },
+    "domains": {
+      "DOM-01": {"nivel_de_conciencia":"alerta","claridad_del_sensorio":"sensorio_claro","curso_temporal":"chronic","orientacion":"orientacion_integra"},
+      "DOM-02": {"higiene":"higiene_adecuada","vestimenta_y_alino":"adecuados_al_contexto","postura":"erguida","facies":"normomimica","adecuacion_al_contexto":"adecuacion_conservada"},
+      "DOM-03": {"actitud":"colaboradora","cooperacion":"cooperacion_conservada","contacto_visual":"contacto_visual_adecuado","rapport":"rapport_adecuado"},
+      "DOM-04": {"actividad_psicomotora":"normocinesia","movimientos_anormales":"ausentes","fenomenos_catatonicos":"ausentes","iniciativa":"iniciativa_conservada","impulsividad_inhibicion_y_compulsion":"impulsividad"},
+      "DOM-05": {"velocidad_y_ritmo":"velocidad_normal","volumen_y_tono":"volumen_adecuado","articulacion":"articulacion_clara","lenguaje_simbolico":"lenguaje_conservado"},
+      "DOM-06": {"velocidad_del_pensamiento":"velocidad_conservada","asociacion_de_ideas":"asociaciones_logicas","densidad_y_continuidad":"curso_fluido","direccionalidad":"dirigido_a_meta"},
+      "DOM-07": {"ideas_delirantes":"ausentes","ideas_sobrevaloradas":"ausentes","pensamiento_magico":"ausente","obsesiones":"ausentes","ideacion_fobica":"ausente","rumiaciones":"rumiaciones_culpa","preocupaciones_dominantes":"preocupaciones_familiares","temas_recurrentes":"culpa"},
+      "DOM-08": {"tipo_de_fenomeno":"sin_alteraciones","modalidad_sensorial":[],"caracteristicas_auditivas":"no_aplica","caracteristicas_visuales_tactiles":"no_aplica","distorsiones_perceptivas":"ausentes"},
+      "DOM-09": {"animo_subjetivo":"eutimico","afecto_observable":"afecto_sintonico","reactividad_afectiva":"reactivo","rango_afectivo":"rango_amplio","regulacion_afectiva":"labilidad_afectiva","congruencia_afectiva":"congruente"},
+      "DOM-10": {"atencion_compleja":"euprosexia","memoria":"memoria_conservada","memoria_de_trabajo":"conservada","funciones_ejecutivas":"perdida_freno_inhibitorio","lenguaje_pragmatico":"adecuado","visuoconstruccion":"conservadas","gnosias":"conservadas","abstraccion":"conservada"},
+      "DOM-11": {"juicio_practico":"juicio_intermitentemente_comprometido","juicio_social":"conducta_social_inapropiada","juicio_de_realidad":"juicio_realidad_conservado","insight_de_enfermedad":"insight_intelectual","atribucion_causal":"atribucion_biopsicosocial_realista"},
+      "DOM-12": {"riesgo_suicida_actual":"riesgo_nulo","caracteristicas_ideacion_suicida":"ausente","conducta_autolesiva_no_suicida":"ausentes","riesgo_heteroagresivo":"agresion_reactiva","riesgo_vulnerabilidad_grave":"capacidad_autocuidado_conservada","factores_protectores":"responsabilidad_familiar"}
+    },
+    "expected_engine_output": {
+      "primary_syndrome": "sindrome_cognitivo",
+      "confidence_band": "possible",
+      "critical_flags": ["trastorno_control_impulsos_probable"],
+      "mandatory_checks": ["DOM-04.impulsividad_inhibicion_y_compulsion","DOM-12.riesgo_heteroagresivo","DOM-11.juicio_practico"]
+    },
+    "assessment_keys": {
+      "errors_to_avoid": ["diagnosticar mania sin sintomas nucleares","atribuir a psicosis sin fenomenologia"],
+      "key_discriminators": ["episodios_breves","arrepentimiento_posterior","basal_estable"]
+    }
+  }
+]

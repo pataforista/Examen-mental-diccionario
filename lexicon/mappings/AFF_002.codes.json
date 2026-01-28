@@ -1,0 +1,13 @@
+{
+  "term_id": "AFF_002",
+  "coding_standards": {
+    "ICD_11": "MB24.8",
+    "ICD_10": "R45.8",
+    "SNOMED_CT": "81548002"
+  },
+  "coding_notes": [
+    "ICD-11 MB24.8 corresponde a 'Elevated mood'.",
+    "ICD-10 no ofrece un equivalente sintomático específico; se usa R45.8 como contenedor pragmático."
+  ],
+  "version": "1.0.0"
+}

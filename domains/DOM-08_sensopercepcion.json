@@ -1,0 +1,115 @@
+{
+  "domain_id": "DOM-08",
+  "label_es": "Sensopercepción",
+  "version": "1.1.0",
+  "definition_es": "Evalúa los fenómenos perceptivos anómalos del paciente. Describe el tipo de experiencia perceptiva, su modalidad sensorial y características fenomenológicas, sin valorar su interpretación delirante ni su significado afectivo.",
+  "evaluates": [
+    "tipo_de_fenomeno",
+    "modalidad_sensorial",
+    "caracteristicas_fenomenologicas",
+    "distorsiones_perceptivas"
+  ],
+  "excludes": [
+    "contenido_del_pensamiento",
+    "curso_y_forma_del_pensamiento",
+    "juicio_de_realidad",
+    "insight",
+    "imaginacion",
+    "recuerdos_intrusivos"
+  ],
+  "subcomponents": [
+    {
+      "id": "tipo_de_fenomeno",
+      "label_es": "Tipo de fenómeno perceptivo",
+      "accepted_terms": [
+        "sin_alteraciones",
+        "alucinacion_verdadera",
+        "pseudoalucinacion",
+        "alucinosis",
+        "alucinacion_hipnagogica",
+        "alucinacion_hipnopompica",
+        "ilusion"
+      ],
+      "notes": "Alucinación verdadera: percepción con corporeidad en espacio externo. Pseudoalucinación: experiencia perceptiva vívida en espacio interno (intrapsíquico). Alucinosis: fenómeno externo con juicio de realidad conservado. Hipnagógicas/Hipnopómpicas: asociadas al sueño, frecuentes en población general."
+    },
+    {
+      "id": "modalidad_sensorial",
+      "label_es": "Modalidad sensorial",
+      "accepted_terms": [
+        "auditiva",
+        "visual",
+        "tactil_haptica",
+        "olfatoria",
+        "gustativa",
+        "cenestesica_visceral",
+        "cinestesica_motora"
+      ],
+      "notes": "Las modalidades olfatoria y gustativa obligan a descartar patología neurológica (epilepsia del lóbulo temporal, tumor)."
+    },
+    {
+      "id": "caracteristicas_auditivas",
+      "label_es": "Características auditivas (si aplica)",
+      "accepted_terms": [
+        "no_aplica",
+        "voces_comentadoras",
+        "voces_imperativas",
+        "voces_dialogantes",
+        "eco_del_pensamiento",
+        "fonemas_elementales"
+      ],
+      "notes": "Las voces imperativas implican riesgo. El eco del pensamiento es un síntoma de primer rango de Schneider."
+    },
+    {
+      "id": "caracteristicas_visuales_tactiles",
+      "label_es": "Características visuales o táctiles (si aplica)",
+      "accepted_terms": [
+        "no_aplica",
+        "escenicas_complejas",
+        "liliputienses",
+        "zoopsias",
+        "formicacion",
+        "fotopsias"
+      ],
+      "notes": "Zoopsias y formicación sugieren etiología tóxica o abstinencia. Fotopsias orientan a causa neurológica (migraña, epilepsia)."
+    },
+    {
+      "id": "distorsiones_perceptivas",
+      "label_es": "Distorsiones perceptivas",
+      "accepted_terms": [
+        "ausentes",
+        "hiperestesia",
+        "hipoestesia",
+        "micropsia",
+        "macropsia",
+        "metamorfopsias"
+      ],
+      "notes": "Distorsión de estímulos reales en intensidad, tamaño o forma. No implican creación de objetos inexistentes."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "time_course",
+    "reality_testing"
+  ],
+  "recommended_wording": [
+    "Sin alteraciones sensoperceptivas.",
+    "Pseudoalucinaciones auditivas intrapsíquicas, con crítica conservada.",
+    "Alucinaciones auditivas verdaderas, voces imperativas.",
+    "Alucinaciones visuales (zoopsias) en contexto de desorientación.",
+    "Fenómenos hipnagógicos aislados sin significación psicopatológica."
+  ],
+  "forbidden_wording": [
+    "Oye voces (sin especificar internas/externas).",
+    "Alucinaciones (sin modalidad ni características).",
+    "Percepción alterada.",
+    "Confundir ilusión con alucinación."
+  ],
+  "clinical_notes": [
+    "La diferenciación entre pseudoalucinación y alucinación verdadera es fenomenológica (espacio), no por insight.",
+    "Las alucinaciones olfatorias o gustativas requieren estudio neurológico.",
+    "La formicación es característica de abstinencia alcohólica o intoxicación por estimulantes.",
+    "Las alucinaciones hipnagógicas e hipnopómpicas no implican psicosis."
+  ]
+}

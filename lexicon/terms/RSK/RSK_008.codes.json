@@ -1,0 +1,10 @@
+{
+  "term_id": "RSK_008",
+  "coding_standards": {
+    "ICD_11": null,
+    "ICD_10": null,
+    "SNOMED_CT": null
+  },
+  "version": "1.0.0",
+  "note": "Riesgo conductual operacional. Se puede mapear por condiciones subyacentes o por códigos de evento si existe agresión consumada; el riesgo en sí no tiene código universal."
+}

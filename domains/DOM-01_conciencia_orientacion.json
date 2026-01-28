@@ -1,0 +1,90 @@
+{
+  "domain_id": "DOM-01",
+  "label_es": "Conciencia y orientación",
+  "version": "1.0.1",
+  "definition_es": "Evalúa el nivel de alerta, la claridad del sensorio y la capacidad del paciente para situarse en sí mismo y en su entorno inmediato. Es un dominio basal que condiciona la interpretación del resto del examen mental.",
+  "evaluates": [
+    "nivel_de_conciencia",
+    "claridad_del_sensorio",
+    "curso_temporal",
+    "orientacion"
+  ],
+  "excludes": [
+    "sueño_y_estados_oniricos",
+    "insight",
+    "juicio",
+    "cognicion_compleja"
+  ],
+  "subcomponents": [
+    {
+      "id": "nivel_de_conciencia",
+      "label_es": "Nivel de conciencia",
+      "accepted_terms": [
+        "alerta",
+        "somnolencia",
+        "obnubilacion",
+        "estupor",
+        "coma"
+      ],
+      "notes": "Describe el grado de vigilia clínica (wakefulness)."
+    },
+    {
+      "id": "claridad_del_sensorio",
+      "label_es": "Claridad del sensorio",
+      "accepted_terms": [
+        "sensorio_claro",
+        "sensorio_embotado",
+        "sensorio_nublado"
+      ],
+      "notes": "Evalúa la nitidez de la percepción y el procesamiento mental (contenido)."
+    },
+    {
+      "id": "curso_temporal",
+      "label_es": "Curso temporal",
+      "accepted_terms": [
+        "estable",
+        "fluctuante"
+      ],
+      "notes": "Describe la variabilidad del estado de conciencia a lo largo del tiempo."
+    },
+    {
+      "id": "orientacion",
+      "label_es": "Orientación",
+      "accepted_terms": [
+        "orientacion_integra",
+        "desorientacion_parcial",
+        "desorientacion_global"
+      ],
+      "dimensions": [
+        "autopsiquica",
+        "alopsiquica_tiempo",
+        "alopsiquica_lugar",
+        "alopsiquica_persona",
+        "alopsiquica_situacion"
+      ],
+      "notes": "Si se selecciona 'desorientacion_parcial', es obligatorio especificar las dimensiones afectadas."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "time_course",
+    "severity",
+    "functional_impact",
+    "observation_type"
+  ],
+  "recommended_wording": [
+    "Paciente alerta, vigil y con sensorio claro.",
+    "Se encuentra somnoliento, con sensorio embotado y desorientación parcial en tiempo.",
+    "Estado de conciencia fluctuante, con periodos de lucidez intercalados."
+  ],
+  "forbidden_wording": [
+    "Paciente confuso (usar: presenta sensorio nublado o embotado).",
+    "Orientado x3 (especificar dimensiones).",
+    "Awareness disminuida."
+  ],
+  "clinical_notes": [
+    "La fluctuación del sensorio es el sello clínico distintivo del delirium.",
+    "Si DOM-01 está alterado, la evaluación de memoria y juicio no es confiable.",
+    "Sueño y estados REM se excluyen del examen mental rutinario."
+  ]
+}

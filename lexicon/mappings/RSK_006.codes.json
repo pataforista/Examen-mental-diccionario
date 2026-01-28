@@ -1,0 +1,10 @@
+{
+  "term_id": "RSK_006",
+  "coding_standards": {
+    "ICD_11": null,
+    "ICD_10": null,
+    "SNOMED_CT": null
+  },
+  "version": "1.0.0",
+  "note": "Constructo de riesgo operacional. No existe un código universal sintomático limpio; se usa para estratificación y decisiones de seguridad."
+}

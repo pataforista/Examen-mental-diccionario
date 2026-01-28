@@ -1,0 +1,10 @@
+{
+  "term_id": "RSK_002",
+  "coding_standards": {
+    "ICD_11": "MB23.S",
+    "ICD_10": null,
+    "SNOMED_CT": null
+  },
+  "version": "1.0.0",
+  "note": "ICD-11 MB23.S describe acciones preparatorias sin intento. ICD-10 no tiene equivalente sintomático limpio y suele codificarse por contexto o diagnóstico principal."
+}

@@ -1,0 +1,83 @@
+{
+  "term_id": "AFF_015",
+  "canonical_name": "Alexitimia",
+  "synonyms_and_slang": [
+    { "term": "no sé qué siento", "context": "patient_report", "locale": "es" },
+    { "term": "me cuesta ponerle nombre a lo que siento", "context": "patient_report", "locale": "es" },
+    { "term": "ceguera emocional", "context": "teaching_slang", "locale": "es" }
+  ],
+  "term_kind": "trait",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Dificultad persistente para identificar y describir emociones propias, con tendencia a pensamiento orientado a lo concreto y a expresar el malestar como sensaciones corporales.",
+    "required_features": [
+      "dificultad para identificar emociones",
+      "dificultad para describir emociones",
+      "predominio de lenguaje somático/concreto"
+    ],
+    "subjective_marker": "Respuestas del tipo 'no sé', 'solo me siento raro', o describe síntomas físicos en lugar de emociones.",
+    "behavioral_marker": "Aparente desconexión entre señales conductuales (llanto/tensión) y reporte verbal; descripción pobre del mundo interno."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion", "instrumento"],
+    "time_relation": ["rasgo_estable"],
+    "pharmacological_link": false,
+    "validation_tool": {
+      "name": "TAS-20 (Toronto Alexithymia Scale)",
+      "use": "apoyo_docente_investigacion"
+    },
+    "computable_markers": [
+      { "marker": "emotion_labeling_difficulty", "type": "ordinal_0_3", "anchors": ["0=no", "1=leve", "2=moderada", "3=marcada"] },
+      { "marker": "somatic_focus", "type": "ordinal_0_3", "anchors": ["0=no", "1=leve", "2=moderada", "3=marcada"] },
+      { "marker": "affect_behavior_mismatch", "type": "boolean", "expected": true },
+      { "marker": "externally_oriented_thinking", "type": "boolean", "expected": true }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-09", "relation": "differential_anchor", "context": "reporte_afectivo_vs_marcadores" },
+    { "domain_id": "DOM-10", "relation": "differential_anchor", "context": "interocepcion_cognicion_social" },
+    { "domain_id": "DOM-14", "relation": "teaching_anchor", "context": "entrevista_emociones" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "AFF_001",
+      "canonical_name": "Ánimo depresivo",
+      "reason": "En depresión puede haber lenguaje emocional claro; en alexitimia el problema es de identificación/expresión, no necesariamente de valencia negativa.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "AFF_014",
+      "canonical_name": "Apatía",
+      "reason": "Apatía es baja iniciativa/motivación; alexitimia es baja capacidad de simbolizar/nombrar afecto. Pueden coexistir, no son equivalentes.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "documentation_warning",
+      "message": "Si hay marcadores conductuales de malestar (tensión, llanto, evitación) con pobre reporte subjetivo, considerar alexitimia antes de concluir 'ausencia de síntomas'."
+    }
+  ],
+
+  "teaching_notes": [
+    "Puede sesgar la entrevista: el clínico depende del reporte verbal y subestima la carga afectiva real.",
+    "Frecuente como modulador en somatización, trauma complejo y perfiles neurodivergentes; úsalo como hipótesis operativa, no etiqueta moral."
+  ],
+
+  "cognitive_pitfalls": [
+    "Interpretar 'no sé qué siento' como falta de cooperación.",
+    "Confundir alexitimia con ausencia real de afecto (p. ej., aplanamiento)."
+  ],
+
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": ["Psicosomática clásica"],
+    "clinical_tradition": ["Entrevista clínica", "Neuropsiquiatría afectiva"]
+  }
+}

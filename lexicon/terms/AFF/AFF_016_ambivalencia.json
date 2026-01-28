@@ -1,0 +1,83 @@
+{
+  "term_id": "AFF_016",
+  "canonical_name": "Ambivalencia",
+  "synonyms_and_slang": [
+    { "term": "sentimientos encontrados", "context": "patient_report", "locale": "es" },
+    { "term": "quiero y no quiero", "context": "patient_report", "locale": "es" },
+    { "term": "no puedo decidirme", "context": "patient_report", "locale": "es" }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Coexistencia de deseos, ideas o afectos opuestos hacia el mismo objeto, persona o decisión, que genera conflicto subjetivo y dificulta la elección o la acción.",
+    "required_features": [
+      "coexistencia de polos opuestos (atracción/aversión, deseo/rechazo)",
+      "referidos al mismo objeto o decisión",
+      "conflicto subjetivo o bloqueo decisional"
+    ],
+    "subjective_marker": "El paciente reporta simultaneidad de impulso y freno: 'una parte de mí quiere, otra no', con malestar por indecisión.",
+    "behavioral_marker": "Vacilación sostenida, conductas de aproximación-evitación, cambios repetidos de postura decisional sin nueva información relevante."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion", "colateral"],
+    "time_relation": ["episodica", "persistente"],
+    "pharmacological_link": false,
+    "computable_markers": [
+      { "marker": "same_object_opposing_drives", "type": "boolean", "expected": true },
+      { "marker": "decision_block", "type": "boolean", "expected": true },
+      { "marker": "distress_about_indecision", "type": "ordinal_0_3", "anchors": ["0=no", "1=leve", "2=moderada", "3=marcada"] },
+      {
+        "marker": "approach_avoidance_pattern",
+        "type": "ordinal_0_3",
+        "anchors": ["0=ausente", "1=ocasional", "2=frecuente", "3=predominante"]
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" },
+    { "domain_id": "DOM-11", "relation": "differential_anchor", "context": "juicio_indecision" },
+    { "domain_id": "DOM-13", "relation": "syndrome_builder", "context": "psicosis_vs_ansiedad_vs_obsesivo" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "COG_0XX",
+      "canonical_name": "Indecisión por rumiación/obsesión",
+      "reason": "En obsesivo-rumiativo predomina duda iterativa con rituales/chequeos o intrusiones egodistónicas; en ambivalencia hay conflicto de polos afectivos hacia el mismo objeto sin estructura obsesiva necesaria.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "AFF_003",
+      "canonical_name": "Labilidad afectiva",
+      "reason": "La labilidad es oscilación temporal del afecto; la ambivalencia es simultaneidad o co-presencia de polos opuestos respecto al mismo objeto.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "documentation_warning",
+      "message": "Registrar el objeto de ambivalencia (persona/decisión) y si hay bloqueo funcional. No confundir con labilidad."
+    }
+  ],
+
+  "teaching_notes": [
+    "Fenomenología útil: ambivalencia ≠ cambio de humor. Es conflicto polar dirigido a un objeto.",
+    "Pregunta discriminadora: '¿Se le pasa al rato (oscilación) o conviven las dos posturas al mismo tiempo (ambivalencia)?'"
+  ],
+
+  "cognitive_pitfalls": [
+    "Etiquetar ambivalencia como 'manipulación' o 'inmadurez' sin caracterizar el conflicto dirigido a objeto.",
+    "Confundir ambivalencia con indecisión obsesiva sin explorar intrusiones/compulsiones."
+  ],
+
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": ["Jaspers", "Berrios"],
+    "clinical_tradition": ["Psicopatología descriptiva"]
+  }
+}

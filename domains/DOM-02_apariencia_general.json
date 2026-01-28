@@ -1,0 +1,104 @@
+{
+  "domain_id": "DOM-02",
+  "label_es": "Apariencia general",
+  "version": "1.0.1",
+  "definition_es": "Evalúa la presentación externa y observable del paciente al inicio y durante la entrevista, con énfasis descriptivo y evitando inferencias psicodinámicas, juicios de personalidad o diagnósticos.",
+  "evaluates": [
+    "higiene",
+    "vestimenta_y_alino",
+    "postura",
+    "facies",
+    "adecuacion_al_contexto"
+  ],
+  "excludes": [
+    "actitud_relacional",
+    "afecto",
+    "psicomotricidad_activa",
+    "juicios_de_personalidad",
+    "diagnosticos_psi"
+  ],
+  "subcomponents": [
+    {
+      "id": "higiene",
+      "label_es": "Higiene",
+      "accepted_terms": [
+        "higiene_adecuada",
+        "higiene_descuidada",
+        "higiene_muy_descuidada"
+      ],
+      "notes": "Describe el cuidado corporal observable. No inferir causas."
+    },
+    {
+      "id": "vestimenta_y_alino",
+      "label_es": "Vestimenta y aliño",
+      "accepted_terms": [
+        "adecuados_al_contexto",
+        "poco_adecuados_al_contexto",
+        "inadecuados_al_contexto"
+      ],
+      "notes": "Valorar congruencia con clima, situación clínica y normas socioculturales; describir lo observable."
+    },
+    {
+      "id": "postura",
+      "label_es": "Postura",
+      "accepted_terms": [
+        "erguida",
+        "encorvada",
+        "rigida",
+        "laxa"
+      ],
+      "notes": "Describir la posición corporal predominante sin atribuir significado emocional."
+    },
+    {
+      "id": "facies",
+      "label_es": "Facies y expresión facial",
+      "accepted_terms": [
+        "normomimica",
+        "hipomimica",
+        "hipermimica",
+        "facies_parkinsoniana",
+        "facies_cushingoide",
+        "facies_tirotoxica",
+        "facies_mixedematosa",
+        "facies_mitral",
+        "facies_dolorosa",
+        "facies_perpleja"
+      ],
+      "notes": "Prioriza descriptores observables (mímica + patrones morfológicos). 'Facies perpleja' se admite como descriptor de expresión (no diagnóstico). Etiquetas sindromáticas psiquiátricas (p. ej., 'depresiva/maníaca') se registran mejor en DOM-09."
+    },
+    {
+      "id": "adecuacion_al_contexto",
+      "label_es": "Adecuación al contexto",
+      "accepted_terms": [
+        "adecuacion_conservada",
+        "adecuacion_parcial",
+        "adecuacion_no_conservada"
+      ],
+      "notes": "Síntesis descriptiva de la presentación general en relación con el entorno clínico."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "observation_type"
+  ],
+  "recommended_wording": [
+    "Paciente con higiene adecuada y vestimenta acorde al contexto.",
+    "Presenta higiene descuidada y vestimenta poco adecuada a la situación clínica.",
+    "Postura encorvada y facies hipomímica durante la entrevista.",
+    "Facies cushingoide; se sugiere correlacionar con antecedentes y exploración médica."
+  ],
+  "forbidden_wording": [
+    "Apariencia triste (preferir: describir hipomimia + afecto congruente con ánimo bajo en DOM-09).",
+    "Aspecto psicótico (preferir: describir conducta observable en DOM-02/03 y pensamiento/sensopercepción en DOM-06/08).",
+    "Cara de loco (preferir: describir facies perpleja/hipermímica + hallazgos específicos).",
+    "Vestimenta extravagante (sin descripción detallada)."
+  ],
+  "clinical_notes": [
+    "Este dominio es predominantemente descriptivo.",
+    "No deben inferirse estados afectivos, rasgos de personalidad ni diagnósticos a partir de la apariencia.",
+    "Las variaciones culturales y contextuales deben considerarse explícitamente.",
+    "Las facies orgánicas (p. ej., cushingoide, mixedematosa, tirotoxica, mitral) funcionan como banderas rojas médicas y requieren correlación clínica."
+  ]
+}

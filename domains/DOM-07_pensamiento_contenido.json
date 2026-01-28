@@ -1,0 +1,163 @@
+{
+  "domain_id": "DOM-07",
+  "label_es": "Pensamiento: contenido",
+  "version": "1.1.0",
+  "definition_es": "Evalúa las ideas, creencias y temas dominantes del pensamiento. Describe el tipo de contenido ideacional presente sin valorar su forma, grado de convicción, juicio de realidad ni riesgo asociado.",
+  "evaluates": [
+    "ideas_delirantes",
+    "ideas_sobrevaloradas",
+    "pensamiento_magico",
+    "obsesiones",
+    "ideacion_fobica",
+    "rumiaciones",
+    "preocupaciones_dominantes",
+    "temas_recurrentes"
+  ],
+  "excludes": [
+    "curso_y_forma_del_pensamiento",
+    "lenguaje",
+    "afecto",
+    "juicio_de_realidad",
+    "insight",
+    "ideacion_suicida_homicida"
+  ],
+  "subcomponents": [
+    {
+      "id": "ideas_delirantes",
+      "label_es": "Ideas delirantes (temática)",
+      "accepted_terms": [
+        "ausentes",
+        "delirio_persecutorio",
+        "delirio_de_referencia",
+        "delirio_de_control_o_pasividad",
+        "delirio_de_difusion_o_robo_del_pensamiento",
+        "delirio_grandiosidad",
+        "delirio_mistico_religioso",
+        "delirio_fantastico",
+        "delirio_culpa",
+        "delirio_ruina",
+        "delirio_hipocondriaco",
+        "delirio_nihilista",
+        "delirio_celotipico",
+        "delirio_erotomanico",
+        "delirio_de_filiacion",
+        "delirio_somatico"
+      ],
+      "notes": "Incluye fenómenos de pasividad (inserción, robo, difusión del pensamiento). El grado de convicción y el juicio de realidad se consignan en DOM-11."
+    },
+    {
+      "id": "ideas_sobrevaloradas",
+      "label_es": "Ideas sobrevaloradas",
+      "accepted_terms": [
+        "ausentes",
+        "ideas_sobrevaloradas_culpa",
+        "ideas_sobrevaloradas_minusvalia",
+        "ideas_sobrevaloradas_hipocondria",
+        "ideas_sobrevaloradas_misticas",
+        "fanatismo_ideologico"
+      ],
+      "notes": "Creencias dominantes emocionalmente cargadas, plausibles dentro del contexto cultural o biográfico, pero excesivas y rígidas."
+    },
+    {
+      "id": "pensamiento_magico",
+      "label_es": "Pensamiento mágico",
+      "accepted_terms": [
+        "ausente",
+        "pensamiento_magico"
+      ],
+      "notes": "Creencia de causalidad irreal entre pensamientos/actos internos y eventos externos. Frecuente en TOC y trastorno esquizotípico."
+    },
+    {
+      "id": "obsesiones",
+      "label_es": "Obsesiones",
+      "accepted_terms": [
+        "ausentes",
+        "obsesiones_contaminacion",
+        "obsesiones_agresion",
+        "obsesiones_sexuales",
+        "obsesiones_religiosas",
+        "obsesiones_simetria",
+        "obsesiones_duda"
+      ],
+      "notes": "Ideas, imágenes o impulsos intrusivos, egodistónicos y generadores de ansiedad. Las compulsiones se registran en DOM-04."
+    },
+    {
+      "id": "ideacion_fobica",
+      "label_es": "Ideación fóbica",
+      "accepted_terms": [
+        "ausente",
+        "fobia_social",
+        "agorafobia",
+        "fobia_especifica",
+        "fobia_de_impulsion"
+      ],
+      "notes": "Miedo irracional a objetos o situaciones externas. La fobia de impulsión implica temor a perder el control, no deseo real de daño."
+    },
+    {
+      "id": "rumiaciones",
+      "label_es": "Rumiaciones",
+      "accepted_terms": [
+        "ausentes",
+        "rumiaciones_culpa",
+        "rumiaciones_fracaso",
+        "rumiaciones_perdida",
+        "rumiaciones_preocupacion"
+      ],
+      "notes": "Pensamiento repetitivo, persistente y autorreferencial, frecuente en depresión y ansiedad."
+    },
+    {
+      "id": "preocupaciones_dominantes",
+      "label_es": "Preocupaciones dominantes",
+      "accepted_terms": [
+        "ausentes",
+        "preocupaciones_economicas",
+        "preocupaciones_salud",
+        "preocupaciones_familiares",
+        "preocupaciones_laborales"
+      ],
+      "notes": "Preocupaciones realistas que dominan el discurso sin pérdida del juicio de realidad."
+    },
+    {
+      "id": "temas_recurrentes",
+      "label_es": "Temas recurrentes",
+      "accepted_terms": [
+        "ninguno",
+        "muerte",
+        "culpa",
+        "enfermedad",
+        "persecucion",
+        "religion",
+        "sexualidad",
+        "fracaso"
+      ],
+      "notes": "Ejes temáticos que aparecen repetidamente en el discurso, independientemente del tipo de idea."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "observation_type",
+    "time_course",
+    "reality_testing"
+  ],
+  "recommended_wording": [
+    "Ideas delirantes persecutorias con fenómenos de control.",
+    "Delirio místico-religioso de misión divina.",
+    "Pensamiento mágico presente, con creencia de causalidad irreal.",
+    "Obsesiones de daño, egodistónicas.",
+    "Fobia de impulsión, sin deseo real de hacerse daño."
+  ],
+  "forbidden_wording": [
+    "Paciente paranoico (usar: ideas delirantes persecutorias).",
+    "Ideas locas.",
+    "Delirio (sin especificar tipo).",
+    "Ideación suicida (registrar obligatoriamente en DOM-12)."
+  ],
+  "clinical_notes": [
+    "Los delirios de control, robo o difusión del pensamiento son síntomas de primer rango de esquizofrenia.",
+    "Diferenciar fobia de impulsión de ideación suicida u homicida real.",
+    "El pensamiento mágico no implica necesariamente psicosis.",
+    "El contenido se describe aquí; el insight y el juicio de realidad se consignan en DOM-11."
+  ]
+}

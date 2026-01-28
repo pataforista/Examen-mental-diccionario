@@ -1,0 +1,8 @@
+{
+  "term_id": "SNM_001",
+  "coding_standards": {
+    "ICD_10": "G21.0",
+    "DSM_5_code": "333.92"
+  },
+  "version": "1.0.0"
+}

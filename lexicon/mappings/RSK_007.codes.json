@@ -1,0 +1,10 @@
+{
+  "term_id": "RSK_007",
+  "coding_standards": {
+    "ICD_11": null,
+    "ICD_10": null,
+    "SNOMED_CT": null
+  },
+  "version": "1.0.0",
+  "note": "Modificador operacional para decisiones de seguridad; no corresponde a un diagnóstico/código estándar."
+}

@@ -1,0 +1,8 @@
+{
+  "term_id": "PER_004",
+  "coding_standards": {
+    "ICD_10": "R44.3",
+    "SNOMED_CT": "4856006"
+  },
+  "version": "1.0.0"
+}

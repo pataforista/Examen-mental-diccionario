@@ -1,0 +1,13 @@
+{
+  "term_id": "AFF_007",
+  "coding_standards": {
+    "ICD_11": "MB24.3",
+    "ICD_10": "R45.0",
+    "SNOMED_CT": "48694002"
+  },
+  "mapping_notes": {
+    "ICD_11_label": "Anxiety",
+    "scope": "síntoma/estado afectivo, no trastorno"
+  },
+  "version": "1.0.1"
+}

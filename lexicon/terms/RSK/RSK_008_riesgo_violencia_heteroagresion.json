@@ -1,0 +1,89 @@
+{
+  "term_id": "RSK_008",
+  "canonical_name": "Riesgo de violencia hacia otros",
+  "synonyms_and_slang": [
+    { "term": "heteroagresión", "context": "clinical_descriptive", "locale": "es" },
+    { "term": "amenazas a terceros", "context": "clinical_descriptive", "locale": "es" }
+  ],
+  "term_kind": "risk_state",
+  "granularity": "atomic",
+  "risk_weight": 5,
+
+  "definition_clinical": {
+    "core": "Probabilidad aumentada de conducta agresiva hacia otras personas en el periodo actual, basada en intención/amenaza, activación, acceso a medios y desinhibición.",
+    "required_features": [
+      "marcadores actuales de intención o activación",
+      "potencial de daño a terceros"
+    ],
+    "subjective_marker": "Amenazas, fantasías agresivas, intención declarada, ideación homicida o deseo de venganza.",
+    "behavioral_marker": "Agitación, escalada verbal, conducta intimidatoria, posesión/búsqueda de armas, persecución de víctima objetivo."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion", "colateral", "expediente_medico"],
+    "time_relation": ["actual", "inminente"],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      { "class": "Intoxicación por alcohol/estimulantes", "risk": "high" },
+      { "class": "Abstinencia (alcohol/BZD)", "risk": "high" }
+    ],
+    "computable_markers": [
+      { "marker": "threats_present", "type": "boolean" },
+      { "marker": "targeted_person_present", "type": "boolean" },
+      {
+        "marker": "intent_to_harm",
+        "type": "ordinal_0_3",
+        "anchors": ["0=ninguna", "1=ambivalente", "2=moderada", "3=alta"]
+      },
+      {
+        "marker": "agitation_level",
+        "type": "ordinal_0_3",
+        "anchors": ["0=calmo", "1=tenso", "2=agitado", "3=violento_inminente"]
+      },
+      {
+        "marker": "means_access_for_violence",
+        "type": "ordinal_0_3",
+        "anchors": ["0=no", "1=posible", "2=probable", "3=directo"]
+      },
+      { "marker": "disinhibition_present", "type": "boolean" }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-12", "relation": "primary_expression", "context": "riesgo_violencia" },
+    { "domain_id": "DOM-04", "relation": "risk_context", "context": "agitacion_psicomotora" },
+    { "domain_id": "DOM-11", "relation": "modifier", "context": "juicio_insight_control_impulsos" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "AFF_017",
+      "canonical_name": "Ira",
+      "reason": "La ira es estado afectivo; el riesgo de violencia requiere intención/medios/desinhibición y evaluación de inminencia.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "message": "Si hay amenaza dirigida + acceso a medios + agitación elevada, activar medidas inmediatas de contención y seguridad del entorno."
+    }
+  ],
+
+  "teaching_notes": [
+    "Separar emoción (ira) de riesgo operativo (amenaza, objetivo, medios, desinhibición).",
+    "El riesgo aumenta con intoxicación, delirium, psicosis imperativa y antecedente de violencia."
+  ],
+
+  "cognitive_pitfalls": [
+    "Asumir que la ausencia de psicosis descarta violencia (la desinhibición tóxica puede ser suficiente).",
+    "Ignorar un objetivo específico (target) como marcador de inminencia."
+  ],
+
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": ["Evaluación de riesgo conductual"],
+    "clinical_tradition": ["Urgencias", "Psiquiatría forense aplicada"]
+  }
+}

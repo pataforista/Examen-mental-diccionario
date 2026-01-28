@@ -1,0 +1,19 @@
+{
+  "registry_version": "1.0.0",
+  "last_updated": "2025-12-26",
+  "prefixes": {
+    "AKT": {
+      "description": "Akathisia / phenomena related to motor restlessness",
+      "next_seq": 2,
+      "reserved": ["AKT_001"]
+    }
+  },
+  "terms_index": [
+    {
+      "term_id": "AKT_001",
+      "canonical_name": "Acatisia",
+      "path": "lexicon/terms/AKT/AKT_001_acatisia.json",
+      "status": "active"
+    }
+  ]
+}

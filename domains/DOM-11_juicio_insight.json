@@ -1,0 +1,98 @@
+{
+  "domain_id": "DOM-11",
+  "label_es": "Juicio e insight",
+  "version": "1.1.0",
+  "definition_es": "Evalúa la capacidad del paciente para valorar la realidad, tomar decisiones seguras y comprender su estado mental. Distingue juicio práctico, juicio social, juicio de realidad e insight (escalonado). No infiere pronóstico ni adherencia futura.",
+  "evaluates": [
+    "juicio_practico",
+    "juicio_social",
+    "juicio_de_realidad",
+    "insight_de_enfermedad",
+    "atribucion_causal"
+  ],
+  "excludes": [
+    "riesgo_suicida_u_heteroagresivo (ver DOM-12)",
+    "anosognosia_neurologica (ver DOM-10)",
+    "contenido_del_pensamiento (ver DOM-07)"
+  ],
+  "subcomponents": [
+    {
+      "id": "juicio_practico",
+      "label_es": "Juicio práctico (seguridad y decisiones cotidianas)",
+      "accepted_terms": [
+        "juicio_practico_conservado",
+        "conducta_de_riesgo_fisico",
+        "incapacidad_resolucion_problemas",
+        "juicio_desviado_por_creencias_patologicas"
+      ],
+      "notes": "Capacidad para decidir y actuar de forma segura ante problemas cotidianos. Si el juicio se desvía por creencias patológicas, especificar si la fuente es delirio (DOM-07) o alteración perceptiva (DOM-08)."
+    },
+    {
+      "id": "juicio_social",
+      "label_es": "Juicio social (normas y autocontrol interpersonal)",
+      "accepted_terms": [
+        "juicio_social_adecuado",
+        "desinhibicion_social",
+        "conducta_social_inapropiada",
+        "indiferencia_a_normas_sociales"
+      ],
+      "notes": "Valora respeto a normas sociales implícitas: distancia, pudor, temas, control de impulsos en interacción."
+    },
+    {
+      "id": "juicio_de_realidad",
+      "label_es": "Juicio de realidad",
+      "accepted_terms": [
+        "juicio_realidad_conservado",
+        "duda_sobre_realidad",
+        "juicio_realidad_suspendido",
+        "juicio_realidad_perdido"
+      ],
+      "notes": "Capacidad crítica para discriminar experiencias internas de hechos externos. 'Suspendido' aplica a perplejidad/confusión; 'perdido' implica certeza patológica."
+    },
+    {
+      "id": "insight_de_enfermedad",
+      "label_es": "Insight (escalonado)",
+      "accepted_terms": [
+        "insight_nulo",
+        "conciencia_de_sintoma",
+        "insight_intelectual",
+        "insight_emocional",
+        "insight_fluctuante"
+      ],
+      "notes": "Insight intelectual: acepta la explicación en el plano racional sin apropiación afectiva. Insight emocional: reconocimiento profundo con integración personal."
+    },
+    {
+      "id": "atribucion_causal",
+      "label_es": "Atribución causal del malestar/síntomas",
+      "accepted_terms": [
+        "atribucion_biopsicosocial_realista",
+        "atribucion_psicologica_exclusiva",
+        "atribucion_somatica_exclusiva",
+        "atribucion_delirante_o_magica"
+      ],
+      "notes": "Describe el modelo explicativo del paciente. Útil para anticipar fricción clínica sin etiquetar 'resistencia'."
+    }
+  ],
+  "allowed_features": [
+    "severity",
+    "context_dependency",
+    "decision_specificity"
+  ],
+  "recommended_wording": [
+    "Juicio práctico conservado con desinhibición social.",
+    "Juicio de realidad perdido; insight nulo.",
+    "Insight intelectual con atribución somática exclusiva.",
+    "Juicio de realidad suspendido en contexto de perplejidad."
+  ],
+  "forbidden_wording": [
+    "Juicio alterado (sin especificar tipo).",
+    "No tiene conciencia (usar: insight nulo o DOM-01 si es sensorio).",
+    "Paciente loco (usar: juicio de realidad perdido).",
+    "Negación (especificar si es mecanismo defensivo en nota narrativa, no como término aquí)."
+  ],
+  "clinical_notes": [
+    "Diferenciar: negación (mecanismo defensivo), insight nulo (psicopatológico), anosognosia (déficit neurológico; DOM-10).",
+    "En manía puede conservarse el juicio de realidad con pérdida marcada del juicio social.",
+    "Si DOM-01 está alterado, la interpretación de juicio e insight puede no ser confiable."
+  ]
+}

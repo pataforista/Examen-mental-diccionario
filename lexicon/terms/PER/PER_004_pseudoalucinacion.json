@@ -1,0 +1,66 @@
+{
+  "term_id": "PER_004",
+  "canonical_name": "Pseudoalucinación",
+  "synonyms_and_slang": [
+    { "term": "voz interna", "context": "patient_report" },
+    { "term": "alucinación psíquica", "context": "clinical_historical" }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Experiencia perceptiva vívida reconocida por el sujeto como originada en su propia mente.",
+    "required_features": [
+      "conservación del juicio de realidad",
+      "atribución interna del fenómeno",
+      "ausencia de convicción delirante asociada"
+    ],
+    "subjective_marker": "El paciente reconoce la experiencia como pensamiento, imagen o voz interna.",
+    "behavioral_marker": "Relato de experiencias perceptivas sin conducta de respuesta externa ni convicción de realidad objetiva."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica"],
+    "time_relation": ["fluctuante"],
+    "pharmacological_link": false
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
+    { "domain_id": "DOM-13", "relation": "differential_anchor", "context": "psicosis_vs_trastornos_no_psicoticos" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "PER_001",
+      "canonical_name": "Alucinación Verdadera",
+      "reason": "En la alucinación verdadera existe atribución externa del fenómeno y pérdida del juicio de realidad.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "management_warning",
+      "message": "PRECAUCIÓN: La pseudoalucinación por sí sola no confirma psicosis. Antes de iniciar antipsicóticos a dosis plenas, explorar juicio de realidad, disociación, trauma y rasgos de personalidad; documentar el locus interno del fenómeno."
+    }
+  ],
+
+  "teaching_notes": [
+    "Frecuente en trauma, TLP y estados disociativos.",
+    "La variable crítica es el juicio de realidad y la atribución interna (locus)."
+  ],
+
+  "cognitive_pitfalls": [
+    "Etiquetar como psicosis cualquier referencia a 'voces' sin explorar juicio de realidad.",
+    "Iniciar tratamiento antipsicótico como respuesta refleja a un término ambiguo."
+  ],
+
+  "version": "1.0.1",
+
+  "provenance": {
+    "phenomenology": ["Jaspers"],
+    "clinical_tradition": []
+  }
+}

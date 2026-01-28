@@ -1,0 +1,82 @@
+{
+  "term_id": "AFF_014",
+  "canonical_name": "Apatía",
+  "synonyms_and_slang": [
+    { "term": "me da igual", "context": "patient_report", "locale": "es" },
+    { "term": "no tengo ganas de nada", "context": "patient_report", "locale": "es" },
+    { "term": "indiferencia", "context": "clinical_descriptive", "locale": "es" }
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Reducción primaria de iniciativa, interés y conducta dirigida a metas, con reactividad emocional disminuida; no implica necesariamente tristeza.",
+    "required_features": [
+      "baja iniciativa",
+      "bajo interés/motivación",
+      "disminución de conducta dirigida a metas"
+    ],
+    "subjective_marker": "El paciente no refiere necesariamente tristeza; describe 'falta de empuje', 'no me nace', 'me es indiferente'.",
+    "behavioral_marker": "Inactividad, pobreza de actividades espontáneas, respuestas breves, escasa búsqueda de recompensa/estimulación."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion", "funcionalidad"],
+    "time_relation": ["persistente"],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      { "class": "Sedación por antipsicóticos/otros depresores", "risk": "moderate" }
+    ],
+    "computable_markers": [
+      { "marker": "initiative_low", "type": "ordinal_0_3", "anchors": ["0=normal", "1=leve", "2=moderada", "3=marcada"] },
+      { "marker": "sadness_reported", "type": "boolean", "expected": false },
+      { "marker": "goal_directed_activity_drop", "type": "boolean", "expected": true },
+      { "marker": "emotional_reactivity_reduced", "type": "ordinal_0_3", "anchors": ["0=no", "1=leve", "2=moderada", "3=marcada"] }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" },
+    { "domain_id": "DOM-10", "relation": "differential_anchor", "context": "neurocognicion_demencias_parkinson" },
+    { "domain_id": "DOM-13", "relation": "syndrome_builder", "context": "negativos_vs_depresion" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "AFF_001",
+      "canonical_name": "Ánimo depresivo",
+      "reason": "En ánimo depresivo hay sufrimiento afectivo triste/culposo; en apatía puede no haber tristeza, predomina baja iniciativa/interés.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "AFF_009",
+      "canonical_name": "Anhedonia",
+      "reason": "Anhedonia = no se experimenta placer; apatía = no se inicia/busca, aunque el placer puede preservarse si ocurre el estímulo.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "diagnostic_clue",
+      "message": "En adultos mayores o con parkinsonismo, apatía sostenida sugiere etiología neurodegenerativa/vascular; evita asumir depresión por defecto."
+    }
+  ],
+
+  "teaching_notes": [
+    "Pregunta discriminadora: 'Si le organizan la actividad, ¿la disfruta?' (apatía con placer preservado) vs anhedonia.",
+    "Diferenciar apatía de sedación: explorar somnolencia diurna, enlentecimiento, dosis/horarios."
+  ],
+
+  "cognitive_pitfalls": [
+    "Prescribir ISRS por 'falta de ganas' sin caracterizar tristeza/anhedonia/iniciativa.",
+    "Interpretar apatía como 'flojera' o rasgo moral."
+  ],
+
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": ["Neuropsiquiatría clásica"],
+    "clinical_tradition": ["Demencias", "Parkinson", "Psiquiatría de enlace"]
+  }
+}

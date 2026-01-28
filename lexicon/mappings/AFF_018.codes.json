@@ -1,0 +1,10 @@
+{
+  "term_id": "AFF_018",
+  "coding_standards": {
+    "ICD_11": "MB24.6",
+    "ICD_10": "R45.89",
+    "SNOMED_CT": "247926002"
+  },
+  "version": "1.0.0"
+}
+	

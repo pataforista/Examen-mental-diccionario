@@ -1,0 +1,10 @@
+{
+  "term_id": "AFF_015",
+  "coding_standards": {
+    "ICD_11": null,
+    "ICD_10": null,
+    "SNOMED_CT": "34413007"
+  },
+  "version": "1.0.0",
+  "note": "Alexitimia no está bien representada como código sintomático en ICD; se mantiene mapping mínimo a SNOMED para interoperabilidad semántica."
+}

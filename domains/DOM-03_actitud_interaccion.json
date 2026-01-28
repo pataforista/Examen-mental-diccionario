@@ -1,0 +1,97 @@
+{
+  "domain_id": "DOM-03",
+  "label_es": "Actitud e interacción",
+  "version": "1.1.0",
+  "definition_es": "Evalúa la forma en que el paciente se vincula e interactúa con el entrevistador y el contexto de la entrevista. Describe patrones relacionales observables durante la interacción clínica, sin inferir estados afectivos, rasgos de personalidad ni diagnósticos.",
+  "evaluates": [
+    "actitud",
+    "cooperacion",
+    "contacto_visual",
+    "rapport"
+  ],
+  "excludes": [
+    "afecto",
+    "estado_de_animo",
+    "lenguaje_formal",
+    "rasgos_de_personalidad",
+    "contenido_del_pensamiento"
+  ],
+  "subcomponents": [
+    {
+      "id": "actitud",
+      "label_es": "Actitud hacia el entrevistador",
+      "accepted_terms": [
+        "colaboradora",
+        "pasiva",
+        "indiferente",
+        "evasiva",
+        "oposicionista",
+        "hostil",
+        "suspicaz",
+        "defensiva",
+        "familiar",
+        "seductora",
+        "pueril",
+        "querellante",
+        "altanera"
+      ],
+      "notes": "Disposición relacional predominante durante la entrevista. 'Familiar': exceso de confianza y pérdida de distancia terapéutica. 'Seductora': búsqueda de aprobación o atracción. 'Pueril': infantilismo conductual. 'Querellante': reclamo persistente."
+    },
+    {
+      "id": "cooperacion",
+      "label_es": "Nivel de cooperación",
+      "accepted_terms": [
+        "cooperacion_conservada",
+        "cooperacion_parcial",
+        "cooperacion_no_conservada"
+      ],
+      "notes": "Valora la disposición funcional del paciente para participar en la entrevista y responder a consignas, independientemente de la actitud."
+    },
+    {
+      "id": "contacto_visual",
+      "label_es": "Contacto visual",
+      "accepted_terms": [
+        "contacto_visual_adecuado",
+        "contacto_visual_escaso",
+        "contacto_visual_evitativo",
+        "contacto_visual_fijo"
+      ],
+      "notes": "Describe el patrón de mirada observado. Interpretar siempre en contexto cultural, neurodiversidad y ansiedad situacional."
+    },
+    {
+      "id": "rapport",
+      "label_es": "Rapport (sintonía)",
+      "accepted_terms": [
+        "rapport_adecuado",
+        "rapport_dificil",
+        "rapport_superficial",
+        "rapport_nulo"
+      ],
+      "notes": "Evalúa la calidad de la sintonía clínica y la resonancia relacional durante la entrevista."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "observation_type"
+  ],
+  "recommended_wording": [
+    "Paciente colaborador, con contacto visual adecuado y rapport adecuado.",
+    "Actitud familiar, con pérdida de distancia terapéutica; cooperación parcial.",
+    "Se muestra querellante y defensivo, con rapport difícil.",
+    "Actitud pueril, con risas inmotivadas y contacto visual errático."
+  ],
+  "forbidden_wording": [
+    "Paciente manipulador.",
+    "Actitud inmadura (usar: pueril).",
+    "Personalidad antisocial.",
+    "Histérica (usar: teatral o seductora).",
+    "Contacto visual patológico (sin descripción)."
+  ],
+  "clinical_notes": [
+    "La actitud puede variar a lo largo de la entrevista; describir el patrón predominante.",
+    "Una actitud colaboradora no garantiza cooperación conservada.",
+    "La actitud debe interpretarse siempre junto con DOM-01 y DOM-04 para evitar errores de atribución."
+  ]
+}

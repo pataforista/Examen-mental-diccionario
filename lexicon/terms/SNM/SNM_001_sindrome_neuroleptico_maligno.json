@@ -1,0 +1,82 @@
+{
+  "term_id": "SNM_001",
+  "canonical_name": "Síndrome Neuroléptico Maligno",
+  "synonyms_and_slang": [
+    { "term": "SNM", "context": "clinical_acronym" }
+  ],
+  "term_kind": "syndrome",
+  "granularity": "atomic",
+  "risk_weight": 2,
+
+  "definition_clinical": {
+    "core": "Estado agudo de disfunción neuromuscular y autonómica asociado a bloqueo dopaminérgico.",
+    "required_features": [
+      "rigidez muscular generalizada",
+      "hipertermia",
+      "alteración del estado mental",
+      "inestabilidad autonómica"
+    ],
+    "subjective_marker": "Malestar intenso con confusión, estupor o disminución del nivel de conciencia.",
+    "behavioral_marker": "Rigidez sostenida tipo 'tubo de plomo', mutismo o estupor, diaforesis, taquicardia, labilidad tensional."
+  },
+
+  "operationalization": {
+    "detectable_by": ["observacion", "exploracion_fisica", "laboratorio"],
+    "time_relation": ["inicio_tras_farmaco", "escalamiento_dosis"],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      { "class": "Antipsicóticos de primera generación", "risk": "very_high" },
+      { "class": "Antipsicóticos de segunda generación", "risk": "moderate" },
+      { "class": "Retiro brusco de agonistas dopaminérgicos", "risk": "moderate" }
+    ],
+    "lab_markers": {
+      "primary": "Elevación marcada de CPK (creatina-fosfocinasa).",
+      "secondary": "Leucocitosis, elevación de transaminasas, mioglobinuria o datos de rabdomiólisis."
+    }
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-04", "relation": "primary_expression", "context": "rigidez_psicomotora" },
+    { "domain_id": "DOM-10", "relation": "secondary_expression", "context": "alteracion_conciencia" },
+    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "riesgo_vital" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "SER_001",
+      "canonical_name": "Síndrome Serotoninérgico",
+      "reason": "El serotoninérgico se caracteriza por clonus e hiperreflexia; el SNM por rigidez sostenida sin clonus predominante.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "CAT_005",
+      "canonical_name": "Catatonía Maligna",
+      "reason": "La catatonía maligna no requiere exposición a neurolépticos y suele presentar signos catatónicos nucleares.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "message": "Emergencia médica. Suspender neurolépticos, iniciar manejo hospitalario inmediato y monitorización estrecha."
+    }
+  ],
+
+  "teaching_notes": [
+    "El laboratorio (CPK) no sustituye el reconocimiento clínico, pero refuerza el diferencial frente a otras causas de fiebre y rigidez.",
+    "Considerar diferencial con catatonía maligna y causas infecciosas/metabólicas."
+  ],
+
+  "cognitive_pitfalls": [
+    "Atribuir la fiebre a infección y retrasar el reconocimiento del síndrome.",
+    "Continuar antipsicóticos por interpretar rigidez o estupor como empeoramiento psiquiátrico."
+  ],
+
+  "version": "1.0.0",
+
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": ["Maudsley Psychopharmacology"]
+  }
+}

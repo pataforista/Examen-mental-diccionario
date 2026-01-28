@@ -1,0 +1,9 @@
+{
+  "term_id": "RSK_001",
+  "coding_standards": {
+    "ICD_11": "MB26.A",
+    "ICD_10": "R45.851",
+    "SNOMED_CT": "6471006"
+  },
+  "version": "1.0.0"
+}

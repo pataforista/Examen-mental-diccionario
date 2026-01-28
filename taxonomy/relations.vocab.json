@@ -1,0 +1,10 @@
+{
+  "domain_links_relation": [
+    "primary_expression",
+    "secondary_expression",
+    "frequent_misclassification",
+    "differential_anchor",
+    "risk_factor"
+  ],
+  "exclusion_relation": ["not_this", "common_confusion"]
+}

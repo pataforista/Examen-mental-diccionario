@@ -1,0 +1,8 @@
+{
+  "term_id": "PER_014",
+  "coding_standards": {
+    "ICD_11": "MB27.4",
+    "comment": "Distorsiones perceptivas con estímulo real; modeladas como subcaso de ilusión visual."
+  },
+  "version": "1.0.1"
+}

@@ -1,0 +1,10 @@
+{
+  "term_id": "RSK_004",
+  "coding_standards": {
+    "ICD_11": null,
+    "ICD_10": null,
+    "SNOMED_CT": "284523002"
+  },
+  "version": "1.0.0",
+  "note": "ICD-11 no ofrece un código fenomenológico limpio para NSSI. Se recomienda codificar la lesión (capítulo de Injuries) y usar este término como constructo clínico/ontológico. Evitar codificar como 'intención no determinada' si la intención fue establecida como no suicida."
+}

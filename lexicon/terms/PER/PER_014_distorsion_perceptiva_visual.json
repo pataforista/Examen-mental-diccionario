@@ -1,0 +1,119 @@
+{
+  "term_id": "PER_014",
+  "canonical_name": "Distorsión perceptiva visual",
+  "synonyms_and_slang": [
+    { "term": "metamorfopsia", "context": "clinical_neurology" },
+    { "term": "micropsia", "context": "clinical_neurology" },
+    { "term": "macropsia", "context": "clinical_neurology" }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Alteración sistemática de las propiedades geométricas o espaciales de un estímulo visual real, con conservación del juicio de realidad.",
+    "required_features": [
+      "estímulo visual real presente",
+      "distorsión consistente de tamaño, forma o proporción",
+      "insight conservado"
+    ],
+    "subjective_marker": "El paciente describe que los objetos se ven más pequeños, más grandes, deformados o alejados, reconociendo que es una alteración de su percepción.",
+    "behavioral_marker": "No interactúa delirantemente con el estímulo; puede acercarse, parpadear o cambiar la iluminación para verificar."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica"],
+    "time_relation": ["episodica", "transitoria", "persistente"],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      { "class": "Alucinógenos (LSD/Psilocibina) — HPPD", "risk": "high" },
+      { "class": "Z-drugs (Zolpidem)", "risk": "moderate" },
+      { "class": "Digoxina (xantopsias/distorsión color)", "risk": "moderate" }
+    ],
+    "computable_markers": [
+      { "marker": "real_stimulus_present", "type": "boolean", "expected": true },
+      {
+        "marker": "distortion_type",
+        "type": "categorical",
+        "options": ["metamorfopsia", "micropsia", "macropsia", "teleopsia", "pelopsia"]
+      },
+      { "marker": "insight_preserved", "type": "boolean", "expected": true },
+      { "marker": "sensory_modality", "type": "categorical", "options": ["visual"], "expected": "visual" },
+      {
+        "marker": "onset",
+        "type": "categorical",
+        "options": ["agudo", "subagudo", "cronico", "no_claro"]
+      },
+      {
+        "marker": "laterality",
+        "type": "categorical",
+        "options": ["monocular", "binocular", "no_claro"]
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
+    { "domain_id": "DOM-10", "relation": "risk_marker", "context": "neurologia_focal" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "PER_001",
+      "canonical_name": "Alucinación verdadera",
+      "reason": "Existe estímulo visual real y el juicio de realidad está conservado.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "PER_010",
+      "canonical_name": "Ilusión",
+      "reason": "La distorsión es geométrica y sistemática, no una mala interpretación puntual.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "PER_003",
+      "canonical_name": "Alucinosis",
+      "reason": "La alucinosis ocurre sin estímulo real.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "trigger_condition": "distortion_type == 'metamorfopsia' AND onset == 'agudo'",
+      "message": "ALERTA: Metamorfopsia de inicio súbito puede indicar patología macular o desprendimiento de retina. Priorizar evaluación oftalmológica, especialmente si es monocular."
+    },
+    {
+      "type": "diagnostic_clue",
+      "message": "Considerar etiología neurológica (migraña con aura, epilepsia occipital/parietal, lesiones corticales) ante distorsiones visuales sistemáticas."
+    },
+    {
+      "type": "diagnostic_clue",
+      "message": "En niños o adolescentes, valorar Síndrome de Alicia en el País de las Maravillas."
+    },
+    {
+      "type": "diagnostic_clue",
+      "message": "Explorar consumo de alucinógenos/HPPD y fármacos asociados si los síntomas son persistentes o con rastros/halos."
+    }
+  ],
+
+  "teaching_notes": [
+    "Diferenciar: si es monocular, sospechar retina/mácula (Oftalmología). Si es binocular, sospechar corteza (Neurología).",
+    "Las micropsias/macropsias pueden aparecer en AIWS (p. ej., asociado a migraña o infecciones en población pediátrica).",
+    "Registrar duración, lateralidad y desencadenantes (sueño, estrés, sustancias)."
+  ],
+
+  "cognitive_pitfalls": [
+    "Asumir etiología central y retrasar evaluación oftalmológica en metamorfopsia aguda.",
+    "Codificar como alucinación por no documentar estímulo real.",
+    "Omitir historia de sustancias/fármacos en distorsiones persistentes."
+  ],
+
+  "version": "1.0.1",
+
+  "provenance": {
+    "phenomenology": ["Head", "Critchley"],
+    "clinical_tradition": ["Neurología", "Oftalmología", "Toxicología"]
+  }
+}

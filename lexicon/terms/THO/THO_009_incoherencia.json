@@ -1,0 +1,82 @@
+{
+  "term_id": "THO_009",
+  "canonical_name": "Incoherencia",
+  "synonyms_and_slang": [
+    { "term": "ensalada de palabras", "context": "teaching" }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+
+  "definition_clinical": {
+    "core": "Pérdida de inteligibilidad del discurso por ruptura severa de la estructura semántica y/o sintáctica, con imposibilidad de extraer significado consistente.",
+    "required_features": [
+      "baja inteligibilidad",
+      "ruptura semántica o sintáctica",
+      "falla para sostener una proposición comprensible"
+    ],
+    "subjective_marker": "Frecuentemente ausente o inaccesible; el paciente puede no reconocer el problema comunicativo.",
+    "behavioral_marker": "Frases con conexiones ilógicas o no rastreables, neologismos o concatenación de palabras sin sentido global."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica", "observacion_clinica"],
+    "time_relation": ["persistente", "episodico"],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "local_intelligibility",
+        "type": "ordinal_0_3",
+        "anchors": ["0=inteligible", "1=ligeramente deteriorado", "2=marcadamente deteriorado", "3=ininteligible"]
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-06", "relation": "primary_expression", "context": "curso_forma_pensamiento" },
+    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "seguridad_por_desorganizacion_severa" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "DEL_00X",
+      "canonical_name": "Delirium (alteración de atención)",
+      "reason": "La incoherencia puede ocurrir en delirium, pero el marcador primario es el déficit atencional fluctuante; requiere evaluación de conciencia/atención.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "NEU_005",
+      "canonical_name": "Afasia de Wernicke (Sensorial)",
+      "reason": "Déficit neurológico focal. Sospechar en inicio agudo, falla de comprensión de órdenes simples y ausencia de explicación psiquiátrica previa.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "message": "ALERTA ROJA: En inicio agudo de incoherencia sin historia psiquiátrica previa, descartar ACV/Afasia de Wernicke con evaluación neurológica urgente."
+    },
+    {
+      "type": "safety_critical",
+      "message": "Si hay incoherencia marcada, documentar capacidad para responder a necesidades básicas, evaluar delirium/intoxicación y priorizar seguridad."
+    }
+  ],
+
+  "teaching_notes": [
+    "Distinguir: tangencialidad puede ser inteligible pero sin meta; incoherencia pierde inteligibilidad.",
+    "Evitar concluir psicosis primaria sin descartar delirium/intoxicación en cuadros agudos o fluctuantes."
+  ],
+
+  "cognitive_pitfalls": [
+    "Interpretar incoherencia como 'mala cooperación' o barrera cultural sin corroborar atención y sensorio.",
+    "No activar evaluación médica cuando el patrón es agudo/fluctuante."
+  ],
+
+  "version": "1.0.1",
+
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": []
+  }
+}

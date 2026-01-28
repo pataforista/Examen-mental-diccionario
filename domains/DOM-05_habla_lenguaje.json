@@ -1,0 +1,101 @@
+{
+  "domain_id": "DOM-05",
+  "label_es": "Habla y lenguaje",
+  "version": "1.2.0",
+  "definition_es": "Evalúa la producción verbal (habla) y el uso del sistema simbólico del lenguaje. Distingue alteraciones motoras, prosódicas y temporales de las alteraciones estructurales y pragmáticas del lenguaje, sin inferir trastornos del pensamiento ni contenidos ideacionales.",
+  "evaluates": [
+    "habla",
+    "lenguaje_simbolico"
+  ],
+  "excludes": [
+    "curso_y_forma_del_pensamiento",
+    "contenido_del_pensamiento",
+    "afecto",
+    "estado_de_animo"
+  ],
+  "subcomponents": [
+    {
+      "id": "velocidad_y_ritmo",
+      "label_es": "Velocidad y ritmo del habla",
+      "accepted_terms": [
+        "velocidad_normal",
+        "bradilalia",
+        "taquilalia",
+        "latencia_aumentada",
+        "latencia_disminuida",
+        "presion_del_habla"
+      ],
+      "notes": "Evalúa el tempo, la fluidez temporal y los tiempos de respuesta. La presión del habla implica dificultad para ser interrumpido."
+    },
+    {
+      "id": "volumen_y_tono",
+      "label_es": "Volumen y tono",
+      "accepted_terms": [
+        "volumen_adecuado",
+        "hipofonia",
+        "volumen_alto",
+        "musitacion",
+        "tono_monotono",
+        "prosodia_afectada",
+        "prosodia_infantil"
+      ],
+      "notes": "La hipofonía puede observarse en depresión, parkinsonismo o ansiedad. La musitación implica habla dirigida a sí mismo."
+    },
+    {
+      "id": "articulacion",
+      "label_es": "Articulación",
+      "accepted_terms": [
+        "articulacion_clara",
+        "disartria",
+        "dislalia",
+        "tartamudez"
+      ],
+      "notes": "La disartria es de origen motor o neurológico. No confundir con desorganización del lenguaje."
+    },
+    {
+      "id": "lenguaje_simbolico",
+      "label_es": "Lenguaje (estructura y uso simbólico)",
+      "accepted_terms": [
+        "lenguaje_conservado",
+        "anomia",
+        "parafasias_foneticas",
+        "parafasias_semanticas",
+        "neologismos",
+        "ensalada_de_palabras",
+        "afasia_motora",
+        "afasia_sensitiva",
+        "afasia_mixta",
+        "ecolalia",
+        "concretismo",
+        "uso_pragmatico_inadecuado"
+      ],
+      "notes": "Evalúa estructura, denominación, comprensión y uso del lenguaje. La anomia es un signo precoz de deterioro cognitivo. La ensalada de palabras implica pérdida grave de sintaxis."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "observation_type",
+    "time_course"
+  ],
+  "recommended_wording": [
+    "Bradilalia con latencia aumentada y tono monótono.",
+    "Presión del habla con volumen alto y prosodia afectada.",
+    "Hipofonía y articulación pastosa compatibles con disartria.",
+    "Lenguaje conservado, con anomia ocasional.",
+    "Presencia de neologismos y parafasias semánticas."
+  ],
+  "forbidden_wording": [
+    "Habla rara.",
+    "Lenguaje incoherente (usar: ensalada de palabras o describir pensamiento en DOM-06).",
+    "Afasia (sin especificar tipo).",
+    "Verborrea (usar: logorrea o presión del habla)."
+  ],
+  "clinical_notes": [
+    "La latencia aumentada es un indicador sensible de depresión melancólica.",
+    "No confundir disartria (motor) con neologismos (simbólico).",
+    "La logorrea no implica necesariamente fuga de ideas.",
+    "La aparición súbita de afasia constituye una urgencia neurológica hasta demostrar lo contrario."
+  ]
+}

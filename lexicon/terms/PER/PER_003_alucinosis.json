@@ -1,0 +1,89 @@
+{
+  "term_id": "PER_003",
+  "canonical_name": "Alucinosis",
+  "synonyms_and_slang": [
+    { "term": "alucinación con insight", "context": "clinical_descriptive" },
+    { "term": "síndrome de Charles Bonnet", "context": "neurology_context" }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Experiencia perceptiva vívida en el espacio externo, sin estímulo real, en la cual el sujeto conserva el juicio de realidad (reconoce que no es real).",
+    "required_features": [
+      "atribución externa del fenómeno",
+      "ausencia de estímulo real",
+      "juicio de realidad conservado"
+    ],
+    "subjective_marker": "El paciente expresa que percibe algo fuera de sí, pero aclara que sabe que no puede ser real.",
+    "behavioral_marker": "Observa el fenómeno sin conductas delirantes congruentes (no interactúa ni actúa como si fuera real)."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica"],
+    "time_relation": ["persistente", "episodica"],
+    "pharmacological_link": true,
+    "computable_markers": [
+      { "marker": "external_attribution", "type": "boolean", "expected": true },
+      {
+        "marker": "reality_conviction",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=pleno insight",
+          "1=duda leve",
+          "2=convicción parcial",
+          "3=convicción delirante"
+        ]
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
+    { "domain_id": "DOM-10", "relation": "risk_marker", "context": "organicidad_neurologica" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "PER_001",
+      "canonical_name": "Alucinación verdadera",
+      "reason": "En la alucinación verdadera el juicio de realidad está perdido.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "PER_004",
+      "canonical_name": "Pseudoalucinación",
+      "reason": "La pseudoalucinación se percibe en el espacio interno, no externo.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "diagnostic_clue",
+      "message": "Si es visual en adulto mayor con déficit visual, considerar Síndrome de Charles Bonnet. Evitar antipsicóticos de rutina."
+    },
+    {
+      "type": "diagnostic_clue",
+      "message": "Si es auditiva, explorar abstinencia alcohólica u otras causas tóxicas."
+    }
+  ],
+
+  "teaching_notes": [
+    "Clave diferencial: lugar externo + insight conservado.",
+    "Es más frecuente en etiologías neurológicas o tóxicas que psiquiátricas primarias."
+  ],
+
+  "cognitive_pitfalls": [
+    "Diagnosticar psicosis solo por localización externa.",
+    "No explorar agudeza visual o consumo de sustancias."
+  ],
+
+  "version": "1.0.0",
+
+  "provenance": {
+    "phenomenology": ["Ey", "Jaspers"],
+    "clinical_tradition": ["Neurología conductual"]
+  }
+}

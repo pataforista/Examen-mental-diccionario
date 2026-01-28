@@ -1,0 +1,128 @@
+{
+  "domain_id": "DOM-04",
+  "label_es": "Psicomotricidad y conación",
+  "version": "1.1.0",
+  "definition_es": "Evalúa la actividad motora observable, la iniciativa para la acción y los patrones de control o repetición conductual. Describe fenómenos motores y volitivos sin inferir estados afectivos, intencionalidad simbólica ni rasgos de personalidad.",
+  "evaluates": [
+    "actividad_psicomotora",
+    "movimientos_anormales",
+    "fenomenos_catatonicos",
+    "iniciativa",
+    "impulsividad_inhibicion_y_compulsion"
+  ],
+  "excludes": [
+    "afecto",
+    "estado_de_animo",
+    "lenguaje",
+    "contenido_del_pensamiento",
+    "rasgos_de_personalidad"
+  ],
+  "subcomponents": [
+    {
+      "id": "actividad_psicomotora",
+      "label_es": "Actividad psicomotora global",
+      "accepted_terms": [
+        "normocinesia",
+        "inquietud_psicomotriz",
+        "agitacion_psicomotora",
+        "enlentecimiento_psicomotor",
+        "inhibicion_psicomotriz"
+      ],
+      "notes": "Diferenciar inquietud (urgencia motora con finalidad reguladora, frecuente en ansiedad/acatisia) de agitación (actividad excesiva, desorganizada o potencialmente agresiva)."
+    },
+    {
+      "id": "movimientos_anormales",
+      "label_es": "Movimientos anormales",
+      "accepted_terms": [
+        "ausentes",
+        "temblor_de_reposo",
+        "temblor_de_accion",
+        "acatisia",
+        "discinesias",
+        "distonia_aguda",
+        "tics",
+        "mioclonias",
+        "corea",
+        "estereotipias",
+        "manierismos"
+      ],
+      "notes": "Si hay acatisia, especificar si es subjetiva (sensación interna) u objetiva (marcha tascinética). Diferenciar estereotipias (repetitivas, sin fin) de manierismos (gestos exagerados e innecesarios)."
+    },
+    {
+      "id": "fenomenos_catatonicos",
+      "label_es": "Fenómenos catatónicos",
+      "accepted_terms": [
+        "ausentes",
+        "estupor_catatonico",
+        "negativismo",
+        "mutismo",
+        "flexibilidad_cerea",
+        "ecopraxia",
+        "ecolalia",
+        "obediencia_automatica",
+        "ambitendencia"
+      ],
+      "notes": "Registrar solo si están presentes. La catatonía puede coexistir con múltiples etiologías psiquiátricas y médicas."
+    },
+    {
+      "id": "iniciativa",
+      "label_es": "Iniciativa y motivación para la acción",
+      "accepted_terms": [
+        "iniciativa_conservada",
+        "hipobulia",
+        "abulia"
+      ],
+      "notes": "Hipobulia: disminución de iniciativa. Abulia: ausencia marcada. No equivale por sí misma a depresión."
+    },
+    {
+      "id": "impulsividad_inhibicion_y_compulsion",
+      "label_es": "Impulsividad, inhibición y compulsión",
+      "accepted_terms": [
+        "control_conductual_conservado",
+        "impulsividad",
+        "desinhibicion",
+        "actos_compulsivos"
+      ],
+      "notes": "Impulsividad: acción sin planificación. Compulsión: acto repetitivo para reducir ansiedad. Fenomenológicamente distintos."
+    },
+    {
+      "id": "actos_compulsivos",
+      "label_es": "Compulsiones y rituales",
+      "accepted_terms": [
+        "ausentes",
+        "rituales_de_limpieza",
+        "rituales_de_verificacion",
+        "rituales_de_orden",
+        "tricotilomania",
+        "onicofagia"
+      ],
+      "notes": "Conductas repetitivas orientadas a reducir ansiedad, no realizadas por placer."
+    }
+  ],
+  "allowed_features": [
+    "inference_level",
+    "severity",
+    "functional_impact",
+    "observation_type",
+    "time_course"
+  ],
+  "recommended_wording": [
+    "Normocinesia, sin movimientos anormales.",
+    "Inquietud psicomotriz con acatisia objetiva.",
+    "Agitación psicomotora con desinhibición conductual.",
+    "Enlentecimiento psicomotor con hipobulia.",
+    "Presencia de mutismo, negativismo y obediencia automática."
+  ],
+  "forbidden_wording": [
+    "Paciente flojo (usar: abulia o inhibición).",
+    "No quiere colaborar (distinguir de negativismo catatónico).",
+    "Movimientos raros (especificar tipo).",
+    "Tic (no confundir con estereotipia)."
+  ],
+  "clinical_notes": [
+    "Alerta: la acatisia suele confundirse con ansiedad; aumentar neurolépticos o ansiolíticos puede empeorarla.",
+    "La inquietud psicomotriz no equivale a agitación.",
+    "Las compulsiones deben diferenciarse de impulsividad para evitar errores diagnósticos.",
+    "Ante mutismo o inmovilidad, descartar causas orgánicas y farmacológicas antes de asumir catatonía psiquiátrica."
+  ]
+}

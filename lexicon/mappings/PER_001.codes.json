@@ -1,0 +1,19 @@
+{
+  "term_id": "PER_001",
+  "coding_standards": {
+    "ICD_11_default": "MB27.2Z",
+    "ICD_11_by_modality": {
+      "auditiva": "MB27.20",
+      "visual": "MB27.27",
+      "olfatoria": "MB27.24",
+      "gustativa": "MB27.21",
+      "tactil": "MB27.26",
+      "somatica": "MB27.25",
+      "hipnagogica": "MB27.23",
+      "hipnopompica": "MB27.22",
+      "mixta": "MB27.2Y",
+      "no_especificada": "MB27.2Z"
+    }
+  },
+  "version": "1.0.1"
+}

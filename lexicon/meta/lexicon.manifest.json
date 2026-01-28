@@ -1,0 +1,14 @@
+{
+  "lexicon_id": "psy_lexicon",
+  "version": "1.0.0",
+  "status": "frozen",
+  "last_updated": "2025-12-26",
+  "term_id_registry_path": "lexicon/term_id_registry.json",
+  "schemas": {
+    "lexicon": "lexicon/lexicon.schema.json",
+    "term": "lexicon/lexicon.term.schema.json"
+  },
+  "build": {
+    "compiled_output": "build/compiled/lexicon.compiled.json"
+  }
+}

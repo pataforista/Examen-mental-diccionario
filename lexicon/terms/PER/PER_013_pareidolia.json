@@ -1,0 +1,82 @@
+{
+  "term_id": "PER_013",
+  "canonical_name": "Pareidolia",
+  "synonyms_and_slang": [
+    { "term": "ver caras en las nubes", "context": "patient_report" }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 0,
+
+  "definition_clinical": {
+    "core": "Percepción de una forma o significado (p. ej., rostros, figuras, voces) a partir de estímulos ambiguos reales.",
+    "required_features": [
+      "estímulo real ambiguo presente",
+      "interpretación con patrón reconocible",
+      "corregible o modulable con atención/clarificación"
+    ],
+    "subjective_marker": "El paciente suele reconocer que el estímulo es ambiguo y que 'su mente completa' la figura/sonido.",
+    "behavioral_marker": "Describe figuras en sombras, rostros en texturas o mensajes en ruidos; mejora al iluminar o acercarse."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica"],
+    "time_relation": ["transitoria", "recurrente"],
+    "pharmacological_link": false,
+    "computable_markers": [
+      { "marker": "real_stimulus_present", "type": "boolean", "expected": true },
+      { "marker": "stimulus_ambiguity", "type": "ordinal_0_3", "anchors": ["0=baja", "1=leve", "2=moderada", "3=alta"] },
+      { "marker": "correctable_with_attention", "type": "boolean", "expected": true },
+      {
+        "marker": "frequency",
+        "type": "categorical",
+        "options": ["aislada", "ocasional", "recurrente"]
+      },
+      {
+        "marker": "age_years",
+        "type": "integer",
+        "constraints": { "min": 0, "max": 120 }
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
+    { "domain_id": "DOM-13", "relation": "differential_anchor", "context": "ilusiones_vs_alucinaciones" },
+    { "domain_id": "DOM-10", "relation": "risk_marker", "context": "demencia_cuerpos_lewy" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "PER_001",
+      "canonical_name": "Alucinación verdadera",
+      "reason": "La pareidolia requiere estímulo real; la alucinación ocurre sin estímulo.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [
+    {
+      "type": "early_warning",
+      "trigger_condition": "age_years > 60 AND frequency == 'recurrente'",
+      "message": "ALERTA: Pareidolias recurrentes en adultos mayores pueden asociarse a enfermedad por cuerpos de Lewy. Considerar evaluación cognitiva y pesquisa de alteraciones de sueño REM."
+    }
+  ],
+
+  "teaching_notes": [
+    "Útil como ejemplo pedagógico de ilusión: estímulo presente + interpretación.",
+    "En adultos mayores, documentar frecuencia y coexistencia de fluctuaciones cognitivas, parkinsonismo o alteraciones del sueño."
+  ],
+
+  "cognitive_pitfalls": [
+    "Codificar como alucinación por no documentar estímulo real.",
+    "Descartar automáticamente como 'normal' cuando es recurrente en >60."
+  ],
+
+  "version": "1.0.1",
+
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": []
+  }
+}

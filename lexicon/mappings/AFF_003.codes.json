@@ -1,0 +1,13 @@
+{
+  "term_id": "AFF_003",
+  "coding_standards": {
+    "ICD_11": "MB24.63",
+    "ICD_10": "R45.86",
+    "SNOMED_CT": "18963009"
+  },
+  "coding_notes": [
+    "ICD-11 MB24.63 corresponde a 'Labile affect' (subtipo de MB24.6 Disturbance of affect).",
+    "SNOMED 18963009 aparece como 'Mood swings / Labile mood / Emotional lability' (finding)."
+  ],
+  "version": "1.0.0"
+}

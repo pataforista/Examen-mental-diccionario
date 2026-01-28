@@ -1,0 +1,56 @@
+{
+  "glossary_id": "mse_features_v1",
+  "version": "1.0.0",
+  "description": "Glosario canónico de características transversales para términos del Examen Mental (EEM).",
+  "features": [
+    {
+      "feature_id": "inference_level",
+      "label_es": "Nivel de inferencia",
+      "kind": "enum",
+      "allowed_values": ["observational", "clinical_inferential", "advanced_phenomenological"],
+      "definition_es": "Nivel epistemológico de la afirmación: lo directamente observable, lo inferido clínicamente, o lo fenomenológico avanzado."
+    },
+    {
+      "feature_id": "time_course",
+      "label_es": "Curso temporal",
+      "kind": "enum",
+      "allowed_values": ["acute", "subacute", "chronic", "fluctuating"],
+      "definition_es": "Forma temporal predominante del fenómeno."
+    },
+    {
+      "feature_id": "severity",
+      "label_es": "Severidad",
+      "kind": "enum",
+      "allowed_values": ["mild", "moderate", "severe"],
+      "definition_es": "Intensidad clínica del fenómeno en la entrevista o periodo relevante."
+    },
+    {
+      "feature_id": "functional_impact",
+      "label_es": "Impacto funcional",
+      "kind": "enum",
+      "allowed_values": ["none", "mild", "moderate", "severe"],
+      "definition_es": "Grado de interferencia con funcionamiento (comunicación, autocuidado, desempeño)."
+    },
+    {
+      "feature_id": "reality_testing",
+      "label_es": "Juicio de realidad",
+      "kind": "enum",
+      "allowed_values": ["intact", "attenuated", "lost"],
+      "definition_es": "Grado en que el paciente reconoce el fenómeno como no real o cuestionable."
+    },
+    {
+      "feature_id": "control_degree",
+      "label_es": "Grado de control",
+      "kind": "enum",
+      "allowed_values": ["voluntary", "partially_controllable", "autonomous"],
+      "definition_es": "Capacidad del paciente de modular o detener el fenómeno por voluntad."
+    },
+    {
+      "feature_id": "observation_type",
+      "label_es": "Tipo de observación",
+      "kind": "enum",
+      "allowed_values": ["objective", "subjective", "mixed"],
+      "definition_es": "Si el fenómeno es principalmente observable por el examinador, reportado por el paciente, o ambos."
+    }
+  ]
+}

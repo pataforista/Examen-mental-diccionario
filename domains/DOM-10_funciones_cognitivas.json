@@ -1,0 +1,145 @@
+{
+  "domain_id": "DOM-10",
+  "label_es": "Funciones cognitivas",
+  "version": "1.1.0",
+  "definition_es": "Evalúa el rendimiento cognitivo del paciente en dominios específicos de orden superior (atención, memoria, memoria de trabajo, funciones ejecutivas, lenguaje pragmático, visuoconstrucción, gnosias y abstracción), mediante observación clínica y pruebas breves, sin inferir etiología, inteligencia global ni juicio.",
+  "evaluates": [
+    "atencion_compleja",
+    "memoria",
+    "memoria_de_trabajo",
+    "funciones_ejecutivas",
+    "lenguaje_pragmatico",
+    "visuoconstruccion",
+    "gnosias",
+    "abstraccion"
+  ],
+  "excludes": [
+    "orientacion_basica (ver DOM-01)",
+    "juicio",
+    "insight",
+    "inteligencia_global",
+    "estado_afectivo"
+  ],
+  "subcomponents": [
+    {
+      "id": "atencion_compleja",
+      "label_es": "Atención (sostenida, selectiva y dividida)",
+      "accepted_terms": [
+        "euprosexia",
+        "hipoprosexia",
+        "distractibilidad",
+        "fatigabilidad_atencional",
+        "negligencia_atencional"
+      ],
+      "notes": "Evaluar con dígitos directos/inversos o tareas seriadas. La negligencia sugiere daño parietal, usualmente derecho."
+    },
+    {
+      "id": "memoria",
+      "label_es": "Memoria (episódica y semántica)",
+      "accepted_terms": [
+        "memoria_conservada",
+        "fallos_memoria_inmediata",
+        "amnesia_anterograda",
+        "amnesia_retrograda",
+        "confabulaciones",
+        "queja_subjetiva_de_memoria"
+      ],
+      "notes": "Diferenciar queja subjetiva (ansiedad/depresión) de confabulación o fallos objetivos (organicidad)."
+    },
+    {
+      "id": "memoria_de_trabajo",
+      "label_es": "Memoria de trabajo y manipulación mental",
+      "accepted_terms": [
+        "conservada",
+        "dificultad_series_inversas",
+        "fallos_manipulacion_mental",
+        "acalculia_funcional"
+      ],
+      "notes": "Capacidad de mantener y manipular información. Muy sensible a ansiedad, TDAH y delirium."
+    },
+    {
+      "id": "funciones_ejecutivas",
+      "label_es": "Funciones ejecutivas",
+      "accepted_terms": [
+        "conservadas",
+        "dificultad_planificacion",
+        "perdida_flexibilidad_cognitiva",
+        "perseveracion",
+        "impulsividad_cognitiva",
+        "conducta_de_utilizacion"
+      ],
+      "notes": "Evalúa planificación, inhibición y flexibilidad. La conducta de utilización sugiere lesión frontal."
+    },
+    {
+      "id": "visuoconstruccion",
+      "label_es": "Visuoconstrucción y praxias",
+      "accepted_terms": [
+        "conservadas",
+        "apraxia_constructiva",
+        "apraxia_ideomotora",
+        "apraxia_del_vestido"
+      ],
+      "notes": "El fallo en el test del reloj o copia de figuras es un marcador sensible de deterioro cortical."
+    },
+    {
+      "id": "lenguaje_pragmatico",
+      "label_es": "Lenguaje pragmático y uso abstracto",
+      "accepted_terms": [
+        "adecuado",
+        "concretismo",
+        "interpretacion_literal",
+        "verborrea_sin_contenido",
+        "dificultad_inferencias_sociales"
+      ],
+      "notes": "Evalúa comprensión de refranes, ironía y normas sociales implícitas."
+    },
+    {
+      "id": "gnosias",
+      "label_es": "Gnosias (reconocimiento)",
+      "accepted_terms": [
+        "conservadas",
+        "agnosia_visual",
+        "prosopagnosia",
+        "anosognosia"
+      ],
+      "notes": "La anosognosia implica incapacidad para reconocer el propio déficit; frecuente en daño hemisférico derecho."
+    },
+    {
+      "id": "abstraccion",
+      "label_es": "Abstracción",
+      "accepted_terms": [
+        "conservada",
+        "dificultad_abstraccion",
+        "pensamiento_concreto"
+      ],
+      "notes": "Evaluar con semejanzas y proverbios; afectada en esquizofrenia y deterioro cognitivo."
+    }
+  ],
+  "allowed_features": [
+    "severity",
+    "time_course",
+    "education_adjustment",
+    "test_used",
+    "observer_vs_test"
+  ],
+  "recommended_wording": [
+    "Hipoprosexia con fatigabilidad atencional.",
+    "Queja subjetiva de memoria sin fallos objetivos.",
+    "Alteración de memoria de trabajo en series inversas.",
+    "Rigidez cognitiva y perseveración.",
+    "Apraxia constructiva en test del reloj.",
+    "Anosognosia del déficit mnésico."
+  ],
+  "forbidden_wording": [
+    "Demencia senil.",
+    "Retrasado mental.",
+    "Mala memoria.",
+    "Desorientado (evaluado en DOM-01)."
+  ],
+  "clinical_notes": [
+    "La atención condiciona el rendimiento del resto de dominios.",
+    "El 'no sé' persistente sugiere pseudodemencia depresiva; la confabulación sugiere organicidad.",
+    "La anosognosia es un signo de alarma neurológica.",
+    "Alteraciones en gnosias o visuoconstrucción ameritan valoración neurológica."
+  ]
+}

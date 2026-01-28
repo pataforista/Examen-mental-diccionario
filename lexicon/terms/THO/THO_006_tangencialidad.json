@@ -1,0 +1,78 @@
+{
+  "term_id": "THO_006",
+  "canonical_name": "Tangencialidad",
+  "synonyms_and_slang": [
+    { "term": "se va por la tangente", "context": "teaching" }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+
+  "definition_clinical": {
+    "core": "Desviación del discurso hacia asociaciones laterales que impiden responder la pregunta o sostener el objetivo comunicativo.",
+    "required_features": [
+      "pérdida del objetivo comunicativo",
+      "no retorno al tema/pregunta",
+      "asociaciones laterales que dominan la respuesta"
+    ],
+    "subjective_marker": "Puede no haber conciencia del desvío; el paciente suele percibir su discurso como adecuado.",
+    "behavioral_marker": "Ante preguntas concretas, produce respuestas largas que terminan en temas no relacionados, sin contestar lo preguntado."
+  },
+
+  "operationalization": {
+    "detectable_by": ["entrevista_clinica"],
+    "time_relation": ["persistente"],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "returns_to_question",
+        "type": "boolean",
+        "expected": false
+      },
+      {
+        "marker": "goal_derailment",
+        "type": "ordinal_0_3",
+        "anchors": ["0=ausente", "1=leve", "2=moderado", "3=marcado"]
+      }
+    ]
+  },
+
+  "domain_links": [
+    { "domain_id": "DOM-06", "relation": "primary_expression", "context": "curso_forma_pensamiento" },
+    { "domain_id": "DOM-13", "relation": "risk_factor", "context": "desorganizacion_potencial" }
+  ],
+
+  "exclusions": [
+    {
+      "term_id": "THO_005",
+      "canonical_name": "Circunstancialidad",
+      "reason": "En circunstancialidad hay retorno eventual al objetivo; en tangencialidad no.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "THO_009",
+      "canonical_name": "Incoherencia",
+      "reason": "En incoherencia falla la inteligibilidad local; en tangencialidad puede haber frases comprensibles pero sin meta comunicativa.",
+      "ref_status": "forward"
+    }
+  ],
+
+  "alerts": [],
+
+  "teaching_notes": [
+    "La prueba rápida: hacer una pregunta cerrada; si no puede contestarla tras varios intentos, tangencialidad es probable.",
+    "Registrar ejemplos textuales breves (no extensos) mejora la reproducibilidad del juicio."
+  ],
+
+  "cognitive_pitfalls": [
+    "Confundir con circumstantialidad y subestimar severidad.",
+    "Interpretar como 'evasión' o mala voluntad sin evaluar desorganización."
+  ],
+
+  "version": "1.0.0",
+
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": []
+  }
+}
