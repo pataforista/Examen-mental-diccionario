@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -9,29 +10,54 @@
     <link rel="icon" href="favicon.ico">
     <meta name="theme-color" content="#003366">
 </head>
+
 <body>
     <header class="app-header">
-        <h1>Examen Mental</h1>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div style="width: 24px;"></div> <!-- Spacer -->
+            <h1>Examen Mental</h1>
+            <button id="about-btn"
+                style="background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 0;">ℹ️</button>
+        </div>
         <div class="search-container">
-            <input type="text" id="global-search" placeholder="Buscar término, síntoma o signo..." autocomplete="off">
+            <input type="text" id="global-search" placeholder="Buscar término..." autocomplete="off">
         </div>
     </header>
 
     <main id="app-content">
-        <!-- Dynamic content goes here -->
+        <section id="dictionary-view">
+            <div id="recent-searches" class="recent-searches-container hidden">
+                <span class="section-label">Recientes</span>
+                <div id="recent-list"></div>
+            </div>
+            <div id="all-terms-list">
+                <!-- Alphabetical list will be rendered here -->
+            </div>
+        </section>
         <section id="results-view" class="hidden"></section>
         <section id="term-view" class="hidden"></section>
-        <section id="domain-view"></section>
+        <section id="domain-view" class="hidden"></section>
         <section id="cases-view" class="hidden"></section>
+        <section id="about-view" class="hidden"></section>
     </main>
 
     <nav class="bottom-nav">
-        <button id="nav-dictionary" class="active">Diccionario</button>
-        <button id="nav-domains">Dominios</button>
-        <button id="nav-cases">Casos OSCE</button>
+        <button id="nav-dictionary" class="active">
+            <span class="nav-icon">📖</span>
+            <span>Diccionario</span>
+        </button>
+        <button id="nav-domains">
+            <span class="nav-icon">🧩</span>
+            <span>Dominios</span>
+        </button>
+        <button id="nav-cases">
+            <span class="nav-icon">📋</span>
+            <span>Casos OSCE</span>
+        </button>
     </nav>
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.basic.min.js"></script>
     <script src="app.js" type="module"></script>
 </body>
+
 </html>
