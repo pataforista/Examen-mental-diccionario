@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#111111" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>MiniGame MCQ + Diferencial</title>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="title">MiniGame</div>
+            <div class="subtitle">MCQ + Diferencial en 2 pasos (offline)</div>
+        </div>
+
+        <div class="top-actions">
+            <button id="btnInstall" class="btn ghost" hidden>Instalar</button>
+            <button id="btnReset" class="btn ghost" title="Borra progreso local">Reset</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <div class="row">
+                <label class="label">Modo</label>
+                <div class="segmented" role="tablist">
+                    <button class="seg" id="modeMcq" aria-selected="true">MCQ definición</button>
+                    <button class="seg" id="modeDiff" aria-selected="false">Diferencial 2 pasos</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="label" for="domainSelect">Dominio</label>
+                <select id="domainSelect" class="select"></select>
+
+                <label class="label" for="difficultySelect">Dificultad</label>
+                <select id="difficultySelect" class="select">
+                    <option value="any">Cualquiera</option>
+                    <option value="1">1 (fácil)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <button id="btnNext" class="btn primary">Siguiente</button>
+            </div>
+
+            <div class="stats">
+                <div><span class="k">Puntaje</span> <span id="score">0</span></div>
+                <div><span class="k">Racha</span> <span id="streak">0</span></div>
+                <div><span class="k">Correctas</span> <span id="correct">0</span></div>
+                <div><span class="k">Incorrectas</span> <span id="wrong">0</span></div>
+            </div>
+        </section>
+
+        <section class="card" id="gameCard">
+            <div id="prompt" class="prompt"></div>
+            <div id="subprompt" class="subprompt"></div>
+            <div id="options" class="options"></div>
+
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+
+            <div class="footer">
+                <div class="hint" id="hint"></div>
+            </div>
+        </section>
+
+        <section class="card muted">
+            <details>
+                <summary>Notas técnicas</summary>
+                <ul>
+                    <li>Dataset local en <code>data.js</code>. Sustituye por tu DB real.</li>
+                    <li>Offline: cachea assets (SW). Si cambias versión, incrementa <code>CACHE_VERSION</code> en
+                        <code>sw.js</code>.</li>
+                    <li>Progreso: <code>localStorage</code> (simple, portable).</li>
+                </ul>
+            </details>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
