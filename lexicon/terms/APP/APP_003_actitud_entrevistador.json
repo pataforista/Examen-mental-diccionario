@@ -1,0 +1,48 @@
+{
+    "term_id": "APP_003",
+    "canonical_name": "Actitud hacia el entrevistador",
+    "synonyms_and_slang": [],
+    "term_kind": "sign",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Descripción del modo en que el paciente se relaciona con el entrevistador, desde cooperador hasta no cooperador.",
+        "required_features": [
+            "modo de relación observable",
+            "nivel de cooperación",
+            "calificadores descriptivos"
+        ],
+        "subjective_marker": "El paciente puede expresar confianza, desconfianza o rechazo hacia la entrevista.",
+        "behavioral_marker": "Actitud cooperadora, seductora, aduladora, excesivamente familiar, hostil, defensiva, suspicaz, antagónica, infantil o retraída."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "actitud_interaccion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Registrar conductas específicas que sustentan la etiqueta de actitud."
+    ],
+    "cognitive_pitfalls": [
+        "Inferir rasgos de personalidad sin evidencia longitudinal."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

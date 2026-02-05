@@ -1,5 +1,5 @@
 {
-    "term_id": "MOT_003",
+    "term_id": "MOT_004",
     "canonical_name": "Negativismo",
     "term_kind": "symptom",
     "definition_clinical": {
@@ -27,7 +27,7 @@
     "alerts": [],
     "teaching_notes": [],
     "cognitive_pitfalls": [],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "provenance": {
         "phenomenology": [],
         "clinical_tradition": []

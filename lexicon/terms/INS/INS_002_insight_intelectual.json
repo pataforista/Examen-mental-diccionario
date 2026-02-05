@@ -1,0 +1,54 @@
+{
+    "term_id": "INS_002",
+    "canonical_name": "Insight intelectual",
+    "synonyms_and_slang": [
+        {
+            "term": "insight parcial",
+            "context": "clinical",
+            "locale": "es"
+        }
+    ],
+    "term_kind": "capacity",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Reconocimiento de que existen problemas y que otros perciben enfermedad, sin integración emocional plena ni adherencia sostenida al tratamiento.",
+        "required_features": [
+            "reconocimiento parcial de problema",
+            "atribución incompleta a enfermedad",
+            "ambivalencia hacia tratamiento"
+        ],
+        "subjective_marker": "El paciente admite síntomas pero minimiza su implicación o la necesidad de tratamiento continuo.",
+        "behavioral_marker": "Acepta parcialmente recomendaciones, con dudas o interrupciones frecuentes."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "colateral"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "juicio_insight"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Diferenciar aceptación intelectual de aceptación emocional es clave para planificar adherencia."
+    ],
+    "cognitive_pitfalls": [
+        "Interpretar la verbalización de diagnóstico como insight completo sin explorar conducta."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

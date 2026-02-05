@@ -1,0 +1,45 @@
+{
+    "term_id": "MEM_005",
+    "canonical_name": "Delirium",
+    "synonyms_and_slang": [],
+    "term_kind": "syndrome",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Síndrome orgánico agudo fluctuante con inatención y alteración global de conciencia y cognición.",
+        "required_features": [],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-01",
+            "relation": "primary_expression",
+            "context": "conciencia"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

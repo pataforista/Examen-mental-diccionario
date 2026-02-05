@@ -1,0 +1,43 @@
+{
+    "term_id": "SPE_011",
+    "canonical_name": "Latencia de respuesta aumentada",
+    "synonyms_and_slang": [],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Retraso anormal en el tiempo que transcurre entre una pregunta y el inicio de la respuesta.",
+        "required_features": [
+            "retraso temporal observable"
+        ],
+        "subjective_marker": "El paciente parece requerir esfuerzo para procesar o iniciar el habla.",
+        "behavioral_marker": "Silencios prolongados tras las intervenciones del examinador."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "lenguaje_comunicacion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Frecuente en depresión melancólica, esquizofrenia (síntomas negativos) o estados confusionales."
+    ],
+    "cognitive_pitfalls": [],
+    "version": "1.1.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

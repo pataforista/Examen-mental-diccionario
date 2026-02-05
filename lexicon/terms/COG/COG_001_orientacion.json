@@ -1,0 +1,53 @@
+{
+    "term_id": "COG_001",
+    "canonical_name": "Orientación",
+    "synonyms_and_slang": [],
+    "term_kind": "capacity",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Estado de conciencia respecto a tiempo, lugar y persona, evaluado mediante preguntas directas sobre fecha, ubicación e identidad.",
+        "required_features": [
+            "orientación temporal",
+            "orientación espacial",
+            "orientación personal"
+        ],
+        "subjective_marker": "El paciente puede referir confusión o desubicación en alguna de las dimensiones.",
+        "behavioral_marker": "Respuestas correctas o erróneas sobre fecha, lugar o identidad durante la evaluación."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "pruebas_cognitivas"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-01",
+            "relation": "primary_expression",
+            "context": "conciencia_orientacion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "clinical_attention",
+            "message": "La desorientación temporal suele ser la primera en aparecer en trastornos orgánicos."
+        }
+    ],
+    "teaching_notes": [
+        "Valorar las tres dimensiones en orden (tiempo, lugar, persona) y registrar el patrón de error."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir desorientación con falta de cooperación sin corroborar nivel de conciencia."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

@@ -1,11 +1,11 @@
 {
-  "name": "Examen Mental - Diccionario Clínico",
-  "short_name": "Examen Mental",
-  "description": "Diccionario clínico de examen mental para psiquiatría.",
+  "name": "Examen Mental - Registro Dual",
+  "short_name": "MSE Registro",
+  "description": "Diccionario clínico de examen mental (Soft Ruins / Black Signal).",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#003366",
-  "theme_color": "#003366",
+  "background_color": "#120C18",
+  "theme_color": "#FFF8E7",
   "icons": [
     {
       "src": "icon-192.png",

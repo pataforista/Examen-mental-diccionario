@@ -1,0 +1,66 @@
+{
+    "term_id": "DEL_015",
+    "canonical_name": "Delirio persecutorio",
+    "synonyms_and_slang": [
+        {
+            "term": "delirio paranoide",
+            "context": "clinical",
+            "locale": "es"
+        }
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 2,
+    "definition_clinical": {
+        "core": "Creencia fija y falsa de que uno está siendo atacado, acosado, engañado, perseguido o espiado.",
+        "required_features": [
+            "creencia falsa",
+            "temática persecutoria",
+            "convicción sostenida"
+        ],
+        "subjective_marker": "El paciente refiere que lo siguen, vigilan o intentan dañarlo.",
+        "behavioral_marker": "Conductas de vigilancia, evitación o medidas de autoprotección basadas en la creencia."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion",
+            "colateral"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-07",
+            "relation": "primary_expression",
+            "context": "pensamiento_contenido"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "safety_critical",
+            "message": "Explorar riesgo de violencia defensiva o huida ante ideas persecutorias intensas."
+        }
+    ],
+    "teaching_notes": [
+        "Registrar grado de convicción y nivel de sistematización del delirio."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir sospecha razonable en contextos reales con delirio."
+    ],
+    "version": "1.1.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "term_id": "MOT_008",
+    "canonical_name": "Manierismos",
+    "synonyms_and_slang": [],
+    "term_kind": "sign",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Movimientos voluntarios estilizados o exagerados que parecen extraños, pero tienen un propósito o significado para el paciente.",
+        "required_features": [
+            "movimientos voluntarios",
+            "patrón estilizado o exagerado",
+            "significado personal"
+        ],
+        "subjective_marker": "El paciente puede explicar la finalidad o significado del gesto.",
+        "behavioral_marker": "Gestos o acciones repetitivas que caricaturizan movimientos normales."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion_clinica",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-04",
+            "relation": "primary_expression",
+            "context": "psicomotricidad_conacion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Diferenciar manerismos de estereotipias o tics por su intencionalidad aparente."
+    ],
+    "cognitive_pitfalls": [
+        "Asumir automáticamente desorganización psicótica sin explorar contexto cultural."
+    ],
+    "version": "1.1.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

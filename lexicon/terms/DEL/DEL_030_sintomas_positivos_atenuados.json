@@ -1,0 +1,39 @@
+{
+    "term_id": "DEL_030",
+    "canonical_name": "Síntomas positivos atenuados",
+    "synonyms_and_slang": [],
+    "term_kind": "state",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Experiencias psicóticas subumbrales con menor intensidad y preservación parcial de insight.",
+        "required_features": [],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

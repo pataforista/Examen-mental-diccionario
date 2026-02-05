@@ -1,0 +1,50 @@
+{
+    "term_id": "SPE_010",
+    "canonical_name": "Presión de habla",
+    "synonyms_and_slang": [
+        {
+            "term": "taquilalia",
+            "context": "clinical",
+            "locale": "es"
+        }
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Aumento significativo en la velocidad y cantidad de habla, difícil de interrumpir.",
+        "required_features": [
+            "velocidad aumentada",
+            "carácter incontenible"
+        ],
+        "subjective_marker": "El paciente siente urgencia por hablar.",
+        "behavioral_marker": "Habla rápida, ruidosa y voluminosa, frecuentemente asociada a fuga de ideas."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "lenguaje_comunicacion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Signo cardinal de manía o hipomanía."
+    ],
+    "cognitive_pitfalls": [],
+    "version": "1.1.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

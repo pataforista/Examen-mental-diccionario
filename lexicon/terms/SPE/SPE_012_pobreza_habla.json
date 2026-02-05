@@ -1,0 +1,55 @@
+{
+    "term_id": "SPE_012",
+    "canonical_name": "Pobreza del habla",
+    "synonyms_and_slang": [
+        {
+            "term": "habla lacónica",
+            "context": "clinical",
+            "locale": "es"
+        }
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Restricción cuantitativa del habla espontánea; las respuestas son breves y poco elaboradas.",
+        "required_features": [
+            "disminución del volumen de habla",
+            "respuestas monosilábicas o breves"
+        ],
+        "subjective_marker": "El paciente se muestra poco comunicativo o refiere que no tiene nada más que decir.",
+        "behavioral_marker": "Uso de respuestas mínimas ('sí', 'no', 'bien') incluso ante preguntas abiertas."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "lenguaje_comunicacion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "SPE_007",
+            "canonical_name": "Alogia",
+            "reason": "La pobreza del habla es el componente cuantitativo; la pobreza de contenido (alogia) es el cualitativo.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.1.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

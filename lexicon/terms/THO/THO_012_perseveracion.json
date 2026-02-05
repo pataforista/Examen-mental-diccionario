@@ -1,0 +1,39 @@
+{
+    "term_id": "THO_012",
+    "canonical_name": "Perseveración",
+    "synonyms_and_slang": [],
+    "term_kind": "sign",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Repetición persistente de una respuesta previa ante estímulos nuevos.",
+        "required_features": [],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

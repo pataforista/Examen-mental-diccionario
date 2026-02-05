@@ -1,0 +1,53 @@
+{
+    "term_id": "MOT_012",
+    "canonical_name": "Distonía aguda",
+    "synonyms_and_slang": [],
+    "term_kind": "sign",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Contracciones musculares sostenidas que causan posturas anómalas o movimientos repetitivos torsionales.",
+        "required_features": [
+            "contracción sostenida",
+            "postura anómala",
+            "relación temporal con antipsicóticos"
+        ],
+        "subjective_marker": "Dolor o tensión muscular intensa, sensación de 'lengua trabada' o cuello girado.",
+        "behavioral_marker": "Tortícolis, crisis oculogiras, trismus o posturas distónicas de extremidades."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion_clinica",
+            "exploracion_fisica"
+        ],
+        "time_relation": [
+            "agudo"
+        ],
+        "pharmacological_link": true
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-04",
+            "relation": "primary_expression",
+            "context": "psicomotricidad_conacion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "safety_critical",
+            "message": "En casos graves puede haber laringoespasmo (emergencia médica)."
+        }
+    ],
+    "teaching_notes": [
+        "Típico efecto secundario extrapiramidal temprano por bloqueo D2."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir distonía con agitación o conducta psicótica, llevando a aumentar el antipsicótico causante."
+    ],
+    "version": "1.1.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

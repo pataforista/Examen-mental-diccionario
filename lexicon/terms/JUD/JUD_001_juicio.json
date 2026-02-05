@@ -1,0 +1,48 @@
+{
+    "term_id": "JUD_001",
+    "canonical_name": "Juicio",
+    "synonyms_and_slang": [],
+    "term_kind": "capacity",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Capacidad para comprender situaciones, evaluar riesgos y prever consecuencias antes de decidir o actuar.",
+        "required_features": [
+            "comprensión de la situación",
+            "evaluación de riesgos",
+            "anticipación de consecuencias"
+        ],
+        "subjective_marker": "El paciente explica cómo decidiría ante escenarios hipotéticos cotidianos.",
+        "behavioral_marker": "Respuestas adecuadas o desajustadas a dilemas simples como encontrar una carta sellada o percibir humo en un cine."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "pruebas_cognitivas"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "juicio_insight"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Registrar la lógica de la respuesta más que la literalidad."
+    ],
+    "cognitive_pitfalls": [
+        "Interpretar respuestas culturalmente distintas como juicio pobre sin contexto."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

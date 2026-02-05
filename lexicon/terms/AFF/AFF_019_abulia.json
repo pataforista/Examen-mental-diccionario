@@ -1,0 +1,45 @@
+{
+    "term_id": "AFF_019",
+    "canonical_name": "Abulia",
+    "synonyms_and_slang": [],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Pérdida severa de iniciativa y motivación con ausencia de conducta espontánea y latencia de respuesta prolongada.",
+        "required_features": [],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-09",
+            "relation": "primary_expression",
+            "context": "afecto"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

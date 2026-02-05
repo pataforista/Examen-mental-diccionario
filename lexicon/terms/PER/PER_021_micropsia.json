@@ -1,0 +1,39 @@
+{
+    "term_id": "PER_021",
+    "canonical_name": "Micropsia",
+    "synonyms_and_slang": [],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Distorsión visual en la que los objetos se perciben más pequeños de lo real.",
+        "required_features": [],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Robinson",
+            "Mendez"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
+}

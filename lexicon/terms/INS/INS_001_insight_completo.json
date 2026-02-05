@@ -1,0 +1,54 @@
+{
+    "term_id": "INS_001",
+    "canonical_name": "Insight completo",
+    "synonyms_and_slang": [
+        {
+            "term": "insight total",
+            "context": "clinical",
+            "locale": "es"
+        }
+    ],
+    "term_kind": "capacity",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Reconocimiento pleno de que los signos y síntomas forman parte de una enfermedad, con comprensión de factores contribuyentes y cooperación terapéutica.",
+        "required_features": [
+            "reconocimiento de enfermedad",
+            "atribución interna de síntomas",
+            "disposición a tratamiento"
+        ],
+        "subjective_marker": "El paciente expresa que su estado es parte de un trastorno y acepta ayuda.",
+        "behavioral_marker": "Colabora con la evaluación y sigue recomendaciones de tratamiento."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "colateral"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "juicio_insight"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "El insight completo incluye comprensión intelectual y aceptación emocional del trastorno."
+    ],
+    "cognitive_pitfalls": [
+        "Asumir insight completo solo por cumplimiento momentáneo en urgencias."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

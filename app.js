@@ -15,6 +15,30 @@ const App = {
         this.setupSearch();
         this.loadRecentSearches();
         this.renderAllTerms();
+        this.theme.init();
+    },
+
+    theme: {
+        current: 'light',
+        init: function () {
+            const saved = localStorage.getItem('mse-theme') || 'light';
+            this.set(saved);
+        },
+        toggle: function () {
+            const next = this.current === 'light' ? 'dark' : 'light';
+            this.set(next);
+        },
+        set: function (theme) {
+            this.current = theme;
+            document.body.setAttribute('data-theme', theme);
+            document.getElementById('theme-toggle').innerHTML = theme === 'light' ? '🌞' : '🌙';
+            document.getElementById('app-title').innerText = theme === 'light' ? 'SOFT RUINS' : 'BLACK SIGNAL';
+            localStorage.setItem('mse-theme', theme);
+
+            // Update meta theme color
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#FFF8E7' : '#120C18');
+        }
     },
 
     cacheDOM: function () {
@@ -31,7 +55,8 @@ const App = {
             recentSearchesBar: document.getElementById('recent-searches'),
             recentList: document.getElementById('recent-list'),
             navButtons: document.querySelectorAll('.bottom-nav button'),
-            aboutBtn: document.getElementById('about-btn')
+            aboutBtn: document.getElementById('about-btn'),
+            themeToggle: document.getElementById('theme-toggle')
         };
     },
 
@@ -41,6 +66,7 @@ const App = {
             btn.addEventListener('click', () => this.switchTab(btn.id));
         });
         this.nodes.aboutBtn.addEventListener('click', () => this.viewAbout());
+        this.nodes.themeToggle.addEventListener('click', () => this.theme.toggle());
     },
 
     loadData: async function () {
@@ -216,6 +242,18 @@ const App = {
                 ` : ''}
 
                 <div class="definition-section">
+                    <span class="section-label">Dominios Asociados</span>
+                    <div class="tag-container" style="margin-top: 0.5rem;">
+                        ${term.domain_links && term.domain_links.length > 0 ?
+                term.domain_links.map(link => `
+                                <span class="tag" onclick="event.stopPropagation(); App.viewDomainDetails('${link.domain_id}')">
+                                    ${this.getDomainIcon(link.domain_id)} ${this.getDomainSlug(link.domain_id).replace(/_/g, ' ')}
+                                </span>
+                            `).join('') : '<span style="font-size: 0.8rem; opacity: 0.5;">No categorizado</span>'}
+                    </div>
+                </div>
+
+                <div class="definition-section">
                     <span class="section-label">Docencia & Perlas</span>
                     <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
                         ${term.teaching_notes.map(note => `<li style="margin-bottom: 0.5rem;">${note}</li>`).join('')}
@@ -278,28 +316,39 @@ const App = {
         this.nodes.aboutView.innerHTML = `
             <div class="btn-back" onclick="App.switchTab('nav-dictionary')">← Volver</div>
             <div class="card">
-                <h2 style="color: var(--primary); margin-top:0;">Acerca del Diccionario</h2>
-                <p style="font-size: 0.9rem;">Esta es una herramienta de referencia clínica rápida para el examen mental en psiquiatría.</p>
+                <h2 style="margin-top:0;">SOFT RUINS / BLACK SIGNAL</h2>
+                <span class="badge" style="margin-bottom: 1rem;">Rev. 3.0</span>
+                <p style="font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-bottom: 1.5rem;">
+                    “El bosque es amable hasta que se apaga la linterna.”
+                </p>
+
+                <div class="definition-section">
+                    <span class="section-label">Naturaleza del Sistema</span>
+                    <p style="font-size: 0.9rem;">
+                        Registro dual de realidades clínicas. <strong>The Valley</strong> (Fantasía Nostálgica) para la exploración y calma; 
+                        <strong>The Void</strong> (Cyber-Ritual) para el análisis profundo y el rigor estructural.
+                    </p>
+                </div>
                 
                 <div class="definition-section">
                     <span class="section-label">Fuentes y Referencias</span>
                     <ul style="font-size: 0.85rem; padding-left: 1.25rem;">
-                        <li>Vallejo Ruiloba J. - Introducción a la Psicopatología y la Psiquiatría.</li>
-                        <li>Kaplan & Sadock's Synopsis of Psychiatry.</li>
-                        <li>DSM-5-TR - American Psychiatric Association.</li>
-                        <li>Delphi Study 2025 - Consenso Terminológico.</li>
+                        <li>Vallejo Ruiloba J. - Psicopatología y Psiquiatría.</li>
+                        <li>Kaplan & Sadock's Synopsis.</li>
+                        <li>EMA CANÓNICO - Protocolo de Excelencia.</li>
                     </ul>
                 </div>
 
-                <div class="card" style="background: rgba(0, 51, 102, 0.05); margin-top: 2rem;">
-                    <span class="section-label">Aviso Legal</span>
+                <div class="card ritual-box" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
+                    <span class="section-label">Aviso Clínico</span>
                     <p style="font-size: 0.75rem; color: var(--text-secondary); margin: 0;">
-                        Esta aplicación es para uso exclusivo por profesionales de la salud. No reemplaza el juicio clínico ni la valoración presencial. 
+                        Esta herramienta es un ritual de consulta rápida. No sustituye el juicio clínico. 
+                        Uso exclusivo para profesionales versados en la arquitectura del pensamiento.
                     </p>
                 </div>
                 
-                <p style="font-size: 0.7rem; color: var(--text-secondary); text-align: center; margin-top: 2rem;">
-                    Versión 1.1.0 (Clinical Excellence Edition)
+                <p style="font-size: 0.7rem; color: var(--text-secondary); text-align: center; margin-top: 2rem; opacity: 0.5;">
+                    EMA CANÓNICO v1.3.0 | Rev. 3.0
                 </p>
             </div>
         `;
@@ -336,7 +385,9 @@ const App = {
         const domain = this.data.domains.find(d => d.domain_id === domainId);
         if (!domain) return;
 
-        const filteredTerms = this.data.terms.filter(t => t.domain_id === domainId);
+        const filteredTerms = this.data.terms.filter(t =>
+            t.domain_links && t.domain_links.some(link => link.domain_id === domainId)
+        );
 
         const detailContainer = document.getElementById('domain-detail-container');
         document.getElementById('domain-grid-container').classList.add('hidden');

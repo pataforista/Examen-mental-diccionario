@@ -1,0 +1,64 @@
+{
+    "term_id": "APP_001",
+    "canonical_name": "Aliño e higiene",
+    "synonyms_and_slang": [
+        {
+            "term": "aseo",
+            "context": "clinical",
+            "locale": "es"
+        },
+        {
+            "term": "desaliñado",
+            "context": "clinical",
+            "locale": "es"
+        },
+        {
+            "term": "disheveled",
+            "context": "clinical",
+            "locale": "en"
+        }
+    ],
+    "term_kind": "sign",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Evaluación del autocuidado observable del paciente, incluyendo cabello, uñas, olor corporal, higiene bucal y estado de la ropa.",
+        "required_features": [
+            "cuidado corporal observable",
+            "condición de ropa y arreglo personal",
+            "descripción sin inferir causas"
+        ],
+        "subjective_marker": "El paciente puede referir cambios en su autocuidado o motivación para asearse.",
+        "behavioral_marker": "Se observa higiene adecuada, descuidada o muy descuidada con signos visibles de suciedad, olor o ropa deteriorada."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "situacional"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "apariencia_general"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Describir la apariencia sin atribuir causas diagnósticas."
+    ],
+    "cognitive_pitfalls": [
+        "Asumir psicosis o depresión sin corroborar factores contextuales (p. ej., pobreza, barreras de acceso)."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}
