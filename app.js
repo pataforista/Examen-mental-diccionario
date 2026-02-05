@@ -733,6 +733,11 @@ const App = {
             }
         },
 
+        toggleInstructions: function () {
+            const el = document.getElementById('game-instructions');
+            if (el) el.classList.toggle('hidden');
+        },
+
         // --- MCQ LOGIC ---
         buildMcqRound: function (domainId, diffObj) {
             // Filter terms from main App.data.terms

@@ -48,17 +48,17 @@
         <section id="cases-view" class="hidden"></section>
 
         <section id="game-view" class="hidden">
-            <div class="card" style="margin-bottom: 1rem;">
-                <div class="row" style="margin-bottom: 1rem;">
-                    <div class="segmented" role="tablist" style="width: 100%; display: flex;">
-                        <button class="seg" id="modeMcq" aria-selected="true" style="flex: 1;">Definiciones</button>
-                        <button class="seg" id="modeDiff" aria-selected="false" style="flex: 1;">Diferencial</button>
+            <div class="card">
+                <div class="game-controls-row">
+                    <div class="segmented-control" role="tablist">
+                        <button class="segmented-btn" id="modeMcq" aria-selected="true">Definiciones</button>
+                        <button class="segmented-btn" id="modeDiff" aria-selected="false">Diferencial</button>
                     </div>
                 </div>
 
-                <div class="row" style="justify-content: space-between;">
-                    <select id="domainSelect" class="select" style="flex: 1; max-width: 48%;"></select>
-                    <select id="difficultySelect" class="select" style="flex: 1; max-width: 48%;">
+                <div class="game-controls-row">
+                    <select id="domainSelect" class="game-select"></select>
+                    <select id="difficultySelect" class="game-select">
                         <option value="any">Dificultad: Cualquiera</option>
                         <option value="1">Nivel 1 (Básico)</option>
                         <option value="2">Nivel 2 (Intermedio)</option>
@@ -66,46 +66,66 @@
                     </select>
                 </div>
 
-                <div class="stats"
-                    style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-around;">
-                    <div style="text-align: center;"><span class="k"
-                            style="display:block; font-size: 0.7rem;">Puntaje</span> <span id="score"
-                            style="font-weight:bold; color: var(--primary);">0</span></div>
-                    <div style="text-align: center;"><span class="k"
-                            style="display:block; font-size: 0.7rem;">Racha</span> <span id="streak"
-                            style="font-weight:bold;">0</span></div>
-                    <div style="text-align: center;"><span class="k"
-                            style="display:block; font-size: 0.7rem;">Aciertos</span> <span id="correct"
-                            style="color: green;">0</span></div>
-                    <div style="text-align: center;"><span class="k"
-                            style="display:block; font-size: 0.7rem;">Errores</span> <span id="wrong"
-                            style="color: red;">0</span></div>
+                <div class="game-stats">
+                    <div class="stat-item" style="cursor: pointer;" onclick="App.game.toggleInstructions()"
+                        title="Ver instrucciones">
+                        <span class="stat-label">Ayuda</span>
+                        <span class="stat-value">?</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Puntaje</span>
+                        <span id="score" class="stat-value" style="color: var(--primary);">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Racha</span>
+                        <span id="streak" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Aciertos</span>
+                        <span id="correct" class="stat-value" style="color: #2f855a;">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Errores</span>
+                        <span id="wrong" class="stat-value" style="color: #c53030;">0</span>
+                    </div>
+                </div>
+
+                <div id="game-instructions" class="hidden"
+                    style="margin-top: 1rem; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem;">
+                    <h4 style="margin-top: 0; color: var(--primary);">Cómo Jugar</h4>
+                    <ul style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
+                        <li><strong>Objetivo:</strong> Entrenar el juicio clínico y reconocimiento de términos.</li>
+                        <li><strong>Modo Definiciones:</strong> Identifica el término correcto para la definición dada.
+                            <br><em>(+10 pts acierto, -5 error)</em></li>
+                        <li><strong>Modo Diferencial:</strong>
+                            <ol style="padding-left: 1rem; margin-top: 0.3rem;">
+                                <li>Lee el mini-caso clínico.</li>
+                                <li>Selecciona el diagnóstico principal.</li>
+                                <li>Identifica el criterio discriminante clave.</li>
+                            </ol>
+                            <em>(Puntaje compuesto por fases)</em>
+                        </li>
+                    </ul>
+                    <button class="btn ghost" style="width: 100%; font-size: 0.8rem;"
+                        onclick="App.game.toggleInstructions()">Cerrar Ayuda</button>
                 </div>
 
                 <div style="margin-top: 1rem; text-align: right;">
-                    <button id="btnReset" class="btn ghost" style="font-size: 0.7rem; padding: 4px 8px;">Resetear
-                        Progreso</button>
-                    <button id="btnNext" class="btn primary" style="width: 100%; margin-top: 0.5rem;">Siguiente Ronda
-                        →</button>
+                    <button id="btnReset" class="btn ghost">Resetear Progreso</button>
                 </div>
             </div>
 
-            <section class="card" id="gameCard"
-                style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
-                <div id="prompt" class="prompt"
-                    style="font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; text-align: center;"></div>
-                <div id="subprompt" class="subprompt"
-                    style="font-size: 0.85rem; color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem;">
-                </div>
+            <section class="card game-card" id="gameCard">
+                <div id="prompt" class="game-prompt"></div>
+                <div id="subprompt" class="game-subprompt"></div>
 
-                <div id="options" class="options" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+                <div id="options" class="game-options"></div>
 
-                <div id="feedback" class="feedback" aria-live="polite"
-                    style="margin-top: 1.5rem; text-align: center; font-weight: bold; min-height: 1.5rem;"></div>
+                <div id="feedback" class="feedback" aria-live="polite"></div>
 
-                <div class="footer" style="margin-top: auto; padding-top: 1rem;">
-                    <div class="hint" id="hint"
-                        style="font-size: 0.8rem; color: var(--text-secondary); font-style: italic;"></div>
+                <div class="game-actions">
+                    <div class="game-hint" id="hint"></div>
+                    <button id="btnNext" class="btn primary">Siguiente Ronda →</button>
                 </div>
             </section>
         </section>
