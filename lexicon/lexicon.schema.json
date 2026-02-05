@@ -1,38 +1,46 @@
 {
-  lexicon_id psy_lexicon,
-  version 1.0.0,
-  status frozen,
-  last_updated 2025-01-15,
-  governance {
-    authority Clinical Psychopathology Board,
-    change_policy semver,
-    freeze_rules {
-      clinical_definition major_only,
-      operationalization minor_allowed,
-      teaching_notes patch_allowed
+  "lexicon_id": "psy_lexicon",
+  "version": "1.0.0",
+  "status": "frozen",
+  "last_updated": "2025-01-15",
+  "governance": {
+    "authority": "Clinical Psychopathology Board",
+    "change_policy": "semver",
+    "freeze_rules": {
+      "clinical_definition": "major_only",
+      "operationalization": "minor_allowed",
+      "teaching_notes": "patch_allowed"
     }
   },
-  controlled_vocabularies {
-    term_kind [symptom, sign, syndrome, state],
-    granularity [atomic, composite],
-    risk_weight {
-      0 neutral,
-      1 alert,
-      2 critical
-    },
-    alert_type [
-      safety_critical,
-      suicide_risk,
-      iatrogenic_risk,
-      diagnostic_error
+  "controlled_vocabularies": {
+    "term_kind": [
+      "symptom",
+      "sign",
+      "syndrome",
+      "state"
     ],
-    domain_relation [
-      primary_expression,
-      secondary_expression,
-      frequent_misclassification,
-      differential_anchor,
-      risk_factor
+    "granularity": [
+      "atomic",
+      "composite"
+    ],
+    "risk_weight": {
+      "0": "neutral",
+      "1": "alert",
+      "2": "critical"
+    },
+    "alert_type": [
+      "safety_critical",
+      "suicide_risk",
+      "iatrogenic_risk",
+      "diagnostic_error"
+    ],
+    "domain_relation": [
+      "primary_expression",
+      "secondary_expression",
+      "frequent_misclassification",
+      "differential_anchor",
+      "risk_factor"
     ]
   },
-  terms []
+  "terms": []
 }
