@@ -601,11 +601,298 @@ const App = {
             this.data.currentView = 'cases';
             this.renderCases();
             this.renderView('cases');
+        } else if (id === 'nav-game') {
+            this.data.currentView = 'game';
+            this.game.init();
+            this.renderView('game');
         }
     },
 
+    // --- GAME ENGINE SUBMODULE ---
+    game: {
+        stats: { score: 0, streak: 0, correct: 0, wrong: 0 },
+        currentMode: 'mcq', // 'mcq' or 'diff'
+        diffPhase: 1,
+        currentRound: null,
+
+        init: function () {
+            this.loadStats();
+            this.cacheDOM();
+            this.bindEvents();
+            this.renderStats();
+            if (!this.currentRound) this.nextRound(); // Only start if not already started
+        },
+
+        cacheDOM: function () {
+            this.nodes = {
+                score: document.getElementById('score'),
+                streak: document.getElementById('streak'),
+                correct: document.getElementById('correct'),
+                wrong: document.getElementById('wrong'),
+                modeMcq: document.getElementById('modeMcq'),
+                modeDiff: document.getElementById('modeDiff'),
+                domainSelect: document.getElementById('domainSelect'),
+                difficultySelect: document.getElementById('difficultySelect'),
+                prompt: document.getElementById('prompt'),
+                subprompt: document.getElementById('subprompt'),
+                options: document.getElementById('options'),
+                feedback: document.getElementById('feedback'),
+                hint: document.getElementById('hint'),
+                btnNext: document.getElementById('btnNext'),
+                btnReset: document.getElementById('btnReset')
+            };
+        },
+
+        bindEvents: function () {
+            // Check if already bound to avoid duplicates in SPA
+            if (this._bound) return;
+            this._bound = true;
+
+            this.nodes.modeMcq.addEventListener('click', () => this.setMode('mcq'));
+            this.nodes.modeDiff.addEventListener('click', () => this.setMode('diff'));
+            this.nodes.btnNext.addEventListener('click', () => this.nextRound());
+            this.nodes.btnReset.addEventListener('click', () => this.resetStats());
+
+            // Populate domains from main App data
+            this.populateDomains();
+        },
+
+        populateDomains: function () {
+            const domains = App.data.domains; // Use main app data
+            this.nodes.domainSelect.innerHTML = '<option value="any">Todos los Dominios</option>';
+            domains.forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d.domain_id;
+                opt.textContent = d.label_es || d.domain_name;
+                this.nodes.domainSelect.appendChild(opt);
+            });
+        },
+
+        setMode: function (mode) {
+            this.currentMode = mode;
+            this.nodes.modeMcq.setAttribute('aria-selected', mode === 'mcq');
+            this.nodes.modeDiff.setAttribute('aria-selected', mode === 'diff');
+            this.nextRound();
+        },
+
+        loadStats: function () {
+            const saved = localStorage.getItem('mse_game_stats');
+            if (saved) this.stats = JSON.parse(saved);
+        },
+
+        saveStats: function () {
+            localStorage.setItem('mse_game_stats', JSON.stringify(this.stats));
+            this.renderStats();
+        },
+
+        resetStats: function () {
+            this.stats = { score: 0, streak: 0, correct: 0, wrong: 0 };
+            this.saveStats();
+            this.showFeedback("Progreso reiniciado.", "ok");
+        },
+
+        renderStats: function () {
+            if (!this.nodes) return;
+            this.nodes.score.innerText = this.stats.score;
+            this.nodes.streak.innerText = this.stats.streak;
+            this.nodes.correct.innerText = this.stats.correct;
+            this.nodes.wrong.innerText = this.stats.wrong;
+        },
+
+        nextRound: function () {
+            this.clearFeedback();
+            this.nodes.options.innerHTML = '';
+            this.nodes.hint.textContent = '';
+
+            const domain = this.nodes.domainSelect.value;
+            const diff = this.nodes.difficultySelect.value;
+
+            if (this.currentMode === 'mcq') {
+                this.diffPhase = 1;
+                this.currentRound = this.buildMcqRound(domain, diff);
+                this.renderMcqRound(this.currentRound);
+            } else {
+                this.diffPhase = 1;
+                this.currentRound = this.buildDiffRound(domain, diff);
+                this.renderDiffPhase1(this.currentRound);
+            }
+        },
+
+        // --- MCQ LOGIC ---
+        buildMcqRound: function (domainId, diffObj) {
+            // Filter terms from main App.data.terms
+            let pool = App.data.terms.filter(t => t.definition_clinical && t.definition_clinical.core);
+            if (domainId !== 'any') {
+                pool = pool.filter(t => t.domain_links && t.domain_links.some(l => l.domain_id === domainId));
+            }
+            // Add difficulty filter if data supports it (assuming defaults for now)
+
+            if (pool.length < 4) return { error: "Insuficientes términos para esta selección." };
+
+            const target = this.sampleOne(pool);
+            const distractorPool = pool.filter(t => t.term_id !== target.term_id);
+            const distractors = this.sampleMany(distractorPool, 3);
+
+            const options = this.shuffle([
+                { id: target.term_id, text: target.definition_clinical.core, correct: true },
+                ...distractors.map(d => ({ id: d.term_id, text: d.definition_clinical.core, correct: false }))
+            ]);
+
+            return { mode: 'mcq', target, options };
+        },
+
+        renderMcqRound: function (round) {
+            if (round.error) {
+                this.nodes.prompt.textContent = "Error";
+                this.nodes.subprompt.textContent = round.error;
+                return;
+            }
+            this.nodes.prompt.textContent = `¿Cuál define mejor: "${round.target.canonical_name}"?`;
+            this.nodes.subprompt.textContent = `${round.target.term_kind} · ${App.getDomainSlug(round.target.domain_links?.[0]?.domain_id || '')}`;
+
+            this.renderOptions(round.options, (opt) => this.gradeMcq(opt.correct, round.target));
+        },
+
+        gradeMcq: function (isCorrect, target) {
+            if (isCorrect) {
+                this.stats.score += 10;
+                this.stats.streak += 1;
+                this.stats.correct += 1;
+                this.showFeedback("¡Correcto!", "ok");
+                if (target.teaching_notes) this.nodes.hint.textContent = `Nota: ${target.teaching_notes[0]}`;
+                this.disableOptions();
+            } else {
+                this.stats.score = Math.max(0, this.stats.score - 5);
+                this.stats.streak = 0;
+                this.stats.wrong += 1;
+                this.showFeedback("Incorrecto.", "bad");
+            }
+            this.saveStats();
+        },
+
+        // --- DIFFERENTIAL LOGIC ---
+        buildDiffRound: function (domainId, diffObj) {
+            let pool = App.data.cases;
+            if (domainId !== 'any') {
+                // Simple domain check via domains object keys
+                pool = pool.filter(c => c.domains && c.domains[domainId]);
+            }
+            if (diffObj !== 'any') {
+                pool = pool.filter(c => String(c.level) === String(diffObj));
+            }
+
+            if (pool.length === 0) return { error: "No hay casos con estos filtros." };
+
+            const c = this.sampleOne(pool);
+            // In the real app, we don't have 'target_term_id' explicitly in case json sometimes, 
+            // but we have 'primary_syndrome'. We will use primary_syndrome as the target.
+
+            const targetName = c.expected_engine_output.primary_syndrome;
+
+            // Create options: Target + Random Distractors from other cases
+            const otherCases = App.data.cases.filter(x => x.case_id !== c.case_id);
+            const distractors = this.sampleMany(otherCases, 3).map(x => x.expected_engine_output.primary_syndrome);
+
+            // Unique set
+            const uniqueOptions = [...new Set([targetName, ...distractors])];
+            // Ensure we have at least 2 distinct
+
+            const termOptions = this.shuffle(uniqueOptions.map(name => ({
+                id: name,
+                text: name.replace(/_/g, ' '),
+                correct: name === targetName
+            })));
+
+            // Phase 2: Key Discriminators
+            const correctKeys = c.assessment_keys.key_discriminators;
+            const wrongKeys = c.assessment_keys.errors_to_avoid; // Use errors as distractors for phase 2
+
+            const discOptions = this.shuffle([
+                { text: this.sampleOne(correctKeys), correct: true, why: "Criterio discriminante clave." },
+                { text: this.sampleOne(wrongKeys), correct: false, why: "Error común a evitar." }
+            ]);
+
+            return { mode: 'diff', case: c, termOptions, discOptions };
+        },
+
+        renderDiffPhase1: function (round) {
+            if (round.error) {
+                this.nodes.prompt.textContent = "Error";
+                this.nodes.subprompt.textContent = round.error;
+                return;
+            }
+            this.nodes.prompt.textContent = "Paso 1: Identifica el Síndrome / Diagnóstico";
+            this.nodes.subprompt.textContent = `"${round.case.stem.contextual_notes}"`;
+
+            this.renderOptions(round.termOptions, (opt) => {
+                if (opt.correct) {
+                    this.showFeedback("Correcto. Ahora valida el criterio clave.", "ok");
+                    this.disableOptions();
+                    setTimeout(() => {
+                        this.clearFeedback();
+                        this.renderDiffPhase2(round);
+                    }, 500);
+                } else {
+                    this.stats.score = Math.max(0, this.stats.score - 5);
+                    this.stats.streak = 0;
+                    this.stats.wrong += 1;
+                    this.saveStats();
+                    this.showFeedback("Diagnóstico incorrecto.", "bad");
+                }
+            });
+        },
+
+        renderDiffPhase2: function (round) {
+            this.nodes.prompt.textContent = "Paso 2: Selecciona el criterio discriminante válido";
+            this.nodes.options.innerHTML = '';
+            this.renderOptions(round.discOptions, (opt) => {
+                if (opt.correct) {
+                    this.stats.score += 20;
+                    this.stats.streak += 1;
+                    this.stats.correct += 1;
+                    this.showFeedback("¡Excelente! Caso resuelto.", "ok");
+                    this.nodes.hint.textContent = `Clave: ${opt.text}`;
+                    this.disableOptions();
+                } else {
+                    this.stats.score = Math.max(0, this.stats.score - 5);
+                    this.stats.streak = 0;
+                    this.stats.wrong += 1;
+                    this.showFeedback("Criterio incorrecto (es un error común).", "bad");
+                }
+                this.saveStats();
+            });
+        },
+
+        // --- UTILS ---
+        renderOptions: function (options, callback) {
+            this.nodes.options.innerHTML = '';
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'opt';
+                btn.textContent = opt.text;
+                btn.onclick = () => callback(opt);
+                this.nodes.options.appendChild(btn);
+            });
+        },
+        disableOptions: function () {
+            const btns = this.nodes.options.querySelectorAll('button');
+            btns.forEach(b => b.disabled = true);
+        },
+        showFeedback: function (msg, cls) {
+            this.nodes.feedback.textContent = msg;
+            this.nodes.feedback.className = `feedback ${cls}`;
+        },
+        clearFeedback: function () {
+            this.nodes.feedback.textContent = '';
+            this.nodes.feedback.className = 'feedback';
+        },
+        sampleOne: function (arr) { return arr[Math.floor(Math.random() * arr.length)]; },
+        sampleMany: function (arr, n) { return [...arr].sort(() => 0.5 - Math.random()).slice(0, n); },
+        shuffle: function (arr) { return arr.sort(() => 0.5 - Math.random()); }
+    },
+
     renderView: function (viewName) {
-        const views = ['dictionary', 'results', 'term', 'domain', 'cases', 'about'];
+        const views = ['dictionary', 'results', 'term', 'domain', 'cases', 'about', 'game'];
         views.forEach(v => {
             const node = this.nodes[`${v}View`];
             if (node) {

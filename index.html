@@ -46,6 +46,70 @@
         <section id="term-view" class="hidden"></section>
         <section id="domain-view" class="hidden"></section>
         <section id="cases-view" class="hidden"></section>
+
+        <section id="game-view" class="hidden">
+            <div class="card" style="margin-bottom: 1rem;">
+                <div class="row" style="margin-bottom: 1rem;">
+                    <div class="segmented" role="tablist" style="width: 100%; display: flex;">
+                        <button class="seg" id="modeMcq" aria-selected="true" style="flex: 1;">Definiciones</button>
+                        <button class="seg" id="modeDiff" aria-selected="false" style="flex: 1;">Diferencial</button>
+                    </div>
+                </div>
+
+                <div class="row" style="justify-content: space-between;">
+                    <select id="domainSelect" class="select" style="flex: 1; max-width: 48%;"></select>
+                    <select id="difficultySelect" class="select" style="flex: 1; max-width: 48%;">
+                        <option value="any">Dificultad: Cualquiera</option>
+                        <option value="1">Nivel 1 (Básico)</option>
+                        <option value="2">Nivel 2 (Intermedio)</option>
+                        <option value="3">Nivel 3 (Avanzado)</option>
+                    </select>
+                </div>
+
+                <div class="stats"
+                    style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-around;">
+                    <div style="text-align: center;"><span class="k"
+                            style="display:block; font-size: 0.7rem;">Puntaje</span> <span id="score"
+                            style="font-weight:bold; color: var(--primary);">0</span></div>
+                    <div style="text-align: center;"><span class="k"
+                            style="display:block; font-size: 0.7rem;">Racha</span> <span id="streak"
+                            style="font-weight:bold;">0</span></div>
+                    <div style="text-align: center;"><span class="k"
+                            style="display:block; font-size: 0.7rem;">Aciertos</span> <span id="correct"
+                            style="color: green;">0</span></div>
+                    <div style="text-align: center;"><span class="k"
+                            style="display:block; font-size: 0.7rem;">Errores</span> <span id="wrong"
+                            style="color: red;">0</span></div>
+                </div>
+
+                <div style="margin-top: 1rem; text-align: right;">
+                    <button id="btnReset" class="btn ghost" style="font-size: 0.7rem; padding: 4px 8px;">Resetear
+                        Progreso</button>
+                    <button id="btnNext" class="btn primary" style="width: 100%; margin-top: 0.5rem;">Siguiente Ronda
+                        →</button>
+                </div>
+            </div>
+
+            <section class="card" id="gameCard"
+                style="min-height: 300px; display: flex; flex-direction: column; justify-content: center;">
+                <div id="prompt" class="prompt"
+                    style="font-size: 1.1rem; font-weight: bold; margin-bottom: 0.5rem; text-align: center;"></div>
+                <div id="subprompt" class="subprompt"
+                    style="font-size: 0.85rem; color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem;">
+                </div>
+
+                <div id="options" class="options" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+
+                <div id="feedback" class="feedback" aria-live="polite"
+                    style="margin-top: 1.5rem; text-align: center; font-weight: bold; min-height: 1.5rem;"></div>
+
+                <div class="footer" style="margin-top: auto; padding-top: 1rem;">
+                    <div class="hint" id="hint"
+                        style="font-size: 0.8rem; color: var(--text-secondary); font-style: italic;"></div>
+                </div>
+            </section>
+        </section>
+
         <section id="about-view" class="hidden"></section>
     </main>
 
@@ -61,6 +125,10 @@
         <button id="nav-cases">
             <span class="nav-icon">📋</span>
             <span>Casos OSCE</span>
+        </button>
+        <button id="nav-game">
+            <span class="nav-icon">🧠</span>
+            <span>Entrenamiento</span>
         </button>
     </nav>
 
