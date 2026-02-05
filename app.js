@@ -520,7 +520,7 @@ const App = {
         const domainGrid = Object.entries(c.domains).map(([key, data]) => {
             const domainName = key;
             const content = Object.entries(data)
-                .map(([k, v]) => `<li><strong>${k.replace(/_/g, ' ')}:</strong> ${v.replace(/_/g, ' ')}</li>`)
+                .map(([k, v]) => `<li><strong>${k.replace(/_/g, ' ')}:</strong> ${String(v || '').replace(/_/g, ' ')}</li>`)
                 .join('');
 
             return `
