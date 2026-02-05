@@ -2,45 +2,104 @@
   "term_id": "RSK_003",
   "canonical_name": "Intento suicida",
   "synonyms_and_slang": [
-    { "term": "me intenté matar", "context": "patient_report", "locale": "es" },
-    { "term": "suicide attempt", "context": "clinical_bilingual", "locale": "en" }
+    {
+      "term": "me intenté matar",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "suicide attempt",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
   ],
   "term_kind": "event",
   "granularity": "atomic",
   "risk_weight": 5,
-
   "definition_clinical": {
-    "core": "Episodio de conducta autoinfligida realizado con intención de causar la propia muerte, independientemente del resultado médico final.",
+    "core": "Acto autolesivo con intención de morir, independientemente del resultado.",
     "required_features": [
       "acto autolesivo o conducta autoinfligida",
       "intención de morir (al menos parcial o fluctuante en el episodio)"
     ],
-    "subjective_marker": "Reconocimiento de intención autolítica o evidencia colateral congruente.",
-    "behavioral_marker": "Lesión/autointoxicación/ahorcamiento u otra conducta autolesiva con finalidad autolítica."
+    "subjective_marker": "Refiere intención de morir durante el acto.",
+    "behavioral_marker": "Lesiones compatibles con intento y contexto de letalidad."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "colateral", "expediente_medico", "exploracion_fisica"],
-    "time_relation": ["actual", "reciente", "historico"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "colateral",
+      "expediente_medico",
+      "exploracion_fisica"
+    ],
+    "time_relation": [
+      "actual",
+      "reciente",
+      "historico"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
-      { "marker": "attempt_occurred", "type": "boolean", "expected": true },
+      {
+        "marker": "attempt_occurred",
+        "type": "boolean",
+        "expected": true
+      },
       {
         "marker": "method_category",
         "type": "categorical",
-        "options": ["intoxicacion", "corte", "asfixia", "caida", "arma_fuego", "otros"]
+        "options": [
+          "intoxicacion",
+          "corte",
+          "asfixia",
+          "caida",
+          "arma_fuego",
+          "otros"
+        ]
       },
-      { "marker": "medical_lethality", "type": "ordinal_0_3", "anchors": ["0=baja", "1=moderada", "2=alta", "3=muy_alta"] },
-      { "marker": "intent_level", "type": "ordinal_0_3", "anchors": ["0=ambivalente", "1=baja", "2=moderada", "3=alta"] },
-      { "marker": "rescue_probability", "type": "ordinal_0_3", "anchors": ["0=alta", "1=moderada", "2=baja", "3=muy_baja"] }
+      {
+        "marker": "medical_lethality",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=baja",
+          "1=moderada",
+          "2=alta",
+          "3=muy_alta"
+        ]
+      },
+      {
+        "marker": "intent_level",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=ambivalente",
+          "1=baja",
+          "2=moderada",
+          "3=alta"
+        ]
+      },
+      {
+        "marker": "rescue_probability",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=alta",
+          "1=moderada",
+          "2=baja",
+          "3=muy_baja"
+        ]
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-12", "relation": "primary_expression", "context": "riesgo_suicida" },
-    { "domain_id": "DOM-13", "relation": "severity_anchor", "context": "historia_suicida" }
+    {
+      "domain_id": "DOM-12",
+      "relation": "primary_expression",
+      "context": "riesgo_suicida"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "severity_anchor",
+      "context": "historia_suicida"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "RSK_004",
@@ -49,26 +108,27 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Intento suicida reciente implica evaluación de inminencia, medios, protección y disposición. Evitar altas sin plan de seguridad y contención."
     }
   ],
-
   "teaching_notes": [
     "Separar letalidad médica de intención evita errores: métodos de baja letalidad pueden tener intención alta, y viceversa."
   ],
-
   "cognitive_pitfalls": [
     "Inferir intención solo por el método (falacia).",
     "No registrar probabilidad de rescate y planificación."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Descriptiva clínica"],
-    "clinical_tradition": ["Urgencias", "Prevención del suicidio"]
+    "phenomenology": [
+      "Descriptiva clínica"
+    ],
+    "clinical_tradition": [
+      "Urgencias",
+      "Prevención del suicidio"
+    ]
   }
 }

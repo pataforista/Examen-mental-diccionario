@@ -1,0 +1,32 @@
+{
+    "term_id": "SPE_004",
+    "canonical_name": "Aprosodia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Pérdida de la entonación, ritmo y modulación emocional del lenguaje.",
+        "required_features": [
+            "lenguaje monótono",
+            "incapacidad para expresar o entender la prosodia emocional"
+        ],
+        "subjective_marker": "Puede no notar el cambio en su propio tono.",
+        "behavioral_marker": "Habla sin inflexiones, voz plana y robótica."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje_prosodia"
+        }
+    ],
+    "version": "1.0.0"
+}

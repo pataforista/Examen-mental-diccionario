@@ -1,0 +1,32 @@
+{
+    "term_id": "SPE_002",
+    "canonical_name": "Palilalia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Repetición involuntaria de las propias palabras o frases.",
+        "required_features": [
+            "repetición de la propia emisión lingual",
+            "frecuentemente asociada a parkinsonismo"
+        ],
+        "subjective_marker": "Puede notar dificultad para dejar de repetir una frase.",
+        "behavioral_marker": "Repetición con velocidad creciente de sus últimas palabras."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje_motor"
+        }
+    ],
+    "version": "1.0.0"
+}

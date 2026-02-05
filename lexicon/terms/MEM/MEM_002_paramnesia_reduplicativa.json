@@ -1,0 +1,42 @@
+{
+    "term_id": "MEM_002",
+    "canonical_name": "Paramnesia reduplicativa",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Creencia delirante de que un lugar ha sido duplicado o existe en dos sitios simultáneamente.",
+        "required_features": [
+            "duplicación subjetiva de lugar",
+            "convicción de realidad"
+        ],
+        "subjective_marker": "Afirma estar en un sitio que es idéntico a otro o que está en dos lugares a la vez.",
+        "behavioral_marker": "Intenta reconciliar la ubicación actual con su creencia de duplicidad."
+    },
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "organic_warning",
+            "message": "Sugeriría lesión en hemisferio derecho o disfunción frontal persistente."
+        }
+    ],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Pick"
+        ],
+        "clinical_tradition": []
+    }
+}

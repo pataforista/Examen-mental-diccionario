@@ -2,44 +2,113 @@
   "term_id": "RSK_001",
   "canonical_name": "Ideación suicida",
   "synonyms_and_slang": [
-    { "term": "pensamientos de suicidio", "context": "patient_report", "locale": "es" },
-    { "term": "pensar en quitarse la vida", "context": "patient_report", "locale": "es" },
-    { "term": "desear no despertar", "context": "patient_report", "locale": "es" }
+    {
+      "term": "pensamientos de suicidio",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "pensar en quitarse la vida",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "desear no despertar",
+      "context": "patient_report",
+      "locale": "es"
+    }
   ],
   "term_kind": "state",
   "granularity": "atomic",
   "risk_weight": 3,
-
   "definition_clinical": {
-    "core": "Pensamientos, ideas o rumiaciones sobre la posibilidad de terminar con la propia vida, que pueden ir desde el deseo pasivo de morir hasta la formulación de planes.",
+    "core": "Pensamientos sobre quitarse la vida, desde deseo pasivo hasta planes específicos.",
     "required_features": [
       "contenido autolítico (muerte propia intencional)",
       "repetición o persistencia en el periodo actual"
     ],
-    "subjective_marker": "El paciente reporta pensamientos de muerte propia con cualidad de intención o deseo.",
-    "behavioral_marker": "No requiere conducta observable; puede coexistir con retiro, desesperanza o búsqueda de medios."
+    "subjective_marker": "Refiere ideas de muerte o suicidio.",
+    "behavioral_marker": "Expresa verbalmente intencionalidad o planificación."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "colateral", "nota_clinica"],
-    "time_relation": ["actual", "reciente"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "colateral",
+      "nota_clinica"
+    ],
+    "time_relation": [
+      "actual",
+      "reciente"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
-      { "marker": "si_present", "type": "boolean", "expected": true },
-      { "marker": "si_type", "type": "categorical", "options": ["pasiva", "activa", "mixta"] },
-      { "marker": "intent_level", "type": "ordinal_0_3", "anchors": ["0=ausente", "1=ambivalente", "2=moderada", "3=alta"] },
-      { "marker": "plan_present", "type": "boolean" },
-      { "marker": "means_access", "type": "ordinal_0_3", "anchors": ["0=no", "1=indirecto", "2=probable", "3=directo"] },
-      { "marker": "timeframe", "type": "categorical", "options": ["sin_plazo", "semanas", "dias", "horas"] }
+      {
+        "marker": "si_present",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "si_type",
+        "type": "categorical",
+        "options": [
+          "pasiva",
+          "activa",
+          "mixta"
+        ]
+      },
+      {
+        "marker": "intent_level",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=ausente",
+          "1=ambivalente",
+          "2=moderada",
+          "3=alta"
+        ]
+      },
+      {
+        "marker": "plan_present",
+        "type": "boolean"
+      },
+      {
+        "marker": "means_access",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=no",
+          "1=indirecto",
+          "2=probable",
+          "3=directo"
+        ]
+      },
+      {
+        "marker": "timeframe",
+        "type": "categorical",
+        "options": [
+          "sin_plazo",
+          "semanas",
+          "dias",
+          "horas"
+        ]
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-12", "relation": "primary_expression", "context": "riesgo_suicida" },
-    { "domain_id": "DOM-11", "relation": "modifier", "context": "juicio_insight_capacidad_acuerdo_seguridad" },
-    { "domain_id": "DOM-09", "relation": "risk_context", "context": "disforia_desesperanza_angustia" }
+    {
+      "domain_id": "DOM-12",
+      "relation": "primary_expression",
+      "context": "riesgo_suicida"
+    },
+    {
+      "domain_id": "DOM-11",
+      "relation": "modifier",
+      "context": "juicio_insight_capacidad_acuerdo_seguridad"
+    },
+    {
+      "domain_id": "DOM-09",
+      "relation": "risk_context",
+      "context": "disforia_desesperanza_angustia"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "RSK_003",
@@ -48,27 +117,28 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Si hay plan + acceso a medios + horizonte corto, escalar a evaluación de inminencia y disposición de seguridad."
     }
   ],
-
   "teaching_notes": [
     "Separar ideación pasiva vs activa reduce falsos positivos y guía la intensidad de intervención.",
     "La ideación puede existir sin depresión mayor; no asumir etiología."
   ],
-
   "cognitive_pitfalls": [
     "Tratar la ideación como un ítem dicotómico sin gradación (plan/medios/tiempo/intención).",
     "Asumir que negar ideación descarta riesgo sin corroborar conducta preparatoria."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Psicopatología descriptiva"],
-    "clinical_tradition": ["Urgencias psiquiátricas", "Evaluación de riesgo"]
+    "phenomenology": [
+      "Psicopatología descriptiva"
+    ],
+    "clinical_tradition": [
+      "Urgencias psiquiátricas",
+      "Evaluación de riesgo"
+    ]
   }
 }

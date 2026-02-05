@@ -4,45 +4,68 @@
   "term_kind": "capacity",
   "granularity": "atomic",
   "risk_weight": 1,
-
   "definition_clinical": {
-    "core": "Disminución marcada o ausencia de la capacidad para experimentar placer ante estímulos habitualmente gratificantes.",
+    "core": "Disminución o pérdida de la capacidad de experimentar placer.",
     "required_features": [
       "pérdida de respuesta hedónica",
       "persistencia temporal",
       "reconocimiento subjetivo del cambio"
     ],
-    "subjective_marker": "El paciente refiere que actividades antes placenteras ya no generan disfrute.",
-    "behavioral_marker": "Reducción de búsqueda de recompensas o participación en actividades gratificantes."
+    "subjective_marker": "Refiere que nada resulta gratificante o placentero.",
+    "behavioral_marker": "Retiro de actividades antes disfrutadas."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica"],
-    "time_relation": ["persistente"],
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "Antipsicóticos con sedación intensa", "risk": "moderate" },
-      { "class": "ISRS/IRSN (aplanamiento emocional en subgrupo)", "risk": "moderate" }
+      {
+        "class": "Antipsicóticos con sedación intensa",
+        "risk": "moderate"
+      },
+      {
+        "class": "ISRS/IRSN (aplanamiento emocional en subgrupo)",
+        "risk": "moderate"
+      }
     ],
     "computable_markers": [
       {
         "marker": "pleasure_capacity",
         "type": "ordinal_0_3",
-        "anchors": ["normal", "reducida", "muy_reducida", "ausente"]
+        "anchors": [
+          "normal",
+          "reducida",
+          "muy_reducida",
+          "ausente"
+        ]
       },
       {
         "marker": "anticipatory_vs_consumatory",
         "type": "categorical",
-        "options": ["anticipatoria", "consumatoria", "ambas"]
+        "options": [
+          "anticipatoria",
+          "consumatoria",
+          "ambas"
+        ]
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" },
-    { "domain_id": "DOM-13", "relation": "syndrome_anchor", "context": "sintomas_negativos_o_depresivos" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "syndrome_anchor",
+      "context": "sintomas_negativos_o_depresivos"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_005",
@@ -57,22 +80,18 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "clinical_attention",
       "message": "Explorar anhedonia anticipatoria vs consumatoria: patrón útil para diferenciar depresión vs síntomas negativos."
     }
   ],
-
   "teaching_notes": [
     "Depresión: suelen caer ambas (anticipatoria y consumatoria).",
     "Psicosis: puede predominar caída anticipatoria con consumatoria relativamente preservada."
   ],
-
   "cognitive_pitfalls": [
     "Confundir anhedonia con apatía o fatiga sin explorar placer consumatorio."
   ],
-
   "version": "1.0.1"
 }

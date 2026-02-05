@@ -2,49 +2,114 @@
   "term_id": "AFF_011",
   "canonical_name": "Irritabilidad",
   "synonyms_and_slang": [
-    { "term": "me enojo por todo", "context": "patient_report", "locale": "es" },
-    { "term": "estoy muy irritable", "context": "patient_report", "locale": "es" },
-    { "term": "me prenden rápido", "context": "patient_report", "locale": "es-MX" }
+    {
+      "term": "me enojo por todo",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "estoy muy irritable",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "me prenden rápido",
+      "context": "patient_report",
+      "locale": "es-MX"
+    }
   ],
   "term_kind": "phenomenon",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Estado de baja tolerancia a estímulos y facilidad desproporcionada para pasar a enojo/hostilidad ante provocaciones mínimas.",
+    "core": "Disposición afectiva irritable con bajo umbral para la ira.",
     "required_features": [
       "umbral bajo para enojo",
       "desproporción respecto al estímulo",
       "reactividad aumentada"
     ],
-    "subjective_marker": "El paciente describe estar 'a punto de explotar' o sentirse 'encendido' con facilidad.",
-    "behavioral_marker": "Respuestas cortantes, aumento de volumen o tensión, conflictos interpersonales frecuentes, conductas impulsivas congruentes con enojo."
+    "subjective_marker": "Se siente fácilmente molesto o impaciente.",
+    "behavioral_marker": "Respuestas bruscas o explosivas ante estímulos menores."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "observacion", "colateral"],
-    "time_relation": ["episodica", "persistente"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion",
+      "colateral"
+    ],
+    "time_relation": [
+      "episodica",
+      "persistente"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "Corticosteroides", "risk": "moderate" },
-      { "class": "Estimulantes", "risk": "moderate" },
-      { "class": "Abstinencia de alcohol/BZD", "risk": "high" },
-      { "class": "Activación por antidepresivos", "risk": "moderate" }
+      {
+        "class": "Corticosteroides",
+        "risk": "moderate"
+      },
+      {
+        "class": "Estimulantes",
+        "risk": "moderate"
+      },
+      {
+        "class": "Abstinencia de alcohol/BZD",
+        "risk": "high"
+      },
+      {
+        "class": "Activación por antidepresivos",
+        "risk": "moderate"
+      }
     ],
     "computable_markers": [
-      { "marker": "anger_threshold_low", "type": "boolean", "expected": true },
-      { "marker": "provocation_disproportion", "type": "boolean", "expected": true },
-      { "marker": "verbal_aggression", "type": "ordinal_0_3", "anchors": ["0=no", "1=leve", "2=moderada", "3=marcada"] },
-      { "marker": "behavioral_impulsivity", "type": "ordinal_0_3", "anchors": ["0=no", "1=leve", "2=moderada", "3=marcada"] }
+      {
+        "marker": "anger_threshold_low",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "provocation_disproportion",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "verbal_aggression",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=no",
+          "1=leve",
+          "2=moderada",
+          "3=marcada"
+        ]
+      },
+      {
+        "marker": "behavioral_impulsivity",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=no",
+          "1=leve",
+          "2=moderada",
+          "3=marcada"
+        ]
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" },
-    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "violencia_autolesion" },
-    { "domain_id": "DOM-13", "relation": "syndrome_builder", "context": "mixto_mania_disforica" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_factor",
+      "context": "violencia_autolesion"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "syndrome_builder",
+      "context": "mixto_mania_disforica"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_008",
@@ -59,27 +124,28 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "management_warning",
       "message": "Si aparece con ↓ necesidad de sueño, ↑ energía o verborrea, considerar estado mixto/hipomaníaco antes de aumentar antidepresivos."
     }
   ],
-
   "teaching_notes": [
     "Pregunta discriminadora: '¿Se enoja rápido o siente miedo/alarma?' (irritabilidad vs ansiedad).",
     "La irritabilidad sostenida en adolescentes también puede ser marcador de depresión, pero no es equivalente a tristeza."
   ],
-
   "cognitive_pitfalls": [
     "Confundir irritabilidad por abstinencia o iatrogenia con 'rasgo de personalidad'.",
     "Usar solo el reporte del paciente sin corroborar con colaterales."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Jaspers"],
-    "clinical_tradition": ["Trastornos del ánimo", "Farmacología clínica"]
+    "phenomenology": [
+      "Jaspers"
+    ],
+    "clinical_tradition": [
+      "Trastornos del ánimo",
+      "Farmacología clínica"
+    ]
   }
 }

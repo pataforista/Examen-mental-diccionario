@@ -221,6 +221,20 @@ const App = {
                         ${term.teaching_notes.map(note => `<li style="margin-bottom: 0.5rem;">${note}</li>`).join('')}
                     </ul>
                 </div>
+
+                ${term.examples && term.examples.length > 0 ? `
+                    <div class="definition-section">
+                        <span class="section-label">Ejemplos Clínicos</span>
+                        <div class="examples-container">
+                            ${term.examples.map(ex => `
+                                <div class="example-item ${ex.type}">
+                                    <div class="example-type-badge">${ex.type === 'patient_quote' ? '💬 Paciente' : '👁️ Observación'}</div>
+                                    <p>${ex.type === 'patient_quote' ? `<em>"${ex.text}"</em>` : ex.text}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
             </div>
         `;
         this.renderView('term');

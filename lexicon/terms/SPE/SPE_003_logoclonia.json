@@ -1,0 +1,31 @@
+{
+    "term_id": "SPE_003",
+    "canonical_name": "Logoclonia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Repetición espasmódica de la última sílaba de una palabra.",
+        "required_features": [
+            "frecuencia alta de repetición de la sílaba final",
+            "asociada a procesos degenerativos"
+        ],
+        "subjective_marker": "No suele ser reportado por el paciente como queja principal.",
+        "behavioral_marker": "Discurso interrumpido por repetición de sílabas finales."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje_motor"
+        }
+    ],
+    "version": "1.0.0"
+}

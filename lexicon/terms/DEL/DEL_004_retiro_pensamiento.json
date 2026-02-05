@@ -1,0 +1,35 @@
+{
+    "term_id": "DEL_004",
+    "canonical_name": "Robo del pensamiento",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Vivencia de que los pensamientos son extraídos o sustraídos por una fuerza externa.",
+        "required_features": [
+            "atribución externa",
+            "sensación de vacío súbito"
+        ],
+        "subjective_marker": "Refiere que le quitan ideas de la mente.",
+        "behavioral_marker": "Describe vacíos mentales atribuidos a intervención externa."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

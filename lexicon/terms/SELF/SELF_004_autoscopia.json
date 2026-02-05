@@ -1,0 +1,31 @@
+{
+    "term_id": "SELF_004",
+    "canonical_name": "Autoscopia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Visión de uno mismo desde fuera del propio cuerpo.",
+        "required_features": [
+            "percepción extracorpórea de la propia imagen",
+            "posible desdoblamiento del yo"
+        ],
+        "subjective_marker": "Describe verse a sí mismo desde arriba o fuera.",
+        "behavioral_marker": "Relata experiencias extracorpóreas visivas."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo"
+        }
+    ],
+    "version": "1.0.0"
+}

@@ -1,0 +1,33 @@
+{
+    "term_id": "SPE_005",
+    "canonical_name": "Disartria",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Dificultad para la articulación de las palabras por alteración en el control muscular.",
+        "required_features": [
+            "comprensión y estructura del lenguaje conservadas",
+            "defecto en la ejecución motora del habla"
+        ],
+        "subjective_marker": "Nota dificultad para 'pronunciar bien' o que se le 'traba la lengua'.",
+        "behavioral_marker": "Habla arrastrada, borrosa o con esfuerzo articulatorio."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente",
+            "episodica"
+        ],
+        "pharmacological_link": true
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje_motor"
+        }
+    ],
+    "version": "1.0.0"
+}

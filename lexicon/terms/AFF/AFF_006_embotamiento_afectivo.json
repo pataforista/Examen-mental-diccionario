@@ -2,26 +2,31 @@
   "term_id": "AFF_006",
   "canonical_name": "Embotamiento afectivo",
   "synonyms_and_slang": [
-    { "term": "afecto embotado", "context": "clinical" }
+    {
+      "term": "afecto embotado",
+      "context": "clinical"
+    }
   ],
   "term_kind": "phenomenological_cluster",
   "granularity": "atomic",
   "risk_weight": 1,
-
   "definition_clinical": {
-    "core": "Reducción marcada en la intensidad y amplitud de la expresión afectiva, con preservación limitada de variación.",
+    "core": "Reducción marcada del rango e intensidad emocional, sin llegar a la ausencia total.",
     "required_features": [
       "expresividad disminuida",
       "reactividad afectiva reducida pero no ausente",
       "prosodia/gestualidad hipomoduladas"
     ],
-    "subjective_marker": "Puede coexistir con vivencia emocional interna parcial o intacta; la clave es la discrepancia con la expresión.",
-    "behavioral_marker": "Expresión facial restringida, prosodia poco modulada, sonrisa breve o tardía, respuesta afectiva tenue ante estímulos."
+    "subjective_marker": "Reconoce sentir poco o no reaccionar emocionalmente.",
+    "behavioral_marker": "Respuesta afectiva limitada ante temas relevantes."
   },
-
   "operationalization": {
-    "detectable_by": ["observacion_clinica"],
-    "time_relation": ["persistente"],
+    "detectable_by": [
+      "observacion_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
     "pharmacological_link": false,
     "confounders_check": [
       {
@@ -36,12 +41,18 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "afecto" },
-    { "domain_id": "DOM-13", "relation": "differential_anchor", "context": "negativos_vs_depresion_sedacion" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "afecto"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "differential_anchor",
+      "context": "negativos_vs_depresion_sedacion"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_005",
@@ -62,23 +73,20 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [],
-
   "teaching_notes": [
     "Documentar reactividad (presente/ausente), prosodia, congruencia con el contenido y variación a lo largo de la entrevista.",
     "Si hay sospecha de hipomimia, cruzar con DOM-04 y revisar fármacos dopaminérgicos/antipsicóticos."
   ],
-
   "cognitive_pitfalls": [
     "Confundir hipomimia extrapiramidal con síntomas negativos.",
     "Interpretar como rasgo de personalidad sin explorar curso, fármacos y psicomotricidad."
   ],
-
   "version": "1.0.1",
-
   "provenance": {
-    "phenomenology": ["Jaspers"],
+    "phenomenology": [
+      "Jaspers"
+    ],
     "clinical_tradition": []
   }
 }

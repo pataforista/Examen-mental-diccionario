@@ -1,0 +1,33 @@
+{
+    "term_id": "SELF_001",
+    "canonical_name": "Despersonalización",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Sentimiento de extrañeza o falta de realidad sobre uno mismo.",
+        "required_features": [
+            "sentimiento de desapego",
+            "conciencia de irrealidad",
+            "insight conservado"
+        ],
+        "subjective_marker": "Describe sentirse como un observador ajeno de su cuerpo.",
+        "behavioral_marker": "Relata sentimientos de extrañeza interna."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "transitoria",
+            "recurrente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo"
+        }
+    ],
+    "version": "1.0.0"
+}

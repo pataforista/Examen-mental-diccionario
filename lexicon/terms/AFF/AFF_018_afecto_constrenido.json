@@ -2,37 +2,59 @@
   "term_id": "AFF_018",
   "canonical_name": "Afecto constreñido",
   "synonyms_and_slang": [
-    { "term": "expresión emocional limitada", "context": "clinical_descriptive", "locale": "es" },
-    { "term": "afecto restringido", "context": "clinical_descriptive", "locale": "es" }
+    {
+      "term": "expresión emocional limitada",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "afecto restringido",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    }
   ],
   "term_kind": "sign",
   "granularity": "atomic",
   "risk_weight": 1,
-
   "definition_clinical": {
-    "core": "Reducción del rango de expresión emocional observable, con preservación de reactividad e intensidad básicas.",
+    "core": "Reducción del rango e intensidad afectiva, menos severa que el embotamiento.",
     "required_features": [
       "rango emocional reducido",
       "reactividad presente",
       "variación afectiva limitada pero existente"
     ],
-    "subjective_marker": "El paciente puede referir emociones, pero sin vivencias extremas.",
-    "behavioral_marker": "Expresión facial y prosodia con variaciones leves; ausencia de expresiones intensas (llanto profundo, risa franca)."
+    "subjective_marker": "Relata sentirse poco expresivo emocionalmente.",
+    "behavioral_marker": "Pocas variaciones emocionales durante la entrevista."
   },
-
   "operationalization": {
-    "detectable_by": ["observacion", "entrevista_clinica"],
-    "time_relation": ["persistente"],
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "Antipsicóticos", "risk": "moderate" },
-      { "class": "Depresores del SNC", "risk": "moderate" }
+      {
+        "class": "Antipsicóticos",
+        "risk": "moderate"
+      },
+      {
+        "class": "Depresores del SNC",
+        "risk": "moderate"
+      }
     ],
     "computable_markers": [
       {
         "marker": "affective_range",
         "type": "ordinal_0_3",
-        "anchors": ["0=normal", "1=ligeramente reducido", "2=moderadamente reducido", "3=marcadamente reducido"],
+        "anchors": [
+          "0=normal",
+          "1=ligeramente reducido",
+          "2=moderadamente reducido",
+          "3=marcadamente reducido"
+        ],
         "expected": "1-2"
       },
       {
@@ -42,12 +64,18 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "expresion_afectiva" },
-    { "domain_id": "DOM-13", "relation": "severity_marker", "context": "mejoria_residual" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "expresion_afectiva"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "severity_marker",
+      "context": "mejoria_residual"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_006",
@@ -62,27 +90,29 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "clinical_attention",
       "message": "El paso de embotamiento a afecto constreñido suele indicar mejoría clínica parcial."
     }
   ],
-
   "teaching_notes": [
     "Es un estado intermedio en el gradiente de reducción afectiva.",
     "Útil para seguimiento longitudinal más que para diagnóstico puntual."
   ],
-
   "cognitive_pitfalls": [
     "Etiquetar como 'normal' una reducción clara del rango afectivo.",
     "Confundir con rasgo de personalidad sin considerar medicación."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Bleuler", "Andreasen"],
-    "clinical_tradition": ["Esquizofrenia residual", "Seguimiento clínico"]
+    "phenomenology": [
+      "Bleuler",
+      "Andreasen"
+    ],
+    "clinical_tradition": [
+      "Esquizofrenia residual",
+      "Seguimiento clínico"
+    ]
   }
 }

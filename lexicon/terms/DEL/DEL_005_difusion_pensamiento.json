@@ -1,0 +1,34 @@
+{
+    "term_id": "DEL_005",
+    "canonical_name": "Difusión del pensamiento",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Creencia de que los pensamientos propios se transmiten o son accesibles para otros.",
+        "required_features": [
+            "pérdida de privacidad del pensamiento"
+        ],
+        "subjective_marker": "Dice que los demás pueden oír sus pensamientos.",
+        "behavioral_marker": "Actúa con cautela por creer que sus ideas se difunden."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

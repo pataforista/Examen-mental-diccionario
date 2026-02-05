@@ -1,19 +1,75 @@
 {
-  "registry_version": "1.0.0",
-  "last_updated": "2025-12-26",
+  "registry_version": "1.2.0",
+  "last_updated": "2026-02-05",
   "prefixes": {
+    "AFF": {
+      "description": "Affect and Mood",
+      "next_seq": 19,
+      "reserved": []
+    },
     "AKT": {
       "description": "Akathisia / phenomena related to motor restlessness",
       "next_seq": 2,
-      "reserved": ["AKT_001"]
+      "reserved": [
+        "AKT_001"
+      ]
+    },
+    "CAT": {
+      "description": "Catatonia and related motor symptoms",
+      "next_seq": 6,
+      "reserved": []
+    },
+    "DEL": {
+      "description": "Delusions and thought content",
+      "next_seq": 9,
+      "reserved": []
+    },
+    "MEM": {
+      "description": "Memory and orientation",
+      "next_seq": 6,
+      "reserved": []
+    },
+    "MOT": {
+      "description": "Motor behavior and psychomotricity",
+      "next_seq": 5,
+      "reserved": []
+    },
+    "PER": {
+      "description": "Perception and sensory phenomena",
+      "next_seq": 15,
+      "reserved": []
+    },
+    "RSK": {
+      "description": "Risk assessment and suicidal behavior",
+      "next_seq": 9,
+      "reserved": []
+    },
+    "SELF": {
+      "description": "Self-awareness and insight",
+      "next_seq": 5,
+      "reserved": []
+    },
+    "SPE": {
+      "description": "Speech and language",
+      "next_seq": 7,
+      "reserved": []
+    },
+    "THO": {
+      "description": "Thought process and form",
+      "next_seq": 10,
+      "reserved": [
+        "THO_008"
+      ]
+    },
+    "SER": {
+      "description": "Serotonin syndrome",
+      "next_seq": 2,
+      "reserved": []
+    },
+    "SNM": {
+      "description": "Neuroleptic Malignant Syndrome",
+      "next_seq": 2,
+      "reserved": []
     }
-  },
-  "terms_index": [
-    {
-      "term_id": "AKT_001",
-      "canonical_name": "Acatisia",
-      "path": "lexicon/terms/AKT/AKT_001_acatisia.json",
-      "status": "active"
-    }
-  ]
+  }
 }

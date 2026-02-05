@@ -2,47 +2,78 @@
   "term_id": "SER_001",
   "canonical_name": "Síndrome Serotoninérgico",
   "synonyms_and_slang": [
-    { "term": "toxicidad serotoninérgica", "context": "clinical" }
+    {
+      "term": "toxicidad serotoninérgica",
+      "context": "clinical"
+    }
   ],
   "term_kind": "syndrome",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Estado agudo por exceso de actividad serotoninérgica central y periférica.",
+    "core": "Síndrome tóxico por exceso de serotonina con alteraciones autonómicas, neuromusculares y mentales.",
     "required_features": [
       "clonus",
       "hiperreflexia",
       "hipertermia",
       "alteración autonómica"
     ],
-    "subjective_marker": "Inquietud intensa con confusión o ansiedad marcada, a menudo de inicio abrupto.",
-    "behavioral_marker": "Clonus inducible o espontáneo, hiperreflexia, temblor, midriasis, diaforesis, agitación."
+    "subjective_marker": "Ansiedad o confusión de inicio agudo tras cambios farmacológicos.",
+    "behavioral_marker": "Clonus, hiperreflexia, temblor, hipertermia y agitación."
   },
-
   "operationalization": {
-    "detectable_by": ["observacion", "exploracion_neurologica"],
-    "time_relation": ["inicio_rapido", "interaccion_farmacologica"],
+    "detectable_by": [
+      "observacion",
+      "exploracion_neurologica"
+    ],
+    "time_relation": [
+      "inicio_rapido",
+      "interaccion_farmacologica"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "ISRS / IRSN", "risk": "moderate" },
-      { "class": "IMAO", "risk": "very_high" },
-      { "class": "Opioides atípicos (Tramadol)", "risk": "high" },
-      { "class": "Antibióticos (Linezolid)", "risk": "high" },
-      { "class": "Triptanes", "risk": "moderate" },
-      { "class": "Antieméticos serotoninérgicos (Ondansetrón)", "risk": "low_to_moderate" }
+      {
+        "class": "ISRS / IRSN",
+        "risk": "moderate"
+      },
+      {
+        "class": "IMAO",
+        "risk": "very_high"
+      },
+      {
+        "class": "Opioides atípicos (Tramadol)",
+        "risk": "high"
+      },
+      {
+        "class": "Antibióticos (Linezolid)",
+        "risk": "high"
+      },
+      {
+        "class": "Triptanes",
+        "risk": "moderate"
+      },
+      {
+        "class": "Antieméticos serotoninérgicos (Ondansetrón)",
+        "risk": "low_to_moderate"
+      }
     ],
     "validation_tool": {
       "name": "Criterios de Hunter",
       "note": "Herramienta sugerida para validación clínica sindromática; no sustituye juicio clínico."
     }
   },
-
   "domain_links": [
-    { "domain_id": "DOM-04", "relation": "primary_expression", "context": "hiperactividad_neuromuscular" },
-    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "riesgo_vital" }
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "hiperactividad_neuromuscular"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_factor",
+      "context": "riesgo_vital"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "SNM_001",
@@ -51,26 +82,21 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Emergencia toxicológica. Suspender agentes serotoninérgicos y escalar manejo según severidad."
     }
   ],
-
   "teaching_notes": [
     "La midriasis apoya el diferencial frente a SNM en cuadros con hipertermia.",
     "Buscar cambios recientes: adición, aumento de dosis o combinación inadvertida de fármacos."
   ],
-
   "cognitive_pitfalls": [
     "Confundir con ansiedad severa o agitación psicótica y añadir fármacos que agravan el cuadro.",
     "No detectar gatillos no psiquiátricos (analgésicos, antibióticos, triptanes)."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
     "phenomenology": [],
     "clinical_tradition": []

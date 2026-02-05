@@ -1,0 +1,34 @@
+{
+    "term_id": "DEL_008",
+    "canonical_name": "Celotipia (Síndrome de Otelo)",
+    "term_kind": "syndrome",
+    "definition_clinical": {
+        "core": "Delirio de infidelidad de la pareja sin base real.",
+        "required_features": [
+            "convicción delirante de traición"
+        ],
+        "subjective_marker": "Persigue pruebas de infidelidad inexistentes.",
+        "behavioral_marker": "Vigilancia excesiva, interrogatorios constantes a la pareja."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

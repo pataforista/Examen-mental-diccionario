@@ -1,0 +1,35 @@
+{
+    "term_id": "MOT_001",
+    "canonical_name": "Ecopraxia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Imitación involuntaria y automática de los movimientos o gestos de otra persona.",
+        "required_features": [
+            "imitación motora",
+            "carácter automático"
+        ],
+        "subjective_marker": "Puede no ser consciente de la imitación o sentirla como impulsiva.",
+        "behavioral_marker": "Repite gestos del entrevistador de forma inmediata."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "observacion_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

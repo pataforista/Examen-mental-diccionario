@@ -2,81 +2,99 @@
   "term_id": "THO_009",
   "canonical_name": "Incoherencia",
   "synonyms_and_slang": [
-    { "term": "ensalada de palabras", "context": "teaching" }
+    {
+      "term": "pensamiento desorganizado",
+      "context": "clinical_general"
+    },
+    {
+      "term": "lenguaje ininteligible",
+      "context": "clinical_descriptive"
+    }
   ],
   "term_kind": "symptom",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Pérdida de inteligibilidad del discurso por ruptura severa de la estructura semántica y/o sintáctica, con imposibilidad de extraer significado consistente.",
+    "core": "Pérdida de la conexión lógica entre palabras o frases, resultando en un discurso ininteligible.",
     "required_features": [
-      "baja inteligibilidad",
-      "ruptura semántica o sintáctica",
-      "falla para sostener una proposición comprensible"
+      "ruptura de sintaxis o semántica básica",
+      "pérdida de la meta-dirección",
+      "incomprensible para el oyente"
     ],
-    "subjective_marker": "Frecuentemente ausente o inaccesible; el paciente puede no reconocer el problema comunicativo.",
-    "behavioral_marker": "Frases con conexiones ilógicas o no rastreables, neologismos o concatenación de palabras sin sentido global."
+    "subjective_marker": "A menudo el paciente no es consciente de la desorganización.",
+    "behavioral_marker": "Discurso que carece de sentido lógico, incluso a nivel de oración."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "observacion_clinica"],
-    "time_relation": ["persistente", "episodico"],
-    "pharmacological_link": false,
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "episodica",
+      "persistente"
+    ],
+    "pharmacological_link": true,
     "computable_markers": [
       {
-        "marker": "local_intelligibility",
+        "marker": "syntax_preserved",
+        "type": "boolean",
+        "expected": false
+      },
+      {
+        "marker": "semantic_link_preserved",
+        "type": "boolean",
+        "expected": false
+      },
+      {
+        "marker": "organization_level",
         "type": "ordinal_0_3",
-        "anchors": ["0=inteligible", "1=ligeramente deteriorado", "2=marcadamente deteriorado", "3=ininteligible"]
+        "anchors": [
+          "0=normal",
+          "1=leve",
+          "2=moderada",
+          "3=incoherencia_total"
+        ]
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-06", "relation": "primary_expression", "context": "curso_forma_pensamiento" },
-    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "seguridad_por_desorganizacion_severa" }
-  ],
-
-  "exclusions": [
     {
-      "term_id": "DEL_00X",
-      "canonical_name": "Delirium (alteración de atención)",
-      "reason": "La incoherencia puede ocurrir en delirium, pero el marcador primario es el déficit atencional fluctuante; requiere evaluación de conciencia/atención.",
-      "ref_status": "forward"
+      "domain_id": "DOM-02",
+      "relation": "primary_expression",
+      "context": "estructura_del_pensamiento"
     },
     {
-      "term_id": "NEU_005",
-      "canonical_name": "Afasia de Wernicke (Sensorial)",
-      "reason": "Déficit neurológico focal. Sospechar en inicio agudo, falla de comprensión de órdenes simples y ausencia de explicación psiquiátrica previa.",
+      "domain_id": "DOM-10",
+      "relation": "risk_marker",
+      "context": "neurocognicion_y_conciencia"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "THO_003",
+      "canonical_name": "Asociaciones laxas",
+      "reason": "En las asociaciones laxas hay vínculos remotos o idiosincrásicos; en la incoherencia el vínculo se ha perdido totalmente.",
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
-      "message": "ALERTA ROJA: En inicio agudo de incoherencia sin historia psiquiátrica previa, descartar ACV/Afasia de Wernicke con evaluación neurológica urgente."
-    },
-    {
-      "type": "safety_critical",
-      "message": "Si hay incoherencia marcada, documentar capacidad para responder a necesidades básicas, evaluar delirium/intoxicación y priorizar seguridad."
+      "message": "Incoherencia de inicio agudo obliga a descartar delirium o patología orgánica cerebral (ictus, encefalitis)."
     }
   ],
-
   "teaching_notes": [
-    "Distinguir: tangencialidad puede ser inteligible pero sin meta; incoherencia pierde inteligibilidad.",
-    "Evitar concluir psicosis primaria sin descartar delirium/intoxicación en cuadros agudos o fluctuantes."
+    "Es el grado máximo de desorganización del pensamiento.",
+    "Documentar si aparece en conciencia clara (esquizofrenia) o nublada (delirium)."
   ],
-
   "cognitive_pitfalls": [
-    "Interpretar incoherencia como 'mala cooperación' o barrera cultural sin corroborar atención y sensorio.",
-    "No activar evaluación médica cuando el patrón es agudo/fluctuante."
+    "Asumir psicosis crónica sin valorar nivel de conciencia.",
+    "No diferenciar de afasia sensorial severa."
   ],
-
-  "version": "1.0.1",
-
+  "version": "1.0.0",
   "provenance": {
-    "phenomenology": [],
-    "clinical_tradition": []
+    "phenomenology": [
+      "Oyebode",
+      "Jaspers"
+    ]
   }
 }

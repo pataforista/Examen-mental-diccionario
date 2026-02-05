@@ -1,0 +1,35 @@
+{
+    "term_id": "MOT_002",
+    "canonical_name": "Flexibilidad cérea",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Resistencia plástica al movimiento pasivo, permitiendo que el paciente mantenga posturas impuestas.",
+        "required_features": [
+            "resistencia plástica (como cera)",
+            "mantenimiento de postura"
+        ],
+        "subjective_marker": "No ofrece resistencia ni iniciativa motora.",
+        "behavioral_marker": "El paciente permite ser 'moldeado' y retiene la posición incómoda."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "exploracion_fisica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

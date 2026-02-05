@@ -2,77 +2,91 @@
   "term_id": "THO_005",
   "canonical_name": "Circunstancialidad",
   "synonyms_and_slang": [
-    { "term": "verbosidad con rodeos", "context": "clinical" }
+    {
+      "term": "pensamiento prolijo",
+      "context": "clinical_descriptive"
+    },
+    {
+      "term": "detallismo excesivo",
+      "context": "patient_report_interpretation"
+    }
   ],
   "term_kind": "symptom",
   "granularity": "atomic",
   "risk_weight": 0,
-
   "definition_clinical": {
-    "core": "Estilo discursivo con inclusión excesiva de detalles periféricos, pero que finalmente regresa al objetivo comunicativo y responde la pregunta.",
+    "core": "Pensamiento con exceso de detalles irrelevantes pero que eventualmente alcanza la meta.",
     "required_features": [
-      "sobreinclusión de detalles",
-      "latencia o duración aumentada",
-      "retorno eventual al tema/pregunta"
+      "pérdida de jerarquía de ideas",
+      "detalles triviales abundantes",
+      "mantenimiento de la meta final"
     ],
-    "subjective_marker": "El paciente puede referir que 'se explica mucho' o que le cuesta ir al punto.",
-    "behavioral_marker": "Respuestas largas, con digresiones pertinentes o semipertinentes, pero con cierre que contesta lo preguntado."
+    "subjective_marker": "Describe que le cuesta 'ir al punto' o que se distrae con detalles.",
+    "behavioral_marker": "Relato pausado, prolijo, con múltiples incisos antes de responder."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica"],
-    "time_relation": ["persistente", "situacional"],
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente",
+      "episodica"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {
-        "marker": "returns_to_question",
+        "marker": "reaches_goal",
         "type": "boolean",
         "expected": true
       },
       {
-        "marker": "detail_overinclusion",
+        "marker": "detail_density",
         "type": "ordinal_0_3",
-        "anchors": ["0=ausente", "1=leve", "2=moderado", "3=marcado"]
+        "anchors": [
+          "0=normal",
+          "1=leve",
+          "2=moderada",
+          "3=extrema"
+        ]
+      },
+      {
+        "marker": "speech_tempo",
+        "type": "categorical",
+        "options": [
+          "lento",
+          "normal",
+          "rapido"
+        ]
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-06", "relation": "primary_expression", "context": "curso_forma_pensamiento" },
-    { "domain_id": "DOM-13", "relation": "differential_anchor", "context": "desorganizacion_del_pensamiento" }
+    {
+      "domain_id": "DOM-02",
+      "relation": "primary_expression",
+      "context": "curso_del_pensamiento"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "THO_006",
       "canonical_name": "Tangencialidad",
-      "reason": "En la tangencialidad no hay retorno al objetivo comunicativo; se abandona la pregunta y no se contesta.",
-      "ref_status": "forward"
-    },
-    {
-      "term_id": "THO_008",
-      "canonical_name": "Fuga de ideas",
-      "reason": "En fuga hay aceleración y asociación rápida (a menudo con ánimo elevado); en circunstancialidad predomina sobreexplicación sin aceleración necesaria.",
+      "reason": "En la circunstancialidad se llega a la meta; en la tangencialidad se pierde el hilo y no se alcanza la respuesta.",
       "ref_status": "forward"
     }
   ],
-
   "alerts": [],
-
   "teaching_notes": [
-    "La clave práctica: si al final sí responde la pregunta, favorece circunstancialidad.",
-    "Cuantificar el 'costo' (tiempo/rodeos) ayuda al seguimiento longitudinal."
+    "Diferenciar de rasgos de personalidad perfeccionista o ansiedad social (donde el detalle es por precisión) frente a síntoma psicopatológico (donde se pierde la jerarquía)."
   ],
-
   "cognitive_pitfalls": [
-    "Etiquetar como desorganización psicótica cuando en realidad es estilo comunicativo o ansiedad por ser entendido.",
-    "Confundir con tangencialidad y sobreestimar severidad."
+    "Interrumpir precozmente y no verificar si el paciente alcanza la meta (meta-direction)."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
-    "phenomenology": [],
-    "clinical_tradition": []
+    "phenomenology": [
+      "Jaspers",
+      "Schneider"
+    ]
   }
 }

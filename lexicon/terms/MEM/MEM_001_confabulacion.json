@@ -1,0 +1,35 @@
+{
+    "term_id": "MEM_003",
+    "canonical_name": "Confabulación",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Producción de falsos recuerdos para rellenar lagunas de memoria, sin intención de engañar.",
+        "required_features": [
+            "falso recuerdo accidental",
+            "asociado a amnesia"
+        ],
+        "subjective_marker": "Relata eventos inexistentes como si fueran reales para cubrir olvidos.",
+        "behavioral_marker": "Inventa historias coherentes o fantásticas ante preguntas sobre su pasado reciente."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

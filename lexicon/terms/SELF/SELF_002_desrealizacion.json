@@ -1,0 +1,32 @@
+{
+    "term_id": "SELF_002",
+    "canonical_name": "Desrealización",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Sentimiento de extrañeza o falta de realidad sobre el entorno.",
+        "required_features": [
+            "entorno percibido como artificial o lejano",
+            "insight conservado"
+        ],
+        "subjective_marker": "Describe el mundo como una película o un escenario.",
+        "behavioral_marker": "Relata extrañeza ante objetos familiares."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "transitoria",
+            "recurrente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo"
+        }
+    ],
+    "version": "1.0.0"
+}

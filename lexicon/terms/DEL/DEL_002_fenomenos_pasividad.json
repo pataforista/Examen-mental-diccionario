@@ -1,0 +1,41 @@
+{
+    "term_id": "DEL_002",
+    "canonical_name": "Fenómenos de pasividad",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Experiencias de control externo sobre pensamientos, emociones o actos propios.",
+        "required_features": [
+            "atribución externa",
+            "pérdida de agencia"
+        ],
+        "subjective_marker": "Dice que sus acciones o pensamientos son impuestos desde fuera.",
+        "behavioral_marker": "Describe una fuerza externa que dirige su conducta o mente."
+    },
+    "synonyms_and_slang": [
+        {
+            "term": "fenómenos de control",
+            "context": "clinical"
+        }
+    ],
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

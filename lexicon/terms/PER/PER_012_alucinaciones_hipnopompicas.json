@@ -2,43 +2,75 @@
   "term_id": "PER_012",
   "canonical_name": "Alucinaciones hipnopómpicas",
   "synonyms_and_slang": [
-    { "term": "alucinaciones al despertar", "context": "patient_report" }
+    {
+      "term": "alucinaciones al despertar",
+      "context": "patient_report"
+    }
   ],
   "term_kind": "phenomenon",
   "granularity": "atomic",
   "risk_weight": 0,
-
   "definition_clinical": {
-    "core": "Experiencias perceptivas vívidas que aparecen en la transición sueño-vigilia (periodo de despertar).",
+    "core": "Percepciones falsas durante la transición de sueño a vigilia.",
     "required_features": [
       "relación temporal con el despertar",
       "modalidad perceptiva definida",
       "curso episódico y breve"
     ],
-    "subjective_marker": "El paciente suele describirlas como fenómenos 'al abrir los ojos' o 'recién despierto'.",
-    "behavioral_marker": "Relato de percepciones al despertar; puede existir sobresalto o confusión breve, usualmente con insight parcial."
+    "subjective_marker": "Refiere imágenes o sonidos al despertar.",
+    "behavioral_marker": "Episodios breves ligados al despertar."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica"],
-    "time_relation": ["episodica"],
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "episodica"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
-      { "marker": "sleep_transition", "type": "categorical", "options": ["hipnagogica", "hipnopompica", "no_relacionada"] },
+      {
+        "marker": "sleep_transition",
+        "type": "categorical",
+        "options": [
+          "hipnagogica",
+          "hipnopompica",
+          "no_relacionada"
+        ]
+      },
       {
         "marker": "sensory_modality",
         "type": "categorical",
-        "options": ["auditiva", "visual", "olfatoria", "gustativa", "tactil", "somatica", "mixta", "no_especificada"]
+        "options": [
+          "auditiva",
+          "visual",
+          "olfatoria",
+          "gustativa",
+          "tactil",
+          "somatica",
+          "mixta",
+          "no_especificada"
+        ]
       },
-      { "marker": "daytime_occurrence", "type": "boolean", "expected": false }
+      {
+        "marker": "daytime_occurrence",
+        "type": "boolean",
+        "expected": false
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
-    { "domain_id": "DOM-13", "relation": "differential_anchor", "context": "psicosis_vs_fenomenos_del_sueno" }
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "differential_anchor",
+      "context": "psicosis_vs_fenomenos_del_sueno"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "PER_001",
@@ -47,26 +79,21 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "management_warning",
       "message": "Si coexisten con parálisis del sueño, somnolencia diurna o cataplejía, priorizar evaluación de trastorno del sueño."
     }
   ],
-
   "teaching_notes": [
     "Son comunes; la temporalidad al despertar define el fenómeno.",
     "Registrar parálisis del sueño y factores precipitantes (privación de sueño, sustancias)."
   ],
-
   "cognitive_pitfalls": [
     "Asumir psicosis sin documentar temporalidad al despertar.",
     "No diferenciar de delirium si el paciente está confuso de forma sostenida."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
     "phenomenology": [],
     "clinical_tradition": []

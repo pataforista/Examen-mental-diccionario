@@ -1,0 +1,37 @@
+{
+    "term_id": "SPE_006",
+    "canonical_name": "Mutismo",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Ausencia total de habla en presencia de conciencia y capacidad física para hablar.",
+        "required_features": [
+            "ausencia de respuesta verbal",
+            "conciencia conservada (a diferencia del coma)"
+        ],
+        "subjective_marker": "No hay reporte verbal directo.",
+        "behavioral_marker": "El paciente permanece en silencio total ante preguntas o estímulos."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion"
+        ],
+        "time_relation": [
+            "persistente",
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje_o_voluntad"
+        },
+        {
+            "domain_id": "DOM-04",
+            "relation": "risk_context",
+            "context": "catatonia"
+        }
+    ],
+    "version": "1.0.0"
+}

@@ -2,43 +2,79 @@
   "term_id": "RSK_006",
   "canonical_name": "Acceso a medios letales",
   "synonyms_and_slang": [
-    { "term": "tiene arma", "context": "colateral", "locale": "es" },
-    { "term": "guardó pastillas", "context": "colateral", "locale": "es" },
-    { "term": "tiene cuerda/cuchillos", "context": "clinical_descriptive", "locale": "es" }
+    {
+      "term": "tiene arma",
+      "context": "colateral",
+      "locale": "es"
+    },
+    {
+      "term": "guardó pastillas",
+      "context": "colateral",
+      "locale": "es"
+    },
+    {
+      "term": "tiene cuerda/cuchillos",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    }
   ],
   "term_kind": "risk_factor",
   "granularity": "atomic",
   "risk_weight": 5,
-
   "definition_clinical": {
-    "core": "Disponibilidad práctica de medios con potencial letal (p. ej., arma de fuego, grandes cantidades de fármacos, pesticidas, lugares/alturas) que incrementa la capacidad inmediata para causar daño grave o muerte.",
+    "core": "Disponibilidad física de medios letales para suicidio.",
     "required_features": [
       "disponibilidad práctica (no solo ideación)",
       "medio con potencial letal"
     ],
-    "subjective_marker": "El paciente reconoce acceso o refiere haberlo asegurado; puede negarlo pese a evidencia colateral.",
-    "behavioral_marker": "Presencia verificable de medios, acopio, o acceso sin barreras relevantes."
+    "subjective_marker": "Reconoce acceso a armas, fármacos u otros medios.",
+    "behavioral_marker": "Posee o tiene a mano medios letales."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "colateral", "revision_entorno", "expediente_medico"],
-    "time_relation": ["actual", "reciente"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "colateral",
+      "revision_entorno",
+      "expediente_medico"
+    ],
+    "time_relation": [
+      "actual",
+      "reciente"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {
         "marker": "means_category",
         "type": "categorical",
-        "options": ["arma_fuego", "farmacos", "tóxicos_pesticidas", "asfixia", "altura", "cortantes", "otros"]
+        "options": [
+          "arma_fuego",
+          "farmacos",
+          "tóxicos_pesticidas",
+          "asfixia",
+          "altura",
+          "cortantes",
+          "otros"
+        ]
       },
       {
         "marker": "access_level",
         "type": "ordinal_0_3",
-        "anchors": ["0=sin_acceso", "1=posible", "2=probable", "3=directo_inmediato"]
+        "anchors": [
+          "0=sin_acceso",
+          "1=posible",
+          "2=probable",
+          "3=directo_inmediato"
+        ]
       },
       {
         "marker": "barriers_present",
         "type": "ordinal_0_3",
-        "anchors": ["0=ninguna", "1=baja", "2=moderada", "3=alta"]
+        "anchors": [
+          "0=none",
+          "1=baja",
+          "2=moderada",
+          "3=alta"
+        ]
       },
       {
         "marker": "means_secured",
@@ -47,33 +83,36 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-12", "relation": "primary_expression", "context": "riesgo_suicida_y_violencia" }
+    {
+      "domain_id": "DOM-12",
+      "relation": "primary_expression",
+      "context": "riesgo_suicida_y_violencia"
+    }
   ],
-
   "exclusions": [],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Acceso directo a medios letales incrementa inminencia. Priorizar restricción de medios y plan de seguridad/contención."
     }
   ],
-
   "teaching_notes": [
     "El acceso a medios puede cambiar el riesgo en horas aunque el ánimo no cambie.",
     "Separar 'tiene idea' de 'tiene medio' reduce errores de disposición."
   ],
-
   "cognitive_pitfalls": [
     "Confiar solo en autoinforme; corroborar con colateral/entorno cuando sea posible.",
     "No preguntar por acopio de fármacos 'legales' (polifarmacia, recetas, opioides)."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Evaluación clínica de riesgo"],
-    "clinical_tradition": ["Restricción de medios", "Urgencias"]
+    "phenomenology": [
+      "Evaluación clínica de riesgo"
+    ],
+    "clinical_tradition": [
+      "Restricción de medios",
+      "Urgencias"
+    ]
   }
 }

@@ -1,0 +1,50 @@
+{
+    "term_id": "DEL_001",
+    "canonical_name": "Delirio primario (autóctono)",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Creencia delirante que surge sin una causa psicológica comprensible y es irreductible a la experiencia previa.",
+        "required_features": [
+            "irrupción súbita",
+            "certeza delirante",
+            "incorregibilidad"
+        ],
+        "subjective_marker": "Refiere una certeza súbita y autoevidente de una nueva creencia.",
+        "behavioral_marker": "Expresa convicción absoluta sin base externa coherente."
+    },
+    "synonyms_and_slang": [
+        {
+            "term": "intuición delirante",
+            "context": "clinical"
+        },
+        {
+            "term": "percepción delirante",
+            "context": "clinical"
+        },
+        {
+            "term": "atmósfera delirante",
+            "context": "clinical"
+        }
+    ],
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

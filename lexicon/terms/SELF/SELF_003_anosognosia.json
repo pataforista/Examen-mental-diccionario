@@ -1,0 +1,32 @@
+{
+    "term_id": "SELF_003",
+    "canonical_name": "Anosognosia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Incapacidad para reconocer o percibir la propia enfermedad o déficit funcional.",
+        "required_features": [
+            "déficit evidente no reconocido",
+            "ausencia de negación voluntaria"
+        ],
+        "subjective_marker": "Niega tener problemas médicos o cognitivos.",
+        "behavioral_marker": "Actúa ignorando sus limitaciones físicas o mentales."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "colateral"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "insight"
+        }
+    ],
+    "version": "1.0.0"
+}

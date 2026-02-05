@@ -1,0 +1,33 @@
+{
+    "term_id": "THO_002",
+    "canonical_name": "Bloqueo del pensamiento",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Interrupción súbita e involuntaria del hilo del pensamiento.",
+        "required_features": [
+            "cese brusco del discurso",
+            "incapacidad para retomar el tema",
+            "frecuencia alta en esquizofrenia"
+        ],
+        "subjective_marker": "Dice que 'se le borró la mente' o que le 'robaron la idea'.",
+        "behavioral_marker": "Se detiene a mitad de una frase y permanece en silencio, pareciendo perplejo."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "curso_del_pensamiento"
+        }
+    ],
+    "version": "1.0.0"
+}

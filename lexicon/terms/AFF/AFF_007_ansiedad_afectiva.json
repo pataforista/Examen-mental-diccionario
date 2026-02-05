@@ -4,47 +4,64 @@
   "term_kind": "state",
   "granularity": "atomic",
   "risk_weight": 1,
-
   "definition_clinical": {
-    "core": "Estado afectivo basal caracterizado por tensión, inquietud y aprensión persistentes, sin un objeto cognitivo claramente definido.",
+    "core": "Estado de ánimo ansioso con miedo, tensión o preocupación persistente.",
     "required_features": [
       "tono afectivo ansioso predominante",
       "persistencia temporal",
       "malestar subjetivo"
     ],
-    "subjective_marker": "El paciente refiere sentirse nervioso, tenso o intranquilo la mayor parte del tiempo, sin una causa específica.",
-    "behavioral_marker": "Postura tensa, hipervigilancia, expresión facial preocupada."
+    "subjective_marker": "Refiere nerviosismo, pavor o sensación de amenaza.",
+    "behavioral_marker": "Inquietud, sudoración, tensión muscular o taquicardia observables."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "observacion"],
-    "time_relation": ["persistente"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {
         "marker": "baseline_affect",
         "type": "categorical",
-        "options": ["calmo", "ansioso", "disforico"],
+        "options": [
+          "calmo",
+          "ansioso",
+          "disforico"
+        ],
         "expected": "ansioso"
       },
       {
         "marker": "object_focus",
         "type": "categorical",
-        "options": ["difuso", "definido"],
+        "options": [
+          "difuso",
+          "definido"
+        ],
         "expected": "difuso"
       },
       {
         "marker": "somatic_tension",
         "type": "ordinal_0_3",
-        "anchors": ["ausente", "leve", "moderada", "marcada"]
+        "anchors": [
+          "ausente",
+          "leve",
+          "moderada",
+          "marcada"
+        ]
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AKT_001",
@@ -59,22 +76,18 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "clinical_attention",
       "message": "Ansiedad afectiva persistente puede amplificar síntomas somáticos y cognitivos; evaluar curso y factores precipitantes."
     }
   ],
-
   "teaching_notes": [
     "Describe el tono emocional, no un diagnóstico.",
     "La ausencia de un objeto definido es el anclaje fenomenológico."
   ],
-
   "cognitive_pitfalls": [
     "Confundir ansiedad afectiva con acatisia o con preocupación cognitiva estructurada."
   ],
-
   "version": "1.0.1"
 }

@@ -2,26 +2,32 @@
   "term_id": "CAT_005",
   "canonical_name": "Catatonía Maligna",
   "synonyms_and_slang": [
-    { "term": "catatonía letal", "context": "historical" }
+    {
+      "term": "catatonía letal",
+      "context": "historical"
+    }
   ],
   "term_kind": "syndrome",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Estado catatónico grave con compromiso autonómico e hipertermia, de evolución potencialmente fatal.",
+    "core": "Síndrome catatónico agudo con hipertermia, rigidez severa e inestabilidad autonómica.",
     "required_features": [
       "síndrome catatónico (estupor o excitación con signos catatónicos nucleares)",
       "inestabilidad autonómica",
       "hipertermia"
     ],
-    "subjective_marker": "Experiencia interna inaccesible o no verbalizable; la fenomenología puede ser opaca por mutismo/estupor.",
-    "behavioral_marker": "Mutismo, rigidez o posturas mantenidas, negativismo, fluctuaciones entre inmovilidad y excitación, signos autonómicos."
+    "subjective_marker": "Malestar extremo o confusión si hay excitación; puede haber estupor.",
+    "behavioral_marker": "Rigidez intensa, fiebre alta, alteración autonómica marcada."
   },
-
   "operationalization": {
-    "detectable_by": ["observacion_clinica"],
-    "time_relation": ["curso_variable", "empeoramiento_progresivo"],
+    "detectable_by": [
+      "observacion_clinica"
+    ],
+    "time_relation": [
+      "curso_variable",
+      "empeoramiento_progresivo"
+    ],
     "pharmacological_link": "withdrawal_linked",
     "risk_factors_history": [
       "abstinencia brusca de benzodiacepinas",
@@ -29,12 +35,18 @@
       "suspensión de clozapina"
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-04", "relation": "primary_expression", "context": "catatonia" },
-    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "riesgo_vital" }
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "catatonia"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_factor",
+      "context": "riesgo_vital"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "SNM_001",
@@ -43,26 +55,21 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Emergencia psiquiátrica. Considerar benzodiacepinas y evaluación para TEC urgente si no hay respuesta o hay deterioro."
     }
   ],
-
   "teaching_notes": [
     "La ausencia de exposición a neurolépticos no excluye gravedad; el eje es síndrome catatónico + disautonomía.",
     "La CPK puede elevarse, pero es más variable que en SNM."
   ],
-
   "cognitive_pitfalls": [
     "Confundir con depresión severa, negativismo o 'falta de colaboración'.",
     "Retrasar tratamiento mientras se interpreta como cuadro primariamente conductual."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
     "phenomenology": [],
     "clinical_tradition": []

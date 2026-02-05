@@ -1,0 +1,34 @@
+{
+    "term_id": "THO_004",
+    "canonical_name": "Ensalada de palabras",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Grado extremo de desorganización donde las palabras se emiten sin orden ni sentido gramatical.",
+        "required_features": [
+            "pérdida total de sintaxis",
+            "mezcla de palabras sin vínculo semántico",
+            "ininteligibilidad absoluta"
+        ],
+        "subjective_marker": "No hay reporte subjetivo coherente.",
+        "behavioral_marker": "Emisión de palabras sueltas o fragmentos de frases sin conexión."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente",
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "desorganizacion_extrema"
+        }
+    ],
+    "version": "1.0.0"
+}

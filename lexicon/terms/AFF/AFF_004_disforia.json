@@ -2,48 +2,106 @@
   "term_id": "AFF_004",
   "canonical_name": "Disforia",
   "synonyms_and_slang": [
-    { "term": "malestar anímico", "context": "clinical_descriptive", "locale": "es-MX" },
-    { "term": "me siento mal por dentro", "context": "patient_report", "locale": "es" },
-    { "term": "irritable y triste a la vez", "context": "patient_report", "locale": "es" }
+    {
+      "term": "malestar anímico",
+      "context": "clinical_descriptive",
+      "locale": "es-MX"
+    },
+    {
+      "term": "me siento mal por dentro",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "irritable y triste a la vez",
+      "context": "patient_report",
+      "locale": "es"
+    }
   ],
   "term_kind": "phenomenon",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Estado anímico subjetivamente desagradable y tenso, con mezcla variable de irritabilidad, ansiedad y tristeza, sin una cualidad dominante estable.",
+    "core": "Estado de ánimo desagradable con malestar, inquietud o infelicidad.",
     "required_features": [
       "valencia negativa (malestar)",
       "tensión subjetiva",
       "mezcla afectiva (no un polo único)"
     ],
-    "subjective_marker": "El paciente describe 'incomodidad', 'fastidio', 'desasosiego', 'estar de malas', con dificultad para nombrar una emoción única.",
-    "behavioral_marker": "Gestualidad de fastidio, queja somática inespecífica, baja tolerancia a estímulos, reactividad aumentada a frustración."
+    "subjective_marker": "Se siente incómodo, irritable o ansioso sin alivio claro.",
+    "behavioral_marker": "Expresión tensa, irritabilidad y quejas de malestar persistente."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "observacion"],
-    "time_relation": ["persistente", "fluctuante"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "persistente",
+      "fluctuante"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "Antidepresivos (activación/viraje)", "risk": "moderate" },
-      { "class": "Estimulantes", "risk": "moderate" },
-      { "class": "Abstinencia de alcohol/BZD", "risk": "high" }
+      {
+        "class": "Antidepresivos (activación/viraje)",
+        "risk": "moderate"
+      },
+      {
+        "class": "Estimulantes",
+        "risk": "moderate"
+      },
+      {
+        "class": "Abstinencia de alcohol/BZD",
+        "risk": "high"
+      }
     ],
     "computable_markers": [
-      { "marker": "valence", "type": "categorical", "options": ["negativa"] },
-      { "marker": "mixed_affect", "type": "boolean", "expected": true },
-      { "marker": "dominant_emotion_stable", "type": "boolean", "expected": false },
-      { "marker": "reactivity_to_frustration", "type": "ordinal_0_3", "anchors": ["0=nula", "1=leve", "2=moderada", "3=marcada"] }
+      {
+        "marker": "valence",
+        "type": "categorical",
+        "options": [
+          "negativa"
+        ]
+      },
+      {
+        "marker": "mixed_affect",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "dominant_emotion_stable",
+        "type": "boolean",
+        "expected": false
+      },
+      {
+        "marker": "reactivity_to_frustration",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=nula",
+          "1=leve",
+          "2=moderada",
+          "3=marcada"
+        ]
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" },
-    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "agitación_suicidio_mixtos" },
-    { "domain_id": "DOM-13", "relation": "syndrome_builder", "context": "mixto_depresivo_agitado" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_factor",
+      "context": "agitación_suicidio_mixtos"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "syndrome_builder",
+      "context": "mixto_depresivo_agitado"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_001",
@@ -64,27 +122,29 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Si coexiste con disminución de necesidad de sueño, incremento de energía o aceleración psicomotora, pensar en estado mixto y evitar escalamiento automático de antidepresivos."
     }
   ],
-
   "teaching_notes": [
     "Útil como 'ladrillo' para mixtos: disforia + activación + irritabilidad ≠ depresión simple.",
     "Pregunta discriminadora: '¿Está triste o más bien está incómodo/irritable y tenso?'"
   ],
-
   "cognitive_pitfalls": [
     "Etiquetar como depresión un cuadro mixto por la queja de malestar.",
     "Reducir disforia a 'ansiedad' e ignorar el componente irritativo/activado."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Jaspers", "Berrios"],
-    "clinical_tradition": ["Urgencias psiquiátricas", "Trastornos del ánimo"]
+    "phenomenology": [
+      "Jaspers",
+      "Berrios"
+    ],
+    "clinical_tradition": [
+      "Urgencias psiquiátricas",
+      "Trastornos del ánimo"
+    ]
   }
 }

@@ -2,44 +2,89 @@
   "term_id": "RSK_002",
   "canonical_name": "Conducta suicida preparatoria",
   "synonyms_and_slang": [
-    { "term": "conducta preparatoria", "context": "clinical_descriptive", "locale": "es" },
-    { "term": "preparativos para suicidarse", "context": "clinical_descriptive", "locale": "es" }
+    {
+      "term": "conducta preparatoria",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "preparativos para suicidarse",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    }
   ],
   "term_kind": "behavior",
   "granularity": "atomic",
   "risk_weight": 4,
-
   "definition_clinical": {
-    "core": "Acciones concretas dirigidas a posibilitar un suicidio (p. ej., acopio de fármacos, compra de arma, elaboración de nota), sin constituir un intento actual.",
+    "core": "Conductas de preparación para suicidio (planificación, ensayo, acumulación de medios).",
     "required_features": [
       "acción observable o verificable",
       "finalidad autolítica",
       "ausencia de evento autolesivo consumado en el episodio"
     ],
-    "subjective_marker": "Puede existir con o sin verbalización de ideación.",
-    "behavioral_marker": "Compra/obtención de medios, acopio, ensayo, despedidas, nota, selección de lugar/tiempo."
+    "subjective_marker": "Reconoce haber planificado o preparado el acto.",
+    "behavioral_marker": "Búsqueda de medios, notas o preparación logística."
   },
-
   "operationalization": {
-    "detectable_by": ["colateral", "observacion", "revisión_objetos", "nota_clinica"],
-    "time_relation": ["actual", "reciente"],
+    "detectable_by": [
+      "colateral",
+      "observacion",
+      "revisión_objetos",
+      "nota_clinica"
+    ],
+    "time_relation": [
+      "actual",
+      "reciente"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
-      { "marker": "preparatory_act_present", "type": "boolean", "expected": true },
+      {
+        "marker": "preparatory_act_present",
+        "type": "boolean",
+        "expected": true
+      },
       {
         "marker": "preparatory_act_type",
         "type": "categorical",
-        "options": ["adquisicion_medios", "acopio_medios", "ensayo", "nota", "despedidas", "seleccion_lugar_tiempo"]
+        "options": [
+          "adquisicion_medios",
+          "acopio_medios",
+          "ensayo",
+          "nota",
+          "despedidas",
+          "seleccion_lugar_tiempo"
+        ]
       },
-      { "marker": "means_access", "type": "ordinal_0_3", "anchors": ["0=no", "1=indirecto", "2=probable", "3=directo"] },
-      { "marker": "secrecy_level", "type": "ordinal_0_3", "anchors": ["0=abierto", "1=parcial", "2=secreto", "3=oculto_activamente"] }
+      {
+        "marker": "means_access",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=no",
+          "1=indirecto",
+          "2=probable",
+          "3=directo"
+        ]
+      },
+      {
+        "marker": "secrecy_level",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=abierto",
+          "1=parcial",
+          "2=secreto",
+          "3=oculto_activamente"
+        ]
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-12", "relation": "primary_expression", "context": "riesgo_suicida" }
+    {
+      "domain_id": "DOM-12",
+      "relation": "primary_expression",
+      "context": "riesgo_suicida"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "RSK_003",
@@ -48,26 +93,27 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_critical",
       "message": "Conducta preparatoria es un marcador de alta inminencia. No trivializar aunque niegue ideación."
     }
   ],
-
   "teaching_notes": [
     "Es el mejor predictor clínico cuando el paciente niega ideación por vergüenza o temor a hospitalización."
   ],
-
   "cognitive_pitfalls": [
     "Confiar en negación verbal sin explorar conducta preparatoria y acceso a medios.",
     "Registrar como 'ideación' y perder el matiz conductual (impacta disposición)."
   ],
-
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": ["Psicopatología descriptiva"],
-    "clinical_tradition": ["Urgencias", "Prevención del suicidio"]
+    "phenomenology": [
+      "Psicopatología descriptiva"
+    ],
+    "clinical_tradition": [
+      "Urgencias",
+      "Prevención del suicidio"
+    ]
   }
 }

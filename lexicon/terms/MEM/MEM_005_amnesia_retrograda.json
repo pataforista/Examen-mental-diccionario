@@ -1,0 +1,34 @@
+{
+    "term_id": "MEM_002",
+    "canonical_name": "Amnesia retrógrada",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Incapacidad para recuperar recuerdos previos a un evento o lesión.",
+        "required_features": [
+            "fallo en la recuperación de pasado"
+        ],
+        "subjective_marker": "No recuerda eventos antes del accidente/lesión.",
+        "behavioral_marker": "Lagunas en la biografía previa."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

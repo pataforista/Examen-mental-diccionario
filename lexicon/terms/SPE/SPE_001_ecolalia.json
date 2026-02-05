@@ -1,0 +1,33 @@
+{
+    "term_id": "SPE_001",
+    "canonical_name": "Ecolalia",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Repetición automática de las últimas palabras o frases dichas por otra persona.",
+        "required_features": [
+            "repetición inmediata o diferida",
+            "falta de intención comunicativa original"
+        ],
+        "subjective_marker": "No suele reportarlo el paciente.",
+        "behavioral_marker": "Repite lo que el entrevistador acaba de decir."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "persistente",
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje"
+        }
+    ],
+    "version": "1.0.0"
+}

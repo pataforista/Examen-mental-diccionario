@@ -1,0 +1,33 @@
+{
+    "term_id": "THO_007",
+    "canonical_name": "Neologismos",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Creación de palabras nuevas con significado privado o idiosincrásico para el paciente.",
+        "required_features": [
+            "palabra inexistente en el léxico común",
+            "significado específico para el paciente",
+            "no es una simple distorsión fonética"
+        ],
+        "subjective_marker": "Usa palabras propias para describir experiencias.",
+        "behavioral_marker": "Emplea términos inventados en su discurso espontáneo."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente",
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "asociaciones_idiosincrasicas"
+        }
+    ],
+    "version": "1.0.0"
+}

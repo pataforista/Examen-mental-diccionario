@@ -1,0 +1,35 @@
+{
+    "term_id": "DEL_003",
+    "canonical_name": "Inserción del pensamiento",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Vivencia de que pensamientos ajenos son introducidos en la mente por una agencia externa.",
+        "required_features": [
+            "atribución externa",
+            "experiencia de pensamiento ajeno"
+        ],
+        "subjective_marker": "Siente que ideas extrañas fueron puestas en su mente.",
+        "behavioral_marker": "Atribuye pensamientos específicos a una fuerza externa."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

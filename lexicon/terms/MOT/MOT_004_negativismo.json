@@ -1,0 +1,35 @@
+{
+    "term_id": "MOT_003",
+    "canonical_name": "Negativismo",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Resistencia inmotivada a todas las solicitudes o intentos de movimiento pasivo.",
+        "required_features": [
+            "resistencia activa o pasiva inmotivada"
+        ],
+        "subjective_marker": "Se niega a colaborar sin motivo aparente.",
+        "behavioral_marker": "Hace lo opuesto a lo pedido o permanece rígido ante la movilización."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "observacion_clinica",
+            "exploracion"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

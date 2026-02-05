@@ -1,0 +1,33 @@
+{
+    "term_id": "THO_003",
+    "canonical_name": "Asociaciones laxas",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Pérdida de la conexión lógica normal entre ideas, con vínculos remotos o idiosincrásicos.",
+        "required_features": [
+            "conexiones ilógicas o débiles",
+            "comprensibilidad disminuida",
+            "mantenimiento de la estructura gramatical básica (a diferencia de la incoherencia)"
+        ],
+        "subjective_marker": "Describe que sus ideas se conectan de formas que otros no entienden.",
+        "behavioral_marker": "Discurso que salta entre temas con hilos conductores muy débiles."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente",
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "asociaciones"
+        }
+    ],
+    "version": "1.0.0"
+}

@@ -4,33 +4,45 @@
   "term_kind": "state",
   "granularity": "atomic",
   "risk_weight": 1,
-
   "definition_clinical": {
-    "core": "Estado afectivo basal persistentemente elevado, expansivo o eufórico, con incremento del tono vital.",
+    "core": "Estado afectivo elevado o expansivo con euforia, júbilo o desinhibición.",
     "required_features": [
       "tono afectivo elevado o expansivo",
       "persistencia",
       "incremento subjetivo de energía"
     ],
-    "subjective_marker": "El paciente se siente excesivamente optimista, poderoso o extraordinariamente bien.",
-    "behavioral_marker": "Expansividad emocional, aumento de gesticulación y contacto interpersonal."
+    "subjective_marker": "Se siente 'arriba', 'volando' o grandioso, con sensación de omnipotencia.",
+    "behavioral_marker": "Mayor actividad y expresividad, participación excesiva en actividades gratificantes."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "observacion"],
-    "time_relation": ["persistente"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
     "pharmacological_link": true,
     "computable_markers": [
       {
         "marker": "baseline_mood",
         "type": "categorical",
-        "options": ["bajo", "neutro", "elevado"],
+        "options": [
+          "bajo",
+          "neutro",
+          "elevado"
+        ],
         "expected": "elevado"
       },
       {
         "marker": "energy_level",
         "type": "ordinal_0_3",
-        "anchors": ["bajo", "normal", "alto", "marcado"]
+        "anchors": [
+          "bajo",
+          "normal",
+          "alto",
+          "marcado"
+        ]
       },
       {
         "marker": "sleep_need_reduction",
@@ -38,11 +50,13 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_003",
@@ -51,22 +65,18 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "clinical_attention",
       "message": "Ánimo elevado persistente con aumento de energía y menor necesidad de sueño sugiere estado maniforme."
     }
   ],
-
   "teaching_notes": [
     "Diferenciar de alegría reactiva o rasgos de personalidad.",
     "Registrar duración, sueño y cambios conductuales."
   ],
-
   "cognitive_pitfalls": [
     "Confundir ansiedad o activación por estrés con ánimo elevado patológico."
   ],
-
   "version": "1.0.0"
 }

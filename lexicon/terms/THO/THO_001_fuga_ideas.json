@@ -1,0 +1,32 @@
+{
+    "term_id": "THO_001",
+    "canonical_name": "Fuga de ideas",
+    "term_kind": "symptom",
+    "definition_clinical": {
+        "core": "Aceleración extrema del pensamiento con salto rápido entre temas, a menudo por asociaciones por asonancia o juegos de palabras.",
+        "required_features": [
+            "taquipsiquia marcada",
+            "asociaciones por cercanía fonética o circunstancial",
+            "presión del habla"
+        ],
+        "subjective_marker": "Describe que sus pensamientos van 'más rápido que su boca'.",
+        "behavioral_marker": "Habla incesante con cambios bruscos de tema."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "episodica"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "taquipsiquia"
+        }
+    ],
+    "version": "1.0.0"
+}

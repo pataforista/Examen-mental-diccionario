@@ -4,25 +4,35 @@
   "term_kind": "state",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Experiencia afectiva intensa, de inicio brusco y vivida corporalmente como opresión o amenaza inminente, con desbordamiento emocional.",
+    "core": "Sufrimiento intenso con sensación de dolor psíquico o ansiedad severa.",
     "required_features": [
       "inicio brusco",
       "intensidad elevada",
       "predominio somático/visceral"
     ],
-    "subjective_marker": "El paciente describe opresión, ahogo, desesperación o urgencia de escapar, con vivencia corporal dominante.",
-    "behavioral_marker": "Inquietud marcada, llanto o petición urgente de ayuda; conducta congruente con alivio inmediato."
+    "subjective_marker": "Describe angustia intensa, opresiva o desesperante.",
+    "behavioral_marker": "Expresión de aflicción extrema y signos somáticos de ansiedad."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "observacion"],
-    "time_relation": ["paroxistica", "episodica"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "paroxistica",
+      "episodica"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "Abstinencias (alcohol/BZD)", "risk": "high" },
-      { "class": "Estimulantes (cocaína/anfetaminas)", "risk": "high" }
+      {
+        "class": "Abstinencias (alcohol/BZD)",
+        "risk": "high"
+      },
+      {
+        "class": "Estimulantes (cocaína/anfetaminas)",
+        "risk": "high"
+      }
     ],
     "therapeutic_probe": {
       "name": "Respuesta a benzodiacepina (ansiolisis rápida)",
@@ -33,13 +43,21 @@
       {
         "marker": "onset",
         "type": "categorical",
-        "options": ["gradual", "brusco"],
+        "options": [
+          "gradual",
+          "brusco"
+        ],
         "expected": "brusco"
       },
       {
         "marker": "somatic_distress",
         "type": "ordinal_0_3",
-        "anchors": ["ausente", "leve", "moderada", "severa"],
+        "anchors": [
+          "ausente",
+          "leve",
+          "moderada",
+          "severa"
+        ],
         "expected": "severa"
       },
       {
@@ -48,12 +66,18 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-09", "relation": "primary_expression", "context": "estado_afectivo" },
-    { "domain_id": "DOM-12", "relation": "risk_factor", "context": "desbordamiento_emocional" }
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_factor",
+      "context": "desbordamiento_emocional"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "AFF_007",
@@ -68,23 +92,19 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "safety_attention",
       "message": "Angustia intensa requiere contención y evaluación de riesgo inmediato (autolesión, fuga, desregulación severa)."
     }
   ],
-
   "teaching_notes": [
     "Predominio somático y inicio brusco son los discriminadores clínicos.",
     "No confundir con ansiedad basal; aquí manda la urgencia corporal."
   ],
-
   "cognitive_pitfalls": [
     "Etiquetar como 'ansiedad generalizada' un episodio paroxístico con alta somaticidad.",
     "Asumir causa psiquiátrica sin descartar abstinencia o intoxicación."
   ],
-
   "version": "1.0.1"
 }

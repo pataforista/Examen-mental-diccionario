@@ -1,0 +1,34 @@
+{
+    "term_id": "DEL_006",
+    "canonical_name": "Síndrome de Capgras",
+    "term_kind": "syndrome",
+    "definition_clinical": {
+        "core": "Creencia de que personas cercanas han sido reemplazadas por impostores idénticos.",
+        "required_features": [
+            "atribución de identidad falsa a conocidos"
+        ],
+        "subjective_marker": "Dice que su familiar es un impostor.",
+        "behavioral_marker": "Desconfía de personas cercanas pese a reconocer su apariencia física."
+    },
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [],
+    "cognitive_pitfalls": [],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}

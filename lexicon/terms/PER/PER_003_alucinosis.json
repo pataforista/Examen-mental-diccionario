@@ -2,30 +2,43 @@
   "term_id": "PER_003",
   "canonical_name": "Alucinosis",
   "synonyms_and_slang": [
-    { "term": "alucinación con insight", "context": "clinical_descriptive" },
-    { "term": "síndrome de Charles Bonnet", "context": "neurology_context" }
+    {
+      "term": "alucinación con insight",
+      "context": "clinical_descriptive"
+    },
+    {
+      "term": "síndrome de Charles Bonnet",
+      "context": "neurology_context"
+    }
   ],
   "term_kind": "phenomenon",
   "granularity": "atomic",
   "risk_weight": 1,
-
   "definition_clinical": {
-    "core": "Experiencia perceptiva vívida en el espacio externo, sin estímulo real, en la cual el sujeto conserva el juicio de realidad (reconoce que no es real).",
+    "core": "Alucinación con juicio de realidad preservado; reconoce la irrealidad de la experiencia.",
     "required_features": [
       "atribución externa del fenómeno",
       "ausencia de estímulo real",
       "juicio de realidad conservado"
     ],
-    "subjective_marker": "El paciente expresa que percibe algo fuera de sí, pero aclara que sabe que no puede ser real.",
-    "behavioral_marker": "Observa el fenómeno sin conductas delirantes congruentes (no interactúa ni actúa como si fuera real)."
+    "subjective_marker": "Dice que sabe que lo percibido no es real.",
+    "behavioral_marker": "Describe la experiencia sin actuar como si fuera real."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica"],
-    "time_relation": ["persistente", "episodica"],
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente",
+      "episodica"
+    ],
     "pharmacological_link": true,
     "computable_markers": [
-      { "marker": "external_attribution", "type": "boolean", "expected": true },
+      {
+        "marker": "external_attribution",
+        "type": "boolean",
+        "expected": true
+      },
       {
         "marker": "reality_conviction",
         "type": "ordinal_0_3",
@@ -38,12 +51,18 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
-    { "domain_id": "DOM-10", "relation": "risk_marker", "context": "organicidad_neurologica" }
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "risk_marker",
+      "context": "organicidad_neurologica"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "PER_001",
@@ -58,7 +77,6 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "diagnostic_clue",
@@ -69,21 +87,22 @@
       "message": "Si es auditiva, explorar abstinencia alcohólica u otras causas tóxicas."
     }
   ],
-
   "teaching_notes": [
     "Clave diferencial: lugar externo + insight conservado.",
     "Es más frecuente en etiologías neurológicas o tóxicas que psiquiátricas primarias."
   ],
-
   "cognitive_pitfalls": [
     "Diagnosticar psicosis solo por localización externa.",
     "No explorar agudeza visual o consumo de sustancias."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
-    "phenomenology": ["Ey", "Jaspers"],
-    "clinical_tradition": ["Neurología conductual"]
+    "phenomenology": [
+      "Ey",
+      "Jaspers"
+    ],
+    "clinical_tradition": [
+      "Neurología conductual"
+    ]
   }
 }

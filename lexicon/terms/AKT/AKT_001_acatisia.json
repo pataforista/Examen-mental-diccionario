@@ -2,40 +2,62 @@
   "term_id": "AKT_001",
   "canonical_name": "Acatisia",
   "synonyms_and_slang": [
-    { "term": "inquietud interna", "context": "patient_report" },
-    { "term": "tasiquinesia", "context": "clinical_archaic" },
-    { "term": "walkies", "context": "nursing_slang", "locale": "en" }
+    {
+      "term": "inquietud interna",
+      "context": "patient_report"
+    },
+    {
+      "term": "tasiquinesia",
+      "context": "clinical_archaic"
+    },
+    {
+      "term": "walkies",
+      "context": "nursing_slang",
+      "locale": "en"
+    }
   ],
   "term_kind": "syndrome",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
-    "core": "Sensación subjetiva de inquietud motora interna que impulsa a la actividad física para obtener alivio transitorio.",
+    "core": "Inquietud motora con urgencia subjetiva de moverse y dificultad para permanecer quieto.",
     "required_features": [
       "urgencia de movimiento",
       "egodistonía",
       "alivio parcial al moverse"
     ],
-    "subjective_marker": "El paciente refiere incapacidad de permanecer quieto, descrita como nerviosidad física o sensación interna intolerable.",
-    "behavioral_marker": "Marcha repetitiva sin finalidad, incapacidad para permanecer sentado, balanceo constante de extremidades.",
+    "subjective_marker": "Sensación interna de intranquilidad y necesidad de mover las piernas.",
+    "behavioral_marker": "Balanceo, deambulación, cambios frecuentes de postura.",
     "validation_tool": {
       "name": "Barnes Akathisia Rating Scale (BARS)",
       "note": "Herramienta sugerida para objetivar severidad; no requerida para el reconocimiento clínico."
     }
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista", "observacion"],
-    "time_relation": ["inicio_tras_farmaco", "dosis_dependiente"],
+    "detectable_by": [
+      "entrevista",
+      "observacion"
+    ],
+    "time_relation": [
+      "inicio_tras_farmaco",
+      "dosis_dependiente"
+    ],
     "pharmacological_link": true,
     "pharmacological_triggers": [
-      { "class": "Antipsicóticos de primera generación", "risk": "high" },
-      { "class": "Antieméticos dopaminérgicos", "risk": "high" },
-      { "class": "ISRS", "risk": "moderate" }
+      {
+        "class": "Antipsicóticos de primera generación",
+        "risk": "high"
+      },
+      {
+        "class": "Antieméticos dopaminérgicos",
+        "risk": "high"
+      },
+      {
+        "class": "ISRS",
+        "risk": "moderate"
+      }
     ]
   },
-
   "alerts": [
     {
       "type": "safety_critical",
@@ -46,6 +68,5 @@
       "message": "La acatisia severa se asocia a suicidio impulsivo incluso en ausencia de depresión."
     }
   ],
-
   "version": "1.1.0"
 }
