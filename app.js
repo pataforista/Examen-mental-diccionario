@@ -65,7 +65,8 @@ const App = {
             recentList: document.getElementById('recent-list'),
             navButtons: document.querySelectorAll('.bottom-nav button'),
             aboutBtn: document.getElementById('about-btn'),
-            themeToggle: document.getElementById('theme-toggle')
+            themeToggle: document.getElementById('theme-toggle'),
+            gameView: document.getElementById('game-view')
         };
     },
 
