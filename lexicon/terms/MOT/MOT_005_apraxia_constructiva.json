@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "En la copia de un cubo, el paciente dibuja líneas desconectadas y pierde la perspectiva; en el reloj, coloca números fuera del círculo o apiñados en un cuadrante, y las manecillas no guardan relación con la hora indicada. El trazo es relativamente firme, pero la organización visuoespacial es defectuosa."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

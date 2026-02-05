@@ -111,6 +111,12 @@
     "Confiar solo en autoinforme; corroborar con colateral/entorno cuando sea posible.",
     "No preguntar por acopio de fármacos 'legales' (polifarmacia, recetas, opioides)."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Confirma disponibilidad inmediata de un medio potencialmente letal (arma en casa; acceso profesional a tóxicos/medicación). El dato clínico relevante es accesibilidad concreta (dónde está, si está asegurada) más que una mención abstracta."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

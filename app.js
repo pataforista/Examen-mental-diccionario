@@ -32,7 +32,7 @@ const App = {
             this.current = theme;
             document.body.setAttribute('data-theme', theme);
             document.getElementById('theme-toggle').innerHTML = theme === 'light' ? '🌞' : '🌙';
-            document.getElementById('app-title').innerText = theme === 'light' ? 'SOFT RUINS' : 'BLACK SIGNAL';
+            document.getElementById('app-title').innerText = 'DICCIONARIO DE EXAMEN MENTAL';
             localStorage.setItem('mse-theme', theme);
 
             // Update meta theme color
@@ -101,7 +101,13 @@ const App = {
 
             // Load cases
             try {
-                const caseFiles = ['OSCE_001–003.json', 'OSCE_004–OSCE_009.json', 'OSCE_010–OSCE_015.json'];
+                const caseFiles = [
+                    'OSCE_001–003.json',
+                    'OSCE_004–OSCE_009.json',
+                    'OSCE_010–OSCE_015.json',
+                    'OSCE_016–025.json',
+                    'OSCE_026–035.json'
+                ];
                 const casePromises = caseFiles.map(file => fetch(file).then(r => r.json()).catch(() => []));
                 const allCasesArrays = await Promise.all(casePromises);
                 this.data.cases = allCasesArrays.flat();
@@ -329,39 +335,46 @@ const App = {
         this.nodes.aboutView.innerHTML = `
             <div class="btn-back" onclick="App.switchTab('nav-dictionary')">← Volver</div>
             <div class="card">
-                <h2 style="margin-top:0;">SOFT RUINS / BLACK SIGNAL</h2>
-                <span class="badge" style="margin-bottom: 1rem;">Rev. 3.0</span>
-                <p style="font-size: 0.9rem; font-style: italic; opacity: 0.8; margin-bottom: 1.5rem;">
-                    “El bosque es amable hasta que se apaga la linterna.”
-                </p>
+                <h2 style="margin-top:0;">DICCIONARIO DE EXAMEN MENTAL</h2>
+                <span class="badge" style="margin-bottom: 1rem;">Versión 1.3.0</span>
+                
+                <div class="definition-section">
+                    <span class="section-label">Sobre la herramienta</span>
+                    <p style="font-size: 0.9rem;">
+                        Este recurso ha sido diseñado como una guía de consulta rápida para profesionales de la salud mental y estudiantes en formación. Su objetivo es estandarizar la terminología psicopatológica y facilitar la precisión en el registro del examen mental.
+                    </p>
+                </div>
 
                 <div class="definition-section">
-                    <span class="section-label">Naturaleza del Sistema</span>
-                    <p style="font-size: 0.9rem;">
-                        Registro dual de realidades clínicas. <strong>The Valley</strong> (Fantasía Nostálgica) para la exploración y calma; 
-                        <strong>The Void</strong> (Cyber-Ritual) para el análisis profundo y el rigor estructural.
-                    </p>
+                    <span class="section-label">Cómo se usa</span>
+                    <div style="font-size: 0.9rem; line-height: 1.5;">
+                        <p><strong>1. Búsqueda:</strong> Utilice la barra superior para buscar términos por nombre, sinónimos o descripción.</p>
+                        <p><strong>2. Dominios:</strong> Explore el menú de "Dominios" para ver los términos agrupados por funciones psíquicas (Conciencia, Pensamiento, Afecto, etc.).</p>
+                        <p><strong>3. Casos OSCE:</strong> Revise escenarios clínicos prácticos para entrenar la identificación de signos y síntomas.</p>
+                        <p><strong>4. Modos Visuales:</strong> Use el icono del sol/luna para alternar entre modos de alto y bajo contraste según su preferencia de lectura.</p>
+                    </div>
                 </div>
                 
                 <div class="definition-section">
-                    <span class="section-label">Fuentes y Referencias</span>
-                    <ul style="font-size: 0.85rem; padding-left: 1.25rem;">
-                        <li>Vallejo Ruiloba J. - Psicopatología y Psiquiatría.</li>
-                        <li>Kaplan & Sadock's Synopsis.</li>
-                        <li>EMA CANÓNICO - Protocolo de Excelencia.</li>
+                    <span class="section-label">Fuentes y Referencias (APA 7)</span>
+                    <ul style="font-size: 0.8rem; padding-left: 1.25rem; line-height: 1.4;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Oyebode, F.</strong> (2022). <em>Sims' Symptoms in the Mind: Textbook of Descriptive Psychopathology</em> (7ª ed.). Elsevier.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Robinson, D. J.</strong> (2017). <em>The Mental Status Exam Explained</em> (3ª ed.). Rapid Psychler Press.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Mendez, M. F.</strong> (2021). <em>The Mental Status Examination Handbook</em> (1ª ed.). Elsevier.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Voss, R. M., & Das, J. M.</strong> (2024). Mental Status Examination. En <em>StatPearls</em> [Internet]. StatPearls Publishing.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Hughes, S.</strong> (s.f.). <em>History Taking & Risk Assessment & Mental State Examination Resource Pack</em>. University of Bristol, Academic Unit of Psychiatry.</li>
                     </ul>
                 </div>
 
                 <div class="card ritual-box" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
                     <span class="section-label">Aviso Clínico</span>
                     <p style="font-size: 0.75rem; color: var(--text-secondary); margin: 0;">
-                        Esta herramienta es un ritual de consulta rápida. No sustituye el juicio clínico. 
-                        Uso exclusivo para profesionales versados en la arquitectura del pensamiento.
+                        Esta herramienta es de carácter informativo y apoyo pedagógico. No sustituye el juicio clínico soberano del profesional ni los protocolos institucionales vigentes.
                     </p>
                 </div>
                 
                 <p style="font-size: 0.7rem; color: var(--text-secondary); text-align: center; margin-top: 2rem; opacity: 0.5;">
-                    EMA CANÓNICO v1.3.0 | Rev. 3.0
+                    Diccionario MSE | SOPORTE ACADÉMICO v1.3.0
                 </p>
             </div>
         `;

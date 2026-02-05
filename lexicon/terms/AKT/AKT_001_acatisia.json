@@ -68,6 +68,16 @@
       "message": "La acatisia severa se asocia a suicidio impulsivo incluso en ausencia de depresión."
     }
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Siento una desesperación en las piernas, como si no pudiera parar de caminar; no es que quiera hacerlo, es que tengo que moverme."
+    },
+    {
+      "type": "observation",
+      "text": "Durante la entrevista el paciente se levanta repetidamente, camina por el consultorio, se vuelve a sentar y mueve las piernas de forma incesante. Refiere que la sensación es insoportable y solo se alivia parcialmente al caminar."
+    }
+  ],
   "version": "1.1.0",
   "domain_links": [
     {

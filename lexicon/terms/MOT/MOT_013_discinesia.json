@@ -54,6 +54,12 @@
     "cognitive_pitfalls": [
         "No confundir con manierismos o tics; la discinesia es coreo-atetoide y no tiene finalidad aparente."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Paciente con tratamiento crónico con antipsicóticos presenta protrusión lingual intermitente, movimientos de masticación, fruncimiento de labios y muecas; los movimientos aumentan con activación/ansiedad, disminuyen al dormir y el paciente no logra suprimirlos de forma sostenida pese a intentarlo."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

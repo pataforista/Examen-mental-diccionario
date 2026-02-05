@@ -58,6 +58,16 @@
     "cognitive_pitfalls": [
         "Confundir sospecha razonable en contextos reales con delirio."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Sé que los vecinos instalaron cámaras en los enchufes de mi casa; me vigilan día y noche para robarme mis ideas."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente tapa las ventanas con papel aluminio, evita salir de casa y revisa constantemente la puerta por miedo a ser atacado por «la organización»."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

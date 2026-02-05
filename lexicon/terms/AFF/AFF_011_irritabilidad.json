@@ -138,6 +138,16 @@
     "Confundir irritabilidad por abstinencia o iatrogenia con 'rasgo de personalidad'.",
     "Usar solo el reporte del paciente sin corroborar con colaterales."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "¡Deje de hacerme preguntas estúpidas!"
+    },
+    {
+      "type": "observation",
+      "text": "Ante una pregunta neutral («¿qué edad tiene?») el paciente eleva la voz y responde con hostilidad. Se observa tensión corporal, mirada desafiante y baja tolerancia a la frustración durante el resto de la entrevista."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

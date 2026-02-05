@@ -106,6 +106,12 @@
     "Confiar en negación verbal sin explorar conducta preparatoria y acceso a medios.",
     "Registrar como 'ideación' y perder el matiz conductual (impacta disposición)."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Sin haberse lesionado aún, realiza actos de preparación: escribe cartas de despedida, ordena documentos, “se despide” inusualmente, o acumula medicación “por si acaso”. El rasgo central es conducta orientada a posibilitar un intento, más allá de la ideación."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

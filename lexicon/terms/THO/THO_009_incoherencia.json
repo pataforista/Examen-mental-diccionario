@@ -94,6 +94,12 @@
     "Asumir psicosis crónica sin valorar nivel de conciencia.",
     "No diferenciar de afasia sensorial severa."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Habla caótica con pérdida total de nexos lógicos y desorganización de la sintaxis (“Ayer el sol porque verde cuando correr”), resultando en una ininteligibilidad absoluta del mensaje global."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

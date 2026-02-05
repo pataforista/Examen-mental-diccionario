@@ -72,6 +72,12 @@
         "Malinterpretar como una defensa proyectiva simple (mecanismo de defensa).",
         "Ignorar el síntoma por parecer una metáfora del paciente."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Durante la entrevista, afirma convencido: “Usted es el que tiene dolor de estómago hoy” (estando él con el síntoma) o proyecta su propio estado afectivo como si perteneciera físicamente al otro, con falla en la frontera del yo."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

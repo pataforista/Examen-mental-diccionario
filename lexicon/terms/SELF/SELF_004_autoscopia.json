@@ -82,6 +82,12 @@
         "No explorar la posición del observador (¿dónde está 'usted' mientras se mira?).",
         "Tratar como una alucinación visual simple sin el componente de identidad personal."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El paciente relata ver “su doble” en el espacio externo (como una imagen exacta de sí mismo), con descripción visual localizada y detallada. Reconoce que “ese soy yo” pero lo percibe como figura en el ambiente, lo cual genera temor/perplejidad."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

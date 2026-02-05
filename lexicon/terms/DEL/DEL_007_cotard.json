@@ -26,6 +26,16 @@
     "alerts": [],
     "teaching_notes": [],
     "cognitive_pitfalls": [],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Mis órganos se pudrieron hace semanas; ya no tengo corazón ni intestinos, soy solo una cáscara vacía que camina."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente afirma estar muerto, puede presentar una falta de respuesta emocional extrema (nihilismo) y rechaza cualquier necesidad vital básica por considerarla innecesaria para un cadáver."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [],

@@ -87,6 +87,12 @@
     "Confundir hipomimia extrapiramidal con síntomas negativos.",
     "Interpretar como rasgo de personalidad sin explorar curso, fármacos y psicomotricidad."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente muestra respuesta emocional presente pero marcadamente atenuada: ante noticias positivas («me aceptaron de vuelta en el trabajo») apenas sonríe de forma leve; ante una mala noticia («me cortaron el apoyo económico») sólo encoge los hombros, sin cambio sustancial en tono o expresión."
+    }
+  ],
   "version": "1.0.1",
   "provenance": {
     "phenomenology": [

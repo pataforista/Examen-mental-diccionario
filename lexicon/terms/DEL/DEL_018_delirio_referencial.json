@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "El presentador de las noticias me envió un código secreto al tocarse la corbata; me estaba avisando que el operativo ya comenzó."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente interpreta eventos neutros (gente riendo en la calle, matrículas de coches, anuncios) como mensajes directos o alusivos a su persona."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

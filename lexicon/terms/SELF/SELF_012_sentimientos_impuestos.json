@@ -82,6 +82,12 @@
         "Confundir con alexitimia (dificultad para identificar emociones propias).",
         "No preguntar por el origen sentido de la emoción."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El paciente asegura que sus sentimientos son “fabricados”: “Alguien me irradia esta tristeza que no es mía; es una pena eléctrica”. Identifica el afecto como artificial y atribuido a control externo (agencia ajena)."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

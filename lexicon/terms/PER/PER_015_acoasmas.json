@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Refiere sonidos elementales sin lenguaje: “Oigo zumbidos, pitidos, chasquidos o pasos”, sin palabras articuladas ni voces. Puede localizarlo “como si viniera del pasillo”, pero no identifica contenido semántico (alucinación auditiva no formada)."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

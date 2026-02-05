@@ -29,6 +29,12 @@
             "context": "asociaciones"
         }
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Discurso que salta entre temas con hilos conductores muy débiles o basados en vínculos idiosincrásicos (“Ayer comí pollo, porque los pájaros vuelan y los aviones son de metal”). Se mantiene la estructura gramatical, pero la conexión lógica es remota o incomprensible."
+        }
+    ],
     "version": "1.0.0",
     "synonyms_and_slang": [
         "asociaciones laxas"

@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Escucha una voz en tercera persona que narra su conducta: “Ahora se está poniendo los zapatos… ahora va hacia la puerta… está buscando las llaves”. El paciente la describe como externa, persistente y no controlable, y ajusta conducta (se detiene, mira alrededor, responde a la voz)."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

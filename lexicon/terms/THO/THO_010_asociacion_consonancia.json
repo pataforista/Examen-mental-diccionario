@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El discurso se ve guiado por la rima o el sonido de las palabras más que por su significado lógico (“Vengo de la cita, con la tacita, que es de plata, la gata, mata”). Es frecuente en estados de manía grave."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

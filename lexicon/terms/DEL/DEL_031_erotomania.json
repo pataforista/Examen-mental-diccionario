@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "El famoso cirujano que salió en televisión me envió un mensaje oculto en su parpadeo; él me ama en secreto y está esperando el momento adecuado para venir por mí."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente escribe cartas diarias al hospital, intenta contactar a la persona por redes sociales y está convencido de que cualquier gesto público de esta es una muestra de afecto dirigida exclusivamente a él."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

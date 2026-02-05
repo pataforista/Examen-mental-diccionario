@@ -111,6 +111,12 @@
     "Confundir pseudoalucinaciones o intrusiones con alucinaciones verdaderas.",
     "No especificar modalidad, perdiendo información diagnóstica y de riesgo."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente señala una silla vacía y afirma: “Ahí está un perro negro, sentado; lo veo claramente”. Describe ubicación en el espacio externo, con corporeidad y perspectiva (“está a dos metros, de lado”), intenta apartarse para “no tocarlo” y mantiene convicción de realidad. No logra suprimir la experiencia ni duda de su carácter perceptivo pese a ausencia de estímulo."
+    }
+  ],
   "version": "1.0.1",
   "provenance": {
     "phenomenology": [

@@ -71,6 +71,12 @@
         "Creer que el paciente se está burlando del examinador.",
         "Confundir con una simulación de enfermedad."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Ante la pregunta “¿cuántas patas tiene un perro?”, el paciente responde “cinco” o describe el color del pelo en lugar del número. Se evidencia que ha comprendido el núcleo de la pregunta pero la elude con una respuesta aproximada o absurda."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

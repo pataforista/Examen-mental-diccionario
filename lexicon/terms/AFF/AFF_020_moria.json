@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Paciente con antecedente de lesión frontal se muestra pueril y desinhibido: hace chistes groseros en un contexto solemne, ríe de manera superficial y persistente, y no calibra la inadecuación social pese a retroalimentación del entrevistador."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

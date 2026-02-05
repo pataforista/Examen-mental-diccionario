@@ -120,6 +120,16 @@
     "Etiquetar ambivalencia como 'manipulación' o 'inmadurez' sin caracterizar el conflicto dirigido a objeto.",
     "Confundir ambivalencia con indecisión obsesiva sin explorar intrusiones/compulsiones."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Quiero abrazar a mi madre y al mismo tiempo no la soporto; me acerco y me detengo."
+    },
+    {
+      "type": "observation",
+      "text": "Durante la entrevista oscila entre acercamiento y rechazo sin resolución, con vivencia de conflicto interno."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

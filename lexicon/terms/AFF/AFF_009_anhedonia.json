@@ -93,6 +93,16 @@
   "cognitive_pitfalls": [
     "Confundir anhedonia con apatía o fatiga sin explorar placer consumatorio."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Miro los colores y es como ver gris; la comida sabe igual; ver a mis nietos ya no me mueve nada."
+    },
+    {
+      "type": "observation",
+      "text": "Aclara que «no es falta de tiempo»: aun cuando intenta la actividad, no aparece placer ni interés."
+    }
+  ],
   "version": "1.0.1",
   "synonyms_and_slang": [
     "anhedonia"

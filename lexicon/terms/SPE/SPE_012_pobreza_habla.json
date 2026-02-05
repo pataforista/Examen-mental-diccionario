@@ -58,6 +58,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Uso de respuestas mínimas (“sí”, “no”, “bien”) incluso ante preguntas abiertas, mostrando una restricción cuantitativa del habla espontánea. El discurso es lacónico y poco elaborado, con una disminución evidente del volumen verbal."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

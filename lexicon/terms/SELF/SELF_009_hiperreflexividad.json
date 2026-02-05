@@ -72,6 +72,12 @@
         "Tratar como un síntoma de ansiedad simple (aunque puede ocurrir, el matiz fenomenológico es distinto).",
         "No explorar la cualidad de 'extraño' que adquiere el proceso observado."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "“No puedo evitar vigilar cómo muevo mi lengua para hablar o cómo respiro; se siente raro, como si fuera de otro”. Describe un monitoreo excesivo de procesos automáticos que ahora se vuelven “objetos” de atención involuntaria."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

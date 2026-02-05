@@ -88,6 +88,12 @@
         "No preguntar explícitamente por el entorno cuando el paciente describe ansiedad.",
         "Tratar como un síntoma psicótico per se."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Refiere extrañeza del entorno: “El mundo se ve plano, como un escenario; los sonidos vienen de lejos”. Reconoce que el ambiente “es real”, pero se percibe sin familiaridad habitual, como si mediara una “pantalla” o distancia."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

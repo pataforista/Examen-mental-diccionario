@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Al pedirle “muéstreme cómo prepararía y enviaría una carta”, el paciente pega la estampilla en una hoja suelta, sella el sobre vacío, luego intenta meter la carta por el borde ya sellado. Ante corrección, parece no captar el orden funcional de la tarea."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

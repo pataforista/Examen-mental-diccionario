@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Percibe aumento del tamaño aparente: “La taza se ve enorme, como gigante”. Puede coexistir con conservación parcial de realidad (“sé que suena raro, pero la veo enorme”) o con ansiedad; el rasgo definitorio es la distorsión de escala."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

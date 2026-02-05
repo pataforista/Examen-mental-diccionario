@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Repetición persistente de una respuesta previa (“Tengo 45 años”) ante estímulos nuevos y diferentes (“¿Cuál es su ocupación?” - “45 años”). Se observa una incapacidad para cambiar el foco de atención o la respuesta motora verbal."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

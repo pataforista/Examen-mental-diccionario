@@ -84,6 +84,12 @@
         "Interpretar como 'mala voluntad' o 'falta de colaboración' deliberada.",
         "Olvidar que el insight puede ser fragmentado (reconoce algunos síntomas pero no la enfermedad)."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "En urgencias por conducta bizarra, afirma: “No estoy enfermo; ustedes forman parte del complot”. Rechaza tratamiento no por evaluación razonable, sino por marco delirante; no concede posibilidad de enfermedad."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

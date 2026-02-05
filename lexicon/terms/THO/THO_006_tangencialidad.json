@@ -70,6 +70,12 @@
   "cognitive_pitfalls": [
     "Confundir con oposicionismo; en tangencialidad hay intento de respuesta pero descarrilado semánticamente."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente responde de forma oblicua o solo parcialmente relacionada con la pregunta, alejándose progresivamente del objetivo inicial sin llegar a responderlo nunca (“¿Dónde vive usted?” - “Las casas de ahora son muy caras y la gente no tiene trabajo”). Se rompe la meta-dirección del pensamiento."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

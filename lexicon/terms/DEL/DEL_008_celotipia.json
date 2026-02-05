@@ -49,6 +49,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Ella movió la cortina un centímetro a la izquierda; es la señal que le da a su amante para que sepa que yo ya llegué a casa."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente revisa el kilometraje del coche de su pareja, sus facturas telefónicas y la ropa interior buscando «pruebas» de una infidelidad inexistente, con una convicción irreductible."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

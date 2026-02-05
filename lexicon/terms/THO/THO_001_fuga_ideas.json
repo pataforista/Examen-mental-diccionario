@@ -28,6 +28,12 @@
             "context": "taquipsiquia"
         }
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Habla incesante con cambios bruscos de tema; el paciente describe que sus pensamientos van “más rápido que su boca”. Se observa taquipsiquia marcada con asociaciones por cercanía fonética (asonancia) o circunstancial, dificultando el seguimiento del hilo conductor."
+        }
+    ],
     "version": "1.0.0",
     "synonyms_and_slang": [
         "fuga de ideas"

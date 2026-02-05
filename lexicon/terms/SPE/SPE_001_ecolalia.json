@@ -89,6 +89,12 @@
     "cognitive_pitfalls": [
         "Confundir con una respuesta afirmativa si el paciente repite la última palabra de una pregunta cerrada."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El examinador pregunta: “¿Cómo durmió anoche?” y el paciente responde: “Dormió anoche”, sin aportar información y repitiendo la entonación final. Se consigna como repetición automática y no informativa de la emisión ajena."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

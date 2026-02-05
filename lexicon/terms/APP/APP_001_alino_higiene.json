@@ -67,6 +67,12 @@
     "cognitive_pitfalls": [
         "Asumir psicosis o depresión sin corroborar factores contextuales (p. ej., pobreza, barreras de acceso)."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Se observa cabello despeinado con signos de falta de lavado, uñas con suciedad distal, olor corporal intenso y ropa con manchas de comida de varios días. El paciente no parece notar ni le preocupa su estado de desaliño."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

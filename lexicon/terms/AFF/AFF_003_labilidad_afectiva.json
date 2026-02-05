@@ -76,6 +76,12 @@
   "cognitive_pitfalls": [
     "Diagnosticar manía solo por cambios emocionales rápidos."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "En el mismo tramo de entrevista, el paciente pasa de risa franca (ante un comentario menor) a llanto intenso al mencionar un detalle neutro («me acordé de una canción») y vuelve a reír en segundos, sin transición emocional proporcional al contenido."
+    }
+  ],
   "version": "1.0.0",
   "synonyms_and_slang": [
     "labilidad afectiva"

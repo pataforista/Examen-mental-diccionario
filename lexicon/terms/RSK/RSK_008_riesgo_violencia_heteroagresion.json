@@ -131,6 +131,12 @@
     "Asumir que la ausencia de psicosis descarta violencia (la desinhibición tóxica puede ser suficiente).",
     "Ignorar un objetivo específico (target) como marcador de inminencia."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Expresa intención específica (“voy a matar a mi vecino”) o describe órdenes alucinatorias de daño, con aumento de agitación, hostilidad y conducta de aproximación (buscar a la persona, portar objeto para agredir). Se consigna el componente de amenaza, especificidad y organización conductual, además de antecedentes recientes de agresión."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

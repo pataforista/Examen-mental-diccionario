@@ -1,0 +1,124 @@
+[
+    {
+        "case_id": "OSCE_XXX",
+        "level": 3,
+        "difficulty_variant": "3A",
+        "stem": {
+            "setting": "consulta_externa",
+            "age_range": "adulto_medio",
+            "sex": "femenino",
+            "contextual_notes": "motivo de consulta y curso temporal resumido"
+        },
+        "domains": {
+            "DOM-01": {
+                "nivel_de_conciencia": "alerta",
+                "claridad_del_sensorio": "sensorio_claro",
+                "curso_temporal": "subacute",
+                "orientacion": "orientacion_integra"
+            },
+            "DOM-02": {
+                "higiene": "higiene_adecuada",
+                "vestimenta_y_alino": "adecuados_al_contexto",
+                "postura": "erguida",
+                "facies": "normomimica",
+                "adecuacion_al_contexto": "adecuacion_conservada"
+            },
+            "DOM-03": {
+                "actitud": "colaboradora",
+                "cooperacion": "cooperacion_conservada",
+                "contacto_visual": "contacto_visual_adecuado",
+                "rapport": "rapport_adecuado"
+            },
+            "DOM-04": {
+                "actividad_psicomotora": "normocinesia",
+                "movimientos_anormales": "ausentes",
+                "fenomenos_catatonicos": "ausentes",
+                "iniciativa": "iniciativa_conservada",
+                "impulsividad_inhibicion_y_compulsion": "control_conductual_conservado"
+            },
+            "DOM-05": {
+                "velocidad_y_ritmo": "velocidad_normal",
+                "volumen_y_tono": "volumen_adecuado",
+                "articulacion": "articulacion_clara",
+                "lenguaje_simbolico": "lenguaje_conservado"
+            },
+            "DOM-06": {
+                "velocidad_del_pensamiento": "velocidad_conservada",
+                "asociacion_de_ideas": "asociaciones_logicas",
+                "densidad_y_continuidad": "curso_fluido",
+                "direccionalidad": "dirigido_a_meta"
+            },
+            "DOM-07": {
+                "ideas_delirantes": "ausentes",
+                "ideas_sobrevaloradas": "ausentes",
+                "pensamiento_magico": "ausente",
+                "obsesiones": "ausentes",
+                "ideacion_fobica": "ausente",
+                "rumiaciones": "ausentes",
+                "preocupaciones_dominantes": "ausentes",
+                "temas_recurrentes": "ninguno"
+            },
+            "DOM-08": {
+                "tipo_de_fenomeno": "sin_alteraciones",
+                "modalidad_sensorial": [],
+                "caracteristicas_auditivas": "no_aplica",
+                "caracteristicas_visuales_tactiles": "no_aplica",
+                "distorsiones_perceptivas": "ausentes"
+            },
+            "DOM-09": {
+                "animo_subjetivo": "eutimico",
+                "afecto_observable": "afecto_sintonico",
+                "reactividad_afectiva": "reactivo",
+                "rango_afectivo": "rango_amplio",
+                "regulacion_afectiva": "estable",
+                "congruencia_afectiva": "congruente"
+            },
+            "DOM-10": {
+                "atencion_compleja": "euprosexia",
+                "memoria": "memoria_conservada",
+                "memoria_de_trabajo": "conservada",
+                "funciones_ejecutivas": "conservadas",
+                "lenguaje_pragmatico": "adecuado",
+                "visuoconstruccion": "conservadas",
+                "gnosias": "conservadas",
+                "abstraccion": "conservada"
+            },
+            "DOM-11": {
+                "juicio_practico": "juicio_practico_conservado",
+                "juicio_social": "juicio_social_adecuado",
+                "juicio_de_realidad": "juicio_realidad_conservado",
+                "insight_de_enfermedad": "insight_intelectual",
+                "atribucion_causal": "atribucion_biopsicosocial_realista"
+            },
+            "DOM-12": {
+                "riesgo_suicida_actual": "riesgo_nulo",
+                "caracteristicas_ideacion_suicida": "ausente",
+                "conducta_autolesiva_no_suicida": "ausentes",
+                "riesgo_heteroagresivo": "riesgo_nulo",
+                "riesgo_vulnerabilidad_grave": "capacidad_autocuidado_conservada",
+                "factores_protectores": "soporte_familiar_presente"
+            }
+        },
+        "expected_engine_output": {
+            "primary_syndrome": "sindrome_a_definir",
+            "confidence_band": "possible",
+            "critical_flags": [
+                "flag_clinica_relevante"
+            ],
+            "mandatory_checks": [
+                "DOM-01.curso_temporal",
+                "DOM-10.atencion_compleja"
+            ]
+        },
+        "assessment_keys": {
+            "errors_to_avoid": [
+                "error_1",
+                "error_2"
+            ],
+            "key_discriminators": [
+                "discriminador_1",
+                "discriminador_2"
+            ]
+        }
+    }
+]

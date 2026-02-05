@@ -98,6 +98,12 @@
         "Confundir con anhedonia (falta de placer) o con depresión (falta de energía).",
         "Asumir que es un síntoma psicótico sin evaluar el insight."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "La paciente describe experiencia de extrañeza del yo: “Me siento como un títere… como si yo no estuviera dentro de mí”. Mantiene juicio de realidad (“sé que soy yo, pero se siente raro”), con vivencia de automatismo/irrealidad personal, a veces acompañada de embotamiento emocional y autoobservación intensa."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

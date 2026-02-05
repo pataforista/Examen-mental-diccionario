@@ -87,6 +87,12 @@
         "No explorar la atribución (¿quién cree que lo mueve?).",
         "Confundir con despersonalización donde el acto se siente extraño pero propio."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "“Mi mano se mueve, pero no soy yo quien la mueve; me manipulan”. Describe pérdida de agencia sobre actos voluntarios, con atribución a fuerza externa y experiencia de ser “marioneta”, aun observando que el movimiento ocurre en su cuerpo."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

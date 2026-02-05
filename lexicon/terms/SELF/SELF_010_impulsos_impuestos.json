@@ -76,6 +76,12 @@
         "Malinterpretar como falta de control de impulsos común.",
         "No preguntar por el sentimiento de 'propiedad' del impulso."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Relata: “Me mandaron las ganas de salir corriendo; alguien puso el impulso en mí”. Diferencia el impulso de una idea propia, ubicando la agencia en el exterior (pasividad), con experiencia de pérdida de control volitivo inicial."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

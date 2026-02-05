@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Dios me habló a través de la televisión y me ordenó que debo purificar la ciudad; soy el nuevo mesías elegido para esta misión."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente realiza rituales complejos o conductas de riesgo basadas en supuestas comunicaciones divinas, con una convicción absoluta de superioridad moral o mística."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

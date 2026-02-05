@@ -26,6 +26,16 @@
     "alerts": [],
     "teaching_notes": [],
     "cognitive_pitfalls": [],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Me acaban de decir el nombre del doctor y ya se me olvidó; no retengo nada de lo que me dicen."
+        },
+        {
+            "type": "observation",
+            "text": "En la evaluación de memoria, el paciente es incapaz de recordar tres palabras tras 5 minutos de interferencia (minimental), a pesar de haberlas repetido correctamente al inicio. Repite las mismas preguntas varias veces durante la entrevista."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [],

@@ -53,6 +53,12 @@
     "cognitive_pitfalls": [
         "Inferir rasgos de personalidad sin evidencia longitudinal."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Actitud suspicaz y defensiva: el paciente responde con monosílabos, cuestiona el motivo de las preguntas («¿para qué quiere saber eso?») y observa con fijeza las manos del entrevistador mientras este toma notas."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

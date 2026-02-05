@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Refiere dos o más voces que conversan entre sí sobre él: una dice “Es un inútil” y otra responde “Déjalo”. El paciente se asume como objeto de la conversación, se muestra reactivo (ansioso/irritable) y reporta ser espectador pasivo."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

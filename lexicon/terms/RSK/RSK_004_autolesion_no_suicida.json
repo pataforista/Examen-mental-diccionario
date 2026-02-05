@@ -143,6 +143,12 @@
     "Clasificar automáticamente como intento sin evaluar intención en el acto.",
     "Minimizar riesgo longitudinal por repetición, habituación al daño y aumento de letalidad con el tiempo."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Presenta cortes superficiales/quemaduras realizados para modular afecto (“para aliviar tensión”, “para dejar de sentirme así”), y niega intención de morir. La función reportada es regulación emocional/auto-castigo, con conducta repetitiva y patrón de alivio breve."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

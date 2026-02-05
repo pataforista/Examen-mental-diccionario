@@ -29,6 +29,12 @@
             "context": "curso_del_pensamiento"
         }
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Se detiene a mitad de una frase y permanece en silencio absoluto durante varios segundos, pareciendo perplejo o ausente. Al recuperar el habla, refiere que “se le borró la mente” o que le “robaron la idea”, siendo incapaz de retomar el tema previo."
+        }
+    ],
     "version": "1.0.0",
     "synonyms_and_slang": [
         "bloqueo del pensamiento"

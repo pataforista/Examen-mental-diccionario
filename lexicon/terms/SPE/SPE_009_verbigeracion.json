@@ -76,6 +76,12 @@
     "cognitive_pitfalls": [
         "Interpretar como una respuesta deliberada a la entrevista."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El paciente repite una frase o palabra continuamente, como un cántico o letanía, ignorando las preguntas. Se consigna como una repetición estereotipada, rítmica y monótona de palabras o frases sin finalidad comunicativa."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

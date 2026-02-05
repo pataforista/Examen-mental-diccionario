@@ -79,6 +79,12 @@
         "Confundir con falta de interés o desmotivación.",
         "Intentar 'convencer' al paciente con lógica; la anosognosia no responde a la persuasión."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Paciente con demencia comete fallos severos (olvida citas, repite preguntas), pero insiste: “Mi memoria está perfecta” y se irrita ante sugerencias de apoyo. La evidencia es discrepancia persistente y falta de reconocimiento del déficit cognitivo."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

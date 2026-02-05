@@ -36,6 +36,12 @@
     "alerts": [],
     "teaching_notes": [],
     "cognitive_pitfalls": [],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Durante toda la entrevista el paciente realiza balanceo anteroposterior constante y frota el pulgar contra el índice en ciclos idénticos, sin relación con preguntas, emoción o estímulos externos. Si se le pide detenerse, lo hace brevemente y reanuda el patrón."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [],

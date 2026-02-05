@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Deslizamiento del discurso entre temas sin conexión lógica aparente, donde el hilo conductor se desvía bruscamente hacia contenidos no relacionados. Se diferencia de la tangencialidad por la falta de un vínculo mínimo con el tema previo."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

@@ -104,6 +104,12 @@
     "Etiquetar como 'normal' una reducción clara del rango afectivo.",
     "Confundir con rasgo de personalidad sin considerar medicación."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente presenta reactividad emocional, pero en rango estrecho: sonríe apenas ante humor, no llega a risa; se entristece levemente sin llorar. La variación afectiva existe, pero es limitada y poco modulada."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

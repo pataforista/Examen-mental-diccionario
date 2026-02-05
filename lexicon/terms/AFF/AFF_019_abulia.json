@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "como si mi cuerpo no arrancara."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente reconoce una necesidad y un objetivo simple («tengo sed»), el vaso está a su alcance, pero permanece inmóvil largo tiempo. No es oposición activa; describe incapacidad para iniciar la acción pese a intención declarada."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

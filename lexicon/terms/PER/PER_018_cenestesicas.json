@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Describe sensaciones internas extrañas y no fisiológicas: “Siento que me estiran los intestinos” o “hay electricidad en mis venas”. La cualidad es somática profunda, localizada “por dentro”, con vivencia de extrañeza corporal y, a veces, atribuciones explicativas secundarias."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

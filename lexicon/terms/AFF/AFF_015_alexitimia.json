@@ -123,6 +123,16 @@
     "Interpretar 'no sé qué siento' como falta de cooperación.",
     "Confundir alexitimia con ausencia real de afecto (p. ej., aplanamiento)."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "No sé cómo me siento… sólo tengo un nudo en el estómago y tensión en el cuello."
+    },
+    {
+      "type": "observation",
+      "text": "Tras un evento interpersonal relevante (divorcio), no logra nombrar emociones. Cuando se le ofrecen opciones («tristeza», «enojo», «miedo»), responde «no sabría decir»."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

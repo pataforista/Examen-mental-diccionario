@@ -125,6 +125,16 @@
     "Prescribir ISRS por 'falta de ganas' sin caracterizar tristeza/anhedonia/iniciativa.",
     "Interpretar apatía como 'flojera' o rasgo moral."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Me da igual bañarme o comer; no le veo el punto."
+    },
+    {
+      "type": "observation",
+      "text": "El paciente pasa el día sentado o acostado, sin iniciativa espontánea. Al preguntar por autocuidado responde con indiferencia. No expresa tristeza intensa; el rasgo central es la falta de motivación e interés."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

@@ -96,6 +96,12 @@
     "Atribuir la fiebre a infección y retrasar el reconocimiento del síndrome.",
     "Continuar antipsicóticos por interpretar rigidez o estupor como empeoramiento psiquiátrico."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente en tratamiento con Haloperidol desarrolla rigidez muscular intensa (“tubo de plomo”), fiebre de 39°C, estupor y taquicardia. El laboratorio muestra CPK > 10.000 UI/L. Se consigna la rigidez extrapiramidal severa y la inestabilidad autonómica como hallazgos cardinales."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [],

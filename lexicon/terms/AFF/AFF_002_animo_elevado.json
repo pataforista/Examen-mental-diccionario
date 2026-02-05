@@ -71,6 +71,16 @@
   "cognitive_pitfalls": [
     "Confundir ansiedad o activación por estrés con ánimo elevado patológico."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "¡Estoy en la cima del mundo! No necesito dormir; anoche dormí dos horas y hoy puedo hacer diez cosas a la vez."
+    },
+    {
+      "type": "observation",
+      "text": "Durante la entrevista interrumpe, habla acelerado y cambia de tema con facilidad."
+    }
+  ],
   "version": "1.0.0",
   "synonyms_and_slang": [
     "ánimo elevado o expansivo"

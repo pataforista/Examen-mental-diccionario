@@ -81,6 +81,12 @@
         "Interpretar como desinterés, aburrimiento o falta de empatía del paciente.",
         "Confundir con depresión sin evaluar otros componentes motores."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Habla sin inflexiones, con un tono constante y monótono que no varía según el contenido emocional (“voz robótica”). Se pierde la melodía del lenguaje que normalmente subraya el afecto o la intención (pregunta, exclamación)."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

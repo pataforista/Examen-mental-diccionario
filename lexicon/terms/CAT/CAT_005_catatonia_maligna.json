@@ -53,6 +53,12 @@
     "Confundir con depresión severa, negativismo o 'falta de colaboración'.",
     "Retrasar tratamiento mientras se interpreta como cuadro primariamente conductual."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente en estupor profundo, con rigidez «en tubo de plomo», fiebre de 39.5°C sin foco infeccioso evidente, piel sudorosa (diaforesis marcada) y fluctuaciones bruscas de la tensión arterial y frecuencia cardiaca (inestabilidad autonómica)."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

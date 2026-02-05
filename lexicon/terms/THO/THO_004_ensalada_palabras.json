@@ -30,6 +30,12 @@
             "context": "desorganizacion_extrema"
         }
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Emisión de palabras sueltas o fragmentos de frases sin ninguna conexión sintáctica ni semántica (“Mesa, azul, perro, saltar, nube, ayer”). Resulta en una ininteligibilidad absoluta del discurso, con pérdida total de la estructura del lenguaje."
+        }
+    ],
     "version": "1.0.0",
     "synonyms_and_slang": [
         "ensalada de palabras"

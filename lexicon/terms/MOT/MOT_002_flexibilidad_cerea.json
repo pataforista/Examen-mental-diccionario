@@ -50,6 +50,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El examinador eleva el antebrazo del paciente a 90° y lo deja suspendido; el paciente mantiene la posición varios minutos, con mínima modulación facial y sin intentar bajarlo. Al intentar flexionar la muñeca, se percibe resistencia suave y sostenida antes de que “ceda”."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

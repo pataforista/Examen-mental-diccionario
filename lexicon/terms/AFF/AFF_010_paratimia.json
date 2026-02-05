@@ -75,6 +75,12 @@
     "Interpretar la risa como burla, manipulación o rasgo de personalidad.",
     "Atribuirla a ansiedad y omitir evaluación psicótica."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Mientras relata un evento objetivamente penoso («cuando murió mi mascota») el paciente ríe con expresión alegre y tono juguetón, sin señales de tristeza concomitante. La forma afectiva (risa, ligereza) es incongruente con el contenido narrado."
+    }
+  ],
   "version": "1.0.1",
   "provenance": {
     "phenomenology": [

@@ -1,0 +1,70 @@
+{
+    "term_id": "DEL_021",
+    "canonical_name": "Idea delirante de culpa",
+    "synonyms_and_slang": [
+        "delirio de culpa"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 2,
+    "definition_clinical": {
+        "core": "Convicción delirante de haber cometido un pecado o crimen imperdonable, a menudo con la creencia de merecer castigo extremo.",
+        "required_features": [
+            "convicción de culpa injustificada",
+            "irreductibilidad a la lógica",
+            "temática de pecado o crimen"
+        ],
+        "subjective_marker": "El paciente refiere ser responsable de tragedias mundiales o pecados atroces.",
+        "behavioral_marker": "Petición de castigo, rumiaciones melancólicas, llanto o agitación por sentimientos de culpa."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-07",
+            "relation": "primary_expression",
+            "context": "pensamiento_contenido"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "safety_critical",
+            "message": "El delirio de culpa se asocia a alto riesgo de suicidio por sentimiento de merecer la muerte."
+        }
+    ],
+    "teaching_notes": [
+        "Frecuente en la depresión psicótica o melancólica."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con remordimiento normal o culpa reactiva proprocionada."
+    ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Merezco estar muerto por lo que hice; causé la guerra en el otro continente por mis malos pensamientos, soy el ser más malvado que existe."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente se atribuye la responsabilidad de eventos catastróficos lejanos, pide ser arrestado por la policía y sostiene que su familia está sufriendo castigos divinos por sus faltas imaginarias."
+        }
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Jaspers",
+            "Sims"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

@@ -89,6 +89,16 @@
   "cognitive_pitfalls": [
     "Confundir ansiedad afectiva con acatisia o con preocupación cognitiva estructurada."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Siento una opresión en el pecho… como si algo terrible fuera a pasar."
+    },
+    {
+      "type": "observation",
+      "text": "Se observa inquietud psicomotora (mueve los pies, se frota las manos), respiración superficial y tensión muscular. Pide reiteradamente que «terminemos rápido»."
+    }
+  ],
   "version": "1.0.1",
   "synonyms_and_slang": [
     "ansiedad afectiva"

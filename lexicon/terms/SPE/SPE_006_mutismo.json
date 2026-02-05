@@ -88,6 +88,12 @@
         "Asumir que el paciente es 'obstinado' o que no quiere hablar a propósito sin evaluar estados de estupor.",
         "No descartar afasia motora grave si el paciente parece despierto."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Ausencia total de respuesta verbal durante toda la entrevista, a pesar de estar despierto y con ojos abiertos. Puede o no haber comunicación no verbal preservada (por ej. seguimiento ocular o gestos mínimos)."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

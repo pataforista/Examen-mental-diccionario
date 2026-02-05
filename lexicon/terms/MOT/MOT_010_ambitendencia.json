@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Al ofrecerle la mano, el paciente inicia el gesto de estrecharla, se detiene a centímetros, retira la mano, vuelve a extenderla y repite la secuencia varias veces, con expresión perpleja, sin poder completar el acto."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

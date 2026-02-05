@@ -77,6 +77,12 @@
         "Confundir con abulia o falta de motivación.",
         "Ignorar por ser un síntoma difícil de describir por el paciente."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Describe que sus experiencias no se sienten como “suyas”: “Soy como un espectador de mi propia vida… falta el centro que lo une todo”. No es un delirio, sino una alteración de la vitalidad del yo; relata falta de “presencia” o un yo disminuido."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

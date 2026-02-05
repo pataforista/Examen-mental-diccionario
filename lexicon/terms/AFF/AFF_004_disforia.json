@@ -136,6 +136,16 @@
     "Etiquetar como depresión un cuadro mixto por la queja de malestar.",
     "Reducir disforia a 'ansiedad' e ignorar el componente irritativo/activado."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "No es tristeza; es como estar incómodo en mi propia piel, todo me desespera."
+    },
+    {
+      "type": "observation",
+      "text": "Se observa ceño fruncido, suspiros frecuentes y respuestas cortantes, con intolerancia a estímulos menores (ruidos, preguntas)."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

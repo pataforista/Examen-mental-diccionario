@@ -75,6 +75,12 @@
     "Inferir automáticamente 'falta de interés' o 'mala actitud'.",
     "Etiquetar como depresión sin explorar reactividad y curso longitudinal."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Durante toda la evaluación mantiene facies inmóvil (amimia), contacto ocular pobre, prosodia monótona y gestualidad mínima. Al narrar un evento objetivamente cargado (muerte reciente de un familiar), no hay modulación emocional observable ni congruente en voz, rostro o postura."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

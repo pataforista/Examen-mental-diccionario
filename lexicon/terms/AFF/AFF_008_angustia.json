@@ -106,6 +106,16 @@
     "Etiquetar como 'ansiedad generalizada' un episodio paroxístico con alta somaticidad.",
     "Asumir causa psiquiátrica sin descartar abstinencia o intoxicación."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Es un tormento en el pecho y en el estómago, como si me quemara por dentro; no lo aguanto."
+    },
+    {
+      "type": "observation",
+      "text": "Se acompaña de facies de sufrimiento, sudoración y urgencia por alivio inmediato, sin que la emoción se reduzca a «nervios» o preocupación."
+    }
+  ],
   "version": "1.0.1",
   "synonyms_and_slang": [
     "angustia"

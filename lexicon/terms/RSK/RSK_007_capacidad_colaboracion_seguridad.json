@@ -93,6 +93,12 @@
     "Confundir asentimiento verbal con capacidad real de colaboración.",
     "Ignorar soporte externo y barreras prácticas (vivienda, acceso a teléfono, vigilancia)."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Acepta medidas de seguridad y ayuda: acuerda contactar a familiar/servicio de urgencias si aumenta el impulso, permite retirar medios, identifica señales de alarma y muestra disposición a seguimiento. La evidencia es conductual (acepta acciones), no sólo verbal (“sí, sí”)."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

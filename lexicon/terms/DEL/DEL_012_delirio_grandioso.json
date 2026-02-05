@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Tengo una línea directa con el presidente y soy el dueño secreto de las mayores empresas de tecnología del mundo."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente se muestra expansivo, da órdenes al personal de salud como si fueran sus empleados y planea inversiones millonarias a pesar de no contar con recursos básicos."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

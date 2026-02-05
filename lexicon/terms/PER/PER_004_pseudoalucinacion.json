@@ -67,6 +67,12 @@
     "Sobre-diagnosticar psicosis por la presencia de 'voces' sin explorar el locus.",
     "Ignorar el malestar subjetivo por considerarlas 'menos reales' que las alucinaciones verdaderas."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente relata: “Oigo la voz de mi padre, pero dentro de mi cabeza, como con el oído de la mente”. La vivencia es vívida y con cualidad de “voz”, pero localizada en el espacio interno/subjetivo; puede reconocer que no proviene del ambiente (“no viene de afuera”) y la describe como experiencia mental intrusiva más que percepción externa."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

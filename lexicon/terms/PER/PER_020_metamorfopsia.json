@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Al mirar el rostro del entrevistador describe deformación dinámica: “Se le derriten los rasgos / se le mueven los ojos”. Reconoce la identidad (“sé que es usted”) pero percibe alteración de forma/contorno, no un objeto completamente distinto."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

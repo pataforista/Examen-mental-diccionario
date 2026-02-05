@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El paciente dice: “En cuanto pienso algo, lo oigo en voz alta, como un eco afuera”. Diferencia entre “pensar” y “oír” y ubica el fenómeno como auditivo externo, sincronizado con el contenido del pensamiento, con malestar por exposición/“publicidad” de su mente."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

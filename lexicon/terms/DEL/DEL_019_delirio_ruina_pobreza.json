@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "No queda ni un peso; nos van a sacar a la calle mañana y toda mi familia morirá de hambre por mi culpa, aunque vea mis ahorros sé que son falsos."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente se muestra extremadamente angustiado, rechaza comer para «no gastar lo que no tenemos» y está convencido de una quiebra financiera inminente y catastrófica."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

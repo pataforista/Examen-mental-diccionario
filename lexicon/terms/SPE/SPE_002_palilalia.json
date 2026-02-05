@@ -88,6 +88,12 @@
     "cognitive_pitfalls": [
         "Confundir con logoclonia (repetición de sílabas solamente)."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Al terminar una frase, el paciente repite las últimas palabras varias veces con velocidad creciente y volumen decreciente: “...ya me voy, voy, voy, voy”. Se diferencia de la ecolalia porque repite su propia producción verbal."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

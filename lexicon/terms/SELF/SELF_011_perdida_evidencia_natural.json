@@ -72,6 +72,12 @@
         "Confundir con timidez o fobia social.",
         "Minimizar el síntoma por parecer 'filosófico' o abstracto."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Describe pérdida de naturalidad: “Tengo que pensar cómo se saluda o para qué sirve una cuchara; lo obvio ya no es obvio”. Presenta perplejidad ante situaciones cotidianas, requiriendo esfuerzo reflexivo para lo que antes era automático."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

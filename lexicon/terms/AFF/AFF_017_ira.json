@@ -119,6 +119,16 @@
     "Asumir 'problema de personalidad' sin evaluar intoxicación, abstinencia o causa médica.",
     "Confundir ira con ansiedad por la activación autonómica compartida."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "los voy a hacer pagar."
+    },
+    {
+      "type": "observation",
+      "text": "El paciente muestra activación autonómica y conducta amenazante: puños cerrados, rubor facial, voz elevada y frases de agresión verbal."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

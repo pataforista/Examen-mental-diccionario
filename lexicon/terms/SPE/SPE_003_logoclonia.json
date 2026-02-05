@@ -64,6 +64,12 @@
     "cognitive_pitfalls": [
         "Atribuir erróneamente a 'nerviosismo' o ansiedad social."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Repite rítmicamente la última sílaba de la última palabra: “Tengo mucha ham-bre-bre-bre-bre”. Es un fenómeno iterativo de carácter espasmódico, frecuente en organicidad avanzada."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

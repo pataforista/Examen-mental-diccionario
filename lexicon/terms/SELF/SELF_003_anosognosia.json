@@ -85,6 +85,12 @@
         "Confundir negación (defensa psicológica) con anosognosia (falla neurológica).",
         "Culpar al paciente por 'no querer colaborar'."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Paciente con hemiplejia izquierda niega déficit: intenta levantarse como si pudiera usar la extremidad, afirma “mi brazo está bien” pese a parálisis observable. Puede atribuir la inmovilidad a factores externos o minimizarla, con discrepancia marcada entre evidencia clínica y autoinforme."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

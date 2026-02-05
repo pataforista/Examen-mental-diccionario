@@ -164,6 +164,12 @@
     "Codificar como alucinación por no documentar estímulo real.",
     "Omitir historia de sustancias/fármacos en distorsiones persistentes."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente describe cambios de cualidad sin objeto “nuevo”: “Los colores están demasiado brillantes, como saturados” o “los contornos ondulan”. Reconoce que el objeto sigue siendo el mismo (“la pared es pared”), pero con alteración de intensidad/forma percibida, sin llegar a una figura externa inexistente."
+    }
+  ],
   "version": "1.0.1",
   "provenance": {
     "phenomenology": [

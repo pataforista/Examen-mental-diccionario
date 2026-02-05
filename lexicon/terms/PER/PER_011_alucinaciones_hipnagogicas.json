@@ -99,6 +99,12 @@
     "Codificar como psicosis por omitir el vínculo con el sueño.",
     "No preguntar si ocurren solo al conciliar el sueño."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "En el tránsito a quedarse dormido, el paciente ve destellos/patrones geométricos brillantes o escucha que alguien dice su nombre; se sobresalta y se despierta, y reconoce el contexto temporal (“justo cuando me estaba durmiendo”). El fenómeno se vincula al inicio del sueño, con breve duración."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

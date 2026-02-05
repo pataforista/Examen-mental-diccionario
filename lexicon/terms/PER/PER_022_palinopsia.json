@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Tras ver un coche rojo, minutos después sigue viendo su “imagen” superpuesta en el campo visual al mirar otros lugares (“se queda pegada la silueta”). Refiere persistencia/recurrencia de la imagen más allá del estímulo, con carácter de posimagen patológica."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

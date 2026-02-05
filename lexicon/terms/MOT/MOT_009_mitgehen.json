@@ -54,6 +54,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El examinador toca apenas el antebrazo y lo empuja 1–2 cm; el paciente continúa elevándolo suavemente “siguiendo” el dedo. Cuando se le dice “no permita que le mueva el brazo”, la extremidad aun así acompaña el estímulo leve."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

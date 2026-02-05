@@ -53,6 +53,12 @@
     "cognitive_pitfalls": [
         "Asumir automáticamente desorganización psicótica sin explorar contexto cultural."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Cada vez que entra alguien, el paciente ejecuta un saludo rígido y ceremonioso, con giro del tronco y reverencia prolongada. Al caminar, adopta puntillas con brazos en postura “coreográfica”, sin razón funcional y con cualidad afectada."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

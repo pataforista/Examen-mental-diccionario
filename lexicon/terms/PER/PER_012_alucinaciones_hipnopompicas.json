@@ -93,6 +93,12 @@
     "Asumir psicosis sin documentar temporalidad al despertar.",
     "No diferenciar de delirium si el paciente está confuso de forma sostenida."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Al despertar por la mañana, con ojos abiertos, ve por segundos una figura al pie de la cama que se desvanece al aumentar el estado de alerta. Puede decir: “Fue al abrir los ojos; luego ya no estaba”. La clave es la aparición en el despertar y desaparición con vigilia plena."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

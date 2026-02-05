@@ -96,6 +96,12 @@
     "Confundir con ansiedad severa o agitación psicótica y añadir fármacos que agravan el cuadro.",
     "No detectar gatillos no psiquiátricos (analgésicos, antibióticos, triptanes)."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Tras iniciar ISRS y Tramadol, presenta agitación, midriasis, diaforesis, clonus inducible en tobillos e hiperreflexia. Se documenta la relación temporal con el fármaco y la tríada de alteraciones autonómicas, neuromusculares y del estado mental."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [],

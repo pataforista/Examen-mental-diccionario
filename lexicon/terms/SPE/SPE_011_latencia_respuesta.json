@@ -51,6 +51,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Silencios prolongados tras las intervenciones del examinador; el paciente parece requerir un esfuerzo inusual para procesar la información o iniciar el habla. Se documenta un retraso temporal observable en el inicio de la respuesta."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

@@ -34,7 +34,7 @@
     },
     "DEL": {
       "description": "Delusions",
-      "next_seq": 32,
+      "next_seq": 33,
       "reserved": []
     },
     "INS": {
@@ -283,6 +283,10 @@
     {
       "term_id": "DEL_020",
       "path": "lexicon/terms/DEL/DEL_020_delirio_somatico_monotematico.json"
+    },
+    {
+      "term_id": "DEL_021",
+      "path": "lexicon/terms/DEL/DEL_021_delirio_culpa.json"
     },
     {
       "term_id": "DEL_022",

@@ -50,6 +50,12 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El entrevistador se ajusta los lentes y luego cruza la pierna; el paciente repite de inmediato ambos gestos con latencia mínima, como “en espejo”. Cuando se le dice “no me copie”, intenta detenerse pero vuelve a imitar el siguiente gesto de manera automática."
+        }
+    ],
     "version": "1.1.0",
     "provenance": {
         "phenomenology": [

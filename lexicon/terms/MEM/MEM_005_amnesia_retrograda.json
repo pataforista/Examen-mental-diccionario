@@ -26,6 +26,16 @@
     "alerts": [],
     "teaching_notes": [],
     "cognitive_pitfalls": [],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Sé quién soy, pero no recuerdo nada de lo que pasó el año pasado, ni el accidente ni quién me trajo aquí."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente presenta una laguna mnésica que abarca desde meses antes del evento traumático hasta el momento actual. Conserva memoria procedimental pero pierde hitos biográficos recientes."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [],

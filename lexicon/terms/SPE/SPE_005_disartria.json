@@ -100,6 +100,12 @@
         "Asumir que el paciente tiene un déficit intelectual porque habla de forma borrosa.",
         "Minimizar una disartria leve como 'cansancio' sin descartar organicidad."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Emisión verbal borrosa, “pastosa” o “como con la lengua pesada”, dificultando la inteligibilidad. El lenguaje (gramática y contenido) es correcto, pero la ejecución motora de la articulación está alterada."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

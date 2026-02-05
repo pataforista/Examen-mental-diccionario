@@ -79,6 +79,12 @@
   "cognitive_pitfalls": [
     "Interrumpir precozmente y no verificar si el paciente alcanza la meta (meta-direction)."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Relato extremadamente minucioso y lento, cargado de digresiones y detalles parentéticos sobre el clima, la ropa o la hora, lo que retrasa significativamente la respuesta central. Aunque se pierde en lo accesorio, finalmente logra volver al tema original y responder a la pregunta."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

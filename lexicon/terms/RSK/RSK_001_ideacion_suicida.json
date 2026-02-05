@@ -131,6 +131,12 @@
     "Tratar la ideación como un ítem dicotómico sin gradación (plan/medios/tiempo/intención).",
     "Asumir que negar ideación descarta riesgo sin corroborar conducta preparatoria."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente verbaliza muerte como deseo o pensamiento recurrente: “A veces pienso que estarían mejor sin mí” y/o “quisiera no despertar”. Al explorar, describe frecuencia y grado de intencionalidad variable, sin acciones concretas en ese momento (ideación, no conducta)."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

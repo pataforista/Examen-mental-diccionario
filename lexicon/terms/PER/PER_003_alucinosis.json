@@ -95,6 +95,12 @@
     "Diagnosticar psicosis solo por localización externa.",
     "No explorar agudeza visual o consumo de sustancias."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente mayor con deterioro visual (contexto compatible con Charles Bonnet) refiere ver “personitas con ropa de colores caminando sobre la mesa”. Agrega: “Sé que no están ahí; son mis ojos/mi cabeza, pero las veo igual”. Conserva juicio de realidad, no organiza conducta delirante alrededor del fenómeno y puede describirlo con distancia crítica."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

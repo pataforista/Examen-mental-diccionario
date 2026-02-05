@@ -62,6 +62,12 @@
     "cognitive_pitfalls": [
         "Atribuir diagnósticos a partir de la facies sin integrar otros dominios."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Facies hipomímica/amímica: el rostro permanece inmóvil y sin cambios expresivos aun cuando relata situaciones de alto impacto emocional. La mirada es fija y la mímica facial es inexistente durante todo el encuentro."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

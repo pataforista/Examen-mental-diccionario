@@ -93,6 +93,12 @@
     "Etiquetar como esquizofrenia a un paciente con TEPT severo.",
     "No investigar desencadenantes ambientales."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Superviviente de accidente describe re-experimentación súbita: “De golpe estoy otra vez atrapado en el coche; huelo gasolina, siento el golpe en el pecho y oigo el metal”, con desanclaje momentáneo del presente (queda “ida/o”, mirada fija, taquipnea), y luego reorienta progresivamente al entorno actual. La cualidad central es vivencia de “ahora mismo”, no un recuerdo narrativo voluntario."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

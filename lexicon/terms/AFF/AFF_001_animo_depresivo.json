@@ -78,6 +78,16 @@
     "Confundir tristeza reactiva con ánimo depresivo patológico.",
     "Ignorar duración y curso."
   ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Me siento hundido, como si estuviera en un agujero negro; nada va a mejorar."
+    },
+    {
+      "type": "observation",
+      "text": "Se observa voz baja, enlentecimiento psicomotor y llanto contenido al hablar de planes futuros."
+    }
+  ],
   "version": "1.0.0",
   "synonyms_and_slang": [
     "ánimo depresivo"

@@ -54,6 +54,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "Mi estómago se convirtió en piedra; ya no puedo digerir nada porque el órgano dejó de ser de carne para ser un mineral duro."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente acude reiteradamente a urgencias por «obstrucción intestinal», rechaza los resultados de los estudios imagenológicos normales y sostiene que los médicos «no tienen tecnología para ver el tipo de piedra en mi interior»."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

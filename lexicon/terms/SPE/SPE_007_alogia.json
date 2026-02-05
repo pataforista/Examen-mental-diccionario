@@ -81,6 +81,12 @@
         "Confundir con falta de educación o bajo nivel cultural.",
         "Asumir que es una falta de cooperación voluntaria del paciente."
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "El paciente responde con frases mínimas o con un discurso circular que no aporta datos nuevos ante preguntas abiertas. Se consigna como un empobrecimiento del pensamiento que se manifiesta como una pobreza del habla o del contenido informativo de la misma."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

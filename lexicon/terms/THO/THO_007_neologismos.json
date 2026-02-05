@@ -29,6 +29,12 @@
             "context": "asociaciones_idiosincrasicas"
         }
     ],
+    "examples": [
+        {
+            "type": "observation",
+            "text": "Usa palabras propias para describir experiencias (por ej. “estoy sufriendo una extranjetización cerebral”), otorgando un significado privado e idiosincrásico a términos inexistentes en el léxico común."
+        }
+    ],
     "version": "1.0.0",
     "synonyms_and_slang": [
         "neologismos"

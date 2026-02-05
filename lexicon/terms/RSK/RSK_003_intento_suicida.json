@@ -121,6 +121,12 @@
     "Inferir intención solo por el método (falacia).",
     "No registrar probabilidad de rescate y planificación."
   ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Ingresa tras ingerir sobredosis con intención declarada de morir, o relata intento previo de ahorcamiento. Se documenta acción autolesiva con intención suicida (aunque el resultado haya sido no letal), incluyendo método, letalidad percibida y rescate."
+    }
+  ],
   "version": "1.0.0",
   "provenance": {
     "phenomenology": [

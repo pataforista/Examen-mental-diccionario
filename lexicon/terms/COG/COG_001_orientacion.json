@@ -53,6 +53,16 @@
     "cognitive_pitfalls": [
         "Confundir desorientación con falta de cooperación sin corroborar nivel de conciencia."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "No sé qué día es hoy... ¿estamos en 1995? ¿Dónde estoy? Esto parece mi casa pero no la reconozco."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente fracasa al identificar el día de la semana, el mes y el año actual. No reconoce el hospital como tal (desorientación espacial) y se muestra perplejo ante el entorno físico."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [

@@ -56,6 +56,16 @@
         "Sobregeneralizar el término sin evidencia clínica suficiente.",
         "No discriminar entre variación normal y hallazgo psicopatológico."
     ],
+    "examples": [
+        {
+            "type": "patient_quote",
+            "text": "No soy yo quien escribe esto; están moviendo mis manos con un control remoto desde el satélite, yo solo soy un títere."
+        },
+        {
+            "type": "observation",
+            "text": "El paciente describe con perplejidad cómo sus movimientos o pensamientos no le pertenecen, atribuyendo el origen de su voluntad a una fuerza externa tecnológica o mística."
+        }
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
