@@ -1,0 +1,5 @@
+Lexicon audit
+Generated: 2026-02-05T05:01:26.175976Z
+Terms in registry: 145
+Missing files: 0
+Status: all terms validated with non-empty key fields, status=active, and domain_links present.

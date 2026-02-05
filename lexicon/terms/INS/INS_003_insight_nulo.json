@@ -38,7 +38,13 @@
             "context": "juicio_insight"
         }
     ],
-    "exclusions": [],
+    "exclusions": [
+        {
+            "term_id": "INS_003",
+            "canonical_name": "Insight nulo",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
     "alerts": [
         {
             "type": "clinical_attention",
@@ -53,7 +59,12 @@
     ],
     "version": "1.0.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

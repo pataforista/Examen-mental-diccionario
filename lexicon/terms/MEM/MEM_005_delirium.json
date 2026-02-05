@@ -1,15 +1,21 @@
 {
     "term_id": "MEM_005",
     "canonical_name": "Delirium",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "delirium"
+    ],
     "term_kind": "syndrome",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
         "core": "Síndrome orgánico agudo fluctuante con inatención y alteración global de conciencia y cognición.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "required_features": [
+            "presencia clínica de delirium",
+            "consistencia fenomenológica durante la entrevista",
+            "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con delirium.",
+        "behavioral_marker": "Se observan signos conductuales coherentes con delirium en contexto clínico."
     },
     "operationalization": {
         "detectable_by": [
@@ -27,10 +33,27 @@
             "context": "conciencia"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "exclusions": [
+        {
+            "term_id": "MEM_005",
+            "canonical_name": "Delirium",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir delirium with fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
@@ -41,5 +64,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

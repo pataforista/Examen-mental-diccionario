@@ -116,6 +116,9 @@
     "phenomenology": [
       "Jaspers"
     ],
-    "clinical_tradition": []
-  }
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

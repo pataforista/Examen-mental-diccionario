@@ -10,7 +10,7 @@
             "frecuencia alta en esquizofrenia"
         ],
         "subjective_marker": "Dice que 'se le borró la mente' o que le 'robaron la idea'.",
-        "behavioral_marker": "Se detiene a mitad de una frase y permanece en silencio, pareciendo perplejo."
+        "behavioral_marker": "Se detiene a mitad de una frase and permanece en silencio, pareciendo perplejo."
     },
     "operationalization": {
         "detectable_by": [
@@ -29,5 +29,40 @@
             "context": "curso_del_pensamiento"
         }
     ],
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "synonyms_and_slang": [
+        "bloqueo del pensamiento"
+    ],
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "exclusions": [
+        {
+            "term_id": "THO_002",
+            "canonical_name": "Bloqueo del pensamiento",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir bloqueo del pensamiento con fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
+    "status": "active",
+    "provenance": {
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
 }

@@ -1,7 +1,9 @@
 {
     "term_id": "MOT_011",
     "canonical_name": "Tics",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "tics"
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 0,
@@ -32,8 +34,19 @@
             "context": "psicomotricidad_conacion"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
+    "exclusions": [
+        {
+            "term_id": "MOT_011",
+            "canonical_name": "Tics",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico and with integración sindromática."
+        }
+    ],
     "teaching_notes": [
         "Anotar si son motores o vocales, simples o complejos."
     ],
@@ -42,7 +55,12 @@
     ],
     "version": "1.1.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

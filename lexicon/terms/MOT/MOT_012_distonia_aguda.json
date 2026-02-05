@@ -1,7 +1,9 @@
 {
     "term_id": "MOT_012",
     "canonical_name": "Distonía aguda",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "distonía aguda"
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 1,
@@ -32,7 +34,13 @@
             "context": "psicomotricidad_conacion"
         }
     ],
-    "exclusions": [],
+    "exclusions": [
+        {
+            "term_id": "MOT_012",
+            "canonical_name": "Distonía aguda",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
     "alerts": [
         {
             "type": "safety_critical",
@@ -47,7 +55,12 @@
     ],
     "version": "1.1.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

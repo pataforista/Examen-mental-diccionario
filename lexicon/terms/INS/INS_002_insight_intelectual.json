@@ -38,8 +38,19 @@
             "context": "juicio_insight"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
+    "exclusions": [
+        {
+            "term_id": "INS_002",
+            "canonical_name": "Insight intelectual",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+        }
+    ],
     "teaching_notes": [
         "Diferenciar aceptación intelectual de aceptación emocional es clave para planificar adherencia."
     ],
@@ -48,7 +59,12 @@
     ],
     "version": "1.0.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

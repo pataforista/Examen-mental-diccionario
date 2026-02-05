@@ -3,39 +3,36 @@
   "canonical_name": "Tangencialidad",
   "synonyms_and_slang": [
     {
-      "term": "perder el hilo",
-      "context": "patient_report"
-    },
-    {
-      "term": "irse por las ramas",
-      "context": "colloquial"
+      "term": "perderse por las ramas",
+      "context": "patient_report",
+      "locale": "es"
     }
   ],
   "term_kind": "symptom",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
-    "core": "Respuesta relacionada con el tema pero que no alcanza el punto objetivo.",
+    "core": "Falla en la meta-dirección del pensamiento; el discurso se desvía del tema central y no llega a la meta o respuesta esperada.",
     "required_features": [
-      "respuesta oblicua",
-      "no alcanza la meta de la pregunta",
-      "vínculo semántico conservado pero ineficiente"
+      "digresión del tema original",
+      "incapacidad para volver al hilo central",
+      "vínculo semántico laxo o ausente con la meta esperada"
     ],
-    "subjective_marker": "Puede no ser consciente de que no está respondiendo.",
-    "behavioral_marker": "Relato que se desvía del tema central sin retomar el hilo original."
+    "subjective_marker": "Puede no ser consciente de la desviación o referir que 'se le olvidó lo que iba a decir'.",
+    "behavioral_marker": "Responde de forma oblicua o irrelevante a las preguntas, alejándose progresivamente del objetivo."
   },
   "operationalization": {
     "detectable_by": [
       "entrevista_clinica"
     ],
     "time_relation": [
-      "episodica",
-      "persistente"
+      "actual",
+      "episodica"
     ],
     "pharmacological_link": false,
     "computable_markers": [
       {
-        "marker": "reaches_goal",
+        "marker": "goal_attained",
         "type": "boolean",
         "expected": false
       },
@@ -61,7 +58,12 @@
       "ref_status": "forward"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
   "teaching_notes": [
     "Dato clave: ¿Se respondió la pregunta original? Si no, y hay vínculo con el tema: tangencialidad."
   ],
@@ -72,6 +74,10 @@
   "provenance": {
     "phenomenology": [
       "Jaspers"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
     ]
-  }
+  },
+  "status": "active"
 }

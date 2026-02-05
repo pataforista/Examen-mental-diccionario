@@ -204,16 +204,23 @@ const App = {
     },
 
     viewTerm: function (termId) {
-        const term = this.data.terms.find(t => t.term_id === termId);
-        if (!term) return;
+        try {
+            const term = this.data.terms.find(t => t.term_id === termId);
+            if (!term) return;
 
-        this.addToRecent(term);
+            this.addToRecent(term);
 
-        this.nodes.termView.innerHTML = `
+            // Defensive defaults for templates
+            const teachingNotes = term.teaching_notes || [];
+            const alerts = term.alerts || [];
+            const examples = term.examples || [];
+            const domainLinks = term.domain_links || [];
+
+            this.nodes.termView.innerHTML = `
             <div class="btn-back" onclick="App.closeTerm()">← Volver</div>
             <div class="card">
                 <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                    <div class="badge badge-risk-${term.risk_weight > 1 ? 'critical' : 'alert'}">${term.term_kind}</div>
+                    <div class="badge badge-risk-${term.risk_weight > 1 ? 'critical' : 'alert'}">${term.term_kind || 'término'}</div>
                     ${term.status === 'active' ? '✅' : ''}
                 </div>
                 <h2 class="term-title">${term.canonical_name}</h2>
@@ -224,17 +231,17 @@ const App = {
                             <span>⚠️</span> ALERTA DE RIESGO CLÍNICO
                         </div>
                         <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: #742a2a;">
-                            ${term.alerts[0]?.message || 'Este término implica un riesgo de seguridad o manejo crítico.'}
+                            ${alerts.length > 0 ? alerts[0].message : 'Este término implica un riesgo de seguridad o manejo crítico.'}
                         </p>
                     </div>
                 ` : ''}
 
                 <div class="definition-section">
                     <span class="section-label">Definición Clínica</span>
-                    <p>${term.definition_clinical.core}</p>
+                    <p>${term.definition_clinical?.core || 'Sin definición disponible.'}</p>
                 </div>
 
-                ${term.definition_clinical.subjective_marker ? `
+                ${term.definition_clinical?.subjective_marker ? `
                     <div class="definition-section">
                         <span class="section-label">Marcador Subjetivo</span>
                         <p><em>"${term.definition_clinical.subjective_marker}"</em></p>
@@ -244,8 +251,8 @@ const App = {
                 <div class="definition-section">
                     <span class="section-label">Dominios Asociados</span>
                     <div class="tag-container" style="margin-top: 0.5rem;">
-                        ${term.domain_links && term.domain_links.length > 0 ?
-                term.domain_links.map(link => `
+                        ${domainLinks.length > 0 ?
+                    domainLinks.map(link => `
                                 <span class="tag" onclick="event.stopPropagation(); App.viewDomainDetails('${link.domain_id}')">
                                     ${this.getDomainIcon(link.domain_id)} ${this.getDomainSlug(link.domain_id).replace(/_/g, ' ')}
                                 </span>
@@ -253,18 +260,20 @@ const App = {
                     </div>
                 </div>
 
+                ${teachingNotes.length > 0 ? `
                 <div class="definition-section">
                     <span class="section-label">Docencia & Perlas</span>
                     <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
-                        ${term.teaching_notes.map(note => `<li style="margin-bottom: 0.5rem;">${note}</li>`).join('')}
+                        ${teachingNotes.map(note => `<li style="margin-bottom: 0.5rem;">${note}</li>`).join('')}
                     </ul>
                 </div>
+                ` : ''}
 
-                ${term.examples && term.examples.length > 0 ? `
+                ${examples.length > 0 ? `
                     <div class="definition-section">
                         <span class="section-label">Ejemplos Clínicos</span>
                         <div class="examples-container">
-                            ${term.examples.map(ex => `
+                            ${examples.map(ex => `
                                 <div class="example-item ${ex.type}">
                                     <div class="example-type-badge">${ex.type === 'patient_quote' ? '💬 Paciente' : '👁️ Observación'}</div>
                                     <p>${ex.type === 'patient_quote' ? `<em>"${ex.text}"</em>` : ex.text}</p>
@@ -275,8 +284,12 @@ const App = {
                 ` : ''}
             </div>
         `;
-        this.renderView('term');
-        this.nodes.content.scrollTop = 0;
+            this.renderView('term');
+            this.nodes.content.scrollTop = 0;
+        } catch (e) {
+            console.error("Error rendering term view:", e);
+            alert("Error al cargar la ficha. El archivo podría estar incompleto.");
+        }
     },
 
     loadRecentSearches: function () {
@@ -367,12 +380,18 @@ const App = {
     renderDomains: function () {
         this.nodes.domainView.innerHTML = `
             <div id="domain-grid-container">
-                <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary);">Explorar Dominios</h3>
+                <div class="ritual-box" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(var(--primary-rgb), 0.05); border-radius: 12px;">
+                    <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary);">Explorador de Dominios</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">Seleccione un dominio para ver su estructura clínica y términos asociados.</p>
+                </div>
                 <div class="domain-grid">
                     ${this.data.domains.map(d => `
                         <div class="domain-card" onclick="App.viewDomainDetails('${d.domain_id}')">
                             <div class="domain-icon">${this.getDomainIcon(d.domain_id)}</div>
-                            <span>${d.label_es || d.domain_name || d.domain_id}</span>
+                            <span class="domain-title">${d.label_es || d.domain_name || d.domain_id}</span>
+                            <div class="domain-subtitle" style="font-size: 0.6rem; opacity: 0.6; text-transform: none;">
+                                ${d.subcomponents ? d.subcomponents.length + ' áreas' : 'Detalles'}
+                            </div>
                         </div>
                     `).join('')}
                 </div>
@@ -491,7 +510,7 @@ const App = {
         } else if (id === 'nav-domains') {
             this.data.currentView = 'domains';
             this.renderDomains();
-            this.renderView('domains');
+            this.renderView('domain');
         } else if (id === 'nav-cases') {
             this.data.currentView = 'cases';
             this.renderCases();

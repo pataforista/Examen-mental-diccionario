@@ -1,15 +1,21 @@
 {
     "term_id": "PER_016",
     "canonical_name": "Alucinaciones auditivas comentadoras",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "alucinaciones auditivas comentadoras"
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
         "core": "Voces que narran en tercera persona las acciones del paciente mientras ocurren.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "required_features": [
+            "presencia clínica de alucinaciones auditivas comentadoras",
+            "consistencia fenomenológica durante la entrevista",
+            "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con alucinaciones auditivas comentadoras.",
+        "behavioral_marker": "Se observan signos conductuales coherentes con alucinaciones auditivas comentadoras en contexto clínico."
     },
     "operationalization": {
         "detectable_by": [
@@ -20,11 +26,34 @@
         ],
         "pharmacological_link": false
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-08",
+            "relation": "primary_expression",
+            "context": "sensopercepcion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "PER_016",
+            "canonical_name": "Alucinaciones auditivas comentadoras",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir alucinaciones auditivas comentadoras con fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
@@ -35,5 +64,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

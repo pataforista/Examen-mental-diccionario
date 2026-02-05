@@ -1,7 +1,9 @@
 {
     "term_id": "MOT_008",
     "canonical_name": "Manierismos",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "manierismos"
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 0,
@@ -32,8 +34,19 @@
             "context": "psicomotricidad_conacion"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
+    "exclusions": [
+        {
+            "term_id": "MOT_008",
+            "canonical_name": "Manierismos",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
     "teaching_notes": [
         "Diferenciar manerismos de estereotipias o tics por su intencionalidad aparente."
     ],
@@ -50,5 +63,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

@@ -3,55 +3,64 @@
   "canonical_name": "Incoherencia",
   "synonyms_and_slang": [
     {
-      "term": "pensamiento desorganizado",
-      "context": "clinical_general"
+      "term": "ensalada de palabras",
+      "context": "clinical_descriptive",
+      "locale": "es"
     },
     {
-      "term": "lenguaje ininteligible",
-      "context": "clinical_descriptive"
+      "term": "discurso ininteligible",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "word salad",
+      "context": "clinical_bilingual",
+      "locale": "en"
     }
   ],
   "term_kind": "symptom",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
-    "core": "Pérdida de la conexión lógica entre palabras o frases, resultando en un discurso ininteligible.",
+    "core": "Pérdida total de la estructura lógica y sintáctica del pensamiento y lenguaje; el discurso es incomprensible.",
     "required_features": [
-      "ruptura de sintaxis o semántica básica",
-      "pérdida de la meta-dirección",
-      "incomprensible para el oyente"
+      "ausencia de nexos lógicos entre palabras o frases",
+      "desorganización de la sintaxis",
+      "ininteligibilidad del mensaje global"
     ],
-    "subjective_marker": "A menudo el paciente no es consciente de la desorganización.",
-    "behavioral_marker": "Discurso que carece de sentido lógico, incluso a nivel de oración."
+    "subjective_marker": "No hay reporte claro; puede percatarse de que 'no le entienden' sin poder rectificar.",
+    "behavioral_marker": "Habla caótica, emisión de palabras sueltas o fragmentos sin sentido gramatical."
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_clinica"
+      "entrevista_clinica",
+      "observacion"
     ],
     "time_relation": [
-      "episodica",
-      "persistente"
+      "actual",
+      "episodica"
     ],
     "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Anticolinérgicos/Alucinógenos",
+        "risk": "high"
+      }
+    ],
     "computable_markers": [
       {
-        "marker": "syntax_preserved",
+        "marker": "syntax_broken",
         "type": "boolean",
-        "expected": false
+        "expected": true
       },
       {
-        "marker": "semantic_link_preserved",
-        "type": "boolean",
-        "expected": false
-      },
-      {
-        "marker": "organization_level",
+        "marker": "comprehensibility",
         "type": "ordinal_0_3",
         "anchors": [
           "0=normal",
-          "1=leve",
-          "2=moderada",
-          "3=incoherencia_total"
+          "1=difícil",
+          "2=mínima",
+          "3=nula"
         ]
       }
     ]
@@ -60,12 +69,7 @@
     {
       "domain_id": "DOM-02",
       "relation": "primary_expression",
-      "context": "estructura_del_pensamiento"
-    },
-    {
-      "domain_id": "DOM-10",
-      "relation": "risk_marker",
-      "context": "neurocognicion_y_conciencia"
+      "context": "desorganizacion_pensamiento"
     }
   ],
   "exclusions": [
@@ -95,6 +99,10 @@
     "phenomenology": [
       "Oyebode",
       "Jaspers"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
     ]
-  }
+  },
+  "status": "active"
 }

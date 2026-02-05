@@ -1,15 +1,21 @@
 {
     "term_id": "DEL_023",
     "canonical_name": "Humor delirante (Wahnstimmung)",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "humor delirante (wahnstimmung)"
+    ],
     "term_kind": "state",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
         "core": "Atmósfera afectiva ominosa y de significación extraña previa a la organización delirante.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "required_features": [
+            "presencia clínica de humor delirante (wahnstimmung)",
+            "consistencia fenomenológica durante la entrevista",
+            "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con humor delirante (wahnstimmung).",
+        "behavioral_marker": "Se observan signos conductuales coherentes con humor delirante (wahnstimmung) en contexto clínico."
     },
     "operationalization": {
         "detectable_by": [
@@ -20,11 +26,34 @@
         ],
         "pharmacological_link": false
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-07",
+            "relation": "primary_expression",
+            "context": "pensamiento_contenido"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "DEL_023",
+            "canonical_name": "Humor delirante (Wahnstimmung)",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir humor delirante (wahnstimmung) with fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
@@ -35,5 +64,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

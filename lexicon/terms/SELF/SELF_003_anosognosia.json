@@ -1,32 +1,100 @@
 {
     "term_id": "SELF_003",
     "canonical_name": "Anosognosia",
-    "term_kind": "symptom",
+    "synonyms_and_slang": [
+        {
+            "term": "falta de insight",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "no reconoce el problema",
+            "context": "patient_report",
+            "locale": "es"
+        }
+    ],
+    "term_kind": "sign",
+    "granularity": "atomic",
+    "risk_weight": 2,
     "definition_clinical": {
-        "core": "Incapacidad para reconocer o percibir la propia enfermedad o déficit funcional.",
+        "core": "Incapacidad para reconocer o percibir la propia enfermedad o déficit funcional de origen neurobiológico.",
         "required_features": [
-            "déficit evidente no reconocido",
-            "ausencia de negación voluntaria"
+            "déficit evidente no reconocido (cognitivo, motor o mental)",
+            "ausencia de negación voluntaria consciente",
+            "base orgánica o funcional severa"
         ],
-        "subjective_marker": "Niega tener problemas médicos o cognitivos.",
-        "behavioral_marker": "Actúa ignorando sus limitaciones físicas o mentales."
+        "subjective_marker": "Niega tener problemas médicos, cognitivos o conductuales a pesar de la evidencia.",
+        "behavioral_marker": "Actúa ignorando sus limitaciones; rechaza asistencia o tratamiento por 'no necesitarlo'."
     },
     "operationalization": {
         "detectable_by": [
             "entrevista_clinica",
-            "colateral"
+            "colateral",
+            "observacion_conductual"
         ],
         "time_relation": [
-            "persistente"
+            "persistente",
+            "estable"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "denial_of_deficit",
+                "type": "boolean",
+                "expected": true
+            },
+            {
+                "marker": "voluntarity",
+                "type": "boolean",
+                "expected": false
+            }
+        ]
     },
     "domain_links": [
         {
             "domain_id": "DOM-11",
             "relation": "primary_expression",
-            "context": "insight"
+            "context": "juicio_insight"
         }
     ],
-    "version": "1.0.0"
+    "exclusions": [
+        {
+            "term_id": "SELF_006",
+            "canonical_name": "Anosognosia cognitiva",
+            "reason": "Anosognosia es el término general; la cognitiva se especifica para déficits de memoria/funciones ejecutivas.",
+            "ref_status": "forward"
+        },
+        {
+            "term_id": "SELF_007",
+            "canonical_name": "Anosognosia psicótica",
+            "reason": "Se especifica para la falta de conciencia en trastornos psicóticos primarios.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "safety_critical",
+            "message": "La anosognosia aumenta el riesgo de caídas, accidentes y mal apego al tratamiento."
+        }
+    ],
+    "teaching_notes": [
+        "No es 'terquedad' ni 'mecanismo de defensa psicológico'. Es una falla en los sistemas de monitoreo cerebral.",
+        "Frecuente en lesiones del hemisferio derecho, demencias y psicosis."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir negación (defensa psicológica) con anosognosia (falla neurológica).",
+        "Culpar al paciente por 'no querer colaborar'."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Babinski",
+            "Neurología clínica"
+        ],
+        "clinical_tradition": [
+            "Neuropsicología",
+            "Psiquiatría orgánica"
+        ]
+    },
+    "status": "active"
 }

@@ -2,13 +2,18 @@
   "term_id": "PER_005",
   "canonical_name": "Flashback",
   "synonyms_and_slang": [
-    { "term": "reviviscencia", "context": "clinical_formal" },
-    { "term": "volver a vivirlo", "context": "patient_report" }
+    {
+      "term": "reviviscencia",
+      "context": "clinical_formal"
+    },
+    {
+      "term": "volver a vivirlo",
+      "context": "patient_report"
+    }
   ],
   "term_kind": "phenomenon",
   "granularity": "atomic",
   "risk_weight": 2,
-
   "definition_clinical": {
     "core": "Re-experimentación involuntaria, vívida y multisensorial de un evento traumático previo, con pérdida parcial o total de la orientación temporal en el presente.",
     "required_features": [
@@ -19,23 +24,46 @@
     "subjective_marker": "El paciente siente que el evento pasado está ocurriendo nuevamente, no solo recordándolo.",
     "behavioral_marker": "Conductas defensivas congruentes con el trauma, desconexión del entorno actual."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica", "historia_trauma"],
-    "time_relation": ["episodica", "reactiva"],
+    "detectable_by": [
+      "entrevista_clinica",
+      "historia_trauma"
+    ],
+    "time_relation": [
+      "episodica",
+      "reactiva"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
-      { "marker": "trauma_history", "type": "boolean", "expected": true },
-      { "marker": "sensory_overlay", "type": "boolean", "expected": true },
-      { "marker": "present_time_disorientation", "type": "boolean", "expected": true }
+      {
+        "marker": "trauma_history",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "sensory_overlay",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "present_time_disorientation",
+        "type": "boolean",
+        "expected": true
+      }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" },
-    { "domain_id": "DOM-10", "relation": "etiological_anchor", "context": "memoria_traumatica" }
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "etiological_anchor",
+      "context": "memoria_traumatica"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "PER_001",
@@ -50,29 +78,29 @@
       "ref_status": "forward"
     }
   ],
-
   "alerts": [
     {
       "type": "management_warning",
       "message": "Diferenciar de psicosis aguda. Priorizar contención, ansiolisis y evaluación de TEPT antes de antipsicóticos."
     }
   ],
-
   "teaching_notes": [
     "Es una intrusión de memoria en el sistema perceptivo.",
     "Frecuente presentación olfatoria o somática.",
     "La congruencia biográfica es la clave diagnóstica."
   ],
-
   "cognitive_pitfalls": [
     "Etiquetar como esquizofrenia a un paciente con TEPT severo.",
     "No investigar desencadenantes ambientales."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
-    "phenomenology": ["Janet"],
-    "clinical_tradition": ["Trauma studies"]
-  }
+    "phenomenology": [
+      "Janet"
+    ],
+    "clinical_tradition": [
+      "Trauma studies"
+    ]
+  },
+  "status": "active"
 }

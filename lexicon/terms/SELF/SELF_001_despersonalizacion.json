@@ -1,16 +1,35 @@
 {
     "term_id": "SELF_001",
     "canonical_name": "Despersonalización",
+    "synonyms_and_slang": [
+        {
+            "term": "sentirse como un autómata",
+            "context": "patient_report",
+            "locale": "es"
+        },
+        {
+            "term": "estar fuera de uno mismo",
+            "context": "patient_report",
+            "locale": "es"
+        },
+        {
+            "term": "depersonalization",
+            "context": "clinical_bilingual",
+            "locale": "en"
+        }
+    ],
     "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
     "definition_clinical": {
-        "core": "Sentimiento de extrañeza o falta de realidad sobre uno mismo.",
+        "core": "Sentimiento de extrañeza o falta de realidad sobre uno mismo (cuerpo, mente o funciones).",
         "required_features": [
-            "sentimiento de desapego",
-            "conciencia de irrealidad",
-            "insight conservado"
+            "sentimiento de desapego o extrañeza interna",
+            "conciencia de irrealidad (insight preservado)",
+            "no es un delirio"
         ],
-        "subjective_marker": "Describe sentirse como un observador ajeno de su cuerpo.",
-        "behavioral_marker": "Relata sentimientos de extrañeza interna."
+        "subjective_marker": "Describe sentirse como un observador ajeno de su cuerpo o procesos mentales.",
+        "behavioral_marker": "Relata sentimientos de extrañeza interna con angustia o perplejidad."
     },
     "operationalization": {
         "detectable_by": [
@@ -18,16 +37,77 @@
         ],
         "time_relation": [
             "transitoria",
-            "recurrente"
+            "recurrente",
+            "persistente"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+            {
+                "class": "Cannabis",
+                "risk": "medium"
+            },
+            {
+                "class": "Disociativos",
+                "risk": "high"
+            }
+        ],
+        "computable_markers": [
+            {
+                "marker": "as_if_quality",
+                "type": "boolean",
+                "expected": true
+            },
+            {
+                "marker": "insight_preserved",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
     "domain_links": [
         {
             "domain_id": "DOM-11",
             "relation": "primary_expression",
             "context": "conciencia_del_yo"
+        },
+        {
+            "domain_id": "DOM-09",
+            "relation": "associated_symptom",
+            "context": "ansiedad_panico"
         }
     ],
-    "version": "1.0.0"
+    "exclusions": [
+        {
+            "term_id": "SELF_002",
+            "canonical_name": "Desrealización",
+            "reason": "La desrealización se refiere a la extrañeza del entorno; la despersonalización a la extrañeza de uno mismo.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_differentiation",
+            "message": "Diferenciar de delirios de control (actos impuestos) donde el insight es nulo. Aquí el paciente sabe que es él, pero se siente extraño."
+        }
+    ],
+    "teaching_notes": [
+        "Frecuente en trastornos de ansiedad, trauma y consumo de sustancias.",
+        "No implica necesariamente psicosis; el juicio de realidad suele estar intacto."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con anhedonia (falta de placer) o con depresión (falta de energía).",
+        "Asumir que es un síntoma psicótico sin evaluar el insight."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Mellor"
+        ],
+        "clinical_tradition": [
+            "Psicopatología descriptiva",
+            "Trastornos disociativos"
+        ]
+    },
+    "status": "active"
 }

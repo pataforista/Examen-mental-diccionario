@@ -1,39 +1,91 @@
 {
     "term_id": "SELF_010",
     "canonical_name": "Impulsos impuestos",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "me obligan a querer hacer algo",
+            "context": "patient_report",
+            "locale": "es"
+        },
+        {
+            "term": "impulsos extraños",
+            "context": "patient_report",
+            "locale": "es"
+        }
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
-    "risk_weight": 0,
+    "risk_weight": 1,
     "definition_clinical": {
-        "core": "Vivencia de impulsos de acción atribuidos a una fuerza externa.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Vivencia de impulsos de acción atribuidos a una fuerza o agencia externa, no sentidos como propios.",
+        "required_features": [
+            "impulso o urgencia sentida como ajena",
+            "atribución externa de la agencia del impulso",
+            "puede o no llevar a la acción"
+        ],
+        "subjective_marker": "Describe que 'le meten ganas' de hacer algo que él no quiere, o que alguien más decide sus impulsos.",
+        "behavioral_marker": "Relata la lucha contra impulsos que siente que no son suyos."
     },
     "operationalization": {
         "detectable_by": [
             "entrevista_clinica"
         ],
         "time_relation": [
-            "actual"
+            "actual",
+            "episodica"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "agency_external",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo_agencia"
+        },
+        {
+            "domain_id": "DOM-07",
+            "relation": "associated_delusion",
+            "context": "delirio_de_control"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "SELF_005",
+            "canonical_name": "Actos impuestos",
+            "reason": "En los actos es la acción ejecutada; aquí es la intención o urgencia previa.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_severity",
+            "message": "Es un fenómeno de pasividad, síntoma de primer rango. Evaluar riesgo de conducta si el impulso es hacia la agresión o autolesión."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar de las compulsiones del TOC, donde el impulso es propio pero indeseado (egodistónico); aquí es ajeno (no-yo)."
+    ],
+    "cognitive_pitfalls": [
+        "Malinterpretar como falta de control de impulsos común.",
+        "No preguntar por el sentimiento de 'propiedad' del impulso."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Schneider",
+            "Sims"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psicopatología descriptiva",
+            "Esquizofrenia"
         ]
-    }
+    },
+    "status": "active"
 }

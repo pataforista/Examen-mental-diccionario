@@ -1,7 +1,9 @@
 {
     "term_id": "MOT_013",
     "canonical_name": "Discinesia",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "discinesia"
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 1,
@@ -33,7 +35,13 @@
             "context": "psicomotricidad_conacion"
         }
     ],
-    "exclusions": [],
+    "exclusions": [
+        {
+            "term_id": "MOT_013",
+            "canonical_name": "Discinesia",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
     "alerts": [
         {
             "type": "safety_critical",
@@ -48,7 +56,12 @@
     ],
     "version": "1.1.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

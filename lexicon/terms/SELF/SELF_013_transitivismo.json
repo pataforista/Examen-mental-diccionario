@@ -1,39 +1,86 @@
 {
     "term_id": "SELF_013",
     "canonical_name": "Transitivismo",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "confusión de personas",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "sentir lo que otros sienten",
+            "context": "patient_report",
+            "locale": "es"
+        }
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
-    "risk_weight": 0,
+    "risk_weight": 1,
     "definition_clinical": {
-        "core": "Alteración de límites del yo con atribución cruzada de experiencias entre sí mismo y otros.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Alteración de los límites del yo en la que el paciente atribuye sus propias experiencias, síntomas o acciones a otros, o viceversa.",
+        "required_features": [
+            "pérdida de la demarcación yo-otro",
+            "atribución cruzada de estados internos",
+            "ocurre en un contexto de conciencia clara (no es confusión global)"
+        ],
+        "subjective_marker": "Afirma que el médico es el que está triste (estándolo el paciente) o que él siente el dolor físico de otra persona.",
+        "behavioral_marker": "Acciones que demuestran una falla en la discriminación de la identidad de las vivencias."
     },
     "operationalization": {
         "detectable_by": [
             "entrevista_clinica"
         ],
         "time_relation": [
+            "episodica",
             "actual"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "ego_boundary_loss",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo_limites"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "COG_001",
+            "canonical_name": "Confusión",
+            "reason": "En la confusión la falla es de orientación global; el transitivismo es una falla específica de la frontera del yo.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_severity",
+            "message": "Suele indicar un proceso psicótico agudo o una desorganización grave de la personalidad."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar de la empatía normal: aquí hay una convicción de que la vivencia es del otro o viceversa, no solo una resonancia afectiva.",
+        "Fue descrito clásicamente en la esquizofrenia y en cuadros orgánicos focales."
+    ],
+    "cognitive_pitfalls": [
+        "Malinterpretar como una defensa proyectiva simple (mecanismo de defensa).",
+        "Ignorar el síntoma por parecer una metáfora del paciente."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Wernicke",
+            "Jaspers"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psicopatología clásica"
         ]
-    }
+    },
+    "status": "active"
 }

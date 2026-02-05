@@ -1,45 +1,96 @@
 {
     "term_id": "SPE_007",
     "canonical_name": "Alogia",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "pobreza de contenido del habla",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "discurso vacío",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "alogia",
+            "context": "clinical_bilingual",
+            "locale": "en"
+        }
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
-        "core": "Empobrecimiento del pensamiento expresado como pobreza del habla o del contenido informativo.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Empobrecimiento del pensamiento que se manifiesta como una pobreza del habla o del contenido informativo de la misma.",
+        "required_features": [
+            "respuestas breves (pobreza de habla) O bien",
+            "habla de longitud normal pero vaga, repetitiva o con poca información (pobreza de contenido)",
+            "ausencia de bloqueos del pensamiento"
+        ],
+        "subjective_marker": "Rara vez es consciente del empobrecimiento; puede referir que 'no tiene ideas'.",
+        "behavioral_marker": "Responde con frases mínimas o con un discurso circular que no aporta datos nuevos ante preguntas abiertas."
     },
     "operationalization": {
         "detectable_by": [
             "entrevista_clinica"
         ],
         "time_relation": [
+            "persistente",
             "actual"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "low_info_density",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
     "domain_links": [
         {
-            "domain_id": "DOM-05",
+            "domain_id": "DOM-02",
             "relation": "primary_expression",
-            "context": "habla_lenguaje"
+            "context": "pensamiento_negativo"
+        },
+        {
+            "domain_id": "DOM-11",
+            "relation": "associated_sign",
+            "context": "esquizofrenia_sintomas_negativos"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "exclusions": [
+        {
+            "term_id": "SPE_012",
+            "canonical_name": "Pobreza del habla",
+            "reason": "La alogia es el concepto psicopatológico amplio (síntoma negativo); la pobreza del habla es su manifestación puramente cuantitativa.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_severity",
+            "message": "Es un síntoma negativo nuclear de la esquizofrenia; predice mal funcionamiento social a largo plazo."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar de la depresión melancólica donde hay inhibición motora pero el 'contenido' suele estar cargado de culpa o desesperación (no vacío)."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con falta de educación o bajo nivel cultural.",
+        "Asumir que es una falta de cooperación voluntaria del paciente."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Andreasen",
+            "Sims"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psiquiatría clínica contemporánea",
+            "DSM"
         ]
-    }
+    },
+    "status": "active"
 }

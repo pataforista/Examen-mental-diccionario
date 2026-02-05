@@ -1,39 +1,87 @@
 {
     "term_id": "SELF_009",
     "canonical_name": "Hiperreflexividad",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "autoobservación obsesiva",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "mirarse por dentro",
+            "context": "patient_report",
+            "locale": "es"
+        }
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
-        "core": "Autoobservación excesiva de procesos normalmente tácitos, con extrañamiento del yo.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Autoobservación excesiva e involuntaria de procesos corporales o mentales que normalmente son tácitos o automáticos.",
+        "required_features": [
+            "atención focalizada en el yo como objeto",
+            "pérdida de la transparencia en la acción",
+            "sentimiento de extrañamiento ante lo observado"
+        ],
+        "subjective_marker": "Dice que no puede dejar de mirar cómo respira, cómo piensa o cómo se mueve su lengua.",
+        "behavioral_marker": "Describe un monitoreo constante de sus propios procesos internos con perplejidad."
     },
     "operationalization": {
         "detectable_by": [
-            "entrevista_clinica"
+            "entrevista_clinica_fenomenologica"
         ],
         "time_relation": [
-            "actual"
+            "persistente",
+            "recurrente"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "hyperreflexivity_present",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "THO_012",
+            "canonical_name": "Obsesiones",
+            "reason": "La obsesión es un pensamiento intrusivo sobre un tema; la hiperreflexividad es una alteración de la estructura de la conciencia sobre procesos automáticos.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_significance",
+            "message": "Es un trastorno de la ipseidad (yo) clave en el espectro esquizofrénico."
+        }
+    ],
+    "teaching_notes": [
+        "Lo automático se vuelve 'objeto' para el sujeto.",
+        "Concepto central en el modelo de Sass y Parnas sobre la esquizofrenia."
+    ],
+    "cognitive_pitfalls": [
+        "Tratar como un síntoma de ansiedad simple (aunque puede ocurrir, el matiz fenomenológico es distinto).",
+        "No explorar la cualidad de 'extraño' que adquiere el proceso observado."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Sass",
+            "Parnas",
+            "EASE"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psicopatología fenomenológica"
         ]
-    }
+    },
+    "status": "active"
 }

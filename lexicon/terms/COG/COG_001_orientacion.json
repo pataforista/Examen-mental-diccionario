@@ -1,7 +1,9 @@
 {
     "term_id": "COG_001",
     "canonical_name": "Orientación",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "orientación"
+    ],
     "term_kind": "capacity",
     "granularity": "atomic",
     "risk_weight": 1,
@@ -32,7 +34,13 @@
             "context": "conciencia_orientacion"
         }
     ],
-    "exclusions": [],
+    "exclusions": [
+        {
+            "term_id": "COG_001",
+            "canonical_name": "Orientación",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
     "alerts": [
         {
             "type": "clinical_attention",
@@ -47,7 +55,12 @@
     ],
     "version": "1.0.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

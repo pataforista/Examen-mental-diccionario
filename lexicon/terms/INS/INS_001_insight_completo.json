@@ -38,8 +38,19 @@
             "context": "juicio_insight"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
+    "exclusions": [
+        {
+            "term_id": "INS_001",
+            "canonical_name": "Insight completo",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
     "teaching_notes": [
         "El insight completo incluye comprensión intelectual y aceptación emocional del trastorno."
     ],
@@ -48,7 +59,12 @@
     ],
     "version": "1.0.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

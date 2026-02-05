@@ -1,39 +1,90 @@
 {
     "term_id": "SPE_009",
     "canonical_name": "Verbigeración",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "perseverancia verbal monótona",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "verbigeration",
+            "context": "clinical_bilingual",
+            "locale": "en"
+        }
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
-        "core": "Repetición estereotipada y monótona de palabras o frases sin finalidad comunicativa.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Repetición estereotipada, rítmica y monótona de palabras o frases sin finalidad comunicativa, a menudo carentes de sentido en el contexto.",
+        "required_features": [
+            "repetición persistente (no solo una vez)",
+            "falta de conexión con el diálogo",
+            "tono de voz monótono"
+        ],
+        "subjective_marker": "Generalmente no es consciente de la repetición como tal.",
+        "behavioral_marker": "El paciente emite una frase o palabra continuamente, como un cántico o letanía, ignorando las preguntas."
     },
     "operationalization": {
         "detectable_by": [
+            "observacion",
             "entrevista_clinica"
         ],
         "time_relation": [
-            "actual"
+            "persistente",
+            "aguda"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "stereotyped_speech",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "lenguaje_motor_y_comportamiento"
+        },
+        {
+            "domain_id": "DOM-04",
+            "relation": "associated_sign",
+            "context": "catatonia_o_desorganizacion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "THO_012",
+            "canonical_name": "Obsesiones",
+            "reason": "La obsesión es una lucha mental interna; la verbigeración es una conducta verbal motora y repetitiva sin lucha.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_warning",
+            "message": "Frecuente en estados catatónicos, esquizofrenia desorganizada y etapas terminales de demencias."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar de la perseveración post-afásica donde el paciente intenta comunicarse pero se queda 'pegado' en una palabra."
+    ],
+    "cognitive_pitfalls": [
+        "Interpretar como una respuesta deliberada a la entrevista."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Kahlbaum",
+            "Sims"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psiquiatría clásica"
         ]
-    }
+    },
+    "status": "active"
 }

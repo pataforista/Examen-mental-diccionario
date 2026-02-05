@@ -160,7 +160,7 @@
     "Registrar duración, lateralidad y desencadenantes (sueño, estrés, sustancias)."
   ],
   "cognitive_pitfalls": [
-    "Asumir etiología central y retrasar evaluación oftalmológica en metamorfopsia aguda.",
+    "Asumir etiología central and retrasar evaluación oftalmológica en metamorfopsia aguda.",
     "Codificar como alucinación por no documentar estímulo real.",
     "Omitir historia de sustancias/fármacos en distorsiones persistentes."
   ],
@@ -175,5 +175,6 @@
       "Oftalmología",
       "Toxicología"
     ]
-  }
+  },
+  "status": "active"
 }

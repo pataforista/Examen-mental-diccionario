@@ -1,7 +1,9 @@
 {
     "term_id": "APP_002",
     "canonical_name": "Contacto visual",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "contacto visual"
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 0,
@@ -32,8 +34,19 @@
             "context": "actitud_interaccion"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
+    "exclusions": [
+        {
+            "term_id": "APP_002",
+            "canonical_name": "Contacto visual",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
     "teaching_notes": [
         "Describir el patrón de contacto visual sin asumir significado afectivo sin otros datos."
     ],
@@ -42,7 +55,12 @@
     ],
     "version": "1.0.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

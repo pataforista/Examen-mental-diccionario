@@ -90,7 +90,13 @@
       "context": "riesgo_suicida_y_violencia"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "RSK_006",
+      "canonical_name": "Acceso a medios letales",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
   "alerts": [
     {
       "type": "safety_critical",
@@ -114,5 +120,6 @@
       "Restricción de medios",
       "Urgencias"
     ]
-  }
+  },
+  "status": "active"
 }

@@ -1,39 +1,97 @@
 {
     "term_id": "SELF_012",
     "canonical_name": "Sentimientos impuestos",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "emociones fabricadas",
+            "context": "patient_report",
+            "locale": "es"
+        },
+        {
+            "term": "me obligan a estar triste",
+            "context": "patient_report",
+            "locale": "es"
+        },
+        {
+            "term": "made feelings",
+            "context": "clinical_bilingual",
+            "locale": "en"
+        }
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
-    "risk_weight": 0,
+    "risk_weight": 2,
     "definition_clinical": {
-        "core": "Vivencia de emociones propias como fabricadas o impuestas por una agencia externa.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Vivencia de que las emociones y sentimientos propios son fabricados, impuestos o controlados por una agencia externa.",
+        "required_features": [
+            "emoción sentida como artificial o no-mía",
+            "atribución externa de la génesis del afecto",
+            "sentimiento de pasividad afectiva"
+        ],
+        "subjective_marker": "Describe que alguien le 'envía' alegría, rabia o tristeza y que él no puede evitar sentirlas.",
+        "behavioral_marker": "Afecto que puede parecer discordante con el relato, pero que el paciente atribuye a control externo."
     },
     "operationalization": {
         "detectable_by": [
             "entrevista_clinica"
         ],
         "time_relation": [
-            "actual"
+            "actual",
+            "episodica"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "agency_external",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conciencia_del_yo_afectividad"
+        },
+        {
+            "domain_id": "DOM-07",
+            "relation": "associated_delusion",
+            "context": "delirio_de_control"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "AFF_004",
+            "canonical_name": "Incontinencia afectiva",
+            "reason": "En la incontinencia el sentimiento es propio pero incontrolable en su expresión; aquí el sentimiento mismo se siente ajeno.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_severity",
+            "message": "Síntoma de primer rango. Evaluar riesgo si los sentimientos impuestos son de ira o desesperación extrema."
+        }
+    ],
+    "teaching_notes": [
+        "Es diferente a la labilidad donde la emoción es propia pero cambiante.",
+        "A menudo el paciente describe la emoción como 'electrónica' o 'irradiada'."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con alexitimia (dificultad para identificar emociones propias).",
+        "No preguntar por el origen sentido de la emoción."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Schneider",
+            "Sims"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psicopatología descriptiva",
+            "Esquizofrenia"
         ]
-    }
+    },
+    "status": "active"
 }

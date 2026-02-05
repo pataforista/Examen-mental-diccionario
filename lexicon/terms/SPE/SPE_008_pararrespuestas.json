@@ -1,39 +1,85 @@
 {
     "term_id": "SPE_008",
     "canonical_name": "Pararrespuestas (Vorbeireden)",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "hablar de lado",
+            "context": "clinical_historical",
+            "locale": "es"
+        },
+        {
+            "term": "respuestas aproximadas",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        }
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
-        "core": "Respuestas aproximadas que evidencian comprensión pero evitan la respuesta correcta.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Emisión de respuestas que, aunque incorrectas o absurdas, evidencian que el paciente ha comprendido el núcleo de la pregunta pero la elude.",
+        "required_features": [
+            "comprensión preservada del tema de la pregunta",
+            "falta de respuesta directa al centro de la cuestión",
+            "no es una afasia ni un déficit cognitivo simple"
+        ],
+        "subjective_marker": "No suele reportarlo; puede parecer que 'se hace el loco'.",
+        "behavioral_marker": "Si se le pregunta '¿cuántas patas tiene un perro?', responde 'cinco' o describe el color del pelo en lugar del número."
     },
     "operationalization": {
         "detectable_by": [
             "entrevista_clinica"
         ],
         "time_relation": [
+            "persistente",
             "actual"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "approximate_answer",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-02",
+            "relation": "primary_expression",
+            "context": "comunicacion_y_juicio"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "COG_003",
+            "canonical_name": "Déficit intelectual",
+            "reason": "En el déficit el error es por falta de capacidad; en la pararrespuesta hay evidencia de que *entendió* la pregunta pero falla el enlace a la respuesta correcta.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_significance",
+            "message": "Es el signo patognomónico del Síndrome de Ganser (pseudodemencia histérica) y también se observa en esquizofrenia."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar del descarrilamiento (donde se pierde el hilo por completo) y de la ensalada de palabras (desorganización total)."
+    ],
+    "cognitive_pitfalls": [
+        "Creer que el paciente se está burlando del examinador.",
+        "Confundir con una simulación de enfermedad."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
-            "Sims",
-            "Robinson",
-            "Mendez"
+            "Ganser",
+            "Jaspers"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Psiquiatría clásica"
         ]
-    }
+    },
+    "status": "active"
 }

@@ -68,5 +68,36 @@
       "message": "La acatisia severa se asocia a suicidio impulsivo incluso en ausencia de depresión."
     }
   ],
-  "version": "1.1.0"
+  "version": "1.1.0",
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "psicomotricidad_conacion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AKT_001",
+      "canonical_name": "Acatisia",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "teaching_notes": [
+    "Describir acatisia con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica and observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  }
 }

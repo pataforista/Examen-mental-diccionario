@@ -61,7 +61,12 @@
       "ref_status": "forward"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
   "teaching_notes": [
     "No asumir ausencia de emoción interna: documentar por separado expresividad observable y reporte subjetivo.",
     "Útil registrar prosodia, gestualidad y reactividad ante estímulos (humor, noticias personales, interacción)."
@@ -75,6 +80,9 @@
     "phenomenology": [
       "Jaspers"
     ],
-    "clinical_tradition": []
-  }
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

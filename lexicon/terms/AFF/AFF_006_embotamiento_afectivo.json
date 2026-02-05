@@ -73,7 +73,12 @@
       "ref_status": "forward"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
   "teaching_notes": [
     "Documentar reactividad (presente/ausente), prosodia, congruencia con el contenido y variación a lo largo de la entrevista.",
     "Si hay sospecha de hipomimia, cruzar con DOM-04 y revisar fármacos dopaminérgicos/antipsicóticos."
@@ -87,6 +92,9 @@
     "phenomenology": [
       "Jaspers"
     ],
-    "clinical_tradition": []
-  }
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

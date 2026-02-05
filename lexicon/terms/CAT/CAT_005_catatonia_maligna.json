@@ -1,50 +1,34 @@
 {
   "term_id": "CAT_005",
-  "canonical_name": "Catatonía Maligna",
-  "synonyms_and_slang": [
-    {
-      "term": "catatonía letal",
-      "context": "historical"
-    }
-  ],
+  "canonical_name": "Catatonia maligna",
   "term_kind": "syndrome",
   "granularity": "atomic",
-  "risk_weight": 2,
+  "risk_weight": 3,
   "definition_clinical": {
-    "core": "Síndrome catatónico agudo con hipertermia, rigidez severa e inestabilidad autonómica.",
+    "core": "Forma grave y potencialmente letal de catatonia caracterizada por inestabilidad autonómica, fiebre e intensa rigidez o agitación.",
     "required_features": [
-      "síndrome catatónico (estupor o excitación con signos catatónicos nucleares)",
-      "inestabilidad autonómica",
-      "hipertermia"
+      "síndrome catatónico",
+      "fiebre de origen no infeccioso",
+      "inestabilidad autonómica"
     ],
-    "subjective_marker": "Malestar extremo o confusión si hay excitación; puede haber estupor.",
-    "behavioral_marker": "Rigidez intensa, fiebre alta, alteración autonómica marcada."
+    "subjective_marker": "No evaluable en etapas graves; puede haber reporte previo de miedo intenso o perplejidad.",
+    "behavioral_marker": "Rigidez extrema, estupor o agitación incesante, diaforesis, taquicardia."
   },
   "operationalization": {
     "detectable_by": [
-      "observacion_clinica"
+      "observacion_clinica",
+      "monitorizacion_vitals"
     ],
     "time_relation": [
-      "curso_variable",
-      "empeoramiento_progresivo"
+      "urgencia_medica"
     ],
-    "pharmacological_link": "withdrawal_linked",
-    "risk_factors_history": [
-      "abstinencia brusca de benzodiacepinas",
-      "abstinencia de alcohol",
-      "suspensión de clozapina"
-    ]
+    "pharmacological_link": false
   },
   "domain_links": [
     {
       "domain_id": "DOM-04",
       "relation": "primary_expression",
-      "context": "catatonia"
-    },
-    {
-      "domain_id": "DOM-12",
-      "relation": "risk_factor",
-      "context": "riesgo_vital"
+      "context": "psicomotricidad_conacion"
     }
   ],
   "exclusions": [
@@ -71,7 +55,12 @@
   ],
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": [],
-    "clinical_tradition": []
-  }
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

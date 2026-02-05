@@ -1,15 +1,35 @@
 {
     "term_id": "SPE_002",
     "canonical_name": "Palilalia",
+    "synonyms_and_slang": [
+        {
+            "term": "auto-repetición",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "iteración verbal",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        },
+        {
+            "term": "palilalia",
+            "context": "clinical_bilingual",
+            "locale": "en"
+        }
+    ],
     "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
     "definition_clinical": {
-        "core": "Repetición involuntaria de las propias palabras o frases.",
+        "core": "Repetición involuntaria de las propias palabras o frases emitidas, a menudo con velocidad creciente y volumen decreciente.",
         "required_features": [
             "repetición de la propia emisión lingual",
-            "frecuentemente asociada a parkinsonismo"
+            "carácter perseverativo",
+            "frecuentemente asociada a trastornos de los ganglios basales"
         ],
-        "subjective_marker": "Puede notar dificultad para dejar de repetir una frase.",
-        "behavioral_marker": "Repetición con velocidad creciente de sus últimas palabras."
+        "subjective_marker": "Puede notar dificultad para 'frenar' el discurso o para dejar de repetir una idea.",
+        "behavioral_marker": "Repetición con velocidad progresiva (taquifemia) de sus últimas sílabas o palabras."
     },
     "operationalization": {
         "detectable_by": [
@@ -17,16 +37,66 @@
             "entrevista_clinica"
         ],
         "time_relation": [
-            "persistente"
+            "persistente",
+            "fluctuante"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+            {
+                "class": "Antipsicóticos",
+                "risk": "low",
+                "context": "parkinsonismo farmacológico"
+            }
+        ],
+        "computable_markers": [
+            {
+                "marker": "self_repetition",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
     "domain_links": [
         {
             "domain_id": "DOM-03",
             "relation": "primary_expression",
             "context": "lenguaje_motor"
+        },
+        {
+            "domain_id": "DOM-04",
+            "relation": "associated_sign",
+            "context": "parkinsonismo_o_tics"
         }
     ],
-    "version": "1.0.0"
+    "exclusions": [
+        {
+            "term_id": "SPE_001",
+            "canonical_name": "Ecolalia",
+            "reason": "La palilalia es autorrepetición; la ecolalia es repetición de otros.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "neurological_warning",
+            "message": "Altamente característica de la enfermedad de Parkinson, parálisis supranuclear progresiva y síndrome de Tourette."
+        }
+    ],
+    "teaching_notes": [
+        "Se diferencia del tartamudeo comercial por la ubicación de la repetición (final de frase/palabra) y la aceleración."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con logoclonia (repetición de sílabas solamente)."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Neurología clínica"
+        ],
+        "clinical_tradition": [
+            "Neuropsiquiatría",
+            "Trastornos del movimiento"
+        ]
+    },
+    "status": "active"
 }

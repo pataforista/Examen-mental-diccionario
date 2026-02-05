@@ -61,7 +61,12 @@
       "ref_status": "forward"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+    }
+  ],
   "teaching_notes": [
     "La paratimia sugiere desorganización afectiva; no debe confundirse con mecanismos defensivos o ansiedad social.",
     "Si la risa es mecánica, estereotipada y no contextual, considerar crisis gelástica."
@@ -76,6 +81,9 @@
       "Bleuler",
       "Jaspers"
     ],
-    "clinical_tradition": []
-  }
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

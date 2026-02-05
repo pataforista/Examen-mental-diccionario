@@ -1,15 +1,21 @@
 {
     "term_id": "AFF_020",
     "canonical_name": "Moria",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "moria"
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
         "core": "Euforia pueril con desinhibición y chistes inapropiados, típica de lesión frontal.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "required_features": [
+            "presencia clínica de moria",
+            "consistencia fenomenológica durante la entrevista",
+            "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con moria.",
+        "behavioral_marker": "Se observan signos conductuales coherentes con moria en contexto clínico."
     },
     "operationalization": {
         "detectable_by": [
@@ -20,11 +26,34 @@
         ],
         "pharmacological_link": false
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-09",
+            "relation": "primary_expression",
+            "context": "estado_afectivo"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "AFF_020",
+            "canonical_name": "Moria",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir moria con fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
@@ -35,5 +64,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

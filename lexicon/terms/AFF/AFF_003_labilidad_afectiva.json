@@ -1,18 +1,18 @@
 {
   "term_id": "AFF_003",
   "canonical_name": "Labilidad afectiva",
-  "term_kind": "pattern",
+  "term_kind": "state",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
-    "core": "Cambios rápidos y frecuentes del tono afectivo en rango o intensidad.",
+    "core": "Cambios rápidos y abruptos del estado afectivo, frecuentemente con escaso o nulo control voluntario.",
     "required_features": [
-      "fluctuaciones emocionales rápidas",
-      "desproporción estímulo-respuesta",
-      "inestabilidad basal"
+      "fluctuación rápida",
+      "frecuencia elevada de cambios",
+      "desproporción respecto al estímulo"
     ],
-    "subjective_marker": "Describe oscilaciones emocionales súbitas difíciles de controlar.",
-    "behavioral_marker": "Pasa de llanto a risa o irritación intensa en segundos."
+    "subjective_marker": "Refiere pasar 'de la risa al llanto' sin saber por qué.",
+    "behavioral_marker": "Cambios visibles en la expresión emocional durante la misma entrevista."
   },
   "operationalization": {
     "detectable_by": [
@@ -20,32 +20,19 @@
       "observacion"
     ],
     "time_relation": [
-      "episodica",
-      "recurrente"
+      "episodico",
+      "fluctuante"
     ],
-    "pharmacological_link": true,
+    "pharmacological_link": false,
     "computable_markers": [
       {
-        "marker": "affect_variability",
-        "type": "ordinal_0_3",
-        "anchors": [
-          "baja",
+        "marker": "fluctuation_rate",
+        "type": "categorical",
+        "options": [
+          "nula",
           "moderada",
-          "alta",
-          "extrema"
-        ],
-        "expected": "alta"
-      },
-      {
-        "marker": "trigger_threshold",
-        "type": "ordinal_0_3",
-        "anchors": [
-          "alto",
-          "medio",
-          "bajo",
-          "minimo"
-        ],
-        "expected": "bajo"
+          "alta"
+        ]
       }
     ]
   },
@@ -60,7 +47,7 @@
     {
       "term_id": "AFF_001",
       "canonical_name": "Ánimo depresivo",
-      "reason": "El ánimo depresivo es estable y sostenido.",
+      "reason": "El ánimo depresivo es persistente; la labilidad es oscilante.",
       "ref_status": "forward"
     },
     {
@@ -89,5 +76,17 @@
   "cognitive_pitfalls": [
     "Diagnosticar manía solo por cambios emocionales rápidos."
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "synonyms_and_slang": [
+    "labilidad afectiva"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  }
 }

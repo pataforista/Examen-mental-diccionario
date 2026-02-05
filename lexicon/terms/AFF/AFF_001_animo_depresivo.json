@@ -12,7 +12,7 @@
       "malestar subjetivo asociado"
     ],
     "subjective_marker": "Refiere dolor mental, melancolía o vacío emocional sostenido.",
-    "behavioral_marker": "Disminución de interés y energía, enlentecimiento, cambios de sueño/apetito."
+    "behavioral_marker": "Disminución de interés and energía, enlentecimiento, cambios de sueño/apetito."
   },
   "operationalization": {
     "detectable_by": [
@@ -78,5 +78,17 @@
     "Confundir tristeza reactiva con ánimo depresivo patológico.",
     "Ignorar duración y curso."
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "synonyms_and_slang": [
+    "ánimo depresivo"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  }
 }

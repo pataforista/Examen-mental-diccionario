@@ -3,51 +3,43 @@
   "canonical_name": "Circunstancialidad",
   "synonyms_and_slang": [
     {
-      "term": "pensamiento prolijo",
-      "context": "clinical_descriptive"
-    },
-    {
-      "term": "detallismo excesivo",
-      "context": "patient_report_interpretation"
+      "term": "pensamiento detallista",
+      "context": "clinical",
+      "locale": "es"
     }
   ],
   "term_kind": "symptom",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
-    "core": "Pensamiento con exceso de detalles irrelevantes pero que eventualmente alcanza la meta.",
+    "core": "Discurso sobrecargado de detalles innecesarios y parentéticos que retrasan el alcance de la meta comunicativa, pero sin perderla.",
     "required_features": [
-      "pérdida de jerarquía de ideas",
-      "detalles triviales abundantes",
-      "mantenimiento de la meta final"
+      "prolixidad de detalles",
+      "incapacidad para distinguir lo esencial de lo accesorio",
+      "mantenimiento de la meta-dirección (eventualmente responde)"
     ],
-    "subjective_marker": "Describe que le cuesta 'ir al punto' o que se distrae con detalles.",
-    "behavioral_marker": "Relato pausado, prolijo, con múltiples incisos antes de responder."
+    "subjective_marker": "Refiere que 'necesita explicar todo bien' para que se le entienda.",
+    "behavioral_marker": "Relato minucioso, lento, con múltiples digresiones que finalmente vuelven al tema original."
   },
   "operationalization": {
     "detectable_by": [
       "entrevista_clinica"
     ],
     "time_relation": [
-      "persistente",
-      "episodica"
+      "actual",
+      "persistente"
     ],
     "pharmacological_link": false,
     "computable_markers": [
       {
-        "marker": "reaches_goal",
+        "marker": "excessive_details",
         "type": "boolean",
         "expected": true
       },
       {
-        "marker": "detail_density",
-        "type": "ordinal_0_3",
-        "anchors": [
-          "0=normal",
-          "1=leve",
-          "2=moderada",
-          "3=extrema"
-        ]
+        "marker": "goal_attained",
+        "type": "boolean",
+        "expected": true
       },
       {
         "marker": "speech_tempo",
@@ -75,7 +67,12 @@
       "ref_status": "forward"
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
   "teaching_notes": [
     "Diferenciar de rasgos de personalidad perfeccionista o ansiedad social (donde el detalle es por precisión) frente a síntoma psicopatológico (donde se pierde la jerarquía)."
   ],
@@ -87,6 +84,10 @@
     "phenomenology": [
       "Jaspers",
       "Schneider"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
     ]
-  }
+  },
+  "status": "active"
 }

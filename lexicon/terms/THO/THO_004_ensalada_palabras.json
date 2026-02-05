@@ -30,5 +30,40 @@
             "context": "desorganizacion_extrema"
         }
     ],
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "synonyms_and_slang": [
+        "ensalada de palabras"
+    ],
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "exclusions": [
+        {
+            "term_id": "THO_004",
+            "canonical_name": "Ensalada de palabras",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir ensalada de palabras con fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
+    "status": "active",
+    "provenance": {
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    }
 }

@@ -2,12 +2,14 @@
   "term_id": "PER_010",
   "canonical_name": "Ilusión",
   "synonyms_and_slang": [
-    { "term": "malinterpretación perceptiva", "context": "clinical" }
+    {
+      "term": "malinterpretación perceptiva",
+      "context": "clinical"
+    }
   ],
   "term_kind": "phenomenon",
   "granularity": "atomic",
   "risk_weight": 0,
-
   "definition_clinical": {
     "core": "Percepción distorsionada o malinterpretada de un estímulo real existente.",
     "required_features": [
@@ -18,10 +20,13 @@
     "subjective_marker": "El paciente reconoce el error al examinar mejor el estímulo.",
     "behavioral_marker": "Confunde sombras, ruidos o formas reales con otros objetos o figuras."
   },
-
   "operationalization": {
-    "detectable_by": ["entrevista_clinica"],
-    "time_relation": ["transitoria"],
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "transitoria"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {
@@ -36,11 +41,13 @@
       }
     ]
   },
-
   "domain_links": [
-    { "domain_id": "DOM-08", "relation": "primary_expression", "context": "sensopercepcion" }
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    }
   ],
-
   "exclusions": [
     {
       "term_id": "PER_001",
@@ -49,23 +56,28 @@
       "ref_status": "forward"
     }
   ],
-
-  "alerts": [],
-
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
   "teaching_notes": [
     "Frecuentes en fatiga, ansiedad, baja iluminación o estados confusionales leves.",
     "No equivalen a psicosis."
   ],
-
   "cognitive_pitfalls": [
     "Interpretar ilusiones aisladas como síntoma psicótico.",
     "No explorar condiciones ambientales o atencionales."
   ],
-
   "version": "1.0.0",
-
   "provenance": {
-    "phenomenology": ["Jaspers"],
-    "clinical_tradition": []
-  }
+    "phenomenology": [
+      "Jaspers"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

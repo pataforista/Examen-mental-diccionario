@@ -1,7 +1,9 @@
 {
     "term_id": "SPE_011",
     "canonical_name": "Latencia de respuesta aumentada",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "latencia de respuesta aumentada"
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
     "risk_weight": 0,
@@ -29,15 +31,34 @@
             "context": "lenguaje_comunicacion"
         }
     ],
-    "exclusions": [],
-    "alerts": [],
+    "exclusions": [
+        {
+            "term_id": "SPE_011",
+            "canonical_name": "Latencia de respuesta aumentada",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+    ],
     "teaching_notes": [
         "Frecuente en depresión melancólica, esquizofrenia (síntomas negativos) o estados confusionales."
     ],
-    "cognitive_pitfalls": [],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.1.0",
     "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-    }
+        "phenomenology": [
+            "consenso_editorial"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
 }

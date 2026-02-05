@@ -1,15 +1,21 @@
 {
     "term_id": "MEM_007",
     "canonical_name": "Inatención",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "inatención"
+    ],
     "term_kind": "symptom",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
         "core": "Incapacidad para focalizar, sostener o desplazar la atención de forma voluntaria.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "required_features": [
+            "presencia clínica de inatención",
+            "consistencia fenomenológica durante la entrevista",
+            "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con inatención.",
+        "behavioral_marker": "Se observan signos conductuales coherentes con inatención en contexto clínico."
     },
     "operationalization": {
         "detectable_by": [
@@ -20,11 +26,34 @@
         ],
         "pharmacological_link": false
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-10",
+            "relation": "primary_expression",
+            "context": "funciones_cognitivas"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "MEM_007",
+            "canonical_name": "Inatención",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir inatención with fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
@@ -35,5 +64,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

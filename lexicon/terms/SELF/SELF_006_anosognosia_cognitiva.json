@@ -1,39 +1,94 @@
 {
     "term_id": "SELF_006",
     "canonical_name": "Anosognosia cognitiva",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        {
+            "term": "no se da cuenta de sus fallos de memoria",
+            "context": "colateral",
+            "locale": "es"
+        },
+        {
+            "term": "niega sus olvidos",
+            "context": "patient_report",
+            "locale": "es"
+        }
+    ],
     "term_kind": "sign",
     "granularity": "atomic",
-    "risk_weight": 0,
+    "risk_weight": 1,
     "definition_clinical": {
-        "core": "Falla neurológica para reconocer déficits cognitivos o funcionales propios.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "core": "Falla neurobiológica para reconocer déficits en funciones cognitivas (memoria, lenguaje, funciones ejecutivas).",
+        "required_features": [
+            "presencia de déficit cognitivo objetivo",
+            "ausencia de autoconciencia del déficit",
+            "no es una negación psicógena"
+        ],
+        "subjective_marker": "Afirma que su memoria o capacidades están 'como siempre' a pesar de errores evidentes.",
+        "behavioral_marker": "Se sorprende o se enfada cuando se le señalan errores cognitivos; no usa estrategias compensatorias."
     },
     "operationalization": {
         "detectable_by": [
-            "entrevista_clinica"
+            "entrevista_clinica",
+            "pruebas_neuropsicologicas",
+            "colateral"
         ],
         "time_relation": [
-            "actual"
+            "persistente",
+            "progresiva"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "cognitive_gap_awareness",
+                "type": "boolean",
+                "expected": false
+            }
+        ]
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "insight_cognitivo"
+        },
+        {
+            "domain_id": "DOM-03",
+            "relation": "associated_defect",
+            "context": "memoria_y_ejecucion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "SELF_003",
+            "canonical_name": "Anosognosia",
+            "reason": "La anosognosia es el término general neurológico.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_warning",
+            "message": "Es un marcador cardinal en la enfermedad de Alzheimer moderada-grave; predice mayor carga para el cuidador."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar de la depresión donde el paciente a menudo sobreestima sus déficits (pseudodemencia).",
+        "La anosognosia se asocia a menudo con disfunción del lóbulo frontal o del hemisferio derecho."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con falta de interés o desmotivación.",
+        "Intentar 'convencer' al paciente con lógica; la anosognosia no responde a la persuasión."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
             "Sims",
-            "Robinson",
             "Mendez"
         ],
         "clinical_tradition": [
-            "psicopatologia_clasica"
+            "Neuropsicología",
+            "Demencias"
         ]
-    }
+    },
+    "status": "active"
 }

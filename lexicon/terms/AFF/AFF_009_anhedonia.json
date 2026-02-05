@@ -93,5 +93,17 @@
   "cognitive_pitfalls": [
     "Confundir anhedonia con apatía o fatiga sin explorar placer consumatorio."
   ],
-  "version": "1.0.1"
+  "version": "1.0.1",
+  "synonyms_and_slang": [
+    "anhedonia"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  }
 }

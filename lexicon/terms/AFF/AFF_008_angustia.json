@@ -106,5 +106,17 @@
     "Etiquetar como 'ansiedad generalizada' un episodio paroxístico con alta somaticidad.",
     "Asumir causa psiquiátrica sin descartar abstinencia o intoxicación."
   ],
-  "version": "1.0.1"
+  "version": "1.0.1",
+  "synonyms_and_slang": [
+    "angustia"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  }
 }

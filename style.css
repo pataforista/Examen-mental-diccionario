@@ -29,6 +29,7 @@
     --text-p: var(--v-text);
     --accent: var(--v-accent);
     --primary: var(--v-primary);
+    --primary-rgb: 86, 216, 182;
     --border: var(--v-border);
     --font-main: var(--v-font);
     --shadow: var(--v-shadow);
@@ -57,6 +58,7 @@
     --text-p: var(--o-text);
     --accent: var(--o-accent-a);
     --primary: var(--o-accent-b);
+    --primary-rgb: 0, 255, 194;
     --border: none;
     --font-main: var(--o-font);
     --shadow: var(--o-shadow-glow);
@@ -410,10 +412,18 @@ main {
     font-size: 2.5rem;
 }
 
-.domain-card span {
+.domain-card .domain-title {
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.domain-card .domain-subtitle {
+    font-size: 0.65rem;
+    opacity: 0.6;
+    text-transform: none;
+    font-style: italic;
 }
 
 /* Custom Scrollbar - Ritualistic Path */

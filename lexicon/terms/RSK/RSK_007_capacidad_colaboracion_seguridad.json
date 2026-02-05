@@ -72,7 +72,13 @@
       "context": "disposicion_y_contencion"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "RSK_007",
+      "canonical_name": "Capacidad de colaboración para seguridad",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
   "alerts": [
     {
       "type": "safety_critical",
@@ -96,5 +102,6 @@
       "Urgencias",
       "Manejo de crisis"
     ]
-  }
+  },
+  "status": "active"
 }

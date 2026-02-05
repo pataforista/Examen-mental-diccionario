@@ -1,15 +1,21 @@
 {
     "term_id": "MEM_004",
     "canonical_name": "Alteración de conciencia",
-    "synonyms_and_slang": [],
+    "synonyms_and_slang": [
+        "alteración de conciencia"
+    ],
     "term_kind": "state",
     "granularity": "atomic",
     "risk_weight": 0,
     "definition_clinical": {
         "core": "Desviación del estado de vigilia lúcida con compromiso cuantitativo o cualitativo de la conciencia.",
-        "required_features": [],
-        "subjective_marker": "",
-        "behavioral_marker": ""
+        "required_features": [
+            "presencia clínica de alteración de conciencia",
+            "consistencia fenomenológica durante la entrevista",
+            "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con alteración de conciencia.",
+        "behavioral_marker": "Se observan signos conductuales coherentes con alteración de conciencia en contexto clínico."
     },
     "operationalization": {
         "detectable_by": [
@@ -20,11 +26,34 @@
         ],
         "pharmacological_link": false
     },
-    "domain_links": [],
-    "exclusions": [],
-    "alerts": [],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-10",
+            "relation": "primary_expression",
+            "context": "funciones_cognitivas"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "MEM_004",
+            "canonical_name": "Alteración de conciencia",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_error",
+            "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+        }
+    ],
+    "teaching_notes": [
+        "Describir alteración de conciencia with fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
@@ -35,5 +64,6 @@
         "clinical_tradition": [
             "psicopatologia_clasica"
         ]
-    }
+    },
+    "status": "active"
 }

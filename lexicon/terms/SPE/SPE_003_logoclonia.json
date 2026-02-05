@@ -1,15 +1,25 @@
 {
     "term_id": "SPE_003",
     "canonical_name": "Logoclonia",
+    "synonyms_and_slang": [
+        {
+            "term": "perseveración silábica final",
+            "context": "clinical_descriptive",
+            "locale": "es"
+        }
+    ],
     "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
     "definition_clinical": {
-        "core": "Repetición espasmódica de la última sílaba de una palabra.",
+        "core": "Repetición espasmódica e involuntaria de la última sílaba de una palabra o frase.",
         "required_features": [
-            "frecuencia alta de repetición de la sílaba final",
-            "asociada a procesos degenerativos"
+            "repetición específica de la sílaba final",
+            "frecuencia alta y rítmica",
+            "no es una corrección del habla"
         ],
-        "subjective_marker": "No suele ser reportado por el paciente como queja principal.",
-        "behavioral_marker": "Discurso interrumpido por repetición de sílabas finales."
+        "subjective_marker": "No suele ser reportado por el paciente de forma espontánea.",
+        "behavioral_marker": "Discurso interrumpido sistemáticamente por la repetición de sílabas finales (por ej. 'mañana-na-na-na-na')."
     },
     "operationalization": {
         "detectable_by": [
@@ -18,7 +28,14 @@
         "time_relation": [
             "persistente"
         ],
-        "pharmacological_link": false
+        "pharmacological_link": false,
+        "computable_markers": [
+            {
+                "marker": "syllable_repetition",
+                "type": "boolean",
+                "expected": true
+            }
+        ]
     },
     "domain_links": [
         {
@@ -27,5 +44,34 @@
             "context": "lenguaje_motor"
         }
     ],
-    "version": "1.0.0"
+    "exclusions": [
+        {
+            "term_id": "SPE_002",
+            "canonical_name": "Palilalia",
+            "reason": "La palilalia suele repetir palabras o frases completas; la logoclonia se restringe a la sílaba final.",
+            "ref_status": "forward"
+        }
+    ],
+    "alerts": [
+        {
+            "type": "clinical_warning",
+            "message": "Suele indicar procesos neurodegenerativos avanzados (demencia de Alzheimer, demencias frontotemporales)."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar del tartamudeo (espasmopemia) que suele ocurrir al inicio de la palabra."
+    ],
+    "cognitive_pitfalls": [
+        "Atribuir erróneamente a 'nerviosismo' o ansiedad social."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [
+            "Neurología clínica"
+        ],
+        "clinical_tradition": [
+            "Neuropsicología"
+        ]
+    },
+    "status": "active"
 }

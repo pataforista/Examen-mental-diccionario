@@ -22,21 +22,45 @@
         ],
         "pharmacological_link": false
     },
-    "domain_links": [],
-    "exclusions": [],
+    "domain_links": [
+        {
+            "domain_id": "DOM-10",
+            "relation": "primary_expression",
+            "context": "funciones_cognitivas"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "MEM_002",
+            "canonical_name": "Paramnesia reduplicativa",
+            "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+    ],
     "alerts": [
         {
             "type": "organic_warning",
             "message": "Sugeriría lesión en hemisferio derecho o disfunción frontal persistente."
         }
     ],
-    "teaching_notes": [],
-    "cognitive_pitfalls": [],
+    "teaching_notes": [
+        "Describir paramnesia reduplicativa with fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+    ],
+    "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+    ],
     "version": "1.0.0",
     "provenance": {
         "phenomenology": [
             "Pick"
         ],
-        "clinical_tradition": []
-    }
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "synonyms_and_slang": [
+        "paramnesia reduplicativa"
+    ],
+    "status": "active"
 }

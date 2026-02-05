@@ -95,7 +95,12 @@
   ],
   "version": "1.0.0",
   "provenance": {
-    "phenomenology": [],
-    "clinical_tradition": []
-  }
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }
