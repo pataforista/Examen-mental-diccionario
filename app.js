@@ -366,7 +366,7 @@ const App = {
                     </ul>
                 </div>
 
-                <div class="card ritual-box" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
+                <div class="card clinical-box" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
                     <span class="section-label">Aviso Clínico</span>
                     <p style="font-size: 0.75rem; color: var(--text-secondary); margin: 0;">
                         Esta herramienta es de carácter informativo y apoyo pedagógico. No sustituye el juicio clínico soberano del profesional ni los protocolos institucionales vigentes.
@@ -393,7 +393,7 @@ const App = {
     renderDomains: function () {
         this.nodes.domainView.innerHTML = `
             <div id="domain-grid-container">
-                <div class="ritual-box" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(var(--primary-rgb), 0.05); border-radius: 12px;">
+                <div class="clinical-box" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(var(--primary-rgb), 0.05); border-radius: 12px;">
                     <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary);">Explorador de Dominios</h3>
                     <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">Seleccione un dominio para ver su estructura clínica y términos asociados.</p>
                 </div>
@@ -492,8 +492,9 @@ const App = {
     renderCases: function () {
         this.nodes.casesView.innerHTML = `
             <h3 style="margin-top:0; color: var(--primary);">Escenarios OSCE</h3>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">Seleccione un caso para practicar el diagnóstico diferencial.</p>
             ${this.data.cases.map(c => `
-                <div class="card" style="padding: 1rem;">
+                <div class="card" onclick="App.renderCase('${c.case_id}')" style="padding: 1rem; cursor: pointer;">
                     <div style="display:flex; justify-content: space-between; align-items: center;">
                         <span class="badge" style="background:#edf2f7; color: #2d3748;">Nivel ${c.level}</span>
                         <code style="font-size: 0.7rem; opacity: 0.5;">${c.case_id}</code>
@@ -504,13 +505,85 @@ const App = {
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
                         ${c.stem.contextual_notes}
                     </p>
-                    <div style="font-size: 0.8rem; background: rgba(0, 51, 102, 0.05); padding: 0.75rem; border-radius: 8px; border-left: 4px solid var(--primary);">
-                        <span class="section-label">Sindromática Esperada</span>
-                        <strong style="color: var(--primary);">${c.expected_engine_output.primary_syndrome.replace(/_/g, ' ')}</strong>
+                    <div style="font-size: 0.75rem; color: var(--primary); font-weight: 600; text-align: right;">
+                        Ver Caso →
                     </div>
                 </div>
             `).join('')}
         `;
+    },
+
+    renderCase: function (caseId) {
+        const c = this.data.cases.find(x => x.case_id === caseId);
+        if (!c) return;
+
+        const domainGrid = Object.entries(c.domains).map(([key, data]) => {
+            const domainName = key;
+            const content = Object.entries(data)
+                .map(([k, v]) => `<li><strong>${k.replace(/_/g, ' ')}:</strong> ${v.replace(/_/g, ' ')}</li>`)
+                .join('');
+
+            return `
+                <div class="domain-card" style="border: 1px solid var(--border); padding: 0.75rem; border-radius: 8px; font-size: 0.85rem;">
+                    <div style="font-weight:bold; color:var(--primary); margin-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">${domainName}</div>
+                    <ul style="padding-left: 1rem; margin:0;">${content}</ul>
+                </div>
+            `;
+        }).join('');
+
+        this.nodes.casesView.innerHTML = `
+            <div class="btn-back" onclick="App.renderCases()">← Volver a Lista de Casos</div>
+            <div class="card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                    <h2 class="term-title">${c.case_id}: ${c.stem.sex}, ${c.stem.age_range}</h2>
+                    <span class="badge">${c.stem.setting.replace(/_/g, ' ')}</span>
+                </div>
+                <p style="font-style:italic; border-left: 3px solid var(--primary); padding-left: 1rem; color: var(--text-secondary); margin: 1.5rem 0;">
+                    "${c.stem.contextual_notes}"
+                </p>
+
+                <h3 style="margin-top: 1.5rem;">Exploración por Dominios</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                    ${domainGrid}
+                </div>
+
+                <!-- Interaction Zone -->
+                <div class="interaction-zone" style="background: var(--surface-2); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border);">
+                    <h3 style="margin-top:0;">Análisis Clínico y Diagnóstico</h3>
+                    <p style="margin-bottom: 1rem; opacity: 0.8;">Intenta formular tu diagnóstico antes de revelar la respuesta.</p>
+                    
+                    <button id="reveal-btn" class="filter-chip" style="background: var(--primary); color: #fff; font-weight: bold; padding: 0.75rem 1.5rem; cursor: pointer; border: none; border-radius: 50px;" 
+                            onclick="document.getElementById('analysis-content').style.display='block'; this.style.display='none';">
+                        👁️ Revelar Análisis
+                    </button>
+
+                    <div id="analysis-content" style="display: none; text-align: left; margin-top: 1.5rem; animation: fadeIn 0.5s;">
+                        <div style="background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+                            <h4 style="margin-top:0; color: var(--primary);">Síndrome Principal</h4>
+                            <p style="font-size: 1.1rem; font-weight: bold;">${c.expected_engine_output.primary_syndrome.replace(/_/g, ' ')}</p>
+                            
+                            <div style="margin-top: 1rem; display:flex; gap: 0.5rem; flex-wrap: wrap;">
+                                ${c.expected_engine_output.critical_flags.map(f =>
+            `<span class="badge" style="background: #fed7d7; color: #742a2a;">🚩 ${f.replace(/_/g, ' ')}</span>`
+        ).join('')}
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div style="background: rgba(47, 133, 90, 0.1); color: #22543d; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
+                                <strong>Claves Diagnósticas:</strong>
+                                <ul>${c.assessment_keys.key_discriminators.map(x => `<li>${x.replace(/_/g, ' ')}</li>`).join('')}</ul>
+                            </div>
+                            <div style="background: rgba(197, 48, 48, 0.1); color: #742a2a; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
+                                <strong>Errores a Evitar:</strong>
+                                <ul>${c.assessment_keys.errors_to_avoid.map(x => `<li>${x.replace(/_/g, ' ')}</li>`).join('')}</ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        window.scrollTo(0, 0);
     },
 
     switchTab: function (id) {
