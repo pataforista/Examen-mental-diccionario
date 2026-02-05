@@ -10,12 +10,21 @@ const App = {
 
     init: async function () {
         this.cacheDOM();
+        this.registerSW();
         this.bindEvents();
         await this.loadData();
         this.setupSearch();
         this.loadRecentSearches();
         this.renderAllTerms();
         this.theme.init();
+    },
+
+    registerSW: function () {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker Registered', reg.scope))
+                .catch(err => console.error('Service Worker Registration Failed', err));
+        }
     },
 
     theme: {
@@ -75,10 +84,15 @@ const App = {
             const termRegistry = registryData.terms_index;
 
             const termPromises = termRegistry.map(t =>
-                fetch(t.path).then(r => r.json()).catch(err => {
-                    console.error(`Error loading term ${t.term_id}:`, err);
-                    return null;
-                })
+                fetch(t.path)
+                    .then(response => {
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                        return response.json();
+                    })
+                    .catch(err => {
+                        console.error(`Error loading term ${t.term_id} from ${t.path}:`, err);
+                        return null;
+                    })
             );
 
             this.data.terms = (await Promise.all(termPromises)).filter(t => t !== null);

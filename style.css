@@ -467,7 +467,7 @@ main {
 /* Responsive */
 @media (min-width: 768px) {
     body {
-        max-width: 500px;
+        max-width: 1200px;
         margin: 0 auto;
         border-left: var(--border);
         border-right: var(--border);
@@ -477,6 +477,48 @@ main {
     [data-theme="dark"] body {
         border-left: 1px solid rgba(0, 255, 194, 0.2);
         border-right: 1px solid rgba(0, 255, 194, 0.2);
+    }
+
+    /* Grid Layouts for Desktop */
+    #all-terms-list,
+    #results-view,
+    .domain-grid,
+    #cases-view {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    #domain-grid-container .domain-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .list-item {
+        margin-bottom: 0;
+        height: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .alphabet-header {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+    }
+
+    /* Keep Search and specific views centered/contained if needed */
+    .search-container {
+        max-width: 600px;
+    }
+
+    /* Detail views should not be grid */
+    #term-view,
+    #domain-detail-container,
+    .case-detail-view {
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
     }
 }
 
