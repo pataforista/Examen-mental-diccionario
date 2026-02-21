@@ -5,7 +5,8 @@ const App = {
         cases: [],
         fuse: null,
         currentView: 'dictionary', // dictionary, domains, cases, search, term, about
-        recentSearches: []
+        recentSearches: [],
+        searchDebounceTimer: null
     },
 
     init: async function () {
@@ -71,7 +72,12 @@ const App = {
     },
 
     bindEvents: function () {
-        this.nodes.search.addEventListener('input', (e) => this.handleSearch(e.target.value));
+        this.nodes.search.addEventListener('input', (e) => {
+            clearTimeout(this.data.searchDebounceTimer);
+            this.data.searchDebounceTimer = setTimeout(() => {
+                this.handleSearch(e.target.value);
+            }, 180);
+        });
         this.nodes.navButtons.forEach(btn => {
             btn.addEventListener('click', () => this.switchTab(btn.id));
         });
@@ -174,13 +180,39 @@ const App = {
     },
 
     handleSearch: function (query) {
-        if (query.length < 2) {
+        const cleanQuery = query.trim();
+        if (cleanQuery.length < 2) {
             this.renderView('dictionary');
             return;
         }
 
-        const results = this.data.fuse.search(query);
+        const results = this.data.fuse
+            ? this.data.fuse.search(cleanQuery)
+            : this.fallbackSearch(cleanQuery);
+
         this.renderResults(results);
+    },
+
+    normalizeText: function (text) {
+        return String(text || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+    },
+
+    fallbackSearch: function (query) {
+        const normalizedQuery = this.normalizeText(query);
+        return this.data.terms
+            .filter(term => {
+                const haystack = [
+                    term.canonical_name,
+                    ...(term.synonyms_and_slang || []),
+                    term.definition_clinical?.core
+                ].map(item => this.normalizeText(item)).join(' ');
+                return haystack.includes(normalizedQuery);
+            })
+            .slice(0, 50)
+            .map(item => ({ item }));
     },
 
     renderAllTerms: function () {
@@ -205,6 +237,20 @@ const App = {
     },
 
     renderResults: function (results) {
+        if (!results.length) {
+            this.nodes.resultsView.innerHTML = `
+                <h3 style="margin-top:0; font-size: 1rem;">Resultados de búsqueda</h3>
+                <div class="card" style="padding: 1rem;">
+                    <strong style="color: var(--primary);">Sin coincidencias</strong>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin: 0.5rem 0 0 0;">
+                        Prueba con otro término, sinónimos o una búsqueda más corta.
+                    </p>
+                </div>
+            `;
+            this.renderView('results');
+            return;
+        }
+
         this.nodes.resultsView.innerHTML = `
             <h3 style="margin-top:0; font-size: 1rem;">Resultados de búsqueda</h3>
             ${results.map(r => `
@@ -215,8 +261,8 @@ const App = {
                             ${r.item.term_kind}
                         </div>
                     </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.5rem 0 0 0 line-height: 1.4;">
-                        ${r.item.definition_clinical.core.substring(0, 80)}...
+                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.5rem 0 0 0; line-height: 1.4;">
+                        ${(r.item.definition_clinical?.core || 'Sin definición disponible.').substring(0, 80)}...
                     </p>
                 </div>
             `).join('')}
