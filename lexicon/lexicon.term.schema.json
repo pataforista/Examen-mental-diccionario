@@ -5,20 +5,17 @@
   "term_kind": "",
   "granularity": "atomic",
   "risk_weight": 0,
-
   "definition_clinical": {
     "core": "",
     "required_features": [],
     "subjective_marker": "",
     "behavioral_marker": ""
   },
-
   "operationalization": {
     "detectable_by": [],
     "time_relation": [],
     "pharmacological_link": false
   },
-
   "domain_links": [
     {
       "domain_id": "",
@@ -26,7 +23,6 @@
       "context": ""
     }
   ],
-
   "exclusions": [
     {
       "term_id": "",
@@ -34,19 +30,35 @@
       "reason": ""
     }
   ],
-
   "alerts": [
     {
       "type": "",
       "message": ""
     }
   ],
-
   "teaching_notes": [],
   "cognitive_pitfalls": [],
-
-  "version": "1.0.0",
-
+  "mappings": {
+    "cie11": {
+      "code": "",
+      "uri": "",
+      "label": ""
+    },
+    "snomed_ct": {
+      "concept_id": "",
+      "preferred_term": ""
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "",
+        "item": "",
+        "scale_id": ""
+      }
+    ]
+  },
+  "version": "1.1.0",
   "provenance": {
     "phenomenology": [],
     "clinical_tradition": []

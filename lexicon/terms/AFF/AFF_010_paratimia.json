@@ -2,90 +2,74 @@
   "term_id": "AFF_010",
   "canonical_name": "Paratimia",
   "synonyms_and_slang": [
-    {
-      "term": "afecto incongruente",
-      "context": "clinical"
-    }
+    "afecto incongruente",
+    "discordancia afectiva"
   ],
-  "term_kind": "phenomenological_cluster",
+  "term_kind": "symptom",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
-    "core": "Afecto incongruente or inapropiado respecto al contenido o contexto.",
+    "core": "Disociación o falta de correspondencia entre el contenido de la vivencia (pensamiento o situación) y la emoción expresada por el paciente.",
     "required_features": [
-      "incongruencia afecto-contenido",
-      "carácter no reactivo al contexto",
-      "pobre modulabilidad voluntaria"
+      "expresión emocional opuesta o extraña al tema tratado",
+      "falta de sintonía entre contenido y afecto",
+      "naturaleza involuntaria"
     ],
-    "subjective_marker": "Describe emociones que no se alinean con lo que está diciendo.",
-    "behavioral_marker": "Ríe ante noticias tristes o expresa alegría ante eventos mórbidos."
+    "subjective_marker": "El paciente puede relatar una tragedia personal mientras sonríe o ríe sin sentir alegría real.",
+    "behavioral_marker": "Risa inmotivada ante noticias tristes; llanto ante situaciones placenteras."
   },
   "operationalization": {
     "detectable_by": [
-      "observacion_clinica"
+      "entrevista_clinica",
+      "observacion"
     ],
     "time_relation": [
-      "persistente"
+      "actual"
     ],
     "pharmacological_link": false
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-03",
       "relation": "primary_expression",
-      "context": "afecto"
-    },
-    {
-      "domain_id": "DOM-13",
-      "relation": "differential_anchor",
-      "context": "psicosis_vs_ansiedad"
+      "context": "afectividad"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "AFF_002",
-      "canonical_name": "Risa Nerviosa",
-      "reason": "La risa nerviosa es reactiva, ansiosa y dependiente del contexto interpersonal.",
-      "ref_status": "forward"
-    },
-    {
-      "term_id": "AFF_006",
-      "canonical_name": "Labilidad Afectiva",
-      "reason": "La labilidad implica cambios rápidos pero congruentes; la paratimia es cualitativamente incongruente.",
-      "ref_status": "forward"
-    },
-    {
-      "term_id": "NEU_00X",
-      "canonical_name": "Crisis Gelástica",
-      "reason": "Risa estereotipada asociada a actividad epiléptica, sin contenido afectivo congruente o elaborable.",
-      "ref_status": "forward"
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
-      "type": "diagnostic_error",
-      "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+      "type": "diagnostic_critical",
+      "message": "Signo clásico de la serie esquizofrénica; indica una desorganización profunda de la vida psíquica."
     }
   ],
   "teaching_notes": [
-    "La paratimia sugiere desorganización afectiva; no debe confundirse con mecanismos defensivos o ansiedad social.",
-    "Si la risa es mecánica, estereotipada y no contextual, considerar crisis gelástica."
+    "A diferencia del cinismo, en la paratimia no hay una intención social de burla, sino una ruptura interna de la asociación afectiva.",
+    "Bleuler lo consideraba uno de los síntomas fundamentales de la esquizofrenia (una de las '4 A')."
   ],
-  "cognitive_pitfalls": [
-    "Interpretar la risa como burla, manipulación o rasgo de personalidad.",
-    "Atribuirla a ansiedad y omitir evaluación psicótica."
-  ],
-  "examples": [
-    {
-      "type": "observation",
-      "text": "Mientras relata un evento objetivamente penoso («cuando murió mi mascota») el paciente ríe con expresión alegre y tono juguetón, sin señales de tristeza concomitante. La forma afectiva (risa, ligereza) es incongruente con el contenido narrado."
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A20.Z",
+      "label": "Schizophrenia or other primary psychotic disorders"
+    },
+    "snomed_ct": {
+      "concept_id": "422502008",
+      "preferred_term": "Inappropriate affect (finding)"
     }
-  ],
-  "version": "1.0.1",
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "PANSS",
+        "item": "N1 - Embotamiento afectivo (ítem de modulación)",
+        "scale_id": "PANSS"
+      }
+    ]
+  },
   "provenance": {
     "phenomenology": [
       "Bleuler",
-      "Jaspers"
+      "Sims"
     ],
     "clinical_tradition": [
       "psicopatologia_clasica"

@@ -1,0 +1,75 @@
+{
+    "term_id": "ARC_009",
+    "canonical_name": "Histeria",
+    "synonyms_and_slang": [
+        "neurosis histérica",
+        "gran histeria de Charcot"
+    ],
+    "term_kind": "state",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Categoría clínica histórica que abarca una amplia gama de síntomas sensoriales (ceguera, anestesia), motores (parálisis, convulsiones) y mentales (amnesia, despersonalización) que carecen de base neurológica y se atribuyen a conflictos psíquicos.",
+        "required_features": [
+            "conversión de angustia en síntomas físicos",
+            "plasticidad y variabilidad de los síntomas",
+            "influenciabilidad y búsqueda de atención (histrionismo)",
+            "belle indifférence (indiferencia ante el síntoma)"
+        ],
+        "subjective_marker": "El paciente describe síntomas físicos dramáticos sin la angustia proporcional esperable.",
+        "behavioral_marker": "Crisis motoras paroxísticas (gran ataque histérico) o parálisis que no siguen la distribución anatómica neurológica."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "examen_fisico",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "historico"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-16",
+            "relation": "historical_precursor",
+            "context": "trastornos_disociativos_y_somatomorfos"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "historical_note",
+            "message": "Hoy este término ha sido eliminado de las clasificaciones modernas (CIE/DSM) y fragmentado en trastornos de conversión, disociativos y de personalidad histriónica."
+        }
+    ],
+    "teaching_notes": [
+        "Charcot la estudió en la Salpêtrière como una enfermedad neurológica funcional.",
+        "Freud utilizó su estudio para desarrollar el psicoanálisis y el concepto de 'conversión'."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6B60",
+            "label": "Dissociative disorders (modern related)"
+        },
+        "snomed_ct": {
+            "concept_id": "24982006",
+            "preferred_term": "Histrionic personality disorder (clinical semantic link)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Charcot",
+            "Freud",
+            "Janet"
+        ],
+        "clinical_tradition": [
+            "psiquiatria_francesa_siglo_XIX"
+        ]
+    },
+    "status": "active"
+}

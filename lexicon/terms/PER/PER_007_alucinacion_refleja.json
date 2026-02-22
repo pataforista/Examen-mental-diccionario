@@ -1,0 +1,74 @@
+{
+    "term_id": "PER_007",
+    "canonical_name": "Alucinación Refleja",
+    "synonyms_and_slang": [
+        "sinestesia patológica"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Un estímulo real en una modalidad sensorial produce una alucinación inmediata en una modalidad sensorial diferente.",
+        "required_features": [
+            "estímulo real presente",
+            "alucinación en modalidad distinta al estímulo",
+            "vínculo causal subjetivo inmediato"
+        ],
+        "subjective_marker": "El paciente refiere sentir sensaciones físicas o ver colores al escuchar sonidos específicos.",
+        "behavioral_marker": "Reacciones físicas (sobresalto, frotarse la piel) ante sonidos debido a la percepción alucinatoria táctil/visual."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": true
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-08",
+            "relation": "primary_expression",
+            "context": "sensopercepcion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "toxicological_warning",
+            "message": "Altamente sugestivo de intoxicación por alucinógenos (LSD, mescalina) o patología del lóbulo temporal."
+        }
+    ],
+    "teaching_notes": [
+        "A diferencia de la sinestesia constitucional, esta es intrusiva, a menudo displacentera y surge en el contexto de un trastorno o intoxicación.",
+        "Ejemplo: El sonido de una llave girando produce una sensación de pinchazo en el costado."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con metáforas poéticas o asociaciones de ideas normales."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB27.Z",
+            "label": "Hallucinations"
+        },
+        "snomed_ct": {
+            "concept_id": "247672005",
+            "preferred_term": "Reflex hallucination (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Oyebode"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

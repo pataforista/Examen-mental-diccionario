@@ -69,6 +69,26 @@
         }
     ],
     "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB20.1",
+            "uri": "https://id.who.int/icd/entity/12345678",
+            "label": "Delusion"
+        },
+        "snomed_ct": {
+            "concept_id": "71363004",
+            "preferred_term": "Persecutory delusion (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "PANSS - Positive and Negative Syndrome Scale",
+                "item": "P1 - Delirios",
+                "scale_id": "CIBERSAM-PANSS"
+            }
+        ]
+    },
     "provenance": {
         "phenomenology": [
             "Sims",

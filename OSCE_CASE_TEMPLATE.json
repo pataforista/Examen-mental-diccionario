@@ -111,6 +111,20 @@
             ]
         },
         "assessment_keys": {
+            "marking_scheme": {
+                "essential_actions": [
+                    {
+                        "action": "acción_crítica_1",
+                        "weight": 2
+                    }
+                ],
+                "desirable_actions": [
+                    {
+                        "action": "acción_deseable_1",
+                        "weight": 1
+                    }
+                ]
+            },
             "errors_to_avoid": [
                 "error_1",
                 "error_2"

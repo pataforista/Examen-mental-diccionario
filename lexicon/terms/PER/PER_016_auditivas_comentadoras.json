@@ -60,7 +60,27 @@
             "text": "Escucha una voz en tercera persona que narra su conducta: “Ahora se está poniendo los zapatos… ahora va hacia la puerta… está buscando las llaves”. El paciente la describe como externa, persistente y no controlable, y ajusta conducta (se detiene, mira alrededor, responde a la voz)."
         }
     ],
-    "version": "1.0.0",
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB27.20",
+            "uri": "https://id.who.int/icd/entity/20703444",
+            "label": "Auditory hallucinations"
+        },
+        "snomed_ct": {
+            "concept_id": "285558000",
+            "preferred_term": "Hallucination: auditory voice (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "LSHS - Launay-Slade Hallucination Scale",
+                "item": "Auditory",
+                "scale_id": "LSHS-R"
+            }
+        ]
+    },
     "provenance": {
         "phenomenology": [
             "Sims",

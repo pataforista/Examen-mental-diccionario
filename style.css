@@ -805,11 +805,166 @@ main {
 
     .game-actions {
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
     }
 
     .btn.primary {
         width: auto;
+    }
+}
+
+/* ChromaGrid Component styles */
+.chroma-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--cols, 3), 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    --r: 300px;
+    --x: 50%;
+    --y: 50%;
+}
+
+@media (max-width: 768px) {
+    .chroma-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chroma-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+[data-theme="light"] .chroma-card {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chroma-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .chroma-card:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.chroma-img-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 3px solid var(--card-border, var(--primary));
+}
+
+.chroma-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chroma-info .name {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-p);
+}
+
+.chroma-info .handle {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.chroma-info .role {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Mouse Follow Effect */
+.chroma-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    background: radial-gradient(var(--r, 300px) circle at var(--x) var(--y),
+            rgba(var(--primary-rgb, 86, 216, 182), 0.15),
+            transparent 80%);
+}
+
+.chroma-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(var(--primary-rgb, 86, 216, 182), 0.1),
+            transparent 40%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.chroma-card:hover::before {
+    opacity: 1;
+}
+
+.chroma-fade {
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* Buy Me a Coffee - Visibility Polish */
+.coffee-card {
+    --card-border: #FFDD00;
+    background: #FFDD0015 !important;
+    border: 2px solid #FFDD00 !important;
+    box-shadow: 0 0 20px #FFDD0030;
+    animation: coffeePulse 3s infinite ease-in-out;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .coffee-card {
+    background: #FFDD0010 !important;
+    box-shadow: 0 0 25px #FFDD0040;
+}
+
+.coffee-card:hover {
+    transform: scale(1.02);
+    background: #FFDD0025 !important;
+}
+
+.coffee-card .chroma-img-wrapper {
+    background: #FFDD00 !important;
+    color: #444;
+}
+
+@keyframes coffeePulse {
+    0% {
+        box-shadow: 0 0 10px #FFDD0020;
+    }
+
+    50% {
+        box-shadow: 0 0 30px #FFDD0060;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #FFDD0020;
     }
 }

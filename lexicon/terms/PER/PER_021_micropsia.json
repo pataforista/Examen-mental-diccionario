@@ -60,7 +60,21 @@
             "text": "Percibe disminución de tamaño o lejanía aparente: “Las personas se ven diminutas, como muy lejos; como si estuviera viendo con binoculares al revés”. Se consigna como distorsión de escala, a veces episódica."
         }
     ],
-    "version": "1.0.0",
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.CZ",
+            "uri": "https://id.who.int/icd/entity/149830589",
+            "label": "Visual scale distortion"
+        },
+        "snomed_ct": {
+            "concept_id": "421801003",
+            "preferred_term": "Micropsia (symptom)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
     "provenance": {
         "phenomenology": [
             "Sims",

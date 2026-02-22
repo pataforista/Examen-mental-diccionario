@@ -1,0 +1,80 @@
+{
+    "term_id": "ARC_002",
+    "canonical_name": "Dementia Praecox",
+    "synonyms_and_slang": [
+        "demencia precoz"
+    ],
+    "term_kind": "state",
+    "granularity": "atomic",
+    "risk_weight": 3,
+    "definition_clinical": {
+        "core": "Término fundamental de Emil Kraepelin para designar un grupo de enfermedades psiquiátricas que se inician en la juventud y conducen inevitablemente a un deterioro cognitivo y emocional irreversible.",
+        "required_features": [
+            "inicio temprano",
+            "curso crónico y progresivo",
+            "pérdida de la unidad interna de la vida psíquica (zerrissenheit)",
+            "deterioro de la voluntad y el afecto"
+        ],
+        "subjective_marker": "El paciente muestra una 'desconexión' progresiva con la realidad y con su propio yo.",
+        "behavioral_marker": "Conductas estereotipadas, embotamiento afectivo profundo y desorganización psicomotora."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion_longitudinal",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "historico",
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-13",
+            "relation": "historical_precursor",
+            "context": "esquizofrenia_y_psicosis"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "ARC_006",
+            "canonical_name": "Psicosis maníaco-depresiva",
+            "reason": "Kraepelin separó la demencia precoz (deterioro) de la psicosis maníaco-depresiva (periodicidad sin deterioro)."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "historical_note",
+            "message": "En 1908, Bleuler propuso el término 'Esquizofrenia' para sustituirlo, enfatizando la escisión mental sobre el curso de deterioro."
+        }
+    ],
+    "teaching_notes": [
+        "Dividida por Kraepelin en: paranoide, catatónica y hebefrénica.",
+        "Su 'pesimismo' pronóstico fue el paradigma dominante hasta mediados del siglo XX."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6A20",
+            "label": "Schizophrenia (modern equivalent)"
+        },
+        "snomed_ct": {
+            "concept_id": "58214004",
+            "preferred_term": "Dementia praecox (disorder)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Kraepelin",
+            "Bleuler"
+        ],
+        "clinical_tradition": [
+            "psiquiatria_alemana_siglo_XIX"
+        ]
+    },
+    "status": "active"
+}

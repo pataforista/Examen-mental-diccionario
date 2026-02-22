@@ -4,9 +4,10 @@ const App = {
         domains: [],
         cases: [],
         fuse: null,
-        currentView: 'dictionary', // dictionary, domains, cases, search, term, about
+        currentView: 'dictionary',
         recentSearches: [],
-        searchDebounceTimer: null
+        searchDebounceTimer: null,
+        chromaPos: { x: 0, y: 0 }
     },
 
     init: async function () {
@@ -23,8 +24,43 @@ const App = {
     registerSW: function () {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
-                .then(reg => console.log('Service Worker Registered', reg.scope))
+                .then(reg => {
+                    console.log('Service Worker Registered', reg.scope);
+                    // Check for updates every hour
+                    setInterval(() => reg.update(), 1000 * 60 * 60);
+                })
                 .catch(err => console.error('Service Worker Registration Failed', err));
+
+            // Reload when a new service worker takes over
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                window.location.reload();
+            });
+        }
+    },
+
+    utils: {
+        sanitizeHTML: function (text) {
+            if (typeof text !== 'string') return text;
+            // Basic entity map for manual escape
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            let safe = text.replace(/[&<>"']/g, m => map[m]);
+            // Restore allowed clinical tags
+            return safe
+                .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
+                .replace(/&lt;strong&gt;/gi, '<strong>')
+                .replace(/&lt;\/strong&gt;/gi, '</strong>')
+                .replace(/&lt;em&gt;/gi, '<em>')
+                .replace(/&lt;\/em&gt;/gi, '</em>')
+                .replace(/&lt;ul&gt;/gi, '<ul>')
+                .replace(/&lt;\/ul&gt;/gi, '</ul>')
+                .replace(/&lt;li&gt;/gi, '<li>')
+                .replace(/&lt;\/li&gt;/gi, '</li>');
         }
     },
 
@@ -79,30 +115,45 @@ const App = {
             }, 180);
         });
         this.nodes.navButtons.forEach(btn => {
-            btn.addEventListener('click', () => this.switchTab(btn.id));
+            btn.addEventListener('click', () => {
+                const tabId = btn.id;
+                this.switchTab(tabId);
+                history.pushState({ view: tabId }, '', `#${tabId.replace('nav-', '')}`);
+            });
         });
-        this.nodes.aboutBtn.addEventListener('click', () => this.viewAbout());
+        this.nodes.aboutBtn.addEventListener('click', () => {
+            this.viewAbout();
+            history.pushState({ view: 'about' }, '', '#about');
+        });
         this.nodes.themeToggle.addEventListener('click', () => this.theme.toggle());
+
+        // History API support
+        window.addEventListener('popstate', (e) => this.handlePopState(e.state));
+    },
+
+    handlePopState: function (state) {
+        if (!state) {
+            this.switchTab('nav-dictionary');
+            return;
+        }
+        if (state.view === 'term' && state.termId) {
+            this.viewTerm(state.termId, true);
+        } else if (state.view === 'domain' && state.domainId) {
+            this.viewDomainDetails(state.domainId, true);
+        } else if (state.view.startsWith('nav-')) {
+            this.switchTab(state.view);
+        } else if (state.view === 'about') {
+            this.viewAbout();
+        } else {
+            this.switchTab('nav-dictionary');
+        }
     },
 
     loadData: async function () {
         try {
-            const registryData = await fetch('lexicon/term_id_registry.json').then(r => r.json());
-            const termRegistry = registryData.terms_index;
-
-            const termPromises = termRegistry.map(t =>
-                fetch(t.path)
-                    .then(response => {
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                        return response.json();
-                    })
-                    .catch(err => {
-                        console.error(`Error loading term ${t.term_id} from ${t.path}:`, err);
-                        return null;
-                    })
-            );
-
-            this.data.terms = (await Promise.all(termPromises)).filter(t => t !== null);
+            // Load optimized lexicon bundle
+            const bundle = await fetch('lexicon/lexicon_bundle.json').then(r => r.json());
+            this.data.terms = bundle.terms;
 
             // Sort terms alphabetically
             this.data.terms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
@@ -237,32 +288,18 @@ const App = {
     },
 
     renderResults: function (results) {
-        if (!results.length) {
-            this.nodes.resultsView.innerHTML = `
-                <h3 style="margin-top:0; font-size: 1rem;">Resultados de búsqueda</h3>
-                <div class="card" style="padding: 1rem;">
-                    <strong style="color: var(--primary);">Sin coincidencias</strong>
-                    <p style="font-size: 0.85rem; opacity: 0.8; margin: 0.5rem 0 0 0;">
-                        Prueba con otro término, sinónimos o una búsqueda más corta.
-                    </p>
-                </div>
-            `;
-            this.renderView('results');
-            return;
-        }
-
         this.nodes.resultsView.innerHTML = `
             <h3 style="margin-top:0; font-size: 1rem;">Resultados de búsqueda</h3>
             ${results.map(r => `
                 <div class="card" onclick="App.viewTerm('${r.item.term_id}')" style="margin-bottom: 0.75rem; padding: 1rem;">
                     <div style="display:flex; justify-content: space-between; align-items: flex-start;">
-                        <strong style="color: var(--primary);">${r.item.canonical_name}</strong>
+                        <strong style="color: var(--primary);">${this.utils.sanitizeHTML(r.item.canonical_name)}</strong>
                         <div class="badge badge-risk-${r.item.risk_weight > 1 ? 'critical' : 'alert'}" style="font-size: 0.6rem;">
-                            ${r.item.term_kind}
+                            ${this.utils.sanitizeHTML(r.item.term_kind)}
                         </div>
                     </div>
                     <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.5rem 0 0 0; line-height: 1.4;">
-                        ${(r.item.definition_clinical?.core || 'Sin definición disponible.').substring(0, 80)}...
+                        ${this.utils.sanitizeHTML((r.item.definition_clinical?.core || 'Sin definición disponible.').substring(0, 80))}...
                     </p>
                 </div>
             `).join('')}
@@ -270,10 +307,14 @@ const App = {
         this.renderView('results');
     },
 
-    viewTerm: function (termId) {
+    viewTerm: function (termId, isPopState = false) {
         try {
             const term = this.data.terms.find(t => t.term_id === termId);
             if (!term) return;
+
+            if (!isPopState) {
+                history.pushState({ view: 'term', termId: termId }, '', `#term/${termId}`);
+            }
 
             this.addToRecent(term);
 
@@ -287,10 +328,10 @@ const App = {
             <div class="btn-back" onclick="App.closeTerm()">← Volver</div>
             <div class="card">
                 <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                    <div class="badge badge-risk-${term.risk_weight > 1 ? 'critical' : 'alert'}">${term.term_kind || 'término'}</div>
+                    <div class="badge badge-risk-${term.risk_weight > 1 ? 'critical' : 'alert'}">${this.utils.sanitizeHTML(term.term_kind || 'término')}</div>
                     ${term.status === 'active' ? '✅' : ''}
                 </div>
-                <h2 class="term-title">${term.canonical_name}</h2>
+                <h2 class="term-title">${this.utils.sanitizeHTML(term.canonical_name)}</h2>
                 
                 ${term.risk_weight > 1 ? `
                     <div class="alert-critical-banner">
@@ -298,20 +339,20 @@ const App = {
                             <span>⚠️</span> ALERTA DE RIESGO CLÍNICO
                         </div>
                         <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: #742a2a;">
-                            ${alerts.length > 0 ? alerts[0].message : 'Este término implica un riesgo de seguridad o manejo crítico.'}
+                            ${alerts.length > 0 ? this.utils.sanitizeHTML(alerts[0].message) : 'Este término implica un riesgo de seguridad o manejo crítico.'}
                         </p>
                     </div>
                 ` : ''}
 
                 <div class="definition-section">
                     <span class="section-label">Definición Clínica</span>
-                    <p>${term.definition_clinical?.core || 'Sin definición disponible.'}</p>
+                    <p>${this.utils.sanitizeHTML(term.definition_clinical?.core || 'Sin definición disponible.')}</p>
                 </div>
 
                 ${term.definition_clinical?.subjective_marker ? `
                     <div class="definition-section">
                         <span class="section-label">Marcador Subjetivo</span>
-                        <p><em>"${term.definition_clinical.subjective_marker}"</em></p>
+                        <p><em>"${this.utils.sanitizeHTML(term.definition_clinical.subjective_marker)}"</em></p>
                     </div>
                 ` : ''}
 
@@ -321,7 +362,7 @@ const App = {
                         ${domainLinks.length > 0 ?
                     domainLinks.map(link => `
                                 <span class="tag" onclick="event.stopPropagation(); App.viewDomainDetails('${link.domain_id}')">
-                                    ${this.getDomainIcon(link.domain_id)} ${this.getDomainSlug(link.domain_id).replace(/_/g, ' ')}
+                                    ${this.getDomainIcon(link.domain_id)} ${this.utils.sanitizeHTML(this.getDomainSlug(link.domain_id).replace(/_/g, ' '))}
                                 </span>
                             `).join('') : '<span style="font-size: 0.8rem; opacity: 0.5;">No categorizado</span>'}
                     </div>
@@ -331,7 +372,7 @@ const App = {
                 <div class="definition-section">
                     <span class="section-label">Docencia & Perlas</span>
                     <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
-                        ${teachingNotes.map(note => `<li style="margin-bottom: 0.5rem;">${note}</li>`).join('')}
+                        ${teachingNotes.map(note => `<li style="margin-bottom: 0.5rem;">${this.utils.sanitizeHTML(note)}</li>`).join('')}
                     </ul>
                 </div>
                 ` : ''}
@@ -343,14 +384,14 @@ const App = {
                             ${examples.map(ex => `
                                 <div class="example-item ${ex.type}">
                                     <div class="example-type-badge">${ex.type === 'patient_quote' ? '💬 Paciente' : '👁️ Observación'}</div>
-                                    <p>${ex.type === 'patient_quote' ? `<em>"${ex.text}"</em>` : ex.text}</p>
+                                    <p>${ex.type === 'patient_quote' ? `<em>"${this.utils.sanitizeHTML(ex.text)}"</em>` : this.utils.sanitizeHTML(ex.text)}</p>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
                 ` : ''}
             </div>
-        `;
+            `;
             this.renderView('term');
             this.nodes.content.scrollTop = 0;
         } catch (e) {
@@ -395,59 +436,118 @@ const App = {
     viewAbout: function () {
         this.nodes.aboutView.innerHTML = `
             <div class="btn-back" onclick="App.switchTab('nav-dictionary')">← Volver</div>
-            <div class="card">
-                <h2 style="margin-top:0;">DICCIONARIO DE EXAMEN MENTAL</h2>
-                <span class="badge" style="margin-bottom: 1rem;">Versión 1.3.0</span>
-                
-                <div class="definition-section">
-                    <span class="section-label">Sobre la herramienta</span>
-                    <p style="font-size: 0.9rem;">
-                        Este recurso ha sido diseñado como una guía de consulta rápida para profesionales de la salud mental y estudiantes en formación. Su objetivo es estandarizar la terminología psicopatológica y facilitar la precisión en el registro del examen mental.
-                    </p>
-                </div>
-
-                <div class="definition-section">
-                    <span class="section-label">Cómo se usa</span>
-                    <div style="font-size: 0.9rem; line-height: 1.5;">
-                        <p><strong>1. Búsqueda:</strong> Utilice la barra superior para buscar términos por nombre, sinónimos o descripción.</p>
-                        <p><strong>2. Dominios:</strong> Explore el menú de "Dominios" para ver los términos agrupados por funciones psíquicas (Conciencia, Pensamiento, Afecto, etc.).</p>
-                        <p><strong>3. Casos OSCE:</strong> Revise escenarios clínicos prácticos para entrenar la identificación de signos y síntomas.</p>
-                        <p><strong>4. Modos Visuales:</strong> Use el icono del sol/luna para alternar entre modos de alto y bajo contraste según su preferencia de lectura.</p>
+            
+            <div class="chroma-grid" id="about-chroma-grid">
+                <article class="chroma-card" style="--card-border: #56D8B6; --cols: 1;">
+                    <div class="chroma-img-wrapper">
+                        <img src="https://i.pravatar.cc/300?u=cesarcelada" alt="Dr. Cesar Celada">
                     </div>
-                </div>
-                
+                    <footer class="chroma-info">
+                        <h3 class="name">Dr. Cesar Celada</h3>
+                        <span class="handle">Autor Principal</span>
+                        <p class="role">Médico Psiquiatra</p>
+                        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">
+                            Creador del Diccionario de Examen Mental. Proyecto independiente y sin fines de lucro para la formación clínica.
+                        </p>
+                    </footer>
+                </article>
+
+                <article class="chroma-card" style="--card-border: #F59E0B;" onclick="window.location.href='mailto:drceladapsiquiatria@gmail.com'">
+                    <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(var(--primary-rgb), 0.1);">
+                        <span style="font-size: 3rem;">📩</span>
+                    </div>
+                    <footer class="chroma-info">
+                        <h3 class="name">Contacto</h3>
+                        <span class="handle">Aclaraciones y Mejoras</span>
+                        <p class="role">drceladapsiquiatria@gmail.com</p>
+                    </footer>
+                </article>
+
+                <article class="chroma-card coffee-card" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">
+                    <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: #FFDD00;">
+                        <span style="font-size: 3.5rem;">☕</span>
+                    </div>
+                    <footer class="chroma-info">
+                        <h3 class="name" style="color: #6d4c41;">Invitame un café</h3>
+                        <span class="handle" style="color: #6d4c41; opacity: 0.8;">Donar para mantener el servidor</span>
+                        <p class="role" style="font-weight: 800; color: #444;">buymeacoffee.com/herramente</p>
+                    </footer>
+                    <div style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FFDD00; color: #444; border-radius: 20px; font-weight: 800; font-size: 0.8rem;">DONAR AHORA</div>
+                </article>
+            </div>
+
+            <div class="card" style="margin-top: 2rem;">
                 <div class="definition-section">
                     <span class="section-label">Fuentes y Referencias (APA 7)</span>
-                    <ul style="font-size: 0.8rem; padding-left: 1.25rem; line-height: 1.4;">
+                    <ul style="font-size: 0.75rem; padding-left: 1.25rem; line-height: 1.4; opacity: 0.8;">
                         <li style="margin-bottom: 0.5rem;"><strong>Oyebode, F.</strong> (2022). <em>Sims' Symptoms in the Mind: Textbook of Descriptive Psychopathology</em> (7ª ed.). Elsevier.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Robinson, D. J.</strong> (2017). <em>The Mental Status Exam Explained</em> (3ª ed.). Rapid Psychler Press.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Mendez, M. F.</strong> (2021). <em>The Mental Status Examination Handbook</em> (1ª ed.). Elsevier.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Voss, R. M., & Das, J. M.</strong> (2024). Mental Status Examination. En <em>StatPearls</em> [Internet]. StatPearls Publishing.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Hughes, S.</strong> (s.f.). <em>History Taking & Risk Assessment & Mental State Examination Resource Pack</em>. University of Bristol, Academic Unit of Psychiatry.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Jaspers, K.</strong> (1997). <em>General Psychopathology</em>. Johns Hopkins University Press.</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>CIE-11 / ICD-11</strong> for Mortality and Morbidity Statistics. World Health Organization.</li>
                     </ul>
                 </div>
 
-                <div class="card clinical-box" style="margin-top: 2rem; border-left: 4px solid var(--accent);">
-                    <span class="section-label">Aviso Clínico</span>
-                    <p style="font-size: 0.75rem; color: var(--text-secondary); margin: 0;">
-                        Esta herramienta es de carácter informativo y apoyo pedagógico. No sustituye el juicio clínico soberano del profesional ni los protocolos institucionales vigentes.
+                <div class="card clinical-box" style="margin-top: 2rem; border-left: 4px solid var(--accent); background: rgba(255, 60, 60, 0.05);">
+                    <span class="section-label" style="color: var(--o-accent-a);">AVISO LEGAL Y CLÍNICO</span>
+                    <p style="font-size: 0.8rem; line-height: 1.5; color: var(--text-p);">
+                        1. Esta herramienta es de carácter estrictamente informativo y pedagógico.
+                        <br>2. **No constituye consejo médico** ni sustituye el juicio clínico soberano del profesional.
+                        <br>3. El autor no se hace responsable de las decisiones clínicas tomadas basadas en esta guía rápida.
                     </p>
                 </div>
                 
                 <p style="font-size: 0.7rem; color: var(--text-secondary); text-align: center; margin-top: 2rem; opacity: 0.5;">
-                    Diccionario MSE | SOPORTE ACADÉMICO v1.3.0
+                    Diccionario MSE | Dr. Cesar Celada © 2026
                 </p>
             </div>
         `;
         this.renderView('about');
         this.nodes.navButtons.forEach(btn => btn.classList.remove('active'));
+        this.setupChromaGrid();
+    },
+
+    setupChromaGrid: function () {
+        const grid = document.getElementById('about-chroma-grid');
+        if (!grid) return;
+
+        // Mouse follow on grid
+        const setX = gsap.quickSetter(grid, '--x', 'px');
+        const setY = gsap.quickSetter(grid, '--y', 'px');
+
+        grid.addEventListener('pointermove', (e) => {
+            const rect = grid.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            gsap.to(this.data.chromaPos, {
+                x, y,
+                duration: 0.45,
+                ease: 'power3.out',
+                onUpdate: () => {
+                    setX(this.data.chromaPos.x);
+                    setY(this.data.chromaPos.y);
+                },
+                overwrite: true
+            });
+        });
+
+        // Mouse follow on cards
+        const cards = grid.querySelectorAll('.chroma-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
     },
 
     closeTerm: function () {
         if (this.nodes.search.value.length >= 2) {
             this.renderView('results');
         } else {
-            this.renderView(this.data.currentView);
+            history.back();
         }
     },
 
@@ -462,7 +562,7 @@ const App = {
                     ${this.data.domains.map(d => `
                         <div class="domain-card" onclick="App.viewDomainDetails('${d.domain_id}')">
                             <div class="domain-icon">${this.getDomainIcon(d.domain_id)}</div>
-                            <span class="domain-title">${d.label_es || d.domain_name || d.domain_id}</span>
+                            <span class="domain-title">${this.utils.sanitizeHTML(d.label_es || d.domain_name || d.domain_id)}</span>
                             <div class="domain-subtitle" style="font-size: 0.6rem; opacity: 0.6; text-transform: none;">
                                 ${d.subcomponents ? d.subcomponents.length + ' áreas' : 'Detalles'}
                             </div>
@@ -474,9 +574,13 @@ const App = {
         `;
     },
 
-    viewDomainDetails: function (domainId) {
+    viewDomainDetails: function (domainId, isPopState = false) {
         const domain = this.data.domains.find(d => d.domain_id === domainId);
         if (!domain) return;
+
+        if (!isPopState) {
+            history.pushState({ view: 'domain', domainId: domainId }, '', `#domain/${domainId}`);
+        }
 
         const filteredTerms = this.data.terms.filter(t =>
             t.domain_links && t.domain_links.some(link => link.domain_id === domainId)
@@ -492,19 +596,19 @@ const App = {
             <div class="domain-detail-header">
                 <h2 class="domain-detail-title">
                     <span>${this.getDomainIcon(domain.domain_id)}</span>
-                    ${domain.label_es || domain.domain_name}
+                    ${this.utils.sanitizeHTML(domain.label_es || domain.domain_name)}
                 </h2>
-                <p style="margin-top: 1rem; opacity: 0.9; line-height: 1.5;">${domain.definition_es || 'Sin definición disponible.'}</p>
+                <p style="margin-top: 1rem; opacity: 0.9; line-height: 1.5;">${this.utils.sanitizeHTML(domain.definition_es || 'Sin definición disponible.')}</p>
             </div>
 
             <div class="section-container">
                 <h3 class="section-label" style="font-size: 1rem;">Subcomponentes y Términos Aceptados</h3>
                 ${domain.subcomponents ? domain.subcomponents.map(sub => `
                     <div class="subcomponent-item">
-                        <span class="subcomponent-label">${sub.label_es}</span>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">${sub.notes || ''}</p>
+                        <span class="subcomponent-label">${this.utils.sanitizeHTML(sub.label_es)}</span>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">${this.utils.sanitizeHTML(sub.notes || '')}</p>
                         <div class="tag-container">
-                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${term}</span>`).join('') : ''}
+                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${this.utils.sanitizeHTML(term)}</span>`).join('') : ''}
                         </div>
                     </div>
                 `).join('') : '<p>No hay subcomponentes definidos.</p>'}
@@ -514,7 +618,7 @@ const App = {
                 <div class="section-container" style="margin-top: 1.5rem;">
                     <h3 class="section-label" style="font-size: 1rem;">Notas Clínicas</h3>
                     <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary);">
-                        ${domain.clinical_notes.map(note => `<li style="margin-bottom: 0.5rem;">${note}</li>`).join('')}
+                        ${domain.clinical_notes.map(note => `<li style="margin-bottom: 0.5rem;">${this.utils.sanitizeHTML(note)}</li>`).join('')}
                     </ul>
                 </div>
             ` : ''}
@@ -524,8 +628,8 @@ const App = {
                 <div class="card" style="padding: 0.5rem;">
                     ${filteredTerms.length ? filteredTerms.map(t => `
                         <div class="list-item" onclick="App.viewTerm('${t.term_id}')">
-                            <span>${t.canonical_name}</span>
-                            <span style="font-size: 0.7rem; color: var(--text-secondary); opacity: 0.6;">${t.term_kind}</span>
+                            <span>${this.utils.sanitizeHTML(t.canonical_name)}</span>
+                            <span style="font-size: 0.7rem; color: var(--text-secondary); opacity: 0.6;">${this.utils.sanitizeHTML(t.term_kind)}</span>
                         </div>
                     `).join('') : '<p style="padding: 1rem; font-size: 0.9rem;">No hay términos específicos registrados aún.</p>'}
                 </div>
@@ -535,7 +639,7 @@ const App = {
                 <div class="wording-box wording-recommended" style="margin-top: 1.5rem;">
                     <span class="section-label" style="color: #2f855a;">Lenguaje Recomendado</span>
                     <ul class="wording-list">
-                        ${domain.recommended_wording.map(w => `<li>${w}</li>`).join('')}
+                        ${domain.recommended_wording.map(w => `<li>${this.utils.sanitizeHTML(w)}</li>`).join('')}
                     </ul>
                 </div>
             ` : ''}
@@ -557,14 +661,14 @@ const App = {
             ${this.data.cases.map(c => `
                 <div class="card" onclick="App.renderCase('${c.case_id}')" style="padding: 1rem; cursor: pointer;">
                     <div style="display:flex; justify-content: space-between; align-items: center;">
-                        <span class="badge" style="background:#edf2f7; color: #2d3748;">Nivel ${c.level}</span>
-                        <code style="font-size: 0.7rem; opacity: 0.5;">${c.case_id}</code>
+                        <span class="badge" style="background:#edf2f7; color: #2d3748;">Nivel ${this.utils.sanitizeHTML(String(c.level))}</span>
+                        <code style="font-size: 0.7rem; opacity: 0.5;">${this.utils.sanitizeHTML(c.case_id)}</code>
                     </div>
                     <p style="margin: 0.75rem 0; font-weight: 600; color: var(--primary-dark);">
-                        ${c.stem.setting.replace(/_/g, ' ')}
+                        ${this.utils.sanitizeHTML(c.stem.setting.replace(/_/g, ' '))}
                     </p>
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
-                        ${c.stem.contextual_notes}
+                        ${this.utils.sanitizeHTML(c.stem.contextual_notes)}
                     </p>
                     <div style="font-size: 0.75rem; color: var(--primary); font-weight: 600; text-align: right;">
                         Ver Caso →
@@ -621,11 +725,11 @@ const App = {
                     <div id="analysis-content" style="display: none; text-align: left; margin-top: 1.5rem; animation: fadeIn 0.5s;">
                         <div style="background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
                             <h4 style="margin-top:0; color: var(--primary);">Síndrome Principal</h4>
-                            <p style="font-size: 1.1rem; font-weight: bold;">${c.expected_engine_output.primary_syndrome.replace(/_/g, ' ')}</p>
+                            <p style="font-size: 1.1rem; font-weight: bold;">${this.utils.sanitizeHTML(c.expected_engine_output.primary_syndrome.replace(/_/g, ' '))}</p>
                             
                             <div style="margin-top: 1rem; display:flex; gap: 0.5rem; flex-wrap: wrap;">
                                 ${c.expected_engine_output.critical_flags.map(f =>
-            `<span class="badge" style="background: #fed7d7; color: #742a2a;">🚩 ${f.replace(/_/g, ' ')}</span>`
+            `<span class="badge" style="background: #fed7d7; color: #742a2a;">🚩 ${this.utils.sanitizeHTML(f.replace(/_/g, ' '))}</span>`
         ).join('')}
                             </div>
                         </div>
@@ -633,11 +737,11 @@ const App = {
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                             <div style="background: rgba(47, 133, 90, 0.1); color: #22543d; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
                                 <strong>Claves Diagnósticas:</strong>
-                                <ul>${c.assessment_keys.key_discriminators.map(x => `<li>${x.replace(/_/g, ' ')}</li>`).join('')}</ul>
+                                <ul>${c.assessment_keys.key_discriminators.map(x => `<li>${this.utils.sanitizeHTML(x.replace(/_/g, ' '))}</li>`).join('')}</ul>
                             </div>
                             <div style="background: rgba(197, 48, 48, 0.1); color: #742a2a; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
                                 <strong>Errores a Evitar:</strong>
-                                <ul>${c.assessment_keys.errors_to_avoid.map(x => `<li>${x.replace(/_/g, ' ')}</li>`).join('')}</ul>
+                                <ul>${c.assessment_keys.errors_to_avoid.map(x => `<li>${this.utils.sanitizeHTML(x.replace(/_/g, ' '))}</li>`).join('')}</ul>
                             </div>
                         </div>
                     </div>

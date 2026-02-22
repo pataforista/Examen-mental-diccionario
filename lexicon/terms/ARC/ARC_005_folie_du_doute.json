@@ -1,0 +1,80 @@
+{
+    "term_id": "ARC_005",
+    "canonical_name": "Locura de la Duda",
+    "synonyms_and_slang": [
+        "folie du doute",
+        "enfermedad de las comprobaciones"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Término clásico (Falret, Legrand du Saulle) para describir el estado de duda obsesiva patológica que lleva a la necesidad imperiosa de comprobaciones repetidas y rumiaciones.",
+        "required_features": [
+            "duda patológica persistente",
+            "necesidad de verificación (checking)",
+            "conciencia de lo absurdo (insight conservado)"
+        ],
+        "subjective_marker": "El paciente refiere una 'incertidumbre torturante' sobre si ha realizado una acción (cerrar la llave, apagar la luz).",
+        "behavioral_marker": "Rituales de comprobación repetitivos que impiden el avance de la vida diaria."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-07",
+            "relation": "historical_precursor",
+            "context": "trastorno_obsesivo_compulsivo"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "CON_001",
+            "canonical_name": "Obsesión",
+            "reason": "La folie du doute es esencialmente la descripción clásica de las obsesiones de duda y compulsiones de verificación."
+        }
+    ],
+    "alerts": [],
+    "teaching_notes": [
+        "Fue descrita por Falret en 1866 como 'la folie du doute avec délire du toucher'.",
+        "Marca el paso de la 'locura' como delirio a la 'neurosis' como obsesión."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6B20",
+            "label": "Obsessive-compulsive disorder (modern equivalent)"
+        },
+        "snomed_ct": {
+            "concept_id": "191696001",
+            "preferred_term": "Folie du doute (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "Y-BOCS",
+                "item": "Dimensión de duda/comprobación",
+                "scale_id": "Y-BOCS"
+            }
+        ]
+    },
+    "provenance": {
+        "phenomenology": [
+            "Falret",
+            "Legrand du Saulle"
+        ],
+        "clinical_tradition": [
+            "psiquiatria_francesa_siglo_XIX"
+        ]
+    },
+    "status": "active"
+}

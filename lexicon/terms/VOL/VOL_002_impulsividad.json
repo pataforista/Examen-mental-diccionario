@@ -1,0 +1,79 @@
+{
+    "term_id": "VOL_002",
+    "canonical_name": "Impulsividad",
+    "synonyms_and_slang": [
+        "descontrol de impulsos",
+        "actuación"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 2,
+    "definition_clinical": {
+        "core": "Predisposición a reacciones rápidas y no planificadas ante estímulos internos o externos, sin considerar las consecuencias negativas para uno mismo o para los demás.",
+        "required_features": [
+            "urgencia de actuar",
+            "ausencia de reflexión previa",
+            "dificultad para posponer la gratificación"
+        ],
+        "subjective_marker": "El paciente siente una 'presión interna' para actuar que solo se alivia realizando la conducta.",
+        "behavioral_marker": "Gastos excesivos, conductas de riesgo, ataques de ira súbitos o interrupciones constantes en el habla."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion_conductual"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-16",
+            "relation": "primary_expression",
+            "context": "voluntad_accion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "diagnostic_critical",
+            "message": "Factor de riesgo mayor para conductas autolesivas o violentas."
+        }
+    ],
+    "teaching_notes": [
+        "Puede ser un rasgo estable de personalidad o un síntoma agudo (manía, intoxicación).",
+        "Distinguir del 'acto compulsivo' (donde hay lucha interna y ansiedad si no se realiza)."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.Z",
+            "label": "Symptoms or signs involving volition"
+        },
+        "snomed_ct": {
+            "concept_id": "247859007",
+            "preferred_term": "Impulsivity (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "BIS-11 - Barratt Impulsiveness Scale",
+                "item": "Puntuación total",
+                "scale_id": "BIS-11"
+            }
+        ]
+    },
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Oyebode"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

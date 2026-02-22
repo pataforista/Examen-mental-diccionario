@@ -1,0 +1,73 @@
+{
+    "term_id": "AFF_012",
+    "canonical_name": "Incontinencia Afectiva",
+    "synonyms_and_slang": [
+        "labilidad extrema",
+        "incontinencia emocional"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Incapacidad para contener las reacciones emocionales, que surgen de forma rápida, intensa y a menudo desproporcionada ante estímulos mínimos.",
+        "required_features": [
+            "falta de control voluntario sobre la expresión emocional",
+            "aparición súbita",
+            "intensidad desmedida"
+        ],
+        "subjective_marker": "El paciente refiere que no puede evitar llorar o reír aunque lo intente, sintiéndose desbordado.",
+        "behavioral_marker": "Llanto súbito o risa explosiva durante la entrevista que cesa con la misma rapidez con que apareció."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "afectividad"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [
+        {
+            "type": "neurological_note",
+            "message": "Común en síndromes pseudobulbares, demencias vasculares y lesiones del lóbulo frontal."
+        }
+    ],
+    "teaching_notes": [
+        "Diferenciar de la labilidad afectiva común; la incontinencia implica una pérdida total de la capacidad de contención (freno).",
+        "A menudo el paciente se siente avergonzado por la falta de control."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.4",
+            "label": "Emotional lability"
+        },
+        "snomed_ct": {
+            "concept_id": "45690001",
+            "preferred_term": "Emotional incontinence (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Fish"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

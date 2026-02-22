@@ -1,0 +1,70 @@
+{
+    "term_id": "PER_008",
+    "canonical_name": "Alucinación Extracampina",
+    "synonyms_and_slang": [
+        "alucinación fuera de campo"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Alucinación que se percibe fuera del campo sensorial fisiológico normal del individuo.",
+        "required_features": [
+            "localización externa clara",
+            "posición fuera del rango normal de visión, audición o tacto",
+            "concepción espacial de la alucinación"
+        ],
+        "subjective_marker": "El paciente refiere 'ver' a alguien parado exactamente detrás de él o en otra habitación a través de paredes opacas.",
+        "behavioral_marker": "Girar la cabeza bruscamente hacia zonas fuera de su campo visual; conductas de evitación de objetos 'invisibles' pero situados espacialmente."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-08",
+            "relation": "primary_expression",
+            "context": "sensopercepcion"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Es un fenómeno espacialmente paradójico. El paciente no 'siente' que está ahí, 'lo ve' con los ojos de la mente pero proyectado fuera del rango visual.",
+        "Diferenciar del 'Sentido de presencia' donde no hay imagen sensorial clara."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con una idea delirante de seguimiento si el paciente no describe una cualidad sensorial clara."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.Z",
+            "label": "Symptoms or signs involving visual appearance"
+        },
+        "snomed_ct": {
+            "concept_id": "247670002",
+            "preferred_term": "Extracampine hallucination (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Bleuler"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

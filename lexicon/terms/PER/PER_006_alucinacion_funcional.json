@@ -1,0 +1,87 @@
+{
+    "term_id": "PER_006",
+    "canonical_name": "Alucinación Funcional",
+    "synonyms_and_slang": [
+        "alucinación desencadenada"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Percepción alucinatoria que se produce solo en presencia de un estímulo sensorial real en la misma modalidad, persistiendo de forma paralela a este.",
+        "required_features": [
+            "presencia de un estímulo real (disparador)",
+            "alucinación en la misma modalidad que el estímulo",
+            "coexistencia del estímulo real y la percepción falsa"
+        ],
+        "subjective_marker": "El paciente refiere oír voces solo cuando hay ruidos de fondo (agua, tráfico, motores).",
+        "behavioral_marker": "Búsqueda de ruidos para 'activar' o 'enmascarar' voces; detenerse cuando el ruido real cesa."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-08",
+            "relation": "primary_expression",
+            "context": "sensopercepcion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "PER_010",
+            "canonical_name": "Ilusión",
+            "reason": "En la ilusión el estímulo real se transforma; en la alucinación funcional, se perciben ambos simultáneamente."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_critical",
+            "message": "Frecuente en esquizofrenia; requiere distinción precisa de la ilusión para evaluar gravedad del juicio de realidad."
+        }
+    ],
+    "teaching_notes": [
+        "El ejemplo clásico es oír voces en el ruido del motor de un avión o en el caer del agua del grifo.",
+        "La alucinación cesa inmediatamente cuando el estímulo real desaparece."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir con pareidolia, donde hay un esfuerzo proactivo por dar forma al ruido."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB27.Z",
+            "uri": "https://id.who.int/icd/entity/20703444",
+            "label": "Hallucinations"
+        },
+        "snomed_ct": {
+            "concept_id": "247671003",
+            "preferred_term": "Functional hallucination (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "PANSS",
+                "item": "P3 - Alucinaciones",
+                "scale_id": "PANSS"
+            }
+        ]
+    },
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Fish"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

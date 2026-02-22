@@ -4,7 +4,7 @@
   "prefixes": {
     "AFF": {
       "description": "Affect and Mood",
-      "next_seq": 21,
+      "next_seq": 24,
       "reserved": []
     },
     "AKT": {
@@ -15,6 +15,11 @@
     "APP": {
       "description": "Appearance and Behavior",
       "next_seq": 5,
+      "reserved": []
+    },
+    "ARC": {
+      "description": "Archaic and Classic Phenomenology",
+      "next_seq": 19,
       "reserved": []
     },
     "CAT": {
@@ -49,12 +54,12 @@
     },
     "MEM": {
       "description": "Memory and orientation",
-      "next_seq": 8,
+      "next_seq": 12,
       "reserved": []
     },
     "MOT": {
       "description": "Motor behavior",
-      "next_seq": 14,
+      "next_seq": 15,
       "reserved": []
     },
     "PER": {
@@ -72,14 +77,24 @@
       "next_seq": 14,
       "reserved": []
     },
+    "SOM": {
+      "description": "Somatization and body awareness",
+      "next_seq": 3,
+      "reserved": []
+    },
     "SPE": {
       "description": "Speech and language",
-      "next_seq": 13,
+      "next_seq": 14,
       "reserved": []
     },
     "THO": {
       "description": "Thought process",
-      "next_seq": 13,
+      "next_seq": 14,
+      "reserved": []
+    },
+    "VOL": {
+      "description": "Volition and action",
+      "next_seq": 3,
       "reserved": []
     }
   },
@@ -129,6 +144,14 @@
       "path": "lexicon/terms/AFF/AFF_011_irritabilidad.json"
     },
     {
+      "term_id": "AFF_012",
+      "path": "lexicon/terms/AFF/AFF_012_incontinencia_afectiva.json"
+    },
+    {
+      "term_id": "AFF_013",
+      "path": "lexicon/terms/AFF/AFF_013_rigidez_afectiva.json"
+    },
+    {
       "term_id": "AFF_014",
       "path": "lexicon/terms/AFF/AFF_014_apatia.json"
     },
@@ -149,12 +172,16 @@
       "path": "lexicon/terms/AFF/AFF_018_afecto_constrenido.json"
     },
     {
-      "term_id": "AFF_019",
-      "path": "lexicon/terms/AFF/AFF_019_abulia.json"
-    },
-    {
       "term_id": "AFF_020",
       "path": "lexicon/terms/AFF/AFF_020_moria.json"
+    },
+    {
+      "term_id": "AFF_022",
+      "path": "lexicon/terms/AFF/AFF_022_atimia.json"
+    },
+    {
+      "term_id": "AFF_023",
+      "path": "lexicon/terms/AFF/AFF_023_raptus.json"
     },
     {
       "term_id": "AKT_001",
@@ -177,6 +204,94 @@
       "path": "lexicon/terms/APP/APP_004_facies_mimica.json"
     },
     {
+      "term_id": "ARC_001",
+      "path": "lexicon/terms/ARC/ARC_001_monomania.json"
+    },
+    {
+      "term_id": "ARC_002",
+      "path": "lexicon/terms/ARC/ARC_002_dementia_praecox.json"
+    },
+    {
+      "term_id": "ARC_003",
+      "path": "lexicon/terms/ARC/ARC_003_manie_sans_delire.json"
+    },
+    {
+      "term_id": "ARC_004",
+      "path": "lexicon/terms/ARC/ARC_004_lypomania.json"
+    },
+    {
+      "term_id": "ARC_005",
+      "path": "lexicon/terms/ARC/ARC_005_folie_du_doute.json"
+    },
+    {
+      "term_id": "ARC_006",
+      "path": "lexicon/terms/ARC/ARC_006_amentia.json"
+    },
+    {
+      "term_id": "ARC_007",
+      "path": "lexicon/terms/ARC/ARC_007_parafrenia.json"
+    },
+    {
+      "term_id": "ARC_008",
+      "path": "lexicon/terms/ARC/ARC_008_bouffee_delirante.json"
+    },
+    {
+      "term_id": "ARC_009",
+      "path": "lexicon/terms/ARC/ARC_009_histeria.json"
+    },
+    {
+      "term_id": "ARC_010",
+      "path": "lexicon/terms/ARC/ARC_010_neurastenia.json"
+    },
+    {
+      "term_id": "ARC_011",
+      "path": "lexicon/terms/ARC/ARC_011_psicastenia.json"
+    },
+    {
+      "term_id": "ARC_012",
+      "path": "lexicon/terms/ARC/ARC_012_ambitendencia.json"
+    },
+    {
+      "term_id": "ARC_013",
+      "path": "lexicon/terms/ARC/ARC_013_ecmnesia.json"
+    },
+    {
+      "term_id": "ARC_014",
+      "path": "lexicon/terms/ARC/ARC_014_hipermnesia.json"
+    },
+    {
+      "term_id": "ARC_015",
+      "path": "lexicon/terms/ARC/ARC_015_degeneracionismo.json"
+    },
+    {
+      "term_id": "ARC_016",
+      "path": "lexicon/terms/ARC/ARC_016_locura_circular.json"
+    },
+    {
+      "term_id": "ARC_017",
+      "path": "lexicon/terms/ARC/ARC_017_paranoia_querulans.json"
+    },
+    {
+      "term_id": "ARC_018",
+      "path": "lexicon/terms/ARC/ARC_018_wahnstimmung.json"
+    },
+    {
+      "term_id": "CAT_001",
+      "path": "lexicon/terms/CAT/CAT_001_estupor_catatonico.json"
+    },
+    {
+      "term_id": "CAT_002",
+      "path": "lexicon/terms/CAT/CAT_002_mutismo_catatonico.json"
+    },
+    {
+      "term_id": "CAT_003",
+      "path": "lexicon/terms/CAT/CAT_003_obediencia_automatica.json"
+    },
+    {
+      "term_id": "CAT_004",
+      "path": "lexicon/terms/CAT/CAT_004_mitmachen_mitgehen.json"
+    },
+    {
       "term_id": "CAT_005",
       "path": "lexicon/terms/CAT/CAT_005_catatonia_maligna.json"
     },
@@ -191,6 +306,14 @@
     {
       "term_id": "COG_003",
       "path": "lexicon/terms/COG/COG_003_memoria_trabajo.json"
+    },
+    {
+      "term_id": "COG_004",
+      "path": "lexicon/terms/COG/COG_004_pensamiento_abstracto_concreto.json"
+    },
+    {
+      "term_id": "COG_005",
+      "path": "lexicon/terms/COG/COG_005_confabulacion.json"
     },
     {
       "term_id": "CON_001",
@@ -345,6 +468,10 @@
       "path": "lexicon/terms/JUD/JUD_001_juicio.json"
     },
     {
+      "term_id": "JUD_002",
+      "path": "lexicon/terms/JUD/JUD_002_juicio_de_realidad.json"
+    },
+    {
       "term_id": "MEM_001",
       "path": "lexicon/terms/MEM/MEM_001_amnesia_disociativa.json"
     },
@@ -371,6 +498,22 @@
     {
       "term_id": "MEM_007",
       "path": "lexicon/terms/MEM/MEM_007_inatencion.json"
+    },
+    {
+      "term_id": "MEM_008",
+      "path": "lexicon/terms/MEM/MEM_008_obnubilacion.json"
+    },
+    {
+      "term_id": "MEM_009",
+      "path": "lexicon/terms/MEM/MEM_009_fuga.json"
+    },
+    {
+      "term_id": "MEM_010",
+      "path": "lexicon/terms/MEM/MEM_010_onirismo.json"
+    },
+    {
+      "term_id": "MEM_011",
+      "path": "lexicon/terms/MEM/MEM_011_sopor.json"
     },
     {
       "term_id": "MOT_001",
@@ -425,8 +568,16 @@
       "path": "lexicon/terms/MOT/MOT_013_discinesia.json"
     },
     {
+      "term_id": "MOT_014",
+      "path": "lexicon/terms/MOT/MOT_014_catalepsia.json"
+    },
+    {
       "term_id": "PER_001",
       "path": "lexicon/terms/PER/PER_001_alucinacion_verdadera.json"
+    },
+    {
+      "term_id": "PER_002",
+      "path": "lexicon/terms/PER/PER_002_imagen_eidetica.json"
     },
     {
       "term_id": "PER_003",
@@ -439,6 +590,22 @@
     {
       "term_id": "PER_005",
       "path": "lexicon/terms/PER/PER_005_flashback.json"
+    },
+    {
+      "term_id": "PER_006",
+      "path": "lexicon/terms/PER/PER_006_alucinacion_funcional.json"
+    },
+    {
+      "term_id": "PER_007",
+      "path": "lexicon/terms/PER/PER_007_alucinacion_refleja.json"
+    },
+    {
+      "term_id": "PER_008",
+      "path": "lexicon/terms/PER/PER_008_alucinacion_extracampina.json"
+    },
+    {
+      "term_id": "PER_009",
+      "path": "lexicon/terms/PER/PER_009_sentido_de_presencia.json"
     },
     {
       "term_id": "PER_010",
@@ -577,6 +744,14 @@
       "path": "lexicon/terms/SELF/SELF_013_transitivismo.json"
     },
     {
+      "term_id": "SOM_001",
+      "path": "lexicon/terms/SOM/SOM_001_hipocondria.json"
+    },
+    {
+      "term_id": "SOM_002",
+      "path": "lexicon/terms/SOM/SOM_002_dismorfofobia.json"
+    },
+    {
       "term_id": "SPE_001",
       "path": "lexicon/terms/SPE/SPE_001_ecolalia.json"
     },
@@ -625,6 +800,10 @@
       "path": "lexicon/terms/SPE/SPE_012_pobreza_habla.json"
     },
     {
+      "term_id": "SPE_013",
+      "path": "lexicon/terms/SPE/SPE_013_logorrea.json"
+    },
+    {
       "term_id": "THO_001",
       "path": "lexicon/terms/THO/THO_001_fuga_ideas.json"
     },
@@ -667,6 +846,18 @@
     {
       "term_id": "THO_012",
       "path": "lexicon/terms/THO/THO_012_perseveracion.json"
+    },
+    {
+      "term_id": "THO_013",
+      "path": "lexicon/terms/THO/THO_013_paralogia.json"
+    },
+    {
+      "term_id": "VOL_001",
+      "path": "lexicon/terms/VOL/VOL_001_abulia.json"
+    },
+    {
+      "term_id": "VOL_002",
+      "path": "lexicon/terms/VOL/VOL_002_impulsividad.json"
     }
   ]
 }

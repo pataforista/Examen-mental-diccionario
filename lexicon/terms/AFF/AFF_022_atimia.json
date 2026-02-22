@@ -1,0 +1,79 @@
+{
+    "term_id": "AFF_022",
+    "canonical_name": "Atimia",
+    "synonyms_and_slang": [
+        "ausencia de afecto",
+        "falta de sentimiento"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 2,
+    "definition_clinical": {
+        "core": "Estado de abolición o falta absoluta de la afectividad y del sentimiento, donde el paciente no experimenta ninguna emoción ante estímulos placenteros o dolorosos.",
+        "required_features": [
+            "ausencia completa de respuesta emocional",
+            "indiferencia afectiva absoluta",
+            "vacío emocional"
+        ],
+        "subjective_marker": "El paciente refiere que 'no siente nada', como si estuviera 'muerto por dentro' o fuera de piedra.",
+        "behavioral_marker": "Inexpresividad facial y gestual total, independientemente del contenido de la entrevista."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-03",
+            "relation": "primary_expression",
+            "context": "afectividad"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "AFF_005",
+            "canonical_name": "Aplanamiento afectivo",
+            "reason": "El aplanamiento es una reducción de la expresión; la atimia es la ausencia profunda de la vivencia afectiva."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_warning",
+            "message": "Indica un deterioro afectivo profundo, común en esquizofrenia de larga evolución o depresiones melancólicas graves."
+        }
+    ],
+    "teaching_notes": [
+        "Término clásico que denota la 'pérdida del alma' o del tono vital.",
+        "A menudo el paciente sufre por su propia incapacidad de sentir (anestesia afectiva dolorosa)."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.Z",
+            "label": "Symptoms or signs involving emotional state"
+        },
+        "snomed_ct": {
+            "concept_id": "81014002",
+            "preferred_term": "Athymia (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Jaspers",
+            "Kraepelin"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

@@ -1,0 +1,85 @@
+{
+    "term_id": "VOL_001",
+    "canonical_name": "Abulia",
+    "synonyms_and_slang": [
+        "falta de voluntad",
+        "hipobulia"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Incapacidad para iniciar o persistir en actividades dirigidas a un fin, caracterizada por una falta de motivación y voluntad (conación).",
+        "required_features": [
+            "disminución notable de la iniciativa",
+            "dificultad para tomar decisiones (ambivalencia de la voluntad)",
+            "deterioro en el funcionamiento social o laboral"
+        ],
+        "subjective_marker": "El paciente refiere que 'no puede' empezar a hacer las cosas aunque sepa que debe hacerlas.",
+        "behavioral_marker": "Permanecer sentado o acostado durante horas sin realizar ninguna actividad, incluso ante necesidades básicas."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion_colateral"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-16",
+            "relation": "primary_expression",
+            "context": "voluntad_accion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "AFF_014",
+            "canonical_name": "Apatía",
+            "reason": "La apatía es la falta de sentimiento/emoción (componente afectivo); la abulia es la falta de voluntad/acción (componente conativo)."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_warning",
+            "message": "Síntoma negativo nuclear de la esquizofrenia; también común en depresión mayor y lesiones frontales."
+        }
+    ],
+    "teaching_notes": [
+        "Históricamente vinculada a la 'pérdida de la energía vital'.",
+        "Es un componente clave del 'síndrome apato-abúlico'."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.Z",
+            "label": "Symptoms or signs involving volition"
+        },
+        "snomed_ct": {
+            "concept_id": "247858004",
+            "preferred_term": "Abof (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "SANS",
+                "item": "Abulia-Apatía",
+                "scale_id": "SANS"
+            }
+        ]
+    },
+    "provenance": {
+        "phenomenology": [
+            "Kraepelin",
+            "Sims"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

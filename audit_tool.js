@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const projectRoot = 'c:\\Users\\caceladab\\Desktop\\Examen-mental-diccionario';
+const projectRoot = process.cwd();
 const lexiconRoot = path.join(projectRoot, 'lexicon', 'terms');
 const osceFiles = [
     'OSCE_001–003.json',

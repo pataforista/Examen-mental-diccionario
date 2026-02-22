@@ -1,0 +1,85 @@
+{
+    "term_id": "SPE_013",
+    "canonical_name": "Logorrea",
+    "synonyms_and_slang": [
+        "verborrea",
+        "flujo verbal incesante"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Aumento excesivo en la cantidad y velocidad del lenguaje hablado, que resulta difícil de interrumpir y a menudo asocia presión del habla.",
+        "required_features": [
+            "flujo verbal continuo",
+            "dificultad para ser interrumpido",
+            "aceleración del ritmo"
+        ],
+        "subjective_marker": "El paciente siente una necesidad imperiosa de hablar sin parar.",
+        "behavioral_marker": "Discurso ininterrumpido durante toda la entrevista que impide el intercambio comunicativo normal."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "observacion"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-10",
+            "relation": "primary_expression",
+            "context": "lenguaje_y_comunicacion"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "SPE_010",
+            "canonical_name": "Presión del habla",
+            "reason": "La logorrea se refiere a la cantidad; la presión del habla a la urgencia y dificultad de interrupción (suelen coexistir)."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_warning",
+            "message": "Característico de episodios maníacos, hipertiroidismo o intoxicación por estimulantes."
+        }
+    ],
+    "teaching_notes": [
+        "Se diferencia del pensamiento acelerado (taquipsiquia) en que es la manifestación verbal externa.",
+        "A menudo el discurso pierde coherencia por la velocidad."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "MB24.Z",
+            "label": "Symptoms or signs involving speech"
+        },
+        "snomed_ct": {
+            "concept_id": "19129002",
+            "preferred_term": "Logorrhea (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "YMRS - Young Mania Rating Scale",
+                "item": "Lenguaje",
+                "scale_id": "YMRS"
+            }
+        ]
+    },
+    "provenance": {
+        "phenomenology": [
+            "Sims",
+            "Fish"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

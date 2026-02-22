@@ -1,0 +1,81 @@
+{
+    "term_id": "ARC_017",
+    "canonical_name": "Paranoia Querulans",
+    "synonyms_and_slang": [
+        "delirio de querulancia",
+        "querulancia procesal"
+    ],
+    "term_kind": "state",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Forma histórica de delirio crónico en la que el individuo se siente víctima de una injusticia legal (real o imaginaria) y dedica su vida de forma obsesiva y delirante a buscar reparación a través de pleitos y demandas interminables.",
+        "required_features": [
+            "sentimiento de haber sido agraviado injustamente",
+            "conducta litigante persistente e irracional",
+            "egocentrismo y rigidez mental extrema",
+            "ausencia de otros síntomas psicóticos fuera del núcleo del agravio"
+        ],
+        "subjective_marker": "El paciente se describe como un 'luchador por la justicia' contra un sistema corrupto.",
+        "behavioral_marker": "Presentación constante de querellas, cartas a autoridades y visitas a abogados por motivos triviales o ya juzgados."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica",
+            "historia_forense"
+        ],
+        "time_relation": [
+            "historico",
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-04",
+            "relation": "historical_precursor",
+            "context": "trastorno_delirante"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "DEL_017",
+            "canonical_name": "Delirio querulante",
+            "reason": "La paranoia querulans es el término latino/clásico para el cuadro; el delirio querulante es su descripción moderna."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_warning",
+            "message": "Es uno de los cuadros más difíciles de manejar en psiquiatría forense dado el riesgo de acoso a terceros."
+        }
+    ],
+    "teaching_notes": [
+        "Descrita por Krafft-Ebing y Kraepelin como una de las formas de la Paranoia.",
+        "El núcleo no es la mentira, sino la interpretación delirante de la justicia."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6A24",
+            "label": "Delusional disorder (modern related)"
+        },
+        "snomed_ct": {
+            "concept_id": "191538001",
+            "preferred_term": "Querulous paranoia (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Kraepelin",
+            "Krafft-Ebing"
+        ],
+        "clinical_tradition": [
+            "psiquiatria_alemana_siglo_XIX"
+        ]
+    },
+    "status": "active"
+}

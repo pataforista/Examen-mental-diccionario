@@ -1,0 +1,84 @@
+{
+    "term_id": "CAT_001",
+    "canonical_name": "Estupor Catatónico",
+    "synonyms_and_slang": [
+        "estupor psiquiátrico"
+    ],
+    "term_kind": "state",
+    "granularity": "atomic",
+    "risk_weight": 3,
+    "definition_clinical": {
+        "core": "Estado de ausencia total de respuesta psicomotora a pesar de que la conciencia parece preservada (ojos abiertos que siguen al examinador o parpadeo normal).",
+        "required_features": [
+            "acinesia (ausencia de movimientos)",
+            "mutismo",
+            "preservación de la vigilia aparente"
+        ],
+        "subjective_marker": "Inaccesible durante el estado; tras la recuperación, el paciente puede recordar vívidamente lo ocurrido a su alrededor.",
+        "behavioral_marker": "Inmovilidad extrema, falta de respuesta al dolor superficial, mirada fija o seguimiento ocular pasivo."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "examen_neurologico"
+        ],
+        "time_relation": [
+            "actual"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "conducta_motriz"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "CAT_999",
+            "canonical_name": "Estupor orgánico",
+            "reason": "En el estupor orgánico suele haber compromiso del nivel de conciencia y ausencia de reflejos posturales complejos."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "medical_emergency",
+            "message": "Requiere monitorización de signos vitales e hidratación. Riesgo de complicaciones tromboembólicas."
+        }
+    ],
+    "teaching_notes": [
+        "A pesar de la inmovilidad, el paciente suele estar hiperpantono (alerta máxima interna).",
+        "Puede terminar bruscamente en una agitación catatónica."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6A21.0",
+            "label": "Catatonia associated with another mental disorder"
+        },
+        "snomed_ct": {
+            "concept_id": "28151000",
+            "preferred_term": "Catatonic stupor (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": [
+            {
+                "name": "BFCRS - Bush-Francis Catatonia Rating Scale",
+                "item": "Excitement / Stupor",
+                "scale_id": "BFCRS"
+            }
+        ]
+    },
+    "provenance": {
+        "phenomenology": [
+            "Kahlbaum",
+            "Sims"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_clasica"
+        ]
+    },
+    "status": "active"
+}

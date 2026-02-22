@@ -1,0 +1,80 @@
+{
+    "term_id": "ARC_013",
+    "canonical_name": "Ecmnesia",
+    "synonyms_and_slang": [
+        "reviviscencia amnésica",
+        "alucinación de la memoria"
+    ],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Trastorno de la memoria en el que el paciente revive sucesos del pasado como si estuvieran ocurriendo en el presente, perdiendo la noción del tiempo actual.",
+        "required_features": [
+            "vivencia del pasado como presente",
+            "pérdida de la consciencia temporal",
+            "carácter alucinatorio de la memoria"
+        ],
+        "subjective_marker": "El paciente actúa y habla como si estuviera en una época anterior de su vida.",
+        "behavioral_marker": "El individuo puede dirigirse a personas fallecidas o realizar tareas laborables de hace décadas ignorando el entorno actual."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "observacion",
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "historico",
+            "episodico"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-11",
+            "relation": "primary_expression",
+            "context": "memoria_y_conciencia"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "PER_005",
+            "canonical_name": "Flashback",
+            "reason": "El flashback es una intrusión breve; la ecmnesia es un estado más prolongado y desorientador."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "diagnostic_warning",
+            "message": "Frecuente en demencias avanzadas (Alzheimer) y en ciertos estados disociativos o hipnóticos."
+        }
+    ],
+    "teaching_notes": [
+        "Término de la escuela francesa (Pitres) para describir el 'olvido del presente'.",
+        "Diferenciar del delirio: aquí la base es un recuerdo real revivido."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6B61",
+            "label": "Dissociative amnesia (clinical related)"
+        },
+        "snomed_ct": {
+            "concept_id": "55030009",
+            "preferred_term": "Ecmnesia (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Pitres",
+            "Ey"
+        ],
+        "clinical_tradition": [
+            "psicopatologia_francesa"
+        ]
+    },
+    "status": "active"
+}

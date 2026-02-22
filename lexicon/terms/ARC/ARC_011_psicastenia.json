@@ -1,0 +1,79 @@
+{
+    "term_id": "ARC_011",
+    "canonical_name": "Psicastenia",
+    "synonyms_and_slang": [
+        "neurosis de Janet",
+        "agotamiento psíquico"
+    ],
+    "term_kind": "state",
+    "granularity": "atomic",
+    "risk_weight": 1,
+    "definition_clinical": {
+        "core": "Concepto de Pierre Janet para describir un estado de 'insuficiencia psicológica' caracterizado por obsesiones, dudas, fobias, ansiedad y una disminución del 'sentimiento de realidad'.",
+        "required_features": [
+            "pérdida de la función de realidad (anestesia de lo real)",
+            "presencia de obsesiones rumiantes (dudas)",
+            "sentimiento de incompletitud y extrañeza",
+            "falta de energía psíquica para la acción"
+        ],
+        "subjective_marker": "El paciente siente que la vida es irreal o que actúa de forma mecánica sin sintonía emocional.",
+        "behavioral_marker": "Inhibición de la acción y rumiación constante que impide la toma de decisiones."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "historico"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-07",
+            "relation": "historical_precursor",
+            "context": "trastorno_obsesivo_compulsivo_y_ansiedad"
+        }
+    ],
+    "exclusions": [
+        {
+            "term_id": "ARC_005",
+            "canonical_name": "Locura de la Duda",
+            "reason": "La psicastenia es un síndrome más amplio que incluye la folie du doute."
+        }
+    ],
+    "alerts": [
+        {
+            "type": "historical_note",
+            "message": "Janet acuñó el término en 1903 para agrupar síntomas neuróticos fuera de la histeria."
+        }
+    ],
+    "teaching_notes": [
+        "Se basa en el concepto de 'baisse de la tension psychologique' (descenso de la tensión psicológica).",
+        "El síntoma clave es la pérdida del 'presente' como vivencia vívida."
+    ],
+    "version": "1.1.0",
+    "mappings": {
+        "cie11": {
+            "code": "6B20.Z",
+            "label": "Obsessive-compulsive or related disorders"
+        },
+        "snomed_ct": {
+            "concept_id": "52297003",
+            "preferred_term": "Psychasthenia (finding)"
+        }
+    },
+    "clinical_assessment": {
+        "recommended_scales": []
+    },
+    "provenance": {
+        "phenomenology": [
+            "Janet",
+            "Jaspers"
+        ],
+        "clinical_tradition": [
+            "psiquiatria_francesa_siglo_XX"
+        ]
+    },
+    "status": "active"
+}
