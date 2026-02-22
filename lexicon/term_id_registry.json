@@ -317,15 +317,15 @@
     },
     {
       "term_id": "CON_001",
-      "path": "lexicon/terms/CON/CON_001_obsesion.json"
+      "path": "lexicon/terms/CNT/CON_001_obsesion.json"
     },
     {
       "term_id": "CON_002",
-      "path": "lexicon/terms/CON/CON_002_fobia.json"
+      "path": "lexicon/terms/CNT/CON_002_fobia.json"
     },
     {
       "term_id": "CON_003",
-      "path": "lexicon/terms/CON/CON_003_idea_sobrevalorada.json"
+      "path": "lexicon/terms/CNT/CON_003_idea_sobrevalorada.json"
     },
     {
       "term_id": "DEL_001",

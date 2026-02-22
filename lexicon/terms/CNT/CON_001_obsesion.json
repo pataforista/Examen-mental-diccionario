@@ -1,0 +1,47 @@
+{
+    "term_id": "CON_001",
+    "canonical_name": "Obsesión",
+    "synonyms_and_slang": [],
+    "term_kind": "symptom",
+    "granularity": "atomic",
+    "risk_weight": 0,
+    "definition_clinical": {
+        "core": "Pensamientos, impulsos o imágenes recurrentes, intrusivos e indeseados, reconocidos como propios y que generan malestar.",
+        "required_features": [
+            "recurrente e intrusivo",
+            "ego-distónico",
+            "intento de neutralizar o suprimir"
+        ],
+        "subjective_marker": "El paciente describe ideas repetitivas que no desea y que intentan resistir.",
+        "behavioral_marker": "Conductas de evitación, supresión o neutralización ante el pensamiento."
+    },
+    "operationalization": {
+        "detectable_by": [
+            "entrevista_clinica"
+        ],
+        "time_relation": [
+            "persistente"
+        ],
+        "pharmacological_link": false
+    },
+    "domain_links": [
+        {
+            "domain_id": "DOM-07",
+            "relation": "primary_expression",
+            "context": "pensamiento_contenido"
+        }
+    ],
+    "exclusions": [],
+    "alerts": [],
+    "teaching_notes": [
+        "Distinguir de la inserción del pensamiento: en la obsesión se reconoce como propio."
+    ],
+    "cognitive_pitfalls": [
+        "Confundir rumiación depresiva con obsesiones sin explorar intrusividad y egodistonía."
+    ],
+    "version": "1.0.0",
+    "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+    }
+}
