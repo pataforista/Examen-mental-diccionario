@@ -815,7 +815,8 @@ const App = {
                 feedback: document.getElementById('feedback'),
                 hint: document.getElementById('hint'),
                 btnNext: document.getElementById('btnNext'),
-                btnReset: document.getElementById('btnReset')
+                btnReset: document.getElementById('btnReset'),
+                gameCard: document.getElementById('gameCard')
             };
         },
 
@@ -1029,12 +1030,14 @@ const App = {
             if (pool.length < 4) return { error: "Insuficientes términos para esta selección." };
 
             const target = this.sampleOne(pool);
+            if (!target) return { error: "No se pudo seleccionar un término." };
+
             const distractorPool = pool.filter(t => t.term_id !== target.term_id);
             const distractors = this.sampleMany(distractorPool, 3);
 
             const options = this.shuffle([
-                { id: target.term_id, text: target.definition_clinical.core, correct: true },
-                ...distractors.map(d => ({ id: d.term_id, text: d.definition_clinical.core, correct: false }))
+                { id: target.term_id, text: target.definition_clinical?.core || "", correct: true },
+                ...distractors.map(d => ({ id: d.term_id, text: d.definition_clinical?.core || "", correct: false }))
             ]);
 
             return { mode: 'mcq', target, options };
@@ -1086,10 +1089,13 @@ const App = {
             if (pool.length === 0) return { error: "No hay casos con estos filtros." };
 
             const c = this.sampleOne(pool);
-            // In the real app, we don't have 'target_term_id' explicitly in case json sometimes, 
+            if (!c) return { error: "No se pudo seleccionar un caso." };
+
+            // In the real app, we don't have 'target_term_id' explicitly in case json sometimes,
             // but we have 'primary_syndrome'. We will use primary_syndrome as the target.
 
-            const targetName = c.expected_engine_output.primary_syndrome;
+            const targetName = c.expected_engine_output?.primary_syndrome;
+            if (!targetName) return { error: "Caso incompleto: falta síndrome primario." };
 
             // Create options: Target + Random Distractors from other cases
             const otherCases = App.data.cases.filter(x => x.case_id !== c.case_id);
@@ -1106,8 +1112,13 @@ const App = {
             })));
 
             // Phase 2: Key Discriminators
-            const correctKeys = c.assessment_keys.key_discriminators;
-            const wrongKeys = c.assessment_keys.errors_to_avoid; // Use errors as distractors for phase 2
+            const correctKeys = c.assessment_keys?.key_discriminators || [];
+            const wrongKeys = c.assessment_keys?.errors_to_avoid || []; // Use errors as distractors for phase 2
+
+            // Ensure we have valid options
+            if (correctKeys.length === 0 || wrongKeys.length === 0) {
+                return { error: "Datos incompletos para este caso." };
+            }
 
             const discOptions = this.shuffle([
                 { text: this.sampleOne(correctKeys), correct: true, why: "Criterio discriminante clave." },
@@ -1124,7 +1135,8 @@ const App = {
                 return;
             }
             this.nodes.prompt.textContent = "Paso 1: Identifica el Síndrome / Diagnóstico";
-            this.nodes.subprompt.textContent = `"${round.case.stem.contextual_notes}"`;
+            const contextNotes = round.case?.stem?.contextual_notes || "Caso clínico sin descripción";
+            this.nodes.subprompt.textContent = `"${contextNotes}"`;
 
             this.renderOptions(round.termOptions, (opt) => {
                 if (opt.correct) {
@@ -1189,9 +1201,18 @@ const App = {
             this.nodes.feedback.textContent = '';
             this.nodes.feedback.className = 'feedback';
         },
-        sampleOne: function (arr) { return arr[Math.floor(Math.random() * arr.length)]; },
-        sampleMany: function (arr, n) { return [...arr].sort(() => 0.5 - Math.random()).slice(0, n); },
-        shuffle: function (arr) { return arr.sort(() => 0.5 - Math.random()); }
+        sampleOne: function (arr) {
+            if (!arr || arr.length === 0) return null;
+            return arr[Math.floor(Math.random() * arr.length)];
+        },
+        sampleMany: function (arr, n) {
+            if (!arr || arr.length === 0) return [];
+            return [...arr].sort(() => 0.5 - Math.random()).slice(0, n);
+        },
+        shuffle: function (arr) {
+            if (!arr) return [];
+            return arr.sort(() => 0.5 - Math.random());
+        }
     },
 
     renderView: function (viewName) {
