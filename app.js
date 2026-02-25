@@ -770,12 +770,23 @@ const App = {
             this.data.currentView = 'game';
             this.game.init();
             this.renderView('game');
+        } else {
+            // Stop game timer if we switch to any other tab
+            if (this.game && this.game.stopTimer) this.game.stopTimer();
         }
     },
 
     // --- GAME ENGINE SUBMODULE ---
     game: {
-        stats: { score: 0, streak: 0, correct: 0, wrong: 0 },
+        stats: { score: 0, streak: 0, correct: 0, wrong: 0, highScore: 0 },
+        arcade: {
+            lives: 3,
+            multiplier: 1,
+            timeLeft: 100,
+            timerInterval: null,
+            maxTime: 15, // seconds per question
+            isGameOver: false
+        },
         currentMode: 'mcq', // 'mcq' or 'diff'
         diffPhase: 1,
         currentRound: null,
@@ -862,6 +873,123 @@ const App = {
             this.nodes.streak.innerText = this.stats.streak;
             this.nodes.correct.innerText = this.stats.correct;
             this.nodes.wrong.innerText = this.stats.wrong;
+            const elLives = document.getElementById('game-lives');
+            if (elLives) elLives.innerText = '❤️'.repeat(Math.max(0, this.arcade.lives));
+            const elMult = document.getElementById('game-multiplier');
+            if (elMult) {
+                elMult.innerText = `x${this.arcade.multiplier}`;
+                if (this.arcade.multiplier > 1) elMult.classList.add('combo-pop');
+                else elMult.classList.remove('combo-pop');
+            }
+        },
+
+        // --- ARCADE LOGIC ---
+        startTimer: function () {
+            clearInterval(this.arcade.timerInterval);
+            this.arcade.timeLeft = 100;
+            const timerBar = document.getElementById('game-timer-bar');
+            const timerContainer = document.getElementById('game-timer-container');
+            if (timerContainer) timerContainer.classList.remove('hidden');
+
+            const step = 100 / (this.arcade.maxTime * 10); // 100ms intervals
+            this.arcade.timerInterval = setInterval(() => {
+                this.arcade.timeLeft -= step;
+                if (timerBar) timerBar.style.transform = `scaleX(${this.arcade.timeLeft / 100})`;
+
+                if (this.arcade.timeLeft <= 0) {
+                    this.onTimeUp();
+                }
+            }, 100);
+        },
+
+        stopTimer: function () {
+            clearInterval(this.arcade.timerInterval);
+            const timerContainer = document.getElementById('game-timer-container');
+            if (timerContainer) timerContainer.classList.add('hidden');
+        },
+
+        onTimeUp: function () {
+            this.stopTimer();
+            this.loseLife("¡Tiempo agotado!");
+        },
+
+        loseLife: function (reason) {
+            this.arcade.lives--;
+            this.arcade.multiplier = 1;
+            this.playAudio('error');
+            this.showFeedback(reason || "Error.", "bad");
+            this.nodes.gameCard.classList.add('animate-shake');
+            setTimeout(() => this.nodes.gameCard.classList.remove('animate-shake'), 500);
+            this.renderStats();
+
+            if (this.arcade.lives <= 0) {
+                this.gameOver();
+            } else if (this.currentMode === 'mcq') {
+                // In MCQ, skip to next round on error or timeup? 
+                // Let's allow one retry in MCQ but skip in Diff? 
+                // Actually, arcade style: lose life, show correct, NEXT.
+                this.disableOptions();
+            }
+        },
+
+        gameOver: function () {
+            this.arcade.isGameOver = true;
+            this.stopTimer();
+            this.nodes.prompt.innerHTML = `<span style="color:var(--v-accent); font-size: 2rem;">GAME OVER</span>`;
+            this.nodes.subprompt.textContent = `Puntaje final: ${this.stats.score}`;
+            this.nodes.options.innerHTML = `<button class="btn primary" onclick="App.game.restart()">Reiniciar Partida</button>`;
+            this.playAudio('gameover');
+        },
+
+        restart: function () {
+            this.arcade.lives = 3;
+            this.arcade.multiplier = 1;
+            this.arcade.isGameOver = false;
+            this.stats.score = 0;
+            this.stats.streak = 0;
+            this.saveStats();
+            this.nextRound();
+        },
+
+        playAudio: function (type) {
+            try {
+                if (!App._audioCtx) {
+                    App._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                const ctx = App._audioCtx;
+                if (ctx.state === 'suspended') ctx.resume();
+
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                if (type === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(440, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.2);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.2);
+                } else if (type === 'error') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, ctx.currentTime);
+                    osc.frequency.linearRampToValueAtTime(110, ctx.currentTime + 0.2);
+                    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.3);
+                } else if (type === 'gameover') {
+                    osc.type = 'square';
+                    osc.frequency.setValueAtTime(150, ctx.currentTime);
+                    osc.frequency.linearRampToValueAtTime(50, ctx.currentTime + 0.5);
+                    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                    gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.5);
+                }
+            } catch (e) { console.warn("Audio Context failed", e); }
         },
 
         nextRound: function () {
@@ -881,6 +1009,7 @@ const App = {
                 this.currentRound = this.buildDiffRound(domain, diff);
                 this.renderDiffPhase1(this.currentRound);
             }
+            if (!this.arcade.isGameOver) this.startTimer();
         },
 
         toggleInstructions: function () {
@@ -924,18 +1053,21 @@ const App = {
         },
 
         gradeMcq: function (isCorrect, target) {
+            this.stopTimer();
             if (isCorrect) {
-                this.stats.score += 10;
+                const timeBonus = Math.floor(this.arcade.timeLeft / 10);
+                this.stats.score += (10 + timeBonus) * this.arcade.multiplier;
                 this.stats.streak += 1;
-                this.stats.correct += 1;
-                this.showFeedback("¡Correcto!", "ok");
+                if (this.stats.streak % 3 === 0) this.arcade.multiplier++;
+
+                this.playAudio('correct');
+                this.showFeedback(`¡Correcto! +${10 + timeBonus}${this.arcade.multiplier > 1 ? ' x' + this.arcade.multiplier : ''}`, "ok");
                 if (target.teaching_notes) this.nodes.hint.textContent = `Nota: ${target.teaching_notes[0]}`;
+                this.nodes.gameCard.classList.add('animate-pulse');
+                setTimeout(() => this.nodes.gameCard.classList.remove('animate-pulse'), 400);
                 this.disableOptions();
             } else {
-                this.stats.score = Math.max(0, this.stats.score - 5);
-                this.stats.streak = 0;
-                this.stats.wrong += 1;
-                this.showFeedback("Incorrecto.", "bad");
+                this.loseLife("Incorrecto.");
             }
             this.saveStats();
         },
@@ -996,6 +1128,7 @@ const App = {
 
             this.renderOptions(round.termOptions, (opt) => {
                 if (opt.correct) {
+                    this.playAudio('correct');
                     this.showFeedback("Correcto. Ahora valida el criterio clave.", "ok");
                     this.disableOptions();
                     setTimeout(() => {
@@ -1003,11 +1136,7 @@ const App = {
                         this.renderDiffPhase2(round);
                     }, 500);
                 } else {
-                    this.stats.score = Math.max(0, this.stats.score - 5);
-                    this.stats.streak = 0;
-                    this.stats.wrong += 1;
-                    this.saveStats();
-                    this.showFeedback("Diagnóstico incorrecto.", "bad");
+                    this.loseLife("Diagnóstico incorrecto.");
                 }
             });
         },
@@ -1015,19 +1144,23 @@ const App = {
         renderDiffPhase2: function (round) {
             this.nodes.prompt.textContent = "Paso 2: Selecciona el criterio discriminante válido";
             this.nodes.options.innerHTML = '';
+            this.startTimer(); // Reset timer for phase 2
             this.renderOptions(round.discOptions, (opt) => {
+                this.stopTimer();
                 if (opt.correct) {
-                    this.stats.score += 20;
+                    const timeBonus = Math.floor(this.arcade.timeLeft / 10);
+                    this.stats.score += (20 + timeBonus) * this.arcade.multiplier;
                     this.stats.streak += 1;
-                    this.stats.correct += 1;
+                    if (this.stats.streak % 3 === 0) this.arcade.multiplier++;
+
+                    this.playAudio('correct');
                     this.showFeedback("¡Excelente! Caso resuelto.", "ok");
                     this.nodes.hint.textContent = `Clave: ${opt.text}`;
+                    this.nodes.gameCard.classList.add('animate-pulse');
+                    setTimeout(() => this.nodes.gameCard.classList.remove('animate-pulse'), 400);
                     this.disableOptions();
                 } else {
-                    this.stats.score = Math.max(0, this.stats.score - 5);
-                    this.stats.streak = 0;
-                    this.stats.wrong += 1;
-                    this.showFeedback("Criterio incorrecto (es un error común).", "bad");
+                    this.loseLife("Criterio incorrecto.");
                 }
                 this.saveStats();
             });

@@ -75,6 +75,14 @@
                         <span class="stat-value">?</span>
                     </div>
                     <div class="stat-item">
+                        <span class="stat-label">Corazón</span>
+                        <span id="game-lives" class="stat-value" style="color: #ff3c3c;">❤️❤️❤️</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Combo</span>
+                        <span id="game-multiplier" class="stat-value" style="color: var(--v-accent);">x1</span>
+                    </div>
+                    <div class="stat-item">
                         <span class="stat-label">Puntaje</span>
                         <span id="score" class="stat-value" style="color: var(--primary);">0</span>
                     </div>
@@ -82,14 +90,11 @@
                         <span class="stat-label">Racha</span>
                         <span id="streak" class="stat-value">0</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Aciertos</span>
-                        <span id="correct" class="stat-value" style="color: #2f855a;">0</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Errores</span>
-                        <span id="wrong" class="stat-value" style="color: #c53030;">0</span>
-                    </div>
+                </div>
+
+                <!-- Timer Bar -->
+                <div id="game-timer-container" class="game-timer-container hidden">
+                    <div id="game-timer-bar" class="game-timer-bar"></div>
                 </div>
 
                 <div id="game-instructions" class="hidden"

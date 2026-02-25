@@ -968,3 +968,99 @@ main {
         box-shadow: 0 0 10px #FFDD0020;
     }
 }
+
+/* Game Timer & Arcade Enhancements */
+.game-timer-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin: 1rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+[data-theme="dark"] .game-timer-container {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.game-timer-bar {
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+    transform-origin: left;
+    transition: transform 0.1s linear;
+}
+
+[data-theme="dark"] .game-timer-bar {
+    background: var(--o-accent-b);
+    box-shadow: 0 0 10px var(--o-accent-b);
+}
+
+/* Animations */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+.animate-shake {
+    animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+@keyframes pulse-success {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        background: rgba(var(--primary-rgb), 0.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-pulse {
+    animation: pulse-success 0.4s ease-out;
+}
+
+.combo-pop {
+    display: inline-block;
+    animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Arcade Highscore Look */
+.game-stats .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 1px;
+}
