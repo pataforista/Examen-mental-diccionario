@@ -870,10 +870,10 @@ const App = {
 
         renderStats: function () {
             if (!this.nodes) return;
-            this.nodes.score.innerText = this.stats.score;
-            this.nodes.streak.innerText = this.stats.streak;
-            this.nodes.correct.innerText = this.stats.correct;
-            this.nodes.wrong.innerText = this.stats.wrong;
+            if (this.nodes.score) this.nodes.score.innerText = this.stats.score;
+            if (this.nodes.streak) this.nodes.streak.innerText = this.stats.streak;
+            if (this.nodes.correct) this.nodes.correct.innerText = this.stats.correct;
+            if (this.nodes.wrong) this.nodes.wrong.innerText = this.stats.wrong;
             const elLives = document.getElementById('game-lives');
             if (elLives) elLives.innerText = '❤️'.repeat(Math.max(0, this.arcade.lives));
             const elMult = document.getElementById('game-multiplier');
