@@ -129,6 +129,18 @@ const App = {
 
         // History API support
         window.addEventListener('popstate', (e) => this.handlePopState(e.state));
+
+        // Floating coffee CTA
+        const coffeeClose = document.getElementById('coffee-float-close');
+        if (coffeeClose) coffeeClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.coffee.dismiss();
+        });
+        const coffeeLink = document.getElementById('coffee-float-link');
+        if (coffeeLink) coffeeLink.addEventListener('click', () => {
+            window.open('https://buymeacoffee.com/herramente', '_blank');
+            this.coffee.dismiss();
+        });
     },
 
     handlePopState: function (state) {
@@ -317,6 +329,7 @@ const App = {
             }
 
             this.addToRecent(term);
+            this.coffee.increment();
 
             // Defensive defaults for templates
             const teachingNotes = term.teaching_notes || [];
@@ -994,6 +1007,7 @@ const App = {
         },
 
         nextRound: function () {
+            if (this.currentRound) App.coffee.increment(); // count completed rounds (not first init)
             this.clearFeedback();
             this.nodes.options.innerHTML = '';
             this.nodes.hint.textContent = '';
@@ -1212,6 +1226,47 @@ const App = {
         shuffle: function (arr) {
             if (!arr) return [];
             return arr.sort(() => 0.5 - Math.random());
+        }
+    },
+
+    // --- COFFEE CTA MODULE ---
+    coffee: {
+        SHOW_AFTER: 5,     // interactions before first show
+        SNOOZE_DAYS: 3,    // days before showing again after dismiss
+        REPEAT_AFTER: 8,   // interactions after snooze before showing again
+
+        increment: function () {
+            const total = parseInt(localStorage.getItem('mse-use-count') || '0') + 1;
+            localStorage.setItem('mse-use-count', total);
+
+            const dismissed = localStorage.getItem('mse-coffee-dismissed');
+
+            if (!dismissed) {
+                if (total >= this.SHOW_AFTER) this.show();
+                return;
+            }
+
+            // After a previous dismiss: respect snooze period
+            const daysSince = (Date.now() - parseInt(dismissed)) / 86400000;
+            if (daysSince < this.SNOOZE_DAYS) return;
+
+            // Snooze expired: count interactions since last dismiss
+            const since = parseInt(localStorage.getItem('mse-coffee-since-dismiss') || '0') + 1;
+            localStorage.setItem('mse-coffee-since-dismiss', since);
+            if (since >= this.REPEAT_AFTER) this.show();
+        },
+
+        show: function () {
+            const el = document.getElementById('coffee-float');
+            if (!el || el.classList.contains('coffee-visible')) return;
+            el.classList.add('coffee-visible');
+        },
+
+        dismiss: function () {
+            const el = document.getElementById('coffee-float');
+            if (el) el.classList.remove('coffee-visible');
+            localStorage.setItem('mse-coffee-dismissed', Date.now());
+            localStorage.setItem('mse-coffee-since-dismiss', '0');
         }
     },
 
