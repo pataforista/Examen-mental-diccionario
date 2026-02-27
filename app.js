@@ -19,6 +19,7 @@ const App = {
         this.loadRecentSearches();
         this.renderAllTerms();
         this.theme.init();
+        this.donation.init();
     },
 
     registerSW: function () {
@@ -394,6 +395,7 @@ const App = {
             `;
             this.renderView('term');
             this.nodes.content.scrollTop = 0;
+            this.donation.increment();
         } catch (e) {
             console.error("Error rendering term view:", e);
             alert("Error al cargar la ficha. El archivo podría estar incompleto.");
@@ -589,6 +591,7 @@ const App = {
         const detailContainer = document.getElementById('domain-detail-container');
         document.getElementById('domain-grid-container').classList.add('hidden');
         detailContainer.classList.remove('hidden');
+        this.donation.increment();
 
         detailContainer.innerHTML = `
             <div class="btn-back" onclick="App.closeDomainDetails()">← Volver a Dominios</div>
@@ -681,6 +684,7 @@ const App = {
     renderCase: function (caseId) {
         const c = this.data.cases.find(x => x.case_id === caseId);
         if (!c) return;
+        this.donation.increment();
 
         const domainGrid = Object.entries(c.domains).map(([key, data]) => {
             const domainName = key;
@@ -1214,6 +1218,49 @@ const App = {
             return arr.sort(() => 0.5 - Math.random());
         }
     },
+
+    // ── Donation widget ──────────────────────────────────────────────────────
+    donation: {
+        SHOW_AFTER: 5,   // show after this many key interactions
+        SNOOZE_FOR: 20,  // after dismissal, wait this many more interactions
+
+        getCount: function () {
+            return parseInt(localStorage.getItem('mse-usage-count') || '0', 10);
+        },
+        setCount: function (n) {
+            localStorage.setItem('mse-usage-count', String(n));
+        },
+        getDismissedAt: function () {
+            const v = localStorage.getItem('mse-donation-dismissed-at');
+            return v !== null ? parseInt(v, 10) : null;
+        },
+        shouldShow: function (count) {
+            if (count < this.SHOW_AFTER) return false;
+            const dismissedAt = this.getDismissedAt();
+            if (dismissedAt === null) return true;
+            return count >= dismissedAt + this.SNOOZE_FOR;
+        },
+        show: function () {
+            const widget = document.getElementById('donation-widget');
+            if (widget) widget.classList.remove('hidden');
+        },
+        dismiss: function () {
+            const widget = document.getElementById('donation-widget');
+            if (widget) widget.classList.add('hidden');
+            localStorage.setItem('mse-donation-dismissed-at', String(this.getCount()));
+        },
+        increment: function () {
+            const n = this.getCount() + 1;
+            this.setCount(n);
+            if (this.shouldShow(n)) this.show();
+        },
+        init: function () {
+            const closeBtn = document.getElementById('donation-close');
+            if (closeBtn) closeBtn.addEventListener('click', () => this.dismiss());
+            if (this.shouldShow(this.getCount())) this.show();
+        }
+    },
+    // ─────────────────────────────────────────────────────────────────────────
 
     renderView: function (viewName) {
         const views = ['dictionary', 'results', 'term', 'domain', 'cases', 'about', 'game'];

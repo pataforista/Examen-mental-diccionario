@@ -1464,3 +1464,113 @@ main {
         padding: 0.5rem;
     }
 }
+
+/* ========================================
+   DONATION WIDGET
+   ======================================== */
+
+.donation-widget {
+    position: fixed;
+    bottom: 80px; /* above bottom nav */
+    right: 16px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--bg);
+    border: var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: donation-slide-in 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    max-width: 180px;
+}
+
+.donation-widget.hidden {
+    display: none !important;
+}
+
+@keyframes donation-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.donation-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 0.65rem 0.45rem 0.75rem;
+    text-decoration: none;
+    color: var(--text-p);
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: var(--font-main);
+    white-space: nowrap;
+    transition: background 0.15s;
+    flex: 1;
+    min-width: 0;
+}
+
+.donation-link:hover {
+    background: rgba(var(--primary-rgb), 0.12);
+}
+
+.donation-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.donation-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.donation-close {
+    background: none;
+    border: none;
+    border-left: var(--border);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    padding: 0.45rem 0.55rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+    font-family: var(--font-main);
+}
+
+.donation-close:hover {
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--text-p);
+}
+
+[data-theme="dark"] .donation-widget {
+    background: #1a1025;
+    border-color: rgba(0, 255, 194, 0.25);
+    box-shadow: 0 0 12px rgba(0, 255, 194, 0.15);
+}
+
+[data-theme="dark"] .donation-link {
+    color: var(--o-text, #E4D8EB);
+}
+
+[data-theme="dark"] .donation-close {
+    border-left-color: rgba(0, 255, 194, 0.2);
+    color: rgba(228, 216, 235, 0.5);
+}
+
+[data-theme="dark"] .donation-link:hover {
+    background: rgba(0, 255, 194, 0.08);
+}
+
+[data-theme="dark"] .donation-close:hover {
+    background: rgba(0, 255, 194, 0.08);
+    color: #E4D8EB;
+}
