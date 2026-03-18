@@ -1,0 +1,69 @@
+{
+  "term_id": "TALD_028",
+  "canonical_name": "Disfunción de la Iniciativa e Intencionalidad",
+  "synonyms_and_slang": [
+    "Disfunción de la Iniciativa e Intencionalidad"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "El paciente experimenta subjetivamente una falta de iniciativa, 'energía' y de intencionalidad del pensamiento. Puede resultar en la incapacidad de realizar actividades de la vida diaria por falta de un concepto rector.",
+    "required_features": [],
+    "subjective_marker": "Reportado por el paciente"
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-06",
+      "relation": "primary_expression",
+      "context": "tald_scale_subjective"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno reportado por el paciente."
+    }
+  ],
+  "teaching_notes": [
+    "Concepto TALD_028 de la escala TALD.",
+    "Registrar presencia/ausencia y severidad si es aplicable."
+  ],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "tald_scale": {
+      "item_number": 28,
+      "type": "subjective",
+      "scale_name": "Thought and Language Disturbance Scale"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "TALD Scale",
+        "item": "Disfunción de la Iniciativa e Intencionalidad",
+        "scale_id": "TALD_028"
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "tald_scale"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clinica"
+    ]
+  }
+}
