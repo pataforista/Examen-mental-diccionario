@@ -1,0 +1,81 @@
+{
+  "term_id": "ARC_017",
+  "canonical_name": "Parafrenia",
+  "synonyms_and_slang": [
+    "psicosis parafrenica",
+    "delirio imaginativo"
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Término de Kraepelin para describir cuadros delirantes crónicos caracterizados por la presencia de delirios fantásticos, expansivos o imaginativos, en ausencia de deterioro cognitivo o emocional significativo (a diferencia de la esquizofrenia).",
+    "required_features": [
+      "delirio crónico y persistente",
+      "carácter fantástico o imaginativo del contenido",
+      "preservación de la personalidad y el afecto",
+      "ausencia de desorganización formal"
+    ],
+    "subjective_marker": "El paciente describe mundos fantásticos o misiones cósmicas con gran detalle y sin aparente angustia.",
+    "behavioral_marker": "El paciente puede llevar una vida aparentemente normal y productiva excepto en lo que concierne a su sistema delirante."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion_longitudinal"
+    ],
+    "time_relation": [
+      "historico",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-13",
+      "relation": "historical_precursor",
+      "context": "psicosis_delirantes_cronicas"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "ARC_002",
+      "canonical_name": "Dementia Praecox",
+      "reason": "La parafrenia se distingue por la falta de deterioro (dementia) y la riqueza imaginativa."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Fue una de las categorías más discutidas de Kraepelin; hoy la mayoría de estos casos se clasifican como trastorno delirante o esquizofrenia residual."
+    }
+  ],
+  "teaching_notes": [
+    "Representa la 'salud mental relativa' dentro del delirio.",
+    "A menudo el delirio es de tipo 'parafrenia expansiva' (grandiosidad fantástica)."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A24",
+      "label": "Delusional disorder (modern related)"
+    },
+    "snomed_ct": {
+      "concept_id": "191539009",
+      "preferred_term": "Paraphrenic schizophrenia (disorder)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Kraepelin",
+      "Leonhard"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_alemana_siglo_XX"
+    ]
+  },
+  "status": "active"
+}

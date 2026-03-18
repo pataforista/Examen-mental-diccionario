@@ -1,85 +1,76 @@
 {
-    "term_id": "VOL_001",
-    "canonical_name": "Abulia",
-    "synonyms_and_slang": [
-        "falta de voluntad",
-        "hipobulia"
+  "term_id": "VOL_001",
+  "canonical_name": "Abulia",
+  "synonyms_and_slang": [
+    "falta de voluntad",
+    "aboulia",
+    "parálisis de la voluntad"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Pérdida severa o ausencia de la capacidad para iniciar, sostener y completar acciones voluntarias dirigidas a metas, a pesar de preservar la capacidad motora y el conocimiento de lo que se debe hacer. Etimológicamente: 'sin voluntad'. Berrios la ubica como el trastorno central del dominio volitivo.",
+    "required_features": [
+      "ausencia de iniciativa de acción",
+      "incapacidad de sostener acción iniciada por otros",
+      "preservación de capacidad motora (no es paresia)"
     ],
-    "term_kind": "symptom",
-    "granularity": "atomic",
-    "risk_weight": 1,
-    "definition_clinical": {
-        "core": "Incapacidad para iniciar o persistir en actividades dirigidas a un fin, caracterizada por una falta de motivación y voluntad (conación).",
-        "required_features": [
-            "disminución notable de la iniciativa",
-            "dificultad para tomar decisiones (ambivalencia de la voluntad)",
-            "deterioro en el funcionamiento social o laboral"
-        ],
-        "subjective_marker": "El paciente refiere que 'no puede' empezar a hacer las cosas aunque sepa que debe hacerlas.",
-        "behavioral_marker": "Permanecer sentado o acostado durante horas sin realizar ninguna actividad, incluso ante necesidades básicas."
+    "subjective_marker": "El paciente refiere querer hacer cosas pero darse cuenta de que 'la orden no llega a los músculos', 'no puedo empezar'.",
+    "behavioral_marker": "Inmovilidad prolongada, docilidad extrema, requiere que otros inicien cada paso de una secuencia (ej. comer, vestirse)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "iniciativa_motora",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "mantenimiento_accion",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "paresia",
+        "type": "string",
+        "expected": "ausente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Apatía",
+      "reason": "La apatía es falta de motivación/interés; la abulia es la incapacidad ejecutiva de la acción voluntaria (pueden coexistir)."
     },
-    "operationalization": {
-        "detectable_by": [
-            "entrevista_clinica",
-            "observacion_colateral"
-        ],
-        "time_relation": [
-            "persistente"
-        ],
-        "pharmacological_link": false
+    {
+      "term_id": "",
+      "canonical_name": "Retardo psicomotor",
+      "reason": "El retardo es lentitud generalizada; la abulia es la falla específica en la iniciación/sostenimiento del acto voluntario."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
     },
-    "domain_links": [
-        {
-            "domain_id": "DOM-16",
-            "relation": "primary_expression",
-            "context": "voluntad_accion"
-        }
-    ],
-    "exclusions": [
-        {
-            "term_id": "AFF_014",
-            "canonical_name": "Apatía",
-            "reason": "La apatía es la falta de sentimiento/emoción (componente afectivo); la abulia es la falta de voluntad/acción (componente conativo)."
-        }
-    ],
-    "alerts": [
-        {
-            "type": "diagnostic_warning",
-            "message": "Síntoma negativo nuclear de la esquizofrenia; también común en depresión mayor y lesiones frontales."
-        }
-    ],
-    "teaching_notes": [
-        "Históricamente vinculada a la 'pérdida de la energía vital'.",
-        "Es un componente clave del 'síndrome apato-abúlico'."
-    ],
-    "version": "1.1.0",
-    "mappings": {
-        "cie11": {
-            "code": "MB24.Z",
-            "label": "Symptoms or signs involving volition"
-        },
-        "snomed_ct": {
-            "concept_id": "247858004",
-            "preferred_term": "Abof (finding)"
-        }
-    },
-    "clinical_assessment": {
-        "recommended_scales": [
-            {
-                "name": "SANS",
-                "item": "Abulia-Apatía",
-                "scale_id": "SANS"
-            }
-        ]
-    },
-    "provenance": {
-        "phenomenology": [
-            "Kraepelin",
-            "Sims"
-        ],
-        "clinical_tradition": [
-            "psicopatologia_clasica"
-        ]
-    },
-    "status": "active"
+    "snomed_ct": {
+      "concept_id": "45785002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
 }

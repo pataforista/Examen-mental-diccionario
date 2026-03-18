@@ -1,0 +1,100 @@
+{
+  "term_id": "SELF_007",
+  "canonical_name": "Disminución de la autoafección",
+  "synonyms_and_slang": [
+    {
+      "term": "falta de presencia",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "sentirse hueco",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "diminished self-affection",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Pérdida del sentimiento inmediato, tácito y preclásico de ser el sujeto de la propia experiencia y de estar 'vivo' en el mundo.",
+    "required_features": [
+      "sentimiento de falta de vitalidad en la conciencia",
+      "pérdida del 'yo' como centro de gravedad de la experiencia",
+      "pre-reflexivo (no es un pensamiento, es una sensación de ser)"
+    ],
+    "subjective_marker": "Describe que sus experiencias no se sienten como 'suyas' o que le falta un núcleo interno.",
+    "behavioral_marker": "Relata sentimientos de vacío ontológico o de ser un espectador pasivo de su propia vida."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica_fenomenologica"
+    ],
+    "time_relation": [
+      "persistente",
+      "prodrómica"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "core_self_disturbance",
+        "type": "boolean",
+        "expected": true
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_del_yo_ipseidad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AFF_002",
+      "canonical_name": "Anhedonia",
+      "reason": "La anhedonia es pérdida de placer; la autoafección es pérdida del sentido de 'ser' el sujeto de la experiencia.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_significance",
+      "message": "Es un síntoma central en el espectro esquizofrénico (EASE), a menudo presente en etapas prodrómicas."
+    }
+  ],
+  "teaching_notes": [
+    "Es un concepto de la fenomenología contemporánea (Parnas, Sass).",
+    "Diferente a la despersonalización clásica por ser más profundo y ontológico."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con abulia o falta de motivación.",
+    "Ignorar por ser un síntoma difícil de describir por el paciente."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Describe que sus experiencias no se sienten como “suyas”: “Soy como un espectador de mi propia vida… falta el centro que lo une todo”. No es un delirio, sino una alteración de la vitalidad del yo; relata falta de “presencia” o un yo disminuido."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Parnas",
+      "Sass",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Psicopatología fenomenológica",
+      "Espectro esquizofrénico"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

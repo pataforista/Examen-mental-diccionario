@@ -1,0 +1,64 @@
+{
+  "term_id": "CNS_006",
+  "canonical_name": "Lentitud del Pensamiento (Bradipsiquia)",
+  "synonyms_and_slang": [
+    "retraso ideativo marcado",
+    "inhibición formal del fluir del pensamiento"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Déficit importante y evidente a la evaluación en la velocidad normal asociativa de las ideas y la producción de constructos cognitivos, resultando en quejas de mente vacía o paralizada. Típicamente los hallazgos son secundarios al retardo psicomotriz melancólico o en esquizofrenias deficitarias y patologías subcorticales. Las asociaciones de ideas siguen la lógica, pero de manera excesivamente dilatada en el tiempo y dificultosa para el individuo.",
+    "required_features": [
+      "fluir ideativo y del habla prolongado notoriamente más allá de lo esperable para edad y perfil funcional previo",
+      "sensación de esfuerzo intelectual al discurrir o formar respuestas hiladas."
+    ],
+    "subjective_marker": "'Esa pregunta tarda tanto en entrar a mi mente, y la respuesta es tan pesada sacarla, que al tenerla ya en la lengua parece innecesaria porque ha pasado el tiempo, siento los engranajes llenos de moho'.",
+    "behavioral_marker": "Aumento dramático de la latencia (retraso en iniciar respuesta a la pregunta del evaluador), pausas muy largas a mitad de sentencia u oraciones infinalizables no por bloqueo o interceptación, sino por enlentecimiento y pérdida de iniciativa secundaria; velocidad verbal física y mímica muy lentas."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "latencia_respuesta",
+        "type": "string",
+        "expected": "muylarga"
+      },
+      {
+        "marker": "velocidad_asociativa_logica",
+        "type": "string",
+        "expected": "baja"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Bloqueo o interceptación del pensamiento (Trastorno formal esquizofrénico)",
+      "reason": "En el Bloqueo el curso fluye bien y luego abrupta e involuntariamente se detiene por competo vaciándose (y la persona reanuda en un tema nuevo desconectado minutos después); en la bradipsiquia, la parada al medio ocurre por fatiga extrema y lentitud patológica general al hablar que el propio paciente argumenta con dolor (y el paciente si se retoma vuelve a conectar lenta y pausadamente en la misma idea)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "191689004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

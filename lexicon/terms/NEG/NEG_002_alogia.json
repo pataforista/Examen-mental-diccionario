@@ -1,0 +1,68 @@
+{
+  "term_id": "NEG_002",
+  "canonical_name": "Alogia",
+  "synonyms_and_slang": [
+    "pobreza del habla",
+    "empobrecimiento ideativo severo"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Manifestación nuclear negativa de la entidad patológica pura esquizofrénica (o demencias avanzadas) basada empíricamente y semiológicamente sobre una reducción masiva, global, observable y espontánea del fluir (cuantitativa) o contenido (cualitativa) expresado del pensamiento o lenguaje oral conversacional, infiriendo no un problema en el aparato fonador expresivo sino una verdadera pobreza central (Alogia significa etimológicamente la falta/ausencia del Logos - de la 'razón' y el pensamiento argumentativo interrelacionado con el ambiente conversante). Constituye el reflejo máximo sintomático negativo en el campo asociativo lógico.",
+    "required_features": [
+      "1) defecto visible cuantitativo (producción pobre referida como 'pobreza del habla'): cantidad paupérrima en respuestas o iniciativa locutiva, y 2) defecto visible cualitativo ('pobreza del contenido'): producción verbonasal pero vacía repitiendo un loop sin hilar asociación nueva y resolutiva real."
+    ],
+    "subjective_marker": "Casi nulamente reportado en fase clínica o en defectuales crónicos, si logran, dicen 'mi mente simplemente no encuentra para decir nada'/'vacío mental general crónico (no es la pausa interceptiva ni obnubilación)'.",
+    "behavioral_marker": "Brevedad monosilábica predominante ante el esfuerzo interrogativo del entrevistador, vaciamiento conceptual, repetición ecolálica funcional sin creatividad sintáctica alguna o pausas largas para elaborar una idea trivial simplotónica de muy baja complejidad sintáctica o argumental para su capacidad educativa previa basal."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "cantidad_expresión_ideas_nuevas_interacción",
+        "type": "string",
+        "expected": "ínfima"
+      },
+      {
+        "marker": "PANSS_SubescalaN_Alogia",
+        "type": "string",
+        "expected": "elevada_puntuación (PANSS-N4) o BPRS-Neg."
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Bradipsiquia",
+      "reason": "El bradipsiquico si fluye, aunque lentísimo y con cansancio vital y se llega a un constructo. El paciente Alógico no tiene una gran lentitud por sí per se si le sacas una palabra, simplemente la maquinaria ideativo-discursante conversacional carece del andamiaje profundo de contenido nuevo a manifestar que enlazar. Tácitamente bloqueando el discurso argumental creativo del intercambio conversacional bidireccional humano."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Afasia o Mutismo Psicógeno Selectivo",
+      "reason": "En la afasia cortical broca se aprecia discurrir con la falla en el polo expresivo sintáctico y lo reportan dolorosamente por la falla focal estricta de base. En este mutismo/pobreza esquizoideo, yace el desapego fundamental y falta del fondo de intercurso de pensamiento o social de ser humano sin el distrés típico en base focal expresiva."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6A20"
+    },
+    "snomed_ct": {
+      "concept_id": "83162002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

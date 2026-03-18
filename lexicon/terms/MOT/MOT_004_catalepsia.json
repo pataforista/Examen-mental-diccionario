@@ -1,0 +1,84 @@
+{
+  "term_id": "MOT_004",
+  "canonical_name": "Catalepsia",
+  "synonyms_and_slang": [
+    "postura inducida"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Mantenimiento involuntario de una postura corporal forzada o incómoda durante un periodo prolongado de tiempo.",
+    "required_features": [
+      "mantenimiento de posturas impuestas por el examinador o asumidas espontáneamente",
+      "resistencia mínima al cambio de posición",
+      "ausencia de fatiga aparente a pesar de la incomodidad de la postura"
+    ],
+    "subjective_marker": "El paciente a menudo no puede explicar por qué permanece inmóvil.",
+    "behavioral_marker": "El paciente permanece con un brazo levantado o en una posición antinatural durante minutos u horas."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "examen_fisico"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "psicomotricidad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MOT_002",
+      "canonical_name": "Flexibilidad cérea",
+      "reason": "La flexibilidad cérea es la cualidad de resistencia al movimiento (como moldear cera); la catalepsia es el mantenimiento de la postura resultante."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_critical",
+      "message": "Signo cardinal de catatonía; requiere evaluación urgente de causas orgánicas o psiquiátricas graves."
+    }
+  ],
+  "teaching_notes": [
+    "A menudo asociada al 'almohadilllo psíquico' (permanecer con la cabeza levantada de la cama).",
+    "Diferenciar de la catalepsia en el sueño o narcolepsia (que es pérdida de tono)."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB40.0",
+      "label": "Catatonia"
+    },
+    "snomed_ct": {
+      "concept_id": "27111005",
+      "preferred_term": "Catalepsy (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "BFCRS - Bush-Francis Catatonia Rating Scale",
+        "item": "Catalepsy",
+        "scale_id": "BFCRS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Kahlbaum",
+      "Leonhard"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

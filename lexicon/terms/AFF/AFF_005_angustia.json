@@ -1,0 +1,133 @@
+{
+  "term_id": "AFF_005",
+  "canonical_name": "Angustia",
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Sufrimiento intenso con sensación de dolor psíquico o ansiedad severa.",
+    "required_features": [
+      "inicio brusco",
+      "intensidad elevada",
+      "predominio somático/visceral"
+    ],
+    "subjective_marker": "Describe angustia intensa, opresiva o desesperante.",
+    "behavioral_marker": "Expresión de aflicción extrema y signos somáticos de ansiedad."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "paroxistica",
+      "episodica"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Abstinencias (alcohol/BZD)",
+        "risk": "high"
+      },
+      {
+        "class": "Estimulantes (cocaína/anfetaminas)",
+        "risk": "high"
+      }
+    ],
+    "therapeutic_probe": {
+      "name": "Respuesta a benzodiacepina (ansiolisis rápida)",
+      "use": "Puede apoyar la lectura de angustia aguda/hiperactivación; no es criterio diagnóstico ni sustituye evaluación médica.",
+      "expected_timeframe_minutes": 30
+    },
+    "computable_markers": [
+      {
+        "marker": "onset",
+        "type": "categorical",
+        "options": [
+          "gradual",
+          "brusco"
+        ],
+        "expected": "brusco"
+      },
+      {
+        "marker": "somatic_distress",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "ausente",
+          "leve",
+          "moderada",
+          "severa"
+        ],
+        "expected": "severa"
+      },
+      {
+        "marker": "duration_minutes",
+        "type": "integer"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_factor",
+      "context": "desbordamiento_emocional"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AFF_007",
+      "canonical_name": "Ansiedad afectiva",
+      "reason": "La ansiedad afectiva es sostenida y de menor intensidad.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "PAN_001",
+      "canonical_name": "Ataque de pánico",
+      "reason": "El pánico exige un cluster autonómico y temor a morir/perder control; la angustia puede ser un 'grito corporal' sin ese contenido.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "safety_attention",
+      "message": "Angustia intensa requiere contención y evaluación de riesgo inmediato (autolesión, fuga, desregulación severa)."
+    }
+  ],
+  "teaching_notes": [
+    "Predominio somático y inicio brusco son los discriminadores clínicos.",
+    "No confundir con ansiedad basal; aquí manda la urgencia corporal."
+  ],
+  "cognitive_pitfalls": [
+    "Etiquetar como 'ansiedad generalizada' un episodio paroxístico con alta somaticidad.",
+    "Asumir causa psiquiátrica sin descartar abstinencia o intoxicación."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Es un tormento en el pecho y en el estómago, como si me quemara por dentro; no lo aguanto."
+    },
+    {
+      "type": "observation",
+      "text": "Se acompaña de facies de sufrimiento, sudoración y urgencia por alivio inmediato, sin que la emoción se reduzca a «nervios» o preocupación."
+    }
+  ],
+  "version": "1.0.1",
+  "synonyms_and_slang": [
+    "angustia"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "mappings": {}
+}

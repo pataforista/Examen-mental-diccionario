@@ -1,0 +1,82 @@
+{
+  "term_id": "AFF_013",
+  "canonical_name": "Depresión",
+  "synonyms_and_slang": [
+    "ánimo deprimido",
+    "estado depresivo",
+    "tristeza patológica",
+    "melancolía (clásico)"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Descenso marcado y persistente del tono afectivo con pérdida del placer (anhedonia), que forma parte del cuadro sintomático de los episodios depresivos. Incluye dimensiones cognitivas, somáticas y conductuales.",
+    "required_features": [
+      "ánimo deprimido la mayor parte del día",
+      "anhedonia",
+      "duración ≥ 2 semanas"
+    ],
+    "subjective_marker": "El paciente refiere tristeza profunda, vacío, incapacidad de experimentar placer. Frecuente negatividad sobre sí mismo, el mundo y el futuro (tríada de Beck).",
+    "behavioral_marker": "Retardo o agitación psicomotora, llanto frecuente, aislamiento social, descuido del autocuidado."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "HAM-D≥17",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "PHQ-9≥10",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "duracion≥2_semanas",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "anhedonia",
+        "type": "string",
+        "expected": "presente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Hipotimia",
+      "reason": "La depresión mayor supera el umbral en intensidad, número de síntomas y duración."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Duelo normal",
+      "reason": "El duelo tiene desencadenante identificable, curva temporal esperada y ausencia de pérdida de autoestima global."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6A70"
+    },
+    "snomed_ct": {
+      "concept_id": "35489007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

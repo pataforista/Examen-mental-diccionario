@@ -1,0 +1,110 @@
+{
+  "term_id": "SPE_007",
+  "canonical_name": "Mutismo",
+  "synonyms_and_slang": [
+    {
+      "term": "no habla nada",
+      "context": "colateral",
+      "locale": "es"
+    },
+    {
+      "term": "silencio absoluto",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "mutism",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 3,
+  "definition_clinical": {
+    "core": "Ausencia total o casi total de producción verbal en un sujeto con capacidad física de habla y conciencia conservada.",
+    "required_features": [
+      "ausencia persistente de respuesta verbal",
+      "preservación aparente de la conciencia",
+      "no es una afasia global ni una anartria"
+    ],
+    "subjective_marker": "No hay reporte verbal directo; puede comunicarse por gestos o escritura si es mutismo selectivo o parcial.",
+    "behavioral_marker": "El paciente permanece en silencio absoluto ante cualquier forma de interpelación o estímulo social."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "revisión_colateral"
+    ],
+    "time_relation": [
+      "persistente",
+      "episodica",
+      "situacional"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "verbal_output",
+        "type": "boolean",
+        "expected": false
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": "comunicación"
+    },
+    {
+      "domain_id": "DOM-04",
+      "relation": "associated_sign",
+      "context": "estupor_catatonia"
+    },
+    {
+      "domain_id": "DOM-09",
+      "relation": "associated_symptom",
+      "context": "inhibicion_psicomotora_grave"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "COG_002",
+      "canonical_name": "Coma",
+      "reason": "En el coma hay pérdida de conciencia; en el mutismo la vigilia suele estar conservada.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "message": "El mutismo puede ser parte de una catatonia o de un cuadro depresivo grave con riesgo de inanición y deshidratación."
+    }
+  ],
+  "teaching_notes": [
+    "Diferenciar mutismo acinético (orgánico, por lesiones frontales/diencefálicas) de mutismo catatónico (psiquiátrico) y mutismo selectivo (ansioso)."
+  ],
+  "cognitive_pitfalls": [
+    "Asumir que el paciente es 'obstinado' o que no quiere hablar a propósito sin evaluar estados de estupor.",
+    "No descartar afasia motora grave si el paciente parece despierto."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Ausencia total de respuesta verbal durante toda la entrevista, a pesar de estar despierto y con ojos abiertos. Puede o no haber comunicación no verbal preservada (por ej. seguimiento ocular o gestos mínimos)."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Jaspers",
+      "Kahlbaum"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría clásica",
+      "Neurología"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

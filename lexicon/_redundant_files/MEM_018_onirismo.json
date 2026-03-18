@@ -1,0 +1,75 @@
+{
+  "term_id": "MEM_018",
+  "canonical_name": "Onirismo",
+  "synonyms_and_slang": [
+    "estado onírico",
+    "somnolencia alucinatoria",
+    "dreamy state (Jackson)"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado de conciencia alterada caracterizado por la irrupción de imágenes oníricas (semejantes al sueño) en la vigilia, con somnolencia, desorientación y posible conducta derivada de las imágenes. No es idéntico al delirium; la conciencia oscila entre somnolencia y vigilia parcial.",
+    "required_features": [
+      "imágenes oníricas vívidas en vigilia",
+      "somnolencia fluctuante",
+      "desorientación",
+      "sin plena inatención del delirium"
+    ],
+    "subjective_marker": "El paciente reporta ver imágenes 'como sueños' mientras está semidespierto; difícil distinguir sueño de realidad.",
+    "behavioral_marker": "Conducta guiada por imágenes oníricas; puede actuar como si estuviera en el escenario soñado."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "imagenes_oniricas",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "somnolencia",
+        "type": "string",
+        "expected": "fluctuante"
+      },
+      {
+        "marker": "orientacion",
+        "type": "string",
+        "expected": "parcialmente_alterada"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Delirium",
+      "reason": "El onirismo es más onírico-visual sin la inatención global característica del delirium pleno."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Alucinaciones vigiles",
+      "reason": "Las alucinaciones vigiles ocurren con conciencia clara; el onirismo implica somnolencia."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

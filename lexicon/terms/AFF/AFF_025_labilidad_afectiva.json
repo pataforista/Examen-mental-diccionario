@@ -1,0 +1,76 @@
+{
+  "term_id": "AFF_025",
+  "canonical_name": "Labilidad afectiva",
+  "synonyms_and_slang": [
+    "afecto lábil",
+    "emotional lability",
+    "incontinencia emocional leve"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Variaciones rápidas e intensas del estado emocional, desproporcionadas o incongruentes con el contexto, con dificultad para regularlas. El estado cambia en minutos u horas. Distinto de la labilidad afectiva pseudobulbar (neurológica).",
+    "required_features": [
+      "cambios rápidos de estado emocional",
+      "desproporción con el estímulo",
+      "dificultad de regulación"
+    ],
+    "subjective_marker": "El paciente refiere 'no puedo controlar mis emociones', llora y ríe sin poder detenerlo.",
+    "behavioral_marker": "Transiciones rápidas entre llanto y risas, irritabilidad súbita, discordancia entre emoción expresada y contexto."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "cambios_estado<horas",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "proporcion_estimulo",
+        "type": "string",
+        "expected": "desproporcionada"
+      },
+      {
+        "marker": "regulacion",
+        "type": "string",
+        "expected": "dificultada"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Afecto fugaz",
+      "reason": "El afecto fugaz implica emociones intensas pero breves (segundos); la labilidad implica oscilaciones sostenidas."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Incontinencia afectiva pseudobulbar",
+      "reason": "La pseudobulbar tiene base neurológica (ACV, EM); la labilidad afectiva es más amplia y psiquiátrica."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.5"
+    },
+    "snomed_ct": {
+      "concept_id": "18963009"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

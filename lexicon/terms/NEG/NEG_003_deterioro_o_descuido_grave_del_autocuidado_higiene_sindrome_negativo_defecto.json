@@ -1,0 +1,62 @@
+{
+  "term_id": "NEG_003",
+  "canonical_name": "Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto)",
+  "synonyms_and_slang": [
+    "Avolición grave enfocada al si-mismo (self-care neglect en psicosis/demencia severa - NO el Sindrome de Diogenes / Senil per se)"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Es un desenlace conductual clave derivado y representante del conglomerado general del déficit cognitivo/volitivo (Síntoma Negativo general Avocativo-Abúlico) de la psicosis severa, donde la función integradora de preservación del 'sí-mismo' básico social y de salud primigenio y corporal claudica total y crónicamente. El individuo, que en etapa premórbida conservaba su perfil social integrativo o su vestidura adaptada, cesa crónicamente debido al embotamiento orgánico psiquiátrico avanzado (o en grandes fases de letargo u otras de abandono activo) todo esfuerzo en aseo, alimentación balanceada basal higiénica de sus procesos corporales o manejo adaptativo estético ambiental de su cuerpo hasta niveles de alto disfuncionalismo o insalubridad general y de marginación evidente.",
+    "required_features": [
+      "negligencia global y crónica al status higiénico adaptativo funcional normativo previo y de la sociedad y del propio cuerpo (baño, ropaje, insalubres acumulaciones en su hogar por desorganización + abulia sin fin productivo o delusivo central)."
+    ],
+    "subjective_marker": "Subjetivamente egosintónico de forma pasiva ('¿Por qué me deben lavar, para qué quiero yo otro aspecto? no me importa la sociedad que me ve').",
+    "behavioral_marker": "Pésimo y abandonado mal estado odontoestomatológico, desaseo crónico por falta de volición, engrasamiento visible y descuido absoluto de infecciones por pura negligencia psicopatológicamente mediada por embotamiento afectivo volitivo extremo y de aislamiento que subyace de origen."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "BPRS/PANSS",
+        "type": "string",
+        "expected": "elevados_scores_en_variables_de_involucramiento_ambiental"
+      },
+      {
+        "marker": "índices_básicos_vida_diaria",
+        "type": "string",
+        "expected": "(ABVD)=puntuación_mala"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Negligencia en Melancolía Severa Aguda o de TOC paralizante Agudo",
+      "reason": "El abandono transitorio en la fase melancólica o ansiosa incapacitante es temporal al ciclo de brote base; en la esquizofrenia esto representa el deterioro deficitario crónico estabilizado que 'corroía/emborronaba' inexorable y silenciosamente la capacidad ejecutiva premórbida previa."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "83015003"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

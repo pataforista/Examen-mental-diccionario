@@ -1,0 +1,61 @@
+{
+  "term_id": "CNS_004",
+  "canonical_name": "Estados Oniroides o de Trastorno Hipnagógico patológico",
+  "synonyms_and_slang": [
+    "trastorno límite sueño-vigilia patológico",
+    "pseudoalucinación hipnagógica masiva invasiva"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado de transición vigilia-sueño que se apodera patológicamente de la conciencia temporal sin llegar a dominarla en el pleno sueño profundo, provocando alucinaciones altamente vividas frecuentemente microzoopsias complejas de parásitos o alucinaciones táctiles terroríficas y alucinaciones de forma/movimiento antes de quedar plenamente dormido e intercalando fallas bruscas somnolientas que generan terror pánico (ej: parálisis del sueño patológica y vívida disrruptiva acompañando a este fenómeno en Narcolepsias u orgánico disociativo en Ansiedades o TEPT o de intoxicación-interrupción abstinencial por Alcoholismo previo o dependencias a Gabaérgicos).",
+    "required_features": [
+      "temporalidad peridormición obligatoria."
+    ],
+    "subjective_marker": "Reporte de visualización terrorífica justo al ir perdiendo el tono y alerta previos, no discernimiento del borde en base a despertar de la parálisis (incapacidad de salir).",
+    "behavioral_marker": "Asociado al diagnóstico subyacente orgánico y del sueño."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "evento_solo_ligado_transición_vigilia-sueño",
+        "type": "string",
+        "expected": "si"
+      },
+      {
+        "marker": "calidad_sensorial_percepción",
+        "type": "string",
+        "expected": "muy_altamente_terrorifica_intrusiva"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Onirismo o Delirio y/o parasomnias (T. Comportamiento sueños REM)",
+      "reason": "Su cualidad temporal subyace estricto al momento liminar al descanso y puede el individuo mantener recordatorios fidedignos vividos y precisos a posteriori muy dolorosos en la cognición despierta."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "7A4Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

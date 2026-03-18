@@ -1,0 +1,84 @@
+{
+  "term_id": "MEM_021",
+  "canonical_name": "Obnubilación",
+  "synonyms_and_slang": [
+    "nublamiento de conciencia"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Grado leve a moderado de disminución del nivel de alerta, caracterizado por una reducción global de la claridad de la conciencia y una lentitud en los procesos psíquicos.",
+    "required_features": [
+      "disminución de la reactividad a estímulos externos",
+      "dificultad para mantener la atención",
+      "lentitud motora y verbal"
+    ],
+    "subjective_marker": "El paciente se siente 'como en una nube' o con dificultad para pensar con claridad.",
+    "behavioral_marker": "El paciente responde con retraso a las preguntas y parece necesitar estímulos más intensos para prestar atención."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_y_alerta"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MEM_005",
+      "canonical_name": "Delirium",
+      "reason": "La obnubilación es un nivel de alerta; el delirium es un síndrome que puede incluir obnubilación pero con desorganización y alucinaciones."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_warning",
+      "message": "Suele ser de origen orgánico (metabólico, tóxico o neurológico)."
+    }
+  ],
+  "teaching_notes": [
+    "Se diferencia del estupor por ser un grado menor de afectación de la conciencia.",
+    "Clásicamente descrito como un 'empañamiento' de la vigilia."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB21.0",
+      "label": "Stupor (clinical related)"
+    },
+    "snomed_ct": {
+      "concept_id": "110359009",
+      "preferred_term": "Clouding of consciousness (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "GCS - Glasgow Coma Scale",
+        "item": "Respuesta verbal/ocular",
+        "scale_id": "GCS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Jaspers",
+      "Sims"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

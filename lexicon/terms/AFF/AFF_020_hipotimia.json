@@ -1,0 +1,75 @@
+{
+  "term_id": "AFF_020",
+  "canonical_name": "Hipotimia",
+  "synonyms_and_slang": [
+    "ánimo bajo",
+    "tristeza clínica leve",
+    "dysthymia leve",
+    "ánimo deprimido subclínico"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Descenso leve pero clínicamente significativo del tono afectivo, que no alcanza el umbral de un episodio depresivo mayor. El sujeto experimenta tristeza persistente, reducción de placer y energía, con capacidad funcional parcialmente preservada.",
+    "required_features": [
+      "tristeza persistente",
+      "sin criterios completos de episodio depresivo mayor",
+      "funcionalidad parcialmente preservada"
+    ],
+    "subjective_marker": "El paciente refiere 'estar triste sin saber bien por qué' o 'no disfrutar las cosas como antes'. Las actividades agradables siguen siendo posibles pero menos placenteras.",
+    "behavioral_marker": "Reducción de iniciativa, expresión facial menos animada, voz más monótona, pero sin retardo psicomotor evidente."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "HAM-D",
+        "type": "string",
+        "expected": "8-16"
+      },
+      {
+        "marker": "PHQ-9",
+        "type": "string",
+        "expected": "5-9"
+      },
+      {
+        "marker": "funcionalidad",
+        "type": "string",
+        "expected": "parcialmente_preservada"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Eutimia",
+      "reason": "La hipotimia implica descenso clínicamente significativo; la eutimia está en rango normativo."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Depresión mayor",
+      "reason": "La hipotimia no alcanza criterios de episodio depresivo mayor en número, intensidad o duración."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.5"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

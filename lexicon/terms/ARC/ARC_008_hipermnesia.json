@@ -1,0 +1,71 @@
+{
+  "term_id": "ARC_008",
+  "canonical_name": "Hipermnesia",
+  "synonyms_and_slang": [
+    "exaltación de la memoria"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Aumento anómalo de la capacidad de evacuación o retención de recuerdos, que a menudo se presenta como un flujo incontrolable de imágenes del pasado.",
+    "required_features": [
+      "vivacidad inusual de los recuerdos",
+      "capacidad de recordar detalles insignificantes",
+      "frecuente asociación con estados de excitación psíquica"
+    ],
+    "subjective_marker": "El paciente refiere que 'toda su vida pasa ante sus ojos' o que recuerda cada detalle de un día lejano.",
+    "behavioral_marker": "Relato pormenorizado y exhaustivo de eventos pasados que excede la capacidad normal de síntesis."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "memoria"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "diagnostic_warning",
+      "message": "Común en estados maníacos, intoxicaciones (anfetaminas) o situaciones de peligro de muerte inminente."
+    }
+  ],
+  "teaching_notes": [
+    "No es una mejora de la inteligencia, sino una 'desinhibición' de los archivos mnésicos.",
+    "Puede ser global o selectiva (ej: hipermnesia para un tema específico)."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Z",
+      "label": "Symptoms or signs involving cognitive functions"
+    },
+    "snomed_ct": {
+      "concept_id": "84307003",
+      "preferred_term": "Hypermnesia (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Ribot"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

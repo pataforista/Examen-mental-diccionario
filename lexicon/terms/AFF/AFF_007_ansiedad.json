@@ -1,0 +1,76 @@
+{
+  "term_id": "AFF_007",
+  "canonical_name": "Ansiedad",
+  "synonyms_and_slang": [
+    "angustia",
+    "nerviosismo patológico",
+    "anxiety"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado emocional de aprensión, preocupación o miedo, con activación autonómica y cognitiva, desproporcionado al estímulo o sin estímulo identificable. Componentes: cognitivo (preocupación), somático (taquicardia, sudoración), conductual (evitación).",
+    "required_features": [
+      "aprensión o miedo desproporcionado",
+      "activación autonómica",
+      "componente cognitivo de preocupación o anticipación negativa"
+    ],
+    "subjective_marker": "El paciente refiere 'angustia', 'tensión', miedo sin causa o anticipación catastrófica.",
+    "behavioral_marker": "Inquietud motora, evitación de situaciones, signos autonómicos (sudoración, palpitaciones, temblor)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "GAD-7≥5",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "activacion_autonomica",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "evitacion",
+        "type": "string",
+        "expected": "posible"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Miedo",
+      "reason": "El miedo tiene objeto identificable; la ansiedad puede ser sin objeto claro (flotante)."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Angustia vital",
+      "reason": "La angustia vital (existencial) es filosófica-normal; la ansiedad clínica es desproporcionada y disfuncional."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.2"
+    },
+    "snomed_ct": {
+      "concept_id": "48694002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

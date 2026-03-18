@@ -1,0 +1,70 @@
+{
+  "term_id": "CNS_003",
+  "canonical_name": "Conciencia Ladeada (Twilight state)",
+  "synonyms_and_slang": [
+    "Estado Crepuscular",
+    "ESTADO ONIROIDE EPILÉPTICO"
+  ],
+  "term_kind": "estado",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Reducción temporal (de horas a semanas) fundamentalmente cualitativa y del campo (más que del nivel basal) de la conciencia. Se produce un estrechamiento grosero en el foco atencional de la realidad (actuación casi sonambúlica), frecuentemente poblada de contenidos afectivos intensos, terroríficos o místicos y acompañada de ilusiones complejas/alucinaciones estructuradas. Frecuente en secuelas ictales (postictales o psicosis epilépticas intraictales), estados disociativos graves (fugas) o intoxicaciones patológicas (embriaguez patológica severa). Acaba súbitamente y suele existir amnesia lacunar (completa) del periodo crepuscular.",
+    "required_features": [
+      "campo de alerta estrechado con foco delirante-afectivo muy predominante",
+      "inicio/final rápido/súbito",
+      "alta incidencia de conducta automática/compleja violenta no recordada"
+    ],
+    "subjective_marker": "Suele haber amnesia completa posterior al episodio; previo al desarrollo completo o durante formas leves, reporte de despersonalización bizarra o trance.",
+    "behavioral_marker": "Conciencia embotada y ensimismada en un objeto/tema, reactividad selectiva al ambiente, propensión al raptus violento por miedo extremo paranoide no suprimible o fugas impulsivas irreflexivas."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "campo_conciencia",
+        "type": "string",
+        "expected": "estrecho_selectivo"
+      },
+      {
+        "marker": "focalizacion_afectiva",
+        "type": "string",
+        "expected": "extrema"
+      },
+      {
+        "marker": "amnesia_lacunar_posterior",
+        "type": "string",
+        "expected": "casi_siempre"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Delirium",
+      "reason": "El estado crepuscular (twilight) se diferencia en poseer un campo de concentración más preservado (pero estrechado y rígido a una temática) con un fin más abrupto en lugar del inicio-fin difuso o la inatención-fluctuación continua patognomónica del delirium metabólico-tóxico."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "23150000"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

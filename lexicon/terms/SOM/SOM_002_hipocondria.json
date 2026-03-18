@@ -1,0 +1,79 @@
+{
+  "term_id": "SOM_002",
+  "canonical_name": "Hipocondría",
+  "synonyms_and_slang": [
+    "ansiedad por la salud",
+    "preocupación somática"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Preocupación persistente y miedo a tener o desarrollar una enfermedad médica grave, basada en una interpretación errónea de síntomas corporales normales o menores.",
+    "required_features": [
+      "preocupación por la salud física",
+      "interpretación catastrófica de sensaciones corporales",
+      "persistencia a pesar de evaluaciones médicas negativas"
+    ],
+    "subjective_marker": "El paciente refiere temor constante a estar enfermo y describe con detalle sensaciones que atribuye a patologías graves.",
+    "behavioral_marker": "Búsqueda repetida de atención médica, auto-exploración frecuente o evitación de información médica."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-14",
+      "relation": "primary_expression",
+      "context": "conciencia_corporal"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_020",
+      "canonical_name": "Delirio somático monotemático",
+      "reason": "En la hipocondría hay una preocupación/miedo que puede ser cuestionado (idea sobrevalorada o ansiosa); en el delirio la certeza es absoluta e inamovible."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "Diferenciar de la somatización pura, donde el foco está en el síntoma mismo; en la hipocondría el foco es el *significado* (la enfermedad temida).",
+    "A menudo se asocia con rasgos de personalidad obsesiva."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6B23",
+      "label": "Hypochondriasis"
+    },
+    "snomed_ct": {
+      "concept_id": "60113000",
+      "preferred_term": "Hypochondriasis (disorder)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "Whiteley Index",
+        "item": "Preocupación por la enfermedad",
+        "scale_id": "WI"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Fish"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

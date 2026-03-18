@@ -1,0 +1,71 @@
+{
+  "term_id": "AFF_015",
+  "canonical_name": "Embotamiento afectivo",
+  "synonyms_and_slang": [
+    "blunted affect",
+    "afecto amortiguado",
+    "amortiguamiento emocional"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Reducción cuantitativa de la expresión y respuesta emocional, menos severa que el aplanamiento. El paciente aún responde emocionalmente a estímulos muy intensos. Distinto del aplanamiento (sin respuesta) y del embotamiento subjetivo (experiencia interna reducida).",
+    "required_features": [
+      "reducción de expresión emocional",
+      "respuesta emocional posible ante estímulos intensos",
+      "menos severo que aplanamiento"
+    ],
+    "subjective_marker": "El paciente refiere sentir 'menos' que antes, como 'apagado', pero puede aún sentir emociones intensas en circunstancias extremas.",
+    "behavioral_marker": "Expresión facial reducida pero no ausente; respuesta a humor o noticias dramáticas atenuada."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "expresion_emocional",
+        "type": "string",
+        "expected": "reducida"
+      },
+      {
+        "marker": "respuesta_estimulo_intenso",
+        "type": "string",
+        "expected": "presente"
+      },
+      {
+        "marker": "PANSS_N2",
+        "type": "string",
+        "expected": "moderado"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Aplanamiento afectivo",
+      "reason": "El aplanamiento es más severo; el embotamiento preserva respuestas a estímulos intensos."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.3"
+    },
+    "snomed_ct": {
+      "concept_id": "25403009"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

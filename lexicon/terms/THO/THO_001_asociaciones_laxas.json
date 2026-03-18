@@ -1,0 +1,75 @@
+{
+  "term_id": "THO_001",
+  "canonical_name": "Asociaciones laxas",
+  "term_kind": "symptom",
+  "definition_clinical": {
+    "core": "Pérdida de la conexión lógica normal entre ideas, con vínculos remotos o idiosincrásicos.",
+    "required_features": [
+      "conexiones ilógicas o débiles",
+      "comprensibilidad disminuida",
+      "mantenimiento de la estructura gramatical básica (a diferencia de la incoherencia)"
+    ],
+    "subjective_marker": "Describe que sus ideas se conectan de formas que otros no entienden.",
+    "behavioral_marker": "Discurso que salta entre temas con hilos conductores muy débiles."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente",
+      "episodica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-02",
+      "relation": "primary_expression",
+      "context": "asociaciones"
+    }
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Discurso que salta entre temas con hilos conductores muy débiles o basados en vínculos idiosincrásicos (“Ayer comí pollo, porque los pájaros vuelan y los aviones son de metal”). Se mantiene la estructura gramatical, pero la conexión lógica es remota o incomprensible."
+    }
+  ],
+  "version": "1.0.0",
+  "synonyms_and_slang": [
+    "asociaciones laxas"
+  ],
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "exclusions": [
+    {
+      "term_id": "THO_003",
+      "canonical_name": "Asociaciones laxas",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir asociaciones laxas con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "mappings": {}
+}

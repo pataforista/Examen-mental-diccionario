@@ -1,0 +1,70 @@
+{
+  "term_id": "VOL_009",
+  "canonical_name": "Negativismo",
+  "synonyms_and_slang": [
+    "resistencia inmotivada",
+    "negativismo pasivo/activo"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Resistencia obstinada, inmotivada y frecuentemente automática a todas las instrucciones, sugerencias o intentos de movilización externa. Puede ser pasivo (hacer nada) o activo (hacer lo exactamente opuesto). Signo cardinal de la catatonía.",
+    "required_features": [
+      "resistencia a instrucciones/movimientos",
+      "inmotivada (sin razón lógica aparente)",
+      "pasiva (no hacer) o activa (hacer lo opuesto)"
+    ],
+    "subjective_marker": "Suele ser inaccesible el relato subjetivo; no parece haber una 'decisión' consciente de oponerse.",
+    "behavioral_marker": "Negativismo motor (rigidez proporcional a la fuerza que ejerce el examinador al intentar mover un miembro), mutismo negativista, evitación visual activa."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "resistencia_instrucciones",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "motivacion_logica",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "catatonia_sindrome",
+        "type": "string",
+        "expected": "evaluar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Oposicionismo",
+      "reason": "El oposicionismo (ej. trastorno negativista desafiante) tiene intención interpersonal, rebeldía y carga afectiva irritable; el negativismo catatónico es frío, automático y psicomotor."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "34185006"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

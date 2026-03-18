@@ -1,0 +1,63 @@
+{
+  "term_id": "CNS_008",
+  "canonical_name": "Moria",
+  "synonyms_and_slang": [
+    "frivolidad patológica orgánica",
+    "síndrome frontal Witzelsucht (dependiendo de traducción y escuela)"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Afectación compleja del nivel funcional pero primariamente un trastorno comportamental / estado global del Yo donde predominan crónicamente una jocosidad inadaptada, superficial, fatua y persistente, caracterizada por la producción repetitiva de bromas insípidas, pueriles o de pobre gracia acompañadas de desinhibición franca y afecto inapropiado sin contenido de ánimo maníaco estricto verdadero ni componentes proactivos del mismo (no es manía primaria). Muy correlativa de lesión neurológica frontal/prefrontal focal (Etiologías típicas en demencia FrontoTemporal, Meningiomas frontales u orbitofrontales, Trauma o EM).",
+    "required_features": [
+      "afectación cualitativa global conductual en pro de una jovialidad/frikismo pueril inapropiada, continua y a-contextual (involuntario mal chiste y regocijo fatuo asociado)",
+      "alteración a la par de las normas conductuales inhibidas sociales",
+      "etiología base no episódica psiquiátrica-afectiva."
+    ],
+    "subjective_marker": "Agnosia/anosognosia severa social; el sujeto cree ser divertido y estar bromeando placenteramente no percibiéndose socialmente inadaptado.",
+    "behavioral_marker": "Humor negro/básico continuo sobre eventos irrelevantes/tristes ajenos, incontinencia verbal jocosa, escasa empatía al dolor del entorno en su evaluación verbal."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "asociación_jocosidad_enfermedad_base",
+        "type": "string",
+        "expected": "alta"
+      },
+      {
+        "marker": "desinhibición_frontal_evaluación",
+        "type": "string",
+        "expected": "comprometida (pruebas neuropsicologicas pobres)"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Euforia de Manía Pura (Trastorno Afectivo Bipolar)",
+      "reason": "En la manía, la grandiosidad y la hiperactividad con discurso hiperacelerado (verborrea imparable y asociaciones de vuelo de ideas ideofugitivo) o presión para hablar acompañan a la euforia o jocosidad del sujeto de forma episódica, la Moria frontal es más crónica, vacía, impulsiva frontal, insulsa (simple sin gran verborrea per se de vuelo complejo creativo ni hiperiniciativa volitiva dirigida, más pueril y des-integrada al ambiente)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

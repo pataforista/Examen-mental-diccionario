@@ -1,0 +1,89 @@
+{
+  "term_id": "PER_018",
+  "canonical_name": "Micropsia",
+  "synonyms_and_slang": [
+    "micropsia"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Distorsión visual en la que los objetos se perciben más pequeños de lo real.",
+    "required_features": [
+      "presencia clínica de micropsia",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con micropsia.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con micropsia en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_021",
+      "canonical_name": "Micropsia",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir micropsia con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Percibe disminución de tamaño o lejanía aparente: “Las personas se ven diminutas, como muy lejos; como si estuviera viendo con binoculares al revés”. Se consigna como distorsión de escala, a veces episódica."
+    }
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB24.CZ",
+      "uri": "https://id.who.int/icd/entity/149830589",
+      "label": "Visual scale distortion"
+    },
+    "snomed_ct": {
+      "concept_id": "421801003",
+      "preferred_term": "Micropsia (symptom)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

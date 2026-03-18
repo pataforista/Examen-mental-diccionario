@@ -1,0 +1,68 @@
+{
+  "term_id": "INS_009",
+  "canonical_name": "Insight parcial",
+  "synonyms_and_slang": [
+    "conciencia de enfermedad oscilante",
+    "insight grado 2/3"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado intermedio donde el sujeto reconoce que algunos de sus síntomas o cambios conductuales son anormales, pero los atribuye a causas externas ajenas a una enfermedad mental (ej. mal de ojo, estrés extremo, complots, virus físico), o reconoce la enfermedad pero niega los síntomas principales.",
+    "required_features": [
+      "reconocimiento de anormalidad parcial",
+      "atribución causal errónea",
+      "fluctuación"
+    ],
+    "subjective_marker": "'Sé que estoy más agitado y veo sombras, pero eso es por el estrés del trabajo que me quieren sacar', 'Tengo nervios, pero la persecución psíquica de mi vecino es real'.",
+    "behavioral_marker": "Puede aceptar ciertas medicaciones ('para dormir' o 'para los nervios') pero rechaza las indicadas para sus síntomas nucleares."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "reconocimiento_anormalidad",
+        "type": "string",
+        "expected": "parcial"
+      },
+      {
+        "marker": "atribucion_causal",
+        "type": "string",
+        "expected": "no_enfermedad_mental"
+      },
+      {
+        "marker": "escala_insight",
+        "type": "string",
+        "expected": "3"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Insight intelectual",
+      "reason": "El intelectual reconoce la enfermedad teóricamente pero falla en aplicarla a sus acciones."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

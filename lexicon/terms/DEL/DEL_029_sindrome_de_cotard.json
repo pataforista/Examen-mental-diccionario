@@ -1,0 +1,45 @@
+{
+  "term_id": "DEL_029",
+  "canonical_name": "Síndrome de Cotard",
+  "term_kind": "syndrome",
+  "definition_clinical": {
+    "core": "Delirio de negación de la propia existencia o de órganos internos.",
+    "required_features": [
+      "negación vital o corporal"
+    ],
+    "subjective_marker": "Afirma estar muerto o no tener vísceras.",
+    "behavioral_marker": "Negativismo grave, rechazo de alimentos por creer ser inmortal o estar muerto."
+  },
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [],
+  "exclusions": [],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Mis órganos se pudrieron hace semanas; ya no tengo corazón ni intestinos, soy solo una cáscara vacía que camina."
+    },
+    {
+      "type": "observation",
+      "text": "El paciente afirma estar muerto, puede presentar una falta de respuesta emocional extrema (nihilismo) y rechaza cualquier necesidad vital básica por considerarla innecesaria para un cadáver."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": []
+  },
+  "mappings": {}
+}

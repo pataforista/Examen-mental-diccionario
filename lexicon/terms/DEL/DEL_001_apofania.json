@@ -1,0 +1,70 @@
+{
+  "term_id": "DEL_001",
+  "canonical_name": "Apofanía",
+  "synonyms_and_slang": [
+    "apofanía"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Etapa de formación delirante en la que hechos neutros adquieren significado anormal intenso.",
+    "required_features": [
+      "presencia clínica de apofanía",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con apofanía.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con apofanía en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "primary_expression",
+      "context": "pensamiento_contenido"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_009",
+      "canonical_name": "Apofanía",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir apofanía con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

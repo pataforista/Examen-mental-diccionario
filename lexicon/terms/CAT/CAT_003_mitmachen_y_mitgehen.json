@@ -1,0 +1,79 @@
+{
+  "term_id": "CAT_003",
+  "canonical_name": "Mitmachen y Mitgehen",
+  "synonyms_and_slang": [
+    "cooperación excesiva",
+    "fenómeno del imán"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Mitmachen: Cooperación extrema donde el paciente permite que una parte de su cuerpo se mueva ante la más leve presión, incluso si se le instruye para resistir. Mitgehen: El paciente mueve su cuerpo en la dirección de la presión del examinador como si fuera un imán.",
+    "required_features": [
+      "ausencia de resistencia al movimiento pasivo",
+      "movimiento iniciado por el examinador y continuado exageradamente por el paciente",
+      "cualidad de 'pasividad' motor"
+    ],
+    "subjective_marker": "Incapacidad para resistir el movimiento impuesto.",
+    "behavioral_marker": "El brazo del paciente 'flota' o sigue la mano del examinador ante un toque ligero."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "maniobras_fisicas"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conducta_motriz"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "CAT_005",
+      "canonical_name": "Flexibilidad cérea",
+      "reason": "En la flexibilidad cérea hay una resistencia plástica inicial; en el Mitmachen la resistencia es nula."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "Diferenciar Mitgehen (seguimiento activo pero automático) de Mitmachen (cooperación pasiva).",
+    "Es un signo muy específico de catatonia y difícil de simular."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A21.Z",
+      "label": "Catatonia"
+    },
+    "snomed_ct": {
+      "concept_id": "247895000",
+      "preferred_term": "Mitgehen (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "BFCRS",
+        "item": "Mitgehen",
+        "scale_id": "BFCRS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Leonhard"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

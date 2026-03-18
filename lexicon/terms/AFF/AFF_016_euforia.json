@@ -1,0 +1,76 @@
+{
+  "term_id": "AFF_016",
+  "canonical_name": "Euforia",
+  "synonyms_and_slang": [
+    "bienestar excesivo patológico",
+    "elación",
+    "ánimo eufórico"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado de bienestar, alegría y satisfacción excesivos, desconectados de las circunstancias objetivas. A diferencia del ánimo elevado maníaco, la euforia puede ocurrir en patologías orgánicas (lesiones frontales derechas, EM, síndromes paraneoplásicos) con poca presión o actividad. Andreasen distingue euforia (patológica, desconectada) de ánimo elevado maníaco (más activo-expansivo).",
+    "required_features": [
+      "bienestar excesivo e inapropiado",
+      "desconexión de circunstancias",
+      "puede coexistir con anosognosia"
+    ],
+    "subjective_marker": "El paciente refiere sentirse 'estupendamente bien' sin base objetiva; puede no entender la preocupación de familiares.",
+    "behavioral_marker": "Sonrisa inapropiada, despreocupación ante situaciones graves, risas sin motivo."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "bienestar_descontextualizado",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "actividad_aumentada",
+        "type": "string",
+        "expected": "no_necesaria"
+      },
+      {
+        "marker": "organico",
+        "type": "string",
+        "expected": "descartar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Manía",
+      "reason": "La manía tiene actividad aumentada, verborrea y conductas de riesgo; la euforia puede ser pasiva y silenciosa."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Hipomanía",
+      "reason": "La hipomanía incluye aumento de actividad y es episódica; la euforia puede ser signo orgánico estable."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "42892008"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

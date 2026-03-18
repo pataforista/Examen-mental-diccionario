@@ -1,0 +1,82 @@
+{
+  "term_id": "MEM_017",
+  "canonical_name": "Fuga disociativa",
+  "synonyms_and_slang": [
+    "fuga psicogénica",
+    "fugue state",
+    "poriomania (término histórico)"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Episodio de viaje físico inesperado, alejándose del hogar o lugar habitual, con amnesia para el pasado y asunción de identidad nueva (parcial o completa). Inicio típicamente asociado a trauma severo o conflicto insoportable.",
+    "required_features": [
+      "viaje físico inesperado",
+      "amnesia para el pasado",
+      "asunción parcial o completa de nueva identidad",
+      "sin sustrato orgánico"
+    ],
+    "subjective_marker": "El paciente no puede explicar cómo llegó al lugar donde está ni quién era antes. Puede asumir nombre y profesión distintos.",
+    "behavioral_marker": "Deambulación geográfica sin explicación; aparente normalidad superficial durante el episodio."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "viaje_no_explicado",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "identidad_nueva",
+        "type": "string",
+        "expected": "presente"
+      },
+      {
+        "marker": "amnesia_autobiografica",
+        "type": "string",
+        "expected": "completa"
+      },
+      {
+        "marker": "organico",
+        "type": "string",
+        "expected": "ausente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia disociativa simple",
+      "reason": "La fuga añade dimensión de viaje físico y nueva identidad."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Trastorno disociativo de identidad",
+      "reason": "En la fuga la fragmentación de identidad es episódica y no hay alternancia sistemática entre estados-ego."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6B61"
+    },
+    "snomed_ct": {
+      "concept_id": "61264004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

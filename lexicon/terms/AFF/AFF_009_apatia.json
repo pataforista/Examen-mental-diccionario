@@ -1,0 +1,76 @@
+{
+  "term_id": "AFF_009",
+  "canonical_name": "Apatía",
+  "synonyms_and_slang": [
+    "indiferencia afectiva",
+    "apathy",
+    "disminución de motivación"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Reducción marcada de la motivación, iniciativa y conducta dirigida a metas, no explicada por disminución del nivel de conciencia ni por angustia emocional. Marin (1991): reducción de motivación relativa al nivel previo del sujeto. Frecuente en demencias, lesiones frontales, esquizofrenia, depresión.",
+    "required_features": [
+      "reducción de motivación",
+      "reducción de iniciativa conductual",
+      "sin explicación por somnolencia o angustia"
+    ],
+    "subjective_marker": "El paciente (o familiares) reporta indiferencia, falta de interés en actividades habituales, sin tristeza necesariamente.",
+    "behavioral_marker": "Pocas actividades iniciadas espontáneamente, escasa respuesta emocional, requiere estimulación externa para actuar."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "AES≥40",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "iniciativa_espontanea",
+        "type": "string",
+        "expected": "reducida"
+      },
+      {
+        "marker": "sin_angustia_prominente",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Anhedonia",
+      "reason": "La apatía es reducción de motivación; la anhedonia es reducción de experiencia de placer. Diferentes constructos aunque frecuentemente solapados."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Abulia",
+      "reason": "La abulia es falta de voluntad; la apatía es más amplia (motivación, iniciativa, emoción)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "20602000"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

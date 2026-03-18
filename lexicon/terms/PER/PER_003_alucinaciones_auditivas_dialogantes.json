@@ -1,0 +1,76 @@
+{
+  "term_id": "PER_003",
+  "canonical_name": "Alucinaciones auditivas dialogantes",
+  "synonyms_and_slang": [
+    "alucinaciones auditivas dialogantes"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Dos o más voces que dialogan entre sí, usualmente acerca del paciente.",
+    "required_features": [
+      "presencia clínica de alucinaciones auditivas dialogantes",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con alucinaciones auditivas dialogantes.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con alucinaciones auditivas dialogantes en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_017",
+      "canonical_name": "Alucinaciones auditivas dialogantes",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir alucinaciones auditivas dialogantes con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Refiere dos o más voces que conversan entre sí sobre él: una dice “Es un inútil” y otra responde “Déjalo”. El paciente se asume como objeto de la conversación, se muestra reactivo (ansioso/irritable) y reporta ser espectador pasivo."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

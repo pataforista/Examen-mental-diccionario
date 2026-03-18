@@ -1,0 +1,69 @@
+{
+  "term_id": "AFF_034",
+  "canonical_name": "Sentimientos impuestos",
+  "synonyms_and_slang": [
+    "emoción pasiva",
+    "afecto impuesto",
+    "made feelings"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Experiencia de emociones como ajenas al propio yo, sentidas como introducidas o implantadas por una fuerza externa. Fenómeno pasivo del dominio afectivo. Schneiderianos de primer rango. Diferente de la alexitimia (dificultad para identificar) y del aplanamiento (reducción de expresión).",
+    "required_features": [
+      "emoción vivida como ajena al yo",
+      "atribución a fuerza externa",
+      "sin control voluntario"
+    ],
+    "subjective_marker": "El paciente refiere: 'este miedo no es mío, me lo ponen desde afuera', 'siento tristeza pero no es la mía'.",
+    "behavioral_marker": "Conducta discordante con el estado emocional aparente; desorientación por el afecto experimentado."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "atribucion_externa",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "control_emocional",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "schneyderiano",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Depersonalización afectiva",
+      "reason": "En la despersonalización las emociones se sienten 'apagadas' o 'como de otro'; en los sentimientos impuestos se sienten como activamente introducidos."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

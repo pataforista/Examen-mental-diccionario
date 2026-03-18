@@ -1,0 +1,121 @@
+{
+  "term_id": "SPE_002",
+  "canonical_name": "Disartria",
+  "synonyms_and_slang": [
+    {
+      "term": "dificultad para articular",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "lengua pesada",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "hablar arrastrado",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "dysarthria",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Trastorno de la articulación de la palabra debido a una alteración en el control neuromuscular de los órganos fonadores.",
+    "required_features": [
+      "comprensión, gramática y léxico conservados",
+      "falla en la ejecución motora del habla (articulación, respiración, resonancia)",
+      "puede afectar velocidad y ritmo"
+    ],
+    "subjective_marker": "Refiere que se le 'traba la lengua' o que los demás no le entienden bien al hablar.",
+    "behavioral_marker": "Emisión verbal borrosa, poco nítida, 'pastosa' o con esfuerzo articulatorio evidente."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente",
+      "episodica",
+      "aguda"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Benzodiacepinas/Litio",
+        "risk": "medium",
+        "context": "toxicidad o sobredosis"
+      },
+      {
+        "class": "Antipsicóticos",
+        "risk": "low",
+        "context": "parkinsonismo farmacológico"
+      }
+    ],
+    "computable_markers": [
+      {
+        "marker": "articulation_impairment",
+        "type": "boolean",
+        "expected": true
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": "lenguaje_motor"
+    },
+    {
+      "domain_id": "DOM-04",
+      "relation": "associated_sign",
+      "context": "organicidad_neurologica"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SPE_005",
+      "canonical_name": "Afasia",
+      "reason": "En la afasia el problema es del lenguaje (simbólico/gramatical); en la disartria es del habla (motor/articulatorio).",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Una disartria de inicio agudo obliga a descartar enfermedad cerebrovascular (ACV) o intoxicación aguda."
+    }
+  ],
+  "teaching_notes": [
+    "Diferenciar de la dislalia (problema de aprendizaje articulatorio en la infancia) y de la afasia."
+  ],
+  "cognitive_pitfalls": [
+    "Asumir que el paciente tiene un déficit intelectual porque habla de forma borrosa.",
+    "Minimizar una disartria leve como 'cansancio' sin descartar organicidad."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Emisión verbal borrosa, “pastosa” o “como con la lengua pesada”, dificultando la inteligibilidad. El lenguaje (gramática y contenido) es correcto, pero la ejecución motora de la articulación está alterada."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Neurología clínica"
+    ],
+    "clinical_tradition": [
+      "Fonoaudiología",
+      "Medicina interna"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

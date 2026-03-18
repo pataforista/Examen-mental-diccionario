@@ -1,0 +1,75 @@
+{
+  "term_id": "MEM_008",
+  "canonical_name": "Confabulación espontánea",
+  "synonyms_and_slang": [
+    "confabulación provista",
+    "falsificación retrospectiva inconsciente"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Producción involuntaria e inconsciente de recuerdos falsos o distorsionados para llenar lagunas mnésicas, sin intención de engañar. El paciente cree en la veracidad de sus relatos. Clásicamente asociado al síndrome de Korsakoff.",
+    "required_features": [
+      "producción sin intención de engaño",
+      "creencia del paciente en sus relatos",
+      "relación con amnesia subyacente"
+    ],
+    "subjective_marker": "El paciente relata eventos plausibles pero falsos; niega tener problemas de memoria.",
+    "behavioral_marker": "Historias espontáneas no solicitadas con errores factuales verificables; consistencia interna variable."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "intencion_engano",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "amnesia_subyacente",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "critica",
+        "type": "string",
+        "expected": "ausente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Confabulación provocada",
+      "reason": "La espontánea emerge sin ser elicitada; la provocada aparece en respuesta a preguntas directas."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Mentira patológica (pseudología fantástica)",
+      "reason": "En la confabulación no hay intención de engaño ni beneficio secundario."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "405533002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

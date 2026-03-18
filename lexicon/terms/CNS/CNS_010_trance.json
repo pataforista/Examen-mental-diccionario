@@ -1,0 +1,67 @@
+{
+  "term_id": "CNS_010",
+  "canonical_name": "Trance",
+  "synonyms_and_slang": [
+    "estado de alteración autoinducida o rítmica de conciencia / 'Absorción' hipnótica"
+  ],
+  "term_kind": "estado",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Modificación transitoria del nivel y contenido de conciencia de inicio relativamente súbito, en la cual se pierde de forma focal el sentido de la identidad personal basal, con o sin limitación de la motricidad espontánea, en donde la persona entra al influjo focal y concentrado hiper-estrecho en un mandato (hipnosis), estímulo rítmico (danza ritual), místico (espiritual) o sugestión, perdiendo responsividad normal con el resto de estímulos periféricos del ambiente y a menudo cursando con obediencia automática o acciones estereotipadas preestablecidas. Es cultural e inintencionalmente auto o co-inducido en su mayor parte de eventos no patológicos (normal si el contexto lo espera y justifica y es controlado y reversible a voluntad de grupo; patológico si involuntario, reiterativo, disruptivo o crónico amnésico –Fuga Disociativa Severa/Trastorno de Posesión–)",
+    "required_features": [
+      "alteración de sentido de identidad personal (disociación)",
+      "focalización atencional estrechada sobre el estímulo o contexto inducente",
+      "desconexión de entorno periférico mediato conservando vías sensomotoras."
+    ],
+    "subjective_marker": "Sensación vivida de flujo o de estar bajo el control de fuerzas externas, sin dolor ante agresiones u oraciones mecánicas irrefrenables; olvido de parte del episodio.",
+    "behavioral_marker": "Mirada fija y dirigida, pérdida cualitativa de respuestas normales en entorno, mantenimiento tenaz y automático de la actividad impuesta o sugerida (canto, rezos continuos, posturas extremas rítmicas)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "identidad_personal_basal",
+        "type": "string",
+        "expected": "modificada"
+      },
+      {
+        "marker": "estrechamiento_atencion",
+        "type": "string",
+        "expected": "focalizado"
+      },
+      {
+        "marker": "sugestionabilidad",
+        "type": "string",
+        "expected": "altisima"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Trance de Posesión Patológico",
+      "reason": "En el diagnóstico (CIE-11 6B62 Trastorno de trance y posesión), se reemplaza la identidad usual por el 'espíritu' o convicción delirante, ocurriendo esto sin aceptación o deseo cultural prestando profundo malestar e inhabilitación y ocurriendo repetitivamente fuera de ritos."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6B62.0"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

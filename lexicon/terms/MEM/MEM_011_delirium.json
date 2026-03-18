@@ -1,0 +1,89 @@
+{
+  "term_id": "MEM_011",
+  "canonical_name": "Delirium",
+  "synonyms_and_slang": [
+    "síndrome confusional agudo",
+    "estado confusional agudo",
+    "encefalopatía metabólica",
+    "acute confusional state"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Síndrome neurocognitivo agudo caracterizado por inatención, alteración del nivel de conciencia, inicio agudo y curso fluctuante. Siempre secundario a causa médica identificable (metabólica, infecciosa, tóxica, etc.). Criterios DSM-5: inatención + alteración de cognición + inicio agudo + fluctuación + causa médica.",
+    "required_features": [
+      "inatención prominente",
+      "inicio agudo (horas a días)",
+      "fluctuación diurna",
+      "causa médica subyacente",
+      "curso reversible si se trata la causa"
+    ],
+    "subjective_marker": "El paciente está confuso, no puede seguir una conversación, se muestra desorientado en tiempo y lugar; puede tener alucinaciones visuales.",
+    "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "CAM",
+        "type": "string",
+        "expected": "positivo"
+      },
+      {
+        "marker": "atencion",
+        "type": "string",
+        "expected": "alterada"
+      },
+      {
+        "marker": "inicio",
+        "type": "string",
+        "expected": "agudo"
+      },
+      {
+        "marker": "fluctuacion",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "causa_medica",
+        "type": "string",
+        "expected": "identificar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Demencia",
+      "reason": "La demencia es crónica, progresiva; el delirium es agudo y fluctuante."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Esquizofrenia",
+      "reason": "En esquizofrenia no hay fluctuación de conciencia ni causa médica aguda."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6D70"
+    },
+    "snomed_ct": {
+      "concept_id": "2776000"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

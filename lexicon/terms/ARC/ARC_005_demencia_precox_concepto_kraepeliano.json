@@ -1,0 +1,53 @@
+{
+  "term_id": "ARC_005",
+  "canonical_name": "Demencia Precox (Concepto Kraepeliano)",
+  "synonyms_and_slang": [
+    "Demencia Temprana (Kraeplin)"
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Dementia praecox (del latín: 'locura prematura') es un diagnóstico psiquiátrico histórico ideado por el psiquiatra alemán Emil Kraepelin (originario de su libro de texto de 1893 pero fundamentado teóricamente como síndrome clínico maestro en 1899 en la 6ta ed.) para clasificar y aglomerar una entidad y proceso de afección cerebral crónico y degenerativo, inexorable que típicamente iniciaba de modo muy grave (y se caracterizaba primariamente en la fase crónica por un proceso devastador de desintegración y atrofia cognitiva-conativa, no primariamente intelectual a la usanza de las demencias seniles orgánicas o la de un déficit focal sino integrativo final) impactando y destrozando en primera mitad de la vida adulta o juventud ('temprana') fundamentalmente en sus aspectos prácticos integrativos sociales en fase terminal a pesar de cursar a grandes tramos con los síntomas activos como el Delirio, catatonia y hebefrénia y alucionaciones transitorias paranoicas pero resultando todos aquellos y cada uno irremediablemente y subsumidos en el deterioro/falta integrativa final residual y definitivo sin recuperación basal a nivel psicosocial.",
+    "required_features": [
+      "Concepto fundacional etiológico unitario propuesto en contraposición de su 'Locura Maníaco Defensiva' de evolución cíclica que recupera al basal e integridad final, sirviendo de progenitor teórico inmediato del constructo esquizofrenico actual. Posteriormente, Bleuler acuña su término de 'Grupo de las Esquizofrenias' para reemplazar el término al evidenciar que estos individuos ni empezaban siempre siempre precozmente su enfermedad y ni se deterioraban en un deterioro estrictamente 'Demenciado' y terminal idéntico al Alzheimer en todas sus facultades por igual en vez su mente que se fragmentaba / disociaba primariamente las funciones basales operativas del fluir unificado o 'escindía'."
+    ],
+    "subjective_marker": "N/A - Término nosológico histórico (La vivencia subjetiva correspondería a los síntomas de lo que hoy conocemos como esquizofrenia que incluye esta entidad en estado crónico de gran déficit / deterioro tardío y empobrecimiento volitivo/lógico-social pero donde se agrupaba los subgrupos paranoides de curso devastador, la forma hebefrénica juvenil rápida y el grupo Catatónico -que era un constructo originario de Kahlbaum, y Kraepelin lo incluyó como un grupo de la misma entidad de Deterioro Precoz).",
+    "behavioral_marker": "Deterioro social progresivo irremediable en un estado con embotamiento atroz e infuncional persistente juvenil subintrante (lo que se catalogaba como curso deteriorante de este paradigma patológico alemán decimonónico)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "Clasificación nosológica Histórica. (Kraepelin 1899).",
+        "type": "string",
+        "expected": ""
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Esquizofrenia concepto Bleuleriano",
+      "reason": "Bleuler rebautizó la Dementia Praecox prestando mucha menos importancia nuclear de diagnostico a un futuro curso inexorable siempre o a un deterioro total como piedra filosofal unificadora del mismo o al inicio cronológico obligatorio previo a los 30 años; él prefirió focalizar e incluir pacientes por la psicopatología primaria observada activa de su 'escisión' patológica vivencial basal (Esquizofrenia - las cuatro 'A': Asociaciones, Afecto, Autismo y Ambivalencia) lo que a la postre resultó ser la escuela que influyó más al DSM contemporáneo en USA. (El DSM hoy usa un concepto mixto pero eminentemente Bleuleriano con criterio cronológico y de deterioro de vuelta para el core sintomático a futuro, tratando de amalgamar los sistemas diagnósticos de ambas históricas fundaciones epistemológicas de la psicopatología fenomenológica estricta que no logró unirse del todo hasta decenios más tarde en consensos)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {},
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

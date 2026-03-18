@@ -1,0 +1,53 @@
+{
+  "term_id": "ARC_010",
+  "canonical_name": "Histeria (Neurosis Histérica)",
+  "synonyms_and_slang": [
+    "Neurosis Histérica de Freud / Histeria de Conversión y Disociativa Somática Clásica de Charcot a Pinel."
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Es un constructo psico-somático histórico originado desde la antigüedad griega e hipocrática pero pulido por el esplendor fenomenológico de base francesa y psicosomática vienesa a fines del siglo XIX y principios del XX, en la cual se asocia un conglomerado y amplia y confusa gama de grandiosas o floridas afecciones/conversiones sensorio-motoras, somáticas 'bizarramente' inexplicadas (anestesias en calcetín o guante anatómicamente imposibles para vías orgánicas de nervios periféricos), pérdidas de funciones súbitas de los sentidos (Ceguera y sordera Histérica sin base de lesiones visual u oído), paralisis de toda clase, y manifestaciones teatrales psíquico-comportamentales mayores convulsiones dramáticas con 'Arco de círculo', alteraciones severas disociativas del nivel de la memoria o conciencia (fugas, o incluso múltiples egos transitorios pseudo o hipnóticamente inducidas) o anestesias profundas para tratar de explicar y categorizar 'la psiconeurose' de etiología base fundamental traumático/defensiva en la esfera y aparato psíquico íntimo-funcional frente al dolor del super-yo vs represión inconsciente. Fue desmantelada conceptualmente por completo y fragmentada operativamente a mediados final del siglo XX desde el DSM y la CIE moderna en múltiples diagnósticos fenomenológicamente des-psicoanalizados en base a sus hallazgos empíricos puros sin proponer etiología analítica para el manual.",
+    "required_features": [
+      "Uso terminológico de época con un sustrato y constructos teóricos (modelo psicoanalítico defensivo conversivo clásico y su disociación psíquica histérica primaria fundacional post-traumática-represiva) inoperante pero basal para el vocabulario, estudio de la evolución de historia de la psiquiatría e inmensamente rico fenomenológicamente descripto como entidad nosológica en su mayor furor empírico Europeo y con un fuerte impacto socio-cultural antropológico vigente."
+    ],
+    "subjective_marker": "N/A",
+    "behavioral_marker": "El amplio compendio descrito por las neurosis histero-conversivas del siglo pasado de Salpêtrière bajo Jean-Martin Charcot, sus fases: Epileptoide – Grandes movimientos /Clownismo/ Posesiones – Actitudes pasionales delusivas transitorias emocionales intensas y – Delirio y disolución dramática de final afectivo sombrío o lloroso, resuelto (Ataque histérico clásico de París – hoy sumergidos en Trastornos somatomorfos y disociativos de conversión pseudoneurológica masiva psicógena)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "Clasificación nosológica Histórica. (Charcot, Janet, Freud 1880 - 1980 DSM II).",
+        "type": "string",
+        "expected": ""
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-12",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "DSM-5 o CIE-11 Trastorno de Síntomas Neurológicos Funcionales o el Trastorno Disociativo",
+      "reason": "En la actual escuela el constructo unitario histórico de la gigantesca 'Neurosis Histérica/Histeria' se subdividió quirúrgicamente separando los síntomas corporales / neurológicos bizarros puros en el grupo y capítulo de Síntomas Somáticos (Ej, Trastorno Funcional Neurológico Ciego/Motor –Conversivos somáticos sin alusión etiológica obligatoria–) hacia un lado, y los fenómenos y desvíos de memoria, y pérdida identitaria hacia un gran distinto cajón de manual en los Trastornos de tipo Disociador de nivel Conciencia/Identidad en otros espectros distintos, perdiendo en la actualidad cualquier lazo nominal/terminológico a nivel de diagnóstico con dicho histórico concepto decimonónico por considerarse o peyorativo, mal estandarizado en investigación neurobiológica o demasiado ligado a un constructo psicoanalítico de base etio patológica dogmática no validada en consensos biomédicos generales amplios modernos."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {},
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

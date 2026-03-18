@@ -1,0 +1,69 @@
+{
+  "term_id": "INS_002",
+  "canonical_name": "Ausencia de insight psiquiátrico",
+  "synonyms_and_slang": [
+    "insight grado 1",
+    "nula conciencia de enfermedad"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "El paciente niega totalmente estar sufriendo un trastorno de salud mental. Interpreta todos sus síntomas (alucinaciones, delirios) no como productos de una enfermedad propia, sino como hechos externos reales objetivos. No es una simple 'no aceptación', sino una incapacidad cognitiva para re-evaluar la propia experiencia patológica. David (1990) lo evalúa en tres dimensiones: reconocimiento de estar enfermo, reconocimiento de síntomas específicos, y necesidad de tratamiento.",
+    "required_features": [
+      "negación de padecer alteración mental",
+      "atribución externa/real de los síntomas psicóticos"
+    ],
+    "subjective_marker": "'Yo no estoy loco, son ellos los que me persiguen. Los micrófonos son reales, por qué habría de tomar medicación.'",
+    "behavioral_marker": "Rechazo activo y hostil del tratamiento psiquiátrico, inasistencia a citas de salud mental, querulancia."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "reconocimiento_enfermedad",
+        "type": "string",
+        "expected": "nulo"
+      },
+      {
+        "marker": "atribucion_sintomas",
+        "type": "string",
+        "expected": "externa"
+      },
+      {
+        "marker": "necesidad_tratamiento",
+        "type": "string",
+        "expected": "rechazada"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Insight parcial",
+      "reason": "El que presenta inicio parcial acepta que 'algo no está bien' aunque mantenga el sistema delirante intacto."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "23073007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

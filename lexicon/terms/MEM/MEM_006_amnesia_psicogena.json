@@ -1,0 +1,70 @@
+{
+  "term_id": "MEM_006",
+  "canonical_name": "Amnesia psicógena",
+  "synonyms_and_slang": [
+    "amnesia postraumática funcional",
+    "amnesia por represión"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Pérdida de memoria claramente relacionada con un evento traumático específico, sin lesión neurológica. Mecanismo propuesto: inhibición activa de recuperación (Freud) o disociación de acceso consciente (Janet).",
+    "required_features": [
+      "causa traumática identificable",
+      "sin daño neurológico",
+      "pérdida selectiva vinculada al trauma"
+    ],
+    "subjective_marker": "El paciente no puede acceder a recuerdos del evento traumático aunque sí a memorias previas y posteriores.",
+    "behavioral_marker": "Evitación de estímulos relacionados; reactivación parcial posible con hipnosis o abreacción."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "trauma_identificable",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "memoria_implicita",
+        "type": "string",
+        "expected": "frecuentemente_preservada"
+      },
+      {
+        "marker": "organico",
+        "type": "string",
+        "expected": "ausente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia disociativa",
+      "reason": "La psicógena enfatiza explícitamente el mecanismo psicodinámico; son conceptos solapados pero con énfasis distinto."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6B60.0"
+    },
+    "snomed_ct": {
+      "concept_id": "724655002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

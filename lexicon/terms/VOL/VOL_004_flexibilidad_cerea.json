@@ -1,0 +1,70 @@
+{
+  "term_id": "VOL_004",
+  "canonical_name": "Flexibilidad cérea",
+  "synonyms_and_slang": [
+    "catalepsia cerosa",
+    "waxy flexibility",
+    "flexibilitas cerea"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Tono muscular característico donde el paciente permite ser moldeado por el examinador en posturas bizarras, ofreciendo una resistencia inicial leve, plástica y constante (como doblar un tubo de cera o plomo), manteniendo luego la postura antigravitatoria impuesta por tiempo prolongado. Signo patognomónico de catatonía.",
+    "required_features": [
+      "resistencia plástica al movimiento pasivo inicial",
+      "mantenimiento de la postura impuesta"
+    ],
+    "subjective_marker": "No reportable durante el estado. Ocasionalmente referida a posteriori como estado de suspensión motor.",
+    "behavioral_marker": "El examinador levanta el brazo del paciente sobre su cabeza; la extremidad cede con resistencia plástica y se queda fija en el aire largo tiempo (catalepsia)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "resistencia_pasiva",
+        "type": "string",
+        "expected": "plastica"
+      },
+      {
+        "marker": "catalepsia_postural",
+        "type": "string",
+        "expected": "observable"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Rigidez en rueda dentada",
+      "reason": "La patología extrapiramidal (parkinsonismo) tiene cata escalonada por temblor superpuesto, distinto de la plasticidad constante de la cera."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Paratonía (Gegenhalten)",
+      "reason": "La paratonía es un negativismo motor donde la resistencia del paciente aumenta en proporción a la fuerza del examinador."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "2808006"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

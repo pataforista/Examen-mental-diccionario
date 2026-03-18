@@ -1,0 +1,69 @@
+{
+  "term_id": "TALD_017",
+  "canonical_name": "Pensamiento Inhibido",
+  "synonyms_and_slang": [
+    "Pensamiento Inhibido"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "El proceso de pensamiento es experimentado por el paciente como enlentecido, frenado o inhibido, como si pensara contra una resistencia interna que no puede superar. Puede llegar a la experiencia subjetiva de no poder pensar en absoluto.",
+    "required_features": [],
+    "subjective_marker": "Reportado por el paciente"
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-06",
+      "relation": "primary_expression",
+      "context": "tald_scale_subjective"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno reportado por el paciente."
+    }
+  ],
+  "teaching_notes": [
+    "Concepto TALD_025 de la escala TALD.",
+    "Registrar presencia/ausencia y severidad si es aplicable."
+  ],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "tald_scale": {
+      "item_number": 25,
+      "type": "subjective",
+      "scale_name": "Thought and Language Disturbance Scale"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "TALD Scale",
+        "item": "Pensamiento Inhibido",
+        "scale_id": "TALD_025"
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "tald_scale"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clinica"
+    ]
+  }
+}

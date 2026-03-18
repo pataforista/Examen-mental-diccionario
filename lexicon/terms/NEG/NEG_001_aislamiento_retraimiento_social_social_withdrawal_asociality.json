@@ -1,0 +1,63 @@
+{
+  "term_id": "NEG_001",
+  "canonical_name": "Aislamiento / Retraimiento Social (Social Withdrawal / Asociality)",
+  "synonyms_and_slang": [
+    "Asocialidad primaria patológica",
+    "anhedonia/apatía social combinada"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Un constructo cardinal negativo representativo, caracterizado por una disfunción o pérdida mantenida de toda motivación o capacidad subyacente de derivar sentido/vinculación e involucramiento en interacciones y contextos afectivo-sociales (familia, parejas, pares, sociedad en general). Tiende a ocurrir en ausencia pre-mórbida (un viraje notorio o gradual que lleva a vivir encerrado con desconexión psicosocial relacional dramática -'drift' de la sociedad general o familia a una individualidad aislada psiquiátricamente enferma-). Presente en fases prodrómicas, brotes y crónicas esquizo-espectrales y cuadros deficitario-depresivos complejos crónicos.",
+    "required_features": [
+      "desvinculación activa o pasiva (por pérdida volitiva) del seno relacional familiar e interaccional esperado",
+      "cronificación al avanzar sin respuesta funcional a incentivos psicosociales",
+      "infuncionalidad autolimitadora extrema resultante de esa carencia del vínculo."
+    ],
+    "subjective_marker": "Incomodidad vacía en la cercanía relacional, 'Prefiero por mucho vivir sólo con esto que adentro en el trato se pierde sentido', o directamente no sienten absolutamente la 'falta/hambre de contacto' mamífero o primatesco inherente a la normalidad del paciente (A-socialidad nuclear plana no carenciada en sí, solo una inercia al asilamiento no doloroso).",
+    "behavioral_marker": "Despido, no ir a escuela, no responder el teléfono jamás, habitar espacios físicos restringidos limitando su territorio basal a su alcoba todo el año incluso sin manías (o psicosis directas en su momento actuante persecutorio agudo, el aislamiento es una elección/estado inercial general basal)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "contactos_interpersonales_basales_mensuales",
+        "type": "string",
+        "expected": "tendencia_a_0"
+      },
+      {
+        "marker": "esfuerzo_sociable_funcional",
+        "type": "string",
+        "expected": "completamente_restringido o nulo."
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Fobia Social / TEPT",
+      "reason": "El fóbico siente altísimo terror orgánico (sudor, pánico, hiperarousal afectivo de miedo) a la evaluación social pero tiene vivo el hambre y deseo natural interno de interaccionar (aunque lo castre su fobia agudamente y llore); en la Asocialidad Esquizofrénica base, el constructo/motor o 'chip' del drive subyacente social (relacionarse, conectar) se ha apagado o dañado. El individuo se apartó progresiva y completamente y no desea el lazo de ninguna clase."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6A20"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

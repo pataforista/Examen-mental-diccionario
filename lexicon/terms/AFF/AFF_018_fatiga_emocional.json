@@ -1,0 +1,76 @@
+{
+  "term_id": "AFF_018",
+  "canonical_name": "Fatiga emocional",
+  "synonyms_and_slang": [
+    "agotamiento afectivo",
+    "burnout emocional",
+    "emotional exhaustion",
+    "compassion fatigue"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado de agotamiento de los recursos afectivos del sujeto, caracterizado por reducción de la empatía, distanciamiento emocional, sensación de vacío afectivo y dificultad para responder emocionalmente. Maslach lo describe como dimensión central del síndrome de burnout. Diferente del aplanamiento patológico por su relación con el agotamiento por sobrecarga.",
+    "required_features": [
+      "agotamiento de recursos afectivos",
+      "reducción de respuesta empática",
+      "relación con sobrecarga sostenida",
+      "sensación de vacío"
+    ],
+    "subjective_marker": "El paciente refiere: 'ya no puedo sentir nada por nadie', 'estoy vaciado', 'me da igual todo aunque sé que no debería'.",
+    "behavioral_marker": "Distanciamiento de personas cercanas, reducción de conductas de cuidado, irritabilidad secundaria al agotamiento."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "MBI_agotamiento",
+        "type": "string",
+        "expected": "alto"
+      },
+      {
+        "marker": "empatia",
+        "type": "string",
+        "expected": "reducida"
+      },
+      {
+        "marker": "sobrecarga_previa",
+        "type": "string",
+        "expected": "identificable"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Aplanamiento afectivo",
+      "reason": "El aplanamiento es síntoma primario; la fatiga emocional es reactiva a sobrecarga crónica."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Depresión mayor",
+      "reason": "La fatiga emocional puede preceder o acompañar la depresión, pero su especificidad está en la relación con sobrecarga de cuidado/trabajo."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "QD85"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

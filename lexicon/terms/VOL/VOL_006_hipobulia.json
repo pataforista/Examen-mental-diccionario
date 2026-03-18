@@ -1,0 +1,68 @@
+{
+  "term_id": "VOL_006",
+  "canonical_name": "Hipobulia",
+  "synonyms_and_slang": [
+    "voluntad debilitada",
+    "hipoabulia"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Grado menor de abulia. Disminución de la capacidad para iniciar y sostener actos voluntarios. El sujeto puede realizar rutinas simples pero fracasa en tareas que requieren esfuerzo volitivo sostenido o toma de decisiones complejas.",
+    "required_features": [
+      "disminución de iniciativa",
+      "fatiga volitiva rápida",
+      "preservación de rutinas simples"
+    ],
+    "subjective_marker": "El paciente refiere que todo cuesta 'un esfuerzo enorme', posterga decisiones, siente que su voluntad es débil.",
+    "behavioral_marker": "Procrastinación severa, abandono de tareas a la mitad, dependencia de otros para decisiones importantes."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "iniciativa_motora",
+        "type": "string",
+        "expected": "reducida"
+      },
+      {
+        "marker": "esfuerzo_sostenido",
+        "type": "string",
+        "expected": "fallido"
+      },
+      {
+        "marker": "rutinas",
+        "type": "string",
+        "expected": "preservadas"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Abulia",
+      "reason": "La hipobulia es un déficit cuantitativamente menor, permitiendo alguna acción autónoma pobre."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

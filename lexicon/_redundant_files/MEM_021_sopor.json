@@ -1,0 +1,76 @@
+{
+  "term_id": "MEM_021",
+  "canonical_name": "Sopor",
+  "synonyms_and_slang": [
+    "adormecimiento extremo",
+    "obtundation",
+    "estupor somnoliento"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Estado de adormecimiento profundo del que el paciente puede ser despertado solo con estímulos intensos (dolorosos o verbales fuertes), recayendo en somnolencia al cesar el estímulo. GCS típicamente 9-12.",
+    "required_features": [
+      "despertar solo con estímulos intensos",
+      "recaída en somnolencia",
+      "respuestas reducidas pero presentes"
+    ],
+    "subjective_marker": "No aplicable (el paciente no puede dar informe subjetivo coherente).",
+    "behavioral_marker": "Ojos cerrados, apertura ocular solo con estímulo intenso, respuestas verbales mínimas o incoherentes."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "GCS",
+        "type": "string",
+        "expected": "9-12"
+      },
+      {
+        "marker": "apertura_ocular",
+        "type": "string",
+        "expected": "con_estimulo_intenso"
+      },
+      {
+        "marker": "respuesta_verbal",
+        "type": "string",
+        "expected": "minima"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Obnubilación",
+      "reason": "El sopor es más profundo: requiere estímulos intensos; la obnubilación preserva la comunicación."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Coma",
+      "reason": "En coma no hay despertar posible con estímulos; en sopor sí."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "271782001"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

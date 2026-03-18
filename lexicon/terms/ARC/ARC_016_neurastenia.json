@@ -1,0 +1,75 @@
+{
+  "term_id": "ARC_016",
+  "canonical_name": "Neurastenia",
+  "synonyms_and_slang": [
+    "agotamiento nervioso",
+    "fatiga crónica histórica"
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Categoría diagnóstica del siglo XIX (Beard) caracterizada por una fatiga física y mental persistente y angustiante tras un esfuerzo mínimo, acompañada de falta de energía y diversos síntomas somáticos.",
+    "required_features": [
+      "sentimiento de fatiga o debilidad tras esfuerzos mentales",
+      "dolores musculares, cefaleas o mareos",
+      "trastorno del sueño e incapacidad para relajarse",
+      "atribución del síntoma a un 'agotamiento' del sistema nervioso"
+    ],
+    "subjective_marker": "El paciente se siente 'vaciado' de energía y con una irritabilidad constante.",
+    "behavioral_marker": "Disminución notable en el rendimiento laboral y social debido a la astenia referida."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "autoinforme"
+    ],
+    "time_relation": [
+      "historico",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-16",
+      "relation": "historical_precursor",
+      "context": "síndrome_de_fatiga_y_ansiedad"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Fue el diagnóstico más popular en la Era Victoriana para describir el estrés del progreso moderno."
+    }
+  ],
+  "teaching_notes": [
+    "Beard la consideraba una deficiencia de 'fuerza nerviosa'.",
+    "Hoy se asocia a trastornos somatomorfos o al síndrome de fatiga crónica."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6B61",
+      "label": "Dissociative disorders (clinical semantic link)"
+    },
+    "snomed_ct": {
+      "concept_id": "30182006",
+      "preferred_term": "Neurasthenia (disorder)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Beard",
+      "Janet"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_siglo_XIX"
+    ]
+  },
+  "status": "active"
+}

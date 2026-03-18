@@ -1,0 +1,80 @@
+{
+  "term_id": "DEL_006",
+  "canonical_name": "Delirio de ruina/pobreza",
+  "synonyms_and_slang": [
+    "delirio de ruina/pobreza"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Creencia fija de ruina económica total pese a evidencia en contra.",
+    "required_features": [
+      "presencia clínica de delirio de ruina/pobreza",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con delirio de ruina/pobreza.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con delirio de ruina/pobreza en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "primary_expression",
+      "context": "pensamiento_contenido"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_019",
+      "canonical_name": "Delirio de ruina/pobreza",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir delirio de ruina/pobreza with fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "No queda ni un peso; nos van a sacar a la calle mañana y toda mi familia morirá de hambre por mi culpa, aunque vea mis ahorros sé que son falsos."
+    },
+    {
+      "type": "observation",
+      "text": "El paciente se muestra extremadamente angustiado, rechaza comer para «no gastar lo que no tenemos» y está convencido de una quiebra financiera inminente y catastrófica."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

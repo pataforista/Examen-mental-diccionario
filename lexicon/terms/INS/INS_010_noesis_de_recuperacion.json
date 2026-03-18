@@ -1,0 +1,63 @@
+{
+  "term_id": "INS_010",
+  "canonical_name": "Noesis de recuperación",
+  "synonyms_and_slang": [
+    "insight post-brote disparado",
+    "depressive post-psychotic shift"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Recuperación brusca y dolorosa del insight tras un episodio psicótico agudo. La súbita comprensión del desajuste con la realidad pasado y las consecuencias conductuales del brote, precipita frecuentemente el episodio depresivo post-esquizofrénico (riesgo suicida crítico). Concepto derivado de los hallazgos fenoménicos post-brote.",
+    "required_features": [
+      "adquisición de insight rápida tras episodio psicótico",
+      "angustia masiva secundaria",
+      "riesgo afectivo severo derivado"
+    ],
+    "subjective_marker": "'¿Qué he hecho? ¿Cómo pude creer eso? ¡Arruiné mi familia persiguiendo fantasmas!'",
+    "behavioral_marker": "Aislamiento súbito coincidente con remisión de síntomas positivos, llanto, culpa, alto riesgo suicida de transición."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "insight_reciente",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "suicidio_riesgo",
+        "type": "string",
+        "expected": "crítico_elevado"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Depresión comórbida simple",
+      "reason": "La condición afectiva en este fenómeno está mecánicamente ligada a la adquisición del insight."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "F20.4"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

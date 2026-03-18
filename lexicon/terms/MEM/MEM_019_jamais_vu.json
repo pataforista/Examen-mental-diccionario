@@ -1,0 +1,74 @@
+{
+  "term_id": "MEM_019",
+  "canonical_name": "Jamais vu",
+  "synonyms_and_slang": [
+    "nunca visto",
+    "extrañeza de lo familiar",
+    "jamais vécu"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Sensación de extrañeza e irreconocibilidad ante situaciones, personas o lugares perfectamente conocidos. Inverso fenomenológico del déjà vu. Ocurre en depersonalización, epilepsia temporal, estados disociativos y fatiga extrema.",
+    "required_features": [
+      "extrañeza ante objeto conocido",
+      "pérdida transitoria de familiaridad",
+      "sin confusión verdadera"
+    ],
+    "subjective_marker": "El paciente refiere: 'mi propia casa se siente completamente extraña, como si nunca la hubiera visto'.",
+    "behavioral_marker": "Puede generar perplejidad, detención de la actividad, ocasionalmente ansiedad intensa."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "extrañeza_conocido",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "conciencia_conocimiento",
+        "type": "string",
+        "expected": "mantenida"
+      },
+      {
+        "marker": "transitorio",
+        "type": "string",
+        "expected": "típico"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Desrealización",
+      "reason": "La desrealización es más global y sostenida; el jamais vu es focal y transitorio."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Déjà vu",
+      "reason": "Fenómenos inversos: familiaridad espuria vs. extrañeza de lo familiar."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB21.1"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

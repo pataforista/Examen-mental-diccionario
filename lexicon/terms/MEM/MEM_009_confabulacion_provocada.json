@@ -1,0 +1,70 @@
+{
+  "term_id": "MEM_009",
+  "canonical_name": "Confabulación provocada",
+  "synonyms_and_slang": [
+    "confabulación por sugestión",
+    "confabulación elicitada"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Producción de recuerdos falsos en respuesta a preguntas directas o sugestión externa, sin intención de engaño. Fenómeno normal bajo hipnosis o sugestión intensa; patológico en contexto de amnesia orgánica.",
+    "required_features": [
+      "elicitada por pregunta directa",
+      "respuesta incorrecta a demanda mnémica",
+      "sin intención de engaño"
+    ],
+    "subjective_marker": "Al preguntar al paciente sobre eventos específicos, ofrece respuestas plausibles pero incorrectas.",
+    "behavioral_marker": "Respuestas incorrectas a preguntas de orientación o episódicas; sin corrección ante feedback."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "elicitada",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "correccion_con_feedback",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "amnesia_subyacente",
+        "type": "string",
+        "expected": "frecuente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Confabulación espontánea",
+      "reason": "La provocada requiere estimulación externa; la espontánea emerge sin ella."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "405533002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

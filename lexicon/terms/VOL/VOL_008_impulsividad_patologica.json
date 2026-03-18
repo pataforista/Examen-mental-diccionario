@@ -1,0 +1,70 @@
+{
+  "term_id": "VOL_008",
+  "canonical_name": "Impulsividad patológica",
+  "synonyms_and_slang": [
+    "falta de control de impulsos",
+    "impulsivity"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Tendencia a actuar de forma rápida, no planeada y frecuente, en respuesta a estímulos internos o externos, sin consideración adecuada de las consecuencias negativas. Falla en el 'freno' volitivo inhibitorio. Presente en TDAH, manía, trastornos de personalidad (Cluster B).",
+    "required_features": [
+      "acción rápida/no planeada",
+      "ausencia de consideración de consecuencias",
+      "falla inhibitoria"
+    ],
+    "subjective_marker": "El paciente refiere 'actué antes de pensar', 'la tensión subía y tuve que hacerlo'.",
+    "behavioral_marker": "Interrupciones constantes, incapacidad de esperar turnos, gastos temerarios, conductas de riesgo súbitas."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "BIS-11",
+        "type": "string",
+        "expected": "alto"
+      },
+      {
+        "marker": "planificacion",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "consecuencias",
+        "type": "string",
+        "expected": "ignoradas"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Compulsión",
+      "reason": "La compulsión es repetitiva, estereotipada y busca reducir ansiedad; el acto impulsivo es súbito y busca gratificación o descarga inmediata."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "87186007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

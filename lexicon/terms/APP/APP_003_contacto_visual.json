@@ -1,0 +1,73 @@
+{
+  "term_id": "APP_003",
+  "canonical_name": "Contacto visual",
+  "synonyms_and_slang": [
+    "contacto visual"
+  ],
+  "term_kind": "sign",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Indicador de interés y cooperación observado en la continuidad, calidad y dirección de la mirada durante la entrevista.",
+    "required_features": [
+      "evaluación de la continuidad",
+      "registro de intensidad y frecuencia",
+      "descripción contextual"
+    ],
+    "subjective_marker": "El paciente puede referir incomodidad, timidez o dificultad para sostener la mirada.",
+    "behavioral_marker": "Contacto visual continuo, intermitente, fugaz o ausente observado durante la interacción."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "situacional"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": "actitud_interaccion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "APP_002",
+      "canonical_name": "Contacto visual",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir el patrón de contacto visual sin asumir significado afectivo sin otros datos."
+  ],
+  "cognitive_pitfalls": [
+    "Interpretar evitación visual como hostilidad sin considerar ansiedad, vergüenza o factores culturales."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente mantiene la mirada fija en el suelo durante toda la evaluación; solo realiza contactos visuales fugaces (menos de un segundo) cuando se le hace una pregunta directa, volviendo inmediatamente la vista hacia abajo."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

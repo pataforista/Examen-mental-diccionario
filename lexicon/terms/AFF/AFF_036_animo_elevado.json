@@ -1,0 +1,98 @@
+{
+  "term_id": "AFF_036",
+  "canonical_name": "Ánimo elevado",
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Tono afectivo sostenido en el polo del bienestar, alegría o euforia, que puede ser expansivo o irritable.",
+    "required_features": [
+      "ánimo exaltado o expansivo",
+      "persistencia temporal",
+      "incremento de energía asociado"
+    ],
+    "subjective_marker": "Refiere sentirse extraordinariamente bien, lleno de energía o 'en la cima del mundo'.",
+    "behavioral_marker": "Locuacidad, risa fácil, aumento de actividad, disminución de necesidad de sueño."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "baseline_mood",
+        "type": "categorical",
+        "options": [
+          "bajo",
+          "neutro",
+          "elevado"
+        ],
+        "expected": "elevado"
+      },
+      {
+        "marker": "expansiveness",
+        "type": "categorical",
+        "options": [
+          "ausente",
+          "presente"
+        ]
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AFF_003",
+      "canonical_name": "Labilidad afectiva",
+      "reason": "El ánimo elevado es sostenido; la labilidad es fluctuante.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Ánimo elevado persistente con aumento de energía y menor necesidad de sueño sugiere estado maniforme."
+    }
+  ],
+  "teaching_notes": [
+    "Diferenciar de alegría reactiva o rasgos de personalidad.",
+    "Registrar duración, sueño y cambios conductuales."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir ansiedad o activación por estrés con ánimo elevado patológico."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "¡Estoy en la cima del mundo! No necesito dormir; anoche dormí dos horas y hoy puedo hacer diez cosas a la vez."
+    },
+    {
+      "type": "observation",
+      "text": "Durante la entrevista interrumpe, habla acelerado y cambia de tema con facilidad."
+    }
+  ],
+  "version": "1.0.0",
+  "synonyms_and_slang": [
+    "ánimo elevado o expansivo"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "mappings": {}
+}

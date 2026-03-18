@@ -1,0 +1,76 @@
+{
+  "term_id": "MOT_001",
+  "canonical_name": "Apraxia constructiva",
+  "synonyms_and_slang": [
+    "apraxia constructiva"
+  ],
+  "term_kind": "sign",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Incapacidad para organizar o ensamblar elementos espaciales en dibujos o construcciones.",
+    "required_features": [
+      "presencia clínica de apraxia constructiva",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con apraxia constructiva.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con apraxia constructiva en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "psicomotricidad_conacion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MOT_005",
+      "canonical_name": "Apraxia constructiva",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir apraxia constructiva con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "En la copia de un cubo, el paciente dibuja líneas desconectadas y pierde la perspectiva; en el reloj, coloca números fuera del círculo o apiñados en un cuadrante, y las manecillas no guardan relación con la hora indicada. El trazo es relativamente firme, pero la organización visuoespacial es defectuosa."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

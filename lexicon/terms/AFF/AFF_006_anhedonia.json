@@ -1,0 +1,77 @@
+{
+  "term_id": "AFF_006",
+  "canonical_name": "Anhedonia",
+  "synonyms_and_slang": [
+    "pérdida del placer",
+    "anhedonia social",
+    "anhedonia física",
+    "anhédon"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad o marcada reducción de la capacidad para experimentar placer. Dimensiones: anticipatoria (no esperar placer) y consumatoria (no experimentarlo al obtenerlo). Central en depresión mayor y esquizofrenia. Chapnan (1976) distinguió anhedonia física de social.",
+    "required_features": [
+      "reducción marcada de capacidad hedónica",
+      "persistente",
+      "en áreas antes placenteras"
+    ],
+    "subjective_marker": "El paciente refiere 'nada me da gusto', 'ya no disfruto nada de lo que antes me gustaba'.",
+    "behavioral_marker": "Abandono de hobbies, menor búsqueda de relaciones sociales, reducción de conductas apetitivas."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "SHAPS≥3",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "abandono_actividades_placenteras",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "anticipacion_hedonica",
+        "type": "string",
+        "expected": "reducida"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Apatía",
+      "reason": "La apatía implica reducción de motivación e iniciativa; la anhedonia es específicamente la incapacidad hedónica."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Abulia",
+      "reason": "La abulia es falta de voluntad; la anhedonia es falta de placer. Pueden coexistir."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.1"
+    },
+    "snomed_ct": {
+      "concept_id": "3415004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

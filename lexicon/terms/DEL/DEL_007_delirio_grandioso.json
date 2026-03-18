@@ -1,0 +1,80 @@
+{
+  "term_id": "DEL_007",
+  "canonical_name": "Delirio grandioso",
+  "synonyms_and_slang": [
+    "delirio grandioso"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Creencia fija de poseer poder, identidad o misión extraordinaria.",
+    "required_features": [
+      "presencia clínica de delirio grandioso",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con delirio grandioso.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con delirio grandioso en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "primary_expression",
+      "context": "pensamiento_contenido"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_012",
+      "canonical_name": "Delirio grandioso",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir delirio grandioso con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Tengo una línea directa con el presidente y soy el dueño secreto de las mayores empresas de tecnología del mundo."
+    },
+    {
+      "type": "observation",
+      "text": "El paciente se muestra expansivo, da órdenes al personal de salud como si fueran sus empleados y planea inversiones millonarias a pesar de no contar con recursos básicos."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

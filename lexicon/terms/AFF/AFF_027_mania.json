@@ -1,0 +1,82 @@
+{
+  "term_id": "AFF_027",
+  "canonical_name": "Manía",
+  "synonyms_and_slang": [
+    "estado maníaco",
+    "ánimo elevado patológico",
+    "euforia maníaca"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Estado afectivo caracterizado por ánimo anormalmente elevado, expansivo o irritable, aumento de actividad y energía, disminución de la necesidad de sueño, grandiosidad, verborrea y comportamiento impulsivo/temerario. Duración ≥ 7 días o que requiere hospitalización.",
+    "required_features": [
+      "ánimo elevado o irritable",
+      "aumento de actividad",
+      "duración ≥ 7 días",
+      "deterioro funcional significativo o riesgo"
+    ],
+    "subjective_marker": "El paciente se siente 'de maravilla', con energía inagotable, planes grandiosos; a veces con irritabilidad ante obstáculos.",
+    "behavioral_marker": "Verborrea, vuelo de ideas, conductas de riesgo, disminución de horas de sueño sin fatiga, hipersexualidad, derroche."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "YMRS≥20",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "dormir<4h_sin_fatiga",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "grandiosidad",
+        "type": "string",
+        "expected": "presente"
+      },
+      {
+        "marker": "conducta_riesgo",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Hipomanía",
+      "reason": "La hipomanía no causa deterioro funcional marcado ni requiere hospitalización; dura ≥ 4 días."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Euforia",
+      "reason": "La euforia es un estado afectivo de bienestar que puede ser normal; la manía implica patología con impacto funcional."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6A60"
+    },
+    "snomed_ct": {
+      "concept_id": "13746004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,80 @@
+{
+  "term_id": "ARC_020",
+  "canonical_name": "Wahnstimmung",
+  "synonyms_and_slang": [
+    "humor delirante",
+    "atmósfera delirante",
+    "trema"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Término de la fenomenología jaspersiana para describir el estado afectivo de tensión, inquietud y premonición en el que el mundo adquiere un significado nuevo y amenazante, pero el paciente aún no puede precisar de qué se trata.",
+    "required_features": [
+      "sentimiento de que 'algo algo está pasando'",
+      "perplejidad y angustia ante la significación nueva",
+      "estado previo a la cristalización de la idea delirante"
+    ],
+    "subjective_marker": "El paciente refiere que el mundo está 'extraño', que la gente parece actuar según un guion o que hay señales que no logra descifrar.",
+    "behavioral_marker": "Actitud expectante, sospecha injustificada y búsqueda inquieta de explicaciones en el entorno."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual",
+      "episodico"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "delirio_fase_pre-psicotica"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_023",
+      "canonical_name": "Humor delirante",
+      "reason": "Wahnstimmung es el término técnico original en alemán usado en fenomenología pura."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_critical",
+      "message": "Fase nuclear del inicio de una psicosis esquizofrénica (Trema de Conrad)."
+    }
+  ],
+  "teaching_notes": [
+    "Es un cambio en la 'forma' de vivir el mundo, no solo un contenido erróneo.",
+    "Jaspers lo describió como parte del 'delirio primario'."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB20.1",
+      "label": "Delusional ideas (clinical related)"
+    },
+    "snomed_ct": {
+      "concept_id": "191531002",
+      "preferred_term": "Delusional mood (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Jaspers",
+      "Conrad"
+    ],
+    "clinical_tradition": [
+      "fenomenologia_alemana"
+    ]
+  },
+  "status": "active"
+}

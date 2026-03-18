@@ -1,0 +1,72 @@
+{
+  "term_id": "ARC_014",
+  "canonical_name": "Manía sin Delirio",
+  "synonyms_and_slang": [
+    "manie sans délire",
+    "locura razonante"
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Concepto introducido por Pinel para describir estados de excitación afectiva y conductual extrema sin alteración de las funciones intelectuales ni presencia de delirio.",
+    "required_features": [
+      "excitación psicomotriz/furor",
+      "ausencia de delirio o alucinaciones",
+      "disrupción del afecto y el instinto"
+    ],
+    "subjective_marker": "El paciente se siente impulsado por una energía incontrolable sin justificación delirante.",
+    "behavioral_marker": "Arrebatos de ira, violencia impulsiva o agitación en sujetos que parecen razonar con normalidad."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "historico"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-16",
+      "relation": "historical_precursor",
+      "context": "trastornos_personalidad_y_manania"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Fue el primer reconocimiento de que la locura no siempre implica una falta de razón, abriendo camino al concepto de psicopatía."
+    }
+  ],
+  "teaching_notes": [
+    "Pinel observó que algunos pacientes en el hospital de Bicêtre tenían crisis de furor manteniendo el juicio intacto.",
+    "Relacionado con la 'moral insanity' de Prichard."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A60",
+      "label": "Bipolar type I disorder (modern related)"
+    },
+    "snomed_ct": {
+      "concept_id": "247859007",
+      "preferred_term": "Impulsivity (clinical semantic link)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Pinel"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_francesa_siglo_XIX"
+    ]
+  },
+  "status": "active"
+}

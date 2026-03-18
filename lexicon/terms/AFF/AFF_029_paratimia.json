@@ -1,0 +1,79 @@
+{
+  "term_id": "AFF_029",
+  "canonical_name": "Paratimia",
+  "synonyms_and_slang": [
+    "afecto incongruente",
+    "discordancia afectiva"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Disociación o falta de correspondencia entre el contenido de la vivencia (pensamiento o situación) y la emoción expresada por el paciente.",
+    "required_features": [
+      "expresión emocional opuesta o extraña al tema tratado",
+      "falta de sintonía entre contenido y afecto",
+      "naturaleza involuntaria"
+    ],
+    "subjective_marker": "El paciente puede relatar una tragedia personal mientras sonríe o ríe sin sentir alegría real.",
+    "behavioral_marker": "Risa inmotivada ante noticias tristes; llanto ante situaciones placenteras."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": "afectividad"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "diagnostic_critical",
+      "message": "Signo clásico de la serie esquizofrénica; indica una desorganización profunda de la vida psíquica."
+    }
+  ],
+  "teaching_notes": [
+    "A diferencia del cinismo, en la paratimia no hay una intención social de burla, sino una ruptura interna de la asociación afectiva.",
+    "Bleuler lo consideraba uno de los síntomas fundamentales de la esquizofrenia (una de las '4 A')."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A20.Z",
+      "label": "Schizophrenia or other primary psychotic disorders"
+    },
+    "snomed_ct": {
+      "concept_id": "422502008",
+      "preferred_term": "Inappropriate affect (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "PANSS",
+        "item": "N1 - Embotamiento afectivo (ítem de modulación)",
+        "scale_id": "PANSS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Bleuler",
+      "Sims"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

@@ -1,0 +1,75 @@
+{
+  "term_id": "VOL_003",
+  "canonical_name": "Ecopraxia",
+  "synonyms_and_slang": [
+    "imitación automática",
+    "ecocinesis"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Imitación automática, repetitiva y no intencional de los movimientos o posturas de otra persona. El sujeto no puede suprimir la tendencia a imitar, reflejando una falla en la inhibición frontal de los 'esquemas de acción' observados. Frecuente en catatonía, Tourette y delírium.",
+    "required_features": [
+      "imitación motora",
+      "naturaleza automática/no voluntaria",
+      "incapacidad de supresión"
+    ],
+    "subjective_marker": "Ocasionalmente el paciente reconoce que no quiso hacerlo pero 'su cuerpo copió' al otro.",
+    "behavioral_marker": "El entrevistador se cruza de brazos y el paciente instantáneamente hace lo mismo; copia tics o gestos ajenos."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "imitacion_motora",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "intencionalidad",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "supresion",
+        "type": "string",
+        "expected": "fallida"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Imitación social (mirroring)",
+      "reason": "El mirroring es sutil y facilita el rapport; la ecopraxia es burda, grosera y no contextual."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Obediencia automática",
+      "reason": "En la ecopraxia se copia la acción visualizada; en la obediencia automática se sigue la orden verbal sin vacilar."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "24756006"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

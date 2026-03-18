@@ -1,0 +1,81 @@
+{
+  "term_id": "ARC_011",
+  "canonical_name": "Locura Circular",
+  "synonyms_and_slang": [
+    "folie circulaire",
+    "psicosis circular"
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Concepto de Jean-Pierre Falret (1854) para describir una enfermedad mental caracterizada por la sucesión regular y continua de periodos de manía, periodos de melancolía y periodos de relativa lucidez.",
+    "required_features": [
+      "periodicidad o ciclicidad de los síntomas",
+      "alternancia entre estados de excitación y de depresión",
+      "ausencia de deterioro cognitivo terminal (generalmente)"
+    ],
+    "subjective_marker": "El paciente o la familia describen una vida marcada por 'olas' de humor extremas e inevitables.",
+    "behavioral_marker": "Transiciones cíclicas comprobables entre la hiperactividad y el estupor melancólico a lo largo de los años."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "historia_clinica_longitudinal",
+      "observacion"
+    ],
+    "time_relation": [
+      "historico",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "historical_precursor",
+      "context": "trastorno_bipolar"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "ARC_002",
+      "canonical_name": "Dementia Praecox",
+      "reason": "La locura circular se distingue por la restitución ad integrum tras las crisis; la dementia praecox conduce al deterioro."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Fue el precursor directo del concepto de 'Psicosis Maníaco-Depresiva' de Kraepelin y del 'Trastorno Bipolar' moderno."
+    }
+  ],
+  "teaching_notes": [
+    "Falret y Baillarger disputaron la autoría del descubrimiento de la ciclicidad.",
+    "Crucial para la separación de las psicosis en 'el gran sistema de Kraepelin'."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A60",
+      "label": "Bipolar type I disorder (modern equivalent)"
+    },
+    "snomed_ct": {
+      "concept_id": "191490001",
+      "preferred_term": "Circular insanity (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Falret",
+      "Baillarger",
+      "Kraepelin"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_francesa_siglo_XIX"
+    ]
+  },
+  "status": "active"
+}

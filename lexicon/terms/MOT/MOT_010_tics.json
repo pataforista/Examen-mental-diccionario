@@ -1,0 +1,67 @@
+{
+  "term_id": "MOT_010",
+  "canonical_name": "Tics",
+  "synonyms_and_slang": [
+    "tics"
+  ],
+  "term_kind": "sign",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Movimientos o vocalizaciones súbitos, rápidos, recurrentes y no rítmicos.",
+    "required_features": [
+      "inicio súbito",
+      "no rítmico",
+      "carácter involuntario o semivoluntario"
+    ],
+    "subjective_marker": "Sensación premonitoria de urgencia física que se alivia tras el tic.",
+    "behavioral_marker": "Parpadeo, sacudidas de hombros, muecas faciales o ruidos vocales."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion_clinica",
+      "colateral"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "psicomotricidad_conacion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MOT_011",
+      "canonical_name": "Tics",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico and with integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Anotar si son motores o vocales, simples o complejos."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir tics con estereotipias (éstas son rítmicas)."
+  ],
+  "version": "1.1.0",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

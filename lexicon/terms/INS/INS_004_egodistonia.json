@@ -1,0 +1,70 @@
+{
+  "term_id": "INS_004",
+  "canonical_name": "Egodistonía",
+  "synonyms_and_slang": [
+    "ego-dystonic",
+    "alineación sintomática"
+  ],
+  "term_kind": "distinción_clínica",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Cualidad de un síntoma, pensamiento o impulso psíquico que es experimentado por el sujeto como inaceptable, repelente, angustiante, fuera de su control y totalmente incongruente con su sistema de valores o identidad central. Clásico de verdaderas compulsiones (TOC) y fobias. Tiende a preservar el insight.",
+    "required_features": [
+      "conflicto masivo entre síntoma e identidad",
+      "rechazo subjetivo del síntoma",
+      "reconocimiento de irracionalidad"
+    ],
+    "subjective_marker": "(En TOC): 'Tengo estos pensamientos blasfemos constantes que me asquean, soy una persona religiosa, quiero pararlos pero no puedo, esto no tiene sentido'.",
+    "behavioral_marker": "Lucha activa contra el síntoma, búsqueda desesperada de tratamiento para eliminar 'eso', angustia visible secundaria."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "conflicto_yo_sintoma",
+        "type": "string",
+        "expected": "máximo"
+      },
+      {
+        "marker": "lucha_anti_sintoma",
+        "type": "string",
+        "expected": "presente"
+      },
+      {
+        "marker": "insight",
+        "type": "string",
+        "expected": "preservado (el paciente reconoce la falla)"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Egocintonía",
+      "reason": "El opuesto fenoménico directo. Diferencia, por ejemplo, los pensamientos restrictivos del TOC (egodistónicos) de los de la Anorexia Nerviosa (egosintónicos)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "23628003"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

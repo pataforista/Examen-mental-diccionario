@@ -1,0 +1,75 @@
+{
+  "term_id": "MEM_023",
+  "canonical_name": "Paramnesia reduplicativa",
+  "synonyms_and_slang": [
+    "reduplicative paramnesia",
+    "síndrome de Pick"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Creencia de que un lugar, persona, objeto o evento existe en dos versiones simultáneas. Descrito originalmente por Pick (1903). Asociado a daño frontal derecho + parietal. El hospital donde está el paciente 'existe en dos sitios' o hay 'otro hospital idéntico'.",
+    "required_features": [
+      "duplicación subjetiva del objeto/lugar/persona",
+      "sustrato neurológico orgánico frecuente",
+      "insight parcial posible"
+    ],
+    "subjective_marker": "El paciente insiste en que existen dos versiones del mismo lugar: 'este hospital es una copia, el real está en otro sitio'.",
+    "behavioral_marker": "Relato consistente de duplicación; puede generar conductas de búsqueda del lugar 'real'."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "duplicacion_objeto",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "organico",
+        "type": "string",
+        "expected": "frecuente"
+      },
+      {
+        "marker": "confabulacion_asociada",
+        "type": "string",
+        "expected": "posible"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Síndrome de Capgras",
+      "reason": "Capgras afecta a personas (impostores), la paramnesia reduplicativa afecta a lugares u objetos."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Confabulación simple",
+      "reason": "La paramnesia reduplicativa tiene estructura temática específica (duplicación) y no es un relleno mnésico general."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB21.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "230455003"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

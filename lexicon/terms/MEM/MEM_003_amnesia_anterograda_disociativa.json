@@ -1,0 +1,70 @@
+{
+  "term_id": "MEM_003",
+  "canonical_name": "Amnesia anterógrada disociativa",
+  "synonyms_and_slang": [
+    "amnesia funcional anterógrada",
+    "amnesia conversiva"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad de consolidar nueva información que mimetiza la amnesia orgánica pero sin sustrato neurológico identificable. Aparece típicamente en contextos de trauma agudo o estrés extremo.",
+    "required_features": [
+      "ausencia de lesión orgánica demostrable",
+      "inicio relacionado a evento estresante",
+      "patrón inconsistente con amnesias orgánicas"
+    ],
+    "subjective_marker": "El paciente refiere no recordar lo que ocurrió, pero pruebas de priming implícito revelan procesamiento de la información.",
+    "behavioral_marker": "Variabilidad inconsistente con lesión neurológica; buenos resultados en pruebas de memoria implícita."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "memoria_implicita",
+        "type": "string",
+        "expected": "preservada"
+      },
+      {
+        "marker": "lesion_organica",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "inicio_estresante",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia anterógrada orgánica",
+      "reason": "La disociativa carece de sustrato neurológico y muestra inconsistencias en perfil de errores."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6B60.0"
+    },
+    "snomed_ct": {
+      "concept_id": "724655002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

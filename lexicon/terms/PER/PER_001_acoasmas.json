@@ -1,0 +1,76 @@
+{
+  "term_id": "PER_001",
+  "canonical_name": "Acoasmas",
+  "synonyms_and_slang": [
+    "acoasmas"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Alucinaciones auditivas elementales no verbales, como zumbidos, silbidos o ruidos simples.",
+    "required_features": [
+      "presencia clínica de acoasmas",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con acoasmas.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con acoasmas en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_015",
+      "canonical_name": "Acoasmas",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir acoasmas con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Refiere sonidos elementales sin lenguaje: “Oigo zumbidos, pitidos, chasquidos o pasos”, sin palabras articuladas ni voces. Puede localizarlo “como si viniera del pasillo”, pero no identifica contenido semántico (alucinación auditiva no formada)."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

@@ -1,0 +1,71 @@
+{
+  "term_id": "CNS_007",
+  "canonical_name": "Letargo",
+  "synonyms_and_slang": [
+    "somnolencia diurna excesiva",
+    "hiperinsomnia secundaria",
+    "drowsiness"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado de reducción del nivel de alerta manifestado como tendencia invencible o profunda al sueño (hipersomnia de tipo no primario) de forma inapropiada al contexto diurno, dificultando el mantenimiento de una vigilia funcional mínima o alterando groseramente el ritmo circadiano. Requiere constante estimulación para sostener el desempeño pero responde (despierta) a órdenes verbales simples.",
+    "required_features": [
+      "propensión anormal a dormirse en contexto vigílico",
+      "lentitud conductual generalizada perniciosa",
+      "requiere estimulación constante verbal/táctil para seguir operando"
+    ],
+    "subjective_marker": "'Por más que duerma toda la noche, mis ojos se cierran solos, no aguanto y me quedo dormido donde sea.'",
+    "behavioral_marker": "Cabeceos continuos, bostezos hiperfrecuentes, lentitud extrema de respuestas que mejora pasajeramente con estimulación ambiental."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "insomnio_diurno",
+        "type": "string",
+        "expected": "invencible"
+      },
+      {
+        "marker": "mantenimiento_vigilia",
+        "type": "string",
+        "expected": "requiere_estimulo"
+      },
+      {
+        "marker": "fatiga_psicomotora",
+        "type": "string",
+        "expected": "sistémica"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Narcolepsia",
+      "reason": "La narcolepsia (hipersomnia central) se caracteriza por crisis de sueño de entrada abrupta (irresistibles) frecuentemente asociadas a cataplexia, y no un letargo de base fluctuante dependiente del ambiente."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.0"
+    },
+    "snomed_ct": {
+      "concept_id": "271801002"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

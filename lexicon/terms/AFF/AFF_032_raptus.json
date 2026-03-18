@@ -1,0 +1,79 @@
+{
+  "term_id": "AFF_032",
+  "canonical_name": "Raptus",
+  "synonyms_and_slang": [
+    "impulso súbito",
+    "raptus afectivo"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Descarga motora o conductual súbita, violenta e imprevisible, gatillada por un estado afectivo intenso (angustia, ira), que se realiza de forma automática y sin premeditación.",
+    "required_features": [
+      "aparición brusca",
+      "violencia o intensidad explosiva",
+      "naturaleza automática o impulsiva"
+    ],
+    "subjective_marker": "El paciente siente un impulso irreprimible que 'le obliga' a actuar sin pensar.",
+    "behavioral_marker": "Ataque súbito de agitación, rotura de objetos o autolesión explosiva durante un pico de angustia."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": "afectividad_y_conducta"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "VOL_002",
+      "canonical_name": "Impulsividad",
+      "reason": "El raptus es un episodio agudo y explosivo; la impulsividad puede ser un rasgo o síntoma más sostenido."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_critical",
+      "message": "Elevado riesgo de hetero o autoagresión inmediata."
+    }
+  ],
+  "teaching_notes": [
+    "Clásico en la melancolía grave ('raptus melancólico') y en la catatonía.",
+    "A menudo el paciente describe una amnesia parcial del momento exacto del acto."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Z",
+      "label": "Symptoms or signs involving emotional state"
+    },
+    "snomed_ct": {
+      "concept_id": "247859007",
+      "preferred_term": "Impulsivity (clinical semantic link)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Ey"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clásica"
+    ]
+  },
+  "status": "active"
+}

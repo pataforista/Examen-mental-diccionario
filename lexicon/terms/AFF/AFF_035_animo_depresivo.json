@@ -1,0 +1,105 @@
+{
+  "term_id": "AFF_035",
+  "canonical_name": "Ánimo depresivo",
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Tristeza persistente con sensación de abatimiento o desesperanza, cualitativamente distinta de la tristeza normal.",
+    "required_features": [
+      "tono afectivo bajo predominante",
+      "persistencia temporal",
+      "malestar subjetivo asociado"
+    ],
+    "subjective_marker": "Refiere dolor mental, melancolía o vacío emocional sostenido.",
+    "behavioral_marker": "Disminución de interés and energía, enlentecimiento, cambios de sueño/apetito."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "baseline_mood",
+        "type": "categorical",
+        "options": [
+          "bajo",
+          "neutro",
+          "elevado"
+        ],
+        "expected": "bajo"
+      },
+      {
+        "marker": "reactivity",
+        "type": "categorical",
+        "options": [
+          "ausente",
+          "reducida",
+          "presente"
+        ],
+        "expected": "ausente"
+      },
+      {
+        "marker": "duration_days",
+        "type": "integer"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": "estado_afectivo"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AFF_003",
+      "canonical_name": "Labilidad afectiva",
+      "reason": "La labilidad implica fluctuaciones rápidas; aquí el ánimo es estable y bajo.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Ánimo bajo persistente y poco reactivo sugiere síndrome depresivo; evaluar impacto funcional y riesgo."
+    }
+  ],
+  "teaching_notes": [
+    "Describe el tono afectivo, no un diagnóstico.",
+    "La reactividad permite distinguir tristeza normal de ánimo patológico."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir tristeza reactiva con ánimo depresivo patológico.",
+    "Ignorar duración y curso."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "Me siento hundido, como si estuviera en un agujero negro; nada va a mejorar."
+    },
+    {
+      "type": "observation",
+      "text": "Se observa voz baja, enlentecimiento psicomotor y llanto contenido al hablar de planes futuros."
+    }
+  ],
+  "version": "1.0.0",
+  "synonyms_and_slang": [
+    "ánimo depresivo"
+  ],
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "mappings": {}
+}

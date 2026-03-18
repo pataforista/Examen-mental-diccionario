@@ -1,0 +1,89 @@
+{
+  "term_id": "DEL_011",
+  "canonical_name": "Delirio primario (autóctono)",
+  "term_kind": "symptom",
+  "definition_clinical": {
+    "core": "Creencia delirante que surge sin una causa psicológica comprensible y es irreductible a la experiencia previa.",
+    "required_features": [
+      "irrupción súbita",
+      "certeza delirante",
+      "incorregibilidad"
+    ],
+    "subjective_marker": "Refiere una certeza súbita y autoevidente de una nueva creencia.",
+    "behavioral_marker": "Expresa convicción absoluta sin base externa coherente."
+  },
+  "synonyms_and_slang": [
+    {
+      "term": "intuición delirante",
+      "context": "clinical"
+    },
+    {
+      "term": "percepción delirante",
+      "context": "clinical"
+    },
+    {
+      "term": "atmósfera delirante",
+      "context": "clinical"
+    }
+  ],
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "primary_expression",
+      "context": "pensamiento_contenido"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_001",
+      "canonical_name": "Delirio primario (autóctono)",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir delirio primario (autóctono) con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "De pronto, al ver ese semáforo en rojo, supe con absoluta certeza que el fin del mundo comienza hoy y yo soy el encargado de avisar a todos."
+    },
+    {
+      "type": "observation",
+      "text": "El paciente describe una intuición súbita, no precedida de dudas o reflexiones, con una convicción total e irreductible que reorganiza su realidad inmediata."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

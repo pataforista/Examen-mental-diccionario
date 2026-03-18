@@ -1,0 +1,81 @@
+{
+  "term_id": "AFF_014",
+  "canonical_name": "Disforia",
+  "synonyms_and_slang": [
+    "malestar subjetivo intenso",
+    "dysphoria",
+    "estado disfórico"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado afectivo de malestar subjetivo profundo, con mezcla de tristeza, irritabilidad, tensión y ansiedad. No equivale a depresión pura ni a ansiedad pura. Prototípico de: estados mixtos bipolares, fase disfórica del TEPT, estado disfórico del TPB.",
+    "required_features": [
+      "malestar subjetivo intenso",
+      "mezcla de tristeza e irritabilidad",
+      "sin reducción a depresión pura"
+    ],
+    "subjective_marker": "El paciente refiere un estado interno intolerable, 'inquietud desesperada', 'no poder estar en ninguna parte'.",
+    "behavioral_marker": "Irritabilidad intensa, agitación interna, puede alternar con explosividad o conducta autolesiva."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "irritabilidad",
+        "type": "string",
+        "expected": "alta"
+      },
+      {
+        "marker": "tristeza",
+        "type": "string",
+        "expected": "presente"
+      },
+      {
+        "marker": "tension",
+        "type": "string",
+        "expected": "alta"
+      },
+      {
+        "marker": "estado_mixto",
+        "type": "string",
+        "expected": "descartar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Depresión",
+      "reason": "La disforia incluye componente de irritabilidad y tensión no central en depresión pura."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Ansiedad",
+      "reason": "La disforia incluye tristeza; la ansiedad pura es aprensión sin tristeza necesariamente."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "191736004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

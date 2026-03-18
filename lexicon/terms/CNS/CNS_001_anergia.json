@@ -1,0 +1,61 @@
+{
+  "term_id": "CNS_001",
+  "canonical_name": "Anergia",
+  "synonyms_and_slang": [
+    "falta persistente de energía global (corporal/mental)",
+    "fatiga patológica vital subyacente"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Anergia se distingue clínicamente como el reporte de una falta paralizante y globalizada de energía física, vigor vital y fuerza interna necesaria para operar el curso diario de vivir (tanto en funciones mentales como corporales estamina-dependientes), sintiéndose inerme y agotado de raíz. Diferenciarlo de la anhedonia y de la apatía; esto no involucra inicialmente el interés, el anhelo o el aprecio o motivación hacia una meta, sino la absoluta sensación de carestía del 'combustible orgánico-psicológico' fisiológico requerido para realizarla. Síntoma de núcleo neurovegetativo de Depresiones (típicas y atípicas, junto con hipersomnia y letargo en Atípicas como plomización de los miembros –'leaden paralysis'–) y de Esquizofrenias.",
+    "required_features": [
+      "reporte vivencial patológico central a carecer de energía y vigor para existir o funcionar en lo elemental (agotamiento desde la base antes siquiera de arrancar a generar acción planeada)."
+    ],
+    "subjective_marker": "'Quiero comer, tengo las ganas de hacerlo, sé que mi cuerpo lo precisa... pero carezco de la menor ínfima energía física para arrastrar esta carga vacía hasta la cocina; me pesa horrores el alma sobre el cuerpo.'",
+    "behavioral_marker": "Postración general, claudicación a las pocas actividades de mínimo esfuerzo físico (levantar una taza genera necesidad de reposo subyacente), inacción corporal."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "capacidad_energética_vital",
+        "type": "string",
+        "expected": "agotada"
+      },
+      {
+        "marker": "relación_fatiga_previo_esfuerzo",
+        "type": "string",
+        "expected": "desproporcionada (ocurre basalmente y no tras el desgaste normal)"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Astenia somática secundaria pura de patología física (p. ej. Anemia/Neoplasias) versus Anergia funcional Depresiva y Apatía",
+      "reason": "La Anemia, Hipotiroidismo, etc. generan astenia documentable con biomarcador somatomédico específico y directo aunque frecuentemente con-causante sindrómico; en contraste, la apatía (indiferencia motivación plana), anhedonia y el retardo psicomotor confluyen frecuentemente de la mano con este reporte vivencial."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

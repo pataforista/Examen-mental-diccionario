@@ -1,0 +1,66 @@
+{
+  "term_id": "AFF_021",
+  "canonical_name": "Incongruencia afectiva",
+  "synonyms_and_slang": [
+    "afecto inapropiado",
+    "paramimia",
+    "desacuerdo afecto-contenido"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Discordancia entre el afecto expresado y el contenido del pensamiento o la situación. El paciente ríe al relatar la muerte de un familiar o llora sin causa aparente. Signo clásico de esquizofrenia desorganizada.",
+    "required_features": [
+      "discordancia afecto-contenido",
+      "no explicable por contexto cultural",
+      "persistente"
+    ],
+    "subjective_marker": "El paciente frecuentemente no reporta la incongruencia; puede no tener conciencia de ella.",
+    "behavioral_marker": "Sonrisa o risa ante temas trágicos; llanto ante temas neutros; expresiones afectivas desconectadas del contexto."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "concordancia_afecto_contenido",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "cultural_context",
+        "type": "string",
+        "expected": "descartado"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Labilidad afectiva",
+      "reason": "La labilidad implica variaciones rápidas apropiadas o desproporcionadas; la incongruencia implica discordancia cualitativa."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "28707001"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

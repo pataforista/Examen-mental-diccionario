@@ -1,0 +1,88 @@
+{
+  "term_id": "PER_021",
+  "canonical_name": "Pseudoalucinación",
+  "synonyms_and_slang": [
+    {
+      "term": "voz interna",
+      "context": "patient_report"
+    },
+    {
+      "term": "alucinación psíquica",
+      "context": "clinical_historical"
+    }
+  ],
+  "term_kind": "phenomenon",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Experiencia perceptiva vívida en espacio interno, sin objetividad plena.",
+    "required_features": [
+      "conservación del juicio de realidad",
+      "atribución interna del fenómeno",
+      "ausencia de convicción delirante asociada"
+    ],
+    "subjective_marker": "Refiere voces 'dentro de la cabeza' o imágenes en la mente.",
+    "behavioral_marker": "Menor respuesta conductual externa que en alucinación verdadera."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "fluctuante"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    },
+    {
+      "domain_id": "DOM-13",
+      "relation": "differential_anchor",
+      "context": "pseudopsicosis_vs_psicosis"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_001",
+      "canonical_name": "Alucinación verdadera",
+      "reason": "En la alucinación verdadera existe atribución externa y pérdida del juicio de realidad.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_clue",
+      "message": "Las pseudoalucinaciones son frecuentes en trastornos de personalidad y disociativos; no codificar automáticamente como esquizofrenia."
+    }
+  ],
+  "teaching_notes": [
+    "Clave diferencial: lugar interno (dentro de la cabeza, ante el 'ojo mental').",
+    "Suele haber insight de que es 'mi propia mente la que lo crea', aunque se viva como intrusivo."
+  ],
+  "cognitive_pitfalls": [
+    "Sobre-diagnosticar psicosis por la presencia de 'voces' sin explorar el locus.",
+    "Ignorar el malestar subjetivo por considerarlas 'menos reales' que las alucinaciones verdaderas."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente relata: “Oigo la voz de mi padre, pero dentro de mi cabeza, como con el oído de la mente”. La vivencia es vívida y con cualidad de “voz”, pero localizada en el espacio interno/subjetivo; puede reconocer que no proviene del ambiente (“no viene de afuera”) y la describe como experiencia mental intrusiva más que percepción externa."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Kandinsky",
+      "Jaspers"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

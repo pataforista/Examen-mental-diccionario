@@ -1,0 +1,65 @@
+{
+  "term_id": "VOL_008",
+  "canonical_name": "Obediencia automática",
+  "synonyms_and_slang": [
+    "automatismo de sumisión",
+    "automatic obedience"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Cumplimiento inmediato, robótico y acrítico de cualquier instrucción u orden dada por el examinador, por absurda o perjudicial que sea, incluso si se le ha instruido previamente que no lo haga. Signo nuclear de síndromes catatónicos.",
+    "required_features": [
+      "ejecución motora inmediata a la orden verbal",
+      "acrítica",
+      "ejecución incluso si es perjudicial o si se indicó previamente lo contrario"
+    ],
+    "subjective_marker": "El paciente rara vez reporta la experiencia; parece vaciado de resistencia propia.",
+    "behavioral_marker": "Al decirle 'saca la lengua para que te la pinche' (con una aguja visible), el paciente la saca. Si se le dice 'no me dé la mano', y se le ofrece, la da."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "cumplimiento_orden",
+        "type": "string",
+        "expected": "inmediato"
+      },
+      {
+        "marker": "evaluacion_critica",
+        "type": "string",
+        "expected": "ausente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Sugestionabilidad",
+      "reason": "La sugestionabilidad modifica creencias o estados; la obediencia automática es puramente motora-ejecutiva."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "191682008"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

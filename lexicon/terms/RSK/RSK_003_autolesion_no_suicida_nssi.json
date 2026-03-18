@@ -1,0 +1,165 @@
+{
+  "term_id": "RSK_003",
+  "canonical_name": "Autolesión no suicida (NSSI)",
+  "synonyms_and_slang": [
+    {
+      "term": "cortarse",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "hacerme daño para calmarme",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "cutting",
+      "context": "patient_report",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "behavior",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Daño deliberado al cuerpo sin intención suicida, con función de alivio emocional.",
+    "required_features": [
+      "daño tisular directo autoinfligido",
+      "ausencia de intención letal en el acto",
+      "función de regulación/alivio o autocastigo"
+    ],
+    "subjective_marker": "Dice hacerse daño para calmar tensión o vacío.",
+    "behavioral_marker": "Cortes, quemaduras u otras lesiones autoinfligidas."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion",
+      "exploracion_fisica",
+      "colateral"
+    ],
+    "time_relation": [
+      "actual",
+      "recurrente",
+      "historico"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "tissue_damage",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "suicidal_intent_in_act",
+        "type": "categorical",
+        "options": [
+          "no",
+          "incierto",
+          "si"
+        ],
+        "expected": "no"
+      },
+      {
+        "marker": "relief_or_regulation_function",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "method_category",
+        "type": "categorical",
+        "options": [
+          "corte",
+          "quemadura",
+          "golpe",
+          "rascado",
+          "mordida",
+          "otros"
+        ]
+      },
+      {
+        "marker": "medical_severity",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=superficial",
+          "1=requiere_curacion",
+          "2=requiere_sutura",
+          "3=amenaza_vida"
+        ]
+      },
+      {
+        "marker": "chronicity",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=primer_episodio",
+          "1=esporadica",
+          "2=recurrente",
+          "3=cronica"
+        ]
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-12",
+      "relation": "secondary_expression",
+      "context": "riesgo_conductual"
+    },
+    {
+      "domain_id": "DOM-09",
+      "relation": "coping_mechanism",
+      "context": "disregulacion_emocional"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "RSK_003",
+      "canonical_name": "Intento suicida",
+      "reason": "El intento implica intención de morir en el episodio; la NSSI no.",
+      "ref_status": "forward"
+    },
+    {
+      "term_id": "RSK_002",
+      "canonical_name": "Conducta suicida preparatoria",
+      "reason": "La preparatoria busca posibilitar un suicidio futuro; la NSSI busca alivio/regulación en el presente.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_differentiation",
+      "message": "Diferenciar intención: preguntar explícitamente por el acto ('¿quería morir o aliviar?') y por ideación paralela. NSSI aumenta riesgo suicida futuro, pero no equivale a intento."
+    },
+    {
+      "type": "safety_critical",
+      "message": "Si la severidad médica es alta (sutura/amenaza vital) o la intención es incierta, tratar como alto riesgo hasta clarificar."
+    }
+  ],
+  "teaching_notes": [
+    "No reducir NSSI a 'llamar la atención'. Suele ser regulación afectiva disfuncional.",
+    "Puede coexistir con ideación suicida: separar 'acto' vs 'estado mental' evita errores de disposición."
+  ],
+  "cognitive_pitfalls": [
+    "Clasificar automáticamente como intento sin evaluar intención en el acto.",
+    "Minimizar riesgo longitudinal por repetición, habituación al daño y aumento de letalidad con el tiempo."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Presenta cortes superficiales/quemaduras realizados para modular afecto (“para aliviar tensión”, “para dejar de sentirme así”), y niega intención de morir. La función reportada es regulación emocional/auto-castigo, con conducta repetitiva y patrón de alivio breve."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Linehan",
+      "Gunderson"
+    ],
+    "clinical_tradition": [
+      "DBT",
+      "Urgencias psiquiátricas"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

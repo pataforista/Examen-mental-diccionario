@@ -1,0 +1,64 @@
+{
+  "term_id": "VOL_002",
+  "canonical_name": "Ambivalencia volitiva",
+  "synonyms_and_slang": [
+    "ambitendencia",
+    "parálisis por decisión"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Coexistencia simultánea de impulsos o intenciones de acción opuestos, lo que resulta en parálisis de la acción, bloqueo o movimientos inacabados repetitivos. Clásico síntoma fundamental de Bleuler.",
+    "required_features": [
+      "intenciones de acción opuestas simultáneas",
+      "bloqueo o vacilación motora resultante"
+    ],
+    "subjective_marker": "El paciente relata querer hacer la acción y, al mismo instante exacto, querer no hacerla, quedando atrapado.",
+    "behavioral_marker": "El paciente extiende la mano para saludar y la retira repetidamente; da un paso al frente y uno atrás; bloqueos de movimiento en transiciones."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "impulsos_opuestos",
+        "type": "string",
+        "expected": "simultaneos"
+      },
+      {
+        "marker": "bloqueo_motor",
+        "type": "string",
+        "expected": "observable"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Bloqueo motor parkinsoniano (freezing)",
+      "reason": "El freezing es puramente motor; la ambitendencia tiene un componente de intencionalidad vacilante observable mentalmente."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "65166005"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

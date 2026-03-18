@@ -1,0 +1,76 @@
+{
+  "term_id": "PER_004",
+  "canonical_name": "Alucinaciones cenestésicas",
+  "synonyms_and_slang": [
+    "alucinaciones cenestésicas"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Percepciones corporales o viscerales anómalas sin correlato somático objetivo.",
+    "required_features": [
+      "presencia clínica de alucinaciones cenestésicas",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con alucinaciones cenestésicas.",
+    "behavioral_marker": "Se observan signos conductuales coherentes con alucinaciones cenestésicas en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_018",
+      "canonical_name": "Alucinaciones cenestésicas",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir alucinaciones cenestésicas con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Describe sensaciones internas extrañas y no fisiológicas: “Siento que me estiran los intestinos” o “hay electricidad en mis venas”. La cualidad es somática profunda, localizada “por dentro”, con vivencia de extrañeza corporal y, a veces, atribuciones explicativas secundarias."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

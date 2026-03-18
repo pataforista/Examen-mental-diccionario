@@ -1,0 +1,63 @@
+{
+  "term_id": "AFF_004",
+  "canonical_name": "Ambivalencia afectiva",
+  "synonyms_and_slang": [
+    "sentimientos contradictorios",
+    "ambivalencia emocional"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Coexistencia simultánea de sentimientos opuestos (amor y odio, atracción y repulsión) hacia la misma persona u objeto. Bleuler lo incluyó entre los síntomas fundamentales de la esquizofrenia. En grado leve, fenómeno normal en relaciones complejas.",
+    "required_features": [
+      "coexistencia de sentimientos opuestos",
+      "hacia el mismo objeto/persona",
+      "sin resolución posible"
+    ],
+    "subjective_marker": "El paciente refiere querer y odiar a la misma persona simultáneamente, sin poder resolverlo ni decantarse.",
+    "behavioral_marker": "Conductas contradictorias hacia el mismo objeto; aproximación y huida alternantes."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "sentimientos_opuestos",
+        "type": "string",
+        "expected": "simultaneos"
+      },
+      {
+        "marker": "objeto_comun",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Ambivalencia volitiva",
+      "reason": "La ambivalencia afectiva es emocional; la volitiva es de impulsos de acción."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

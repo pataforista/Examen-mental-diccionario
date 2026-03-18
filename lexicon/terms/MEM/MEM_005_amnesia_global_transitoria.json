@@ -1,0 +1,83 @@
+{
+  "term_id": "MEM_005",
+  "canonical_name": "Amnesia global transitoria",
+  "synonyms_and_slang": [
+    "AGT",
+    "transient global amnesia",
+    "TGA"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Episodio agudo, autolimitado (< 24 h, típicamente 4-8 h) de amnesia anterógrada y retrógrada intensa, con identidad preservada. El paciente formula repetidamente las mismas preguntas. La causa más aceptada es isquemia venosa transitoria del hipocampo bilateral.",
+    "required_features": [
+      "duración < 24 horas",
+      "identidad preservada",
+      "preguntas repetitivas",
+      "ausencia de déficits focales",
+      "sin pérdida de conciencia"
+    ],
+    "subjective_marker": "El paciente no sabe dónde está ni qué hizo las últimas horas. Pregunta repetidamente '¿qué hago aquí?' sin retener la respuesta.",
+    "behavioral_marker": "Cuestionamiento repetitivo, deambulación confusa, sin déficits neurológicos focales acompañantes."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "duración<24h",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "identidad",
+        "type": "string",
+        "expected": "preservada"
+      },
+      {
+        "marker": "focal_deficit",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "preguntas_repetitivas",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia disociativa",
+      "reason": "La AGT tiene sustrato neurológico vascular, duración autolimitada y no responde a trauma psíquico."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Delirium",
+      "reason": "En AGT no hay fluctuación de conciencia ni inatención global."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "8A62"
+    },
+    "snomed_ct": {
+      "concept_id": "230435007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,100 @@
+{
+  "term_id": "THO_004",
+  "canonical_name": "Circunstancialidad",
+  "synonyms_and_slang": [
+    {
+      "term": "pensamiento detallista",
+      "context": "clinical",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Discurso sobrecargado de detalles innecesarios y parentéticos que retrasan el alcance de la meta comunicativa, pero sin perderla.",
+    "required_features": [
+      "prolixidad de detalles",
+      "incapacidad para distinguir lo esencial de lo accesorio",
+      "mantenimiento de la meta-dirección (eventualmente responde)"
+    ],
+    "subjective_marker": "Refiere que 'necesita explicar todo bien' para que se le entienda.",
+    "behavioral_marker": "Relato minucioso, lento, con múltiples digresiones que finalmente vuelven al tema original."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual",
+      "persistente"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "excessive_details",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "goal_attained",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "speech_tempo",
+        "type": "categorical",
+        "options": [
+          "lento",
+          "normal",
+          "rapido"
+        ]
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-02",
+      "relation": "primary_expression",
+      "context": "curso_del_pensamiento"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "THO_006",
+      "canonical_name": "Tangencialidad",
+      "reason": "En la circunstancialidad se llega a la meta; en la tangencialidad se pierde el hilo y no se alcanza la respuesta.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Diferenciar de rasgos de personalidad perfeccionista o ansiedad social (donde el detalle es por precisión) frente a síntoma psicopatológico (donde se pierde la jerarquía)."
+  ],
+  "cognitive_pitfalls": [
+    "Interrumpir precozmente y no verificar si el paciente alcanza la meta (meta-direction)."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Relato extremadamente minucioso y lento, cargado de digresiones y detalles parentéticos sobre el clima, la ropa o la hora, lo que retrasa significativamente la respuesta central. Aunque se pierde en lo accesorio, finalmente logra volver al tema original y responder a la pregunta."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Jaspers",
+      "Schneider"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

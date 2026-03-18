@@ -1,0 +1,70 @@
+{
+  "term_id": "CNS_009",
+  "canonical_name": "Síncope",
+  "synonyms_and_slang": [
+    "desmayo",
+    "pérdida súbita y transitoria de conciencia por isquemia"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Episodio súbito, transitorio y autolimitado de pérdida de la conciencia (con abolición transitoria del tono postural), producto de una hipoperfusión cerebral global y reversible (síncope reflejo neuromediado, vasovagal, arritmias, hipotensión ortostática). Generalmente recupera total lucidez en minutos u horas sin confusión prolongada intercurrente.",
+    "required_features": [
+      "pérdida de conciencia súbita y breve",
+      "recuperación completa y rápida ad integrum (sin confusión prolongada subsecuente)",
+      "substrato fisiopatológico de hipoperfusión global cerebral aguda"
+    ],
+    "subjective_marker": "'Estaba de pie esperando, sentí mareo, todo se puso muy oscuro y al momento me di cuenta que me estaban levantando del piso.' (Frecuente amnesia del evento per se, pero recuerdo claro de pródromos).",
+    "behavioral_marker": "Desplome postural súbito, palidez, sudoración (diaforesis) pródromos autonómicos frecuentes; recuperación completa en lapsos breves."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "perdida_brusca_conciencia",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "recuperacion_total_rapida<3min",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "pródromos_vegetativos",
+        "type": "string",
+        "expected": "frecuentes"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Crisis epiléptica generalizada (convulsión)",
+      "reason": "El síncope típicamente NO posee aura sensorial compleja, ni movimientos tonicoclónicos sostenidos (aunque puede haber mioclonías sincopales muy leves), y la recuperación del nivel de alerta es rápida frente al extenso período posictal confuso propio de la convulsión."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MG45"
+    },
+    "snomed_ct": {
+      "concept_id": "271594007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

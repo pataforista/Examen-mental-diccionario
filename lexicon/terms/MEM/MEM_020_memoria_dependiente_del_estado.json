@@ -1,0 +1,69 @@
+{
+  "term_id": "MEM_020",
+  "canonical_name": "Memoria dependiente del estado",
+  "synonyms_and_slang": [
+    "state-dependent memory",
+    "state-dependent learning",
+    "olvido por cambio de contexto"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Fenómeno por el cual la información codificada en un determinado estado fisiológico o emocional es recuperada más fácilmente cuando se vuelve a ese estado. Descrito experimentalmente con alcohol, benzodiazepinas, humor. Clínicamente relevante en pacientes con estados afectivos extremos.",
+    "required_features": [
+      "codificación en estado específico",
+      "mejor recuperación en el mismo estado",
+      "deterioro al cambiar de estado"
+    ],
+    "subjective_marker": "El paciente reporta no recordar lo hecho en estado de intoxicación hasta volver a ese estado.",
+    "behavioral_marker": "Disociación entre conducta en diferentes estados; puede parecer amnésico al sobrio sobre lo ocurrido en intoxicación."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "estado_codificacion",
+        "type": "string",
+        "expected": "específico"
+      },
+      {
+        "marker": "recuperacion_mismoestado",
+        "type": "string",
+        "expected": "mejorada"
+      },
+      {
+        "marker": "transferencia_entre_estados",
+        "type": "string",
+        "expected": "reducida"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia por intoxicación",
+      "reason": "La amnesia por intoxicación implica fallo de codificación; la memoria dependiente del estado implica dificultad de recuperación inter-estados con codificación preservada."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB21.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

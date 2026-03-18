@@ -1,0 +1,84 @@
+{
+  "term_id": "MEM_025",
+  "canonical_name": "Sopor",
+  "synonyms_and_slang": [
+    "letargo profundo",
+    "semicoma"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 4,
+  "definition_clinical": {
+    "core": "Estado de disminución profunda de la conciencia en el que el paciente solo puede ser despertado mediante estímulos muy intensos y repetidos (generalmente dolorosos).",
+    "required_features": [
+      "ausencia de respuesta a estímulos verbales",
+      "respuesta motora defensiva ante estímulos dolorosos",
+      "retorno inmediato al estado de inconsciencia al cesar el estímulo"
+    ],
+    "subjective_marker": "Inaccesibilidad a la vivencia subjetiva durante el estado.",
+    "behavioral_marker": "El paciente permanece con los ojos cerrados, inmóvil, y solo emite gruñidos o retira una extremidad ante un pellizco externo."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "examen_fisico",
+      "observacion"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_y_alerta"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "COG_001",
+      "canonical_name": "Orientación",
+      "reason": "La orientación no es evaluable en estado de sopor."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_critical",
+      "message": "Urgencia médica. Indica compromiso cerebral severo."
+    }
+  ],
+  "teaching_notes": [
+    "Situado en la escala de gravedad entre la somnolencia y el coma.",
+    "Evaluar siempre mediante la escala de Glasgow."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB21.Z",
+      "label": "Symptoms or signs involving levels of consciousness"
+    },
+    "snomed_ct": {
+      "concept_id": "62944002",
+      "preferred_term": "Sopor (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "GCS - Glasgow Coma Scale",
+        "item": "Respuesta total < 8-9",
+        "scale_id": "GCS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Clásica"
+    ],
+    "clinical_tradition": [
+      "neuropatologia"
+    ]
+  },
+  "status": "active"
+}

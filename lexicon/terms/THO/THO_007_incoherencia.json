@@ -1,0 +1,115 @@
+{
+  "term_id": "THO_007",
+  "canonical_name": "Incoherencia",
+  "synonyms_and_slang": [
+    {
+      "term": "ensalada de palabras",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "discurso ininteligible",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "word salad",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Pérdida total de la estructura lógica y sintáctica del pensamiento y lenguaje; el discurso es incomprensible.",
+    "required_features": [
+      "ausencia de nexos lógicos entre palabras o frases",
+      "desorganización de la sintaxis",
+      "ininteligibilidad del mensaje global"
+    ],
+    "subjective_marker": "No hay reporte claro; puede percatarse de que 'no le entienden' sin poder rectificar.",
+    "behavioral_marker": "Habla caótica, emisión de palabras sueltas o fragmentos sin sentido gramatical."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "actual",
+      "episodica"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Anticolinérgicos/Alucinógenos",
+        "risk": "high"
+      }
+    ],
+    "computable_markers": [
+      {
+        "marker": "syntax_broken",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "comprehensibility",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=normal",
+          "1=difícil",
+          "2=mínima",
+          "3=nula"
+        ]
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-02",
+      "relation": "primary_expression",
+      "context": "desorganizacion_pensamiento"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "THO_003",
+      "canonical_name": "Asociaciones laxas",
+      "reason": "En las asociaciones laxas hay vínculos remotos o idiosincrásicos; en la incoherencia el vínculo se ha perdido totalmente.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "message": "Incoherencia de inicio agudo obliga a descartar delirium o patología orgánica cerebral (ictus, encefalitis)."
+    }
+  ],
+  "teaching_notes": [
+    "Es el grado máximo de desorganización del pensamiento.",
+    "Documentar si aparece en conciencia clara (esquizofrenia) o nublada (delirium)."
+  ],
+  "cognitive_pitfalls": [
+    "Asumir psicosis crónica sin valorar nivel de conciencia.",
+    "No diferenciar de afasia sensorial severa."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Habla caótica con pérdida total de nexos lógicos y desorganización de la sintaxis (“Ayer el sol porque verde cuando correr”), resultando en una ininteligibilidad absoluta del mensaje global."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Oyebode",
+      "Jaspers"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

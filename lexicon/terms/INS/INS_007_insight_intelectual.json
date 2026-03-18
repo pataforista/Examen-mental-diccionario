@@ -1,0 +1,63 @@
+{
+  "term_id": "INS_007",
+  "canonical_name": "Insight intelectual",
+  "synonyms_and_slang": [
+    "insight puramente cognitivo",
+    "insight grado 4/5"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "El paciente es capaz de articular racionalmente que tiene una enfermedad mental y que sus síntomas derivan de ella (es capaz de 'repetir' el diagnóstico del médico), pero este conocimiento no se traduce en un cambio emocional ni altera su comportamiento ante los síntomas.",
+    "required_features": [
+      "reconocimiento teórico del diagnóstico",
+      "incapacidad para aplicar este conocimiento a la conducta",
+      "disociación intelecto-afecto"
+    ],
+    "subjective_marker": "'El médico dice que tengo esquizofrenia y que las voces son mi cerebro fallando. Supongo que es verdad. (Pausa) Pero me dijeron que cruzara la calle corriendo...'",
+    "behavioral_marker": "Adherencia irregular; verbalmente cooperador en consulta pero conductualmente guiado por la patología en casa."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "conocimiento_intelectual",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "aplicacion_conductual",
+        "type": "string",
+        "expected": "nula"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Insight emocional",
+      "reason": "El insight intelectual es 'saber sin sentir'; el emocional es la verdadera integración de ese conocimiento."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

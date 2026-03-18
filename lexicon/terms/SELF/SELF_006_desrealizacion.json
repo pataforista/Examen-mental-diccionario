@@ -1,0 +1,110 @@
+{
+  "term_id": "SELF_006",
+  "canonical_name": "Desrealización",
+  "synonyms_and_slang": [
+    {
+      "term": "el mundo parece de cartón",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "percepción de película",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "derealization",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Sentimiento de extrañeza o falta de realidad sobre el entorno externo.",
+    "required_features": [
+      "entorno percibido como artificial, lejano o distorsionado",
+      "insight conservado sobre la anomalía perceptiva",
+      "no es una alucinación ni un delirio"
+    ],
+    "subjective_marker": "Describe el mundo como una película, un escenario o que hay un velo entre él y el entorno.",
+    "behavioral_marker": "Relata extrañeza ante objetos o personas familiares; puede haber perplejidad."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "transitoria",
+      "episodica",
+      "recurrente"
+    ],
+    "pharmacological_link": true,
+    "computable_markers": [
+      {
+        "marker": "world_unreal_quality",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "insight_preserved",
+        "type": "boolean",
+        "expected": true
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_del_yo_y_mundo"
+    },
+    {
+      "domain_id": "DOM-09",
+      "relation": "associated_symptom",
+      "context": "ansiedad_panico"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SELF_001",
+      "canonical_name": "Despersonalización",
+      "reason": "La desrealización es externa (entorno); la despersonalización es interna (uno mismo). Suelen coexistir.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_differentiation",
+      "message": "Diferenciar de distorsiones visuales (PER_014) donde hay cambios geométricos reales en la percepción. Aquí es la 'cualidad de realidad' lo que falla."
+    }
+  ],
+  "teaching_notes": [
+    "Común en crisis de angustia y fatiga extrema.",
+    "El paciente a menudo teme 'estar volviéndose loco' debido a la extrañeza de la experiencia."
+  ],
+  "cognitive_pitfalls": [
+    "No preguntar explícitamente por el entorno cuando el paciente describe ansiedad.",
+    "Tratar como un síntoma psicótico per se."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Refiere extrañeza del entorno: “El mundo se ve plano, como un escenario; los sonidos vienen de lejos”. Reconoce que el ambiente “es real”, pero se percibe sin familiaridad habitual, como si mediara una “pantalla” o distancia."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Descriptive psychopathology"
+    ],
+    "clinical_tradition": [
+      "Trastornos disociativos",
+      "Psicopatología clásica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

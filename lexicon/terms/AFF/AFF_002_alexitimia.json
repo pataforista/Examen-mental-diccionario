@@ -1,0 +1,69 @@
+{
+  "term_id": "AFF_002",
+  "canonical_name": "Alexitimia",
+  "synonyms_and_slang": [
+    "analfabetismo emocional",
+    "alexithymia",
+    "ceguera emocional"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Dificultad marcada para identificar, describir y diferenciar emociones propias, y para distinguir emociones de sensaciones somáticas. Descrita por Sifneos (1972). Asociada a somatización, trastornos psicosomáticos, TEA y TEPT.",
+    "required_features": [
+      "dificultad para identificar emociones propias",
+      "dificultad para describir emociones a otros",
+      "pensamiento orientado a lo externo-concreto"
+    ],
+    "subjective_marker": "El paciente no puede nombrar lo que siente ('no sé, algo raro en el pecho'), describe síntomas físicos en lugar de emociones.",
+    "behavioral_marker": "Discurso centrado en hechos concretos; poca referencia a estados internos; respuestas afectivas atenuadas o confusas."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "TAS-20≥61",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "descripcion_emocional",
+        "type": "string",
+        "expected": "pobre"
+      },
+      {
+        "marker": "somatizacion",
+        "type": "string",
+        "expected": "frecuente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Aplanamiento afectivo",
+      "reason": "El aplanamiento es un signo de reducción de expresión; la alexitimia es una dificultad metacognitiva para identificar y verbalizar emociones."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

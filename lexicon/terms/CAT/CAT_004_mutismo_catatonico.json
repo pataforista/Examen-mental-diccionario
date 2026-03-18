@@ -1,0 +1,84 @@
+{
+  "term_id": "CAT_004",
+  "canonical_name": "Mutismo Catatónico",
+  "synonyms_and_slang": [
+    "mutismo acinético"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Ausencia total de lenguaje verbal en un paciente con integridad de los órganos fonatorios y nivel de conciencia preservado, dentro del contexto de un síndrome catatónico.",
+    "required_features": [
+      "ausencia de respuesta verbal",
+      "integridad de centros del lenguaje",
+      "contexto de inhibición psicomotora"
+    ],
+    "subjective_marker": "Inaccesibilidad verbal.",
+    "behavioral_marker": "El paciente no responde a preguntas, ni inicia contacto verbal, manteniendo silencio absoluto incluso ante estímulos intensos."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "lenguaje_comunicacion"
+    },
+    {
+      "domain_id": "DOM-11",
+      "relation": "associated_symptom",
+      "context": "conducta_motriz"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SPE_001",
+      "canonical_name": "Afasia",
+      "reason": "En la afasia hay un daño en el procesamiento del lenguaje; en el mutismo catatónico hay una inhibición de la voluntad de habla."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_warning",
+      "message": "Evaluar siempre con la prueba de la respuesta ante la presión (Mitmachen) para distinguir de simulaciones."
+    }
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A21.Z",
+      "label": "Catatonia"
+    },
+    "snomed_ct": {
+      "concept_id": "285640003",
+      "preferred_term": "Catatonic mutism (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "BFCRS",
+        "item": "Mutism",
+        "scale_id": "BFCRS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Fish"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

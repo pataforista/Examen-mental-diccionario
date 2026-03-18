@@ -1,0 +1,81 @@
+{
+  "term_id": "ARC_003",
+  "canonical_name": "Bouffée Délirante",
+  "synonyms_and_slang": [
+    "psicosis delirante aguda",
+    "llamarada delirante"
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 3,
+  "definition_clinical": {
+    "core": "Concepto clásico de la psiquiatría francesa (Magnan) para describir un episodio psicótico agudo de inicio súbito, caracterizado por un delirio polimorfo (cambiante en contenido), labilidad afectiva y ausencia de base orgánica.",
+    "required_features": [
+      "inicio brusco ('d’emblée')",
+      "delirio polimorfo (múltiples temas: persecución, grandeza, místico)",
+      "fluctuación del afecto y la conciencia",
+      "resolución rápida con retorno al estado previo"
+    ],
+    "subjective_marker": "El paciente se siente súbitamente invadido por una multitud de ideas y percepciones extrañas.",
+    "behavioral_marker": "Agitación intensa, discurso cambiante y conducta desorganizada que aparece en pocas horas."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion_aguda"
+    ],
+    "time_relation": [
+      "historico",
+      "episodico"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-13",
+      "relation": "historical_precursor",
+      "context": "psicosis_agudas"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "ARC_002",
+      "canonical_name": "Dementia Praecox",
+      "reason": "La bouffée délirante es esencialmente reversible y aguda; la dementia praecox es crónica y deteriorante."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Es el antepasado directo del 'Trastorno psicótico agudo y transitorio' moderno."
+    }
+  ],
+  "teaching_notes": [
+    "El término enfatiza el carácter explosivo y transitorio del cuadro.",
+    "Diferenciar de episodios maníacos por la falta de euforia sostenida y el polimorfismo delirante."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A23",
+      "label": "Acute and transient psychotic disorder"
+    },
+    "snomed_ct": {
+      "concept_id": "191522005",
+      "preferred_term": "Bouffée délirante (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Magnan",
+      "Ey"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_francesa"
+    ]
+  },
+  "status": "active"
+}

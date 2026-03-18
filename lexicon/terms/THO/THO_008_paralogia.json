@@ -1,0 +1,78 @@
+{
+  "term_id": "THO_008",
+  "canonical_name": "Paralogia",
+  "synonyms_and_slang": [
+    "pensamiento ilógico",
+    "lógica anómala"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Trastorno de la forma del pensamiento en el que el paciente utiliza razonamientos que parecen seguir una estructura lógica pero que llegan a conclusiones absurdas o erróneas basadas en premisas falsas o asociaciones idiosincrásicas.",
+    "required_features": [
+      "apariencia de razonamiento deductivo",
+      "conclusiones que no siguen la lógica convencional",
+      "mantenimiento de la estructura gramatical"
+    ],
+    "subjective_marker": "El paciente defiende sus argumentos como verdades lógicas e irrefutables.",
+    "behavioral_marker": "Discurso argumentativo que utiliza conectores lógicos ('por lo tanto', 'en consecuencia') para unir ideas que no guardan relación causal real."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "pensamiento_forma"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "THO_009",
+      "canonical_name": "Incoherencia",
+      "reason": "En la paralogia hay una estructura formal que se mantiene; en la incoherencia la estructura misma está rota."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_warning",
+      "message": "Frecuente en trastornos esquizofrénicos y ciertos trastornos delirantes crónicos."
+    }
+  ],
+  "teaching_notes": [
+    "Término clásico que ayuda a describir el 'pensamiento delireoide'.",
+    "A menudo relacionado con la 'metonimia' y el uso de metáforas como realidades."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Z",
+      "label": "Symptoms or signs involving thought processes"
+    },
+    "snomed_ct": {
+      "concept_id": "191533005",
+      "preferred_term": "Paralogia (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Kleist",
+      "Jaspers"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_alemana"
+    ]
+  },
+  "status": "active"
+}

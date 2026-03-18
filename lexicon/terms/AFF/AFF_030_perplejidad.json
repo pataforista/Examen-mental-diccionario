@@ -1,0 +1,69 @@
+{
+  "term_id": "AFF_030",
+  "canonical_name": "Perplejidad",
+  "synonyms_and_slang": [
+    "bewilderment",
+    "estado de perplejidad",
+    "confusión afectiva"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Estado emocional de desorientación y desconcierto ante la propia experiencia psíquica. El paciente no comprende lo que le ocurre, siente que algo ha cambiado fundamentalmente en él o en el mundo, sin poder explicarlo. Frecuente en pródromo psicótico y estados delirantes incipientes.",
+    "required_features": [
+      "desorientación sobre la propia experiencia",
+      "sensación de cambio inexplicable",
+      "no comprensión del estado propio"
+    ],
+    "subjective_marker": "El paciente refiere: 'algo pasa, no sé qué, todo se siente diferente pero no puedo explicarlo'.",
+    "behavioral_marker": "Expresión facial de extrañeza o confusión, mirada perdida, búsqueda de explicaciones, irritabilidad ante la falta de comprensión."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "comprension_estado_propio",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "cambio_percibido",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "psicotico_prodromo",
+        "type": "string",
+        "expected": "descartar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Confusión",
+      "reason": "La confusión es desorientación cognitiva; la perplejidad es desconcierto afectivo-fenomenológico."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,69 @@
+{
+  "term_id": "INS_006",
+  "canonical_name": "Insight emocional",
+  "synonyms_and_slang": [
+    "insight verdadero",
+    "insight grado 6",
+    "conciencia plena"
+  ],
+  "term_kind": "distinción_clínica",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "El grado más alto y curativo de conciencia de enfermedad. El paciente no solo reconoce intelectualmente su padecimiento y sus síntomas causados por éste, sino que asimila emocionalmente este hecho, lo que produce una modificación terapéutica en su actitud vital, conducta y manejo de los síntomas.",
+    "required_features": [
+      "reconocimiento cognitivo de la enfermedad",
+      "resonancia afectiva proporcional",
+      "modificación conductual (adherencia)"
+    ],
+    "subjective_marker": "'Entiendo que mi mente me juega trampas cuando estoy maníaco; ahora reconozco esos arranques de energía y sé que debo pedir ayuda inmediata'.",
+    "behavioral_marker": "Adherencia completa, auto-monitoreo de síntomas prodrómicos, anticipación de recaídas."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "integracion_emocional",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "modificacion_conducta",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "escala_insight",
+        "type": "string",
+        "expected": "6"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "baseline_reference",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Insight intelectual",
+      "reason": "El insight intelectual falla en la traducción conductual y afectiva."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {},
+    "snomed_ct": {
+      "concept_id": "104711000119106"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

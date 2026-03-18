@@ -104,7 +104,8 @@ const App = {
             navButtons: document.querySelectorAll('.bottom-nav button'),
             aboutBtn: document.getElementById('about-btn'),
             themeToggle: document.getElementById('theme-toggle'),
-            gameView: document.getElementById('game-view')
+            gameView: document.getElementById('game-view'),
+            clearSearchBtn: document.getElementById('clear-search')
         };
     },
 
@@ -127,6 +128,14 @@ const App = {
             history.pushState({ view: 'about' }, '', '#about');
         });
         this.nodes.themeToggle.addEventListener('click', () => this.theme.toggle());
+        if (this.nodes.clearSearchBtn) {
+            this.nodes.clearSearchBtn.addEventListener('click', () => {
+                this.nodes.search.value = '';
+                this.nodes.clearSearchBtn.classList.add('hidden');
+                this.handleSearch('');
+                this.nodes.search.focus();
+            });
+        }
 
         // History API support
         window.addEventListener('popstate', (e) => this.handlePopState(e.state));
@@ -226,13 +235,28 @@ const App = {
     setupSearch: function () {
         if (!window.Fuse) return;
         this.data.fuse = new Fuse(this.data.terms, {
-            keys: ['canonical_name', 'synonyms_and_slang', 'definition_clinical.core'],
-            threshold: 0.3
+            keys: [
+                { name: 'canonical_name', weight: 1.0 },
+                { name: 'synonyms_and_slang', weight: 0.7 },
+                { name: 'definition_clinical.core', weight: 0.4 }
+            ],
+            threshold: 0.4, // Higher tolerance for typos
+            distance: 100,
+            location: 0,
+            minMatchCharLength: 2,
+            findAllMatches: true,
+            useExtendedSearch: true,
+            ignoreLocation: false
         });
     },
 
     handleSearch: function (query) {
         const cleanQuery = query.trim();
+        
+        if (this.nodes.clearSearchBtn) {
+            this.nodes.clearSearchBtn.classList.toggle('hidden', cleanQuery.length === 0);
+        }
+
         if (cleanQuery.length < 2) {
             this.renderView('dictionary');
             return;
@@ -289,22 +313,36 @@ const App = {
     },
 
     renderResults: function (results) {
-        this.nodes.resultsView.innerHTML = `
-            <h3 style="margin-top:0; font-size: 1rem;">Resultados de búsqueda</h3>
-            ${results.map(r => `
-                <div class="card" onclick="App.viewTerm('${r.item.term_id}')" style="margin-bottom: 0.75rem; padding: 1rem;">
-                    <div style="display:flex; justify-content: space-between; align-items: flex-start;">
-                        <strong style="color: var(--primary);">${this.utils.sanitizeHTML(r.item.canonical_name)}</strong>
-                        <div class="badge badge-risk-${r.item.risk_weight > 1 ? 'critical' : 'alert'}" style="font-size: 0.6rem;">
-                            ${this.utils.sanitizeHTML(r.item.term_kind)}
-                        </div>
-                    </div>
-                    <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.5rem 0 0 0; line-height: 1.4;">
-                        ${this.utils.sanitizeHTML((r.item.definition_clinical?.core || 'Sin definición disponible.').substring(0, 80))}...
-                    </p>
+        if (results.length === 0) {
+            this.nodes.resultsView.innerHTML = `
+                <div class="card" style="text-align: center; padding: 3rem 1rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                    <h3 style="margin: 0; color: var(--text-p);">No se encontraron términos</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Intenta con palabras similares o revisa la ortografía.</p>
                 </div>
-            `).join('')}
-        `;
+            `;
+        } else {
+            this.nodes.resultsView.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0 0.5rem;">
+                    <span class="section-label" style="margin:0;">Resultados (${results.length})</span>
+                </div>
+                ${results.map(r => `
+                    <div class="card" onclick="App.viewTerm('${r.item.term_id}')" style="cursor: pointer; padding: 1.25rem;">
+                        <div style="display:flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <strong style="color: var(--primary); font-size: 1.1rem; letter-spacing: -0.02em;">
+                                ${this.utils.sanitizeHTML(r.item.canonical_name)}
+                            </strong>
+                            <div class="badge ${r.item.risk_weight > 1 ? 'badge-risk-critical' : ''}" style="font-size: 0.65rem; border: 1px solid var(--border-subtle);">
+                                ${this.utils.sanitizeHTML(r.item.term_kind)}
+                            </div>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                            ${this.utils.sanitizeHTML(r.item.definition_clinical?.core || 'Sin definición disponible.')}
+                        </p>
+                    </div>
+                `).join('')}
+            `;
+        }
         this.renderView('results');
     },
 

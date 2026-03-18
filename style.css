@@ -5,24 +5,31 @@
 
 :root {
     /* Common */
-    --transition-speed: 0.5s;
-    --radius-soft: 20px;
-    --radius-sharp: 4px;
+    --transition-speed: 0.3s;
+    --md-sys-motion-standard: cubic-bezier(0.2, 0, 0, 1);
+    
+    /* M3 Radii */
+    --radius-none: 0;
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
 
-    /* REGISTRO CLARO — "The Valley" */
-    --v-bg: #FFF8E7;
-    /* Crema Papel */
-    --v-text: #2B2F40;
-    /* Tinta Índigo */
-    --v-primary: #56D8B6;
-    /* Verde Espíritu */
+    /* REGISTRO CLARO — "The Valley" (M3 Light adaptation) */
+    --v-bg: #FFF8E7; /* Crema Papel */
+    --v-text: #1C1B1F; /* On Surface */
+    --v-primary: #56D8B6; /* Primary */
+    --v-on-primary: #FFFFFF;
+    --v-primary-container: #D1F3E9;
+    --v-on-primary-container: #002019;
+    --v-secondary-container: #E8DEF8;
     --v-accent: #FF8E72;
-    /* Coral Salmón */
     --v-detail: #FFC857;
-    /* Dorado Mostaza */
     --v-border: 2px solid #2B2F40;
     --v-font: 'Outfit', sans-serif;
-    --v-shadow: 4px 4px 0px #2B2F40;
+    --v-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
     /* Current Active (Light by default) */
     --bg: var(--v-bg);
@@ -30,53 +37,62 @@
     --accent: var(--v-accent);
     --primary: var(--v-primary);
     --primary-rgb: 86, 216, 182;
+    --primary-container: var(--v-primary-container);
+    --on-primary-container: var(--v-on-primary-container);
+    --secondary-container: var(--v-secondary-container);
     --border: var(--v-border);
     --font-main: var(--v-font);
     --shadow: var(--v-shadow);
     --glass: blur(8px) saturate(150%);
-    --header-bg: rgba(255, 248, 231, 0.85);
+    --header-bg: rgba(255, 248, 231, 0.9);
 
-    /* Supplementary tokens */
-    --text-secondary: #6b7280;
-    --surface-2: rgba(0, 0, 0, 0.03);
-    --border-subtle: rgba(43, 47, 64, 0.1);
+    /* M3 Surface levels */
+    --surface-1: rgba(var(--primary-rgb), 0.05);
+    --surface-2: rgba(var(--primary-rgb), 0.08);
+    --surface-3: rgba(var(--primary-rgb), 0.11);
+    
+    --text-secondary: #49454F;
+    --border-subtle: rgba(28, 27, 31, 0.12);
     --primary-dark: #3bba98;
     --success: #2ecc71;
 }
 
 [data-theme="dark"] {
-    /* REGISTRO OSCURO — "The Void" */
-    --o-bg: #120C18;
-    /* Vacío Púrpura */
-    --o-text: #E4D8EB;
-    /* Hueso Lunar */
-    --o-accent-a: #FF3C3C;
-    /* Rojo Sangre */
-    --o-accent-b: #00FFC2;
-    /* Cian The Wired */
-    --o-light: #FFA600;
-    /* Naranja Linterna */
+    /* REGISTRO OSCURO — "The Void" (M3 Dark adaptation) */
+    --o-bg: #1C1B1F; /* Dark Surface */
+    --o-text: #E6E1E5; /* On Surface */
+    --o-accent-a: #FFB4AB; /* Error Light */
+    --o-accent-b: #80F6CD; /* Primary Dark Variant */
+    --o-primary-container: #005141;
+    --o-on-primary-container: #80F6CD;
+    --o-secondary-container: #4A4458;
+    --o-light: #FFB900;
     --o-font: 'Space Grotesk', sans-serif;
-    --o-shadow-glow: 0 0 15px rgba(0, 255, 194, 0.3);
-    --o-shadow-red: 0 0 20px rgba(255, 60, 60, 0.4);
+    --o-shadow-glow: 0 4px 8px rgba(0,0,0,0.5);
 
     /* Override Active */
     --bg: var(--o-bg);
     --text-p: var(--o-text);
     --accent: var(--o-accent-a);
     --primary: var(--o-accent-b);
-    --primary-rgb: 0, 255, 194;
+    --primary-rgb: 128, 246, 205;
+    --primary-container: var(--o-primary-container);
+    --on-primary-container: var(--o-on-primary-container);
+    --secondary-container: var(--o-secondary-container);
     --border: none;
     --font-main: var(--o-font);
     --shadow: var(--o-shadow-glow);
-    --header-bg: rgba(18, 12, 24, 0.9);
+    --header-bg: rgba(28, 27, 31, 0.9);
 
-    /* Supplementary tokens */
-    --text-secondary: rgba(228, 216, 235, 0.55);
-    --surface-2: rgba(255, 255, 255, 0.04);
-    --border-subtle: rgba(0, 255, 194, 0.15);
+    /* M3 Surface levels Dark */
+    --surface-1: rgba(255, 255, 255, 0.05);
+    --surface-2: rgba(255, 255, 255, 0.08);
+    --surface-3: rgba(255, 255, 255, 0.11);
+
+    --text-secondary: #CAC4D0;
+    --border-subtle: rgba(230, 225, 229, 0.12);
     --primary-dark: var(--o-accent-b);
-    --success: #48bb78;
+    --success: #81C784;
 }
 
 * {
@@ -122,14 +138,13 @@ body::before {
     background: var(--header-bg);
     backdrop-filter: var(--glass);
     -webkit-backdrop-filter: var(--glass);
-    padding: 1.5rem 1rem;
-    border-bottom: var(--border);
+    padding: 1rem 1rem 1.25rem;
     z-index: 100;
     position: relative;
 }
 
-[data-theme="dark"] .app-header {
-    border-bottom: 1px solid rgba(0, 255, 194, 0.1);
+[data-theme="light"] .app-header {
+    border-bottom: var(--border);
 }
 
 .header-top {
@@ -186,30 +201,74 @@ body::before {
     box-shadow: var(--o-shadow-glow);
 }
 
-/* Search Box */
+/* Search Box M3 */
 .search-container {
-    max-width: 600px;
+    max-width: 720px;
     margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .search-container input {
     width: 100%;
-    padding: 1rem 1.5rem;
-    border: var(--border);
-    border-radius: var(--radius-soft);
-    background: var(--bg);
+    padding: 0.85rem 1rem 0.85rem 3.5rem;
+    border: none;
+    border-radius: var(--radius-xl);
+    background: var(--surface-2);
     color: var(--text-p);
     font-family: var(--font-main);
-    font-size: 1.1rem;
+    font-size: 1rem;
     outline: none;
-    box-shadow: var(--shadow);
+    transition: all 0.3s var(--md-sys-motion-standard);
+    box-shadow: none;
+}
+
+.search-container::before {
+    content: "🔍";
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-p);
+    opacity: 0.5;
+    padding: 0.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.clear-btn:hover {
+    background: var(--surface-3);
+    opacity: 1;
+}
+
+.search-container input:focus {
+    background: var(--bg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+[data-theme="light"] .search-container input {
+    border: 1px solid rgba(0,0,0,0.1);
 }
 
 [data-theme="dark"] .search-container input {
-    border-radius: var(--radius-sharp);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--o-accent-b);
-    box-shadow: 0 0 20px rgba(0, 255, 194, 0.1);
+    background: var(--surface-3);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 /* Content Area */
@@ -220,23 +279,26 @@ main {
     scroll-behavior: smooth;
 }
 
-/* Cards & Items */
+/* Cards & Items M3 */
 .card {
-    background: var(--bg);
-    border: var(--border);
-    border-radius: var(--radius-soft);
+    background: var(--surface-1);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
     position: relative;
-    animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: slideIn 0.4s var(--md-sys-motion-standard);
+    transition: transform 0.2s, background 0.2s;
+}
+
+[data-theme="light"] .card {
+    background: #FFFBFE;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 [data-theme="dark"] .card {
-    border-radius: var(--radius-sharp);
-    background: rgba(255, 255, 255, 0.03);
-    box-shadow: var(--o-shadow-glow);
-    border-left: 4px solid var(--o-accent-b);
+    background: var(--surface-2);
+    border-left: none;
 }
 
 @keyframes slideIn {
@@ -255,30 +317,26 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem;
-    background: var(--bg);
-    border: var(--border);
-    border-radius: 12px;
-    margin-bottom: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface-1);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.5rem;
     cursor: pointer;
-    box-shadow: var(--shadow);
+    transition: all 0.2s var(--md-sys-motion-standard);
 }
 
 .list-item:hover {
-    transform: translateX(5px);
-    background: var(--v-detail);
+    background: var(--secondary-container);
+    transform: scale(1.01);
+}
+
+[data-theme="light"] .list-item {
+    border: 1px solid var(--border-subtle);
 }
 
 [data-theme="dark"] .list-item {
-    border: none;
-    border-radius: var(--radius-sharp);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
-}
-
-[data-theme="dark"] .list-item:hover {
-    background: rgba(0, 255, 194, 0.1);
-    box-shadow: 0 0 15px rgba(0, 255, 194, 0.2);
+    background: var(--surface-2);
+    box-shadow: none;
 }
 
 /* Typography Details */
@@ -324,7 +382,7 @@ main {
     display: block;
 }
 
-/* Navigation */
+/* Navigation M3 */
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -333,13 +391,9 @@ main {
     background: var(--header-bg);
     backdrop-filter: var(--glass);
     display: flex;
-    padding: 1rem 0.5rem 1.5rem;
-    border-top: var(--border);
+    padding: 0.75rem 0 1.5rem;
+    border-top: 1px solid var(--border-subtle);
     z-index: 100;
-}
-
-[data-theme="dark"] .bottom-nav {
-    border-top: 1px solid rgba(0, 255, 194, 0.2);
 }
 
 .bottom-nav button {
@@ -350,26 +404,37 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
     font-family: var(--font-main);
-    font-weight: 700;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    opacity: 0.5;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: none;
+    opacity: 0.7;
     cursor: pointer;
+    position: relative;
+    transition: opacity 0.2s;
+}
+
+.bottom-nav button .nav-icon {
+    font-size: 1.4rem;
+    padding: 4px 20px;
+    border-radius: 16px;
+    transition: background 0.3s var(--md-sys-motion-standard), color 0.3s;
 }
 
 .bottom-nav button.active {
     opacity: 1;
+    font-weight: 700;
 }
 
-.bottom-nav button .nav-icon {
-    font-size: 1.6rem;
+.bottom-nav button.active .nav-icon {
+    background: var(--secondary-container);
+    color: var(--on-primary-container);
 }
 
-[data-theme="dark"] .bottom-nav button.active {
-    color: var(--o-accent-b);
-    text-shadow: 0 0 10px var(--o-accent-b);
+[data-theme="dark"] .bottom-nav button.active .nav-icon {
+    background: var(--primary-container);
+    color: var(--on-primary-container);
 }
 
 /* Ritual Effects */

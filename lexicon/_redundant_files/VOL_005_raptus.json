@@ -1,0 +1,70 @@
+{
+  "term_id": "VOL_005",
+  "canonical_name": "Raptus",
+  "synonyms_and_slang": [
+    "impulso ciego",
+    "descargo motor explosivo",
+    "rapto melancólico"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Descarga motora explosiva, repentina y de extrema violencia (hacia sí mismo o hacia otros), que emerge de un estado de intensa tensión afectiva (frecuentemente depresión melancólica severa o catatonía), saltándose toda deliberación consciente.",
+    "required_features": [
+      "explosión motora extrema",
+      "ausencia total de deliberación",
+      "violencia/peligrosidad inherente",
+      "sobre fondo de tensión intrapsíquica"
+    ],
+    "subjective_marker": "Frecuentemente el paciente tiene amnesia parcial del episodio o lo describe como si 'algo hubiera explotado' dentro.",
+    "behavioral_marker": "Intento de suicidio súbito y brutal (raptus melancólico), agresión inmotivada letal repentina, seguido a menudo de retorno rápido al estado previo."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "explosividad",
+        "type": "string",
+        "expected": "extrema"
+      },
+      {
+        "marker": "deliberacion",
+        "type": "string",
+        "expected": "nula"
+      },
+      {
+        "marker": "peligro_inminente",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Impulsividad patológica",
+      "reason": "El raptus es mucho más severo, explosivo, menos dependiente de estímulos ambientales y típicamente más violento/destructivo."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

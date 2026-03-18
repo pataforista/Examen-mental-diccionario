@@ -1,0 +1,77 @@
+{
+  "term_id": "MEM_006",
+  "canonical_name": "Amnesia disociativa",
+  "synonyms_and_slang": [
+    "amnesia psicogénica episódica",
+    "amnesia histérica",
+    "repressed memory (coloquial)"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad de recuperar información autobiográfica importante, típicamente de naturaleza traumática o estresante, demasiado extensa para ser explicada por olvido ordinario. Sin sustrato neurológico identificable.",
+    "required_features": [
+      "pérdida de memoria autobiográfica",
+      "ausencia de causa orgánica",
+      "contenido generalmente traumático",
+      "sin explicación por olvido ordinario"
+    ],
+    "subjective_marker": "El paciente no recuerda períodos de su vida o eventos específicos traumáticos. Puede haber awareness de 'huecos' en su historia.",
+    "behavioral_marker": "Incapacidad de relatar episodios de vida propios; sin deterioro en otros dominios cognitivos."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "memoria_autobiografica",
+        "type": "string",
+        "expected": "lagunas_selectivas"
+      },
+      {
+        "marker": "cognicion_general",
+        "type": "string",
+        "expected": "normal"
+      },
+      {
+        "marker": "trauma_previo",
+        "type": "string",
+        "expected": "frecuente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia orgánica",
+      "reason": "La disociativa es selectiva para contenidos traumáticos y no sigue gradientes temporales orgánicos."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Fuga disociativa",
+      "reason": "La fuga incluye viaje físico y asunción de nueva identidad, que la amnesia disociativa simple no tiene."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6B60"
+    },
+    "snomed_ct": {
+      "concept_id": "80002003"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

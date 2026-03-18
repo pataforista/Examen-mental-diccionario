@@ -1,0 +1,77 @@
+{
+  "term_id": "AFF_010",
+  "canonical_name": "Aplanamiento afectivo",
+  "synonyms_and_slang": [
+    "flat affect",
+    "afecto plano",
+    "restricción afectiva severa",
+    "afecto embotado grave"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Reducción marcada o ausencia de la expresión emocional facial, vocal y gestual. El paciente puede referir emociones internamente pero no las expresa. Signo nuclear de esquizofrenia y síntoma negativo primario.",
+    "required_features": [
+      "ausencia o marcada reducción de expresión emocional",
+      "no corresponde a ausencia de experiencia emocional necesariamente",
+      "persistente"
+    ],
+    "subjective_marker": "El paciente puede o no reportar indiferencia subjetiva; algunos refieren emociones internas que 'no pueden expresar'.",
+    "behavioral_marker": "Cara inexpresiva, voz monótona, escasa o ausente gesticulación, contacto ocular reducido."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "PANSS_N2",
+        "type": "string",
+        "expected": "score_alto"
+      },
+      {
+        "marker": "expresion_facial",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "prosodia",
+        "type": "string",
+        "expected": "monotona"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Embotamiento afectivo",
+      "reason": "El embotamiento es cuantitativo (reducción); el aplanamiento es más severo, cualitativo (ausencia)."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Depresión mayor",
+      "reason": "La depresión se acompaña de tristeza subjetiva intensa; el aplanamiento puede ocurrir sin sufrimiento subjetivo reportado."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.3"
+    },
+    "snomed_ct": {
+      "concept_id": "307473008"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

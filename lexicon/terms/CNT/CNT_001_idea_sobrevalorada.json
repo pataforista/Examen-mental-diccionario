@@ -1,0 +1,48 @@
+{
+  "term_id": "CNT_001",
+  "canonical_name": "Idea sobrevalorada",
+  "synonyms_and_slang": [],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Creencia firme y sostenida que no es delirante, comprensible en el contexto del paciente, pero que domina su vida de manera desproporcionada.",
+    "required_features": [
+      "creencia no delirante",
+      "convicción sostenida",
+      "impacto desproporcionado en conducta"
+    ],
+    "subjective_marker": "El paciente reconoce la creencia como central aunque admite su excesiva influencia.",
+    "behavioral_marker": "Conductas reiteradas y restrictivas guiadas por la creencia."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "primary_expression",
+      "context": "pensamiento_contenido"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [],
+  "teaching_notes": [
+    "A diferencia del delirio, existe algún grado de criticidad o plausibilidad cultural."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir ideas sobrevaloradas con delirios cuando la creencia es culturalmente compartida."
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [],
+    "clinical_tradition": []
+  },
+  "mappings": {}
+}

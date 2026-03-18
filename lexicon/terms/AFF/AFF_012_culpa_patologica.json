@@ -1,0 +1,69 @@
+{
+  "term_id": "AFF_012",
+  "canonical_name": "Culpa patológica",
+  "synonyms_and_slang": [
+    "autoacusación patológica",
+    "culpa delirante",
+    "autoculpabilización excesiva"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Sentimiento excesivo, persistente e inapropiado de responsabilidad por eventos negativos, que puede alcanzar grado delirante (delirio de culpa) en casos severos. Central en episodios depresivos severos con características melancólicas.",
+    "required_features": [
+      "culpa excesiva o inapropiada",
+      "persistente",
+      "sin base objetiva proporcional"
+    ],
+    "subjective_marker": "El paciente se culpa de eventos sobre los que no tenía control o de sucesos triviales magnificados.",
+    "behavioral_marker": "Conductas de autopunición, confesiones repetidas, búsqueda de castigo; en casos extremos, suicidio como 'expiación'."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "HAM-D_item3",
+        "type": "string",
+        "expected": "alto"
+      },
+      {
+        "marker": "autoacusacion",
+        "type": "string",
+        "expected": "desproporcionada"
+      },
+      {
+        "marker": "suicidio_expiatorio",
+        "type": "string",
+        "expected": "descartar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Culpa adaptativa",
+      "reason": "La culpa adaptativa es proporcional al daño causado y motiva reparación; la patológica es desproporcionada y no se alivia."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

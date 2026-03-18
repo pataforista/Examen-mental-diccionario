@@ -1,0 +1,79 @@
+{
+  "term_id": "MEM_022",
+  "canonical_name": "Onirismo",
+  "synonyms_and_slang": [
+    "estado oniroide",
+    "delirio onírico"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Estado de la conciencia en el que el paciente vive una serie de vivencias alucinatorias visuales ricas y complejas, similares a un sueño, pero en estado de vigilia.",
+    "required_features": [
+      "predominio de alucinaciones visuales escenográficas",
+      "participación afectiva intensa del sujeto en el contenido alucinatorio",
+      "desorientación espacio-temporal variable"
+    ],
+    "subjective_marker": "El paciente refiere estar 'viviendo una película' o un sueño despierto con gran realismo.",
+    "behavioral_marker": "El paciente puede gesticular o hablar con personajes invisibles como si estuviera dentro de una escena onírica."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observacion",
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_y_alerta"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MEM_005",
+      "canonical_name": "Delirium",
+      "reason": "El onirismo es el componente fenoménico-alucinatorio del delirium."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_warning",
+      "message": "Frecuente en cuadros tóxicos (delirium tremens), infecciones graves y estados febriles."
+    }
+  ],
+  "teaching_notes": [
+    "Término de la escuela francesa (Régis) muy usado en psicopatología descriptiva clásica.",
+    "Se diferencia de la alucinosis por la pérdida de la crítica de realidad y el compromiso de la conciencia."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6D70",
+      "label": "Delirium (clinical related)"
+    },
+    "snomed_ct": {
+      "concept_id": "416180004",
+      "preferred_term": "Oneirism (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Régis",
+      "Ey"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_francesa"
+    ]
+  },
+  "status": "active"
+}

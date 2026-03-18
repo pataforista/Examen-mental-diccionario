@@ -1,0 +1,81 @@
+{
+  "term_id": "MEM_002",
+  "canonical_name": "Amnesia anterógrada",
+  "synonyms_and_slang": [
+    "amnesia de fijación",
+    "incapacidad de consolidar",
+    "goldfish memory (coloquial)"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad para consolidar nuevos recuerdos tras el evento causal (traumatismo, anoxia, lesión límbica), con memoria remota relativamente preservada. El umbral de codificación está elevado o es inaccesible.",
+    "required_features": [
+      "inicio identificable",
+      "preservación de memoria remota relativa",
+      "incapacidad de aprendizaje de nueva información"
+    ],
+    "subjective_marker": "El paciente no recuerda lo ocurrido momentos antes. Puede preguntar lo mismo repetidamente sin awareness de haberlo preguntado ya.",
+    "behavioral_marker": "Pruebas de memoria inmediata y diferida anormales (RAVLT, WMS-IV); aprendizaje verbal y visuoespacial abolido."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "memoria_inmediata",
+        "type": "string",
+        "expected": "0"
+      },
+      {
+        "marker": "memoria_diferida",
+        "type": "string",
+        "expected": "0"
+      },
+      {
+        "marker": "aprendizaje_nueva_info",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "memoria_remota",
+        "type": "string",
+        "expected": "preservada"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia retrógrada",
+      "reason": "La anterógrada afecta información post-lesión; la retrógrada afecta información pre-lesión."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Confabulación",
+      "reason": "La confabulación es un fenómeno acompañante, no la amnesia en sí."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MA14.00"
+    },
+    "snomed_ct": {
+      "concept_id": "44271000"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

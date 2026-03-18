@@ -1,0 +1,83 @@
+{
+  "term_id": "MEM_026",
+  "canonical_name": "Síndrome de Korsakoff",
+  "synonyms_and_slang": [
+    "psicosis de Korsakoff",
+    "síndrome amnésico-confabulatorio",
+    "Korsakoff's syndrome"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Síndrome amnésico crónico caracterizado por amnesia anterógrada grave, confabulación (espontánea y provocada), desorientación temporal intensa y relativa preservación de la conciencia. Típicamente secuela del síndrome de Wernicke (encefalopatía tiamínica). Lesiones en cuerpos mamilares y núcleo dorsomedial del tálamo.",
+    "required_features": [
+      "amnesia anterógrada grave",
+      "confabulación",
+      "desorientación temporoespacial",
+      "relativa lucidez",
+      "antecedente de encefalopatía de Wernicke o alcoholismo"
+    ],
+    "subjective_marker": "El paciente fabrica respuestas plausibles pero falsas cuando se le pregunta por eventos recientes. No tiene conciencia de confabular.",
+    "behavioral_marker": "Confabulación espontánea (relatos no solicitadas) y provocada (respuesta incorrecta a preguntas directas). Desorientación temporal severa."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "confabulacion",
+        "type": "string",
+        "expected": "presente"
+      },
+      {
+        "marker": "amnesia_anterograda",
+        "type": "string",
+        "expected": "severa"
+      },
+      {
+        "marker": "conciencia",
+        "type": "string",
+        "expected": "lucida"
+      },
+      {
+        "marker": "orientacion_temporal",
+        "type": "string",
+        "expected": "alterada"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia anterógrada simple",
+      "reason": "Korsakoff incluye confabulación sistemática y es un síndrome con sustrato tiamínico definido."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Demencia",
+      "reason": "En Korsakoff los dominios cognitivos distintos a la memoria están relativamente preservados en fases iniciales."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6D71.0"
+    },
+    "snomed_ct": {
+      "concept_id": "35239004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

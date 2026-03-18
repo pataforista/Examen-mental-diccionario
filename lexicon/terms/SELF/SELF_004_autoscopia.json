@@ -1,103 +1,104 @@
 {
-    "term_id": "SELF_004",
-    "canonical_name": "Autoscopia",
-    "synonyms_and_slang": [
-        {
-            "term": "fenómeno del doble",
-            "context": "clinical_descriptive",
-            "locale": "es"
-        },
-        {
-            "term": "experiencia extracorpórea",
-            "context": "patient_report",
-            "locale": "es"
-        },
-        {
-            "term": "autoscopy",
-            "context": "clinical_bilingual",
-            "locale": "en"
-        }
-    ],
-    "term_kind": "symptom",
-    "granularity": "atomic",
-    "risk_weight": 0,
-    "definition_clinical": {
-        "core": "Visión de uno mismo (o de alguna parte de uno mismo) desde fuera del propio cuerpo.",
-        "required_features": [
-            "percepción extracorpórea de la propia imagen",
-            "conciencia de estar en la posición del observador",
-            "vívidamente visual"
-        ],
-        "subjective_marker": "Describe verse a sí mismo desde arriba, desde atrás o en un espejo inexistente.",
-        "behavioral_marker": "Relata experiencias extracorpóreas visivas con asombro o desapego."
+  "term_id": "SELF_004",
+  "canonical_name": "Autoscopia",
+  "synonyms_and_slang": [
+    {
+      "term": "fenómeno del doble",
+      "context": "clinical_descriptive",
+      "locale": "es"
     },
-    "operationalization": {
-        "detectable_by": [
-            "entrevista_clinica"
-        ],
-        "time_relation": [
-            "episodica",
-            "paroxística"
-        ],
-        "pharmacological_link": true,
-        "computable_markers": [
-            {
-                "marker": "out_of_body",
-                "type": "boolean",
-                "expected": true
-            }
-        ]
+    {
+      "term": "experiencia extracorpórea",
+      "context": "patient_report",
+      "locale": "es"
     },
-    "domain_links": [
-        {
-            "domain_id": "DOM-11",
-            "relation": "primary_expression",
-            "context": "conciencia_del_yo_espacialidad"
-        },
-        {
-            "domain_id": "DOM-10",
-            "relation": "associated_symptom",
-            "context": "percepcion_visual"
-        }
+    {
+      "term": "autoscopy",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Visión de uno mismo (o de alguna parte de uno mismo) desde fuera del propio cuerpo.",
+    "required_features": [
+      "percepción extracorpórea de la propia imagen",
+      "conciencia de estar en la posición del observador",
+      "vívidamente visual"
     ],
-    "exclusions": [
-        {
-            "term_id": "SELF_001",
-            "canonical_name": "Despersonalización",
-            "reason": "La autoscopia es una alteración visual/espacial del yo; la despersonalización es un sentimiento de extrañeza cualitativa sin necesariamente verse por fuera.",
-            "ref_status": "forward"
-        }
+    "subjective_marker": "Describe verse a sí mismo desde arriba, desde atrás o en un espejo inexistente.",
+    "behavioral_marker": "Relata experiencias extracorpóreas visivas con asombro o desapego."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
     ],
-    "alerts": [
-        {
-            "type": "neurological_warning",
-            "message": "La autoscopia puede ser un síntoma de actividad de focos epilépticos temporoparietales o lesiones encefálicas."
-        }
+    "time_relation": [
+      "episodica",
+      "paroxística"
     ],
-    "teaching_notes": [
-        "Diferenciar de 'autoscopia interna' (ver órganos internos, raro y psicótico).",
-        "A menudo asociada a migraña, fatiga, epilepsia o estados disociativos graves."
-    ],
-    "cognitive_pitfalls": [
-        "No explorar la posición del observador (¿dónde está 'usted' mientras se mira?).",
-        "Tratar como una alucinación visual simple sin el componente de identidad personal."
-    ],
-    "examples": [
-        {
-            "type": "observation",
-            "text": "El paciente relata ver “su doble” en el espacio externo (como una imagen exacta de sí mismo), con descripción visual localizada y detallada. Reconoce que “ese soy yo” pero lo percibe como figura en el ambiente, lo cual genera temor/perplejidad."
-        }
-    ],
-    "version": "1.0.0",
-    "provenance": {
-        "phenomenology": [
-            "Schilder",
-            "Lhermitte"
-        ],
-        "clinical_tradition": [
-            "Neuropatología",
-            "Psicopatología descriptiva"
-        ]
+    "pharmacological_link": true,
+    "computable_markers": [
+      {
+        "marker": "out_of_body",
+        "type": "boolean",
+        "expected": true
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_del_yo_espacialidad"
     },
-    "status": "active"
+    {
+      "domain_id": "DOM-10",
+      "relation": "associated_symptom",
+      "context": "percepcion_visual"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SELF_001",
+      "canonical_name": "Despersonalización",
+      "reason": "La autoscopia es una alteración visual/espacial del yo; la despersonalización es un sentimiento de extrañeza cualitativa sin necesariamente verse por fuera.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "La autoscopia puede ser un síntoma de actividad de focos epilépticos temporoparietales o lesiones encefálicas."
+    }
+  ],
+  "teaching_notes": [
+    "Diferenciar de 'autoscopia interna' (ver órganos internos, raro y psicótico).",
+    "A menudo asociada a migraña, fatiga, epilepsia o estados disociativos graves."
+  ],
+  "cognitive_pitfalls": [
+    "No explorar la posición del observador (¿dónde está 'usted' mientras se mira?).",
+    "Tratar como una alucinación visual simple sin el componente de identidad personal."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente relata ver “su doble” en el espacio externo (como una imagen exacta de sí mismo), con descripción visual localizada y detallada. Reconoce que “ese soy yo” pero lo percibe como figura en el ambiente, lo cual genera temor/perplejidad."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Schilder",
+      "Lhermitte"
+    ],
+    "clinical_tradition": [
+      "Neuropatología",
+      "Psicopatología descriptiva"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
 }

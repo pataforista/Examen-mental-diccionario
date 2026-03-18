@@ -1,0 +1,70 @@
+{
+  "term_id": "INS_001",
+  "canonical_name": "Anosognosia",
+  "synonyms_and_slang": [
+    "ausencia de insight nuclear",
+    "falta de conciencia de enfermedad (neurológica)"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Incapacidad total, a menudo de base neurológica estricta (lesiones parietales derechas o frontales), para reconocer un déficit físico o cognitivo evidente (ej. hemiplejia, ceguera). Por extensión en psiquiatría, la falta total de reconocimiento de la psicosis severa, atribuida a déficit neurocognitivo frontal primario más que a defensas psicológicas.",
+    "required_features": [
+      "imposibilidad de reconocer el déficit propio",
+      "incorregible con evidencia en contra",
+      "origen patofisiológico orgánico/neurobiológico presunto"
+    ],
+    "subjective_marker": "El paciente niega el problema por completo. Un paciente con hemiplejia dirá: 'puedo mover mi brazo izquierdo perfectamente'.",
+    "behavioral_marker": "Intentos de usar el miembro paralizado (resultando en caídas); en psicosis, negativa total a recibir tratamiento por 'no estar enfermo'."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "reconocimiento_deficit",
+        "type": "string",
+        "expected": "nulo"
+      },
+      {
+        "marker": "incorporacion_feedback",
+        "type": "string",
+        "expected": "nula"
+      },
+      {
+        "marker": "escala_insight",
+        "type": "string",
+        "expected": "1"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Negación psicológica (denial)",
+      "reason": "La negación psicológica protege de la angustia de estar enfermo; la anosognosia es una 'ceguera' cognitiva real al defecto, sin angustia asociada."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "62476001"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

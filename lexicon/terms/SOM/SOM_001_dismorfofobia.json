@@ -1,0 +1,85 @@
+{
+  "term_id": "SOM_001",
+  "canonical_name": "Dismorfofobia",
+  "synonyms_and_slang": [
+    "trastorno dismórfico corporal",
+    "fealdad imaginaria"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Preocupación excesiva por un defecto percibido en la apariencia física que es inexistente o apenas visible para los demás.",
+    "required_features": [
+      "preocupación centrada en la apariencia física",
+      "defecto mínimo o imaginario",
+      "malestar clínicamente significativo"
+    ],
+    "subjective_marker": "El paciente se siente 'deforme' o 'monstruoso' por un detalle (ej: forma de la nariz, piel) que los demás no notan.",
+    "behavioral_marker": "Mirarse excesivamente al espejo (o evitarlo), camuflaje excesivo con maquillaje o ropa, búsqueda de cirugías estéticas."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-14",
+      "relation": "primary_expression",
+      "context": "conciencia_corporal"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SOM_003",
+      "canonical_name": "Anorexia nerviosa",
+      "reason": "En la anorexia la preocupación es global sobre el peso/figura; en la dismorfofobia suele ser sobre una parte específica del cuerpo."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_warning",
+      "message": "Elevado riesgo de suicidio y de insatisfacción post-quirúrgica si se recurre a cirugías estéticas."
+    }
+  ],
+  "teaching_notes": [
+    "Morselli acuñó el término en 1886.",
+    "A menudo se clasifica dentro del espectro obsesivo-compulsivo."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "6B21",
+      "label": "Body dysmorphic disorder"
+    },
+    "snomed_ct": {
+      "concept_id": "53138004",
+      "preferred_term": "Body dysmorphic disorder (disorder)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "BDD-YBOCS",
+        "item": "Severidad de síntomas",
+        "scale_id": "BDD-YBOCS"
+      }
+    ]
+  },
+  "provenance": {
+    "phenomenology": [
+      "Morselli",
+      "Sims"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

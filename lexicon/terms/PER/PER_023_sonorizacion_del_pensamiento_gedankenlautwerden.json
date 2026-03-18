@@ -1,0 +1,76 @@
+{
+  "term_id": "PER_023",
+  "canonical_name": "Sonorización del pensamiento (Gedankenlautwerden)",
+  "synonyms_and_slang": [
+    "sonorización del pensamiento (gedankenlautwerden)"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Vivencia auditiva de los propios pensamientos como si sonaran externamente.",
+    "required_features": [
+      "presencia clínica de sonorización del pensamiento (gedankenlautwerden)",
+      "consistencia fenomenológica durante la entrevista",
+      "impacto clínico observable o referido"
+    ],
+    "subjective_marker": "El paciente refiere experiencia compatible con sonorización del pensamiento (gedankenlautwerden).",
+    "behavioral_marker": "Se observan signos conductuales coherentes con sonorización del pensamiento (gedankenlautwerden) en contexto clínico."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "sensopercepcion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_023",
+      "canonical_name": "Sonorización del pensamiento (Gedankenlautwerden)",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_error",
+      "message": "Interpretar dentro del contexto psicopatológico and con integración sindromática."
+    }
+  ],
+  "teaching_notes": [
+    "Describir sonorización del pensamiento (gedankenlautwerden) con fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente dice: “En cuanto pienso algo, lo oigo en voz alta, como un eco afuera”. Diferencia entre “pensar” y “oír” y ubica el fenómeno como auditivo externo, sincronizado con el contenido del pensamiento, con malestar por exposición/“publicidad” de su mente."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Robinson",
+      "Mendez"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

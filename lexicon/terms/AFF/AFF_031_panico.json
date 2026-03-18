@@ -1,0 +1,77 @@
+{
+  "term_id": "AFF_031",
+  "canonical_name": "Pánico",
+  "synonyms_and_slang": [
+    "ataque de pánico",
+    "crisis de angustia",
+    "panic attack"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Episodio agudo, discreto, de miedo o malestar intenso con síntomas físicos y cognitivos que alcanzan su pico en minutos. Al menos 4 síntomas de 13 criterios DSM-5. Puede ser esperado (con desencadenante) o inesperado (sin desencadenante aparente).",
+    "required_features": [
+      "inicio súbito",
+      "pico en minutos",
+      "≥4 síntomas físicos/cognitivos",
+      "miedo a morir/perder control/enloquecer frecuente"
+    ],
+    "subjective_marker": "El paciente refiere 'sentí que me moría', 'mi corazón se salía', 'pensé que me volvía loco'; terror intenso con urgencia de huir.",
+    "behavioral_marker": "Conducta de escape, búsqueda de ayuda médica urgente, evitación posterior."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "sintomas_panico≥4",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "duracion_pico<10min",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "miedo_morir_o_enloquecer",
+        "type": "string",
+        "expected": "frecuente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Ansiedad generalizada",
+      "reason": "La ansiedad generalizada es crónica y difusa; el pánico es episódico y agudo."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Crisis autonómica médica",
+      "reason": "Descartar causas médicas (arritmias, hipoglucemia, feocromocitoma) antes de codificar como pánico."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "6B00"
+    },
+    "snomed_ct": {
+      "concept_id": "225624000"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

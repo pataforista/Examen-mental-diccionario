@@ -1,0 +1,66 @@
+{
+  "term_id": "MEM_014",
+  "canonical_name": "Déjà vu / Jamais vu",
+  "term_kind": "phenomenon",
+  "definition_clinical": {
+    "core": "Alteración del sentido de familiaridad con el entorno.",
+    "required_features": [
+      "falsa familiaridad (déjà vu) o falsa extrañeza (jamais vu)"
+    ],
+    "subjective_marker": "Siente que ya ha vivido algo nuevo o que lo conocido le resulta extraño.",
+    "behavioral_marker": "Relata extrañeza o desconcierto súbito ante el entorno."
+  },
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "paroxistica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": "funciones_cognitivas"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MEM_003",
+      "canonical_name": "Déjà vu / Jamais vu",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_clue",
+      "message": "Si es frecuente o se asocia a aura, considerar epilepsia del lóbulo temporal."
+    }
+  ],
+  "teaching_notes": [
+    "Describir déjà vu / jamais vu with fenomenología y curso temporal.",
+    "Corroborar con entrevista clínica y observación conductual."
+  ],
+  "cognitive_pitfalls": [
+    "Sobregeneralizar el término sin evidencia clínica suficiente.",
+    "No discriminar entre variación normal y hallazgo psicopatológico."
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "consenso_editorial"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "synonyms_and_slang": [
+    "déjà vu / jamais vu"
+  ],
+  "status": "active",
+  "mappings": {}
+}

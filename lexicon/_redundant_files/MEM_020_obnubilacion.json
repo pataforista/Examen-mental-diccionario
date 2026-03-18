@@ -1,0 +1,77 @@
+{
+  "term_id": "MEM_020",
+  "canonical_name": "Obnubilación",
+  "synonyms_and_slang": [
+    "oscurecimiento de conciencia",
+    "clouding of consciousness",
+    "velamiento mental"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Disminución leve a moderada del nivel de conciencia con reducción de la claridad y velocidad del pensamiento, sin alcanzar estupor. El paciente puede comunicarse pero con latencia aumentada, respuestas empobrecidas y tendencia al sueño.",
+    "required_features": [
+      "reducción de claridad de conciencia",
+      "sin pérdida completa",
+      "pensamiento enlentecido",
+      "tendencia somnolencia"
+    ],
+    "subjective_marker": "El paciente refiere 'niebla mental', dificultad para pensar con claridad; puede sentirse adormecido.",
+    "behavioral_marker": "Latencia aumentada de respuesta, bostezo frecuente, párpados caídos, respuestas reducidas pero no ausentes."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "nivel_conciencia",
+        "type": "string",
+        "expected": "disminuido_leve"
+      },
+      {
+        "marker": "GCS",
+        "type": "string",
+        "expected": "13-14"
+      },
+      {
+        "marker": "respuesta",
+        "type": "string",
+        "expected": "lenta"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Sopor",
+      "reason": "El sopor es más profundo: el paciente solo responde a estímulos intensos."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Delirium",
+      "reason": "La obnubilación puede preceder al delirium pero sin su inatención característica."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "419284004"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

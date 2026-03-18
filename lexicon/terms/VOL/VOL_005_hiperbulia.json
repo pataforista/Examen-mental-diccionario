@@ -1,0 +1,68 @@
+{
+  "term_id": "VOL_005",
+  "canonical_name": "Hiperbulia",
+  "synonyms_and_slang": [
+    "aumento patológico de la voluntad",
+    "hyperboulia"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Aumento patológico y desproporcionado de la actividad voluntaria y las iniciativas, caracterizado por la multiplicación de propósitos, proyectos y decisiones, frecuentemente impulsivas o temerarias. Típico de estados maníacos.",
+    "required_features": [
+      "aumento de iniciativas",
+      "multiplicidad de propósitos",
+      "frecuentemente ineficaz por dispersión"
+    ],
+    "subjective_marker": "El paciente siente que 'puede con todo', siente un impulso irresistible a actuar e iniciar proyectos.",
+    "behavioral_marker": "Inicio simultáneo de múltiples tareas (frecuentemente inconclusas), hiperactividad dirigida a metas (aunque cambiantes)."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "iniciativas_multiples",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "finalizacion_tareas",
+        "type": "string",
+        "expected": "reducida"
+      },
+      {
+        "marker": "mania_sindrome",
+        "type": "string",
+        "expected": "frecuente"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Agitación psicomotora",
+      "reason": "La hiperbulia implica acciones dirigidas a metas (aunque desorganizadas); la agitación son movimientos sin propósito."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

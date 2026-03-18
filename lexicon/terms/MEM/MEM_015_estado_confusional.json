@@ -1,0 +1,70 @@
+{
+  "term_id": "MEM_015",
+  "canonical_name": "Estado confusional",
+  "synonyms_and_slang": [
+    "confusión mental",
+    "confusional state",
+    "desorientación sin delirium"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Desorientación temporoespacial sin los criterios completos de delirium (puede carecer de inatención global o fluctuación marcada). Término más amplio y descriptivo. Causas: médicas, psiquiátricas, psicogénicas.",
+    "required_features": [
+      "desorientación tiempo/lugar/situación",
+      "sin criterios completos de delirium necesariamente"
+    ],
+    "subjective_marker": "El paciente no sabe dónde está, qué hora es, qué día es; puede estar tranquilo o agitado.",
+    "behavioral_marker": "Respuestas incorrectas a preguntas de orientación; conducta desorganizada leve."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "orientacion",
+        "type": "string",
+        "expected": "alterada"
+      },
+      {
+        "marker": "atencion",
+        "type": "string",
+        "expected": "variable"
+      },
+      {
+        "marker": "inicio",
+        "type": "string",
+        "expected": "variable"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Delirium",
+      "reason": "El estado confusional es más inespecífico; el delirium requiere inatención prominente, inicio agudo y fluctuación."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "40917007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

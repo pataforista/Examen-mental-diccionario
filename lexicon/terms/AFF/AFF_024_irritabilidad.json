@@ -1,0 +1,71 @@
+{
+  "term_id": "AFF_024",
+  "canonical_name": "Irritabilidad",
+  "synonyms_and_slang": [
+    "humor irritable",
+    "irritability",
+    "susceptibilidad aumentada"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Umbral reducido para la respuesta de frustración o enojo ante estímulos mínimos. Puede manifestarse como hostilidad verbal, explosiones de ira o simplemente tensión sostenida. Síntoma transnosológico presente en depresión (especialmente en niños/adolescentes y depresión atípica), manía, TEPT, TDAH, patología orgánica.",
+    "required_features": [
+      "umbral reducido para frustración",
+      "respuesta de enojo desproporcionada",
+      "persistente o recurrente"
+    ],
+    "subjective_marker": "El paciente refiere 'saltar' por cosas pequeñas, sentirse 'al límite', todo le molesta.",
+    "behavioral_marker": "Estallidos verbales, gestos bruscos, quejas frecuentes, conflictos interpersonales aumentados."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "umbral_frustracion",
+        "type": "string",
+        "expected": "bajo"
+      },
+      {
+        "marker": "conflictos_interpersonales",
+        "type": "string",
+        "expected": "aumentados"
+      },
+      {
+        "marker": "impacto_funcional",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Hostilidad",
+      "reason": "La hostilidad es una actitud generalizada hacia otros; la irritabilidad es un estado de umbral bajo no necesariamente dirigido."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "55929007"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

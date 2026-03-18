@@ -1,0 +1,70 @@
+{
+  "term_id": "CNS_002",
+  "canonical_name": "Coma",
+  "synonyms_and_slang": [
+    "arreactividad total",
+    "pérdida completa de conciencia"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Estado de pérdida profunda y prolongada de la conciencia, del cual el paciente no puede ser despertado mediante ninguna clase de estímulo (ni siquiera doloroso). Hay abolición de la actividad motora voluntaria, el sujeto mantiene los ojos cerrados, no emite respuestas verbales y sus reflejos motores son patológicos o nulos. GCS = 3-8. Etiología metabólica, tóxica o estructural craneal inminente.",
+    "required_features": [
+      "arreactividad absoluta al estímulo doloroso intenso",
+      "ausencia de ciclos sueño-vigilia (ojos cerrados)",
+      "sin repuestas intencionales ni defensivas"
+    ],
+    "subjective_marker": "No aplicable (el individuo carece de funciones experienciales integradas).",
+    "behavioral_marker": "Decúbito laxo o adoptando posturas de descerebración/decorticación al estímulo de dolor (ej. compresión esternal); ausencia de apertura ocular espontánea o inducida; nulo contacto comunicativo."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "GCS≤8",
+        "type": "string",
+        "expected": ""
+      },
+      {
+        "marker": "apertura_ocular",
+        "type": "string",
+        "expected": "nula"
+      },
+      {
+        "marker": "ciclo_sueño_vigilia",
+        "type": "string",
+        "expected": "abolido"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Muerte Encefálica",
+      "reason": "La muerte encefálica presupone daño irreversible total del encéfalo, incluyendo abolición de los reflejos del tronco y apnea sostenida; un coma puede tener reflejos troncoencefálicos conservados y preservar autonomía respiratoria."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB20.1"
+    },
+    "snomed_ct": {
+      "concept_id": "371632003"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,77 @@
+{
+  "term_id": "MEM_013",
+  "canonical_name": "Déjà vu",
+  "synonyms_and_slang": [
+    "ya visto",
+    "déjà vécue (ya vivido)",
+    "sensación de familiaridad espuria"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Sensación subjetiva intensa de haber experimentado antes la situación presente, con conciencia simultánea de que es imposible. Transitorio (segundos). Patológico cuando es frecuente, intenso o prolongado (epilepsia temporal, depersonalización).",
+    "required_features": [
+      "familiaridad espuria ante situación nueva",
+      "conciencia de imposibilidad",
+      "transitoriedad",
+      "sin pérdida de conciencia"
+    ],
+    "subjective_marker": "El paciente reporta: 'tengo la sensación de que esto ya ocurrió antes, aunque sé que es la primera vez'.",
+    "behavioral_marker": "Puede interrumpir conducta; si frecuente, descartar aura epiléptica o depersonalización."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "familiaridad_espuria",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "conciencia_imposibilidad",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "duracion<segundos",
+        "type": "string",
+        "expected": "típico"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Jamais vu",
+      "reason": "El jamais vu es la extrañeza de lo conocido; el déjà vu es la familiaridad de lo nuevo."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Aura epiléptica",
+      "reason": "El déjà vu epiléptico se repite estereotipadamente, frecuentemente con automatismos."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB21.1"
+    },
+    "snomed_ct": {
+      "concept_id": "11838006"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

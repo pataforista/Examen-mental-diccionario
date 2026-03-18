@@ -1,0 +1,114 @@
+{
+  "term_id": "RSK_004",
+  "canonical_name": "Capacidad de colaboración para seguridad",
+  "synonyms_and_slang": [
+    {
+      "term": "puede comprometerse a pedir ayuda",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    },
+    {
+      "term": "capacidad de acuerdo de seguridad",
+      "context": "clinical_descriptive",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "modifier",
+  "granularity": "atomic",
+  "risk_weight": 4,
+  "definition_clinical": {
+    "core": "Grado de colaboración con el plan de seguridad y tratamiento.",
+    "required_features": [
+      "comprensión suficiente del riesgo",
+      "disposición a aceptar medidas",
+      "probabilidad razonable de cumplimiento"
+    ],
+    "subjective_marker": "Expresa disposición (o no) a seguir el plan de seguridad.",
+    "behavioral_marker": "Coopera con medidas de seguridad y seguimiento."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "colateral"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "collaboration_capacity",
+        "type": "ordinal_0_3",
+        "anchors": [
+          "0=nula (rechaza/impedido por desorganización o intoxicación)",
+          "1=baja (acepta verbalmente pero inconsistente)",
+          "2=moderada (acepta y comprende parcialmente)",
+          "3=alta (acepta, comprende y tiene soporte)"
+        ]
+      },
+      {
+        "marker": "intoxication_or_delirium_present",
+        "type": "boolean"
+      },
+      {
+        "marker": "psychosis_severity",
+        "type": "ordinal_0_3"
+      },
+      {
+        "marker": "support_available_now",
+        "type": "boolean"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "juicio_insight"
+    },
+    {
+      "domain_id": "DOM-12",
+      "relation": "risk_modifier",
+      "context": "disposicion_y_contencion"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "RSK_007",
+      "canonical_name": "Capacidad de colaboración para seguridad",
+      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "safety_critical",
+      "message": "Colaboración nula o baja en presencia de ideación/plan/medios eleva la necesidad de contención y supervisión."
+    }
+  ],
+  "teaching_notes": [
+    "No es un 'contrato'. Es una estimación clínica operacional basada en comprensión, consistencia y soporte.",
+    "Si hay delirium/intoxicación/psicosis desorganizada, la capacidad suele ser baja aunque el paciente 'acepte'."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir asentimiento verbal con capacidad real de colaboración.",
+    "Ignorar soporte externo y barreras prácticas (vivienda, acceso a teléfono, vigilancia)."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Acepta medidas de seguridad y ayuda: acuerda contactar a familiar/servicio de urgencias si aumenta el impulso, permite retirar medios, identifica señales de alarma y muestra disposición a seguimiento. La evidencia es conductual (acepta acciones), no sólo verbal (“sí, sí”)."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Evaluación clínica de capacidad funcional"
+    ],
+    "clinical_tradition": [
+      "Urgencias",
+      "Manejo de crisis"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

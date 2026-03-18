@@ -1,0 +1,73 @@
+{
+  "term_id": "AFF_033",
+  "canonical_name": "Rigidez Afectiva",
+  "synonyms_and_slang": [
+    "escasa modulación afectiva"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Incapacidad o dificultad marcada del paciente para modificar su estado de ánimo y su expresión afectiva según las variaciones del entorno o el contenido del pensamiento.",
+    "required_features": [
+      "persistencia de un tono afectivo fijo",
+      "falta de reactividad ante estímulos ambientales",
+      "monotonía en la expresión verbal y no verbal"
+    ],
+    "subjective_marker": "El paciente se siente 'atrapado' en un solo estado emocional sin poder sintonizar con los demás.",
+    "behavioral_marker": "Mantenimiento de la misma expresión facial y tono de voz independientemente de que se hablen temas alegres o tristes."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion"
+    ],
+    "time_relation": [
+      "actual"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "primary_expression",
+      "context": "afectividad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AFF_005",
+      "canonical_name": "Embotamiento afectivo",
+      "reason": "En la rigidez el afecto puede ser intenso pero inamovible; en el embotamiento hay una pérdida de la intensidad general."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "Típico de cuadros paranoides crónicos y ciertos rasgos de personalidad obsesiva o esquizoide.",
+    "Se describe como una 'falta de sintonía' con el examinador."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Z",
+      "label": "Symptoms or signs involving emotional state"
+    },
+    "snomed_ct": {
+      "concept_id": "247854002",
+      "preferred_term": "Rigid affect (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Bleuler",
+      "Sims"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
+}

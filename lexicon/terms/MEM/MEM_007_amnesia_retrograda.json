@@ -1,0 +1,75 @@
+{
+  "term_id": "MEM_007",
+  "canonical_name": "Amnesia retrógrada",
+  "synonyms_and_slang": [
+    "pérdida de recuerdos previos",
+    "amnesia histórica"
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Pérdida de recuerdos almacenados antes del evento causal. Típicamente adopta el gradiente temporal de Ribot: los recuerdos más recientes se pierden primero y los más remotos son los más resistentes.",
+    "required_features": [
+      "pérdida de información previa al evento",
+      "gradiente temporal (Ribot)",
+      "sin nueva amnesia anterógrada obligatoria"
+    ],
+    "subjective_marker": "El paciente no recuerda episodios de su vida pasada. Puede reconocer a familiares pero no recordar eventos específicos con ellos.",
+    "behavioral_marker": "Falla en preguntas de memoria autobiográfica; fallos en memoria semántica en casos severos."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "memoria_autobiografica",
+        "type": "string",
+        "expected": "alterada"
+      },
+      {
+        "marker": "gradiente_temporal",
+        "type": "string",
+        "expected": "positivo"
+      },
+      {
+        "marker": "memoria_semantica",
+        "type": "string",
+        "expected": "variable"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "primary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia anterógrada",
+      "reason": "La retrógrada afecta el pasado; la anterógrada el futuro post-lesión."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Amnesia disociativa",
+      "reason": "La retrógrada orgánica tiene causa neurológica demostrable; la disociativa responde a trauma psíquico."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MA14.01"
+    },
+    "snomed_ct": {
+      "concept_id": "44341000"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,73 +1,73 @@
 {
-    "term_id": "JUD_002",
-    "canonical_name": "Juicio de Realidad",
-    "synonyms_and_slang": [
-        "prueba de realidad",
-        "sentido de la realidad"
+  "term_id": "JUD_002",
+  "canonical_name": "Juicio de Realidad",
+  "synonyms_and_slang": [
+    "prueba de realidad",
+    "sentido de la realidad"
+  ],
+  "term_kind": "state",
+  "granularity": "atomic",
+  "risk_weight": 3,
+  "definition_clinical": {
+    "core": "Capacidad psíquica para distinguir entre los estímulos que provienen del mundo externo y los que provienen del mundo interno (pensamientos, fantasías), permitiendo una adaptación adecuada a las normas sociales y la lógica común.",
+    "required_features": [
+      "distinción yo/no-yo",
+      "reconocimiento de la irrealidad de percepciones falsas",
+      "congruencia con la realidad objetiva compartida"
     ],
-    "term_kind": "state",
-    "granularity": "atomic",
-    "risk_weight": 3,
-    "definition_clinical": {
-        "core": "Capacidad psíquica para distinguir entre los estímulos que provienen del mundo externo y los que provienen del mundo interno (pensamientos, fantasías), permitiendo una adaptación adecuada a las normas sociales y la lógica común.",
-        "required_features": [
-            "distinción yo/no-yo",
-            "reconocimiento de la irrealidad de percepciones falsas",
-            "congruencia con la realidad objetiva compartida"
-        ],
-        "subjective_marker": "Incapacidad para dudar de la veracidad de una alucinación o un pensamiento delirante.",
-        "behavioral_marker": "Conducta desorganizada o temeraria basada en premisas falsas que el paciente no puede corregir ante la evidencia."
-    },
-    "operationalization": {
-        "detectable_by": [
-            "entrevista_clinica",
-            "observacion_conductual"
-        ],
-        "time_relation": [
-            "actual"
-        ],
-        "pharmacological_link": false
-    },
-    "domain_links": [
-        {
-            "domain_id": "DOM-16",
-            "relation": "primary_expression",
-            "context": "insight_juicio"
-        }
+    "subjective_marker": "Incapacidad para dudar de la veracidad de una alucinación o un pensamiento delirante.",
+    "behavioral_marker": "Conducta desorganizada o temeraria basada en premisas falsas que el paciente no puede corregir ante la evidencia."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion_conductual"
     ],
-    "exclusions": [],
-    "alerts": [
-        {
-            "type": "diagnostic_critical",
-            "message": "La pérdida del juicio de realidad es el criterio fundamental para definir el estado psicótico."
-        }
+    "time_relation": [
+      "actual"
     ],
-    "teaching_notes": [
-        "El juicio puede estar 'conservado', 'debilitado' o 'perdido'.",
-        "No es lo mismo que 'insight' (conciencia de enfermedad), aunque están relacionados."
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-16",
+      "relation": "primary_expression",
+      "context": "insight_juicio"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "diagnostic_critical",
+      "message": "La pérdida del juicio de realidad es el criterio fundamental para definir el estado psicótico."
+    }
+  ],
+  "teaching_notes": [
+    "El juicio puede estar 'conservado', 'debilitado' o 'perdido'.",
+    "No es lo mismo que 'insight' (conciencia de enfermedad), aunque están relacionados."
+  ],
+  "version": "1.1.0",
+  "mappings": {
+    "cie11": {
+      "code": "MB2Z",
+      "label": "Symptoms or signs involving the nervous system"
+    },
+    "snomed_ct": {
+      "concept_id": "247761001",
+      "preferred_term": "Impaired reality testing (finding)"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Jaspers",
+      "Freud"
     ],
-    "version": "1.1.0",
-    "mappings": {
-        "cie11": {
-            "code": "MB2Z",
-            "label": "Symptoms or signs involving the nervous system"
-        },
-        "snomed_ct": {
-            "concept_id": "247761001",
-            "preferred_term": "Impaired reality testing (finding)"
-        }
-    },
-    "clinical_assessment": {
-        "recommended_scales": []
-    },
-    "provenance": {
-        "phenomenology": [
-            "Jaspers",
-            "Freud"
-        ],
-        "clinical_tradition": [
-            "psicopatologia_clasica"
-        ]
-    },
-    "status": "active"
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  },
+  "status": "active"
 }

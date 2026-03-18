@@ -1,0 +1,69 @@
+{
+  "term_id": "CNS_005",
+  "canonical_name": "Estupor Psiquiátrico",
+  "synonyms_and_slang": [
+    "mutismo acinético funcional",
+    "inhibición psicomotriz masiva (melancólica/catatónica)"
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Estado caracterizado por una dramática y severa disminución de las reacciones o de la responsividad psicomotora hacia los estímulos ambientales, manteniendo simultáneamente la integridad básica y normalidad del nivel de alerta neurológico subyacente (el individuo parece estar despierto y consciente de su entorno, aunque no responde verbalmente y raramente interacciona o se mueve volitivamente de modo espontáneo). Frecuente en Catatonía profunda, Depresión Melancólica Extrema, Psicosis agudas masivas y cuadros disociativos profundos.",
+    "required_features": [
+      "inmovilidad acinética casi total",
+      "mutismo acompañante",
+      "integridad presuntiva fisiológica de vías sensorio-motoras (falsa apariencia neurológica)",
+      "mantenimiento del nivel de alerta cortical (no hay lesión troncoencefálica)."
+    ],
+    "subjective_marker": "Los escasos reportes retrospectivos tras salir del cuadro indican mantenimiento vívido de memoria o de los eventos que ocurrían alrededor (frecuentemente matizados por angustia brutal inexpresable, alucinaciones aterrorizantes, perplejidad o delirio nihilista, según origen).",
+    "behavioral_marker": "Inexpresividad fascial, mutismo casi total, paciente anclado a la cama o silla en posturas prolongadas, no obedece a instrucciones verbales para movilizarse pero sin las paratonías típicas, rechazo de alimentos constante."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "nivel_alerta_EEG",
+        "type": "string",
+        "expected": "normal (vigilia)"
+      },
+      {
+        "marker": "respuesta_motora",
+        "type": "string",
+        "expected": "ausente_activa"
+      },
+      {
+        "marker": "mutismo",
+        "type": "string",
+        "expected": "si"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Estupor Orgánico",
+      "reason": "En el semi-sopor o estupor neurológico hay alteración verdadera en la excitabilidad/nivel real fisiológico de corteza-tronco (el cerebro 'apenas' enciende) con pobre apertura ocular ante estímulos, mientras que el estupor psicógeno/psiquiátrico cursa con apertura permanente de ojos (estado subyacente de vigilia inamovible)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

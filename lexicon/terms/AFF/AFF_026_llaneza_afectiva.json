@@ -1,0 +1,68 @@
+{
+  "term_id": "AFF_026",
+  "canonical_name": "Llaneza afectiva",
+  "synonyms_and_slang": [
+    "flat affect (British tradition)",
+    "afecto llano",
+    "monotonía expresiva estable"
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Estilo expresivo caracterizado por ausencia de dramatización emocional, expresión discreta y contenida, sin implicar patología. Concepto de la tradición psiquiátrica británica para diferenciar estilo cultural/temperamental de embotamiento patológico. Es una variante normal en determinadas culturas o personalidades.",
+    "required_features": [
+      "expresión emocional discreta",
+      "sin dramatización",
+      "experiencia emocional subjetiva preservada",
+      "sin deterioro funcional"
+    ],
+    "subjective_marker": "La persona reporta sentir emociones con normalidad aunque no las exprese dramáticamente.",
+    "behavioral_marker": "Expresión facial y verbal contenida, tono calmado; responde apropiadamente ante situaciones de alta carga emocional."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "experiencia_subjetiva",
+        "type": "string",
+        "expected": "preservada"
+      },
+      {
+        "marker": "funcionalidad",
+        "type": "string",
+        "expected": "normal"
+      },
+      {
+        "marker": "contexto_cultural",
+        "type": "string",
+        "expected": "considerar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Aplanamiento afectivo",
+      "reason": "La llaneza afectiva es estilo normal; el aplanamiento es síntoma con pérdida de experiencia o expresión patológica."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {},
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

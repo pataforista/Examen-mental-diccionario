@@ -1,0 +1,65 @@
+{
+  "term_id": "INS_003",
+  "canonical_name": "Egocintonía",
+  "synonyms_and_slang": [
+    "sintonía con el ego",
+    "ego-syntonic"
+  ],
+  "term_kind": "distinción_clínica",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Cualidad de un síntoma, impulso, idea o rasgo patológico por la cual el paciente lo percibe como aceptable, familiar, justificado y no conflictivo con su propia identidad, valores y auto-esquema subyacente. Fundamental en trastornos de personalidad, delirios y anorexia nerviosa. Disminuye casi a cero el insight.",
+    "required_features": [
+      "concordancia entre el síntoma y la identidad del sujeto",
+      "ausencia de conflicto interno",
+      "justificación del síntoma"
+    ],
+    "subjective_marker": "(En T. Obsesivo de la Personalidad): 'Soy perfeccionista porque las cosas se deben hacer bien; los demás son mediocres'.",
+    "behavioral_marker": "Rechazo al cambio o tratamiento de ese rasgo, minimización del impacto en otros."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "conflicto_yo_sintoma",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "justificacion",
+        "type": "string",
+        "expected": "sí"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Egodistonía",
+      "reason": "En la egodistonía el síntoma causa repulsión e incongruencia consigo mismo."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    },
+    "snomed_ct": {
+      "concept_id": "300403006"
+    }
+  },
+  "version": "1.0.0",
+  "status": "active"
+}

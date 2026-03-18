@@ -1,0 +1,109 @@
+{
+  "term_id": "SELF_001",
+  "canonical_name": "Actos impuestos (pasividad volitiva)",
+  "synonyms_and_slang": [
+    {
+      "term": "sentirse como un títere",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "me mueven los brazos",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "made acts",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Vivencia de que las acciones corporales propias (movimientos, actos) son ejecutadas por una agencia o fuerza externa, no por la propia voluntad.",
+    "required_features": [
+      "la acción se percibe como ajena a la voluntad",
+      "atribución a una fuerza externa",
+      "percepción de ser un autómata o títere"
+    ],
+    "subjective_marker": "Dice que 'algo' o 'alguien' controla sus movimientos o lo obliga a actuar.",
+    "behavioral_marker": "Movimientos que el paciente describe como involuntarios o ajenos a su control real."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "actual",
+      "recurrente"
+    ],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "agency_external",
+        "type": "boolean",
+        "expected": true
+      },
+      {
+        "marker": "passivity_phenomenon",
+        "type": "boolean",
+        "expected": true
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_del_yo_agencia"
+    },
+    {
+      "domain_id": "DOM-07",
+      "relation": "associated_delusion",
+      "context": "delirio_de_control"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SELF_010",
+      "canonical_name": "Impulsos impuestos",
+      "reason": "En los actos impuestos se describe la acción ya en curso o realizada; en los impulsos, es la urgencia de actuar lo que se siente impuesto.",
+      "ref_status": "forward"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_severity",
+      "message": "Es un síntoma de primer rango de Schneider. Altamente sugestivo de esquizofrenia o trastorno psicótico agudo."
+    }
+  ],
+  "teaching_notes": [
+    "Fundamental para la detección de fenómenos de pasividad.",
+    "Diferenciar de tics o movimientos coreicos donde no hay atribución de agencia externa, solo falta de control."
+  ],
+  "cognitive_pitfalls": [
+    "No explorar la atribución (¿quién cree que lo mueve?).",
+    "Confundir con despersonalización donde el acto se siente extraño pero propio."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "“Mi mano se mueve, pero no soy yo quien la mueve; me manipulan”. Describe pérdida de agencia sobre actos voluntarios, con atribución a fuerza externa y experiencia de ser “marioneta”, aun observando que el movimiento ocurre en su cuerpo."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Schneider",
+      "Sims"
+    ],
+    "clinical_tradition": [
+      "Psicopatología clásica",
+      "Síntomas de primer rango"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

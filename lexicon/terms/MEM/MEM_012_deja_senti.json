@@ -1,0 +1,68 @@
+{
+  "term_id": "MEM_012",
+  "canonical_name": "Déjà senti",
+  "synonyms_and_slang": [
+    "ya sentido",
+    "familiaridad emocional espuria"
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Sensación de haber tenido anteriormente un estado emocional o pensamiento exacto al presente, sin referencia a un evento específico exterior. Más interno y emocional que el déjà vu (que es perceptivo-situacional). Descrito por Jackson en epilepsia temporal.",
+    "required_features": [
+      "familiaridad del estado interno (no perceptivo)",
+      "sin referencia a evento externo",
+      "breve duración"
+    ],
+    "subjective_marker": "El paciente describe: 'esta sensación interna, este pensamiento exacto, lo he tenido antes', sin poder ubicarlo en un momento o lugar.",
+    "behavioral_marker": "Frecuentemente asociado a aura epiléptica temporal; difícil de objetivar conductualmente."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false,
+    "computable_markers": [
+      {
+        "marker": "familiaridad_interna",
+        "type": "string",
+        "expected": "sí"
+      },
+      {
+        "marker": "referencia_evento_externo",
+        "type": "string",
+        "expected": "ausente"
+      },
+      {
+        "marker": "epilepsia_temporal",
+        "type": "string",
+        "expected": "descartar"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-09",
+      "relation": "secondary_expression",
+      "context": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "",
+      "canonical_name": "Déjà vu",
+      "reason": "El déjà senti es interno/emocional; el déjà vu es perceptivo-situacional (la escena exterior)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "cie11": {
+      "code": "MB21.Y"
+    },
+    "snomed_ct": {}
+  },
+  "version": "1.0.0",
+  "status": "active"
+}
