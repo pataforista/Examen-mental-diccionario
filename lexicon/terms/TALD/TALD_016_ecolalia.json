@@ -1,0 +1,69 @@
+{
+  "term_id": "TALD_016",
+  "canonical_name": "Ecolalia",
+  "synonyms_and_slang": [
+    "Ecolalia"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Repeticiones sin sentido de palabras y oraciones sin tener en cuenta sus significados y funciones semánticas. El paciente repite como un eco las palabras o frases del entrevistador.",
+    "required_features": [],
+    "behavioral_marker": "Observable en la entrevista clínica"
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-05",
+      "relation": "primary_expression",
+      "context": "tald_scale"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno observable por el evaluador."
+    }
+  ],
+  "teaching_notes": [
+    "Concepto TALD_016 de la escala TALD.",
+    "Registrar presencia/ausencia y severidad si es aplicable."
+  ],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "tald_scale": {
+      "item_number": 16,
+      "type": "objective",
+      "scale_name": "Thought and Language Disturbance Scale"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "TALD Scale",
+        "item": "Ecolalia",
+        "scale_id": "TALD_016"
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "tald_scale"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clinica"
+    ]
+  }
+}

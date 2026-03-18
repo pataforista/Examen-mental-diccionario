@@ -1,0 +1,69 @@
+{
+  "term_id": "TALD_003",
+  "canonical_name": "Tangencialidad",
+  "synonyms_and_slang": [
+    "Tangencialidad"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Las ideas no siguen un camino recto. Dentro de pasajes de habla más largos, el contenido se aleja lentamente de donde comenzó originalmente. El paciente no regresa al tema inicial.",
+    "required_features": [],
+    "behavioral_marker": "Observable en la entrevista clínica"
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-06",
+      "relation": "primary_expression",
+      "context": "tald_scale"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno observable por el evaluador."
+    }
+  ],
+  "teaching_notes": [
+    "Concepto TALD_003 de la escala TALD.",
+    "Registrar presencia/ausencia y severidad si es aplicable."
+  ],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "tald_scale": {
+      "item_number": 3,
+      "type": "objective",
+      "scale_name": "Thought and Language Disturbance Scale"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "TALD Scale",
+        "item": "Tangencialidad",
+        "scale_id": "TALD_003"
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "tald_scale"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clinica"
+    ]
+  }
+}

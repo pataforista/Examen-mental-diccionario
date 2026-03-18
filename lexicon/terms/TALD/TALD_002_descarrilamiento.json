@@ -1,0 +1,69 @@
+{
+  "term_id": "TALD_002",
+  "canonical_name": "Descarrilamiento",
+  "synonyms_and_slang": [
+    "Descarrilamiento"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Un patrón de habla espontánea en el que las ideas se 'salen de la vía' hacia otros pensamientos que están clara pero oblicuamente relacionados. Pueden decirse cosas en yuxtaposición que carecen de una relación significativa, o el paciente puede cambiar idiosincrásicamente de un marco de referencia a otro. A veces puede haber conexiones vagas entre las ideas. Una manifestación es un deslizamiento lento y constante, de modo que el hablante se aleja cada vez más de la pista sin darse cuenta de que su respuesta ya no tiene conexión con la pregunta.",
+    "required_features": [],
+    "behavioral_marker": "Observable en la entrevista clínica"
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-06",
+      "relation": "primary_expression",
+      "context": "tald_scale"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno observable por el evaluador."
+    }
+  ],
+  "teaching_notes": [
+    "Concepto TALD_002 de la escala TALD.",
+    "Registrar presencia/ausencia y severidad si es aplicable."
+  ],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "tald_scale": {
+      "item_number": 2,
+      "type": "objective",
+      "scale_name": "Thought and Language Disturbance Scale"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "TALD Scale",
+        "item": "Descarrilamiento",
+        "scale_id": "TALD_002"
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "tald_scale"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clinica"
+    ]
+  }
+}

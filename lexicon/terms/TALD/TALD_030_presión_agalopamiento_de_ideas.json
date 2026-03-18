@@ -1,0 +1,69 @@
+{
+  "term_id": "TALD_030",
+  "canonical_name": "Presión/Agalopamiento de Ideas",
+  "synonyms_and_slang": [
+    "Presión/Agalopamiento de Ideas"
+  ],
+  "term_kind": "symptom",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Numerosos pensamientos con contenido variado saltan o se imponen en la mente, alternando rápidamente. El paciente no puede controlar ni suprimir estos pensamientos que aparecen y desaparecen.",
+    "required_features": [],
+    "subjective_marker": "Reportado por el paciente"
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-06",
+      "relation": "primary_expression",
+      "context": "tald_scale_subjective"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno reportado por el paciente."
+    }
+  ],
+  "teaching_notes": [
+    "Concepto TALD_030 de la escala TALD.",
+    "Registrar presencia/ausencia y severidad si es aplicable."
+  ],
+  "cognitive_pitfalls": [],
+  "mappings": {
+    "tald_scale": {
+      "item_number": 30,
+      "type": "subjective",
+      "scale_name": "Thought and Language Disturbance Scale"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": [
+      {
+        "name": "TALD Scale",
+        "item": "Presión/Agalopamiento de Ideas",
+        "scale_id": "TALD_030"
+      }
+    ]
+  },
+  "version": "1.0.0",
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "tald_scale"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clinica"
+    ]
+  }
+}
