@@ -252,12 +252,13 @@ const App = {
 
     handleSearch: function (query) {
         const cleanQuery = query.trim();
-        
+
         if (this.nodes.clearSearchBtn) {
             this.nodes.clearSearchBtn.classList.toggle('hidden', cleanQuery.length === 0);
         }
 
         if (cleanQuery.length < 2) {
+            this.renderAllTerms();
             this.renderView('dictionary');
             return;
         }
@@ -799,6 +800,7 @@ const App = {
 
         if (id === 'nav-dictionary') {
             this.data.currentView = 'dictionary';
+            this.renderAllTerms();
             this.renderView('dictionary');
         } else if (id === 'nav-domains') {
             this.data.currentView = 'domains';
