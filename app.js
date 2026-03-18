@@ -296,7 +296,10 @@ const App = {
         let currentLetter = '';
         let html = '';
 
-        this.data.terms.forEach(term => {
+        // Filter terms that have a canonical_name to avoid rendering errors
+        const validTerms = this.data.terms.filter(term => term.canonical_name);
+
+        validTerms.forEach(term => {
             const firstLetter = term.canonical_name.charAt(0).toUpperCase();
             if (firstLetter !== currentLetter) {
                 currentLetter = firstLetter;
