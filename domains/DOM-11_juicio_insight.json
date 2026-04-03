@@ -8,7 +8,8 @@
     "juicio_social",
     "juicio_de_realidad",
     "insight_de_enfermedad",
-    "atribucion_causal"
+    "atribucion_causal",
+    "proyeccion_a_futuro"
   ],
   "excludes": [
     "riesgo_suicida_u_heteroagresivo (ver DOM-12)",
@@ -71,6 +72,18 @@
         "atribucion_delirante_o_magica"
       ],
       "notes": "Describe el modelo explicativo del paciente. Útil para anticipar fricción clínica sin etiquetar 'resistencia'."
+    },
+    {
+      "id": "proyeccion_a_futuro",
+      "label_es": "Proyección a futuro",
+      "accepted_terms": [
+        "proyeccion_realista",
+        "proyeccion_optimista",
+        "proyeccion_pesimista",
+        "sin_proyeccion_a_futuro",
+        "proyeccion_delirante"
+      ],
+      "notes": "Valora si el paciente tiene metas o planes estructurados y su coherencia con la realidad."
     }
   ],
   "allowed_features": [

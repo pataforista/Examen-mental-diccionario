@@ -1,21 +1,26 @@
 {
-  "name": "Examen Mental - Registro Dual",
-  "short_name": "MSE Registro",
-  "description": "Diccionario clínico de examen mental (Soft Ruins / Black Signal).",
+  "name": "Diccionario de Examen Mental",
+  "short_name": "MSE Diccionario",
+  "description": "Recurso clínico especializado para psiquiatría y psicología médica. Incluye herramientas de semiología, asistente de redacción y escenarios diagnósticos (OSCE).",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#120C18",
   "theme_color": "#FFF8E7",
+  "categories": ["medical", "education", "productivity"],
   "icons": [
     {
       "src": "icon.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "orientation": "portrait",
+  "lang": "es-MX"
 }

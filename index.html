@@ -14,7 +14,36 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon.png">
+    <link rel="canonical" href="https://examenmental.pages.dev">
     <meta name="theme-color" content="#FFF8E7">
+    <meta name="description" content="Diccionario especializado de Examen Mental. Herramienta clínica interactiva para psiquiatría y psicología con esquema de 20 puntos e integración sindromática.">
+    <meta name="keywords" content="examen mental, psiquiatría, psicología, clínica, semiología, diagnóstico, médico, diccionario médico">
+    <meta name="author" content="Dr. Cesar Celada">
+
+    <!-- Social Media (Open Graph & Twitter) -->
+    <meta property="og:title" content="Diccionario de Examen Mental | Dr. Cesar Celada">
+    <meta property="og:description" content="Integra y redacta tus exámenes mentales de forma profesional con este asistente clínico.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://examenmental.pages.dev">
+    <meta property="og:image" content="https://examenmental.pages.dev/icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Diccionario de Examen Mental",
+      "description": "Herramienta digital para la formación en semiología psiquiátrica y redacción de examen mental.",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Cesar Celada"
+      },
+      "medicalSpecialty": "Psychiatry",
+      "audience": "Medical Professionals"
+    }
+    </script>
+
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.transparenttextures.com https://i.pravatar.cc; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self';">
 </head>
@@ -50,6 +79,62 @@
         <section id="domain-view" class="hidden"></section>
         <section id="cases-view" class="hidden"></section>
 
+        <section id="integrator-view" class="hidden">
+            <div class="integrator-header">
+                <div class="m3-progress-container">
+                    <div id="int-progress-bar" class="m3-progress-bar"></div>
+                </div>
+                <h2 class="m3-title">Constructor del Examen Mental</h2>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
+                    <p class="section-subtitle" style="margin:0;">Sigue los 20 puntos para generar tu reporte</p>
+                    <label class="m3-switch" title="Activa perlas clínicas y diagnósticos diferenciales">
+                        <input type="checkbox" id="int-teaching-mode">
+                        <span class="m3-switch-slider"></span>
+                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary);">MODO MAESTRO</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="integrator-container">
+                <div class="stepper-sidebar">
+                    <ul id="integrator-steps-list"></ul>
+                </div>
+
+                <div class="step-content card">
+                    <div id="step-title-container">
+                        <h3 id="step-label"></h3>
+                        <p id="step-description"></p>
+                    </div>
+
+                    <div id="step-options-container" class="options-grid"></div>
+
+                    <div class="step-writing-area">
+                        <label for="step-text">Redacción para este punto:</label>
+                        <textarea id="step-text" placeholder="Selecciona términos arriba o escribe aquí..."></textarea>
+                    </div>
+
+                    <div class="step-navigation">
+                        <button id="int-prev-btn" class="btn secondary">← Anterior</button>
+                        <button id="int-next-btn" class="btn primary">Siguiente →</button>
+                    </div>
+                </div>
+
+                <div class="report-preview-panel card">
+                    <div class="preview-header">
+                        <h3><span style="margin-right: 0.5rem;">📄</span> Vista Previa del Reporte</h3>
+                        <button id="int-reset-btn" class="btn-icon" title="Reiniciar">🔄</button>
+                    </div>
+                    <div id="report-output" class="report-output" contenteditable="true">
+                        Tu reporte aparecerá aquí a medida que avances...
+                    </div>
+                    <div class="report-actions">
+                        <button id="int-copy-btn" class="btn primary" style="width: 100%;">
+                            <span style="margin-right:0.5rem;">📋</span> Copiar Reporte
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="game-view" class="hidden">
             <div class="card">
                 <div class="game-controls-row">
@@ -163,22 +248,26 @@
             <span class="nav-icon">📋</span>
             <span>Casos OSCE</span>
         </button>
+        <button id="nav-integrator">
+            <span class="nav-icon">📝</span>
+            <span>Integrador</span>
+        </button>
         <button id="nav-game">
             <span class="nav-icon">🧠</span>
             <span>Entrenamiento</span>
         </button>
     </nav>
 
-    <!-- Donation floating widget -->
-    <div id="donation-widget" class="donation-widget hidden" role="complementary" aria-label="Apoya el proyecto">
-        <a href="https://www.buymeacoffee.com/TU_USUARIO" target="_blank" rel="noopener noreferrer" class="donation-link" title="Invítame un café ☕">
-            <span class="donation-icon">☕</span>
-            <span class="donation-text">Invítame un café</span>
-        </a>
-        <button class="donation-close" id="donation-close" title="Cerrar" aria-label="Cerrar sugerencia de donación">✕</button>
-    </div>
+    <footer class="global-footer">
+        <div class="footer-content">
+            <p>© 2026 Dr. Cesar Celada | Diccionario de Examen Mental</p>
+            <button class="btn secondary small" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">
+                ☕ Apoyar Proyecto
+            </button>
+        </div>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.basic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="app.js" type="module"></script>
 </body>

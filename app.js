@@ -20,6 +20,23 @@ const App = {
         this.renderAllTerms();
         this.theme.init();
         this.donation.init();
+        this.handleInitialHash();
+    },
+
+    handleInitialHash: function () {
+        const hash = window.location.hash;
+        if (!hash) return;
+
+        if (hash.startsWith('#term/')) {
+            const termId = hash.replace('#term/', '');
+            this.viewTerm(termId);
+        } else if (hash.startsWith('#domain/')) {
+            const domainId = hash.replace('#domain/', '');
+            this.viewDomainDetails(domainId);
+        } else if (hash.length > 1) {
+            const tabId = `nav-${hash.substring(1)}`;
+            this.switchTab(tabId);
+        }
     },
 
     registerSW: function () {
@@ -97,6 +114,7 @@ const App = {
             termView: document.getElementById('term-view'),
             domainView: document.getElementById('domain-view'),
             casesView: document.getElementById('cases-view'),
+            integratorView: document.getElementById('integrator-view'),
             aboutView: document.getElementById('about-view'),
             allTermsList: document.getElementById('all-terms-list'),
             recentSearchesBar: document.getElementById('recent-searches'),
@@ -160,45 +178,50 @@ const App = {
     },
 
     loadData: async function () {
+        const startTime = performance.now();
         try {
-            // Load optimized lexicon bundle
-            const bundle = await fetch('lexicon/lexicon_bundle.json').then(r => r.json());
-            this.data.terms = bundle.terms;
-
-            // Sort terms alphabetically
-            this.data.terms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
-
-            // Load domains (hardcoded slugs for robustness based on the folder structure)
+            // Start parallel fetches for all critical resources
+            const lexiconPromise = fetch('lexicon/lexicon_bundle.json').then(r => r.json());
+            
             const domainIds = Array.from({ length: 14 }, (_, i) => `DOM-${(i + 1).toString().padStart(2, '0')}`);
             const domainPromises = domainIds.map(async id => {
                 const slug = this.getDomainSlug(id);
                 try {
                     const response = await fetch(`domains/${id}_${slug}.json`);
+                    if (!response.ok) throw new Error(`Domain ${id} not found`);
                     return await response.json();
                 } catch (e) {
-                    return { domain_id: id, domain_name: id.replace('-', ' ') };
+                    return { domain_id: id, domain_name: id.replace('-', ' '), subcomponents: [] };
                 }
             });
-            this.data.domains = await Promise.all(domainPromises);
 
-            // Load cases
-            try {
-                const caseFiles = [
-                    'OSCE_001–003.json',
-                    'OSCE_004–OSCE_009.json',
-                    'OSCE_010–OSCE_015.json',
-                    'OSCE_016–025.json',
-                    'OSCE_026–035.json'
-                ];
-                const casePromises = caseFiles.map(file => fetch(file).then(r => r.json()).catch(() => []));
-                const allCasesArrays = await Promise.all(casePromises);
-                this.data.cases = allCasesArrays.flat();
-            } catch (e) {
-                console.warn("Could not load OSCE cases");
-            }
+            const caseFiles = [
+                'OSCE_001–003.json', 'OSCE_004–OSCE_009.json', 'OSCE_010–OSCE_015.json',
+                'OSCE_016–025.json', 'OSCE_026–035.json'
+            ];
+            const casePromises = caseFiles.map(file => fetch(file).then(r => r.json()).catch(() => []));
 
+            // Await all groups in parallel
+            const [lexiconData, domainsData, casesDataArrays] = await Promise.all([
+                lexiconPromise,
+                Promise.all(domainPromises),
+                Promise.all(casePromises)
+            ]);
+
+            // Assign data
+            this.data.terms = lexiconData.terms || [];
+            this.data.domains = domainsData;
+            this.data.cases = casesDataArrays.flat();
+
+            // Sort terms alphabetically
+            this.data.terms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
+
+            console.log(`🚀 Clinical Data Loaded in ${Math.round(performance.now() - startTime)}ms`);
         } catch (error) {
-            console.error("Error loading clinical data:", error);
+            console.error("Critical error loading clinical data:", error);
+            // Fallback to empty to prevent UI crash
+            this.data.terms = this.data.terms || [];
+            this.data.domains = this.data.domains || [];
         }
     },
 
@@ -368,7 +391,13 @@ const App = {
             const domainLinks = term.domain_links || [];
 
             this.nodes.termView.innerHTML = `
-            <div class="btn-back" onclick="App.closeTerm()">← Volver</div>
+            <div class="view-actions-header" style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div class="btn-back" onclick="App.closeTerm()" style="margin:0;">← Volver</div>
+                <div style="display:flex; gap:0.5rem;">
+                    <button class="btn-icon" onclick="App.speakTerm('${term.term_id}')" title="Leer definición">🔊 Leer</button>
+                    <button class="btn-icon" onclick="App.shareTerm('${term.term_id}')" title="Compartir">📤</button>
+                </div>
+            </div>
             <div class="card">
                 <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
                     <div class="badge badge-risk-${term.risk_weight > 1 ? 'critical' : 'alert'}">${this.utils.sanitizeHTML(term.term_kind || 'término')}</div>
@@ -433,6 +462,11 @@ const App = {
                         </div>
                     </div>
                 ` : ''}
+
+                <div class="support-nudge" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-subtle); text-align: center;">
+                    <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.75rem;">¿Te fue útil esta definición? Apoya el proyecto independiente.</p>
+                    <button class="btn secondary" style="font-size: 0.75rem; padding: 0.5rem 1rem;" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">☕ Invitame un café</button>
+                </div>
             </div>
             `;
             this.renderView('term');
@@ -504,20 +538,20 @@ const App = {
                         <h3 class="name">Contacto</h3>
                         <span class="handle">Aclaraciones y Mejoras</span>
                         <p class="role">drceladapsiquiatria@gmail.com</p>
-                    </footer>
-                </article>
-
-                <article class="chroma-card coffee-card" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">
-                    <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: #FFDD00;">
-                        <span style="font-size: 3.5rem;">☕</span>
+            <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="card about-main-card" style="position: relative; overflow: hidden; background: linear-gradient(135deg, var(--surface-1), var(--surface-2));">
+                    <div class="deco-circle" style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: var(--primary); border-radius: 50%; opacity: 0.1; filter: blur(40px);"></div>
+                    
+                    <h3 class="m3-title" style="margin-bottom: 1rem; color: var(--primary);">Dr. Cesar Celada</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem; opacity: 0.8; line-height: 1.6;">
+                        Médico Cirujano y Especialista en Psiquiatría (INPRFM). Apasionado por la intersección entre la tecnología y la salud mental de precisión.
+                    </p>
+                    
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <button class="btn primary small" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">☕ Invitame un café</button>
+                        <button class="btn secondary small" onclick="window.location.href='mailto:cesar.celada@gmail.com'">📧 Contacto</button>
                     </div>
-                    <footer class="chroma-info">
-                        <h3 class="name" style="color: #6d4c41;">Invitame un café</h3>
-                        <span class="handle" style="color: #6d4c41; opacity: 0.8;">Donar para mantener el servidor</span>
-                        <p class="role" style="font-weight: 800; color: #444;">buymeacoffee.com/herramente</p>
-                    </footer>
-                    <div style="margin-top: 1rem; padding: 0.5rem 1rem; background: #FFDD00; color: #444; border-radius: 20px; font-weight: 800; font-size: 0.8rem;">DONAR AHORA</div>
-                </article>
+                </div>
             </div>
 
             <div class="card" style="margin-top: 2rem;">
@@ -634,6 +668,9 @@ const App = {
         document.getElementById('domain-grid-container').classList.add('hidden');
         detailContainer.classList.remove('hidden');
         this.donation.increment();
+
+        // Title for SEO
+        document.title = `Dominio: ${domain.label_es || domain.domain_name} | Diccionario MSE`;
 
         detailContainer.innerHTML = `
             <div class="btn-back" onclick="App.closeDomainDetails()">← Volver a Dominios</div>
@@ -813,6 +850,10 @@ const App = {
             this.data.currentView = 'cases';
             this.renderCases();
             this.renderView('cases');
+        } else if (id === 'nav-integrator') {
+            this.data.currentView = 'integrator';
+            this.integrator.init();
+            this.renderView('integrator');
         } else if (id === 'nav-game') {
             this.data.currentView = 'game';
             this.game.init();
@@ -820,6 +861,353 @@ const App = {
         } else {
             // Stop game timer if we switch to any other tab
             if (this.game && this.game.stopTimer) this.game.stopTimer();
+        }
+    },
+
+    init: async function () {
+        this.cacheDOM();
+        this.registerSW();
+        this.bindEvents();
+        await this.loadData();
+        this.setupSearch();
+        this.loadRecentSearches();
+        this.renderAllTerms(); // Pre-load dictionary immediately
+        this.theme.init();
+        this.donation.init();
+        this.handleInitialHash();
+        this.checkOnboarding();
+        this.setupSWUpdates();
+    },
+
+    // --- MSE INTEGRATOR SUBMODULE ---
+    integrator: {
+        currentStep: 0,
+        steps: [
+            { 
+                id: 1, label: "Consciencia y orientación", domain: "DOM-01", 
+                guide: "¿Está alerta, somnoliento, estuporoso, confuso, obnubilado, en coma?\nOrientación: Persona (¿Cómo se llama?), Lugar (¿Dónde estamos?), Tiempo (Día, mes, año), Situación (¿Sabe por qué está aquí?)", 
+                example: "Paciente consciente, alerta. Orientado en persona, lugar, tiempo y situación.",
+                description: "Evaluación del estado de alerta y ubicación."
+            },
+            { 
+                id: 2, label: "Higiene, vestimenta y aliento", domain: "DOM-02", components: ["higiene", "vestimenta_y_alino", "aliento"],
+                guide: "Ropa adecuada al clima/situación, limpia o descuidada.\nHigiene personal (olor corporal, cabello, uñas).\nAliento (alcohol, cetonas, fétido, normal).",
+                example: "Vestimenta desordenada, ropa sucia. Higiene deficiente. Aliento normal.",
+                description: "Observación de aliño y presentación física."
+            },
+            { 
+                id: 3, label: "Posición", domain: "DOM-02", components: ["postura"],
+                guide: "De pie, sentado, en cama, encamado, postura fija, decúbito activo/pasivo.",
+                example: "Paciente sentado voluntariamente en la camilla.",
+                description: "Postura corporal predominante."
+            },
+            { 
+                id: 4, label: "Facies", domain: "DOM-02", components: ["facies"],
+                guide: "Expresión facial (triste, angustiada, hostil, desconfiada, indiferente, perpleja, eufórica, inexpresiva).",
+                example: "Facies de angustia e indiferencia.",
+                description: "Mímica y expresión facial."
+            },
+            { 
+                id: 5, label: "Función psicomotriz", domain: "DOM-04",
+                guide: "Movimientos anormales (temblor, tics, acatisia, estereotipias, corea). Inhibición o agitación. Catalepsia, flexibilidad cérea.",
+                example: "Agitación psicomotriz generalizada, sin temblores.",
+                description: "Actividad motora observable."
+            },
+            { 
+                id: 6, label: "Actitud", domain: "DOM-03", components: ["actitud"],
+                guide: "Cooperadora, hostil, negativista, seductora, distante, apática, provocadora.",
+                example: "Actitud cooperadora durante la entrevista.",
+                description: "Disposición hacia el examinador."
+            },
+            { 
+                id: 7, label: "Contacto visual", domain: "DOM-03", components: ["contacto_visual"],
+                guide: "Fijo, evitativo, perdido, amenazante, de seducción.",
+                example: "Contacto visual evitativo, ocasional.",
+                description: "Conexión visual con el examinador."
+            },
+            { 
+                id: 8, label: "Habla (volumen, cantidad, tono)", domain: "DOM-05", components: ["habla"],
+                guide: "Volumen (alto, bajo, normal), Cantidad (escasa, logorrea, pobre), Tono (monótono, modulado, enfático).",
+                example: "Habla espontánea, volumen bajo, cantidad escasa, tono monótono.",
+                description: "Características sonoras del lenguaje."
+            },
+            { 
+                id: 9, label: "Discurso", domain: "DOM-05", components: ["discurso"],
+                guide: "Velocidad (lento, presionado, normal), Organización (coherente, divagante, tangencial, circunstancial).",
+                example: "Discurso lento, coherente pero con tendencia a divagaciones.",
+                description: "Forma y fluidez del relato."
+            },
+            { 
+                id: 10, label: "Lenguaje", domain: "DOM-05", components: ["lenguaje"],
+                guide: "Neologismos, parafasias, jergafasia, ecolalia, mutismo.",
+                example: "Lenguaje sin alteraciones; sin neologismos ni parafasias.",
+                description: "Uso de símbolos y reglas gramaticales."
+            },
+            { 
+                id: 11, label: "Curso del pensamiento", domain: "DOM-06",
+                guide: "Acelerado, enlentecido, bloqueo, robo, fuga de ideas, incoherencia.",
+                example: "Curso del pensamiento enlentecido, sin bloqueos.",
+                description: "Flujo y velocidad de las ideas."
+            },
+            { 
+                id: 12, label: "Ideación suicida", domain: "DOM-12",
+                guide: "¿Ha pensado que la vida no vale la pena? ¿Ha pensado en morir? ¿Tiene plan/medios?\n¿Hay ideación homicida?",
+                example: "Niega ideación suicida u homicida en la actualidad.",
+                description: "Evaluación de riesgo vital."
+            },
+            { 
+                id: 13, label: "Contenido del pensamiento", domain: "DOM-07",
+                guide: "Delirios (persecutorio, místico, grandeza), Obsesiones, Fobias, Ideas sobrevaloradas.",
+                example: "Contenido delirante de tipo persecutorio y autorreferencial.",
+                description: "El qué de lo que el paciente piensa."
+            },
+            { 
+                id: 14, label: "Ánimo", domain: "DOM-09", components: ["animo"],
+                guide: "¿Cómo se ha sentido? ¿Triste, alegre, irritable?\nEscala subjetiva 0-10.",
+                example: "Ánimo disfórico, refiere tristeza 8/10.",
+                description: "Estado subjetivo reportado por el paciente."
+            },
+            { 
+                id: 15, label: "Afecto", domain: "DOM-09", components: ["afecto"],
+                guide: "Tipo (depresivo, ansioso, irritable), Modulación (reactivo, lábil, restringido). Adecuación al discurso.",
+                example: "Afecto ansioso, reactivo, adecuado al contenido verbal.",
+                description: "Expresión emocional observable."
+            },
+            { 
+                id: 16, label: "Sensopercepción", domain: "DOM-08",
+                guide: "¿Oye/ve cosas que otros no? Alucinaciones (auditivas, visuales, etc.), Ilusiones, Despersonalización.",
+                example: "Alucinaciones auditivas simples (escucha que le llaman).",
+                description: "Evaluación de percepciones."
+            },
+            { 
+                id: 17, label: "Funciones mentales superiores", domain: "DOM-10",
+                guide: "a) Memoria (Reciente, Mediata, Remota)\nb) Atención (Dígitos, Mundo al revés)\nc) Abstracción (Semejanzas, Refranes)\nd) Cálculo\ne) Conocimiento (Gnosias, info general)",
+                example: "Memoria y atención conservadas; abstracción en nivel concreto.",
+                description: "Evaluación cognitiva global."
+            },
+            { 
+                id: 18, label: "Conciencia de enfermedad", domain: "DOM-11", components: ["insight_de_enfermedad"],
+                guide: "¿Cree que tiene algún problema? ¿Necesita tratamiento?",
+                example: "Ausencia de conciencia de enfermedad; niega trastorno.",
+                description: "Reconocimiento de la patología."
+            },
+            { 
+                id: 19, label: "Juicio", domain: "DOM-11", components: ["juicio_practico", "juicio_social"],
+                guide: "¿Qué haría ante un incendio? ¿Si se queda sin dinero?",
+                example: "Juicio conservado para situaciones prácticas.",
+                description: "Capacidad de toma de decisiones."
+            },
+            { 
+                id: 20, label: "Proyección a futuro", domain: "DOM-11", components: ["proyeccion_a_futuro"],
+                guide: "¿Cómo se ve en un año? ¿Tiene metas/planes?",
+                example: "Proyección a futuro pesimista, sin planes concretos.",
+                description: "Expectativas y prospectiva de vida."
+            }
+        ],
+        responses: {}, // stepId -> text
+
+        init: function () {
+            this.cacheDOM();
+            this.bindEvents();
+            this.renderStepsList();
+            this.renderCurrentStep();
+            this.updateReport();
+            this.updateProgressBar();
+        },
+
+        loadPedagogicalData: function () {
+            this.discriminators = {
+                "PER_001": { label: "Alucinación verdadera", why: "Sin objeto, externa, con convicción." },
+                "PER_004": { label: "Pseudoalucinación", why: "Sin objeto, interna (dentro de la mente)." },
+                "THO_010": { label: "Fuga de ideas", why: "Asociaciones rápidas pero con hilo conductor superficial." },
+                "THO_020": { label: "Incoherencia", why: "Pérdida total de sintaxis y sentido." }
+            };
+        },
+
+        cacheDOM: function () {
+            this.nodes = {
+                stepsList: document.getElementById('integrator-steps-list'),
+                stepLabel: document.getElementById('step-label'),
+                stepDescription: document.getElementById('step-description'),
+                optionsContainer: document.getElementById('step-options-container'),
+                stepText: document.getElementById('step-text'),
+                prevBtn: document.getElementById('int-prev-btn'),
+                nextBtn: document.getElementById('int-next-btn'),
+                reportOutput: document.getElementById('report-output'),
+                copyBtn: document.getElementById('int-copy-btn'),
+                resetBtn: document.getElementById('int-reset-btn'),
+                progressBar: document.getElementById('int-progress-bar'),
+                teachingToggle: document.getElementById('int-teaching-mode')
+            };
+        },
+
+        bindEvents: function () {
+            if (this._bound) return;
+            this._bound = true;
+
+            this.nodes.prevBtn.addEventListener('click', () => this.navigate(-1));
+            this.nodes.nextBtn.addEventListener('click', () => this.navigate(1));
+            this.nodes.resetBtn.addEventListener('click', () => this.reset());
+            this.nodes.copyBtn.addEventListener('click', () => this.copyReport());
+            
+            this.nodes.stepText.addEventListener('input', (e) => {
+                const step = this.steps[this.currentStep];
+                this.responses[step.id] = e.target.value;
+                this.updateReport();
+                this.updateStepStatus(step.id);
+            });
+
+            this.nodes.reportOutput.addEventListener('input', (e) => {
+                // Manual edits to report don't sync back to individual steps easily
+                // so we just let the user edit the final output.
+            });
+        },
+
+        renderStepsList: function () {
+            this.nodes.stepsList.innerHTML = this.steps.map((step, index) => `
+                <li class="step-item ${index === this.currentStep ? 'active' : ''} ${this.responses[step.id] ? 'completed' : ''}" 
+                    onclick="App.integrator.goToStep(${index})" id="step-nav-${step.id}">
+                    <span class="step-number">${index + 1}</span>
+                    <span class="step-text-label">${step.label}</span>
+                </li>
+            `).join('');
+        },
+
+        renderCurrentStep: function () {
+            const step = this.steps[this.currentStep];
+            if (!step) return;
+
+            this.nodes.stepLabel.textContent = `${this.currentStep + 1}. ${step.label}`;
+            this.nodes.stepDescription.innerHTML = `
+                <div style="margin-bottom:0.75rem; color:var(--text-p); font-size:0.9rem; font-weight:500;">${App.utils.sanitizeHTML(step.description)}</div>
+                ${step.guide ? `<div class="mnemonic-hint" style="background:rgba(var(--accent-rgb), 0.1); border-color:var(--accent); margin-top:0.5rem; padding:0.75rem; border-radius:8px; font-size:0.85rem;"><strong>🔎 QUÉ OBSERVAR / PREGUNTAR:</strong><br>${App.utils.sanitizeHTML(step.guide).replace(/\n/g, '<br>')}</div>` : ''}
+                ${step.example ? `<div class="mnemonic-hint" style="background:rgba(var(--primary-rgb), 0.05); color:var(--text-secondary); border-style:dashed; margin-top:0.5rem; padding:0.75rem; border-radius:8px; font-size:0.85rem;"><strong>✍️ REDACCIÓN EJEMPLO:</strong><br>${App.utils.sanitizeHTML(step.example)}</div>` : ''}
+            `;
+            this.nodes.stepText.value = this.responses[step.id] || '';
+            this.nodes.stepText.placeholder = step.example || "Escribe tus observaciones aquí...";
+
+            // Render options from domain terms
+            this.renderOptionsForStep(step);
+            
+            this.nodes.prevBtn.disabled = this.currentStep === 0;
+            this.nodes.nextBtn.textContent = this.currentStep === this.steps.length - 1 ? 'Finalizar' : 'Siguiente →';
+
+            // Update active class in sidebar
+            const items = this.nodes.stepsList.querySelectorAll('.step-item');
+            items.forEach((item, i) => item.classList.toggle('active', i === this.currentStep));
+        },
+
+        renderOptionsForStep: function (step) {
+            const domain = App.data.domains.find(d => d.domain_id === step.domain);
+            if (!domain) {
+                this.nodes.optionsContainer.innerHTML = '<p style="font-size:0.8rem; opacity:0.5;">No hay términos asociados.</p>';
+                return;
+            }
+
+            let terms = [];
+            if (step.components) {
+                // Specific components
+                step.components.forEach(compId => {
+                    const comp = domain.subcomponents?.find(c => c.id === compId);
+                    if (comp && comp.accepted_terms) terms = [...terms, ...comp.accepted_terms];
+                });
+            } else {
+                // All terms for this domain
+                domain.subcomponents?.forEach(comp => {
+                    if (comp.accepted_terms) terms = [...terms, ...comp.accepted_terms];
+                });
+            }
+
+            // Deduplicate
+            terms = [...new Set(terms)];
+
+            if (terms.length === 0) {
+                this.nodes.optionsContainer.innerHTML = '<p style="font-size:0.8rem; opacity:0.5;">No hay términos asociados.</p>';
+                return;
+            }
+
+            this.nodes.optionsContainer.innerHTML = terms.map(t => {
+                const isSelected = this.responses[step.id]?.includes(t.replace(/_/g, ' '));
+                return `<div class="int-opt ${isSelected ? 'selected' : ''}" onclick="App.integrator.toggleTerm('${t}')">${t.replace(/_/g, ' ')}</div>`;
+            }).join('');
+        },
+
+        toggleTerm: function (term) {
+            const step = this.steps[this.currentStep];
+            const cleanTerm = term.replace(/_/g, ' ');
+            let current = this.responses[step.id] || '';
+            
+            if (current.includes(cleanTerm)) {
+                current = current.replace(new RegExp(`${cleanTerm},?\\s?`, 'g'), '').trim();
+                if (current.endsWith(',')) current = current.slice(0, -1);
+            } else {
+                current = current ? `${current}, ${cleanTerm}` : cleanTerm;
+            }
+            
+            this.responses[step.id] = current;
+            this.nodes.stepText.value = current;
+            this.updateReport();
+            this.renderOptionsForStep(step);
+            this.updateStepStatus(step.id);
+        },
+
+        updateStepStatus: function (stepId) {
+            const el = document.getElementById(`step-nav-${stepId}`);
+            if (el) el.classList.toggle('completed', !!this.responses[stepId]);
+        },
+
+        navigate: function (dir) {
+            const next = this.currentStep + dir;
+            if (next >= 0 && next < this.steps.length) {
+                this.currentStep = next;
+                this.renderCurrentStep();
+                App.nodes.content.scrollTop = 0;
+            } else if (next === this.steps.length) {
+                alert("¡Examen mental completado! Puedes revisar y copiar el reporte final.");
+            }
+        },
+
+        goToStep: function (index) {
+            this.currentStep = index;
+            this.renderCurrentStep();
+        },
+
+        updateReport: function () {
+            let fullText = "";
+            this.steps.forEach(s => {
+                if (this.responses[s.id]) {
+                    fullText += `${s.label}: ${this.responses[s.id]}.\n`;
+                }
+            });
+            
+            if (!fullText) {
+                this.nodes.reportOutput.textContent = "Tu reporte aparecerá aquí a medida que avances...";
+            } else {
+                this.nodes.reportOutput.textContent = fullText;
+            }
+        },
+
+        copyReport: function () {
+            const text = this.nodes.reportOutput.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const original = this.nodes.copyBtn.textContent;
+                this.nodes.copyBtn.textContent = "¡Copiado!";
+                this.nodes.copyBtn.classList.add('success');
+                setTimeout(() => {
+                    this.nodes.copyBtn.textContent = original;
+                    this.nodes.copyBtn.classList.remove('success');
+                }, 2000);
+            });
+        },
+
+        reset: function () {
+            if (confirm("¿Estás seguro de reiniciar todo el asistente? Se borrarán tus respuestas actuales.")) {
+                this.responses = {};
+                this.currentStep = 0;
+                this.renderStepsList();
+                this.renderCurrentStep();
+                this.updateReport();
+            }
         }
     },
 
@@ -1045,15 +1433,18 @@ const App = {
             this.nodes.options.innerHTML = '';
             this.nodes.hint.textContent = '';
 
+            const manual = document.getElementById('game-manual-text');
             const domain = this.nodes.domainSelect.value;
             const diff = this.nodes.difficultySelect.value;
 
             if (this.currentMode === 'mcq') {
                 this.diffPhase = 1;
+                if (manual) manual.innerHTML = "<strong>Modo Definiciones:</strong> Identifica el término correcto basado en la descripción mostrada.";
                 this.currentRound = this.buildMcqRound(domain, diff);
                 this.renderMcqRound(this.currentRound);
             } else {
                 this.diffPhase = 1;
+                if (manual) manual.innerHTML = "<strong>Fase 1 (Diagnóstico):</strong> Analiza el caso y selecciona el <strong>Síndrome Predominante</strong>.";
                 this.currentRound = this.buildDiffRound(domain, diff);
                 this.renderDiffPhase1(this.currentRound);
             }
@@ -1306,7 +1697,7 @@ const App = {
     // ─────────────────────────────────────────────────────────────────────────
 
     renderView: function (viewName) {
-        const views = ['dictionary', 'results', 'term', 'domain', 'cases', 'about', 'game'];
+        const views = ['dictionary', 'results', 'term', 'domain', 'cases', 'integrator', 'about', 'game'];
         views.forEach(v => {
             const node = this.nodes[`${v}View`];
             if (node) {

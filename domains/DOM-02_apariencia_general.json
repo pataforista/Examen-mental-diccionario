@@ -6,6 +6,7 @@
   "evaluates": [
     "higiene",
     "vestimenta_y_alino",
+    "aliento",
     "postura",
     "facies",
     "adecuacion_al_contexto"
@@ -39,15 +40,32 @@
       "notes": "Valorar congruencia con clima, situación clínica y normas socioculturales; describir lo observable."
     },
     {
+      "id": "aliento",
+      "label_es": "Aliento",
+      "accepted_terms": [
+        "aliento_normal",
+        "aliento_alcoholico",
+        "aliento_cetonico",
+        "aliento_fetido",
+        "aliento_urinoso"
+      ],
+      "notes": "Valorar presencia de olores sugerentes de intoxicación, patología metabólica o higiene deficiente."
+    },
+    {
       "id": "postura",
-      "label_es": "Postura",
+      "label_es": "Postura y posición",
       "accepted_terms": [
         "erguida",
         "encorvada",
         "rigida",
-        "laxa"
+        "laxa",
+        "decubito_activo",
+        "decubito_pasivo",
+        "sentado_voluntariamente",
+        "encamado",
+        "postura_fija"
       ],
-      "notes": "Describir la posición corporal predominante sin atribuir significado emocional."
+      "notes": "Describir la posición corporal predominante y el modo en que se mantiene (ej. sentado, de pie)."
     },
     {
       "id": "facies",
