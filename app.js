@@ -345,9 +345,12 @@ const App = {
     },
 
     renderAllTerms: function () {
-        if (!this.nodes.allTermsList) return;
+        if (!this.nodes.allTermsList || !this.data.terms) return;
         this.nodes.allTermsList.innerHTML = '';
-        this.data.terms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name)).forEach(term => {
+        
+        const validTerms = this.data.terms.filter(t => t && t.canonical_name);
+        
+        validTerms.sort((a, b) => (a.canonical_name || "").localeCompare(b.canonical_name || "")).forEach(term => {
             const card = this.renderTermCard(term);
             this.nodes.allTermsList.appendChild(card);
         });
