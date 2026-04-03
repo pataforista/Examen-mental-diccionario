@@ -21,6 +21,35 @@ const App = {
         this.theme.init();
         this.donation.init();
         this.handleInitialHash();
+        this.checkOnboarding();
+        this.setupSWUpdates();
+    },
+
+    setupSWUpdates: function () {
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                window.location.reload();
+            });
+        }
+    },
+
+    checkOnboarding: function () {
+        if (!localStorage.getItem('mse_onboarded_v2.1')) {
+            setTimeout(() => {
+                alert("¡Bienvenido al Diccionario de Examen Mental! Pro tip: Activa el 'Modo Maestro' en el Integrador para ver guías de estudio mientras redactas.");
+                localStorage.setItem('mse_onboarded_v2.1', 'true');
+            }, 1500);
+        }
+    },
+
+    speakTerm: function (termId) {
+        const term = this.data.terms.find(t => t.term_id === termId);
+        if (!term) return;
+        const text = `${term.canonical_name}. ${term.definition_clinical?.core || ''}`;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'es-MX';
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
     },
 
     handleInitialHash: function () {
@@ -316,27 +345,23 @@ const App = {
     },
 
     renderAllTerms: function () {
-        let currentLetter = '';
-        let html = '';
-
-        // Filter terms that have a canonical_name to avoid rendering errors
-        const validTerms = this.data.terms.filter(term => term.canonical_name);
-
-        validTerms.forEach(term => {
-            const firstLetter = term.canonical_name.charAt(0).toUpperCase();
-            if (firstLetter !== currentLetter) {
-                currentLetter = firstLetter;
-                html += `<div class="alphabet-header">${currentLetter}</div>`;
-            }
-            html += `
-                <div class="list-item" onclick="App.viewTerm('${term.term_id}')">
-                    <span>${term.canonical_name}</span>
-                    <span style="font-size: 0.7rem; color: var(--text-secondary); opacity: 0.6;">${term.term_kind}</span>
-                </div>
-            `;
+        if (!this.nodes.allTermsList) return;
+        this.nodes.allTermsList.innerHTML = '';
+        this.data.terms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name)).forEach(term => {
+            const card = this.renderTermCard(term);
+            this.nodes.allTermsList.appendChild(card);
         });
+    },
 
-        this.nodes.allTermsList.innerHTML = html;
+    renderTermCard: function (term) {
+        const div = document.createElement('div');
+        div.className = 'term-card-simple';
+        div.onclick = () => this.viewTerm(term.term_id);
+        div.innerHTML = `
+            <div class="term-name">${term.canonical_name}</div>
+            <div class="term-snippet">${term.definition_clinical?.core.substring(0, 60) || ''}...</div>
+        `;
+        return div;
     },
 
     renderResults: function (results) {
@@ -840,16 +865,11 @@ const App = {
 
         if (id === 'nav-dictionary') {
             this.data.currentView = 'dictionary';
-            this.renderAllTerms();
             this.renderView('dictionary');
         } else if (id === 'nav-domains') {
             this.data.currentView = 'domains';
+            this.renderView('domains');
             this.renderDomains();
-            this.renderView('domain');
-        } else if (id === 'nav-cases') {
-            this.data.currentView = 'cases';
-            this.renderCases();
-            this.renderView('cases');
         } else if (id === 'nav-integrator') {
             this.data.currentView = 'integrator';
             this.integrator.init();
@@ -859,24 +879,8 @@ const App = {
             this.game.init();
             this.renderView('game');
         } else {
-            // Stop game timer if we switch to any other tab
             if (this.game && this.game.stopTimer) this.game.stopTimer();
         }
-    },
-
-    init: async function () {
-        this.cacheDOM();
-        this.registerSW();
-        this.bindEvents();
-        await this.loadData();
-        this.setupSearch();
-        this.loadRecentSearches();
-        this.renderAllTerms(); // Pre-load dictionary immediately
-        this.theme.init();
-        this.donation.init();
-        this.handleInitialHash();
-        this.checkOnboarding();
-        this.setupSWUpdates();
     },
 
     // --- MSE INTEGRATOR SUBMODULE ---
@@ -1013,6 +1017,17 @@ const App = {
             this.renderCurrentStep();
             this.updateReport();
             this.updateProgressBar();
+        },
+
+        teachingMode: true, // Default to true as per user preference for learning
+
+        updateProgressBar: function () {
+            const total = this.steps.length;
+            const completed = this.steps.filter(s => !!this.responses[s.id]).length;
+            const pct = (completed / total) * 100;
+            if (this.nodes.progressBar) {
+                this.nodes.progressBar.style.width = `${pct}%`;
+            }
         },
 
         loadPedagogicalData: function () {
