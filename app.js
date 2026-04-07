@@ -87,7 +87,8 @@ const App = {
 
     utils: {
         sanitizeHTML: function (text) {
-            if (typeof text !== 'string') return text;
+            if (text === null || text === undefined) return '';
+            if (typeof text !== 'string') return String(text);
             // Basic entity map for manual escape
             const map = {
                 '&': '&amp;',
@@ -240,10 +241,10 @@ const App = {
             // Assign data
             this.data.terms = lexiconData.terms || [];
             this.data.domains = domainsData;
-            this.data.cases = casesDataArrays.flat();
+            this.data.cases = (casesDataArrays || []).flat();
 
             // Sort terms alphabetically
-            this.data.terms.sort((a, b) => a.canonical_name.localeCompare(b.canonical_name));
+            this.data.terms.sort((a, b) => (a.canonical_name || "").localeCompare(b.canonical_name || ""));
 
             console.log(`🚀 Clinical Data Loaded in ${Math.round(performance.now() - startTime)}ms`);
         } catch (error) {
@@ -251,6 +252,7 @@ const App = {
             // Fallback to empty to prevent UI crash
             this.data.terms = this.data.terms || [];
             this.data.domains = this.data.domains || [];
+            this.data.cases = this.data.cases || [];
         }
     },
 
@@ -361,8 +363,8 @@ const App = {
         div.className = 'term-card-simple';
         div.onclick = () => this.viewTerm(term.term_id);
         div.innerHTML = `
-            <div class="term-name">${term.canonical_name}</div>
-            <div class="term-snippet">${term.definition_clinical?.core.substring(0, 60) || ''}...</div>
+            <div class="term-name">${this.utils.sanitizeHTML(term.canonical_name)}</div>
+            <div class="term-snippet">${this.utils.sanitizeHTML(term.definition_clinical?.core?.substring(0, 60) || '')}...</div>
         `;
         return div;
     },
@@ -546,40 +548,39 @@ const App = {
             <div class="chroma-grid" id="about-chroma-grid">
                 <article class="chroma-card" style="--card-border: #56D8B6; --cols: 1;">
                     <div class="chroma-img-wrapper">
-                        <img src="https://i.pravatar.cc/300?u=cesarcelada" alt="Dr. Cesar Celada">
+                        <img src="assets/celada.jpeg" alt="Dr. Cesar Celada">
                     </div>
                     <footer class="chroma-info">
                         <h3 class="name">Dr. Cesar Celada</h3>
                         <span class="handle">Autor Principal</span>
                         <p class="role">Médico Psiquiatra</p>
                         <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">
-                            Creador del Diccionario de Examen Mental. Proyecto independiente y sin fines de lucro para la formación clínica.
+                            Médico Cirujano y Especialista en Psiquiatría (INPRFM). Apasionado por la intersección entre la tecnología y la salud mental de precisión.
                         </p>
                     </footer>
                 </article>
 
-                <article class="chroma-card" style="--card-border: #F59E0B;" onclick="window.location.href='mailto:drceladapsiquiatria@gmail.com'">
+                <article class="chroma-card" style="--card-border: #F59E0B;" onclick="window.location.href='mailto:cesar.celada@gmail.com'">
                     <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(var(--primary-rgb), 0.1);">
                         <span style="font-size: 3rem;">📩</span>
                     </div>
                     <footer class="chroma-info">
                         <h3 class="name">Contacto</h3>
                         <span class="handle">Aclaraciones y Mejoras</span>
-                        <p class="role">drceladapsiquiatria@gmail.com</p>
-            <div class="about-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                <div class="card about-main-card" style="position: relative; overflow: hidden; background: linear-gradient(135deg, var(--surface-1), var(--surface-2));">
-                    <div class="deco-circle" style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: var(--primary); border-radius: 50%; opacity: 0.1; filter: blur(40px);"></div>
-                    
-                    <h3 class="m3-title" style="margin-bottom: 1rem; color: var(--primary);">Dr. Cesar Celada</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 1.5rem; opacity: 0.8; line-height: 1.6;">
-                        Médico Cirujano y Especialista en Psiquiatría (INPRFM). Apasionado por la intersección entre la tecnología y la salud mental de precisión.
-                    </p>
-                    
-                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                        <button class="btn primary small" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">☕ Invitame un café</button>
-                        <button class="btn secondary small" onclick="window.location.href='mailto:cesar.celada@gmail.com'">📧 Contacto</button>
+                        <p class="role">cesar.celada@gmail.com</p>
+                    </footer>
+                </article>
+
+                <article class="chroma-card" style="--card-border: #FF3C3C;" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">
+                    <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(var(--accent-rgb), 0.1);">
+                        <span style="font-size: 3rem;">☕</span>
                     </div>
-                </div>
+                    <footer class="chroma-info">
+                        <h3 class="name">Apoyo</h3>
+                        <span class="handle">Donaciones</span>
+                        <p class="role">Invitame un café</p>
+                    </footer>
+                </article>
             </div>
 
             <div class="card" style="margin-top: 2rem;">

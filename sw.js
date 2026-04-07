@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clinical-pwa-v2';
+const CACHE_NAME = 'clinical-pwa-v2.1';
 const ASSETS = [
     '/',
     '/index.html',
@@ -6,6 +6,7 @@ const ASSETS = [
     '/app.js',
     '/icon.png',
     '/manifest.json',
+    '/assets/celada.jpeg',
     'https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
     'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;600;700&display=swap'
