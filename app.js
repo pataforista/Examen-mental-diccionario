@@ -871,9 +871,13 @@ const App = {
             this.data.currentView = 'dictionary';
             this.renderView('dictionary');
         } else if (id === 'nav-domains') {
-            this.data.currentView = 'domains';
-            this.renderView('domains');
+            this.data.currentView = 'domain';
+            this.renderView('domain'); // Fixed singular/plural
             this.renderDomains();
+        } else if (id === 'nav-cases') {
+            this.data.currentView = 'cases';
+            this.renderView('cases');
+            this.renderCases();
         } else if (id === 'nav-integrator') {
             this.data.currentView = 'integrator';
             this.integrator.init();

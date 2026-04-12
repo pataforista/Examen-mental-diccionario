@@ -8,52 +8,65 @@
     --transition-speed: 0.3s;
     --md-sys-motion-standard: cubic-bezier(0.2, 0, 0, 1);
     
-    /* M3 Radii */
+    /* Bauhaus-Memphis Radii */
     --radius-none: 0;
-    --radius-xs: 4px;
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 28px;
+    --radius-xs: 2px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    --radius-xl: 32px;
     --radius-full: 999px;
 
-    /* REGISTRO CLARO — "The Valley" (M3 Light adaptation) */
-    --v-bg: #FFF8E7; /* Crema Papel */
-    --v-text: #1C1B1F; /* On Surface */
-    --v-primary: #56D8B6; /* Primary */
-    --v-on-primary: #FFFFFF;
-    --v-primary-container: #D1F3E9;
-    --v-on-primary-container: #002019;
-    --v-secondary-container: #E8DEF8;
-    --v-accent: #FF8E72;
-    --v-detail: #FFC857;
-    --v-border: 2px solid #2B2F40;
-    --v-font: 'Outfit', sans-serif;
-    --v-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    /* Bauhaus Primary Palette */
+    --bau-red: #FF3E3E;
+    --bau-yellow: #FFD700;
+    --bau-blue: #0055FF;
+    --bau-black: #1C1B1F;
+    --bau-cream: #FFF8E7;
 
-    /* Current Active (Light by default) */
+    /* Memphis Accents */
+    --mem-pink: #FF8E72;
+    --mem-teal: #56D8B6;
+    --mem-purple: #B19CD9;
+
+    /* REGISTRO CLARO — Bauhaus/Memphis adapted */
+    --v-bg: var(--bau-cream);
+    --v-text: var(--bau-black);
+    --v-primary: var(--bau-blue);
+    --v-on-primary: #FFFFFF;
+    --v-primary-container: #D1E1FF;
+    --v-on-primary-container: #001B3D;
+    --v-secondary-container: #FFECA1;
+    --v-accent: var(--bau-red);
+    --v-detail: var(--bau-yellow);
+    --v-border: 4px solid var(--bau-black);
+    --v-font: 'Outfit', sans-serif;
+    --v-shadow: 6px 6px 0px var(--bau-black);
+    --v-shadow-sm: 4px 4px 0px var(--bau-black);
+
+    /* Current Active */
     --bg: var(--v-bg);
     --text-p: var(--v-text);
     --accent: var(--v-accent);
     --primary: var(--v-primary);
-    --primary-rgb: 86, 216, 182;
+    --primary-rgb: 0, 85, 255;
     --primary-container: var(--v-primary-container);
     --on-primary-container: var(--v-on-primary-container);
     --secondary-container: var(--v-secondary-container);
     --border: var(--v-border);
     --font-main: var(--v-font);
     --shadow: var(--v-shadow);
-    --glass: blur(8px) saturate(150%);
-    --header-bg: rgba(255, 248, 231, 0.9);
+    --glass: none; /* Bauhaus prefers solid shapes */
+    --header-bg: var(--bau-cream);
 
-    /* M3 Surface levels */
-    --surface-1: rgba(var(--primary-rgb), 0.05);
-    --surface-2: rgba(var(--primary-rgb), 0.08);
-    --surface-3: rgba(var(--primary-rgb), 0.11);
+    /* Bauhaus Surface levels */
+    --surface-1: #FFFFFF;
+    --surface-2: #F5F5F5;
+    --surface-3: #EBEBEB;
     
     --text-secondary: #49454F;
-    --border-subtle: rgba(28, 27, 31, 0.12);
-    --primary-dark: #3bba98;
+    --border-subtle: var(--bau-black);
+    --primary-dark: #0044CC;
     --success: #2ecc71;
 }
 
@@ -145,6 +158,22 @@ body::before {
 
 [data-theme="light"] .app-header {
     border-bottom: var(--border);
+    position: relative;
+}
+
+/* Memphis background pattern for header */
+.app-header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-image: radial-gradient(circle, var(--bau-yellow) 20%, transparent 20%);
+    background-size: 15px 15px;
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .header-top {
@@ -212,16 +241,17 @@ body::before {
 
 .search-container input {
     width: 100%;
-    padding: 0.85rem 1rem 0.85rem 3.5rem;
-    border: none;
-    border-radius: var(--radius-xl);
-    background: var(--surface-2);
-    color: var(--text-p);
+    padding: 1rem 1rem 1rem 3.5rem;
+    border: 3px solid var(--bau-black);
+    border-radius: var(--radius-md);
+    background: white;
+    color: var(--bau-black);
     font-family: var(--font-main);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     outline: none;
     transition: all 0.3s var(--md-sys-motion-standard);
-    box-shadow: none;
+    box-shadow: 4px 4px 0px var(--bau-black);
 }
 
 .search-container::before {
@@ -230,8 +260,9 @@ body::before {
     left: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
-    opacity: 0.6;
+    font-size: 1.4rem;
+    opacity: 1;
+    z-index: 2;
     pointer-events: none;
 }
 
@@ -279,38 +310,69 @@ main {
     scroll-behavior: smooth;
 }
 
-/* Cards & Items M3 */
+/* Cards & Items Bauhaus-Memphis Style */
 .card {
     background: var(--surface-1);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    border: var(--v-border);
+    border-radius: var(--radius-md);
     padding: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     position: relative;
-    animation: slideIn 0.4s var(--md-sys-motion-standard);
-    transition: transform 0.2s, background 0.2s;
+    box-shadow: var(--v-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--bau-black);
 }
 
 [data-theme="light"] .card {
-    background: #FFFBFE;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    background: #FFFFFF;
 }
 
 [data-theme="dark"] .card {
-    background: var(--surface-2);
-    border-left: none;
+    background: var(--bau-black);
+    border: 2px solid var(--primary);
+    box-shadow: 6px 6px 0px var(--primary);
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+/* Dictionary List Items (The broken cards) */
+.term-card-simple {
+    background: white;
+    border: var(--v-border);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: var(--v-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.term-card-simple:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--bau-black);
+    background: var(--v-secondary-container);
+}
+
+.term-name {
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--bau-black);
+}
+
+.term-snippet {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .list-item {
@@ -318,25 +380,25 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.25rem;
-    background: var(--surface-1);
-    border-radius: var(--radius-md);
-    margin-bottom: 0.5rem;
+    background: white;
+    border: 2px solid var(--bau-black);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
     cursor: pointer;
-    transition: all 0.2s var(--md-sys-motion-standard);
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0px var(--bau-black);
 }
 
 .list-item:hover {
-    background: var(--secondary-container);
-    transform: scale(1.01);
-}
-
-[data-theme="light"] .list-item {
-    border: 1px solid var(--border-subtle);
+    background: var(--bau-yellow);
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0px var(--bau-black);
 }
 
 [data-theme="dark"] .list-item {
     background: var(--surface-2);
-    box-shadow: none;
+    border-color: var(--primary);
+    box-shadow: 3px 3px 0px var(--primary);
 }
 
 /* Typography Details */
@@ -424,17 +486,19 @@ main {
 
 .bottom-nav button.active {
     opacity: 1;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .bottom-nav button.active .nav-icon {
-    background: var(--secondary-container);
-    color: var(--on-primary-container);
+    background: var(--bau-yellow);
+    color: var(--bau-black);
+    border: 2px solid var(--bau-black);
+    box-shadow: 3px 3px 0px var(--bau-black);
 }
 
 [data-theme="dark"] .bottom-nav button.active .nav-icon {
-    background: var(--primary-container);
-    color: var(--on-primary-container);
+    background: var(--primary);
+    color: var(--bau-black);
 }
 
 /* Ritual Effects */
@@ -608,33 +672,30 @@ main {
 }
 
 .tag {
-    background: rgba(0, 51, 102, 0.05);
-    border: 1px solid rgba(43, 47, 64, 0.2);
-    color: var(--text-p);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
+    background: white;
+    border: 2px solid var(--bau-black);
+    color: var(--bau-black);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-xs);
     font-size: 0.75rem;
+    font-weight: 800;
     cursor: pointer;
-    transition: all 0.2s ease;
-    text-transform: capitalize;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0px var(--bau-black);
 }
 
 .tag:hover {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-    transform: translateY(-1px);
+    background: var(--bau-yellow);
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--bau-black);
 }
 
 [data-theme="dark"] .tag {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(0, 255, 194, 0.3);
-}
-
-[data-theme="dark"] .tag:hover {
-    background: var(--o-accent-b);
-    color: var(--o-bg);
-    box-shadow: 0 0 10px var(--o-accent-b);
+    background: var(--bau-black);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 2px 2px 0px var(--primary);
 }
 
 .hidden {
@@ -762,22 +823,24 @@ main {
 }
 
 .opt {
-    background: var(--bg);
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    border-radius: 12px;
+    background: white;
+    border: 3px solid var(--bau-black);
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
     text-align: left;
     font-family: var(--font-main);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
-    color: var(--text-p);
+    color: var(--bau-black);
+    box-shadow: 4px 4px 0px var(--bau-black);
 }
 
 .opt:hover {
-    border-color: var(--primary);
-    transform: translateX(4px);
-    background: rgba(var(--primary-rgb), 0.05);
+    background: var(--v-secondary-container);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--bau-black);
 }
 
 .opt:disabled {
@@ -913,22 +976,22 @@ main {
 
 .chroma-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
+    background: white;
+    border-radius: var(--radius-md);
     padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background 0.3s;
+    border: 3px solid var(--bau-black);
+    transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     z-index: 10;
+    box-shadow: 6px 6px 0px var(--bau-black);
 }
 
 [data-theme="light"] .chroma-card {
-    background: rgba(0, 0, 0, 0.02);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #FFFFFF;
 }
 
 .chroma-card:hover {
@@ -1794,11 +1857,11 @@ main {
     top: 1rem;
     max-height: calc(100vh - 200px);
     overflow-y: auto;
-    background: var(--surface-1);
-    border-radius: var(--radius-xl);
+    background: white;
+    border-radius: var(--radius-md);
     padding: 1rem;
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow);
+    border: 3px solid var(--bau-black);
+    box-shadow: 4px 4px 0px var(--bau-black);
 }
 
 #integrator-steps-list {
@@ -1870,8 +1933,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-md);
     padding: 2rem;
+    background: white;
+    border: 3px solid var(--bau-black);
+    box-shadow: 8px 8px 0px var(--bau-black);
 }
 
 [data-theme="dark"] .step-content {
@@ -1925,11 +1991,11 @@ main {
 }
 
 .int-opt.selected {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.35);
-    transform: scale(1.08);
+    background: var(--bau-yellow);
+    color: var(--bau-black);
+    border-color: var(--bau-black);
+    box-shadow: 3px 3px 0px var(--bau-black);
+    transform: translate(-1px, -1px);
 }
 
 .step-writing-area {
@@ -1954,19 +2020,20 @@ main {
     padding: 1.25rem;
     font-family: inherit;
     font-size: 1rem;
-    border: 2px solid var(--border-subtle);
-    border-radius: var(--radius-xl);
-    background: var(--bg);
-    color: var(--text-p);
+    border: 3px solid var(--bau-black);
+    border-radius: var(--radius-md);
+    background: white;
+    color: var(--bau-black);
     resize: none;
     line-height: 1.6;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 4px 4px 0px var(--bau-black);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .step-writing-area textarea:focus {
     outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 5px rgba(var(--primary-rgb), 0.15);
+    transform: translate(-1px, -1px);
+    box-shadow: 6px 6px 0px var(--bau-black);
 }
 
 .step-navigation {
@@ -1983,10 +2050,12 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: var(--surface-2);
+    background: var(--bau-yellow);
     max-height: calc(100vh - 200px);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-md);
     padding: 1.5rem;
+    border: 3px solid var(--bau-black);
+    box-shadow: 6px 6px 0px var(--bau-black);
 }
 
 [data-theme="dark"] .report-preview-panel {
