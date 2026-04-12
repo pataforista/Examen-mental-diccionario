@@ -1,7 +1,7 @@
 {
   "version": "1.5.0",
-  "generated_at": "2026-03-17T22:00:00.063528Z",
-  "total_terms": 265,
+  "generated_at": "2026-04-12T22:39:54.725361Z",
+  "total_terms": 295,
   "terms": [
     {
       "term_id": "RSK_001",
@@ -721,6 +721,99 @@
       "mappings": {}
     },
     {
+      "term_id": "NEU_001",
+      "canonical_name": "Agnosia visual",
+      "synonyms_and_slang": [
+        {
+          "term": "ceguera psíquica",
+          "context": "clinical_historical",
+          "locale": "es"
+        },
+        {
+          "term": "visual agnosia",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "signo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Incapacidad de reconocer objetos, rostros o formas a través de la vía visual a pesar de una agudeza visual, campos visuales y funciones cognitivas básicas preservadas. Se debe a lesiones en áreas de asociación occipitotemporales (vía ventral).",
+        "required_features": [
+          "preservación de la percepción elemental (forma, color, movimiento)",
+          "incapacidad de identificar el significado del objeto",
+          "no explicable por demencia o afasia"
+        ],
+        "subjective_marker": "“Veo esto pero no sé qué es; puedo describirlo pero no nombrarlo ni usarlo”.",
+        "behavioral_marker": "Falla en pruebas de nombrar objetos, emparejar por categoría, o imitar el uso de utensilios comunes."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "exploración_neuropsicológica",
+          "pruebas_de_nombramiento"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-10",
+          "relation": "primary_expression",
+          "context": "agnosia"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "PER_001",
+          "canonical_name": "Alucinación",
+          "reason": "En la agnosia no hay percepción falsa, sino falla de reconocimiento."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "neurological_warning",
+          "message": "Sugiere lesión cortical en la vía ventral (occipitotemporal). Descartar tumor, ACV, demencia."
+        }
+      ],
+      "teaching_notes": [
+        "Se divide en aperceptiva (no integra la forma) y asociativa (ve la forma pero no la identifica)."
+      ],
+      "cognitive_pitfalls": [
+        "Confundir con afasia óptica (donde falla el nombrar pero puede demostrar uso gestual)."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "El paciente no puede nombrar un lápiz, pero describe: “Es alargado, amarillo, de madera con punta negra”. Al pedirle que lo use, lo toma y garabatea, demostrando que percibe la función pero no puede nombrar."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Lissauer",
+          "Freud"
+        ],
+        "clinical_tradition": [
+          "Neuropsicología",
+          "Neurología"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "cie11": {
+          "code": "MB21.2",
+          "label": "Agnosia"
+        },
+        "snomed_ct": {
+          "concept_id": "85440001",
+          "preferred_term": "Visual agnosia (finding)"
+        }
+      }
+    },
+    {
       "term_id": "NEG_001",
       "canonical_name": "Aislamiento / Retraimiento Social (Social Withdrawal / Asociality)",
       "synonyms_and_slang": [
@@ -1072,6 +1165,173 @@
         ],
         "clinical_tradition": [
           "psicopatologia_clasica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_006",
+      "canonical_name": "Alteración de la teoría de la mente",
+      "synonyms_and_slang": [
+        {
+          "term": "mentalización alterada",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "theory of mind deficit",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "constructo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Dificultad para atribuir estados mentales (creencias, intenciones, deseos, emociones) a uno mismo o a los demás, y para predecir la conducta basada en dichas atribuciones. Central en el trastorno del espectro autista, pero también presente en esquizofrenia (especialmente síntomas negativos y paranoia) y trastornos de personalidad límite.",
+        "required_features": [
+          "incapacidad para inferir las intenciones de otros",
+          "dificultad para entender que otros pueden tener creencias falsas",
+          "tendencia a interpretar las acciones de otros como directamente causadas por eventos externos"
+        ],
+        "subjective_marker": "“No sé por qué hizo eso; no entiendo qué piensa la gente”.",
+        "behavioral_marker": "Falla en pruebas de falsa creencia (Sally-Anne), conducta social ingenua o desajustada, falta de empatía."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "pruebas_de_teoría_de_la_mente",
+          "entrevista_clínica"
+        ],
+        "time_relation": [
+          "rasgo",
+          "episódica"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-03",
+          "relation": "cognitive_deficit",
+          "context": "cognición_social"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [],
+      "teaching_notes": [
+        "En esquizofrenia, el déficit de teoría de la mente se asocia a síntomas paranoides (sobreinterpretación de intenciones hostiles)."
+      ],
+      "cognitive_pitfalls": [
+        "No confundir con falta de inteligencia; la teoría de la mente es un dominio específico."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "El paciente no comprende por qué su amigo se enfadó cuando él no acudió a la cita; dice: “Yo no llegué, pero él podía ir solo, no entiendo su reacción”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Premack",
+          "Woodruff",
+          "Baron-Cohen",
+          "Frith"
+        ],
+        "clinical_tradition": [
+          "Neurociencia cognitiva",
+          "Autismo",
+          "Esquizofrenia"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_001",
+      "canonical_name": "Alteración del campo de conciencia (EASE)",
+      "synonyms_and_slang": [
+        {
+          "term": "estrechamiento del campo atencional",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "disturbance of the field of awareness",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Vivencia de que el campo de la conciencia (el espacio de la experiencia presente) está anormalmente estrechado, fragmentado o difuso. El paciente siente que solo puede atender a un aspecto de la realidad a la vez, o que los objetos parecen \"recortados\" o faltos de contexto. Descrito en la EASE (Examination of Anomalous Self-Experience).",
+        "required_features": [
+          "sensación de que la atención no puede abarcar la escena completa",
+          "los objetos o personas parecen aislados, sin fondo",
+          "pérdida de la totalidad del campo experiencial"
+        ],
+        "subjective_marker": "“Solo puedo ver una cosa a la vez; lo demás se borra” o “las cosas están como flotando, sin contexto”.",
+        "behavioral_marker": "Mirada fija en un punto, dificultad para cambiar el foco atencional."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_fenomenológica (EASE)"
+        ],
+        "time_relation": [
+          "prodrómica",
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "ipseidad"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "associated_symptom",
+          "context": "atención"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "MEM_018",
+          "canonical_name": "Inatención",
+          "reason": "La inatención es un déficit cognitivo; aquí es una alteración cualitativa de la vivencia del campo."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Marcador temprano de trastorno del espectro esquizofrénico (EASE)."
+        }
+      ],
+      "teaching_notes": [
+        "Relacionado con la pérdida de la 'evidencia natural' (Blankenburg)."
+      ],
+      "cognitive_pitfalls": [
+        "No confundir con ansiedad o fatiga atencional."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "“Cuando miro a una persona, el fondo desaparece; es como si la viera aislada, sin el cuarto. Me cuesta ver el conjunto”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Parnas",
+          "Møller",
+          "EASE"
+        ],
+        "clinical_tradition": [
+          "Psicopatología fenomenológica",
+          "Esquizofrenia"
         ]
       },
       "status": "active",
@@ -2033,6 +2293,96 @@
       },
       "status": "active",
       "mappings": {}
+    },
+    {
+      "term_id": "NEU_004",
+      "canonical_name": "Alucinosis peduncular",
+      "synonyms_and_slang": [
+        {
+          "term": "alucinosis de Lhermitte",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "peduncular hallucinosis",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "síndrome",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Alucinaciones visuales vívidas, a menudo complejas (figuras, animales, escenas), con insight preservado, asociadas a lesiones del mesencéfalo (pedúnculos cerebrales) o tálamo. Descrita por Lhermitte (1922).",
+        "required_features": [
+          "alucinaciones visuales lúcidas",
+          "conciencia de irrealidad (insight)",
+          "lesión estructural en mesencéfalo o tálamo (infarto, tumor, inflamación)"
+        ],
+        "subjective_marker": "“Veo animales y personas que sé que no existen, pero son tan reales como si estuvieran ahí”.",
+        "behavioral_marker": "Describe las alucinaciones con detalle, no actúa como si fueran reales."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clínica",
+          "neuroimagen"
+        ],
+        "time_relation": [
+          "aguda",
+          "subaguda"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-08",
+          "relation": "primary_expression",
+          "context": "alucinosis_orgánica"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "PER_011",
+          "canonical_name": "Alucinosis",
+          "reason": "La alucinosis peduncular es una subcategoría etiológica."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "neurological_warning",
+          "message": "Sospechar lesión vascular o tumoral en mesencéfalo; realizar neuroimagen urgente."
+        }
+      ],
+      "teaching_notes": [
+        "Las alucinaciones suelen ser más floridas y con mayor insight que en el delirium."
+      ],
+      "cognitive_pitfalls": [
+        "Atribuir a psicosis funcional y retrasar el diagnóstico neurológico."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente con infarto talámico refiere: “Veo soldados marchando en mi habitación, sé que no son reales, pero los veo claramente”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Lhermitte",
+          "van Bogaert"
+        ],
+        "clinical_tradition": [
+          "Neurología",
+          "Neurooftalmología"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "snomed_ct": {
+          "concept_id": "230263005",
+          "preferred_term": "Peduncular hallucinosis (finding)"
+        }
+      }
     },
     {
       "term_id": "ARC_001",
@@ -3207,6 +3557,278 @@
       },
       "version": "1.0.0",
       "status": "active"
+    },
+    {
+      "term_id": "NSC_003",
+      "canonical_name": "Anomalía del sentido de agencia",
+      "synonyms_and_slang": [
+        {
+          "term": "no me siento autor de mis actos",
+          "context": "patient_report",
+          "locale": "es"
+        },
+        {
+          "term": "sense of agency",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Alteración de la sensación de ser el iniciador y controlador de las propias acciones. Puede presentarse como disminución (las acciones se sienten automáticas, no propias) o exageración (sobrerreflexividad sobre cada movimiento). Diferente de los fenómenos de pasividad donde hay atribución externa explícita.",
+        "required_features": [
+          "vivencia de extrañeza respecto al origen de la acción propia",
+          "ausencia de atribución delirante a una fuerza externa (a diferencia de actos impuestos)",
+          "preservación parcial del juicio de realidad"
+        ],
+        "subjective_marker": "“Muevo la mano, pero no siento que yo la haya movido; es como si se moviera sola, aunque sé que soy yo”.",
+        "behavioral_marker": "Movimientos torpes, vacilantes, necesidad de verificar visualmente las propias acciones."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica_fenomenológica",
+          "paradigmas_experimentales_de_agencia"
+        ],
+        "time_relation": [
+          "episódica",
+          "persistente"
+        ],
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+          {
+            "class": "Ketamina",
+            "risk": "high"
+          },
+          {
+            "class": "Antipsicóticos",
+            "risk": "low"
+          }
+        ]
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "conciencia_del_yo_agencia"
+        },
+        {
+          "domain_id": "DOM-07",
+          "relation": "prodromal_marker",
+          "context": "riesgo_psicótico"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "SELF_001",
+          "canonical_name": "Actos impuestos",
+          "reason": "En los actos impuestos hay atribución explícita a una fuerza externa; aquí hay extrañeza sin atribución."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Puede ser un marcador prodrómico de esquizofrenia (EASE)."
+        }
+      ],
+      "teaching_notes": [
+        "Se distingue de la despersonalización porque ésta afecta al yo global, no específicamente a la agencia motora."
+      ],
+      "cognitive_pitfalls": [
+        "Interpretar como mera torpeza motora o falta de coordinación."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "“Cuando escribo, no siento que los trazos los haga yo; mis dedos se mueven pero yo solo observo”. No lo atribuye a un agente externo, solo reporta falta de propiedad sobre la acción."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Parnas",
+          "Sass",
+          "EASE"
+        ],
+        "clinical_tradition": [
+          "Fenomenología",
+          "Esquizofrenia"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_004",
+      "canonical_name": "Anomalías de la vivencia del tiempo",
+      "synonyms_and_slang": [
+        {
+          "term": "distorsión del tiempo subjetivo",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "time experience disturbance",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Alteración de la experiencia subjetiva del tiempo, que puede manifestarse como aceleración, enlentecimiento, fragmentación, detención o pérdida de la continuidad temporal. No se debe a fármacos ni a trastornos afectivos puros (aunque puede coexistir).",
+        "required_features": [
+          "cambio cualitativo en la vivencia del paso del tiempo",
+          "no atribuible a intoxicación o privación de sueño",
+          "puede ser prodrómico de psicosis"
+        ],
+        "subjective_marker": "“El tiempo se ha detenido, como si estuviéramos en el mismo momento para siempre” o “el tiempo pasa en pedazos, no hay continuidad”.",
+        "behavioral_marker": "Relatos de que los segundos duran minutos o viceversa; desorientación temporal sin confusión."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_fenomenológica"
+        ],
+        "time_relation": [
+          "persistente",
+          "episódica"
+        ],
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+          {
+            "class": "Psicodélicos",
+            "risk": "high"
+          },
+          {
+            "class": "Ketamina",
+            "risk": "high"
+          }
+        ]
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "ipseidad"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "AFF_003",
+          "canonical_name": "Bradipsiquia",
+          "reason": "La bradipsiquia es lentitud objetiva del pensamiento; aquí es alteración cualitativa del tiempo."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Puede ser un marcador prodrómico de esquizofrenia (EASE)."
+        }
+      ],
+      "teaching_notes": [
+        "Diferente de la aceleración maníaca (donde el tiempo 'vuela' subjetivamente) porque incluye fenómenos de fragmentación o detención."
+      ],
+      "cognitive_pitfalls": [
+        "Atribuir a simple aburrimiento o impaciencia."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "“A veces siento que el tiempo se para y yo quedo congelado; luego de repente pasa muy rápido y no sé cómo llegué al final del día”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Minkowski",
+          "EASE"
+        ],
+        "clinical_tradition": [
+          "Psicopatología fenomenológica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_008",
+      "canonical_name": "Anomalías del sentido de pertenencia",
+      "synonyms_and_slang": [
+        {
+          "term": "ipseidad alterada",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "sense of ownership",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Vivencia de que el propio cuerpo, pensamientos o sentimientos no le pertenecen completamente, sin llegar a la atribución delirante externa. Se experimenta como una extrañeza o falta de familiaridad con uno mismo. Forma parte del trastorno de la ipseidad en la EASE.",
+        "required_features": [
+          "sensación de que los pensamientos o el cuerpo son 'como de otro'",
+          "no hay atribución a una fuerza externa específica",
+          "preservación del juicio de realidad (insight)"
+        ],
+        "subjective_marker": "“Mis manos son mías pero no las siento como mías; hay como una distancia”.",
+        "behavioral_marker": "Tocarse repetidamente para verificar la pertenencia, o mirarse en el espejo con extrañeza."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_fenomenológica (EASE)"
+        ],
+        "time_relation": [
+          "prodrómica",
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "ipseidad"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "SELF_005",
+          "canonical_name": "Despersonalización",
+          "reason": "La despersonalización incluye esta sensación, pero la anomalía del sentido de pertenencia es más específica y no siempre con la cualidad de 'como en un sueño'."
+        }
+      ],
+      "alerts": [],
+      "teaching_notes": [
+        "Se diferencia de los fenómenos de pasividad porque no hay agente externo."
+      ],
+      "cognitive_pitfalls": [
+        "No confundir con falta de interés por el propio cuerpo."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "“Miro mis manos y sé que son mías, pero se sienten como si no lo fueran; es difícil de explicar, como si hubiera un vidrio entre ellas y yo”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Parnas",
+          "EASE"
+        ],
+        "clinical_tradition": [
+          "Psicopatología fenomenológica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
     },
     {
       "term_id": "INS_001",
@@ -5678,6 +6300,93 @@
       "status": "active"
     },
     {
+      "term_id": "NEU_006",
+      "canonical_name": "Comportamiento de utilización",
+      "synonyms_and_slang": [
+        {
+          "term": "utilization behaviour",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        },
+        {
+          "term": "conducta de agarre automático",
+          "context": "clinical",
+          "locale": "es"
+        }
+      ],
+      "term_kind": "signo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Tendencia a utilizar objetos del entorno de forma automática e inapropiada cuando se presentan, sin poder inhibir la acción. Descrito por Lhermitte (1983) en lesiones frontales.",
+        "required_features": [
+          "uso forzado de objetos colocados frente al paciente",
+          "incapacidad de inhibir la acción",
+          "el paciente reconoce lo inapropiado pero no puede evitarlo"
+        ],
+        "subjective_marker": "“Veo unas gafas y me las pongo aunque no las necesite; no puedo evitarlo”.",
+        "behavioral_marker": "Toma un martillo y comienza a golpear sin que se le haya pedido; bebe de un vaso vacío; usa un peine aunque tenga el pelo liso."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "examen_clínico_conductual"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-04",
+          "relation": "primary_expression",
+          "context": "impulsividad_frontal"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "MOT_009",
+          "canonical_name": "Mitgehen",
+          "reason": "En mitgehen la respuesta es al movimiento del examinador; en utilización es al objeto."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "neurological_warning",
+          "message": "Sugiere lesión del lóbulo frontal (áreas premotoras y cinguladas)."
+        }
+      ],
+      "teaching_notes": [
+        "Es una forma de 'desinhibición conductual' relacionada con el fenómeno de 'dependencia ambiental'."
+      ],
+      "cognitive_pitfalls": [
+        "Interpretar como oposicionismo o negativismo; es todo lo contrario: obediencia exagerada al objeto."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "El examinador coloca un cepillo de dientes sobre la mesa; el paciente lo toma y comienza a cepillarse los dientes aunque acabe de hacerlo."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Lhermitte"
+        ],
+        "clinical_tradition": [
+          "Neurología conductual",
+          "Neuropsicología"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "snomed_ct": {
+          "concept_id": "248739009",
+          "preferred_term": "Utilization behaviour (finding)"
+        }
+      }
+    },
+    {
       "term_id": "CNS_003",
       "canonical_name": "Conciencia Ladeada (Twilight state)",
       "synonyms_and_slang": [
@@ -6935,76 +7644,6 @@
       "status": "active"
     },
     {
-      "term_id": "DEL_010",
-      "canonical_name": "Delirio primario (Jaspers)",
-      "synonyms_and_slang": [
-        "delirio primario (jaspers)"
-      ],
-      "term_kind": "symptom",
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "definition_clinical": {
-        "core": "Creencia delirante irreductible que surge sin derivación psicológica comprensible.",
-        "required_features": [
-          "presencia clínica de delirio primario (jaspers)",
-          "consistencia fenomenológica durante la entrevista",
-          "impacto clínico observable o referido"
-        ],
-        "subjective_marker": "El paciente refiere experiencia compatible con delirio primario (jaspers).",
-        "behavioral_marker": "Se observan signos conductuales coherentes con delirio primario (jaspers) en contexto clínico."
-      },
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-07",
-          "relation": "primary_expression",
-          "context": "pensamiento_contenido"
-        }
-      ],
-      "exclusions": [
-        {
-          "term_id": "DEL_016",
-          "canonical_name": "Delirio primario (Jaspers)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
-      "alerts": [
-        {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
-        }
-      ],
-      "teaching_notes": [
-        "Describir delirio primario (jaspers) con fenomenología y curso temporal.",
-        "Corroborar con entrevista clínica y observación conductual."
-      ],
-      "cognitive_pitfalls": [
-        "Sobregeneralizar el término sin evidencia clínica suficiente.",
-        "No discriminar entre variación normal y hallazgo psicopatológico."
-      ],
-      "version": "1.0.0",
-      "provenance": {
-        "phenomenology": [
-          "Sims",
-          "Robinson",
-          "Mendez"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clasica"
-        ]
-      },
-      "status": "active",
-      "mappings": {}
-    },
-    {
       "term_id": "DEL_011",
       "canonical_name": "Delirio primario (autóctono)",
       "term_kind": "symptom",
@@ -7085,6 +7724,76 @@
       "provenance": {
         "phenomenology": [
           "consenso_editorial"
+        ],
+        "clinical_tradition": [
+          "psicopatologia_clasica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "DEL_010",
+      "canonical_name": "Delirio primario (Jaspers)",
+      "synonyms_and_slang": [
+        "delirio primario (jaspers)"
+      ],
+      "term_kind": "symptom",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Creencia delirante irreductible que surge sin derivación psicológica comprensible.",
+        "required_features": [
+          "presencia clínica de delirio primario (jaspers)",
+          "consistencia fenomenológica durante la entrevista",
+          "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con delirio primario (jaspers).",
+        "behavioral_marker": "Se observan signos conductuales coherentes con delirio primario (jaspers) en contexto clínico."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica"
+        ],
+        "time_relation": [
+          "actual"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-07",
+          "relation": "primary_expression",
+          "context": "pensamiento_contenido"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "DEL_016",
+          "canonical_name": "Delirio primario (Jaspers)",
+          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "diagnostic_error",
+          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+      ],
+      "teaching_notes": [
+        "Describir delirio primario (jaspers) con fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+      ],
+      "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Sims",
+          "Robinson",
+          "Mendez"
         ],
         "clinical_tradition": [
           "psicopatologia_clasica"
@@ -8055,6 +8764,88 @@
       "mappings": {}
     },
     {
+      "term_id": "HIS_003",
+      "canonical_name": "Dipsomanía",
+      "synonyms_and_slang": [
+        {
+          "term": "dipsomania",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        },
+        {
+          "term": "deseo patológico de alcohol",
+          "context": "historical",
+          "locale": "es"
+        },
+        {
+          "term": "Binge Drinking",
+          "context": "social/moderno",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Término usado en el siglo XIX para describir un deseo periódico, irresistible e incontrolable de ingerir bebidas alcohólicas, a menudo asociado a cambios de ánimo o estados mixtos. Diferenciado del alcoholismo crónico por su carácter paroxístico y la ausencia de intoxicación continua.",
+        "required_features": [
+          "episodios intermitentes de compulsión alcohólica",
+          "sensación de pérdida de control durante el episodio",
+          "periodos de abstinencia completa entre episodios"
+        ],
+        "subjective_marker": "“De repente siento que necesito beber como si me fuera la vida en ello; después puedo estar meses sin tomar”.",
+        "behavioral_marker": "Búsqueda activa de alcohol, consumo excesivo en pocas horas, seguido de remordimiento y abstinencia."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "historia_clínica",
+          "colateral"
+        ],
+        "time_relation": [
+          "episódica"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-12",
+          "relation": "historical_precursor",
+          "context": "adicciones"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Término en desuso. Se solapa con conceptos actuales como 'binge drinking', 'dependencia episódica' o 'trastorno por consumo de alcohol con patrón de episodios'."
+        }
+      ],
+      "teaching_notes": [
+        "Fue una categoría muy influyente en el movimiento de la templanza y en la psiquiatría forense del siglo XIX."
+      ],
+      "cognitive_pitfalls": [
+        "No debe confundirse con la dependencia al alcohol diaria continua."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Varón de 45 años que bebe de forma controlada durante meses, pero presenta episodios cada 2-3 meses en los que consume más de una botella de licor en pocas horas, con amnesia parcial y conductas desinhibidas."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Marcé",
+          "Magnan"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría francesa siglo XIX"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "SPE_002",
       "canonical_name": "Disartria",
       "synonyms_and_slang": [
@@ -8331,6 +9122,75 @@
       "status": "active"
     },
     {
+      "term_id": "TALD_006",
+      "canonical_name": "Disfunción de la Iniciativa e Intencionalidad",
+      "synonyms_and_slang": [
+        "Disfunción de la Iniciativa e Intencionalidad"
+      ],
+      "term_kind": "symptom",
+      "granularity": "atomic",
+      "risk_weight": 2,
+      "definition_clinical": {
+        "core": "El paciente experimenta subjetivamente una falta de iniciativa, 'energía' y de intencionalidad del pensamiento. Puede resultar en la incapacidad de realizar actividades de la vida diaria por falta de un concepto rector.",
+        "required_features": [],
+        "subjective_marker": "Reportado por el paciente"
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica"
+        ],
+        "time_relation": [
+          "presente_en_evaluacion"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-06",
+          "relation": "primary_expression",
+          "context": "tald_scale_subjective"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "clinical_assessment",
+          "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno reportado por el paciente."
+        }
+      ],
+      "teaching_notes": [
+        "Concepto TALD_028 de la escala TALD.",
+        "Registrar presencia/ausencia y severidad si es aplicable."
+      ],
+      "cognitive_pitfalls": [],
+      "mappings": {
+        "tald_scale": {
+          "item_number": 28,
+          "type": "subjective",
+          "scale_name": "Thought and Language Disturbance Scale"
+        }
+      },
+      "clinical_assessment": {
+        "recommended_scales": [
+          {
+            "name": "TALD Scale",
+            "item": "Disfunción de la Iniciativa e Intencionalidad",
+            "scale_id": "TALD_028"
+          }
+        ]
+      },
+      "version": "1.0.0",
+      "status": "active",
+      "provenance": {
+        "phenomenology": [
+          "tald_scale"
+        ],
+        "clinical_tradition": [
+          "psicopatologia_clinica"
+        ]
+      }
+    },
+    {
       "term_id": "TALD_004",
       "canonical_name": "Disfunción Expresiva del Lenguaje",
       "synonyms_and_slang": [
@@ -8454,75 +9314,6 @@
             "name": "TALD Scale",
             "item": "Disfunción Receptiva del Lenguaje",
             "scale_id": "TALD_026"
-          }
-        ]
-      },
-      "version": "1.0.0",
-      "status": "active",
-      "provenance": {
-        "phenomenology": [
-          "tald_scale"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clinica"
-        ]
-      }
-    },
-    {
-      "term_id": "TALD_006",
-      "canonical_name": "Disfunción de la Iniciativa e Intencionalidad",
-      "synonyms_and_slang": [
-        "Disfunción de la Iniciativa e Intencionalidad"
-      ],
-      "term_kind": "symptom",
-      "granularity": "atomic",
-      "risk_weight": 2,
-      "definition_clinical": {
-        "core": "El paciente experimenta subjetivamente una falta de iniciativa, 'energía' y de intencionalidad del pensamiento. Puede resultar en la incapacidad de realizar actividades de la vida diaria por falta de un concepto rector.",
-        "required_features": [],
-        "subjective_marker": "Reportado por el paciente"
-      },
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "presente_en_evaluacion"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-06",
-          "relation": "primary_expression",
-          "context": "tald_scale_subjective"
-        }
-      ],
-      "exclusions": [],
-      "alerts": [
-        {
-          "type": "clinical_assessment",
-          "message": "Parte de la Escala TALD (Thought and Language Disturbance Scale). Fenómeno reportado por el paciente."
-        }
-      ],
-      "teaching_notes": [
-        "Concepto TALD_028 de la escala TALD.",
-        "Registrar presencia/ausencia y severidad si es aplicable."
-      ],
-      "cognitive_pitfalls": [],
-      "mappings": {
-        "tald_scale": {
-          "item_number": 28,
-          "type": "subjective",
-          "scale_name": "Thought and Language Disturbance Scale"
-        }
-      },
-      "clinical_assessment": {
-        "recommended_scales": [
-          {
-            "name": "TALD Scale",
-            "item": "Disfunción de la Iniciativa e Intencionalidad",
-            "scale_id": "TALD_028"
           }
         ]
       },
@@ -9040,6 +9831,97 @@
           "Neurología",
           "Oftalmología",
           "Toxicología"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_005",
+      "canonical_name": "Déficit metacognitivo",
+      "synonyms_and_slang": [
+        {
+          "term": "pobreza metacognitiva",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "metacognitive deficit",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "constructo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Alteración de la capacidad de reflexionar sobre los propios procesos cognitivos y emocionales, así como de integrar esa reflexión para guiar la conducta adaptativa. Se ha descrito especialmente en esquizofrenia (déficit en la 'metacognición narrativa') y en TOC.",
+        "required_features": [
+          "dificultad para identificar y nombrar los propios pensamientos y emociones",
+          "incapacidad para formar una narrativa coherente de la propia experiencia",
+          "pobreza en la regulación cognitiva y emocional"
+        ],
+        "subjective_marker": "“No sé por qué pienso lo que pienso; las cosas pasan y ya”.",
+        "behavioral_marker": "Discurso pobre en reflexión, atribuciones causales externas, conducta rígida sin corrección de errores."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_metacognitiva (MAI)",
+          "escala_MAS (Metacognitive Assessment Scale)"
+        ],
+        "time_relation": [
+          "rasgo",
+          "fluctuante"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "insight"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "associated_deficit",
+          "context": "funciones_ejecutivas"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "NSC_002",
+          "canonical_name": "Metacognición",
+          "reason": "El déficit metacognitivo es la ausencia de la capacidad; metacognición es el constructo general."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Es un predictor de mala adherencia y peor funcionamiento psicosocial."
+        }
+      ],
+      "teaching_notes": [
+        "Se relaciona con el concepto de 'insight' pero es más amplio (incluye regulación emocional y toma de perspectiva)."
+      ],
+      "cognitive_pitfalls": [
+        "Confundir con baja inteligencia o falta de educación."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "El paciente no puede explicar por qué dejó la medicación; dice simplemente “se me acabó” y no anticipa consecuencias; al preguntarle cómo se siente, responde “bien, no sé” sin más elaboración."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Semerari",
+          "Lysaker",
+          "Dimaggio"
+        ],
+        "clinical_tradition": [
+          "Psicoterapia cognitiva",
+          "Esquizofrenia"
         ]
       },
       "status": "active",
@@ -9879,6 +10761,65 @@
         ],
         "clinical_tradition": [
           "psicopatologia_clasica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "HIS_008",
+      "canonical_name": "Esquizofrenia simple (concepto histórico)",
+      "synonyms_and_slang": [
+        {
+          "term": "simple schizophrenia",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Subtipo de esquizofrenia descrito por Bleuler que se caracterizaba por un inicio insidioso, predominio de síntomas negativos (abulia, anhedonia, retraimiento) sin episodios psicóticos francos. Eliminado de las clasificaciones modernas (DSM-5, CIE-11) por falta de especificidad y solapamiento con otros trastornos.",
+        "required_features": [
+          "síntomas negativos prominentes",
+          "ausencia de delirios o alucinaciones claros",
+          "curso progresivo"
+        ],
+        "subjective_marker": "",
+        "behavioral_marker": "Aislamiento progresivo, descuido personal, pérdida de funcionalidad."
+      },
+      "operationalization": {
+        "detectable_by": [],
+        "time_relation": [],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-16",
+          "relation": "historical_precursor",
+          "context": "esquizofrenia"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Categoría obsoleta. Los casos que se diagnosticaban así hoy suelen considerarse trastorno esquizotípico de la personalidad, trastorno depresivo mayor con síntomas negativos, o síndrome negativo primario."
+        }
+      ],
+      "teaching_notes": [
+        "Su eliminación refleja el cambio hacia criterios más operativos y la necesidad de síntomas positivos para el diagnóstico de esquizofrenia."
+      ],
+      "cognitive_pitfalls": [],
+      "examples": [],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Bleuler"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría clásica"
         ]
       },
       "status": "active",
@@ -10784,6 +11725,94 @@
       "status": "active"
     },
     {
+      "term_id": "HIS_001",
+      "canonical_name": "Folie à deux",
+      "synonyms_and_slang": [
+        {
+          "term": "psicosis compartida",
+          "context": "clinical_modern",
+          "locale": "es"
+        },
+        {
+          "term": "trastorno psicótico inducido",
+          "context": "clinical_modern",
+          "locale": "es"
+        }
+      ],
+      "term_kind": "síndrome",
+      "granularity": "cluster",
+      "risk_weight": 2,
+      "definition_clinical": {
+        "core": "Síndrome en el cual una persona desarrolla un sistema delirante inducido por la estrecha relación con otra que ya presenta un delirio primario. Descrito por Lasègue y Falret (1877).",
+        "required_features": [
+          "delirio primario en un sujeto (inductor)",
+          "delirio secundario en otro sujeto (inducido) que estaría ausente en aislamiento",
+          "relación cercana y a menudo aislada socialmente"
+        ],
+        "subjective_marker": "El paciente inducido comparte las mismas ideas delirantes que el inductor, a menudo con menor sistematización.",
+        "behavioral_marker": "Pareja o familiares que sostienen creencias idénticas, a veces actuando en consecuencia."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica",
+          "colateral",
+          "observación_diádica"
+        ],
+        "time_relation": [
+          "persistente",
+          "resolución_con_separación"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-07",
+          "relation": "historical_precursor",
+          "context": "trastorno_psicótico_inducido"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Término clásico; en CIE-11 corresponde a 'Trastorno psicótico inducido (6A25.0)'. El término 'folie à deux' se mantiene por tradición clínica."
+        }
+      ],
+      "teaching_notes": [
+        "La separación del par suele resolver el cuadro en el sujeto inducido."
+      ],
+      "cognitive_pitfalls": [
+        "No confundir con creencias compartidas culturalmente o por sectas sin base delirante."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Dos hermanas que viven juntas y aisladas: una tiene delirio paranoide sobre vecinos que las espían; la otra, sin antecedentes, termina compartiendo la misma convicción y vigilando con ella."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Lasègue",
+          "Falret"
+        ],
+        "clinical_tradition": [
+          "Psicopatología clásica"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "cie11": {
+          "code": "6A25.0",
+          "label": "Induced delusional disorder"
+        },
+        "snomed_ct": {
+          "concept_id": "191521003",
+          "preferred_term": "Folie à deux (disorder)"
+        }
+      }
+    },
+    {
       "term_id": "MEM_016",
       "canonical_name": "Fuga",
       "synonyms_and_slang": [
@@ -11022,6 +12051,61 @@
       },
       "version": "1.0.0",
       "status": "active"
+    },
+    {
+      "term_id": "HIS_006",
+      "canonical_name": "Furor uterino",
+      "synonyms_and_slang": [
+        {
+          "term": "furia uterina",
+          "context": "historical"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Antigua entidad nosológica que atribuía la ninfomanía a una supuesta enfermedad del útero. Término usado en la medicina hipocrática y hasta el siglo XIX. Carece de validez actual.",
+        "required_features": [],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+      },
+      "operationalization": {
+        "detectable_by": [],
+        "time_relation": [],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-16",
+          "relation": "obsolete_concept",
+          "context": "historia_de_la_psiquiatría"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Concepto obsoleto y sexista. Solo interés histórico."
+        }
+      ],
+      "teaching_notes": [
+        "Ilustra cómo teorías anatómicas erróneas influyeron en la psiquiatría."
+      ],
+      "cognitive_pitfalls": [],
+      "examples": [],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Hipócrates",
+          "Galeno"
+        ],
+        "clinical_tradition": [
+          "Medicina antigua"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
     },
     {
       "term_id": "TALD_008",
@@ -11368,6 +12452,89 @@
         ]
       },
       "status": "active"
+    },
+    {
+      "term_id": "MEM_027",
+      "canonical_name": "Hipermnesia traumática",
+      "synonyms_and_slang": [
+        {
+          "term": "memoria intrusiva",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "traumatic hypermnesia",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 2,
+      "definition_clinical": {
+        "core": "Recuerdo excesivamente vívido, detallado e involuntario de un evento traumático, que se impone en la conciencia y puede ser tan intenso que se vive como una reviviscencia (similar a flashback). Se diferencia del flashback por su carácter predominantemente mnésico (no multisensorial necesariamente) y por la conservación del insight.",
+        "required_features": [
+          "recuerdo involuntario y muy vívido de un trauma",
+          "cualidad de 'actualidad' pero con conciencia de que es un recuerdo",
+          "asociado a malestar y evitación"
+        ],
+        "subjective_marker": "“No puedo dejar de recordar aquel día con todo detalle; es como si estuviera viendo una película muy real, pero sé que es un recuerdo”.",
+        "behavioral_marker": "Angustia al evocar el recuerdo, conductas de evitación de desencadenantes."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clínica (TEPT)"
+        ],
+        "time_relation": [
+          "recurrente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-10",
+          "relation": "primary_expression",
+          "context": "memoria_traumática"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "PER_013",
+          "canonical_name": "Flashback",
+          "reason": "En el flashback hay pérdida transitoria del juicio de realidad y cualidad multisensorial; en la hipermnesia se mantiene el insight."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Central en el TEPT; puede confundirse con síntomas psicóticos si no se explora el insight."
+        }
+      ],
+      "teaching_notes": [
+        "La hipermnesia traumática es un recuerdo, no una alucinación."
+      ],
+      "cognitive_pitfalls": [
+        "Diagnosticar psicosis por la vividez del recuerdo sin explorar la conciencia de irrealidad."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente con TEPT: “Cada vez que oigo un coche frenar, recuerdo el accidente con todos los detalles: el ruido, el color del otro coche, la posición de las manos. Sé que es un recuerdo, pero es muy real”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Janet",
+          "van der Kolk"
+        ],
+        "clinical_tradition": [
+          "Trauma studies",
+          "TEPT"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
     },
     {
       "term_id": "SELF_008",
@@ -13811,6 +14978,106 @@
       "mappings": {}
     },
     {
+      "term_id": "PHM_007",
+      "canonical_name": "Interocepción aberrante",
+      "synonyms_and_slang": [
+        {
+          "term": "alteración de la sensación corporal interna",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "aberrant interoception",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "constructo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Percepción anómala de las sensaciones viscerales y corporales internas (latido cardíaco, respiración, hambre, saciedad, temperatura), que puede ser aumentada (hipersensibilidad) o disminuida (insensibilidad). Relacionado con trastornos de ansiedad, pánico, trastornos alimentarios, depresión y alexitimia.",
+        "required_features": [
+          "sensación exagerada o atenuada de señales corporales",
+          "malestar o desconexión respecto al propio cuerpo",
+          "puede llevar a catastrofización o a ignorar señales de alarma"
+        ],
+        "subjective_marker": "“Siento cada latido de mi corazón como si fuera un martillazo” o “no siento hambre nunca, como por obligación”.",
+        "behavioral_marker": "Búsqueda excesiva de atención médica (hipocondría) o descuido de necesidades básicas."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "tareas_de_detección_cardíaca",
+          "cuestionarios_de_interocepción (BPQ, MAIA)"
+        ],
+        "time_relation": [
+          "rasgo",
+          "estado"
+        ],
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+          {
+            "class": "Estimulantes",
+            "risk": "high"
+          },
+          {
+            "class": "Ansiolíticos",
+            "risk": "low"
+          },
+          {
+            "class": "Antipsicóticos de primera generación",
+            "risk": "moderate"
+          }
+        ]
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-14",
+          "relation": "primary_expression",
+          "context": "conciencia_corporal"
+        },
+        {
+          "domain_id": "DOM-09",
+          "relation": "risk_factor",
+          "context": "ansiedad_pánico"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "SOM_002",
+          "canonical_name": "Hipocondría",
+          "reason": "La hipocondría es la preocupación cognitiva por la enfermedad; la interocepción aberrante es una alteración perceptiva basal."
+        }
+      ],
+      "alerts": [],
+      "teaching_notes": [
+        "La interocepción aumentada es típica en el trastorno de pánico; la disminuida, en la anorexia nerviosa."
+      ],
+      "cognitive_pitfalls": [
+        "Atribuir a quejas somáticas inespecíficas sin explorar la dimensión perceptiva."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente con trastorno de pánico: “Siento que mi corazón late muy fuerte y rápido; eso me da miedo y creo que voy a infartar” (hipersensibilidad interoceptiva)."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Craig",
+          "Khalsa",
+          "Paulus"
+        ],
+        "clinical_tradition": [
+          "Neurociencia afectiva",
+          "Psiquiatría de enlace"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "DEL_024",
       "canonical_name": "Interpretación delirante",
       "synonyms_and_slang": [
@@ -14821,6 +16088,64 @@
       "status": "active"
     },
     {
+      "term_id": "HIS_007",
+      "canonical_name": "Locura lúcida",
+      "synonyms_and_slang": [
+        {
+          "term": "mania sin delirio",
+          "context": "historical"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Concepto de Pinel (manie sans délire) que describía a pacientes con conducta desordenada e impulsiva, sin alteración de las facultades intelectuales ni delirios. Precursor del trastorno antisocial de la personalidad y de los trastornos del control de impulsos.",
+        "required_features": [
+          "excitación o impulsividad patológica",
+          "ausencia de delirio o alucinaciones claros",
+          "preservación del juicio en áreas no afectadas"
+        ],
+        "subjective_marker": "",
+        "behavioral_marker": "Arrebatos de furia, conductas criminales sin justificación delirante."
+      },
+      "operationalization": {
+        "detectable_by": [],
+        "time_relation": [],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-16",
+          "relation": "historical_precursor",
+          "context": "trastornos_de_la_personalidad"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Término histórico, reemplazado por 'moral insanity' (Prichard) y luego por trastornos de personalidad."
+        }
+      ],
+      "teaching_notes": [
+        "Pinel observó que algunos pacientes en Bicêtre tenían furia pero razonaban bien."
+      ],
+      "cognitive_pitfalls": [],
+      "examples": [],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Pinel"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría francesa siglo XVIII"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "SPE_005",
       "canonical_name": "Logoclonia",
       "synonyms_and_slang": [
@@ -15504,6 +16829,88 @@
       "status": "active"
     },
     {
+      "term_id": "NSC_002",
+      "canonical_name": "Metacognición",
+      "synonyms_and_slang": [
+        {
+          "term": "pensar sobre el pensar",
+          "context": "patient_report",
+          "locale": "es"
+        }
+      ],
+      "term_kind": "capacidad",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Capacidad de reflexionar sobre los propios procesos cognitivos, monitorizar el conocimiento y regular la conducta basada en esa reflexión. Incluye conocimiento metacognitivo (saber sobre el propio saber) y regulación metacognitiva (control de la cognición).",
+        "required_features": [
+          "capacidad de autoobservación cognitiva",
+          "capacidad de evaluar la certeza o validez de los propios pensamientos",
+          "capacidad de modificar estrategias cognitivas ante el error"
+        ],
+        "subjective_marker": "“Me doy cuenta de que a veces confundo mis pensamientos con la realidad; puedo parar y revisar si es lógico”.",
+        "behavioral_marker": "Pausas para corregir el discurso, expresión de dudas razonables sobre la propia memoria o percepción."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica",
+          "escalas_metacognitivas (MCQ-30)",
+          "pruebas_narrativas"
+        ],
+        "time_relation": [
+          "rasgo",
+          "fluctuante"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "cognitive_insight",
+          "context": "insight_psicótico"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "cognitive_domain",
+          "context": "funciones_ejecutivas"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "INS_004",
+          "canonical_name": "Insight intelectual",
+          "reason": "El insight es un tipo de conocimiento metacognitivo sobre la enfermedad; la metacognición es un dominio más amplio."
+        }
+      ],
+      "alerts": [],
+      "teaching_notes": [
+        "Su déficit es central en la esquizofrenia (pobre insight) y en el TOC (metacogniciones disfuncionales)."
+      ],
+      "cognitive_pitfalls": [
+        "Confundir con inteligencia general; un paciente inteligente puede tener pobre metacognición."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "El paciente refiere: “Cuando me pongo ansioso, sé que mis pensamientos se vuelven catastróficos sin motivo; entonces intento relajarme y cambiar el foco”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Flavell",
+          "Wells"
+        ],
+        "clinical_tradition": [
+          "Psicología cognitiva",
+          "Esquizofrenia",
+          "TOC"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "PER_017",
       "canonical_name": "Metamorfopsia",
       "synonyms_and_slang": [
@@ -15972,6 +17379,82 @@
         ]
       },
       "status": "active"
+    },
+    {
+      "term_id": "HIS_002",
+      "canonical_name": "Moral insanity",
+      "synonyms_and_slang": [
+        {
+          "term": "locura moral",
+          "context": "historical",
+          "locale": "es"
+        },
+        {
+          "term": "insania moral",
+          "context": "historical",
+          "locale": "es"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Término acuñado por James Cowles Prichard (1835) para describir un trastorno caracterizado por una perversión patológica de los sentimientos, hábitos y conducta moral sin deterioro intelectual aparente ni delirios. Considerado precursor del trastorno antisocial de la personalidad y de la psicopatía.",
+        "required_features": [
+          "ausencia de delirio o alucinaciones",
+          "preservación de las capacidades intelectuales",
+          "conducta antisocial o inmoral persistente"
+        ],
+        "subjective_marker": "El sujeto no experimenta remordimiento ni conciencia de transgresión.",
+        "behavioral_marker": "Mentiras, fraudes, agresiones, falta de empatía, incapacidad para aprender del castigo."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "historia_clínica_longitudinal",
+          "colateral"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-16",
+          "relation": "historical_precursor",
+          "context": "trastorno_antisocial"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Concepto obsoleto y cargado de connotaciones morales. Su interés es histórico para entender la evolución hacia los trastornos de personalidad."
+        }
+      ],
+      "teaching_notes": [
+        "Influyó en el desarrollo de los conceptos de 'psicopatía' (Cleckley, Hare) y 'trastorno antisocial de la personalidad' (DSM)."
+      ],
+      "cognitive_pitfalls": [
+        "No usar como diagnóstico actual; solo referencia histórica."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente con inteligencia normal, sin síntomas psicóticos, que miente, roba y agrede repetidamente sin mostrar arrepentimiento ni aprender de las consecuencias."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Prichard"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría británica siglo XIX"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
     },
     {
       "term_id": "CNS_008",
@@ -16443,6 +17926,149 @@
         ]
       },
       "status": "active"
+    },
+    {
+      "term_id": "HIS_010",
+      "canonical_name": "Neurosis de angustia",
+      "synonyms_and_slang": [
+        {
+          "term": "anxiety neurosis",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Término freudiano (1895) para describir un cuadro de ansiedad flotante, ataques de angustia, fobias y síntomas somáticos, atribuido a acumulación de tensión sexual no descargada. En las clasificaciones actuales se corresponde con el trastorno de ansiedad generalizada, el trastorno de pánico y las fobias.",
+        "required_features": [
+          "ansiedad crónica o paroxística",
+          "síntomas somáticos (palpitaciones, sudoración)",
+          "ausencia de causa orgánica"
+        ],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+      },
+      "operationalization": {
+        "detectable_by": [],
+        "time_relation": [],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-16",
+          "relation": "historical_precursor",
+          "context": "trastornos_de_ansiedad"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Término histórico; en CIE-11 y DSM-5 se utilizan categorías más específicas (trastorno de pánico, ansiedad generalizada, etc.)."
+        }
+      ],
+      "teaching_notes": [
+        "Freud la distinguió de la 'neurastenia' (fatiga) y de la 'neurosis obsesiva'."
+      ],
+      "cognitive_pitfalls": [],
+      "examples": [],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Freud"
+        ],
+        "clinical_tradition": [
+          "Psicoanálisis",
+          "Psiquiatría dinámica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "HIS_005",
+      "canonical_name": "Nimfomanía / Satiriasis",
+      "synonyms_and_slang": [
+        {
+          "term": "hipersexualidad patológica",
+          "context": "clinical_modern",
+          "locale": "es"
+        },
+        {
+          "term": "nymphomania / satyriasis",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Términos históricos (siglos XVIII-XIX) para describir un deseo sexual incontrolable, excesivo y patológico en mujeres (nimfomanía) y hombres (satiriasis). Considerados hoy dentro de los trastornos del control de impulsos o la hipersexualidad (compulsión sexual).",
+        "required_features": [
+          "deseo sexual intenso, recurrente e incontrolable",
+          "conductas sexuales desinhibidas y repetitivas",
+          "malestar o deterioro funcional"
+        ],
+        "subjective_marker": "“No puedo dejar de pensar en sexo; necesito tener relaciones varias veces al día, aunque no quiera”.",
+        "behavioral_marker": "Búsqueda constante de parejas sexuales, masturbación excesiva, uso de pornografía adictivo."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clínica"
+        ],
+        "time_relation": [
+          "persistente",
+          "episódica"
+        ],
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+          {
+            "class": "Agonistas dopaminérgicos (Parkinson)",
+            "risk": "high"
+          }
+        ]
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-12",
+          "relation": "historical_precursor",
+          "context": "hipersexualidad"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Términos en desuso por su carga moral y de género. En CIE-11 se usa 'trastorno de control de impulsos con hipersexualidad' o 'compulsión sexual'."
+        }
+      ],
+      "teaching_notes": [
+        "La hipersexualidad puede ser secundaria a trastorno bipolar (manía), lesiones neurológicas, o trastorno del control de impulsos primario."
+      ],
+      "cognitive_pitfalls": [
+        "Patologizar una libido alta normal; debe causar malestar o deterioro."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Mujer de 35 años que refiere: “Tengo que tener sexo varias veces al día, si no, siento una tensión insoportable; he perdido mi trabajo por faltar para buscar encuentros”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Esquirol",
+          "Krafft-Ebing"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría clásica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
     },
     {
       "term_id": "INS_010",
@@ -17424,6 +19050,90 @@
       "status": "active"
     },
     {
+      "term_id": "MEM_028",
+      "canonical_name": "Paramnesia del espejo",
+      "synonyms_and_slang": [
+        {
+          "term": "mirror misidentification",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        },
+        {
+          "term": "síndrome del espejo",
+          "context": "clinical",
+          "locale": "es"
+        }
+      ],
+      "term_kind": "síntoma",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Creencia de que la propia imagen reflejada en un espejo es otra persona (a menudo un impostor o un familiar). Asociado a lesiones frontales derechas, demencias (especialmente Alzheimer y Lewy) y a veces a psicosis.",
+        "required_features": [
+          "reconocimiento de que la imagen es la suya pero con atribución errónea de identidad",
+          "o no reconocimiento de sí mismo en el espejo",
+          "no se debe a agnosia visual primaria"
+        ],
+        "subjective_marker": "“Hay una señora en el espejo que me sigue; no sé quién es”.",
+        "behavioral_marker": "Hablarle al espejo, intentar comunicarse con el 'otro', o cubrir los espejos."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "observación_clínica",
+          "exploración_cognitiva"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "conciencia_del_yo"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "DEL_028",
+          "canonical_name": "Síndrome de Capgras",
+          "reason": "Capgras afecta a personas reales; aquí afecta al reflejo."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "neurological_warning",
+          "message": "Frecuente en demencia de cuerpos de Lewy y en daño prefrontal derecho."
+        }
+      ],
+      "teaching_notes": [
+        "Se diferencia de la prosopagnosia porque aquí la imagen es reconocida como humana pero no como uno mismo."
+      ],
+      "cognitive_pitfalls": [
+        "No confundir con alucinación visual (el reflejo es real, la interpretación es errónea)."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente con demencia avanzada: al mirarse al espejo dice: “¿Quién es esa vieja? ¡Que se vaya!”, y trata de agredir el espejo."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Mendez",
+          "Breen"
+        ],
+        "clinical_tradition": [
+          "Neuropsiquiatría",
+          "Demencias"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "MEM_023",
       "canonical_name": "Paramnesia reduplicativa",
       "synonyms_and_slang": [
@@ -17749,6 +19459,99 @@
         ]
       },
       "status": "active"
+    },
+    {
+      "term_id": "NEU_007",
+      "canonical_name": "Paratonía (Gegenhalten)",
+      "synonyms_and_slang": [
+        {
+          "term": "resistencia involuntaria",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "paratonia",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "signo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Resistencia involuntaria al movimiento pasivo que aumenta en proporción a la fuerza aplicada por el examinador, sin que el paciente pueda relajarse. Se diferencia del negativismo porque no es una oposición activa, sino una rigidez modulada por la intensidad del estímulo.",
+        "required_features": [
+          "aumento de resistencia al movimiento pasivo",
+          "resistencia proporcional a la fuerza del examinador",
+          "el paciente no puede inhibirla voluntariamente"
+        ],
+        "subjective_marker": "“No puedo dejar de tensarme cuando me mueven; es automático”.",
+        "behavioral_marker": "Al intentar flexionar el brazo del paciente, ofrece más resistencia cuanto más fuerte se empuja; al cesar la fuerza, el brazo no queda fijo como en catalepsia."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "examen_motor_pasivo"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-04",
+          "relation": "primary_expression",
+          "context": "tono_muscular_patológico"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "VOL_009",
+          "canonical_name": "Negativismo",
+          "reason": "El negativismo es una oposición activa y a menudo deliberada; la paratonía es involuntaria y proporcional."
+        },
+        {
+          "term_id": "VOL_004",
+          "canonical_name": "Flexibilidad cérea",
+          "reason": "En flexibilidad cérea la resistencia es plástica y constante; en paratonía es proporcional."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Frecuente en lesiones frontales y demencias (especialmente Alzheimer avanzado)."
+        }
+      ],
+      "teaching_notes": [
+        "Es un signo de 'dependencia ambiental' del tono muscular."
+      ],
+      "cognitive_pitfalls": [
+        "Confundir con rigidez extrapiramidal (parkinsoniana) donde la resistencia es constante (cogwheel)."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Al explorador que intenta mover el codo, el paciente opone más resistencia cuanto más rápido o fuerte se mueve; si se mueve muy lentamente, la resistencia disminuye."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Kleist",
+          "Duensing"
+        ],
+        "clinical_tradition": [
+          "Neurología",
+          "Psiquiatría geriátrica"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "snomed_ct": {
+          "concept_id": "248816005",
+          "preferred_term": "Paratonia (finding)"
+        }
+      }
     },
     {
       "term_id": "PER_020",
@@ -18588,6 +20391,88 @@
       }
     },
     {
+      "term_id": "HIS_004",
+      "canonical_name": "Poriomanía",
+      "synonyms_and_slang": [
+        {
+          "term": "fuga impulsiva",
+          "context": "clinical_historical",
+          "locale": "es"
+        },
+        {
+          "term": "deambulación patológica",
+          "context": "clinical_historical",
+          "locale": "es"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Tendencia irresistible y periódica a la fuga o deambulación, a menudo con vagabundeo sin propósito, a veces asociada a amnesia del episodio. Término utilizado por la escuela francesa (Legrand du Saulle, Magnan) para describir una forma de impulsión motora.",
+        "required_features": [
+          "impulso súbito a alejarse del entorno habitual",
+          "deambulación prolongada sin meta clara",
+          "puede acompañarse de amnesia o estado crepuscular"
+        ],
+        "subjective_marker": "“De pronto siento que debo irme, caminar sin rumbo; no puedo evitarlo”.",
+        "behavioral_marker": "Ausencias del hogar por horas o días, encontrado en lugares lejanos sin recordar cómo llegó."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "historia_clínica",
+          "colateral"
+        ],
+        "time_relation": [
+          "episódica"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-04",
+          "relation": "historical_precursor",
+          "context": "impulsividad"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "historical_precursor",
+          "context": "fuga_disociativa"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Término en desuso. Sus manifestaciones se incluyen hoy en fuga disociativa, trastorno de control de impulsos o episodios complejos parciales."
+        }
+      ],
+      "teaching_notes": [
+        "Se diferencia de la fuga disociativa por la ausencia de asunción de nueva identidad y por el componente de impulsividad irrefrenable."
+      ],
+      "cognitive_pitfalls": [
+        "No confundir con conductas de evitación fóbica o con deambulación en demencias."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente que cada pocas semanas abandona su domicilio y camina durante horas, hasta ser encontrado en otra ciudad sin recordar bien cómo llegó, sin cambiar de nombre ni profesión."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Magnan",
+          "Legrand du Saulle"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría francesa siglo XIX"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "SPE_010",
       "canonical_name": "Presión de habla",
       "synonyms_and_slang": [
@@ -18802,6 +20687,97 @@
       "status": "active"
     },
     {
+      "term_id": "NEU_002",
+      "canonical_name": "Prosopagnosia",
+      "synonyms_and_slang": [
+        {
+          "term": "ceguera para rostros",
+          "context": "patient_report",
+          "locale": "es"
+        },
+        {
+          "term": "face blindness",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "signo",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Incapacidad específica para reconocer rostros familiares, incluyendo el propio en el espejo, a pesar de una percepción visual intacta de otros objetos. Puede ser congénita (desarrollo) o adquirida (lesión fusiforme).",
+        "required_features": [
+          "preservación del reconocimiento de otros objetos",
+          "fracaso en identificación de personas por su cara",
+          "puede reconocer a personas por voz o contexto"
+        ],
+        "subjective_marker": "“No distingo a mis amigos hasta que me hablan; todos los rostros se me parecen”.",
+        "behavioral_marker": "No identifica fotografías de familiares, se guía por ropa o peinados."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "pruebas_de_reconocimiento_facial",
+          "Benton Facial Recognition Test"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-10",
+          "relation": "primary_expression",
+          "context": "agnosia_específica"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "DEL_028",
+          "canonical_name": "Síndrome de Capgras",
+          "reason": "En Capgras el rostro es reconocido pero se cree que es un impostor; en prosopagnosia no hay reconocimiento perceptivo."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "diagnostic_clue",
+          "message": "Puede ser congénito (a menudo subdiagnosticado) o adquirido tras lesión temporooccipital derecha."
+        }
+      ],
+      "teaching_notes": [
+        "El paciente con prosopagnosia puede saber si un rostro es humano o no, pero no distinguir identidades."
+      ],
+      "cognitive_pitfalls": [
+        "Atribuir a falta de atención o demencia sin pruebas específicas."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente que no reconoce a su esposa en la sala de espera hasta que ella habla; describe: “Veo una mujer, pero no sé si es ella o una extraña”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Bodamer (1947)"
+        ],
+        "clinical_tradition": [
+          "Neurología cognitiva"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "cie11": {
+          "code": "MB21.2",
+          "label": "Prosopagnosia"
+        },
+        "snomed_ct": {
+          "concept_id": "40055003",
+          "preferred_term": "Prosopagnosia (finding)"
+        }
+      }
+    },
+    {
       "term_id": "PER_021",
       "canonical_name": "Pseudoalucinación",
       "synonyms_and_slang": [
@@ -18969,6 +20945,65 @@
       "status": "active"
     },
     {
+      "term_id": "HIS_009",
+      "canonical_name": "Psicosis tóxica",
+      "synonyms_and_slang": [
+        {
+          "term": "psicosis exógena",
+          "context": "historical"
+        }
+      ],
+      "term_kind": "concepto_histórico",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Término usado por Kraepelin y Bonhoeffer para describir psicosis agudas secundarias a intoxicaciones, infecciones o trastornos metabólicos, caracterizadas por delirium, alucinaciones y desorganización. Actualmente se engloban en 'delirium', 'trastorno psicótico inducido por sustancias' o 'trastorno psicótico debido a enfermedad médica'.",
+        "required_features": [
+          "inicio agudo",
+          "relación temporal con agente tóxico o infeccioso",
+          "fluctuación del nivel de conciencia"
+        ],
+        "subjective_marker": "",
+        "behavioral_marker": ""
+      },
+      "operationalization": {
+        "detectable_by": [],
+        "time_relation": [],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-16",
+          "relation": "historical_precursor",
+          "context": "psicosis_orgánicas"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "historical_note",
+          "message": "Término en desuso; reemplazado por diagnósticos más específicos (delirium, psicosis inducida)."
+        }
+      ],
+      "teaching_notes": [
+        "Bonhoeffer describió las 'psicosis exógenas' como un grupo limitado de reacciones (delirium, amnesia, estupor, etc.) independientemente del agente causal."
+      ],
+      "cognitive_pitfalls": [],
+      "examples": [],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Kraepelin",
+          "Bonhoeffer"
+        ],
+        "clinical_tradition": [
+          "Psiquiatría alemana siglo XX"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "AFF_031",
       "canonical_name": "Pánico",
       "synonyms_and_slang": [
@@ -19129,6 +21164,168 @@
       "provenance": {
         "phenomenology": [
           "Blankenburg",
+          "EASE"
+        ],
+        "clinical_tradition": [
+          "Psicopatología fenomenológica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_003",
+      "canonical_name": "Pérdida de la perspectiva (EASE)",
+      "synonyms_and_slang": [
+        {
+          "term": "déficit de perspectiva",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "loss of perspective",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Incapacidad o dificultad para adoptar una perspectiva diferente de la propia, ya sea en el espacio (ver algo desde otro ángulo), en el tiempo (imaginar el pasado o futuro), o en lo social (ponerse en el lugar del otro). Forma parte de los trastornos de la ipseidad en la EASE.",
+        "required_features": [
+          "dificultad para cambiar el punto de vista espacial o temporal",
+          "incapacidad para descentrarse cognitiva o afectivamente",
+          "no se debe a un déficit intelectual"
+        ],
+        "subjective_marker": "“No puedo imaginarme cómo ve esa mesa una persona sentada al otro lado; solo veo desde mis ojos”.",
+        "behavioral_marker": "Interpretaciones literales y egocéntricas; falla en tareas de teoría de la mente."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_fenomenológica",
+          "tareas_de_perspectiva_espacial"
+        ],
+        "time_relation": [
+          "persistente",
+          "prodrómica"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "ipseidad"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "COG_005",
+          "canonical_name": "Pensamiento concreto",
+          "reason": "El pensamiento concreto es una dificultad de abstracción; la pérdida de perspectiva es más amplia (espacial, temporal, social)."
+        }
+      ],
+      "alerts": [],
+      "teaching_notes": [
+        "Se relaciona con la alteración de la teoría de la mente en esquizofrenia."
+      ],
+      "cognitive_pitfalls": [
+        "Confundir con falta de empatía o egocentrismo normal."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "“Si me pongo al otro lado de la mesa, no puedo imaginar cómo se ve desde allí; solo existe mi punto de vista”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Parnas",
+          "EASE"
+        ],
+        "clinical_tradition": [
+          "Psicopatología fenomenológica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "PHM_002",
+      "canonical_name": "Rapto de atención (EASE)",
+      "synonyms_and_slang": [
+        {
+          "term": "captura involuntaria de la atención",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "attentional capture",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "fenómeno",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Fenómeno en el cual la atención es capturada de manera súbita e involuntaria por un estímulo externo trivial, interrumpiendo la línea de pensamiento o acción, y generando una sensación de que el estímulo 'exige' ser atendido. Descrito en la EASE.",
+        "required_features": [
+          "captura atencional involuntaria por estímulos banales",
+          "sensación de que el estímulo 'tira' de la atención",
+          "dificultad para desengancharse"
+        ],
+        "subjective_marker": "“De repente mi atención se va a una mota de polvo en la pared y no puedo dejar de mirarla; me cuesta volver a la conversación”.",
+        "behavioral_marker": "Pausas BRUSCAS en el habla para mirar algo irrelevante; fijación ocular en detalles sin propósito."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_fenomenológica (EASE)"
+        ],
+        "time_relation": [
+          "prodrómica",
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-11",
+          "relation": "primary_expression",
+          "context": "ipseidad"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "PER_010",
+          "canonical_name": "Ilusión",
+          "reason": "En la ilusión hay una interpretación errónea; en el rapto no hay distorsión, solo captura."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "clinical_attention",
+          "message": "Frecuente en pródromos de esquizofrenia y en estados de hiperreflexividad."
+        }
+      ],
+      "teaching_notes": [
+        "Se diferencia de la distractibilidad en la manía (donde hay cambio rápido de interés) por la cualidad de 'imposición' y la dificultad de desenganche."
+      ],
+      "cognitive_pitfalls": [
+        "Atribuir a falta de interés o aburrimiento."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Mientras habla, el paciente se detiene y mira fijamente una mancha en la pared: “Es que esa mancha me llamó la atención; no puedo dejar de mirarla aunque quiera seguir la conversación”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Parnas",
           "EASE"
         ],
         "clinical_tradition": [
@@ -19718,6 +21915,101 @@
       }
     },
     {
+      "term_id": "NSC_001",
+      "canonical_name": "Saliencia aberrante",
+      "synonyms_and_slang": [
+        {
+          "term": "significación anómala",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "aberrant salience",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "constructo",
+      "granularity": "atomic",
+      "risk_weight": 2,
+      "definition_clinical": {
+        "core": "Mecanismo neurocognitivo por el cual estímulos neutros o irrelevantes adquieren una significación anómala, intensa y a menudo amenazante, contribuyendo a la formación de delirios y alucinaciones (Kapur, 2003).",
+        "required_features": [
+          "asignación de significado desproporcionado a estímulos banales",
+          "experiencia subjetiva de novedad, relevancia o extrañeza sin causa objetiva",
+          "puede preceder o acompañar síntomas psicóticos positivos"
+        ],
+        "subjective_marker": "“De repente todo me llama la atención, como si todo fuera importante o escondiera un mensaje”.",
+        "behavioral_marker": "Hipervigilancia, fijación en detalles triviales, imposibilidad de filtrar estímulos irrelevantes."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica",
+          "paradigmas_de_aprendizaje_asociativo"
+        ],
+        "time_relation": [
+          "prodrómico",
+          "activo"
+        ],
+        "pharmacological_link": true,
+        "pharmacological_triggers": [
+          {
+            "class": "Agonistas dopaminérgicos",
+            "risk": "high"
+          },
+          {
+            "class": "Alucinógenos",
+            "risk": "high"
+          }
+        ]
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-07",
+          "relation": "neurobiological_substrate",
+          "context": "delirio"
+        },
+        {
+          "domain_id": "DOM-08",
+          "relation": "neurobiological_substrate",
+          "context": "alucinación"
+        }
+      ],
+      "exclusions": [],
+      "alerts": [
+        {
+          "type": "conceptual_note",
+          "message": "Constructo teórico, no síntoma directamente observable. Útil para integrar neurobiología y fenomenología."
+        }
+      ],
+      "teaching_notes": [
+        "Central en la teoría dopaminérgica de la psicosis.",
+        "Explica por qué los delirios suelen comenzar con una 'atmósfera delirante' (Wahnstimmung)."
+      ],
+      "cognitive_pitfalls": [
+        "Aplicar el término como si fuera un síntoma clínico primario sin evidencia empírica directa."
+      ],
+      "examples": [
+        {
+          "type": "patient_quote",
+          "text": "De repente, las nubes, los carteles, todo tenía un significado especial, como si el universo me hablara."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Kapur",
+          "Neuroscience"
+        ],
+        "clinical_tradition": [
+          "Neuropsiquiatría",
+          "Psicosis"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
       "term_id": "PER_022",
       "canonical_name": "Sentido de Presencia",
       "synonyms_and_slang": [
@@ -20099,6 +22391,460 @@
       "status": "active"
     },
     {
+      "term_id": "DEL_028",
+      "canonical_name": "Síndrome de Capgras",
+      "term_kind": "syndrome",
+      "definition_clinical": {
+        "core": "Creencia de que personas cercanas han sido reemplazadas por impostores idénticos.",
+        "required_features": [
+          "atribución de identidad falsa a conocidos"
+        ],
+        "subjective_marker": "Dice que su familiar es un impostor.",
+        "behavioral_marker": "Desconfía de personas cercanas pese a reconocer su apariencia física."
+      },
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica"
+        ],
+        "time_relation": [
+          "actual"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-07",
+          "relation": "primary_expression",
+          "context": "pensamiento_contenido"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "DEL_006",
+          "canonical_name": "Síndrome de Capgras",
+          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "diagnostic_error",
+          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+      ],
+      "teaching_notes": [
+        "Describir síndrome de capgras con fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+      ],
+      "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "consenso_editorial"
+        ],
+        "clinical_tradition": [
+          "psicopatologia_clasica"
+        ]
+      },
+      "synonyms_and_slang": [
+        "síndrome de capgras"
+      ],
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "NEU_003",
+      "canonical_name": "Síndrome de Charles Bonnet",
+      "synonyms_and_slang": [
+        {
+          "term": "alucinosis visual del anciano",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "Charles Bonnet syndrome",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "síndrome",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Presencia de alucinaciones visuales complejas, lúcidas y con insight conservado en personas con deterioro visual significativo, sin otras causas neurológicas o psiquiátricas.",
+        "required_features": [
+          "alucinaciones visuales (figuras, personas, animales, escenas)",
+          "conciencia de la irrealidad (insight)",
+          "deterioro visual (macular, glaucoma, catarata)",
+          "ausencia de delirium o psicosis"
+        ],
+        "subjective_marker": "“Veo personas pequeñas vestidas de colores caminando sobre la mesa; sé que no están ahí, es por mis ojos”.",
+        "behavioral_marker": "Puede describir las imágenes con detalle, pero no interactúa con ellas como reales."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clínica",
+          "examen_oftalmológico"
+        ],
+        "time_relation": [
+          "persistente",
+          "episódica"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-08",
+          "relation": "primary_expression",
+          "context": "alucinosis"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "PER_011",
+          "canonical_name": "Alucinosis",
+          "reason": "El síndrome de Charles Bonnet es una causa específica de alucinosis."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "management_warning",
+          "message": "No requiere antipsicóticos; la explicación y la mejora visual (si es posible) son lo principal."
+        }
+      ],
+      "teaching_notes": [
+        "El insight suele estar intacto, pero en algunos casos puede haber duda inicial."
+      ],
+      "cognitive_pitfalls": [
+        "Diagnosticar psicosis o demencia por las alucinaciones sin explorar la agudeza visual."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Mujer de 80 años con degeneración macular avanzada refiere: “Veo niños jugando en la esquina de la habitación; cuando les hablo, desaparecen. Sé que es por la vista”."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Charles Bonnet",
+          "de Morsier"
+        ],
+        "clinical_tradition": [
+          "Oftalmología",
+          "Neuropsiquiatría geriátrica"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "cie11": {
+          "code": "MB27.2",
+          "label": "Visual hallucinations with insight"
+        },
+        "snomed_ct": {
+          "concept_id": "43944008",
+          "preferred_term": "Charles Bonnet syndrome (disorder)"
+        }
+      }
+    },
+    {
+      "term_id": "DEL_029",
+      "canonical_name": "Síndrome de Cotard",
+      "term_kind": "syndrome",
+      "definition_clinical": {
+        "core": "Delirio de negación de la propia existencia o de órganos internos.",
+        "required_features": [
+          "negación vital o corporal"
+        ],
+        "subjective_marker": "Afirma estar muerto o no tener vísceras.",
+        "behavioral_marker": "Negativismo grave, rechazo de alimentos por creer ser inmortal o estar muerto."
+      },
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica"
+        ],
+        "time_relation": [
+          "actual"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [],
+      "exclusions": [],
+      "alerts": [],
+      "teaching_notes": [],
+      "cognitive_pitfalls": [],
+      "examples": [
+        {
+          "type": "patient_quote",
+          "text": "Mis órganos se pudrieron hace semanas; ya no tengo corazón ni intestinos, soy solo una cáscara vacía que camina."
+        },
+        {
+          "type": "observation",
+          "text": "El paciente afirma estar muerto, puede presentar una falta de respuesta emocional extrema (nihilismo) y rechaza cualquier necesidad vital básica por considerarla innecesaria para un cadáver."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [],
+        "clinical_tradition": []
+      },
+      "mappings": {}
+    },
+    {
+      "term_id": "DEL_030",
+      "canonical_name": "Síndrome de Fregoli",
+      "synonyms_and_slang": [
+        "síndrome de fregoli"
+      ],
+      "term_kind": "symptom",
+      "granularity": "atomic",
+      "risk_weight": 0,
+      "definition_clinical": {
+        "core": "Creencia de que personas distintas son una sola que cambia de apariencia.",
+        "required_features": [
+          "presencia clínica de síndrome de fregoli",
+          "consistencia fenomenológica durante la entrevista",
+          "impacto clínico observable o referido"
+        ],
+        "subjective_marker": "El paciente refiere experiencia compatible con síndrome de fregoli.",
+        "behavioral_marker": "Se observan signos conductuales coherentes con síndrome de fregoli en contexto clínico."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "entrevista_clinica"
+        ],
+        "time_relation": [
+          "actual"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-07",
+          "relation": "primary_expression",
+          "context": "pensamiento_contenido"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "DEL_022",
+          "canonical_name": "Síndrome de Fregoli",
+          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "diagnostic_error",
+          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+        }
+      ],
+      "teaching_notes": [
+        "Describir síndrome de fregoli with fenomenología y curso temporal.",
+        "Corroborar con entrevista clínica y observación conductual."
+      ],
+      "cognitive_pitfalls": [
+        "Sobregeneralizar el término sin evidencia clínica suficiente.",
+        "No discriminar entre variación normal y hallazgo psicopatológico."
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Sims",
+          "Robinson",
+          "Mendez"
+        ],
+        "clinical_tradition": [
+          "psicopatologia_clasica"
+        ]
+      },
+      "status": "active",
+      "mappings": {}
+    },
+    {
+      "term_id": "MEM_026",
+      "canonical_name": "Síndrome de Korsakoff",
+      "synonyms_and_slang": [
+        "psicosis de Korsakoff",
+        "síndrome amnésico-confabulatorio",
+        "Korsakoff's syndrome"
+      ],
+      "term_kind": "síndrome",
+      "granularity": "cluster",
+      "risk_weight": 2,
+      "definition_clinical": {
+        "core": "Síndrome amnésico crónico caracterizado por amnesia anterógrada grave, confabulación (espontánea y provocada), desorientación temporal intensa y relativa preservación de la conciencia. Típicamente secuela del síndrome de Wernicke (encefalopatía tiamínica). Lesiones en cuerpos mamilares y núcleo dorsomedial del tálamo.",
+        "required_features": [
+          "amnesia anterógrada grave",
+          "confabulación",
+          "desorientación temporoespacial",
+          "relativa lucidez",
+          "antecedente de encefalopatía de Wernicke o alcoholismo"
+        ],
+        "subjective_marker": "El paciente fabrica respuestas plausibles pero falsas cuando se le pregunta por eventos recientes. No tiene conciencia de confabular.",
+        "behavioral_marker": "Confabulación espontánea (relatos no solicitadas) y provocada (respuesta incorrecta a preguntas directas). Desorientación temporal severa."
+      },
+      "operationalization": {
+        "detectable_by": [],
+        "time_relation": [],
+        "pharmacological_link": false,
+        "computable_markers": [
+          {
+            "marker": "confabulacion",
+            "type": "string",
+            "expected": "presente"
+          },
+          {
+            "marker": "amnesia_anterograda",
+            "type": "string",
+            "expected": "severa"
+          },
+          {
+            "marker": "conciencia",
+            "type": "string",
+            "expected": "lucida"
+          },
+          {
+            "marker": "orientacion_temporal",
+            "type": "string",
+            "expected": "alterada"
+          }
+        ]
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-09",
+          "relation": "primary_expression",
+          "context": ""
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "",
+          "canonical_name": "Amnesia anterógrada simple",
+          "reason": "Korsakoff incluye confabulación sistemática y es un síndrome con sustrato tiamínico definido."
+        },
+        {
+          "term_id": "",
+          "canonical_name": "Demencia",
+          "reason": "En Korsakoff los dominios cognitivos distintos a la memoria están relativamente preservados en fases iniciales."
+        }
+      ],
+      "alerts": [],
+      "teaching_notes": [],
+      "cognitive_pitfalls": [],
+      "mappings": {
+        "cie11": {
+          "code": "6D71.0"
+        },
+        "snomed_ct": {
+          "concept_id": "35239004"
+        }
+      },
+      "version": "1.0.0",
+      "status": "active"
+    },
+    {
+      "term_id": "NEU_005",
+      "canonical_name": "Síndrome de la mano alienígena",
+      "synonyms_and_slang": [
+        {
+          "term": "mano extraña",
+          "context": "clinical",
+          "locale": "es"
+        },
+        {
+          "term": "alien hand syndrome",
+          "context": "clinical_bilingual",
+          "locale": "en"
+        }
+      ],
+      "term_kind": "síndrome",
+      "granularity": "atomic",
+      "risk_weight": 1,
+      "definition_clinical": {
+        "core": "Fenómeno en el cual una extremidad (generalmente la mano) realiza movimientos involuntarios, complejos y dirigidos a un objetivo, que el paciente no reconoce como propios o siente que actúa con voluntad propia. Asociado a lesiones del cuerpo calloso, lóbulo frontal medial o parietal.",
+        "required_features": [
+          "movimientos involuntarios de una mano",
+          "sensación de que la mano actúa por sí misma",
+          "el paciente puede intentar sujetar la mano con la otra"
+        ],
+        "subjective_marker": "“Mi mano izquierda me agarra la ropa y yo no la controlo; a veces me da golpes sin querer”.",
+        "behavioral_marker": "Una mano desabotona la camisa mientras la otra la abotona; la mano alienígena interfiere con acciones voluntarias."
+      },
+      "operationalization": {
+        "detectable_by": [
+          "observación_clínica",
+          "neuroimagen"
+        ],
+        "time_relation": [
+          "persistente"
+        ],
+        "pharmacological_link": false
+      },
+      "domain_links": [
+        {
+          "domain_id": "DOM-04",
+          "relation": "primary_expression",
+          "context": "pasividad_motora"
+        }
+      ],
+      "exclusions": [
+        {
+          "term_id": "SELF_001",
+          "canonical_name": "Actos impuestos",
+          "reason": "En la mano alienígena no suele haber atribución a una fuerza externa personalizada; es más un fallo del control motor."
+        },
+        {
+          "term_id": "",
+          "canonical_name": "Apraxia ideomotora",
+          "reason": "En la mano alienígena los movimientos son propositivos, en la apraxia hay falla en la ejecución del plan motor."
+        }
+      ],
+      "alerts": [
+        {
+          "type": "neurological_warning",
+          "message": "Lesión típica: cuerpo calloso + lóbulo frontal medial (síndrome de desconexión)."
+        }
+      ],
+      "teaching_notes": [
+        "Se diferencia de la apraxia ideomotora porque los movimientos son complejos y propositivos, aunque no deseados."
+      ],
+      "cognitive_pitfalls": [
+        "Confundir con discinesia o corea; en mano alienígena los movimientos son más organizados."
+      ],
+      "examples": [
+        {
+          "type": "observation",
+          "text": "Paciente con lesión del cuerpo calloso: la mano izquierda agarra un objeto y no lo suelta; la mano derecha intenta liberarlo, creando una lucha entre ambas manos."
+        }
+      ],
+      "version": "1.0.0",
+      "provenance": {
+        "phenomenology": [
+          "Brion",
+          "Jedynak",
+          "Goldstein"
+        ],
+        "clinical_tradition": [
+          "Neuropsiquiatría",
+          "Neurología conductual"
+        ]
+      },
+      "status": "active",
+      "mappings": {
+        "snomed_ct": {
+          "concept_id": "230262000",
+          "preferred_term": "Alien hand syndrome (finding)"
+        }
+      }
+    },
+    {
       "term_id": "SNM_001",
       "canonical_name": "Síndrome Neuroléptico Maligno",
       "synonyms_and_slang": [
@@ -20321,270 +23067,6 @@
         "clinical_tradition": []
       },
       "mappings": {}
-    },
-    {
-      "term_id": "DEL_028",
-      "canonical_name": "Síndrome de Capgras",
-      "term_kind": "syndrome",
-      "definition_clinical": {
-        "core": "Creencia de que personas cercanas han sido reemplazadas por impostores idénticos.",
-        "required_features": [
-          "atribución de identidad falsa a conocidos"
-        ],
-        "subjective_marker": "Dice que su familiar es un impostor.",
-        "behavioral_marker": "Desconfía de personas cercanas pese a reconocer su apariencia física."
-      },
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-07",
-          "relation": "primary_expression",
-          "context": "pensamiento_contenido"
-        }
-      ],
-      "exclusions": [
-        {
-          "term_id": "DEL_006",
-          "canonical_name": "Síndrome de Capgras",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
-      "alerts": [
-        {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
-        }
-      ],
-      "teaching_notes": [
-        "Describir síndrome de capgras con fenomenología y curso temporal.",
-        "Corroborar con entrevista clínica y observación conductual."
-      ],
-      "cognitive_pitfalls": [
-        "Sobregeneralizar el término sin evidencia clínica suficiente.",
-        "No discriminar entre variación normal y hallazgo psicopatológico."
-      ],
-      "version": "1.0.0",
-      "provenance": {
-        "phenomenology": [
-          "consenso_editorial"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clasica"
-        ]
-      },
-      "synonyms_and_slang": [
-        "síndrome de capgras"
-      ],
-      "status": "active",
-      "mappings": {}
-    },
-    {
-      "term_id": "DEL_029",
-      "canonical_name": "Síndrome de Cotard",
-      "term_kind": "syndrome",
-      "definition_clinical": {
-        "core": "Delirio de negación de la propia existencia o de órganos internos.",
-        "required_features": [
-          "negación vital o corporal"
-        ],
-        "subjective_marker": "Afirma estar muerto o no tener vísceras.",
-        "behavioral_marker": "Negativismo grave, rechazo de alimentos por creer ser inmortal o estar muerto."
-      },
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [],
-      "exclusions": [],
-      "alerts": [],
-      "teaching_notes": [],
-      "cognitive_pitfalls": [],
-      "examples": [
-        {
-          "type": "patient_quote",
-          "text": "Mis órganos se pudrieron hace semanas; ya no tengo corazón ni intestinos, soy solo una cáscara vacía que camina."
-        },
-        {
-          "type": "observation",
-          "text": "El paciente afirma estar muerto, puede presentar una falta de respuesta emocional extrema (nihilismo) y rechaza cualquier necesidad vital básica por considerarla innecesaria para un cadáver."
-        }
-      ],
-      "version": "1.0.0",
-      "provenance": {
-        "phenomenology": [],
-        "clinical_tradition": []
-      },
-      "mappings": {}
-    },
-    {
-      "term_id": "DEL_030",
-      "canonical_name": "Síndrome de Fregoli",
-      "synonyms_and_slang": [
-        "síndrome de fregoli"
-      ],
-      "term_kind": "symptom",
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "definition_clinical": {
-        "core": "Creencia de que personas distintas son una sola que cambia de apariencia.",
-        "required_features": [
-          "presencia clínica de síndrome de fregoli",
-          "consistencia fenomenológica durante la entrevista",
-          "impacto clínico observable o referido"
-        ],
-        "subjective_marker": "El paciente refiere experiencia compatible con síndrome de fregoli.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con síndrome de fregoli en contexto clínico."
-      },
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-07",
-          "relation": "primary_expression",
-          "context": "pensamiento_contenido"
-        }
-      ],
-      "exclusions": [
-        {
-          "term_id": "DEL_022",
-          "canonical_name": "Síndrome de Fregoli",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
-      "alerts": [
-        {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
-        }
-      ],
-      "teaching_notes": [
-        "Describir síndrome de fregoli with fenomenología y curso temporal.",
-        "Corroborar con entrevista clínica y observación conductual."
-      ],
-      "cognitive_pitfalls": [
-        "Sobregeneralizar el término sin evidencia clínica suficiente.",
-        "No discriminar entre variación normal y hallazgo psicopatológico."
-      ],
-      "version": "1.0.0",
-      "provenance": {
-        "phenomenology": [
-          "Sims",
-          "Robinson",
-          "Mendez"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clasica"
-        ]
-      },
-      "status": "active",
-      "mappings": {}
-    },
-    {
-      "term_id": "MEM_026",
-      "canonical_name": "Síndrome de Korsakoff",
-      "synonyms_and_slang": [
-        "psicosis de Korsakoff",
-        "síndrome amnésico-confabulatorio",
-        "Korsakoff's syndrome"
-      ],
-      "term_kind": "síndrome",
-      "granularity": "cluster",
-      "risk_weight": 2,
-      "definition_clinical": {
-        "core": "Síndrome amnésico crónico caracterizado por amnesia anterógrada grave, confabulación (espontánea y provocada), desorientación temporal intensa y relativa preservación de la conciencia. Típicamente secuela del síndrome de Wernicke (encefalopatía tiamínica). Lesiones en cuerpos mamilares y núcleo dorsomedial del tálamo.",
-        "required_features": [
-          "amnesia anterógrada grave",
-          "confabulación",
-          "desorientación temporoespacial",
-          "relativa lucidez",
-          "antecedente de encefalopatía de Wernicke o alcoholismo"
-        ],
-        "subjective_marker": "El paciente fabrica respuestas plausibles pero falsas cuando se le pregunta por eventos recientes. No tiene conciencia de confabular.",
-        "behavioral_marker": "Confabulación espontánea (relatos no solicitadas) y provocada (respuesta incorrecta a preguntas directas). Desorientación temporal severa."
-      },
-      "operationalization": {
-        "detectable_by": [],
-        "time_relation": [],
-        "pharmacological_link": false,
-        "computable_markers": [
-          {
-            "marker": "confabulacion",
-            "type": "string",
-            "expected": "presente"
-          },
-          {
-            "marker": "amnesia_anterograda",
-            "type": "string",
-            "expected": "severa"
-          },
-          {
-            "marker": "conciencia",
-            "type": "string",
-            "expected": "lucida"
-          },
-          {
-            "marker": "orientacion_temporal",
-            "type": "string",
-            "expected": "alterada"
-          }
-        ]
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-09",
-          "relation": "primary_expression",
-          "context": ""
-        }
-      ],
-      "exclusions": [
-        {
-          "term_id": "",
-          "canonical_name": "Amnesia anterógrada simple",
-          "reason": "Korsakoff incluye confabulación sistemática y es un síndrome con sustrato tiamínico definido."
-        },
-        {
-          "term_id": "",
-          "canonical_name": "Demencia",
-          "reason": "En Korsakoff los dominios cognitivos distintos a la memoria están relativamente preservados en fases iniciales."
-        }
-      ],
-      "alerts": [],
-      "teaching_notes": [],
-      "cognitive_pitfalls": [],
-      "mappings": {
-        "cie11": {
-          "code": "6D71.0"
-        },
-        "snomed_ct": {
-          "concept_id": "35239004"
-        }
-      },
-      "version": "1.0.0",
-      "status": "active"
     },
     {
       "term_id": "DEL_031",

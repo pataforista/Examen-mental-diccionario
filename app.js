@@ -18,6 +18,7 @@ const App = {
         this.setupSearch();
         this.loadRecentSearches();
         this.renderAllTerms();
+        this.renderTermOfTheDay();
         this.theme.init();
         this.donation.init();
         this.handleInitialHash();
@@ -46,10 +47,8 @@ const App = {
         const term = this.data.terms.find(t => t.term_id === termId);
         if (!term) return;
         const text = `${term.canonical_name}. ${term.definition_clinical?.core || ''}`;
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'es-MX';
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(utterance);
+        this.utils.speakTerm(text);
+        this.utils.haptic();
     },
 
     handleInitialHash: function () {
@@ -86,29 +85,27 @@ const App = {
     },
 
     utils: {
-        sanitizeHTML: function (text) {
-            if (text === null || text === undefined) return '';
-            if (typeof text !== 'string') return String(text);
-            // Basic entity map for manual escape
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            let safe = text.replace(/[&<>"']/g, m => map[m]);
-            // Restore allowed clinical tags
-            return safe
-                .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
-                .replace(/&lt;strong&gt;/gi, '<strong>')
-                .replace(/&lt;\/strong&gt;/gi, '</strong>')
-                .replace(/&lt;em&gt;/gi, '<em>')
-                .replace(/&lt;\/em&gt;/gi, '</em>')
-                .replace(/&lt;ul&gt;/gi, '<ul>')
-                .replace(/&lt;\/ul&gt;/gi, '</ul>')
-                .replace(/&lt;li&gt;/gi, '<li>')
-                .replace(/&lt;\/li&gt;/gi, '</li>');
+        sanitizeHTML: function (str) {
+            if (!str) return '';
+            const temp = document.createElement('div');
+            temp.textContent = str;
+            return temp.innerHTML;
+        },
+
+        speakTerm: function (text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'es-MX';
+                utterance.rate = 0.95;
+                window.speechSynthesis.speak(utterance);
+            }
+        },
+
+        haptic: function () {
+            if ('vibrate' in navigator) {
+                try { navigator.vibrate(10); } catch (e) {}
+            }
         }
     },
 
@@ -153,7 +150,8 @@ const App = {
             aboutBtn: document.getElementById('about-btn'),
             themeToggle: document.getElementById('theme-toggle'),
             gameView: document.getElementById('game-view'),
-            clearSearchBtn: document.getElementById('clear-search')
+            clearSearchBtn: document.getElementById('clear-search'),
+            termOfTheDay: document.getElementById('term-of-the-day')
         };
     },
 
@@ -371,13 +369,33 @@ const App = {
 
     renderResults: function (results) {
         if (results.length === 0) {
+            const pearls = [
+                "¿Sabías que la 'Saliencia aberrante' es el mecanismo neurocognitivo central detrás de la formación de delirios?",
+                "La fenomenología (EASE) sugiere que los trastornos de la ipseidad suelen preceder a los síntomas psicóticos positivos.",
+                "En el examen mental, las 'acoasmas' se refieren a alucinaciones auditivas elementales como chasquidos o zumbidos.",
+                "El concepto de 'Insight' en psiquiatría es multidimensional e incluye la conciencia de enfermedad y la adherencia al tratamiento.",
+                "La 'prosopagnosia' es la incapacidad de reconocer rostros conocidos, a menudo por lesiones en el área fusiforme."
+            ];
+            const randomPearl = pearls[Math.floor(Math.random() * pearls.length)];
+
             this.nodes.resultsView.innerHTML = `
-                <div class="card" style="text-align: center; padding: 3rem 1rem;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
-                    <h3 style="margin: 0; color: var(--text-p);">No se encontraron términos</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">Intenta con palabras similares o revisa la ortografía.</p>
+                <div class="card animate-pop" style="text-align: center; padding: 2.5rem 1.5rem; border-color: var(--bau-yellow);">
+                    <div style="font-size: 3.5rem; margin-bottom: 1rem;">🕳️</div>
+                    <h3 style="margin: 0; color: var(--bau-black); font-family: 'Outfit', sans-serif; font-weight: 800;">¿PERDIDO EN EL PSIQUISMO?</h3>
+                    <p style="font-size: 0.95rem; margin-top: 0.75rem; color: var(--text-p);">No encontramos el término exacto, pero no te vayas sin aprender algo:</p>
+                    
+                    <div style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bau-yellow); border: 3px solid var(--bau-black); box-shadow: 4px 4px 0px var(--bau-black); border-radius: 12px; text-align: left;">
+                        <span style="font-weight: 900; font-size: 0.7rem; text-transform: uppercase; color: var(--bau-red); display: block; margin-bottom: 0.5rem;">💡 Sabías que...</span>
+                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--bau-black); font-weight: 600;">${randomPearl}</p>
+                    </div>
+
+                    <button class="btn" style="margin-top: 1.5rem; width: 100%;" onclick="App.viewTerm(App.data.terms[Math.floor(Math.random()*App.data.terms.length)].term_id)">
+                        🎲 Explorar término aleatorio
+                    </button>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;" onclick="App.switchTab('nav-dictionary')">O vuelve al <span style="text-decoration: underline; cursor: pointer;">índice general</span></p>
                 </div>
             `;
+            return;
         } else {
             this.nodes.resultsView.innerHTML = `
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0 0.5rem;">
@@ -401,6 +419,48 @@ const App = {
             `;
         }
         this.renderView('results');
+    },
+
+    renderTermOfTheDay: function () {
+        if (!this.nodes.termOfTheDay || !this.data.terms || this.data.terms.length === 0) return;
+
+        // Deterministic daily selection
+        const filterTerms = this.data.terms.filter(t => t && t.definition_clinical && t.definition_clinical.core);
+        if (filterTerms.length === 0) return;
+
+        const dateStr = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD"
+        let seed = 0;
+        for (let i = 0; i < dateStr.length; i++) {
+            seed += dateStr.charCodeAt(i);
+        }
+        const dailyIndex = seed % filterTerms.length;
+        const dailyTerm = filterTerms[dailyIndex];
+
+        const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
+        const tipHtml = objMarker ? `
+            <div style="background: rgba(0,0,0,0.05); padding: 0.75rem; border-left: 3px solid var(--bau-blue); margin-bottom: 1rem; border-radius: var(--radius-xs);">
+                <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.2rem; color: var(--bau-black);">💡 Tip Clínico:</strong>
+                <span style="font-size: 0.85rem; font-style: italic; color: var(--text-secondary);">${this.utils.sanitizeHTML(objMarker)}</span>
+            </div>
+        ` : '';
+
+        this.nodes.termOfTheDay.innerHTML = `
+            <div class="totd-card" onclick="App.viewTerm('${dailyTerm.term_id}')">
+                <div class="totd-ribbon">Término del Día</div>
+                <div class="totd-content">
+                    <h3 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h3>
+                    <div class="badge ${dailyTerm.risk_weight > 1 ? 'badge-risk-critical' : ''}" style="display:inline-block; margin-bottom: 0.5rem; font-size: 0.65rem;">
+                        ${this.utils.sanitizeHTML(dailyTerm.term_kind)}
+                    </div>
+                    <p class="totd-snippet">
+                        ${this.utils.sanitizeHTML(dailyTerm.definition_clinical.core.substring(0, 150))}...
+                    </p>
+                    ${tipHtml}
+                    <div class="totd-action">Leer Ficha Completa →</div>
+                </div>
+            </div>
+        `;
+        this.nodes.termOfTheDay.classList.remove('hidden');
     },
 
     viewTerm: function (termId, isPopState = false) {
