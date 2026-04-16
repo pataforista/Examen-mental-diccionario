@@ -551,9 +551,9 @@ const App = {
         const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
         
         const tipHtml = objMarker ? `
-            <div style="background: rgba(0,0,0,0.08); padding: 1rem; border-left: 6px solid var(--bau-blue); margin-bottom: 1.25rem; border-radius: 4px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-                <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem; color: var(--bau-black); opacity: 0.7;">💡 Perla Clínica:</strong>
-                <span style="font-size: 0.9rem; font-style: italic; color: var(--bau-black); line-height: 1.4; display: block;">${this.utils.sanitizeHTML(objMarker)}</span>
+            <div style="background: rgba(var(--v-on-primary-container-rgb, 0,0,0), 0.08); padding: 1rem; border-left: 6px solid var(--bau-blue); margin-bottom: 1.25rem; border-radius: 4px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+                <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem; color: inherit; opacity: 0.7;">💡 Perla Clínica:</strong>
+                <span style="font-size: 0.9rem; font-style: italic; color: inherit; line-height: 1.4; display: block;">${this.utils.sanitizeHTML(objMarker)}</span>
             </div>
         ` : '';
 
@@ -565,16 +565,16 @@ const App = {
             <div class="totd-card" onclick="App.viewTerm('${dailyTerm.term_id}')">
                 <div class="totd-ribbon">Término del Día</div>
                 <div class="totd-content">
-                    <h3 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h3>
+                    <h3 class="totd-title" style="color: inherit;">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h3>
                     <div class="badge ${dailyTerm.risk_weight > 1 ? 'badge-risk-critical' : ''}" style="display:inline-block; margin-bottom: 0.75rem; font-size: 0.7rem; background: var(--bau-magenta); color: white; border: none;">
                         ${this.utils.sanitizeHTML(dailyTerm.term_kind)}
                     </div>
-                    <p class="totd-snippet">
+                    <p class="totd-snippet" style="color: inherit;">
                         ${this.utils.sanitizeHTML(truncatedDef)}
                     </p>
                     ${tipHtml}
                     <div style="display:flex; gap:1rem; align-items: center; justify-content: space-between;">
-                        <div class="totd-action">Explorar Ficha Completa →</div>
+                        <div class="totd-action" style="color: inherit;">Explorar Ficha Completa →</div>
                         <button class="share-pill" onclick="event.stopPropagation(); App.shareTerm('${dailyTerm.term_id}')">
                             <span>📤</span> COMPARTIR
                         </button>

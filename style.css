@@ -378,7 +378,7 @@ main {
 
 .totd-snippet {
     font-size: 0.95rem;
-    color: var(--bau-black);
+    color: inherit;
     font-weight: 500;
     line-height: 1.5;
     margin: 0 0 1rem 0;
@@ -430,9 +430,18 @@ main {
 }
 
 [data-theme="dark"] .totd-card {
-    background: var(--primary-container);
+    background: var(--card);
     border: 2px solid var(--primary);
     box-shadow: 8px 8px 0px var(--primary);
+}
+
+[data-theme="dark"] .totd-card .totd-title {
+    color: var(--text);
+}
+
+[data-theme="dark"] .totd-card .totd-snippet {
+    color: var(--text);
+    opacity: 0.9;
 }
 
 [data-theme="dark"] .totd-title, 
