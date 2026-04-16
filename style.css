@@ -8,37 +8,27 @@
     --transition-speed: 0.3s;
     --md-sys-motion-standard: cubic-bezier(0.2, 0, 0, 1);
     
-    /* Bauhaus-Memphis Radii */
-    --radius-none: 0;
-    --radius-xs: 2px;
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 20px;
-    --radius-xl: 32px;
-    --radius-full: 999px;
-
-    /* Bauhaus Primary Palette */
-    --bau-red: #FF3E3E;
-    --bau-yellow: #FFD700;
-    --bau-blue: #0055FF;
-    --bau-black: #1C1B1F;
+    /* Bauhaus-Memphis Palette (Updated) */
+    --bau-magenta: #95215c;
+    --bau-brown: #996335;
+    --bau-brick: #974443;
+    --bau-black: #211f1f;
+    --bau-olive: #95a143;
+    --bau-gold: #9a8238;
+    --bau-green: #7ac25e;
+    --bau-teal: #7acdbf;
     --bau-cream: #FFF8E7;
 
-    /* Memphis Accents */
-    --mem-pink: #FF8E72;
-    --mem-teal: #56D8B6;
-    --mem-purple: #B19CD9;
-
-    /* REGISTRO CLARO — Bauhaus/Memphis adapted */
+    /* REGISTRO CLARO — Minimalist Bauhaus/Memphis */
     --v-bg: var(--bau-cream);
     --v-text: var(--bau-black);
-    --v-primary: var(--bau-blue);
+    --v-primary: var(--bau-teal);
     --v-on-primary: #FFFFFF;
-    --v-primary-container: #D1E1FF;
-    --v-on-primary-container: #001B3D;
-    --v-secondary-container: #FFECA1;
-    --v-accent: var(--bau-red);
-    --v-detail: var(--bau-yellow);
+    --v-primary-container: rgba(122, 205, 191, 0.2);
+    --v-on-primary-container: #00201a;
+    --v-secondary-container: rgba(154, 130, 56, 0.2);
+    --v-accent: var(--bau-magenta);
+    --v-detail: var(--bau-gold);
     --v-border: 4px solid var(--bau-black);
     --v-font: 'Outfit', sans-serif;
     --v-shadow: 6px 6px 0px var(--bau-black);
@@ -71,17 +61,20 @@
 }
 
 [data-theme="dark"] {
-    /* REGISTRO OSCURO — "The Void" (M3 Dark adaptation) */
-    --o-bg: #1C1B1F; /* Dark Surface */
-    --o-text: #E6E1E5; /* On Surface */
-    --o-accent-a: #FFB4AB; /* Error Light */
-    --o-accent-b: #80F6CD; /* Primary Dark Variant */
-    --o-primary-container: #005141;
-    --o-on-primary-container: #80F6CD;
-    --o-secondary-container: #4A4458;
-    --o-light: #FFB900;
+    /* REGISTRO OSCURO — Minimalist Neo-Gothic/Forest */
+    --o-bg: #231f20;
+    --o-text: #e0e0e0;
+    --o-accent-a: #b9e0a6; /* Menta */
+    --o-accent-b: #789d5e; /* Bosque */
+    --o-primary-container: #42173d; /* Púrpura */
+    --o-on-primary-container: #b9e0a6;
+    --o-secondary-container: #572445; /* Vino */
+    --o-light: #747e57; /* Musgo */
     --o-font: 'Space Grotesk', sans-serif;
-    --o-shadow-glow: 0 4px 8px rgba(0,0,0,0.5);
+    --o-shadow-glow: 0 4px 15px rgba(0,0,0,0.7);
+    --o-border-color: #747e57;
+    --o-accent-c: #693f4d; /* Rosa viejo */
+    --o-accent-d: #726053; /* Café */
 
     /* Override Active */
     --bg: var(--o-bg);
@@ -242,8 +235,8 @@ body::before {
 .search-container input {
     width: 100%;
     padding: 1rem 1rem 1rem 3.5rem;
-    border: 3px solid var(--bau-black);
-    border-radius: var(--radius-md);
+    border: 4px solid var(--bau-black);
+    border-radius: var(--radius-sm);
     background: white;
     color: var(--bau-black);
     font-family: var(--font-main);
@@ -340,12 +333,12 @@ main {
 
 /* Term of the Day Component */
 .totd-card {
-    background: var(--bau-yellow);
-    border: 4px solid var(--bau-black);
-    border-radius: var(--radius-md);
+    background: var(--bau-gold);
+    border: 5px solid var(--bau-black);
+    border-radius: var(--radius-sm);
     margin-bottom: 2.5rem;
     position: relative;
-    box-shadow: 8px 8px 0px var(--bau-black);
+    box-shadow: 10px 10px 0px var(--bau-black);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
     overflow: hidden;

@@ -140,30 +140,30 @@ const App = {
             canvas.height = 1080;
             const ctx = canvas.getContext('2d');
 
-            // Colors (Bauhaus Cream Palette)
+            // Colors (Updated Bauhaus/Memphis Palette)
             const cream = '#FFF8E7';
-            const black = '#1C1B1F';
-            const red = '#FF3E3E';
-            const yellow = '#FFD700';
-            const blue = '#0055FF';
+            const black = '#211f1f';
+            const magenta = '#95215c';
+            const gold = '#9a8238';
+            const teal = '#7acdbf';
 
             // Background
             ctx.fillStyle = cream;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             // Bauhaus Accents
-            // Red Circle (Top Right)
-            ctx.fillStyle = red;
+            // Magenta Circle (Top Right)
+            ctx.fillStyle = magenta;
             ctx.beginPath();
             ctx.arc(950, 130, 180, 0, Math.PI * 2);
             ctx.fill();
 
-            // Blue Square (Bottom Left)
-            ctx.fillStyle = blue;
+            // Teal Square (Bottom Left)
+            ctx.fillStyle = teal;
             ctx.fillRect(-50, 900, 300, 300);
 
-            // Yellow Triangle (Background behind title)
-            ctx.fillStyle = yellow;
+            // Gold Triangle (Background behind title)
+            ctx.fillStyle = gold;
             ctx.beginPath();
             ctx.moveTo(100, 350);
             ctx.lineTo(980, 200);
@@ -190,7 +190,7 @@ const App = {
             this.wrapText(ctx, termName, 80, 350, 920, 120);
 
             // Term Kind Badge
-            ctx.fillStyle = red;
+            ctx.fillStyle = magenta;
             ctx.fillRect(80, 400, 250, 50);
             ctx.fillStyle = '#FFFFFF';
             ctx.font = '800 30px Outfit, sans-serif';

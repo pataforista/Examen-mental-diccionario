@@ -1,18 +1,39 @@
 :root {
-    --bg: #0b0b0b;
-    --card: #141414;
-    --muted: #1a1a1a;
-    --text: #f2f2f2;
-    --sub: #b8b8b8;
-    --line: #2a2a2a;
-    --ok: #2dd4bf;
-    --bad: #fb7185;
-    --btn: #222;
-    --btn2: #2b2b2b;
+    /* Default: Light (Claro) */
+    --bg: #FFF8E7;
+    --card: #ffffff;
+    --muted: #fbf6e9;
+    --text: #211f1f;
+    --sub: #726053;
+    --line: #211f1f;
+    --ok: #7acdbf;
+    --bad: #95215c;
+    --btn: #211f1f;
+    --btn-text: #ffffff;
+    --btn2: #3d3d3d;
+    --shadow: 6px 6px 0px #211f1f;
+    --radius: 4px;
+}
+
+[data-theme="dark"] {
+    --bg: #231f20;
+    --card: #42173d;
+    --muted: #2d1029;
+    --text: #e0e0e0;
+    --sub: #b9e0a6;
+    --line: #747e57;
+    --ok: #b9e0a6;
+    --bad: #693f4d;
+    --btn: #789d5e;
+    --btn-text: #231f20;
+    --btn2: #b9e0a6;
+    --shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    --radius: 8px;
 }
 
 * {
     box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 html,
@@ -22,7 +43,7 @@ body {
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
 }
@@ -32,10 +53,11 @@ body {
     justify-content: space-between;
     gap: 12px;
     padding: 14px 16px;
-    border-bottom: 1px solid var(--line);
-    background: #0f0f0f;
+    border-bottom: 3px solid var(--line);
+    background: var(--bg);
     position: sticky;
     top: 0;
+    z-index: 10;
 }
 
 .brand .title {
@@ -59,13 +81,15 @@ body {
 
 .card {
     background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 14px;
+    border: 3px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
 }
 
 .card.muted {
     background: var(--muted);
+    box-shadow: none;
 }
 
 .row {
@@ -81,34 +105,41 @@ body {
 }
 
 .select {
-    background: #0f0f0f;
-    border: 1px solid var(--line);
+    background: var(--card);
+    border: 2px solid var(--line);
     color: var(--text);
-    border-radius: 12px;
+    border-radius: var(--radius);
     padding: 10px 12px;
     outline: none;
+    font-weight: 600;
 }
 
 .btn {
-    border: 1px solid var(--line);
+    border: 2px solid var(--line);
     background: var(--btn);
-    color: var(--text);
-    padding: 10px 12px;
-    border-radius: 12px;
+    color: var(--btn-text);
+    padding: 10px 16px;
+    border-radius: var(--radius);
     cursor: pointer;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    background: var(--btn2);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--line);
 }
 
 .btn.primary {
-    background: #0f172a;
-    border-color: #1e293b;
+    background: var(--ok);
+    color: var(--bg);
+    border-color: var(--line);
 }
 
 .btn.primary:hover {
-    background: #111c33;
+    background: var(--ok);
+    opacity: 0.9;
 }
 
 .btn.ghost {
@@ -117,8 +148,8 @@ body {
 
 .segmented {
     display: inline-flex;
-    border: 1px solid var(--line);
-    border-radius: 12px;
+    border: 2px solid var(--line);
+    border-radius: var(--radius);
     overflow: hidden;
 }
 
@@ -126,12 +157,15 @@ body {
     background: transparent;
     border: 0;
     color: var(--text);
-    padding: 10px 12px;
+    padding: 10px 14px;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
 }
 
 .seg[aria-selected="true"] {
-    background: #0f172a;
+    background: var(--btn);
+    color: var(--btn-text);
 }
 
 .stats {
@@ -144,7 +178,7 @@ body {
 }
 
 .stats .k {
-    color: #8b8b8b;
+    opacity: 0.7;
     margin-right: 6px;
 }
 
@@ -168,16 +202,19 @@ body {
 
 .opt {
     text-align: left;
-    padding: 12px 12px;
-    border-radius: 14px;
-    background: #0f0f0f;
-    border: 1px solid var(--line);
+    padding: 14px 16px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 2px solid var(--line);
     cursor: pointer;
     line-height: 1.35;
+    font-weight: 600;
 }
 
 .opt:hover {
-    border-color: #3b3b3b;
+    background: var(--muted);
+    border-color: var(--line);
+    transform: translateX(4px);
 }
 
 .opt[disabled] {
@@ -201,9 +238,11 @@ body {
 
 .footer {
     margin-top: 10px;
+    border-top: 1px dashed var(--line);
+    padding-top: 10px;
 }
 
 .hint {
-    color: #9a9a9a;
+    opacity: 0.7;
     font-size: 12px;
 }

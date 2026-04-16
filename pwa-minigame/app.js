@@ -6,6 +6,7 @@
 
     // --- Estado persistente simple ---
     const STORAGE_KEY = "minigame_v1_stats";
+    const THEME_KEY = "minigame_v1_theme";
     const defaultStats = { score: 0, streak: 0, correct: 0, wrong: 0 };
     let stats = loadStats();
 
@@ -19,6 +20,7 @@
     const btnReset = $("#btnReset");
 
     const btnInstall = $("#btnInstall");
+    const btnTheme = $("#btnTheme");
     let deferredPrompt = null;
 
     const modeMcq = $("#modeMcq");
@@ -41,6 +43,7 @@
     let currentRound = null; // objeto con datos de ronda
 
     // --- Init ---
+    initTheme();
     initPWA();
     initControls();
     populateDomains();
@@ -73,6 +76,7 @@
         modeMcq.addEventListener("click", () => setMode(GameMode.MCQ));
         modeDiff.addEventListener("click", () => setMode(GameMode.DIFF));
         btnNext.addEventListener("click", nextRound);
+        btnTheme.addEventListener("click", toggleTheme);
 
         btnReset.addEventListener("click", () => {
             stats = { ...defaultStats };
@@ -80,6 +84,27 @@
             renderStats();
             showFeedback("Progreso borrado.", "ok");
         });
+    }
+
+    function initTheme() {
+        const saved = localStorage.getItem(THEME_KEY) || "light";
+        setTheme(saved);
+    }
+
+    function toggleTheme() {
+        const current = document.body.getAttribute("data-theme") || "light";
+        const next = current === "light" ? "dark" : "light";
+        setTheme(next);
+    }
+
+    function setTheme(theme) {
+        document.body.setAttribute("data-theme", theme);
+        btnTheme.textContent = theme === "light" ? "🌞" : "🌙";
+        localStorage.setItem(THEME_KEY, theme);
+        
+        // Update manifest color
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "light" ? "#FFF8E7" : "#231f20");
     }
 
     function setMode(mode) {
