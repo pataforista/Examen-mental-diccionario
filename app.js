@@ -547,30 +547,36 @@ const App = {
         const dailyIndex = seed % filterTerms.length;
         const dailyTerm = filterTerms[dailyIndex];
 
+        // Determine a clinical marker if available
         const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
+        
         const tipHtml = objMarker ? `
-            <div style="background: rgba(0,0,0,0.05); padding: 0.75rem; border-left: 3px solid var(--bau-blue); margin-bottom: 1rem; border-radius: var(--radius-xs);">
-                <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.2rem; color: var(--bau-black);">💡 Tip Clínico:</strong>
-                <span style="font-size: 0.85rem; font-style: italic; color: var(--text-secondary);">${this.utils.sanitizeHTML(objMarker)}</span>
+            <div style="background: rgba(0,0,0,0.08); padding: 1rem; border-left: 6px solid var(--bau-blue); margin-bottom: 1.25rem; border-radius: 4px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+                <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem; color: var(--bau-black); opacity: 0.7;">💡 Perla Clínica:</strong>
+                <span style="font-size: 0.9rem; font-style: italic; color: var(--bau-black); line-height: 1.4; display: block;">${this.utils.sanitizeHTML(objMarker)}</span>
             </div>
         ` : '';
+
+        // Safely truncate definition
+        const fullDef = dailyTerm.definition_clinical.core || "";
+        const truncatedDef = fullDef.length > 160 ? fullDef.substring(0, 160).trim() + "..." : fullDef;
 
         this.nodes.termOfTheDay.innerHTML = `
             <div class="totd-card" onclick="App.viewTerm('${dailyTerm.term_id}')">
                 <div class="totd-ribbon">Término del Día</div>
                 <div class="totd-content">
                     <h3 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h3>
-                    <div class="badge ${dailyTerm.risk_weight > 1 ? 'badge-risk-critical' : ''}" style="display:inline-block; margin-bottom: 0.5rem; font-size: 0.65rem;">
+                    <div class="badge ${dailyTerm.risk_weight > 1 ? 'badge-risk-critical' : ''}" style="display:inline-block; margin-bottom: 0.75rem; font-size: 0.7rem; background: var(--bau-magenta); color: white; border: none;">
                         ${this.utils.sanitizeHTML(dailyTerm.term_kind)}
                     </div>
                     <p class="totd-snippet">
-                        ${this.utils.sanitizeHTML(dailyTerm.definition_clinical.core.substring(0, 150))}...
+                        ${this.utils.sanitizeHTML(truncatedDef)}
                     </p>
                     ${tipHtml}
-                    <div style="display:flex; gap:0.75rem; align-items: center;">
-                        <div class="totd-action">Leer Ficha Completa →</div>
+                    <div style="display:flex; gap:1rem; align-items: center; justify-content: space-between;">
+                        <div class="totd-action">Explorar Ficha Completa →</div>
                         <button class="share-pill" onclick="event.stopPropagation(); App.shareTerm('${dailyTerm.term_id}')">
-                            <span>📤</span> Compartir
+                            <span>📤</span> COMPARTIR
                         </button>
                     </div>
                 </div>

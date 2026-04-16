@@ -17,6 +17,7 @@
     --bau-gold: #9a8238;
     --bau-green: #7ac25e;
     --bau-teal: #7acdbf;
+    --bau-blue: #375a9a;
     --bau-cream: #FFF8E7;
 
     /* REGISTRO CLARO — Minimalist Bauhaus/Memphis */
@@ -333,13 +334,13 @@ main {
 
 /* Term of the Day Component */
 .totd-card {
-    background: var(--bau-gold);
+    background: #e3c15d; /* Improved, more vibrant Bauhaus yellow/gold */
     border: 5px solid var(--bau-black);
     border-radius: var(--radius-sm);
     margin-bottom: 2.5rem;
     position: relative;
     box-shadow: 10px 10px 0px var(--bau-black);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.2s;
     cursor: pointer;
     overflow: hidden;
 }
@@ -376,10 +377,12 @@ main {
 }
 
 .totd-snippet {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
+    font-size: 0.95rem;
+    color: var(--bau-black);
+    font-weight: 500;
+    line-height: 1.5;
     margin: 0 0 1rem 0;
+    opacity: 0.85;
 }
 
 .totd-action {
