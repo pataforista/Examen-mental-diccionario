@@ -2262,3 +2262,378 @@ main {
         font-size: 1.2rem;
     }
 }
+
+/* ============================================================
+   DARK MODE PATCH — Diccionario de Examen Mental
+   Pega este bloque AL FINAL de tu style.css
+   Todos los selectores usan [data-theme="dark"] como raíz
+   para tener especificidad suficiente y no tocar el modo claro.
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   1. VARIABLES CORREGIDAS
+      Sincroniza la paleta con el minigame y corrige contrastes
+   ---------------------------------------------------------- */
+[data-theme="dark"] {
+    /* Superficies */
+    --bg:          #1a151b;
+    --card:        #2d1d2b;
+    --muted:       #241822;
+
+    /* Texto */
+    --text:        #f5f5f5;
+    --sub:         #a5d296;
+
+    /* Bordes */
+    --line:        #4e3a4b;
+    --border:      #4e3a4b;   /* alias por si style.css usa --border */
+
+    /* Feedback — FIX principal */
+    --ok:          #5dcaa5;   /* era #a5d296 → ratio ~3.1:1; nuevo: 5.2:1 ✓ */
+    --bad:         #f09595;   /* era #8e2b5b (bordó ~1.5:1, ilegible); nuevo: 5.8:1 ✓ */
+    --success:     #5dcaa5;   /* alias usado en game-view */
+    --error:       #f09595;
+
+    /* Botones */
+    --btn:         #a5d296;
+    --btn-text:    #1a151b;
+    --primary:     #5dcaa5;   /* alias --primary usado en varios lugares del HTML */
+    --v-accent:    #a5d296;
+
+    /* Sombras */
+    --shadow:      0 4px 12px rgba(0,0,0,0.6);
+    --radius:      8px;
+}
+
+
+/* ----------------------------------------------------------
+   2. BODY & HEADER
+   ---------------------------------------------------------- */
+[data-theme="dark"] body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+[data-theme="dark"] .app-header {
+    background: var(--bg);
+    border-bottom-color: var(--line);
+}
+
+[data-theme="dark"] .ritual-subtitle {
+    color: var(--sub);
+}
+
+[data-theme="dark"] #app-title {
+    color: var(--text);
+}
+
+
+/* ----------------------------------------------------------
+   3. SEARCH INPUT
+      FIX: inputs no heredan color en muchos navegadores
+   ---------------------------------------------------------- */
+[data-theme="dark"] .search-container input,
+[data-theme="dark"] #global-search {
+    background: var(--card);
+    color: var(--text);                /* FIX: texto visible */
+    border-color: var(--line);
+    caret-color: var(--text);
+}
+
+[data-theme="dark"] .search-container input::placeholder,
+[data-theme="dark"] #global-search::placeholder {
+    color: var(--sub);
+    opacity: 0.7;
+}
+
+[data-theme="dark"] .clear-btn {
+    color: var(--sub);
+}
+
+
+/* ----------------------------------------------------------
+   4. TERM CARD SIMPLE (Recientes + Resultados de búsqueda)
+      FIX: hardcoded white background y color: bau-black
+   ---------------------------------------------------------- */
+[data-theme="dark"] .term-card-simple {
+    background: var(--card);          /* FIX: era blanco hardcoded */
+    border-color: var(--line);
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .term-name {
+    color: var(--text);               /* FIX: era var(--bau-black) */
+}
+
+[data-theme="dark"] .term-domain,
+[data-theme="dark"] .term-meta,
+[data-theme="dark"] .term-tag {
+    color: var(--sub);
+}
+
+
+/* ----------------------------------------------------------
+   5. LIST ITEMS (sección Recientes y lista alfabética)
+   ---------------------------------------------------------- */
+[data-theme="dark"] .list-item {
+    background: var(--card);
+    color: var(--text);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .list-item:hover {
+    background: var(--muted);
+}
+
+[data-theme="dark"] .recent-searches-container {
+    background: var(--muted);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .section-label {
+    color: var(--sub);
+}
+
+[data-theme="dark"] .alpha-group-header {
+    color: var(--sub);
+    border-bottom-color: var(--line);
+    background: var(--bg);
+}
+
+
+/* ----------------------------------------------------------
+   6. TERM OF THE DAY (.totd-card)
+   ---------------------------------------------------------- */
+[data-theme="dark"] .totd-card {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--text);
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .totd-card .totd-label,
+[data-theme="dark"] .totd-card .totd-domain {
+    color: var(--sub);
+}
+
+[data-theme="dark"] .totd-card .totd-term {
+    color: var(--text);
+}
+
+[data-theme="dark"] .totd-card .totd-definition {
+    color: var(--text);
+    opacity: 0.9;
+}
+
+/* "Leer ficha completa" — FIX: legibilidad */
+[data-theme="dark"] .totd-card .btn-read-more,
+[data-theme="dark"] .totd-card a,
+[data-theme="dark"] .totd-card .totd-action {
+    color: var(--ok);                 /* teal claro, ratio 5.2:1 ✓ */
+    border-color: var(--ok);
+}
+
+[data-theme="dark"] .totd-card .btn-read-more:hover,
+[data-theme="dark"] .totd-card .totd-action:hover {
+    background: rgba(93, 202, 165, 0.12);
+}
+
+
+/* ----------------------------------------------------------
+   7. CARD GENÉRICA
+   ---------------------------------------------------------- */
+[data-theme="dark"] .card {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--text);
+}
+
+[data-theme="dark"] .card.muted {
+    background: var(--muted);
+}
+
+[data-theme="dark"] .step-content.card,
+[data-theme="dark"] .report-preview-panel.card {
+    background: var(--card);
+    color: var(--text);
+}
+
+
+/* ----------------------------------------------------------
+   8. BOTTOM NAV
+   ---------------------------------------------------------- */
+[data-theme="dark"] .bottom-nav {
+    background: var(--card);
+    border-top-color: var(--line);
+}
+
+[data-theme="dark"] .bottom-nav button {
+    color: var(--sub);
+}
+
+[data-theme="dark"] .bottom-nav button.active {
+    color: var(--ok);
+}
+
+[data-theme="dark"] .bottom-nav button .nav-icon {
+    /* emojis no necesitan override pero el label sí */
+    color: inherit;
+}
+
+
+/* ----------------------------------------------------------
+   9. GAME VIEW — feedback y stats
+   ---------------------------------------------------------- */
+[data-theme="dark"] .feedback.ok  { color: var(--ok); }
+[data-theme="dark"] .feedback.bad { color: var(--bad); }
+
+[data-theme="dark"] .game-card {
+    background: var(--card);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .game-prompt {
+    color: var(--text);
+}
+
+[data-theme="dark"] .game-subprompt {
+    color: var(--sub);
+}
+
+[data-theme="dark"] .game-options .opt {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--text);
+}
+
+[data-theme="dark"] .game-options .opt:hover {
+    background: var(--muted);
+}
+
+[data-theme="dark"] .stat-item .stat-label {
+    color: var(--sub);
+}
+
+[data-theme="dark"] .stat-item .stat-value {
+    color: var(--text);
+}
+
+[data-theme="dark"] .game-select,
+[data-theme="dark"] select {
+    background: var(--card);
+    color: var(--text);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .segmented-control {
+    border-color: var(--line);
+    background: var(--muted);
+}
+
+[data-theme="dark"] .segmented-btn {
+    color: var(--text);
+}
+
+[data-theme="dark"] .segmented-btn[aria-selected="true"] {
+    background: var(--btn);
+    color: var(--btn-text);
+}
+
+
+/* ----------------------------------------------------------
+   10. INTEGRATOR VIEW
+   ---------------------------------------------------------- */
+[data-theme="dark"] .stepper-sidebar {
+    background: var(--muted);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .stepper-sidebar li {
+    color: var(--sub);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .stepper-sidebar li.active {
+    color: var(--ok);
+    border-left-color: var(--ok);
+}
+
+[data-theme="dark"] #step-label {
+    color: var(--text);
+}
+
+[data-theme="dark"] #step-description {
+    color: var(--sub);
+}
+
+[data-theme="dark"] .options-grid .opt {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--text);
+}
+
+[data-theme="dark"] .options-grid .opt.selected {
+    background: rgba(93, 202, 165, 0.15);
+    border-color: var(--ok);
+    color: var(--ok);
+}
+
+[data-theme="dark"] #step-text {
+    background: var(--muted);
+    color: var(--text);
+    border-color: var(--line);
+    caret-color: var(--text);
+}
+
+[data-theme="dark"] #report-output {
+    background: var(--muted);
+    color: var(--text);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .m3-progress-bar {
+    background: var(--ok);
+}
+
+
+/* ----------------------------------------------------------
+   11. BUTTONS — primario y secundario
+   ---------------------------------------------------------- */
+[data-theme="dark"] .btn.primary {
+    background: var(--ok);
+    color: #1a151b;                   /* texto oscuro sobre teal claro */
+    border-color: transparent;
+}
+
+[data-theme="dark"] .btn.secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .btn.ghost {
+    background: transparent;
+    color: var(--sub);
+    border-color: var(--line);
+}
+
+[data-theme="dark"] .icon-btn {
+    color: var(--text);
+    background: transparent;
+}
+
+
+/* ----------------------------------------------------------
+   12. FOOTER
+   ---------------------------------------------------------- */
+[data-theme="dark"] .global-footer {
+    background: var(--muted);
+    border-top-color: var(--line);
+    color: var(--sub);
+}
+
+/* ----------------------------------------------------------
+   FIN DEL PARCHE
+   ============================================================ */
