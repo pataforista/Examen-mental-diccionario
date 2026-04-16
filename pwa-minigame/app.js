@@ -104,7 +104,7 @@
         
         // Update manifest color
         const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "light" ? "#FFF8E7" : "#231f20");
+        if (meta) meta.setAttribute("content", theme === "light" ? "#FFF8E7" : "#1a151b");
     }
 
     function setMode(mode) {

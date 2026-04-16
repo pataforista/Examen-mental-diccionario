@@ -16,18 +16,18 @@
 }
 
 [data-theme="dark"] {
-    --bg: #231f20;
-    --card: #42173d;
-    --muted: #2d1029;
-    --text: #e0e0e0;
-    --sub: #b9e0a6;
-    --line: #747e57;
-    --ok: #b9e0a6;
-    --bad: #693f4d;
-    --btn: #789d5e;
-    --btn-text: #231f20;
-    --btn2: #b9e0a6;
-    --shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    --bg: #1a151b;
+    --card: #2d1d2b;
+    --muted: #241822;
+    --text: #f5f5f5;
+    --sub: #a5d296;
+    --line: #4e3a4b;
+    --ok: #a5d296;
+    --bad: #8e2b5b;
+    --btn: #a5d296;
+    --btn-text: #1a151b;
+    --btn2: #3d3d3d;
+    --shadow: 0 4px 12px rgba(0,0,0,0.6);
     --radius: 8px;
 }
 
@@ -124,6 +124,7 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-family: inherit;
 }
 
 .btn:hover {
@@ -206,9 +207,11 @@ body {
     border-radius: var(--radius);
     background: var(--card);
     border: 2px solid var(--line);
+    color: var(--text);
     cursor: pointer;
     line-height: 1.35;
     font-weight: 600;
+    font-family: inherit;
 }
 
 .opt:hover {
