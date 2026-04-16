@@ -35,10 +35,10 @@ const App = {
     },
 
     checkOnboarding: function () {
-        if (!localStorage.getItem('mse_onboarded_v2.1')) {
+        if (!localStorage.getItem('mse_onboarded_v2.2')) {
             setTimeout(() => {
-                alert("¡Bienvenido al Diccionario de Examen Mental! Pro tip: Activa el 'Modo Maestro' en el Integrador para ver guías de estudio mientras redactas.");
-                localStorage.setItem('mse_onboarded_v2.1', 'true');
+                alert("¡Nuevo! Ya puedes compartir términos clínicos usando tarjetas artísticas diseñadas por el Dr. Celada. Busca el botón 📤.");
+                localStorage.setItem('mse_onboarded_v2.2', 'true');
             }, 1500);
         }
     },
@@ -106,6 +106,117 @@ const App = {
             if ('vibrate' in navigator) {
                 try { navigator.vibrate(10); } catch (e) {}
             }
+        },
+
+        getTermUrl: function (termId) {
+            return `${window.location.origin}${window.location.pathname}#term/${termId}`;
+        },
+
+        wrapText: function (ctx, text, x, y, maxWidth, lineHeight) {
+            const words = text.split(' ');
+            let line = '';
+            let lines = 0;
+
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const metrics = ctx.measureText(testLine);
+                const testWidth = metrics.width;
+                if (testWidth > maxWidth && n > 0) {
+                    ctx.fillText(line, x, y);
+                    line = words[n] + ' ';
+                    y += lineHeight;
+                    lines++;
+                } else {
+                    line = testLine;
+                }
+            }
+            ctx.fillText(line, x, y);
+            return lines + 1;
+        },
+
+        generateShareCard: async function (term) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1080;
+            canvas.height = 1080;
+            const ctx = canvas.getContext('2d');
+
+            // Colors (Bauhaus Cream Palette)
+            const cream = '#FFF8E7';
+            const black = '#1C1B1F';
+            const red = '#FF3E3E';
+            const yellow = '#FFD700';
+            const blue = '#0055FF';
+
+            // Background
+            ctx.fillStyle = cream;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Bauhaus Accents
+            // Red Circle (Top Right)
+            ctx.fillStyle = red;
+            ctx.beginPath();
+            ctx.arc(950, 130, 180, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Blue Square (Bottom Left)
+            ctx.fillStyle = blue;
+            ctx.fillRect(-50, 900, 300, 300);
+
+            // Yellow Triangle (Background behind title)
+            ctx.fillStyle = yellow;
+            ctx.beginPath();
+            ctx.moveTo(100, 350);
+            ctx.lineTo(980, 200);
+            ctx.lineTo(800, 500);
+            ctx.closePath();
+            ctx.fill();
+
+            // Main Border
+            ctx.strokeStyle = black;
+            ctx.lineWidth = 40;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+            // Title "PALABRA DEL DÍA" Ribbon
+            ctx.fillStyle = black;
+            ctx.fillRect(80, 80, 480, 80);
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '900 40px Outfit, sans-serif';
+            ctx.fillText('TERMINOLOGÍA CLÍNICA', 110, 135);
+
+            // Term Name
+            ctx.fillStyle = black;
+            ctx.font = '900 110px Outfit, sans-serif';
+            const termName = term.canonical_name.toUpperCase();
+            this.wrapText(ctx, termName, 80, 350, 920, 120);
+
+            // Term Kind Badge
+            ctx.fillStyle = red;
+            ctx.fillRect(80, 400, 250, 50);
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = '800 30px Outfit, sans-serif';
+            ctx.fillText(term.term_kind.toUpperCase(), 100, 435);
+
+            // Definition Text
+            ctx.fillStyle = black;
+            ctx.font = '500 48px Outfit, sans-serif';
+            const definition = term.definition_clinical?.core || "";
+            const shortDef = definition.length > 280 ? definition.substring(0, 280) + "..." : definition;
+            this.wrapText(ctx, shortDef, 80, 550, 920, 65);
+
+            // Branding / Footer
+            ctx.fillStyle = black;
+            ctx.font = '800 35px Outfit, sans-serif';
+            ctx.fillText('DICCIONARIO DE EXAMEN MENTAL', 80, 980);
+            ctx.font = '400 30px Outfit, sans-serif';
+            ctx.fillText('diccionariomental.pages.dev', 80, 1020);
+
+            // QR Placeholder or Dr. Signature
+            ctx.font = '900 40px Outfit, sans-serif';
+            ctx.fillText('DR. CESAR CELADA', 680, 980);
+
+            return new Promise(resolve => {
+                canvas.toBlob(resolve, 'image/png');
+            });
         }
     },
 
@@ -456,11 +567,59 @@ const App = {
                         ${this.utils.sanitizeHTML(dailyTerm.definition_clinical.core.substring(0, 150))}...
                     </p>
                     ${tipHtml}
-                    <div class="totd-action">Leer Ficha Completa →</div>
+                    <div style="display:flex; gap:0.75rem; align-items: center;">
+                        <div class="totd-action">Leer Ficha Completa →</div>
+                        <button class="share-pill" onclick="event.stopPropagation(); App.shareTerm('${dailyTerm.term_id}')">
+                            <span>📤</span> Compartir
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
         this.nodes.termOfTheDay.classList.remove('hidden');
+    },
+
+    shareTerm: async function (termId) {
+        const term = this.data.terms.find(t => t.term_id === termId);
+        if (!term) return;
+
+        this.utils.haptic();
+        
+        // Show loading state or feedback
+        console.log(`Generating card for ${term.canonical_name}...`);
+        
+        try {
+            const blob = await this.utils.generateShareCard(term);
+            const file = new File([blob], `MSE_${term.canonical_name}.png`, { type: 'image/png' });
+
+            if (navigator.share) {
+                await navigator.share({
+                    title: `Diccionario MSE: ${term.canonical_name}`,
+                    text: `Definición de ${term.canonical_name}: ${term.definition_clinical?.core}`,
+                    url: this.utils.getTermUrl(termId),
+                    files: [file]
+                });
+            } else {
+                // Fallback: Download
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `MSE_${term.canonical_name}.png`;
+                a.click();
+                URL.revokeObjectURL(url);
+                alert("La tarjeta se ha descargado a tu equipo.");
+            }
+        } catch (error) {
+            console.error("Error sharing:", error);
+            // Simple text share if failed
+            if (navigator.share) {
+                navigator.share({
+                    title: `Diccionario MSE: ${term.canonical_name}`,
+                    text: `${term.canonical_name}: ${term.definition_clinical?.core}`,
+                    url: this.utils.getTermUrl(termId)
+                }).catch(() => {});
+            }
+        }
     },
 
     viewTerm: function (termId, isPopState = false) {

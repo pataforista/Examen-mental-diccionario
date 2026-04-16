@@ -399,6 +399,40 @@ main {
     gap: 0.5rem;
 }
 
+.share-pill {
+    background: var(--bau-black);
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: transform 0.2s, background 0.2s;
+    text-transform: uppercase;
+}
+
+.share-pill:hover {
+    background: var(--bau-red);
+    transform: scale(1.05);
+}
+
+.share-pill span {
+    font-size: 1rem;
+}
+
+[data-theme="dark"] .share-pill {
+    background: var(--primary);
+    color: var(--bau-black);
+}
+
+[data-theme="dark"] .share-pill:hover {
+    background: var(--bau-yellow);
+}
+
 [data-theme="dark"] .totd-card {
     background: var(--primary-container);
     border: 2px solid var(--primary);
