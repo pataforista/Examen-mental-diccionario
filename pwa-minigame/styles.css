@@ -6,7 +6,7 @@
     --text: #211f1f;
     --sub: #726053;
     --line: #211f1f;
-    --ok: #7acdbf;
+    --ok: #0f6e56;
     --bad: #95215c;
     --btn: #211f1f;
     --btn-text: #ffffff;
@@ -22,8 +22,8 @@
     --text: #f5f5f5;
     --sub: #a5d296;
     --line: #4e3a4b;
-    --ok: #a5d296;
-    --bad: #8e2b5b;
+    --ok: #5dcaa5;
+    --bad: #f09595;
     --btn: #a5d296;
     --btn-text: #1a151b;
     --btn2: #3d3d3d;
@@ -133,8 +133,8 @@ body {
 }
 
 .btn.primary {
-    background: var(--ok);
-    color: var(--bg);
+    background: #1d9e75;
+    color: #ffffff;
     border-color: var(--line);
 }
 
