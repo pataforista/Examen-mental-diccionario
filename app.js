@@ -208,11 +208,11 @@ const App = {
             ctx.font = '800 35px Outfit, sans-serif';
             ctx.fillText('DICCIONARIO DE EXAMEN MENTAL', 80, 980);
             ctx.font = '400 30px Outfit, sans-serif';
-            ctx.fillText('diccionariomental.pages.dev', 80, 1020);
+            ctx.fillText('examen-mental.pages.dev', 80, 1020);
 
-            // QR Placeholder or Dr. Signature
-            ctx.font = '900 40px Outfit, sans-serif';
-            ctx.fillText('DR. CESAR CELADA', 680, 980);
+            // Download App CTA
+            ctx.font = '900 32px Outfit, sans-serif';
+            ctx.fillText('📱 DESCARGA LA APP', 620, 985);
 
             return new Promise(resolve => {
                 canvas.toBlob(resolve, 'image/png');
