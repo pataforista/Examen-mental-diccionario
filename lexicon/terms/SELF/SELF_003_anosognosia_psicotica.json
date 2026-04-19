@@ -18,7 +18,7 @@
       "locale": "en"
     }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

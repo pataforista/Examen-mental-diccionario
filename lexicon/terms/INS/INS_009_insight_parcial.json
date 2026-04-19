@@ -2,8 +2,16 @@
   "term_id": "INS_009",
   "canonical_name": "Insight parcial",
   "synonyms_and_slang": [
-    "conciencia de enfermedad oscilante",
-    "insight grado 2/3"
+    {
+      "term": "conciencia de enfermedad oscilante",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "insight grado 2/3",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

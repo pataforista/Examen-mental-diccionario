@@ -2,8 +2,16 @@
   "term_id": "CNS_008",
   "canonical_name": "Moria",
   "synonyms_and_slang": [
-    "frivolidad patológica orgánica",
-    "síndrome frontal Witzelsucht (dependiendo de traducción y escuela)"
+    {
+      "term": "frivolidad patológica orgánica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "síndrome frontal Witzelsucht (dependiendo de traducción y escuela)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

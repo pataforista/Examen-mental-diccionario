@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_015",
   "canonical_name": "Difusión del pensamiento",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Creencia de que los pensamientos propios se transmiten o son accesibles para otros.",
     "required_features": [
@@ -59,7 +59,11 @@
     ]
   },
   "synonyms_and_slang": [
-    "difusión del pensamiento"
+    {
+      "term": "difusión del pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "mappings": {}

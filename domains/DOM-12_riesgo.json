@@ -37,11 +37,12 @@
         "ausente",
         "deseo_de_muerte_pasivo",
         "ideacion_activa_sin_plan",
-        "ideacion_planificada_inespecifica",
+        "ideacion_con_metodos_inespecificos",
+        "ideacion_con_metodo_determinado",
         "plan_estructurado_y_letal",
         "intencionalidad_declarada"
       ],
-      "notes": "La progresión desde deseo pasivo a plan estructurado marca incremento exponencial del riesgo."
+      "notes": "Escala: Pasivo -> Activo -> Método -> Plan -> Intención. La transición al 'método' exige evaluar accesibilidad a medios."
     },
     {
       "id": "conducta_autolesiva_no_suicida",
@@ -62,10 +63,11 @@
         "riesgo_nulo",
         "irritabilidad_verbal",
         "amenazas_inespecificas",
+        "fantasias_de_dano_a_terceros",
         "amenazas_a_persona_especifica",
         "violencia_fisica_reciente"
       ],
-      "notes": "La amenaza dirigida a terceros específicos activa deber de protección/advertencia (criterio Tarasoff)."
+      "notes": "Deber de advertencia (Tarasoff): amenaza seria + persona identificable + posibilidad real de ejecución."
     },
     {
       "id": "riesgo_vulnerabilidad_grave",
@@ -74,9 +76,10 @@
         "capacidad_autocuidado_conservada",
         "descuido_personal_grave",
         "inanicion_o_deshidratacion",
-        "vulnerabilidad_social_extrema"
+        "vulnerabilidad_social_extrema",
+        "situacion_de_calle"
       ],
-      "notes": "Riesgo pasivo para sí mismo. Base legal frecuente de internación en demencia, catatonía o manía exhaustiva."
+      "notes": "Riesgo pasivo (ej. anciano que olvida comer, paciente psicótico en situación de calle). Base legal frecuente para internación involuntaria."
     },
     {
       "id": "factores_protectores",

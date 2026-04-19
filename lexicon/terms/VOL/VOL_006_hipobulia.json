@@ -2,8 +2,16 @@
   "term_id": "VOL_006",
   "canonical_name": "Hipobulia",
   "synonyms_and_slang": [
-    "voluntad debilitada",
-    "hipoabulia"
+    {
+      "term": "voluntad debilitada",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "hipoabulia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",

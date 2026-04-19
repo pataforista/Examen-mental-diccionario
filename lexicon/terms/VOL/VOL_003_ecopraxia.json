@@ -2,8 +2,16 @@
   "term_id": "VOL_003",
   "canonical_name": "Ecopraxia",
   "synonyms_and_slang": [
-    "imitación automática",
-    "ecocinesis"
+    {
+      "term": "imitación automática",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ecocinesis",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

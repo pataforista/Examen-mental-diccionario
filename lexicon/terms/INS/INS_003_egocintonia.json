@@ -2,8 +2,16 @@
   "term_id": "INS_003",
   "canonical_name": "Egocintonía",
   "synonyms_and_slang": [
-    "sintonía con el ego",
-    "ego-syntonic"
+    {
+      "term": "sintonía con el ego",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ego-syntonic",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "distinción_clínica",
   "granularity": "atomic",

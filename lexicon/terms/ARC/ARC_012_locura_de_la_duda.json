@@ -2,10 +2,18 @@
   "term_id": "ARC_012",
   "canonical_name": "Locura de la Duda",
   "synonyms_and_slang": [
-    "folie du doute",
-    "enfermedad de las comprobaciones"
+    {
+      "term": "folie du doute",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "enfermedad de las comprobaciones",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

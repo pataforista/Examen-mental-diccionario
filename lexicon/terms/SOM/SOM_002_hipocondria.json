@@ -2,10 +2,18 @@
   "term_id": "SOM_002",
   "canonical_name": "Hipocondría",
   "synonyms_and_slang": [
-    "ansiedad por la salud",
-    "preocupación somática"
+    {
+      "term": "ansiedad por la salud",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "preocupación somática",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -29,7 +37,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-14",
+      "domain_id": "DOM-07",
       "relation": "primary_expression",
       "context": "conciencia_corporal"
     }

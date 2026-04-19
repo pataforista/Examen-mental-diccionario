@@ -7,7 +7,7 @@
       "context": "clinical"
     }
   ],
-  "term_kind": "phenomenon",
+  "term_kind": "fenómeno",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

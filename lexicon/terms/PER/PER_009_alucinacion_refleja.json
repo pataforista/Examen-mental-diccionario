@@ -2,9 +2,13 @@
   "term_id": "PER_009",
   "canonical_name": "Alucinación Refleja",
   "synonyms_and_slang": [
-    "sinestesia patológica"
+    {
+      "term": "sinestesia patológica",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

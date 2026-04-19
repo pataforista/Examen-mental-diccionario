@@ -2,8 +2,16 @@
   "term_id": "INS_010",
   "canonical_name": "Noesis de recuperación",
   "synonyms_and_slang": [
-    "insight post-brote disparado",
-    "depressive post-psychotic shift"
+    {
+      "term": "insight post-brote disparado",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "depressive post-psychotic shift",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "fenómeno",
   "granularity": "atomic",

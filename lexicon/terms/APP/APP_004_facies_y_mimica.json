@@ -13,7 +13,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

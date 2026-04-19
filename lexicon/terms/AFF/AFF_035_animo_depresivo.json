@@ -1,7 +1,7 @@
 {
   "term_id": "AFF_035",
   "canonical_name": "Ánimo depresivo",
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -90,7 +90,11 @@
   ],
   "version": "1.0.0",
   "synonyms_and_slang": [
-    "ánimo depresivo"
+    {
+      "term": "ánimo depresivo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "provenance": {

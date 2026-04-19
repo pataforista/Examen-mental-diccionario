@@ -2,10 +2,18 @@
   "term_id": "ARC_007",
   "canonical_name": "Ecmnesia",
   "synonyms_and_slang": [
-    "reviviscencia amnésica",
-    "alucinación de la memoria"
+    {
+      "term": "reviviscencia amnésica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "alucinación de la memoria",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

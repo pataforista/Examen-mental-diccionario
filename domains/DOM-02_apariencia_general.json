@@ -5,7 +5,7 @@
   "definition_es": "Evalúa la presentación externa y observable del paciente al inicio y durante la entrevista, con énfasis descriptivo y evitando inferencias psicodinámicas, juicios de personalidad o diagnósticos.",
   "evaluates": [
     "higiene",
-    "vestimenta_y_alino",
+    "vestimenta_y_aliño",
     "aliento",
     "postura",
     "facies",
@@ -24,13 +24,14 @@
       "label_es": "Higiene",
       "accepted_terms": [
         "higiene_adecuada",
+        "higiene_algo_descuidada",
         "higiene_descuidada",
         "higiene_muy_descuidada"
       ],
-      "notes": "Describe el cuidado corporal observable. No inferir causas."
+      "notes": "Describe el cuidado corporal observable. No inferir causas; el nivel 'algo descuidada' aplica a falta de cuidado parcial (ej. manos limpias pero cabello despeinado)."
     },
     {
-      "id": "vestimenta_y_alino",
+      "id": "vestimenta_y_aliño",
       "label_es": "Vestimenta y aliño",
       "accepted_terms": [
         "adecuados_al_contexto",
@@ -45,7 +46,7 @@
       "accepted_terms": [
         "aliento_normal",
         "aliento_alcoholico",
-        "aliento_cetonico",
+        "aliento_cetónico",
         "aliento_fetido",
         "aliento_urinoso"
       ],
@@ -76,13 +77,13 @@
         "hipermimica",
         "facies_parkinsoniana",
         "facies_cushingoide",
-        "facies_tirotoxica",
+        "facies_tirotóxica",
         "facies_mixedematosa",
         "facies_mitral",
         "facies_dolorosa",
-        "facies_perpleja"
+        "expresion_perpleja"
       ],
-      "notes": "Prioriza descriptores observables (mímica + patrones morfológicos). 'Facies perpleja' se admite como descriptor de expresión (no diagnóstico). Etiquetas sindromáticas psiquiátricas (p. ej., 'depresiva/maníaca') se registran mejor en DOM-09."
+      "notes": "Prioriza descriptores observables. 'Expresion perpleja' es un descriptor dinámico que debe reflejarse en DOM-09 (Afecto). Facies orgánicas (cushingoide [luna llena], tirotóxica [exoftalmos]) son avisos médicos."
     },
     {
       "id": "adecuacion_al_contexto",
@@ -92,7 +93,7 @@
         "adecuacion_parcial",
         "adecuacion_no_conservada"
       ],
-      "notes": "Síntesis descriptiva de la presentación general en relación con el entorno clínico."
+      "notes": "Campo sintético (metacampo) que resume la congruencia de la presentación con el entorno clínico; emerge de los hallazgos anteriores."
     }
   ],
   "allowed_features": [
@@ -110,13 +111,13 @@
   "forbidden_wording": [
     "Apariencia triste (preferir: describir hipomimia + afecto congruente con ánimo bajo en DOM-09).",
     "Aspecto psicótico (preferir: describir conducta observable en DOM-02/03 y pensamiento/sensopercepción en DOM-06/08).",
-    "Cara de loco (preferir: describir facies perpleja/hipermímica + hallazgos específicos).",
+    "Cara de loco (preferir: describir expresión perpleja/hipermímica + hallazgos específicos).",
     "Vestimenta extravagante (sin descripción detallada)."
   ],
   "clinical_notes": [
     "Este dominio es predominantemente descriptivo.",
     "No deben inferirse estados afectivos, rasgos de personalidad ni diagnósticos a partir de la apariencia.",
     "Las variaciones culturales y contextuales deben considerarse explícitamente.",
-    "Las facies orgánicas (p. ej., cushingoide, mixedematosa, tirotoxica, mitral) funcionan como banderas rojas médicas y requieren correlación clínica."
+    "Las facies orgánicas (p. ej., cushingoide, mixedematosa, tirotóxica, mitral) funcionan como banderas rojas médicas y requieren correlación clínica; p. ej., la facies tirotóxica suele presentar exoftalmos y retracción palpebral."
   ]
 }

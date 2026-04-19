@@ -2,10 +2,26 @@
   "term_id": "MEM_011",
   "canonical_name": "Delirium",
   "synonyms_and_slang": [
-    "síndrome confusional agudo",
-    "estado confusional agudo",
-    "encefalopatía metabólica",
-    "acute confusional state"
+    {
+      "term": "síndrome confusional agudo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "estado confusional agudo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "encefalopatía metabólica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "acute confusional state",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",

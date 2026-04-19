@@ -33,10 +33,9 @@
         "disforico",
         "apatico",
         "anhedonico",
-        "alexitimico",
         "sentimiento_de_vacio"
       ],
-      "notes": "Estado emocional sostenido (días–semanas). Alexitimia: incapacidad para identificar o describir emociones propias."
+      "notes": "Ánimo: estado emocional subjetivo y sostenido (semanas). Sentimiento de vacío: ausencia de significado o conexión emocional. La alexitimia (dificultad para identificar emociones) se consigna como cualidad transversal."
     },
     {
       "id": "afecto_observable",
@@ -49,9 +48,9 @@
         "afecto_pueril",
         "moria",
         "perplejidad",
-        "afecto_dramatico_o_teatral"
+        "afecto_dramático_o_teatral"
       ],
-      "notes": "Moria: jocosidad insulsa/desinhibida típica de daño frontal. Aplanamiento: ausencia casi total de expresión emocional."
+      "notes": "Afecto: expresión observable durante la entrevista (minutos). Moria: jocosidad insulsa (ej. reír al hablar del clima en contexto de demencia). Afecto dramático/teatral: expresión exagerada e incongruente."
     },
     {
       "id": "reactividad_afectiva",
@@ -83,7 +82,7 @@
         "incontinencia_afectiva",
         "viscosidad_afectiva"
       ],
-      "notes": "Labilidad: cambios rápidos. Incontinencia: incapacidad de frenar risa/llanto (pseudobulbar). Viscosidad: dificultad para salir de un estado afectivo."
+      "notes": "Labilidad: cambios rápidos de afecto ante estímulos. Incontinencia pseudobulbar: incapacidad de frenar risa o llanto espasmódico ante estímulos mínimos, con desconexión ideo-afectiva."
     },
     {
       "id": "congruencia_afectiva",

@@ -2,8 +2,16 @@
   "term_id": "MEM_009",
   "canonical_name": "Confabulación provocada",
   "synonyms_and_slang": [
-    "confabulación por sugestión",
-    "confabulación elicitada"
+    {
+      "term": "confabulación por sugestión",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "confabulación elicitada",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",
@@ -42,7 +50,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

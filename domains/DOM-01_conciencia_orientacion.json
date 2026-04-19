@@ -36,7 +36,7 @@
         "sensorio_embotado",
         "sensorio_nublado"
       ],
-      "notes": "Evalúa la nitidez de la percepción y el procesamiento mental (contenido)."
+      "notes": "Evalúa la nitidez de la percepción y el procesamiento mental. Embotado: enlentecimiento y reactividad baja. Nublado: pérdida de nitidez y confusión variable (típico de delirium)."
     },
     {
       "id": "curso_temporal",
@@ -45,7 +45,7 @@
         "estable",
         "fluctuante"
       ],
-      "notes": "Describe la variabilidad del estado de conciencia a lo largo del tiempo."
+      "notes": "Describe la estabilidad del nivel de alerta y claridad del sensorio en periodos cortos; la fluctuación es cardinal en delirium."
     },
     {
       "id": "orientacion",
@@ -59,7 +59,7 @@
         "autopsiquica",
         "alopsiquica_tiempo",
         "alopsiquica_lugar",
-        "alopsiquica_persona",
+        "alopsiquica_entorno_o_personas",
         "alopsiquica_situacion"
       ],
       "notes": "Si se selecciona 'desorientacion_parcial', es obligatorio especificar las dimensiones afectadas."
@@ -74,7 +74,7 @@
   ],
   "recommended_wording": [
     "Paciente alerta, vigil y con sensorio claro.",
-    "Se encuentra somnoliento, con sensorio embotado y desorientación parcial en tiempo.",
+    "Se encuentra somnoliento, con sensorio embotado y desorientación parcial en tiempo (orienta año pero no mes).",
     "Estado de conciencia fluctuante, con periodos de lucidez intercalados."
   ],
   "forbidden_wording": [

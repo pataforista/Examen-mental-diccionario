@@ -6,5 +6,19 @@
     "differential_anchor",
     "risk_factor"
   ],
+  "usage_examples": [
+    {
+      "subject": "DOM-01 (Conciencia)",
+      "relation": "primary_expression",
+      "object": "DOM-10 (Atención)",
+      "note": "La alteración de la conciencia se manifiesta primariamente como fallo atencional."
+    },
+    {
+      "subject": "DOM-07 (Contenido)",
+      "relation": "differential_anchor",
+      "object": "DOM-08 (Percepción)",
+      "note": "La certeza del delirio ayuda a diferenciar alucinación de ilusión."
+    }
+  ],
   "exclusion_relation": ["not_this", "common_confusion"]
 }

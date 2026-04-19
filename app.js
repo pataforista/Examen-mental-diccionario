@@ -104,7 +104,7 @@ const App = {
 
         haptic: function () {
             if ('vibrate' in navigator) {
-                try { navigator.vibrate(10); } catch (e) {}
+                try { navigator.vibrate(10); } catch (e) { }
             }
         },
 
@@ -321,7 +321,7 @@ const App = {
         try {
             // Start parallel fetches for all critical resources
             const lexiconPromise = fetch('lexicon/lexicon_bundle.json').then(r => r.json());
-            
+
             const domainIds = Array.from({ length: 14 }, (_, i) => `DOM-${(i + 1).toString().padStart(2, '0')}`);
             const domainPromises = domainIds.map(async id => {
                 const slug = this.getDomainSlug(id);
@@ -458,9 +458,9 @@ const App = {
     renderAllTerms: function () {
         if (!this.nodes.allTermsList || !this.data.terms) return;
         this.nodes.allTermsList.innerHTML = '';
-        
+
         const validTerms = this.data.terms.filter(t => t && t.canonical_name);
-        
+
         validTerms.sort((a, b) => (a.canonical_name || "").localeCompare(b.canonical_name || "")).forEach(term => {
             const card = this.renderTermCard(term);
             this.nodes.allTermsList.appendChild(card);
@@ -549,7 +549,7 @@ const App = {
 
         // Determine a clinical marker if available
         const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
-        
+
         const tipHtml = objMarker ? `
             <div style="background: rgba(var(--v-on-primary-container-rgb, 0,0,0), 0.08); padding: 1rem; border-left: 6px solid var(--bau-blue); margin-bottom: 1.25rem; border-radius: 4px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
                 <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem; color: inherit; opacity: 0.7;">💡 Perla Clínica:</strong>
@@ -590,10 +590,10 @@ const App = {
         if (!term) return;
 
         this.utils.haptic();
-        
+
         // Show loading state or feedback
         console.log(`Generating card for ${term.canonical_name}...`);
-        
+
         try {
             const blob = await this.utils.generateShareCard(term);
             const file = new File([blob], `MSE_${term.canonical_name}.png`, { type: 'image/png' });
@@ -623,7 +623,7 @@ const App = {
                     title: `Diccionario MSE: ${term.canonical_name}`,
                     text: `${term.canonical_name}: ${term.definition_clinical?.core}`,
                     url: this.utils.getTermUrl(termId)
-                }).catch(() => {});
+                }).catch(() => { });
             }
         }
     },
@@ -1120,121 +1120,121 @@ const App = {
     integrator: {
         currentStep: 0,
         steps: [
-            { 
-                id: 1, label: "Consciencia y orientación", domain: "DOM-01", 
-                guide: "¿Está alerta, somnoliento, estuporoso, confuso, obnubilado, en coma?\nOrientación: Persona (¿Cómo se llama?), Lugar (¿Dónde estamos?), Tiempo (Día, mes, año), Situación (¿Sabe por qué está aquí?)", 
+            {
+                id: 1, label: "Consciencia y orientación", domain: "DOM-01",
+                guide: "¿Está alerta, somnoliento, estuporoso, confuso, obnubilado, en coma?\nOrientación: Persona (¿Cómo se llama?), Lugar (¿Dónde estamos?), Tiempo (Día, mes, año), Situación (¿Sabe por qué está aquí?)",
                 example: "Paciente consciente, alerta. Orientado en persona, lugar, tiempo y situación.",
                 description: "Evaluación del estado de alerta y ubicación."
             },
-            { 
+            {
                 id: 2, label: "Higiene, vestimenta y aliento", domain: "DOM-02", components: ["higiene", "vestimenta_y_alino", "aliento"],
                 guide: "Ropa adecuada al clima/situación, limpia o descuidada.\nHigiene personal (olor corporal, cabello, uñas).\nAliento (alcohol, cetonas, fétido, normal).",
                 example: "Vestimenta desordenada, ropa sucia. Higiene deficiente. Aliento normal.",
                 description: "Observación de aliño y presentación física."
             },
-            { 
+            {
                 id: 3, label: "Posición", domain: "DOM-02", components: ["postura"],
                 guide: "De pie, sentado, en cama, encamado, postura fija, decúbito activo/pasivo.",
                 example: "Paciente sentado voluntariamente en la camilla.",
                 description: "Postura corporal predominante."
             },
-            { 
+            {
                 id: 4, label: "Facies", domain: "DOM-02", components: ["facies"],
                 guide: "Expresión facial (triste, angustiada, hostil, desconfiada, indiferente, perpleja, eufórica, inexpresiva).",
                 example: "Facies de angustia e indiferencia.",
                 description: "Mímica y expresión facial."
             },
-            { 
+            {
                 id: 5, label: "Función psicomotriz", domain: "DOM-04",
                 guide: "Movimientos anormales (temblor, tics, acatisia, estereotipias, corea). Inhibición o agitación. Catalepsia, flexibilidad cérea.",
                 example: "Agitación psicomotriz generalizada, sin temblores.",
                 description: "Actividad motora observable."
             },
-            { 
+            {
                 id: 6, label: "Actitud", domain: "DOM-03", components: ["actitud"],
                 guide: "Cooperadora, hostil, negativista, seductora, distante, apática, provocadora.",
                 example: "Actitud cooperadora durante la entrevista.",
                 description: "Disposición hacia el examinador."
             },
-            { 
+            {
                 id: 7, label: "Contacto visual", domain: "DOM-03", components: ["contacto_visual"],
                 guide: "Fijo, evitativo, perdido, amenazante, de seducción.",
                 example: "Contacto visual evitativo, ocasional.",
                 description: "Conexión visual con el examinador."
             },
-            { 
+            {
                 id: 8, label: "Habla (volumen, cantidad, tono)", domain: "DOM-05", components: ["habla"],
                 guide: "Volumen (alto, bajo, normal), Cantidad (escasa, logorrea, pobre), Tono (monótono, modulado, enfático).",
                 example: "Habla espontánea, volumen bajo, cantidad escasa, tono monótono.",
                 description: "Características sonoras del lenguaje."
             },
-            { 
+            {
                 id: 9, label: "Discurso", domain: "DOM-05", components: ["discurso"],
                 guide: "Velocidad (lento, presionado, normal), Organización (coherente, divagante, tangencial, circunstancial).",
                 example: "Discurso lento, coherente pero con tendencia a divagaciones.",
                 description: "Forma y fluidez del relato."
             },
-            { 
+            {
                 id: 10, label: "Lenguaje", domain: "DOM-05", components: ["lenguaje"],
                 guide: "Neologismos, parafasias, jergafasia, ecolalia, mutismo.",
                 example: "Lenguaje sin alteraciones; sin neologismos ni parafasias.",
                 description: "Uso de símbolos y reglas gramaticales."
             },
-            { 
+            {
                 id: 11, label: "Curso del pensamiento", domain: "DOM-06",
                 guide: "Acelerado, enlentecido, bloqueo, robo, fuga de ideas, incoherencia.",
                 example: "Curso del pensamiento enlentecido, sin bloqueos.",
                 description: "Flujo y velocidad de las ideas."
             },
-            { 
+            {
                 id: 12, label: "Ideación suicida", domain: "DOM-12",
                 guide: "¿Ha pensado que la vida no vale la pena? ¿Ha pensado en morir? ¿Tiene plan/medios?\n¿Hay ideación homicida?",
                 example: "Niega ideación suicida u homicida en la actualidad.",
                 description: "Evaluación de riesgo vital."
             },
-            { 
+            {
                 id: 13, label: "Contenido del pensamiento", domain: "DOM-07",
                 guide: "Delirios (persecutorio, místico, grandeza), Obsesiones, Fobias, Ideas sobrevaloradas.",
                 example: "Contenido delirante de tipo persecutorio y autorreferencial.",
                 description: "El qué de lo que el paciente piensa."
             },
-            { 
+            {
                 id: 14, label: "Ánimo", domain: "DOM-09", components: ["animo"],
                 guide: "¿Cómo se ha sentido? ¿Triste, alegre, irritable?\nEscala subjetiva 0-10.",
                 example: "Ánimo disfórico, refiere tristeza 8/10.",
                 description: "Estado subjetivo reportado por el paciente."
             },
-            { 
+            {
                 id: 15, label: "Afecto", domain: "DOM-09", components: ["afecto"],
                 guide: "Tipo (depresivo, ansioso, irritable), Modulación (reactivo, lábil, restringido). Adecuación al discurso.",
                 example: "Afecto ansioso, reactivo, adecuado al contenido verbal.",
                 description: "Expresión emocional observable."
             },
-            { 
+            {
                 id: 16, label: "Sensopercepción", domain: "DOM-08",
                 guide: "¿Oye/ve cosas que otros no? Alucinaciones (auditivas, visuales, etc.), Ilusiones, Despersonalización.",
                 example: "Alucinaciones auditivas simples (escucha que le llaman).",
                 description: "Evaluación de percepciones."
             },
-            { 
+            {
                 id: 17, label: "Funciones mentales superiores", domain: "DOM-10",
                 guide: "a) Memoria (Reciente, Mediata, Remota)\nb) Atención (Dígitos, Mundo al revés)\nc) Abstracción (Semejanzas, Refranes)\nd) Cálculo\ne) Conocimiento (Gnosias, info general)",
                 example: "Memoria y atención conservadas; abstracción en nivel concreto.",
                 description: "Evaluación cognitiva global."
             },
-            { 
+            {
                 id: 18, label: "Conciencia de enfermedad", domain: "DOM-11", components: ["insight_de_enfermedad"],
                 guide: "¿Cree que tiene algún problema? ¿Necesita tratamiento?",
                 example: "Ausencia de conciencia de enfermedad; niega trastorno.",
                 description: "Reconocimiento de la patología."
             },
-            { 
+            {
                 id: 19, label: "Juicio", domain: "DOM-11", components: ["juicio_practico", "juicio_social"],
                 guide: "¿Qué haría ante un incendio? ¿Si se queda sin dinero?",
                 example: "Juicio conservado para situaciones prácticas.",
                 description: "Capacidad de toma de decisiones."
             },
-            { 
+            {
                 id: 20, label: "Proyección a futuro", domain: "DOM-11", components: ["proyeccion_a_futuro"],
                 guide: "¿Cómo se ve en un año? ¿Tiene metas/planes?",
                 example: "Proyección a futuro pesimista, sin planes concretos.",
@@ -1297,7 +1297,7 @@ const App = {
             this.nodes.nextBtn.addEventListener('click', () => this.navigate(1));
             this.nodes.resetBtn.addEventListener('click', () => this.reset());
             this.nodes.copyBtn.addEventListener('click', () => this.copyReport());
-            
+
             this.nodes.stepText.addEventListener('input', (e) => {
                 const step = this.steps[this.currentStep];
                 this.responses[step.id] = e.target.value;
@@ -1336,7 +1336,7 @@ const App = {
 
             // Render options from domain terms
             this.renderOptionsForStep(step);
-            
+
             this.nodes.prevBtn.disabled = this.currentStep === 0;
             this.nodes.nextBtn.textContent = this.currentStep === this.steps.length - 1 ? 'Finalizar' : 'Siguiente →';
 
@@ -1384,14 +1384,14 @@ const App = {
             const step = this.steps[this.currentStep];
             const cleanTerm = term.replace(/_/g, ' ');
             let current = this.responses[step.id] || '';
-            
+
             if (current.includes(cleanTerm)) {
                 current = current.replace(new RegExp(`${cleanTerm},?\\s?`, 'g'), '').trim();
                 if (current.endsWith(',')) current = current.slice(0, -1);
             } else {
                 current = current ? `${current}, ${cleanTerm}` : cleanTerm;
             }
-            
+
             this.responses[step.id] = current;
             this.nodes.stepText.value = current;
             this.updateReport();
@@ -1427,7 +1427,7 @@ const App = {
                     fullText += `${s.label}: ${this.responses[s.id]}.\n`;
                 }
             });
-            
+
             if (!fullText) {
                 this.nodes.reportOutput.textContent = "Tu reporte aparecerá aquí a medida que avances...";
             } else {

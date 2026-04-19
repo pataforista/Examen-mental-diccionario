@@ -1,7 +1,7 @@
 {
   "term_id": "CAT_001",
   "canonical_name": "Catatonia maligna",
-  "term_kind": "syndrome",
+  "term_kind": "síndrome",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {

@@ -2,9 +2,21 @@
   "term_id": "AFF_016",
   "canonical_name": "Euforia",
   "synonyms_and_slang": [
-    "bienestar excesivo patológico",
-    "elación",
-    "ánimo eufórico"
+    {
+      "term": "bienestar excesivo patológico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "elación",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ánimo eufórico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

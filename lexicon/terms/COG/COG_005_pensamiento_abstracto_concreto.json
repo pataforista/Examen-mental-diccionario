@@ -2,10 +2,18 @@
   "term_id": "COG_005",
   "canonical_name": "Pensamiento Abstracto / Concreto",
   "synonyms_and_slang": [
-    "concretismo",
-    "literalismo"
+    {
+      "term": "concretismo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "literalismo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

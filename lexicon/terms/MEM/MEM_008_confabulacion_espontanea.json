@@ -2,8 +2,16 @@
   "term_id": "MEM_008",
   "canonical_name": "Confabulación espontánea",
   "synonyms_and_slang": [
-    "confabulación provista",
-    "falsificación retrospectiva inconsciente"
+    {
+      "term": "confabulación provista",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "falsificación retrospectiva inconsciente",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",
@@ -42,7 +50,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

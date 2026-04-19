@@ -2,9 +2,13 @@
   "term_id": "TALD_018",
   "canonical_name": "Pensamiento Restringido",
   "synonyms_and_slang": [
-    "Pensamiento Restringido"
+    {
+      "term": "Pensamiento Restringido",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

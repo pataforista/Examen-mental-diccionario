@@ -2,9 +2,13 @@
   "term_id": "PER_004",
   "canonical_name": "Alucinaciones cenestésicas",
   "synonyms_and_slang": [
-    "alucinaciones cenestésicas"
+    {
+      "term": "alucinaciones cenestésicas",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

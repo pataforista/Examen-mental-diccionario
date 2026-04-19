@@ -2,8 +2,16 @@
   "term_id": "CNS_002",
   "canonical_name": "Coma",
   "synonyms_and_slang": [
-    "arreactividad total",
-    "pérdida completa de conciencia"
+    {
+      "term": "arreactividad total",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "pérdida completa de conciencia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

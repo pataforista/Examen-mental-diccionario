@@ -2,10 +2,18 @@
   "term_id": "SOM_001",
   "canonical_name": "Dismorfofobia",
   "synonyms_and_slang": [
-    "trastorno dismórfico corporal",
-    "fealdad imaginaria"
+    {
+      "term": "trastorno dismórfico corporal",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "fealdad imaginaria",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-14",
+      "domain_id": "DOM-07",
       "relation": "primary_expression",
       "context": "conciencia_corporal"
     }

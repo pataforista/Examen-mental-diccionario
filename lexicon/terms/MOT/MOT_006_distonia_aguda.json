@@ -2,9 +2,13 @@
   "term_id": "MOT_006",
   "canonical_name": "Distonía aguda",
   "synonyms_and_slang": [
-    "distonía aguda"
+    {
+      "term": "distonía aguda",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

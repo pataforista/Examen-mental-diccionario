@@ -2,9 +2,13 @@
   "term_id": "DEL_006",
   "canonical_name": "Delirio de ruina/pobreza",
   "synonyms_and_slang": [
-    "delirio de ruina/pobreza"
+    {
+      "term": "delirio de ruina/pobreza",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

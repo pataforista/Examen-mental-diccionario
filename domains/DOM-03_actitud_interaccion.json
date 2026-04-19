@@ -29,13 +29,13 @@
         "hostil",
         "suspicaz",
         "defensiva",
-        "familiar",
+        "familiaridad_excesiva",
         "seductora",
         "pueril",
         "querellante",
         "altanera"
       ],
-      "notes": "Disposición relacional predominante durante la entrevista. 'Familiar': exceso de confianza y pérdida de distancia terapéutica. 'Seductora': búsqueda de aprobación o atracción. 'Pueril': infantilismo conductual. 'Querellante': reclamo persistente."
+      "notes": "Disposición relacional predominante during the interview. 'Familiaridad excesiva': pérdida de distancia terapéutica (tuteo, preguntas personales). 'Oposicionista': relacional e intencional (distinguir de negativismo catatónico en DOM-04)."
     },
     {
       "id": "cooperacion",
@@ -78,7 +78,7 @@
   ],
   "recommended_wording": [
     "Paciente colaborador, con contacto visual adecuado y rapport adecuado.",
-    "Actitud familiar, con pérdida de distancia terapéutica; cooperación parcial.",
+    "Actitud con familiaridad excesiva, con pérdida de distancia terapéutica; cooperación parcial.",
     "Se muestra querellante y defensivo, con rapport difícil.",
     "Actitud pueril, con risas inmotivadas y contacto visual errático."
   ],

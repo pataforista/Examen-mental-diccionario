@@ -2,10 +2,26 @@
   "term_id": "AFF_020",
   "canonical_name": "Hipotimia",
   "synonyms_and_slang": [
-    "ánimo bajo",
-    "tristeza clínica leve",
-    "dysthymia leve",
-    "ánimo deprimido subclínico"
+    {
+      "term": "ánimo bajo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "tristeza clínica leve",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "dysthymia leve",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ánimo deprimido subclínico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -44,7 +60,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

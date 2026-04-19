@@ -2,9 +2,21 @@
   "term_id": "AFF_014",
   "canonical_name": "Disforia",
   "synonyms_and_slang": [
-    "malestar subjetivo intenso",
-    "dysphoria",
-    "estado disfórico"
+    {
+      "term": "malestar subjetivo intenso",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "dysphoria",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "estado disfórico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -48,7 +60,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

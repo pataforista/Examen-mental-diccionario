@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_022",
   "canonical_name": "Inserción del pensamiento",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Vivencia de que pensamientos ajenos son introducidos en la mente por una agencia externa.",
     "required_features": [
@@ -60,7 +60,11 @@
     ]
   },
   "synonyms_and_slang": [
-    "inserción del pensamiento"
+    {
+      "term": "inserción del pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "mappings": {}

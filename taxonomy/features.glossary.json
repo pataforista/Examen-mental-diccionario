@@ -8,7 +8,12 @@
       "label_es": "Nivel de inferencia",
       "kind": "enum",
       "allowed_values": ["observational", "clinical_inferential", "advanced_phenomenological"],
-      "definition_es": "Nivel epistemológico de la afirmación: lo directamente observable, lo inferido clínicamente, o lo fenomenológico avanzado."
+      "definition_es": "Nivel epistemológico de la afirmación: lo directamente observable, lo inferido clínicamente, o lo fenomenológico avanzado.",
+      "usage_examples": {
+        "observational": "Paciente evita contacto visual; tiembla ostensiblemente.",
+        "clinical_inferential": "Ideación delirante paranoide; humor deprimido.",
+        "advanced_phenomenological": "Pérdida de la evidencia natural (Blankenburg); vivencia de fragmentación del self."
+      }
     },
     {
       "feature_id": "time_course",

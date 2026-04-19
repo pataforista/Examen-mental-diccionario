@@ -2,8 +2,16 @@
   "term_id": "VOL_009",
   "canonical_name": "Negativismo",
   "synonyms_and_slang": [
-    "resistencia inmotivada",
-    "negativismo pasivo/activo"
+    {
+      "term": "resistencia inmotivada",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "negativismo pasivo/activo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

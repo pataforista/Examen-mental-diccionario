@@ -2,14 +2,22 @@
   "term_id": "TALD_022",
   "canonical_name": "Presión/Agalopamiento de Ideas",
   "synonyms_and_slang": [
-    "Presión/Agalopamiento de Ideas"
+    {
+      "term": "Presión/Agalopamiento de Ideas",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
     "core": "Numerosos pensamientos con contenido variado saltan o se imponen en la mente, alternando rápidamente. El paciente no puede controlar ni suprimir estos pensamientos que aparecen y desaparecen.",
-    "required_features": [],
+    "required_features": [
+      "velocidad de habla aumentada",
+      "dificultad para interrumpir al paciente",
+      "impulso irrefrenable de hablar"
+    ],
     "subjective_marker": "Reportado por el paciente"
   },
   "operationalization": {

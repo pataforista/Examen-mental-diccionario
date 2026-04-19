@@ -1,7 +1,7 @@
 {
   "term_id": "THO_006",
   "canonical_name": "Fuga de ideas",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Aceleración extrema del pensamiento con salto rápido entre temas, a menudo por asociaciones por asonancia o juegos de palabras.",
     "required_features": [
@@ -23,7 +23,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-02",
+      "domain_id": "DOM-06",
       "relation": "primary_expression",
       "context": "taquipsiquia"
     }
@@ -36,17 +36,15 @@
   ],
   "version": "1.0.0",
   "synonyms_and_slang": [
-    "fuga de ideas"
+    {
+      "term": "fuga de ideas",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "granularity": "atomic",
   "risk_weight": 0,
-  "exclusions": [
-    {
-      "term_id": "THO_001",
-      "canonical_name": "Fuga de ideas",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",
@@ -70,5 +68,9 @@
       "psicopatologia_clasica"
     ]
   },
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Z"
+    }
+  }
 }

@@ -2,11 +2,19 @@
   "term_id": "CNS_005",
   "canonical_name": "Estupor Psiquiátrico",
   "synonyms_and_slang": [
-    "mutismo acinético funcional",
-    "inhibición psicomotriz masiva (melancólica/catatónica)"
+    {
+      "term": "mutismo acinético funcional",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "inhibición psicomotriz masiva (melancólica/catatónica)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
-  "granularity": "cluster",
+  "granularity": "composite",
   "risk_weight": 2,
   "definition_clinical": {
     "core": "Estado caracterizado por una dramática y severa disminución de las reacciones o de la responsividad psicomotora hacia los estímulos ambientales, manteniendo simultáneamente la integridad básica y normalidad del nivel de alerta neurológico subyacente (el individuo parece estar despierto y consciente de su entorno, aunque no responde verbalmente y raramente interacciona o se mueve volitivamente de modo espontáneo). Frecuente en Catatonía profunda, Depresión Melancólica Extrema, Psicosis agudas masivas y cuadros disociativos profundos.",

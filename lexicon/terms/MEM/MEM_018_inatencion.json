@@ -2,9 +2,13 @@
   "term_id": "MEM_018",
   "canonical_name": "Inatención",
   "synonyms_and_slang": [
-    "inatención"
+    {
+      "term": "inatención",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

@@ -2,14 +2,22 @@
   "term_id": "TALD_021",
   "canonical_name": "Pobreza del Habla",
   "synonyms_and_slang": [
-    "Pobreza del Habla"
+    {
+      "term": "Pobreza del Habla",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
     "core": "Restricción en la cantidad de habla espontánea; las respuestas tienden a ser breves, concretas y no elaboradas. Rara vez se proporciona información adicional no solicitada y las respuestas pueden ser monosilábicas.",
-    "required_features": [],
+    "required_features": [
+      "reducción en la cantidad de palabras producidas",
+      "respuestas extremadamente breves",
+      "discurso lento y laborioso"
+    ],
     "behavioral_marker": "Observable en la entrevista clínica"
   },
   "operationalization": {

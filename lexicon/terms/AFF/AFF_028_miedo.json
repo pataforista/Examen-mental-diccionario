@@ -2,9 +2,21 @@
   "term_id": "AFF_028",
   "canonical_name": "Miedo",
   "synonyms_and_slang": [
-    "temor",
-    "terror",
-    "fobia (miedo irracional)"
+    {
+      "term": "temor",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "terror",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "fobia (miedo irracional)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

@@ -2,14 +2,22 @@
   "term_id": "TALD_019",
   "canonical_name": "Pobreza de Contenido del Habla",
   "synonyms_and_slang": [
-    "Pobreza de Contenido del Habla"
+    {
+      "term": "Pobreza de Contenido del Habla",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
     "core": "Aunque las respuestas son lo suficientemente largas, transmiten poca información. El lenguaje tiende a ser vago, a menudo excesivamente abstracto o concreto, repetitivo y estereotipado.",
-    "required_features": [],
+    "required_features": [
+      "discurso vago u oscuro",
+      "repetición de frases hechas",
+      "poca información transmitida a pesar de fluidez relativa"
+    ],
     "behavioral_marker": "Observable en la entrevista clínica"
   },
   "operationalization": {

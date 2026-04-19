@@ -2,9 +2,13 @@
   "term_id": "DEL_008",
   "canonical_name": "Delirio místico-religioso de mandato",
   "synonyms_and_slang": [
-    "delirio místico-religioso de mandato"
+    {
+      "term": "delirio místico-religioso de mandato",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

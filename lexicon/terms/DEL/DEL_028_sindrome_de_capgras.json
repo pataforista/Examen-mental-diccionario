@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_028",
   "canonical_name": "Síndrome de Capgras",
-  "term_kind": "syndrome",
+  "term_kind": "síndrome",
   "definition_clinical": {
     "core": "Creencia de que personas cercanas han sido reemplazadas por impostores idénticos.",
     "required_features": [
@@ -59,7 +59,11 @@
     ]
   },
   "synonyms_and_slang": [
-    "síndrome de capgras"
+    {
+      "term": "síndrome de capgras",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "mappings": {}

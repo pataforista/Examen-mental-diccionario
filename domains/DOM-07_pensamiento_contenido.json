@@ -31,7 +31,7 @@
         "delirio_de_referencia",
         "delirio_de_control_o_pasividad",
         "delirio_de_difusion_o_robo_del_pensamiento",
-        "delirio_grandiosidad",
+        "delirio_de_grandiosidad",
         "delirio_mistico_religioso",
         "delirio_fantastico",
         "delirio_culpa",
@@ -43,7 +43,7 @@
         "delirio_de_filiacion",
         "delirio_somatico"
       ],
-      "notes": "Incluye fenómenos de pasividad (inserción, robo, difusión del pensamiento). El grado de convicción y el juicio de realidad se consignan en DOM-11."
+      "notes": "Delirio fantástico: bizarro, viola leyes físicas/biológicas. Delirio somático: convicción de defecto/enfermedad irreales (distinguir de hipocondría delirante). Incluye fenómenos de pasividad."
     },
     {
       "id": "ideas_sobrevaloradas",
@@ -77,9 +77,10 @@
         "obsesiones_sexuales",
         "obsesiones_religiosas",
         "obsesiones_simetria",
-        "obsesiones_duda"
+        "obsesiones_duda",
+        "fobia_de_impulsion"
       ],
-      "notes": "Ideas, imágenes o impulsos intrusivos, egodistónicos y generadores de ansiedad. Las compulsiones se registran en DOM-04."
+      "notes": "Ideas, imágenes o impulsos intrusivos, egodistónicas y generadores de ansiedad. La fobia de impulsión es una obsesión (temor a realizar un acto, no al objeto externo)."
     },
     {
       "id": "ideacion_fobica",
@@ -88,10 +89,9 @@
         "ausente",
         "fobia_social",
         "agorafobia",
-        "fobia_especifica",
-        "fobia_de_impulsion"
+        "fobia_especifica"
       ],
-      "notes": "Miedo irracional a objetos o situaciones externas. La fobia de impulsión implica temor a perder el control, no deseo real de daño."
+      "notes": "Miedo irracional a objetos o situaciones externas (estímulo fóbico identificable)."
     },
     {
       "id": "rumiaciones",
@@ -128,9 +128,11 @@
         "persecucion",
         "religion",
         "sexualidad",
+        "alimentacion_y_peso",
+        "celos",
         "fracaso"
       ],
-      "notes": "Ejes temáticos que aparecen repetidamente en el discurso, independientemente del tipo de idea."
+      "notes": "Ejes temáticos dominantes. La recurrencia de celos o alimentación obliga a descartar cuadros específicos (celotipia, TCA)."
     }
   ],
   "allowed_features": [

@@ -2,9 +2,13 @@
   "term_id": "JUD_001",
   "canonical_name": "Juicio",
   "synonyms_and_slang": [
-    "juicio"
+    {
+      "term": "juicio",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "capacity",
+  "term_kind": "capacidad",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -34,13 +38,7 @@
       "context": "juicio_insight"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "JUD_001",
-      "canonical_name": "Juicio",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

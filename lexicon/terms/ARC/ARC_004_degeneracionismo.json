@@ -2,10 +2,18 @@
   "term_id": "ARC_004",
   "canonical_name": "Degeneracionismo",
   "synonyms_and_slang": [
-    "teoría de la degeneración",
-    "heredo-degeneración"
+    {
+      "term": "teoría de la degeneración",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "heredo-degeneración",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

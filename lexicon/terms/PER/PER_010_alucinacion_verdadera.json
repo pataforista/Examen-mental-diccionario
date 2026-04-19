@@ -11,7 +11,7 @@
       "context": "patient_report"
     }
   ],
-  "term_kind": "phenomenon",
+  "term_kind": "fenómeno",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

@@ -2,9 +2,13 @@
   "term_id": "COG_003",
   "canonical_name": "Memoria de trabajo",
   "synonyms_and_slang": [
-    "memoria de trabajo"
+    {
+      "term": "memoria de trabajo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "capacity",
+  "term_kind": "capacidad",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

@@ -2,9 +2,21 @@
   "term_id": "MEM_026",
   "canonical_name": "Síndrome de Korsakoff",
   "synonyms_and_slang": [
-    "psicosis de Korsakoff",
-    "síndrome amnésico-confabulatorio",
-    "Korsakoff's syndrome"
+    {
+      "term": "psicosis de Korsakoff",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "síndrome amnésico-confabulatorio",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "Korsakoff's syndrome",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",
@@ -50,7 +62,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
     }

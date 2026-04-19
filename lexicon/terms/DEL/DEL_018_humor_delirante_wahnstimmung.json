@@ -2,20 +2,24 @@
   "term_id": "DEL_018",
   "canonical_name": "Humor delirante (Wahnstimmung)",
   "synonyms_and_slang": [
-    "humor delirante (wahnstimmung)"
+    {
+      "term": "humor delirante (wahnstimmung)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
     "core": "Atmósfera afectiva ominosa y de significación extraña previa a la organización delirante.",
     "required_features": [
-      "presencia clínica de humor delirante (wahnstimmung)",
-      "consistencia fenomenológica durante la entrevista",
-      "impacto clínico observable o referido"
+      "atmósfera de irrealidad u ominosidad",
+      "expectación de algo inminente y significativo",
+      "tensión afectiva sin causa externa"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con humor delirante (wahnstimmung).",
-    "behavioral_marker": "Se observan signos conductuales coherentes con humor delirante (wahnstimmung) en contexto clínico."
+    "subjective_marker": "El paciente dice: 'Algo extraño está pasando a mi alrededor, siento que el mundo ha cambiado pero no sé en qué'.",
+    "behavioral_marker": "Vigilancia aumentada, perplejidad, actitud suspicaz ante el entorno."
   },
   "operationalization": {
     "detectable_by": [

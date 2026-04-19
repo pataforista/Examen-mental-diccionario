@@ -2,9 +2,13 @@
   "term_id": "CAT_002",
   "canonical_name": "Estupor Catatónico",
   "synonyms_and_slang": [
-    "estupor psiquiátrico"
+    {
+      "term": "estupor psiquiátrico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {
@@ -29,7 +33,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-11",
+      "domain_id": "DOM-04",
       "relation": "primary_expression",
       "context": "conducta_motriz"
     }

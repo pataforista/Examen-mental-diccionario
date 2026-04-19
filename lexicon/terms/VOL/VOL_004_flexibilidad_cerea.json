@@ -2,9 +2,21 @@
   "term_id": "VOL_004",
   "canonical_name": "Flexibilidad cérea",
   "synonyms_and_slang": [
-    "catalepsia cerosa",
-    "waxy flexibility",
-    "flexibilitas cerea"
+    {
+      "term": "catalepsia cerosa",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "waxy flexibility",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "flexibilitas cerea",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

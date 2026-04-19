@@ -2,10 +2,18 @@
   "term_id": "SPE_006",
   "canonical_name": "Logorrea",
   "synonyms_and_slang": [
-    "verborrea",
-    "flujo verbal incesante"
+    {
+      "term": "verborrea",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "flujo verbal incesante",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-10",
+      "domain_id": "DOM-05",
       "relation": "primary_expression",
       "context": "lenguaje_y_comunicacion"
     }

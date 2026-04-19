@@ -2,9 +2,13 @@
   "term_id": "TALD_020",
   "canonical_name": "Pobreza de Pensamiento",
   "synonyms_and_slang": [
-    "Pobreza de Pensamiento"
+    {
+      "term": "Pobreza de Pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

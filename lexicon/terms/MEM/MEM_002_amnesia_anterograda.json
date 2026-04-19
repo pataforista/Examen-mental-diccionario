@@ -2,9 +2,21 @@
   "term_id": "MEM_002",
   "canonical_name": "Amnesia anterógrada",
   "synonyms_and_slang": [
-    "amnesia de fijación",
-    "incapacidad de consolidar",
-    "goldfish memory (coloquial)"
+    {
+      "term": "amnesia de fijación",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "incapacidad de consolidar",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "goldfish memory (coloquial)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -48,7 +60,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
     }

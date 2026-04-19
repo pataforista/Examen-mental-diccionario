@@ -33,22 +33,22 @@ async function runAudit() {
                     const term = JSON.parse(content);
 
                     // Validation 1: Required fields
-                    if (!term.id || !term.term) {
-                        console.error(`[FAIL] ${file}: Missing ID or Term`);
+                    if (!term.term_id || !term.canonical_name) {
+                        console.error(`[FAIL] ${file}: Missing term_id or canonical_name`);
                         errorCount++;
                     }
 
                     // Validation 2: Duplicate ID check
-                    if (lexiconTerms.has(term.id)) {
-                        console.error(`[FAIL] Duplicate ID found: ${term.id} in ${file} and ${lexiconTerms.get(term.id)}`);
+                    if (lexiconTerms.has(term.term_id)) {
+                        console.error(`[FAIL] Duplicate ID found: ${term.term_id} in ${file} and ${lexiconTerms.get(term.term_id)}`);
                         errorCount++;
                     } else {
-                        lexiconTerms.set(term.id, file);
+                        lexiconTerms.set(term.term_id, file);
                     }
 
                     // Validation 3: Definitions
-                    if (!term.definitions || term.definitions.length === 0) {
-                        console.warn(`[WARN] ${file}: No definitions found`);
+                    if (!term.definition_clinical || !term.definition_clinical.core) {
+                        console.warn(`[WARN] ${file}: No core definition found`);
                         warningCount++;
                     }
 

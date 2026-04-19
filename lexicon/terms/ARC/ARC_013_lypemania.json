@@ -2,10 +2,18 @@
   "term_id": "ARC_013",
   "canonical_name": "Lypemanía",
   "synonyms_and_slang": [
-    "lipemanía",
-    "melancolía delirante"
+    {
+      "term": "lipemanía",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "melancolía delirante",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {

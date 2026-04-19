@@ -2,9 +2,13 @@
   "term_id": "PER_023",
   "canonical_name": "Sonorización del pensamiento (Gedankenlautwerden)",
   "synonyms_and_slang": [
-    "sonorización del pensamiento (gedankenlautwerden)"
+    {
+      "term": "sonorización del pensamiento (gedankenlautwerden)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

@@ -2,9 +2,13 @@
   "term_id": "MOT_005",
   "canonical_name": "Discinesia",
   "synonyms_and_slang": [
-    "discinesia"
+    {
+      "term": "discinesia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

@@ -2,9 +2,13 @@
   "term_id": "DEL_007",
   "canonical_name": "Delirio grandioso",
   "synonyms_and_slang": [
-    "delirio grandioso"
+    {
+      "term": "delirio grandioso",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

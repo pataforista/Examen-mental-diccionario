@@ -2,9 +2,21 @@
   "term_id": "MEM_005",
   "canonical_name": "Amnesia global transitoria",
   "synonyms_and_slang": [
-    "AGT",
-    "transient global amnesia",
-    "TGA"
+    {
+      "term": "AGT",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "transient global amnesia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "TGA",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",
@@ -50,7 +62,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
     }

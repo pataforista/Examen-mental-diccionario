@@ -2,20 +2,24 @@
   "term_id": "DEL_001",
   "canonical_name": "Apofanía",
   "synonyms_and_slang": [
-    "apofanía"
+    {
+      "term": "apofanía",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
     "core": "Etapa de formación delirante en la que hechos neutros adquieren significado anormal intenso.",
     "required_features": [
-      "presencia clínica de apofanía",
-      "consistencia fenomenológica durante la entrevista",
-      "impacto clínico observable o referido"
+      "percepción de significados en eventos aleatorios",
+      "certeza subjetiva de revelación",
+      "carácter autorreferencial de la experiencia"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con apofanía.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con apofanía en contexto clínico."
+    "subjective_marker": "El paciente refiere: 'De repente entendí que la disposición de los autos en la calle era un código para mí'.",
+    "behavioral_marker": "Búsqueda activa de patrones, perplejidad o actitud de 'ajá' (epifanía delirante)."
   },
   "operationalization": {
     "detectable_by": [

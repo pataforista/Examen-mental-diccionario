@@ -2,7 +2,11 @@
   "term_id": "CNS_010",
   "canonical_name": "Trance",
   "synonyms_and_slang": [
-    "estado de alteración autoinducida o rítmica de conciencia / 'Absorción' hipnótica"
+    {
+      "term": "estado de alteración autoinducida o rítmica de conciencia / 'Absorción' hipnótica",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "estado",
   "granularity": "atomic",

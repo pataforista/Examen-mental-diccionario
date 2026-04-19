@@ -60,7 +60,7 @@
         "insight_emocional",
         "insight_fluctuante"
       ],
-      "notes": "Insight intelectual: acepta la explicación en el plano racional sin apropiación afectiva. Insight emocional: reconocimiento profundo con integración personal."
+      "notes": "Escala: Nulo -> Síntoma -> Intelectual -> Emocional. Intelectual (ej. 'Sé que tengo esquizofrenia porque los test lo dicen, pero lo que me pasa es que el vecino me persigue'). Emocional (reconocimiento con duelo/apropiación)."
     },
     {
       "id": "atribucion_causal",
@@ -69,9 +69,10 @@
         "atribucion_biopsicosocial_realista",
         "atribucion_psicologica_exclusiva",
         "atribucion_somatica_exclusiva",
-        "atribucion_delirante_o_magica"
+        "atribucion_delirante",
+        "atribucion_magica"
       ],
-      "notes": "Describe el modelo explicativo del paciente. Útil para anticipar fricción clínica sin etiquetar 'resistencia'."
+      "notes": "Describe el modelo explicativo. Delirante: basada en falsa creencia. Mágica: causalidad sobrenatural (ej. 'pensar mal causó esto')."
     },
     {
       "id": "proyeccion_a_futuro",

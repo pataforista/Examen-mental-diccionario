@@ -8,7 +8,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "capacity",
+  "term_kind": "capacidad",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -40,9 +40,9 @@
   ],
   "exclusions": [
     {
-      "term_id": "INS_003",
-      "canonical_name": "Insight nulo",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
+      "term_id": "INS_005",
+      "canonical_name": "Insight completo",
+      "reason": "Diferenciación necesaria por gradiente de conciencia de enfermedad."
     }
   ],
   "alerts": [

@@ -18,7 +18,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {

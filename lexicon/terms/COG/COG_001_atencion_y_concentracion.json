@@ -2,9 +2,13 @@
   "term_id": "COG_001",
   "canonical_name": "Atención y concentración",
   "synonyms_and_slang": [
-    "atención y concentración"
+    {
+      "term": "atención y concentración",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "capacity",
+  "term_kind": "capacidad",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

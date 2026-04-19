@@ -2,9 +2,21 @@
   "term_id": "AFF_026",
   "canonical_name": "Llaneza afectiva",
   "synonyms_and_slang": [
-    "flat affect (British tradition)",
-    "afecto llano",
-    "monotonía expresiva estable"
+    {
+      "term": "flat affect (British tradition)",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "afecto llano",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "monotonía expresiva estable",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",
@@ -44,7 +56,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "secondary_expression",
       "context": ""
     }

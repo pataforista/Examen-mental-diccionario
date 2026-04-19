@@ -13,7 +13,7 @@
       "locale": "en"
     }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -46,7 +46,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-05",
       "relation": "primary_expression",
       "context": "lenguaje_motor_y_comportamiento"
     },
@@ -93,5 +93,9 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    }
+  }
 }

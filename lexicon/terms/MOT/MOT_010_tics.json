@@ -2,9 +2,13 @@
   "term_id": "MOT_010",
   "canonical_name": "Tics",
   "synonyms_and_slang": [
-    "tics"
+    {
+      "term": "tics",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

@@ -2,9 +2,21 @@
   "term_id": "MEM_024",
   "canonical_name": "Presque vu patológico",
   "synonyms_and_slang": [
-    "punta de la lengua patológico",
-    "tip-of-the-tongue pathological",
-    "anomia funcional"
+    {
+      "term": "punta de la lengua patológico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "tip-of-the-tongue pathological",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "anomia funcional",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "fenómeno",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

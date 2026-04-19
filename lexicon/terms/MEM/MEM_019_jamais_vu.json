@@ -2,9 +2,21 @@
   "term_id": "MEM_019",
   "canonical_name": "Jamais vu",
   "synonyms_and_slang": [
-    "nunca visto",
-    "extrañeza de lo familiar",
-    "jamais vécu"
+    {
+      "term": "nunca visto",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "extrañeza de lo familiar",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "jamais vécu",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "fenómeno",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

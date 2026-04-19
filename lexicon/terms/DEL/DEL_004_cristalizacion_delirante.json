@@ -2,9 +2,13 @@
   "term_id": "DEL_004",
   "canonical_name": "Cristalización delirante",
   "synonyms_and_slang": [
-    "cristalización delirante"
+    {
+      "term": "cristalización delirante",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

@@ -1,7 +1,7 @@
 {
   "term_id": "MOT_007",
   "canonical_name": "Estereotipia",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Repetición persistente y mecánica de movimientos, posturas o palabras sin finalidad aparente.",
     "required_features": [

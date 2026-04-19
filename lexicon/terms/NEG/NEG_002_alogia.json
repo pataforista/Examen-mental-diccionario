@@ -2,8 +2,16 @@
   "term_id": "NEG_002",
   "canonical_name": "Alogia",
   "synonyms_and_slang": [
-    "pobreza del habla",
-    "empobrecimiento ideativo severo"
+    {
+      "term": "pobreza del habla",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "empobrecimiento ideativo severo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",
@@ -35,7 +43,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-08",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

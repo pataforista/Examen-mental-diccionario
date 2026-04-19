@@ -2,9 +2,13 @@
   "term_id": "MEM_021",
   "canonical_name": "Obnubilación",
   "synonyms_and_slang": [
-    "nublamiento de conciencia"
+    {
+      "term": "nublamiento de conciencia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

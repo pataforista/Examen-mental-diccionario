@@ -2,10 +2,18 @@
   "term_id": "ARC_018",
   "canonical_name": "Paranoia Querulans",
   "synonyms_and_slang": [
-    "delirio de querulancia",
-    "querulancia procesal"
+    {
+      "term": "delirio de querulancia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "querulancia procesal",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -32,7 +40,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-04",
+      "domain_id": "DOM-07",
       "relation": "historical_precursor",
       "context": "trastorno_delirante"
     }

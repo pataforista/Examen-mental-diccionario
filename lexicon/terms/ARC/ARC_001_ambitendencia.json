@@ -2,10 +2,18 @@
   "term_id": "ARC_001",
   "canonical_name": "Ambitendencia",
   "synonyms_and_slang": [
-    "ambivalencia motora",
-    "oposición automática"
+    {
+      "term": "ambivalencia motora",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "oposición automática",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-08",
+      "domain_id": "DOM-04",
       "relation": "primary_expression",
       "context": "psicomotricidad"
     }
@@ -55,7 +63,7 @@
   "version": "1.1.0",
   "mappings": {
     "cie11": {
-      "code": "MB40.0",
+      "code": "6A21.Z",
       "label": "Catatonia (clinical related)"
     },
     "snomed_ct": {

@@ -2,9 +2,13 @@
   "term_id": "TALD_024",
   "canonical_name": "Ruptura del Pensamiento",
   "synonyms_and_slang": [
-    "Ruptura del Pensamiento"
+    {
+      "term": "Ruptura del Pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

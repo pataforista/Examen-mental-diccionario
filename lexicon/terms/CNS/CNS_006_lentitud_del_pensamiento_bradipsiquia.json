@@ -2,8 +2,16 @@
   "term_id": "CNS_006",
   "canonical_name": "Lentitud del Pensamiento (Bradipsiquia)",
   "synonyms_and_slang": [
-    "retraso ideativo marcado",
-    "inhibición formal del fluir del pensamiento"
+    {
+      "term": "retraso ideativo marcado",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "inhibición formal del fluir del pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

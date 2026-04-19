@@ -2,9 +2,13 @@
   "term_id": "MOT_004",
   "canonical_name": "Catalepsia",
   "synonyms_and_slang": [
-    "postura inducida"
+    {
+      "term": "postura inducida",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -29,7 +33,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-08",
+      "domain_id": "DOM-04",
       "relation": "primary_expression",
       "context": "psicomotricidad"
     }

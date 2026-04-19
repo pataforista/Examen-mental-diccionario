@@ -2,9 +2,21 @@
   "term_id": "AFF_024",
   "canonical_name": "Irritabilidad",
   "synonyms_and_slang": [
-    "humor irritable",
-    "irritability",
-    "susceptibilidad aumentada"
+    {
+      "term": "humor irritable",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "irritability",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "susceptibilidad aumentada",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

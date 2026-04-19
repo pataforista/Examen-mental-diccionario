@@ -2,8 +2,16 @@
   "term_id": "CNS_009",
   "canonical_name": "Síncope",
   "synonyms_and_slang": [
-    "desmayo",
-    "pérdida súbita y transitoria de conciencia por isquemia"
+    {
+      "term": "desmayo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "pérdida súbita y transitoria de conciencia por isquemia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",

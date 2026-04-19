@@ -2,9 +2,13 @@
   "term_id": "MEM_004",
   "canonical_name": "Amnesia disociativa",
   "synonyms_and_slang": [
-    "amnesia disociativa"
+    {
+      "term": "amnesia disociativa",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

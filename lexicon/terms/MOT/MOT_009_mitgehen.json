@@ -2,9 +2,13 @@
   "term_id": "MOT_009",
   "canonical_name": "Mitgehen",
   "synonyms_and_slang": [
-    "mitgehen"
+    {
+      "term": "mitgehen",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

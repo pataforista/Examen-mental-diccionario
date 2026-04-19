@@ -2,10 +2,26 @@
   "term_id": "AFF_006",
   "canonical_name": "Anhedonia",
   "synonyms_and_slang": [
-    "pérdida del placer",
-    "anhedonia social",
-    "anhedonia física",
-    "anhédon"
+    {
+      "term": "pérdida del placer",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "anhedonia social",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "anhedonia física",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "anhédon",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -44,7 +60,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }
@@ -66,7 +82,7 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "MB24.1"
+      "code": "MB24.Y"
     },
     "snomed_ct": {
       "concept_id": "3415004"

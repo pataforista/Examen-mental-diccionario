@@ -2,9 +2,13 @@
   "term_id": "PER_002",
   "canonical_name": "Alucinaciones auditivas comentadoras",
   "synonyms_and_slang": [
-    "alucinaciones auditivas comentadoras"
+    {
+      "term": "alucinaciones auditivas comentadoras",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

@@ -2,8 +2,16 @@
   "term_id": "INS_007",
   "canonical_name": "Insight intelectual",
   "synonyms_and_slang": [
-    "insight puramente cognitivo",
-    "insight grado 4/5"
+    {
+      "term": "insight puramente cognitivo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "insight grado 4/5",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

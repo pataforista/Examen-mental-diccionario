@@ -2,8 +2,16 @@
   "term_id": "INS_004",
   "canonical_name": "Egodistonía",
   "synonyms_and_slang": [
-    "ego-dystonic",
-    "alineación sintomática"
+    {
+      "term": "ego-dystonic",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "alineación sintomática",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "distinción_clínica",
   "granularity": "atomic",

@@ -2,10 +2,18 @@
   "term_id": "JUD_002",
   "canonical_name": "Juicio de Realidad",
   "synonyms_and_slang": [
-    "prueba de realidad",
-    "sentido de la realidad"
+    {
+      "term": "prueba de realidad",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "sentido de la realidad",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-16",
+      "domain_id": "DOM-11",
       "relation": "primary_expression",
       "context": "insight_juicio"
     }
@@ -49,7 +57,7 @@
   "version": "1.1.0",
   "mappings": {
     "cie11": {
-      "code": "MB2Z",
+      "code": "MB20.Z",
       "label": "Symptoms or signs involving the nervous system"
     },
     "snomed_ct": {

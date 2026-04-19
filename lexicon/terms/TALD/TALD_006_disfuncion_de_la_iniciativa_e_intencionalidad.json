@@ -2,9 +2,13 @@
   "term_id": "TALD_006",
   "canonical_name": "Disfunción de la Iniciativa e Intencionalidad",
   "synonyms_and_slang": [
-    "Disfunción de la Iniciativa e Intencionalidad"
+    {
+      "term": "Disfunción de la Iniciativa e Intencionalidad",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

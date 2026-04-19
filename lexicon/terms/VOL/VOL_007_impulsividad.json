@@ -2,10 +2,18 @@
   "term_id": "VOL_007",
   "canonical_name": "Impulsividad",
   "synonyms_and_slang": [
-    "descontrol de impulsos",
-    "actuación"
+    {
+      "term": "descontrol de impulsos",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "actuación",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-16",
+      "domain_id": "DOM-04",
       "relation": "primary_expression",
       "context": "voluntad_accion"
     }

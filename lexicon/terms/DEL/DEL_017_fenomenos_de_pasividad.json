@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_017",
   "canonical_name": "Fenómenos de pasividad",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Experiencias de control externo sobre pensamientos, emociones o actos propios.",
     "required_features": [

@@ -2,8 +2,16 @@
   "term_id": "INS_002",
   "canonical_name": "Ausencia de insight psiquiátrico",
   "synonyms_and_slang": [
-    "insight grado 1",
-    "nula conciencia de enfermedad"
+    {
+      "term": "insight grado 1",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "nula conciencia de enfermedad",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

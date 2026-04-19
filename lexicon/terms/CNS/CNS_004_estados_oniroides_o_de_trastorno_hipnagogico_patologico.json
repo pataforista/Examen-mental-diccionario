@@ -2,8 +2,16 @@
   "term_id": "CNS_004",
   "canonical_name": "Estados Oniroides o de Trastorno Hipnagógico patológico",
   "synonyms_and_slang": [
-    "trastorno límite sueño-vigilia patológico",
-    "pseudoalucinación hipnagógica masiva invasiva"
+    {
+      "term": "trastorno límite sueño-vigilia patológico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "pseudoalucinación hipnagógica masiva invasiva",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "fenómeno",
   "granularity": "atomic",

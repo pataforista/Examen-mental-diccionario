@@ -2,10 +2,18 @@
   "term_id": "ARC_017",
   "canonical_name": "Parafrenia",
   "synonyms_and_slang": [
-    "psicosis parafrenica",
-    "delirio imaginativo"
+    {
+      "term": "psicosis parafrenica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "delirio imaginativo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

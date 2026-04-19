@@ -1,7 +1,7 @@
 {
   "term_id": "THO_001",
   "canonical_name": "Asociaciones laxas",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Pérdida de la conexión lógica normal entre ideas, con vínculos remotos o idiosincrásicos.",
     "required_features": [
@@ -24,7 +24,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-02",
+      "domain_id": "DOM-06",
       "relation": "primary_expression",
       "context": "asociaciones"
     }
@@ -37,17 +37,15 @@
   ],
   "version": "1.0.0",
   "synonyms_and_slang": [
-    "asociaciones laxas"
+    {
+      "term": "asociaciones laxas",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "granularity": "atomic",
   "risk_weight": 0,
-  "exclusions": [
-    {
-      "term_id": "THO_003",
-      "canonical_name": "Asociaciones laxas",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",
@@ -71,5 +69,9 @@
       "psicopatologia_clasica"
     ]
   },
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Z"
+    }
+  }
 }

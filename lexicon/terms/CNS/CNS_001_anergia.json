@@ -2,8 +2,16 @@
   "term_id": "CNS_001",
   "canonical_name": "Anergia",
   "synonyms_and_slang": [
-    "falta persistente de energía global (corporal/mental)",
-    "fatiga patológica vital subyacente"
+    {
+      "term": "falta persistente de energía global (corporal/mental)",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "fatiga patológica vital subyacente",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",

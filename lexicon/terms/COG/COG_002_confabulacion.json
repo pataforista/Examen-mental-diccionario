@@ -2,10 +2,18 @@
   "term_id": "COG_002",
   "canonical_name": "Confabulación",
   "synonyms_and_slang": [
-    "falso recuerdo",
-    "relleno de memoria"
+    {
+      "term": "falso recuerdo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "relleno de memoria",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

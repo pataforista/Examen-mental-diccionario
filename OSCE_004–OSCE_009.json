@@ -13,7 +13,7 @@
       "DOM-01": {
         "nivel_de_conciencia": "alerta",
         "claridad_del_sensorio": "sensorio_claro",
-        "course_temporal": "estable",
+        "curso_temporal": "estable",
         "orientacion": "orientacion_integra"
       },
       "DOM-02": {
@@ -541,8 +541,7 @@
         "ideacion_fobica": "ausente",
         "rumiaciones": "rumiaciones_preocupacion",
         "preocupaciones_dominantes": "ausentes",
-        "temas_recurrentes": "ninguno",
-        "notes_rituales_mentales": "neutralizacion_mental_repetitiva (rezos/repasos) como compulsión encubierta"
+        "temas_recurrentes": "ninguno"
       },
       "DOM-08": {
         "tipo_de_fenomeno": "sin_alteraciones",
@@ -635,7 +634,7 @@
       },
       "DOM-04": {
         "actividad_psicomotora": "normocinesia",
-        "movemientos_anormales": "manierismos",
+        "movimientos_anormales": "manierismos",
         "fenomenos_catatonicos": "ausentes",
         "iniciativa": "hipobulia",
         "impulsividad_inhibicion_y_compulsion": "control_conductual_conservado"

@@ -2,14 +2,22 @@
   "term_id": "TALD_003",
   "canonical_name": "Descarrilamiento",
   "synonyms_and_slang": [
-    "Descarrilamiento"
+    {
+      "term": "Descarrilamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
     "core": "Un patrón de habla espontánea en el que las ideas se 'salen de la vía' hacia otros pensamientos que están clara pero oblicuamente relacionados. Pueden decirse cosas en yuxtaposición que carecen de una relación significativa, o el paciente puede cambiar idiosincrásicamente de un marco de referencia a otro. A veces puede haber conexiones vagas entre las ideas. Una manifestación es un deslizamiento lento y constante, de modo que el hablante se aleja cada vez más de la pista sin darse cuenta de que su respuesta ya no tiene conexión con la pregunta.",
-    "required_features": [],
+    "required_features": [
+      "pérdida de continuidad lógica en el discurso",
+      "desvío del tema central sin retorno",
+      "vínculos asociativos débiles entre frases"
+    ],
     "behavioral_marker": "Observable en la entrevista clínica"
   },
   "operationalization": {

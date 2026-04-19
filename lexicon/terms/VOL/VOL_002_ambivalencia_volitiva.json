@@ -2,8 +2,16 @@
   "term_id": "VOL_002",
   "canonical_name": "Ambivalencia volitiva",
   "synonyms_and_slang": [
-    "ambitendencia",
-    "parálisis por decisión"
+    {
+      "term": "ambitendencia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "parálisis por decisión",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",

@@ -2,10 +2,18 @@
   "term_id": "MEM_022",
   "canonical_name": "Onirismo",
   "synonyms_and_slang": [
-    "estado oniroide",
-    "delirio onírico"
+    {
+      "term": "estado oniroide",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "delirio onírico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

@@ -2,9 +2,21 @@
   "term_id": "CNS_007",
   "canonical_name": "Letargo",
   "synonyms_and_slang": [
-    "somnolencia diurna excesiva",
-    "hiperinsomnia secundaria",
-    "drowsiness"
+    {
+      "term": "somnolencia diurna excesiva",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "hiperinsomnia secundaria",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "drowsiness",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

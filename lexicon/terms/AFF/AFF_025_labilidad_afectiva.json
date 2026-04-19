@@ -2,9 +2,21 @@
   "term_id": "AFF_025",
   "canonical_name": "Labilidad afectiva",
   "synonyms_and_slang": [
-    "afecto lábil",
-    "emotional lability",
-    "incontinencia emocional leve"
+    {
+      "term": "afecto lábil",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "emotional lability",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "incontinencia emocional leve",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }
@@ -65,7 +77,7 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "MB24.5"
+      "code": "MB24.4"
     },
     "snomed_ct": {
       "concept_id": "18963009"

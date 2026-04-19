@@ -2,9 +2,21 @@
   "term_id": "AFF_017",
   "canonical_name": "Eutimia",
   "synonyms_and_slang": [
-    "ánimo normal",
-    "estado de ánimo basal",
-    "euthymia"
+    {
+      "term": "ánimo normal",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "estado de ánimo basal",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "euthymia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "estado",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "baseline_reference",
       "context": ""
     }

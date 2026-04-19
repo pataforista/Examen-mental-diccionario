@@ -2,10 +2,18 @@
   "term_id": "THO_008",
   "canonical_name": "Paralogia",
   "synonyms_and_slang": [
-    "pensamiento ilógico",
-    "lógica anómala"
+    {
+      "term": "pensamiento ilógico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "lógica anómala",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -29,7 +37,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-04",
+      "domain_id": "DOM-06",
       "relation": "primary_expression",
       "context": "pensamiento_forma"
     }

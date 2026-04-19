@@ -2,9 +2,13 @@
   "term_id": "MEM_016",
   "canonical_name": "Fuga",
   "synonyms_and_slang": [
-    "fuga disociativa"
+    {
+      "term": "fuga disociativa",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

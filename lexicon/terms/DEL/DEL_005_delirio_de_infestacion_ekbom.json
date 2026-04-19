@@ -2,9 +2,13 @@
   "term_id": "DEL_005",
   "canonical_name": "Delirio de infestación (Ekbom)",
   "synonyms_and_slang": [
-    "delirio de infestación (ekbom)"
+    {
+      "term": "delirio de infestación (ekbom)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

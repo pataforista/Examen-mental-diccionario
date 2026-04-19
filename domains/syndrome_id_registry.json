@@ -69,10 +69,10 @@
       "category": "psiquiatrico",
       "priority": 60,
       "variants": [
-        "depresivo",
         "maniaco",
         "mixto",
-        "hipomaniaco"
+        "hipomaniaco",
+        "irritable_disforico"
       ],
       "notes": "El estado mixto se asocia a mayor riesgo clínico; se integra con DOM-12 (riesgo) y DOM-04 (psicomotricidad)."
     },

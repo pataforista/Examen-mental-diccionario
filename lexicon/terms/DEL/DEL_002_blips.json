@@ -2,9 +2,13 @@
   "term_id": "DEL_002",
   "canonical_name": "BLIPS",
   "synonyms_and_slang": [
-    "blips"
+    {
+      "term": "blips",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

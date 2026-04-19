@@ -2,8 +2,16 @@
   "term_id": "MEM_003",
   "canonical_name": "Amnesia anterógrada disociativa",
   "synonyms_and_slang": [
-    "amnesia funcional anterógrada",
-    "amnesia conversiva"
+    {
+      "term": "amnesia funcional anterógrada",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "amnesia conversiva",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -42,7 +50,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
     }

@@ -2,9 +2,21 @@
   "term_id": "MEM_020",
   "canonical_name": "Memoria dependiente del estado",
   "synonyms_and_slang": [
-    "state-dependent memory",
-    "state-dependent learning",
-    "olvido por cambio de contexto"
+    {
+      "term": "state-dependent memory",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "state-dependent learning",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "olvido por cambio de contexto",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "fenómeno",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

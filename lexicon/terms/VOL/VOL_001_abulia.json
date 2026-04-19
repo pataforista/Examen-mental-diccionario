@@ -2,9 +2,21 @@
   "term_id": "VOL_001",
   "canonical_name": "Abulia",
   "synonyms_and_slang": [
-    "falta de voluntad",
-    "aboulia",
-    "parálisis de la voluntad"
+    {
+      "term": "falta de voluntad",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "aboulia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "parálisis de la voluntad",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",

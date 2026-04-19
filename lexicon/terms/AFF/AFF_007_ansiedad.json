@@ -2,9 +2,21 @@
   "term_id": "AFF_007",
   "canonical_name": "Ansiedad",
   "synonyms_and_slang": [
-    "angustia",
-    "nerviosismo patológico",
-    "anxiety"
+    {
+      "term": "angustia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "nerviosismo patológico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "anxiety",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

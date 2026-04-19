@@ -2,9 +2,21 @@
   "term_id": "AFF_030",
   "canonical_name": "Perplejidad",
   "synonyms_and_slang": [
-    "bewilderment",
-    "estado de perplejidad",
-    "confusión afectiva"
+    {
+      "term": "bewilderment",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "estado de perplejidad",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "confusión afectiva",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "secondary_expression",
       "context": ""
     }

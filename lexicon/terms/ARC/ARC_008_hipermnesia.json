@@ -2,9 +2,13 @@
   "term_id": "ARC_008",
   "canonical_name": "Hipermnesia",
   "synonyms_and_slang": [
-    "exaltación de la memoria"
+    {
+      "term": "exaltación de la memoria",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

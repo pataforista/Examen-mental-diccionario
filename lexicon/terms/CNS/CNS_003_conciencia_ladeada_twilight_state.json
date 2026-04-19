@@ -2,8 +2,16 @@
   "term_id": "CNS_003",
   "canonical_name": "Conciencia Ladeada (Twilight state)",
   "synonyms_and_slang": [
-    "Estado Crepuscular",
-    "ESTADO ONIROIDE EPILÉPTICO"
+    {
+      "term": "Estado Crepuscular",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ESTADO ONIROIDE EPILÉPTICO",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "estado",
   "granularity": "atomic",

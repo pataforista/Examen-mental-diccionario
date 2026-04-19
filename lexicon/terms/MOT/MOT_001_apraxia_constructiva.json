@@ -2,9 +2,13 @@
   "term_id": "MOT_001",
   "canonical_name": "Apraxia constructiva",
   "synonyms_and_slang": [
-    "apraxia constructiva"
+    {
+      "term": "apraxia constructiva",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

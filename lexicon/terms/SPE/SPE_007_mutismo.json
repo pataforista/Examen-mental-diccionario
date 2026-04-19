@@ -18,7 +18,7 @@
       "locale": "en"
     }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {
@@ -106,5 +106,9 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    }
+  }
 }

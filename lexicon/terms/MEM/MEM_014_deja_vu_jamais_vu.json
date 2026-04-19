@@ -1,7 +1,7 @@
 {
   "term_id": "MEM_014",
   "canonical_name": "Déjà vu / Jamais vu",
-  "term_kind": "phenomenon",
+  "term_kind": "fenómeno",
   "definition_clinical": {
     "core": "Alteración del sentido de familiaridad con el entorno.",
     "required_features": [
@@ -59,7 +59,11 @@
     ]
   },
   "synonyms_and_slang": [
-    "déjà vu / jamais vu"
+    {
+      "term": "déjà vu / jamais vu",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "mappings": {}

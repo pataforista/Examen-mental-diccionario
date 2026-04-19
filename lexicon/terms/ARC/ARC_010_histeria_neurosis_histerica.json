@@ -2,7 +2,11 @@
   "term_id": "ARC_010",
   "canonical_name": "Histeria (Neurosis Histérica)",
   "synonyms_and_slang": [
-    "Neurosis Histérica de Freud / Histeria de Conversión y Disociativa Somática Clásica de Charcot a Pinel."
+    {
+      "term": "Neurosis Histérica de Freud / Histeria de Conversión y Disociativa Somática Clásica de Charcot a Pinel.",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "concepto_histórico",
   "granularity": "atomic",
@@ -29,7 +33,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-12",
+      "domain_id": "DOM-16",
       "relation": "primary_expression",
       "context": ""
     }

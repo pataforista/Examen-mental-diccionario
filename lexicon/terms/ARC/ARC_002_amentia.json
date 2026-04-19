@@ -2,10 +2,18 @@
   "term_id": "ARC_002",
   "canonical_name": "Amentia",
   "synonyms_and_slang": [
-    "confusión mental centroeuropeo",
-    "estado confuso-onírico"
+    {
+      "term": "confusión mental centroeuropeo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "estado confuso-onírico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

@@ -2,8 +2,16 @@
   "term_id": "MEM_023",
   "canonical_name": "Paramnesia reduplicativa",
   "synonyms_and_slang": [
-    "reduplicative paramnesia",
-    "síndrome de Pick"
+    {
+      "term": "reduplicative paramnesia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "síndrome de Pick",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -42,7 +50,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
     }

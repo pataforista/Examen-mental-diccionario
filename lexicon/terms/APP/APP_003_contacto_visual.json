@@ -2,9 +2,13 @@
   "term_id": "APP_003",
   "canonical_name": "Contacto visual",
   "synonyms_and_slang": [
-    "contacto visual"
+    {
+      "term": "contacto visual",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

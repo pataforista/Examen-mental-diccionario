@@ -7,7 +7,7 @@
       "context": "clinical_acronym"
     }
   ],
-  "term_kind": "syndrome",
+  "term_kind": "síndrome",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -109,5 +109,9 @@
       "Maudsley Psychopharmacology"
     ]
   },
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "EH60"
+    }
+  }
 }

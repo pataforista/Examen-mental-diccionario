@@ -2,9 +2,13 @@
   "term_id": "TALD_016",
   "canonical_name": "Pensamiento Enlentecido",
   "synonyms_and_slang": [
-    "Pensamiento Enlentecido"
+    {
+      "term": "Pensamiento Enlentecido",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

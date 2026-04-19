@@ -2,9 +2,21 @@
   "term_id": "MEM_017",
   "canonical_name": "Fuga disociativa",
   "synonyms_and_slang": [
-    "fuga psicogénica",
-    "fugue state",
-    "poriomania (término histórico)"
+    {
+      "term": "fuga psicogénica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "fugue state",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "poriomania (término histórico)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",
@@ -49,7 +61,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
     }

@@ -2,9 +2,21 @@
   "term_id": "MEM_015",
   "canonical_name": "Estado confusional",
   "synonyms_and_slang": [
-    "confusión mental",
-    "confusional state",
-    "desorientación sin delirium"
+    {
+      "term": "confusión mental",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "confusional state",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "desorientación sin delirium",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",

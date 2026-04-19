@@ -2,8 +2,16 @@
   "term_id": "VOL_005",
   "canonical_name": "Hiperbulia",
   "synonyms_and_slang": [
-    "aumento patológico de la voluntad",
-    "hyperboulia"
+    {
+      "term": "aumento patológico de la voluntad",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "hyperboulia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",

@@ -2,9 +2,13 @@
   "term_id": "DEL_030",
   "canonical_name": "Síndrome de Fregoli",
   "synonyms_and_slang": [
-    "síndrome de fregoli"
+    {
+      "term": "síndrome de fregoli",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

@@ -2,9 +2,13 @@
   "term_id": "TALD_008",
   "canonical_name": "Glosomanía / Clanging",
   "synonyms_and_slang": [
-    "Glosomanía / Clanging"
+    {
+      "term": "Glosomanía / Clanging",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

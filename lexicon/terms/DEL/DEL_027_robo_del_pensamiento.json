@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_027",
   "canonical_name": "Robo del pensamiento",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Vivencia de que los pensamientos son extraídos o sustraídos por una fuerza externa.",
     "required_features": [
@@ -60,7 +60,11 @@
     ]
   },
   "synonyms_and_slang": [
-    "robo del pensamiento"
+    {
+      "term": "robo del pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "mappings": {}

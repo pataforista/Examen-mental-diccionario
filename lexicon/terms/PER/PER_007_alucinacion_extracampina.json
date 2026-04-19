@@ -2,9 +2,13 @@
   "term_id": "PER_007",
   "canonical_name": "Alucinación Extracampina",
   "synonyms_and_slang": [
-    "alucinación fuera de campo"
+    {
+      "term": "alucinación fuera de campo",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

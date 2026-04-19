@@ -2,11 +2,23 @@
   "term_id": "ARC_020",
   "canonical_name": "Wahnstimmung",
   "synonyms_and_slang": [
-    "humor delirante",
-    "atmósfera delirante",
-    "trema"
+    {
+      "term": "humor delirante",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "atmósfera delirante",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "trema",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -31,7 +43,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-04",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": "delirio_fase_pre-psicotica"
     }

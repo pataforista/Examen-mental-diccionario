@@ -18,7 +18,7 @@
       "locale": "en"
     }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -58,7 +58,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-05",
       "relation": "primary_expression",
       "context": "lenguaje_motor"
     },
@@ -105,5 +105,9 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    }
+  }
 }

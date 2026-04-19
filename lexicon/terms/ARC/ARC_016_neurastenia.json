@@ -2,10 +2,18 @@
   "term_id": "ARC_016",
   "canonical_name": "Neurastenia",
   "synonyms_and_slang": [
-    "agotamiento nervioso",
-    "fatiga crónica histórica"
+    {
+      "term": "agotamiento nervioso",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "fatiga crónica histórica",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -51,7 +59,7 @@
   "version": "1.1.0",
   "mappings": {
     "cie11": {
-      "code": "6B61",
+      "code": "8E49",
       "label": "Dissociative disorders (clinical semantic link)"
     },
     "snomed_ct": {

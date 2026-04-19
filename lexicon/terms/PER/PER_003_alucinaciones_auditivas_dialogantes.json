@@ -2,9 +2,13 @@
   "term_id": "PER_003",
   "canonical_name": "Alucinaciones auditivas dialogantes",
   "synonyms_and_slang": [
-    "alucinaciones auditivas dialogantes"
+    {
+      "term": "alucinaciones auditivas dialogantes",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

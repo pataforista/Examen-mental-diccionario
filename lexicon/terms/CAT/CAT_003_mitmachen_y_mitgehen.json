@@ -2,10 +2,18 @@
   "term_id": "CAT_003",
   "canonical_name": "Mitmachen y Mitgehen",
   "synonyms_and_slang": [
-    "cooperación excesiva",
-    "fenómeno del imán"
+    {
+      "term": "cooperación excesiva",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "fenómeno del imán",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -29,7 +37,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-11",
+      "domain_id": "DOM-04",
       "relation": "primary_expression",
       "context": "conducta_motriz"
     }

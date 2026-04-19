@@ -2,9 +2,13 @@
   "term_id": "DEL_031",
   "canonical_name": "Síntomas positivos atenuados",
   "synonyms_and_slang": [
-    "síntomas positivos atenuados"
+    {
+      "term": "síntomas positivos atenuados",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

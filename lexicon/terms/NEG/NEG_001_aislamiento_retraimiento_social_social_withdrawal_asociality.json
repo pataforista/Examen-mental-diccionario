@@ -2,8 +2,16 @@
   "term_id": "NEG_001",
   "canonical_name": "Aislamiento / Retraimiento Social (Social Withdrawal / Asociality)",
   "synonyms_and_slang": [
-    "Asocialidad primaria patológica",
-    "anhedonia/apatía social combinada"
+    {
+      "term": "Asocialidad primaria patológica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "anhedonia/apatía social combinada",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",
@@ -37,7 +45,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-08",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

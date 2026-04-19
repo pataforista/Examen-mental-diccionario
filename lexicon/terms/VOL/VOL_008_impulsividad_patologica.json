@@ -2,8 +2,16 @@
   "term_id": "VOL_008",
   "canonical_name": "Impulsividad patológica",
   "synonyms_and_slang": [
-    "falta de control de impulsos",
-    "impulsivity"
+    {
+      "term": "falta de control de impulsos",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "impulsivity",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

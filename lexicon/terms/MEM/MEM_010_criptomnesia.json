@@ -2,9 +2,21 @@
   "term_id": "MEM_010",
   "canonical_name": "Criptomnesia",
   "synonyms_and_slang": [
-    "memory illusion",
-    "plagio inconsciente",
-    "cryptomnesia"
+    {
+      "term": "memory illusion",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "plagio inconsciente",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "cryptomnesia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

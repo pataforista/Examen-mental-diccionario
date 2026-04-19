@@ -2,10 +2,26 @@
   "term_id": "AFF_013",
   "canonical_name": "Depresión",
   "synonyms_and_slang": [
-    "ánimo deprimido",
-    "estado depresivo",
-    "tristeza patológica",
-    "melancolía (clásico)"
+    {
+      "term": "ánimo deprimido",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "estado depresivo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "tristeza patológica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "melancolía (clásico)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -49,7 +65,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }
@@ -71,7 +87,7 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "6A70"
+      "code": "MB24.5"
     },
     "snomed_ct": {
       "concept_id": "35489007"

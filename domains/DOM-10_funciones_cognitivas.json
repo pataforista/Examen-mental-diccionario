@@ -64,11 +64,12 @@
         "conservadas",
         "dificultad_planificacion",
         "perdida_flexibilidad_cognitiva",
-        "perseveracion",
+        "perseveracion_verbal",
+        "perseveracion_motora",
         "impulsividad_cognitiva",
         "conducta_de_utilizacion"
       ],
-      "notes": "Evalúa planificación, inhibición y flexibilidad. La conducta de utilización sugiere lesión frontal."
+      "notes": "Planificación, inhibición y flexibilidad. Perseveración verbal: repetir palabras/frases. Perseveración motora: repetir actos sin finalidad. Conducta de utilización (lesión frontal)."
     },
     {
       "id": "visuoconstruccion",
@@ -99,20 +100,22 @@
       "accepted_terms": [
         "conservadas",
         "agnosia_visual",
+        "agnosia_auditiva",
+        "simultagnosia",
+        "acromatopsia",
         "prosopagnosia",
         "anosognosia"
       ],
-      "notes": "La anosognosia implica incapacidad para reconocer el propio déficit; frecuente en daño hemisférico derecho."
+      "notes": "Agnosia auditiva: falla en reconocimiento de sonidos (ej. miau). Simultagnosia: falla en ver múltiples objetos. Anosognosia: falla en reconocer el déficit (signo neurológico; distinguir de negación psicológica)."
     },
     {
       "id": "abstraccion",
       "label_es": "Abstracción",
       "accepted_terms": [
         "conservada",
-        "dificultad_abstraccion",
-        "pensamiento_concreto"
+        "dificultad_abstraccion_con_pensamiento_concreto"
       ],
-      "notes": "Evaluar con semejanzas y proverbios; afectada en esquizofrenia y deterioro cognitivo."
+      "notes": "Dificultad de abstracción implica incapacidad de ir más allá del significado literal (concretismo). Evaluar con semejanzas y proverbios."
     }
   ],
   "allowed_features": [
@@ -138,7 +141,7 @@
   ],
   "clinical_notes": [
     "La atención condiciona el rendimiento del resto de dominios.",
-    "El 'no sé' persistente sugiere pseudodemencia depresiva; la confabulación sugiere organicidad.",
+    "Todo hallazgo debe ajustarse al nivel educativo/laboral previo (education_adjustment). El analfabetismo funcional simula concretismo.",
     "La anosognosia es un signo de alarma neurológica.",
     "Alteraciones en gnosias o visuoconstrucción ameritan valoración neurológica."
   ]

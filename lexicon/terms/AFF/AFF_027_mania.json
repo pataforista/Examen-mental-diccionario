@@ -2,9 +2,21 @@
   "term_id": "AFF_027",
   "canonical_name": "Manía",
   "synonyms_and_slang": [
-    "estado maníaco",
-    "ánimo elevado patológico",
-    "euforia maníaca"
+    {
+      "term": "estado maníaco",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ánimo elevado patológico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "euforia maníaca",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -49,7 +61,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

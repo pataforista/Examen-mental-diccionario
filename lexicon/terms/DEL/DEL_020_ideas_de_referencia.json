@@ -2,9 +2,13 @@
   "term_id": "DEL_020",
   "canonical_name": "Ideas de referencia",
   "synonyms_and_slang": [
-    "ideas de referencia"
+    {
+      "term": "ideas de referencia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

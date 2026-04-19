@@ -2,9 +2,13 @@
   "term_id": "TALD_007",
   "canonical_name": "Disociación del Pensamiento",
   "synonyms_and_slang": [
-    "Disociación del Pensamiento"
+    {
+      "term": "Disociación del Pensamiento",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

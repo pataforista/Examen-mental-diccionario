@@ -128,6 +128,8 @@
   "clinical_notes": [
     "DOM-13 está diseñado para apoyar la integración y reducir omisiones, no para documentar.",
     "La ausencia de datos se interpreta como posible omisión, no como normalidad.",
-    "Las banderas críticas obligan a revisión activa del caso."
+    "Las banderas críticas obligan a revisión activa del caso.",
+    "Reglas de inferencia (placeholder): IF DOM-08.visual AND DOM-01.fluctuante AND DOM-12.riesgo THEN sindrome_confusional(sev=High).",
+    "Guardrails: La 'fobia de impulsión' (DOM-07) inhibe mecánicamente la alerta de 'riesgo autolítico' si es el único hallazgo en DOM-12."
   ]
 }

@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_003",
   "canonical_name": "Celotipia (Síndrome de Otelo)",
-  "term_kind": "syndrome",
+  "term_kind": "síndrome",
   "definition_clinical": {
     "core": "Delirio de infidelidad de la pareja sin base real.",
     "required_features": [
@@ -69,7 +69,11 @@
     ]
   },
   "synonyms_and_slang": [
-    "celotipia (síndrome de otelo)"
+    {
+      "term": "celotipia (síndrome de otelo)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "mappings": {}

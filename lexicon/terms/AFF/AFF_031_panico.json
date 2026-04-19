@@ -2,9 +2,21 @@
   "term_id": "AFF_031",
   "canonical_name": "Pánico",
   "synonyms_and_slang": [
-    "ataque de pánico",
-    "crisis de angustia",
-    "panic attack"
+    {
+      "term": "ataque de pánico",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "crisis de angustia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "panic attack",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -44,7 +56,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

@@ -19,7 +19,6 @@
     ],
     "alert_type": [
       "safety_critical",
-      "suicide_risk",
       "iatrogenic_risk",
       "diagnostic_error",
       "management_warning"
@@ -37,6 +36,12 @@
       "self",
       "other",
       "vulnerability"
+    ],
+    "vulnerability_type": [
+      "medical_acute",
+      "social_isolation",
+      "self_neglect",
+      "legal_protection"
     ],
     "phenotype_stage": [
       "ideation",

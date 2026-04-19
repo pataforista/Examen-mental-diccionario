@@ -8,7 +8,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -31,18 +31,12 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-02",
+      "domain_id": "DOM-05",
       "relation": "primary_expression",
       "context": "lenguaje_comunicacion"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "SPE_010",
-      "canonical_name": "Presión de habla",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",
@@ -72,5 +66,9 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB24.Y"
+    }
+  }
 }

@@ -7,7 +7,7 @@
       "context": "clinical"
     }
   ],
-  "term_kind": "syndrome",
+  "term_kind": "síndrome",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -107,5 +107,9 @@
     "phenomenology": [],
     "clinical_tradition": []
   },
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "EH60"
+    }
+  }
 }

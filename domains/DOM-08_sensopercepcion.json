@@ -30,7 +30,7 @@
         "alucinacion_hipnopompica",
         "ilusion"
       ],
-      "notes": "Alucinación verdadera: percepción con corporeidad en espacio externo. Pseudoalucinación: experiencia perceptiva vívida en espacio interno (intrapsíquico). Alucinosis: fenómeno externo con juicio de realidad conservado. Hipnagógicas/Hipnopómpicas: asociadas al sueño, frecuentes en población general."
+      "notes": "Alucinación verdadera: percepción con corporeidad y objetividad en espacio externo. Pseudoalucinación: experiencia vívida en espacio interno; carece de corporeidad y objetividad (Jaspers). Alucinosis: fenómeno externo con juicio de realidad conservado (frecuente en abstinencia; ej. 'Veo siluetas pero sé que no están')."
     },
     {
       "id": "modalidad_sensorial",
@@ -42,9 +42,10 @@
         "olfatoria",
         "gustativa",
         "cenestesica_visceral",
-        "cinestesica_motora"
+        "cinestesica_motora",
+        "extracampal"
       ],
-      "notes": "Las modalidades olfatoria y gustativa obligan a descartar patología neurológica (epilepsia del lóbulo temporal, tumor)."
+      "notes": "Olfatogustativas: descartar patología neurológica. Cenestésicas/Viscerales: descartar patología médica urgente (IAM, disección)."
     },
     {
       "id": "caracteristicas_auditivas",
@@ -70,7 +71,7 @@
         "formicacion",
         "fotopsias"
       ],
-      "notes": "Zoopsias y formicación sugieren etiología tóxica o abstinencia. Fotopsias orientan a causa neurológica (migraña, epilepsia)."
+      "notes": "Zoopsias + formicación sugieren síndrome de abstinencia severa (Delirium Tremens). Fotopsias orientan a causa neurológica."
     },
     {
       "id": "distorsiones_perceptivas",

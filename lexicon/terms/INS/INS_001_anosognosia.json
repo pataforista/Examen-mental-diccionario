@@ -2,8 +2,16 @@
   "term_id": "INS_001",
   "canonical_name": "Anosognosia",
   "synonyms_and_slang": [
-    "ausencia de insight nuclear",
-    "falta de conciencia de enfermedad (neurológica)"
+    {
+      "term": "ausencia de insight nuclear",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "falta de conciencia de enfermedad (neurológica)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",

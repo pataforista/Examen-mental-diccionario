@@ -2,9 +2,13 @@
   "term_id": "ARC_006",
   "canonical_name": "Dementia Praecox",
   "synonyms_and_slang": [
-    "demencia precoz"
+    {
+      "term": "demencia precoz",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {

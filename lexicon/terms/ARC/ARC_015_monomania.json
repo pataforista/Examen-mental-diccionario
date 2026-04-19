@@ -2,10 +2,18 @@
   "term_id": "ARC_015",
   "canonical_name": "Monomanía",
   "synonyms_and_slang": [
-    "paranoia parcial",
-    "delirio parcial"
+    {
+      "term": "paranoia parcial",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "delirio parcial",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-04",
+      "domain_id": "DOM-07",
       "relation": "historical_precursor",
       "context": "delirios_monotematicos"
     }

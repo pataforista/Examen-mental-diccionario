@@ -2,9 +2,13 @@
   "term_id": "TALD_015",
   "canonical_name": "Parafasia Semántica",
   "synonyms_and_slang": [
-    "Parafasia Semántica"
+    {
+      "term": "Parafasia Semántica",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

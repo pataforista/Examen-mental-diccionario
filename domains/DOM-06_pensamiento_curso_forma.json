@@ -39,7 +39,7 @@
         "resonancia_o_rimas",
         "ensalada_de_palabras"
       ],
-      "notes": "Evalúa el nexo entre ideas sucesivas. 'Resonancia': asociación por sonido (rimas, aliteraciones). 'Circunstancialidad' conserva meta final; 'tangencialidad' no."
+      "notes": "Evalúa el nexo entre ideas sucesivas. 'Resonancia': asociación por sonido (ej. 'cine rima con fine, me siento fine'). 'Circunstancialidad' (con rodeos innecesarios) conserva meta final; 'tangencialidad' no."
     },
     {
       "id": "densidad_y_continuidad",
@@ -49,9 +49,9 @@
         "bloqueo_del_pensamiento",
         "mente_en_blanco",
         "perseveracion",
-        "pobreza_de_contenido"
+        "pobreza_informatica"
       ],
-      "notes": "La pobreza de contenido implica discurso aparentemente fluido pero con escasa información real. El bloqueo es una interrupción brusca y observable; la mente en blanco es subjetiva."
+      "notes": "Pobreza informática (o de contenido): discurso fluido pero con información mínima o redundante (v.g. 'las cosas son como son porque al final la vida es así'). El bloqueo es observable; la mente en blanco es subjetiva."
     },
     {
       "id": "direccionalidad",

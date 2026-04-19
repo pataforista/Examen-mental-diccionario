@@ -2,10 +2,18 @@
   "term_id": "AFF_022",
   "canonical_name": "Incontinencia Afectiva",
   "synonyms_and_slang": [
-    "labilidad extrema",
-    "incontinencia emocional"
+    {
+      "term": "labilidad extrema",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "incontinencia emocional",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -30,7 +38,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": "afectividad"
     }

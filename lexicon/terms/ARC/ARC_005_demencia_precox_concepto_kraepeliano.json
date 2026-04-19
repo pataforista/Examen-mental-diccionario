@@ -2,7 +2,11 @@
   "term_id": "ARC_005",
   "canonical_name": "Demencia Precox (Concepto Kraepeliano)",
   "synonyms_and_slang": [
-    "Demencia Temprana (Kraeplin)"
+    {
+      "term": "Demencia Temprana (Kraeplin)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "concepto_histórico",
   "granularity": "atomic",

@@ -2,9 +2,21 @@
   "term_id": "AFF_002",
   "canonical_name": "Alexitimia",
   "synonyms_and_slang": [
-    "analfabetismo emocional",
-    "alexithymia",
-    "ceguera emocional"
+    {
+      "term": "analfabetismo emocional",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "alexithymia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ceguera emocional",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

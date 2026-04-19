@@ -2,9 +2,21 @@
   "term_id": "AFF_021",
   "canonical_name": "Incongruencia afectiva",
   "synonyms_and_slang": [
-    "afecto inapropiado",
-    "paramimia",
-    "desacuerdo afecto-contenido"
+    {
+      "term": "afecto inapropiado",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "paramimia",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "desacuerdo afecto-contenido",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "signo",
   "granularity": "atomic",
@@ -38,7 +50,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

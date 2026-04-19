@@ -2,9 +2,13 @@
   "term_id": "APP_001",
   "canonical_name": "Actitud hacia el entrevistador",
   "synonyms_and_slang": [
-    "actitud hacia el entrevistador"
+    {
+      "term": "actitud hacia el entrevistador",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

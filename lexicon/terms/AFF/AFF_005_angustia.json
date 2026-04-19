@@ -1,7 +1,7 @@
 {
   "term_id": "AFF_005",
   "canonical_name": "Angustia",
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
@@ -118,7 +118,11 @@
   ],
   "version": "1.0.1",
   "synonyms_and_slang": [
-    "angustia"
+    {
+      "term": "angustia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "status": "active",
   "provenance": {

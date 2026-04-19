@@ -23,9 +23,10 @@
         "taquilalia",
         "latencia_aumentada",
         "latencia_disminuida",
-        "presion_del_habla"
+        "presion_del_habla",
+        "logorrea"
       ],
-      "notes": "Evalúa el tempo, la fluidez temporal y los tiempos de respuesta. La presión del habla implica dificultad para ser interrumpido."
+      "notes": "Presión del habla: urgencia subjetiva y volumen alto. Logorrea: flujo verborrágico constante y difícil de interrumpir (manía)."
     },
     {
       "id": "volumen_y_tono",
@@ -50,7 +51,7 @@
         "dislalia",
         "tartamudez"
       ],
-      "notes": "La disartria es de origen motor o neurológico. No confundir con desorganización del lenguaje."
+      "notes": "Disartria: origen motor/neurológico (ej. 'Soy peshiente de la clinisha'). Tartamudez: bloqueos o prolongaciones (distinguir de latencia)."
     },
     {
       "id": "lenguaje_simbolico",
@@ -58,9 +59,12 @@
       "accepted_terms": [
         "lenguaje_conservado",
         "anomia",
+        "circunloquio",
         "parafasias_foneticas",
+        "parafasias_fonemicas",
         "parafasias_semanticas",
         "neologismos",
+        "parafasia_neologística",
         "ensalada_de_palabras",
         "afasia_motora",
         "afasia_sensitiva",
@@ -69,7 +73,7 @@
         "concretismo",
         "uso_pragmatico_inadecuado"
       ],
-      "notes": "Evalúa estructura, denominación, comprensión y uso del lenguaje. La anomia es un signo precoz de deterioro cognitivo. La ensalada de palabras implica pérdida grave de sintaxis."
+      "notes": "Anomia: dificultad de recuperación léxical (deterioro, ansiedad, fármacos). Circunloquio: rodeos para compensar anomia. Parafasias fonéticas (motoras) vs fonémicas (sustitución simbólica). Neologismos: palabras nuevas (sin sentido o funcionales)."
     }
   ],
   "allowed_features": [

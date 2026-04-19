@@ -1,7 +1,7 @@
 {
   "term_id": "DEL_029",
   "canonical_name": "Síndrome de Cotard",
-  "term_kind": "syndrome",
+  "term_kind": "síndrome",
   "definition_clinical": {
     "core": "Delirio de negación de la propia existencia o de órganos internos.",
     "required_features": [
@@ -21,7 +21,13 @@
     ],
     "pharmacological_link": false
   },
-  "domain_links": [],
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "primary_expression",
+      "context": "contenido"
+    }
+  ],
   "exclusions": [],
   "alerts": [],
   "teaching_notes": [],

@@ -2,9 +2,13 @@
   "term_id": "DEL_025",
   "canonical_name": "Perplejidad delirante",
   "synonyms_and_slang": [
-    "perplejidad delirante"
+    {
+      "term": "perplejidad delirante",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

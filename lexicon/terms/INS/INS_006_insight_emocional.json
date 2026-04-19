@@ -2,9 +2,21 @@
   "term_id": "INS_006",
   "canonical_name": "Insight emocional",
   "synonyms_and_slang": [
-    "insight verdadero",
-    "insight grado 6",
-    "conciencia plena"
+    {
+      "term": "insight verdadero",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "insight grado 6",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "conciencia plena",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "distinción_clínica",
   "granularity": "atomic",

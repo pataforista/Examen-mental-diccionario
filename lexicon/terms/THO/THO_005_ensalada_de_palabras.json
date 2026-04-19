@@ -1,7 +1,7 @@
 {
   "term_id": "THO_005",
   "canonical_name": "Ensalada de palabras",
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "definition_clinical": {
     "core": "Grado extremo de desorganización donde las palabras se emiten sin orden ni sentido gramatical.",
     "required_features": [
@@ -25,7 +25,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-02",
+      "domain_id": "DOM-06",
       "relation": "primary_expression",
       "context": "desorganizacion_extrema"
     }
@@ -38,17 +38,15 @@
   ],
   "version": "1.0.0",
   "synonyms_and_slang": [
-    "ensalada de palabras"
+    {
+      "term": "ensalada de palabras",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "granularity": "atomic",
   "risk_weight": 0,
-  "exclusions": [
-    {
-      "term_id": "THO_004",
-      "canonical_name": "Ensalada de palabras",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",
@@ -72,5 +70,9 @@
       "psicopatologia_clasica"
     ]
   },
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Z"
+    }
+  }
 }

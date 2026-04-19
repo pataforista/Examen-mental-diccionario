@@ -2,9 +2,13 @@
   "term_id": "DEL_021",
   "canonical_name": "Ideas sobrevaloradas",
   "synonyms_and_slang": [
-    "ideas sobrevaloradas"
+    {
+      "term": "ideas sobrevaloradas",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

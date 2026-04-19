@@ -2,10 +2,18 @@
   "term_id": "MEM_025",
   "canonical_name": "Sopor",
   "synonyms_and_slang": [
-    "letargo profundo",
-    "semicoma"
+    {
+      "term": "letargo profundo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "semicoma",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 4,
   "definition_clinical": {

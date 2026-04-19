@@ -2,8 +2,16 @@
   "term_id": "MEM_012",
   "canonical_name": "Déjà senti",
   "synonyms_and_slang": [
-    "ya sentido",
-    "familiaridad emocional espuria"
+    {
+      "term": "ya sentido",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "familiaridad emocional espuria",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "fenómeno",
   "granularity": "atomic",
@@ -42,7 +50,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-09",
+      "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
     }

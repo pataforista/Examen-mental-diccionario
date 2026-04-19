@@ -2,9 +2,21 @@
   "term_id": "AFF_019",
   "canonical_name": "Hipomanía",
   "synonyms_and_slang": [
-    "estado hipomaníaco",
-    "manía leve",
-    "hypomania"
+    {
+      "term": "estado hipomaníaco",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "manía leve",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "hypomania",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -49,7 +61,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

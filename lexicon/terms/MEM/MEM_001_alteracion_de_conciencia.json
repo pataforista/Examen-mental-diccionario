@@ -2,9 +2,13 @@
   "term_id": "MEM_001",
   "canonical_name": "Alteración de conciencia",
   "synonyms_and_slang": [
-    "alteración de conciencia"
+    {
+      "term": "alteración de conciencia",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {

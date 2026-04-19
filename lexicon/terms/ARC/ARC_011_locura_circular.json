@@ -2,10 +2,18 @@
   "term_id": "ARC_011",
   "canonical_name": "Locura Circular",
   "synonyms_and_slang": [
-    "folie circulaire",
-    "psicosis circular"
+    {
+      "term": "folie circulaire",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "psicosis circular",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

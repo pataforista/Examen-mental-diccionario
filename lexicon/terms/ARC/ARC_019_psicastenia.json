@@ -2,10 +2,18 @@
   "term_id": "ARC_019",
   "canonical_name": "Psicastenia",
   "synonyms_and_slang": [
-    "neurosis de Janet",
-    "agotamiento psíquico"
+    {
+      "term": "neurosis de Janet",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "agotamiento psíquico",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

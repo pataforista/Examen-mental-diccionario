@@ -2,9 +2,13 @@
   "term_id": "TALD_010",
   "canonical_name": "Habla Presionada",
   "synonyms_and_slang": [
-    "Habla Presionada"
+    {
+      "term": "Habla Presionada",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

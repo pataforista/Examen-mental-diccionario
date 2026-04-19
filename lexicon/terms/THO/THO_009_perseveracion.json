@@ -2,9 +2,13 @@
   "term_id": "THO_009",
   "canonical_name": "Perseveración",
   "synonyms_and_slang": [
-    "perseveración"
+    {
+      "term": "perseveración",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "sign",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -33,13 +37,7 @@
       "context": "pensamiento_curso_forma"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "THO_012",
-      "canonical_name": "Perseveración",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",
@@ -72,5 +70,9 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Z"
+    }
+  }
 }

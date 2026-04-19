@@ -2,9 +2,13 @@
   "term_id": "COG_004",
   "canonical_name": "Orientación",
   "synonyms_and_slang": [
-    "orientación"
+    {
+      "term": "orientación",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "capacity",
+  "term_kind": "capacidad",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

@@ -2,9 +2,21 @@
   "term_id": "AFF_012",
   "canonical_name": "Culpa patológica",
   "synonyms_and_slang": [
-    "autoacusación patológica",
-    "culpa delirante",
-    "autoculpabilización excesiva"
+    {
+      "term": "autoacusación patológica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "culpa delirante",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "autoculpabilización excesiva",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
@@ -43,7 +55,7 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-03",
+      "domain_id": "DOM-09",
       "relation": "primary_expression",
       "context": ""
     }

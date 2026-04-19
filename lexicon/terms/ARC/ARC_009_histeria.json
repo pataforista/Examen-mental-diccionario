@@ -2,10 +2,18 @@
   "term_id": "ARC_009",
   "canonical_name": "Histeria",
   "synonyms_and_slang": [
-    "neurosis histérica",
-    "gran histeria de Charcot"
+    {
+      "term": "neurosis histérica",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "gran histeria de Charcot",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "state",
+  "term_kind": "estado",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

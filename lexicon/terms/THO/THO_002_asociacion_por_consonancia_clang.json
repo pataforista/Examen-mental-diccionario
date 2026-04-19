@@ -2,9 +2,13 @@
   "term_id": "THO_002",
   "canonical_name": "Asociación por consonancia (clang)",
   "synonyms_and_slang": [
-    "asociación por consonancia (clang)"
+    {
+      "term": "asociación por consonancia (clang)",
+      "context": "clínico",
+      "locale": "es"
+    }
   ],
-  "term_kind": "symptom",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -72,5 +76,9 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB20.Z"
+    }
+  }
 }

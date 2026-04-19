@@ -26,9 +26,9 @@
         "inquietud_psicomotriz",
         "agitacion_psicomotora",
         "enlentecimiento_psicomotor",
-        "inhibicion_psicomotriz"
+        "acinesia"
       ],
-      "notes": "Diferenciar inquietud (urgencia motora con finalidad reguladora, frecuente en ansiedad/acatisia) de agitación (actividad excesiva, desorganizada o potencialmente agresiva)."
+      "notes": "Acinesia: ausencia de movimiento voluntario (máximo grado de inhibición). Diferenciar inquietud de agitación."
     },
     {
       "id": "movimientos_anormales",
@@ -46,7 +46,7 @@
         "estereotipias",
         "manierismos"
       ],
-      "notes": "Si hay acatisia, especificar si es subjetiva (sensación interna) u objetiva (marcha tascinética). Diferenciar estereotipias (repetitivas, sin fin) de manierismos (gestos exagerados e innecesarios)."
+      "notes": "Si hay acatisia, especificar si es subjetiva (sensación interna) u objetiva (marcha tasikinética). Estereotipias: repetitivas, sin finalidad consciente. Manierismos: gestos peculiares con función aparente (ej. social or defensiva)."
     },
     {
       "id": "fenomenos_catatonicos",
@@ -58,7 +58,6 @@
         "mutismo",
         "flexibilidad_cerea",
         "ecopraxia",
-        "ecolalia",
         "obediencia_automatica",
         "ambitendencia"
       ],
@@ -70,9 +69,10 @@
       "accepted_terms": [
         "iniciativa_conservada",
         "hipobulia",
-        "abulia"
+        "abulia",
+        "apragmatismo"
       ],
-      "notes": "Hipobulia: disminución de iniciativa. Abulia: ausencia marcada. No equivale por sí misma a depresión."
+      "notes": "Hipobulia/Abulia: déficit de voluntad e inicio. Apragmatismo: incapacidad para realizar acciones complejas a pesar de conservar la voluntad inicial (lesión frontal)."
     },
     {
       "id": "impulsividad_inhibicion_y_compulsion",
