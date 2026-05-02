@@ -60,6 +60,8 @@ const App = {
             this.viewTerm(termId);
         } else if (hash.startsWith('#domain/')) {
             const domainId = hash.replace('#domain/', '');
+            this.renderView('domain');
+            this.renderDomains();
             this.viewDomainDetails(domainId);
         } else if (hash.length > 1) {
             const tabId = `nav-${hash.substring(1)}`;
@@ -72,15 +74,9 @@ const App = {
             navigator.serviceWorker.register('sw.js')
                 .then(reg => {
                     console.log('Service Worker Registered', reg.scope);
-                    // Check for updates every hour
                     setInterval(() => reg.update(), 1000 * 60 * 60);
                 })
                 .catch(err => console.error('Service Worker Registration Failed', err));
-
-            // Reload when a new service worker takes over
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-                window.location.reload();
-            });
         }
     },
 
@@ -839,7 +835,7 @@ const App = {
 
     setupChromaGrid: function () {
         const grid = document.getElementById('about-chroma-grid');
-        if (!grid) return;
+        if (!grid || typeof gsap === 'undefined') return;
 
         // Mouse follow on grid
         const setX = gsap.quickSetter(grid, '--x', 'px');
