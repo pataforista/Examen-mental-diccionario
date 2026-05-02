@@ -54,6 +54,7 @@
     --bg: var(--v-bg);
     --text-p: var(--v-text);
     --accent: var(--v-accent);
+    --accent-rgb: 149, 33, 92;
     --primary: var(--v-primary);
     --primary-rgb: 0, 85, 255;
     --primary-container: var(--v-primary-container);
@@ -96,6 +97,7 @@
     --bg: var(--o-bg);
     --text-p: var(--o-text);
     --accent: var(--o-accent-a);
+    --accent-rgb: 185, 224, 166;
     --primary: var(--o-accent-b);
     --primary-rgb: 128, 246, 205;
     --primary-container: var(--o-primary-container);
