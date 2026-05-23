@@ -1,0 +1,79 @@
+{
+  "term_id": "PHM_003",
+  "canonical_name": "Pérdida de la perspectiva (EASE)",
+  "synonyms_and_slang": [
+    {
+      "term": "déficit de perspectiva",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "loss of perspective",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad o dificultad para adoptar una perspectiva diferente de la propia, ya sea en el espacio (ver algo desde otro ángulo), en el tiempo (imaginar el pasado o futuro), o en lo social (ponerse en el lugar del otro). Forma parte de los trastornos de la ipseidad en la EASE.",
+    "required_features": [
+      "dificultad para cambiar el punto de vista espacial o temporal",
+      "incapacidad para descentrarse cognitiva o afectivamente",
+      "no se debe a un déficit intelectual"
+    ],
+    "subjective_marker": "“No puedo imaginarme cómo ve esa mesa una persona sentada al otro lado; solo veo desde mis ojos”.",
+    "behavioral_marker": "Interpretaciones literales y egocéntricas; falla en tareas de teoría de la mente."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_fenomenológica",
+      "tareas_de_perspectiva_espacial"
+    ],
+    "time_relation": [
+      "persistente",
+      "prodrómica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "ipseidad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "COG_005",
+      "canonical_name": "Pensamiento concreto",
+      "reason": "El pensamiento concreto es una dificultad de abstracción; la pérdida de perspectiva es más amplia (espacial, temporal, social)."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "Se relaciona con la alteración de la teoría de la mente en esquizofrenia."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con falta de empatía o egocentrismo normal."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "“Si me pongo al otro lado de la mesa, no puedo imaginar cómo se ve desde allí; solo existe mi punto de vista”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Parnas",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Psicopatología fenomenológica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

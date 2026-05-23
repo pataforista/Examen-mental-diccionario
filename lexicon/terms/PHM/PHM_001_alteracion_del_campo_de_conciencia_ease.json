@@ -1,0 +1,90 @@
+{
+  "term_id": "PHM_001",
+  "canonical_name": "Alteración del campo de conciencia (EASE)",
+  "synonyms_and_slang": [
+    {
+      "term": "estrechamiento del campo atencional",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "disturbance of the field of awareness",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Vivencia de que el campo de la conciencia (el espacio de la experiencia presente) está anormalmente estrechado, fragmentado o difuso. El paciente siente que solo puede atender a un aspecto de la realidad a la vez, o que los objetos parecen \"recortados\" o faltos de contexto. Descrito en la EASE (Examination of Anomalous Self-Experience).",
+    "required_features": [
+      "sensación de que la atención no puede abarcar la escena completa",
+      "los objetos o personas parecen aislados, sin fondo",
+      "pérdida de la totalidad del campo experiencial"
+    ],
+    "subjective_marker": "“Solo puedo ver una cosa a la vez; lo demás se borra” o “las cosas están como flotando, sin contexto”.",
+    "behavioral_marker": "Mirada fija en un punto, dificultad para cambiar el foco atencional."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_fenomenológica (EASE)"
+    ],
+    "time_relation": [
+      "prodrómica",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "ipseidad"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "associated_symptom",
+      "context": "atención"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MEM_018",
+      "canonical_name": "Inatención",
+      "reason": "La inatención es un déficit cognitivo; aquí es una alteración cualitativa de la vivencia del campo."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Marcador temprano de trastorno del espectro esquizofrénico (EASE)."
+    }
+  ],
+  "teaching_notes": [
+    "Relacionado con la pérdida de la 'evidencia natural' (Blankenburg)."
+  ],
+  "cognitive_pitfalls": [
+    "No confundir con ansiedad o fatiga atencional."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "“Cuando miro a una persona, el fondo desaparece; es como si la viera aislada, sin el cuarto. Me cuesta ver el conjunto”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Parnas",
+      "Møller",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Psicopatología fenomenológica",
+      "Esquizofrenia"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

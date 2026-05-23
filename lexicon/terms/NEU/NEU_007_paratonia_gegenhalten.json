@@ -1,0 +1,93 @@
+{
+  "term_id": "NEU_007",
+  "canonical_name": "Paratonía (Gegenhalten)",
+  "synonyms_and_slang": [
+    {
+      "term": "resistencia involuntaria",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "paratonia",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Resistencia involuntaria al movimiento pasivo que aumenta en proporción a la fuerza aplicada por el examinador, sin que el paciente pueda relajarse. Se diferencia del negativismo porque no es una oposición activa, sino una rigidez modulada por la intensidad del estímulo.",
+    "required_features": [
+      "aumento de resistencia al movimiento pasivo",
+      "resistencia proporcional a la fuerza del examinador",
+      "el paciente no puede inhibirla voluntariamente"
+    ],
+    "subjective_marker": "“No puedo dejar de tensarme cuando me mueven; es automático”.",
+    "behavioral_marker": "Al intentar flexionar el brazo del paciente, ofrece más resistencia cuanto más fuerte se empuja; al cesar la fuerza, el brazo no queda fijo como en catalepsia."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "examen_motor_pasivo"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "tono_muscular_patológico"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "VOL_009",
+      "canonical_name": "Negativismo",
+      "reason": "El negativismo es una oposición activa y a menudo deliberada; la paratonía es involuntaria y proporcional."
+    },
+    {
+      "term_id": "VOL_004",
+      "canonical_name": "Flexibilidad cérea",
+      "reason": "En flexibilidad cérea la resistencia es plástica y constante; en paratonía es proporcional."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Frecuente en lesiones frontales y demencias (especialmente Alzheimer avanzado)."
+    }
+  ],
+  "teaching_notes": [
+    "Es un signo de 'dependencia ambiental' del tono muscular."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con rigidez extrapiramidal (parkinsoniana) donde la resistencia es constante (cogwheel)."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Al explorador que intenta mover el codo, el paciente opone más resistencia cuanto más rápido o fuerte se mueve; si se mueve muy lentamente, la resistencia disminuye."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Kleist",
+      "Duensing"
+    ],
+    "clinical_tradition": [
+      "Neurología",
+      "Psiquiatría geriátrica"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "snomed_ct": {
+      "concept_id": "248816005",
+      "preferred_term": "Paratonia (finding)"
+    }
+  }
+}

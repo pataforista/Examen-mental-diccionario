@@ -1,0 +1,95 @@
+{
+  "term_id": "NSC_001",
+  "canonical_name": "Saliencia aberrante",
+  "synonyms_and_slang": [
+    {
+      "term": "significación anómala",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "aberrant salience",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "constructo",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Mecanismo neurocognitivo por el cual estímulos neutros o irrelevantes adquieren una significación anómala, intensa y a menudo amenazante, contribuyendo a la formación de delirios y alucinaciones (Kapur, 2003).",
+    "required_features": [
+      "asignación de significado desproporcionado a estímulos banales",
+      "experiencia subjetiva de novedad, relevancia o extrañeza sin causa objetiva",
+      "puede preceder o acompañar síntomas psicóticos positivos"
+    ],
+    "subjective_marker": "“De repente todo me llama la atención, como si todo fuera importante o escondiera un mensaje”.",
+    "behavioral_marker": "Hipervigilancia, fijación en detalles triviales, imposibilidad de filtrar estímulos irrelevantes."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "paradigmas_de_aprendizaje_asociativo"
+    ],
+    "time_relation": [
+      "prodrómico",
+      "activo"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Agonistas dopaminérgicos",
+        "risk": "high"
+      },
+      {
+        "class": "Alucinógenos",
+        "risk": "high"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "neurobiological_substrate",
+      "context": "delirio"
+    },
+    {
+      "domain_id": "DOM-08",
+      "relation": "neurobiological_substrate",
+      "context": "alucinación"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "conceptual_note",
+      "message": "Constructo teórico, no síntoma directamente observable. Útil para integrar neurobiología y fenomenología."
+    }
+  ],
+  "teaching_notes": [
+    "Central en la teoría dopaminérgica de la psicosis.",
+    "Explica por qué los delirios suelen comenzar con una 'atmósfera delirante' (Wahnstimmung)."
+  ],
+  "cognitive_pitfalls": [
+    "Aplicar el término como si fuera un síntoma clínico primario sin evidencia empírica directa."
+  ],
+  "examples": [
+    {
+      "type": "patient_quote",
+      "text": "De repente, las nubes, los carteles, todo tenía un significado especial, como si el universo me hablara."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Kapur",
+      "Neuroscience"
+    ],
+    "clinical_tradition": [
+      "Neuropsiquiatría",
+      "Psicosis"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

@@ -1,0 +1,91 @@
+{
+  "term_id": "PHM_005",
+  "canonical_name": "Déficit metacognitivo",
+  "synonyms_and_slang": [
+    {
+      "term": "pobreza metacognitiva",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "metacognitive deficit",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "constructo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Alteración de la capacidad de reflexionar sobre los propios procesos cognitivos y emocionales, así como de integrar esa reflexión para guiar la conducta adaptativa. Se ha descrito especialmente en esquizofrenia (déficit en la 'metacognición narrativa') y en TOC.",
+    "required_features": [
+      "dificultad para identificar y nombrar los propios pensamientos y emociones",
+      "incapacidad para formar una narrativa coherente de la propia experiencia",
+      "pobreza en la regulación cognitiva y emocional"
+    ],
+    "subjective_marker": "“No sé por qué pienso lo que pienso; las cosas pasan y ya”.",
+    "behavioral_marker": "Discurso pobre en reflexión, atribuciones causales externas, conducta rígida sin corrección de errores."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_metacognitiva (MAI)",
+      "escala_MAS (Metacognitive Assessment Scale)"
+    ],
+    "time_relation": [
+      "rasgo",
+      "fluctuante"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "insight"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "associated_deficit",
+      "context": "funciones_ejecutivas"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "NSC_002",
+      "canonical_name": "Metacognición",
+      "reason": "El déficit metacognitivo es la ausencia de la capacidad; metacognición es el constructo general."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Es un predictor de mala adherencia y peor funcionamiento psicosocial."
+    }
+  ],
+  "teaching_notes": [
+    "Se relaciona con el concepto de 'insight' pero es más amplio (incluye regulación emocional y toma de perspectiva)."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con baja inteligencia o falta de educación."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente no puede explicar por qué dejó la medicación; dice simplemente “se me acabó” y no anticipa consecuencias; al preguntarle cómo se siente, responde “bien, no sé” sin más elaboración."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Semerari",
+      "Lysaker",
+      "Dimaggio"
+    ],
+    "clinical_tradition": [
+      "Psicoterapia cognitiva",
+      "Esquizofrenia"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

@@ -1,0 +1,91 @@
+{
+  "term_id": "NEU_002",
+  "canonical_name": "Prosopagnosia",
+  "synonyms_and_slang": [
+    {
+      "term": "ceguera para rostros",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "face blindness",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad específica para reconocer rostros familiares, incluyendo el propio en el espejo, a pesar de una percepción visual intacta de otros objetos. Puede ser congénita (desarrollo) o adquirida (lesión fusiforme).",
+    "required_features": [
+      "preservación del reconocimiento de otros objetos",
+      "fracaso en identificación de personas por su cara",
+      "puede reconocer a personas por voz o contexto"
+    ],
+    "subjective_marker": "“No distingo a mis amigos hasta que me hablan; todos los rostros se me parecen”.",
+    "behavioral_marker": "No identifica fotografías de familiares, se guía por ropa o peinados."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "pruebas_de_reconocimiento_facial",
+      "Benton Facial Recognition Test"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": "agnosia_específica"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_028",
+      "canonical_name": "Síndrome de Capgras",
+      "reason": "En Capgras el rostro es reconocido pero se cree que es un impostor; en prosopagnosia no hay reconocimiento perceptivo."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "diagnostic_clue",
+      "message": "Puede ser congénito (a menudo subdiagnosticado) o adquirido tras lesión temporooccipital derecha."
+    }
+  ],
+  "teaching_notes": [
+    "El paciente con prosopagnosia puede saber si un rostro es humano o no, pero no distinguir identidades."
+  ],
+  "cognitive_pitfalls": [
+    "Atribuir a falta de atención o demencia sin pruebas específicas."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente que no reconoce a su esposa en la sala de espera hasta que ella habla; describe: “Veo una mujer, pero no sé si es ella o una extraña”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Bodamer (1947)"
+    ],
+    "clinical_tradition": [
+      "Neurología cognitiva"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "cie11": {
+      "code": "MB21.2",
+      "label": "Prosopagnosia"
+    },
+    "snomed_ct": {
+      "concept_id": "40055003",
+      "preferred_term": "Prosopagnosia (finding)"
+    }
+  }
+}

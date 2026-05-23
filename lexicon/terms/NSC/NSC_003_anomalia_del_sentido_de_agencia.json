@@ -1,0 +1,101 @@
+{
+  "term_id": "NSC_003",
+  "canonical_name": "Anomalía del sentido de agencia",
+  "synonyms_and_slang": [
+    {
+      "term": "no me siento autor de mis actos",
+      "context": "patient_report",
+      "locale": "es"
+    },
+    {
+      "term": "sense of agency",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Alteración de la sensación de ser el iniciador y controlador de las propias acciones. Puede presentarse como disminución (las acciones se sienten automáticas, no propias) o exageración (sobrerreflexividad sobre cada movimiento). Diferente de los fenómenos de pasividad donde hay atribución externa explícita.",
+    "required_features": [
+      "vivencia de extrañeza respecto al origen de la acción propia",
+      "ausencia de atribución delirante a una fuerza externa (a diferencia de actos impuestos)",
+      "preservación parcial del juicio de realidad"
+    ],
+    "subjective_marker": "“Muevo la mano, pero no siento que yo la haya movido; es como si se moviera sola, aunque sé que soy yo”.",
+    "behavioral_marker": "Movimientos torpes, vacilantes, necesidad de verificar visualmente las propias acciones."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica_fenomenológica",
+      "paradigmas_experimentales_de_agencia"
+    ],
+    "time_relation": [
+      "episódica",
+      "persistente"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Ketamina",
+        "risk": "high"
+      },
+      {
+        "class": "Antipsicóticos",
+        "risk": "low"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_del_yo_agencia"
+    },
+    {
+      "domain_id": "DOM-07",
+      "relation": "prodromal_marker",
+      "context": "riesgo_psicótico"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SELF_001",
+      "canonical_name": "Actos impuestos",
+      "reason": "En los actos impuestos hay atribución explícita a una fuerza externa; aquí hay extrañeza sin atribución."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Puede ser un marcador prodrómico de esquizofrenia (EASE)."
+    }
+  ],
+  "teaching_notes": [
+    "Se distingue de la despersonalización porque ésta afecta al yo global, no específicamente a la agencia motora."
+  ],
+  "cognitive_pitfalls": [
+    "Interpretar como mera torpeza motora o falta de coordinación."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "“Cuando escribo, no siento que los trazos los haga yo; mis dedos se mueven pero yo solo observo”. No lo atribuye a un agente externo, solo reporta falta de propiedad sobre la acción."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Parnas",
+      "Sass",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Fenomenología",
+      "Esquizofrenia"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

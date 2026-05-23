@@ -1,0 +1,82 @@
+{
+  "term_id": "HIS_003",
+  "canonical_name": "Dipsomanía",
+  "synonyms_and_slang": [
+    {
+      "term": "dipsomania",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    },
+    {
+      "term": "deseo patológico de alcohol",
+      "context": "historical",
+      "locale": "es"
+    },
+    {
+      "term": "Binge Drinking",
+      "context": "social/moderno",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Término usado en el siglo XIX para describir un deseo periódico, irresistible e incontrolable de ingerir bebidas alcohólicas, a menudo asociado a cambios de ánimo o estados mixtos. Diferenciado del alcoholismo crónico por su carácter paroxístico y la ausencia de intoxicación continua.",
+    "required_features": [
+      "episodios intermitentes de compulsión alcohólica",
+      "sensación de pérdida de control durante el episodio",
+      "periodos de abstinencia completa entre episodios"
+    ],
+    "subjective_marker": "“De repente siento que necesito beber como si me fuera la vida en ello; después puedo estar meses sin tomar”.",
+    "behavioral_marker": "Búsqueda activa de alcohol, consumo excesivo en pocas horas, seguido de remordimiento y abstinencia."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "historia_clínica",
+      "colateral"
+    ],
+    "time_relation": [
+      "episódica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-12",
+      "relation": "historical_precursor",
+      "context": "adicciones"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término en desuso. Se solapa con conceptos actuales como 'binge drinking', 'dependencia episódica' o 'trastorno por consumo de alcohol con patrón de episodios'."
+    }
+  ],
+  "teaching_notes": [
+    "Fue una categoría muy influyente en el movimiento de la templanza y en la psiquiatría forense del siglo XIX."
+  ],
+  "cognitive_pitfalls": [
+    "No debe confundirse con la dependencia al alcohol diaria continua."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Varón de 45 años que bebe de forma controlada durante meses, pero presenta episodios cada 2-3 meses en los que consume más de una botella de licor en pocas horas, con amnesia parcial y conductas desinhibidas."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Marcé",
+      "Magnan"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría francesa siglo XIX"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

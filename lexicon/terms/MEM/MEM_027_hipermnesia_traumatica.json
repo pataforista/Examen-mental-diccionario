@@ -1,0 +1,83 @@
+{
+  "term_id": "MEM_027",
+  "canonical_name": "Hipermnesia traumática",
+  "synonyms_and_slang": [
+    {
+      "term": "memoria intrusiva",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "traumatic hypermnesia",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Recuerdo excesivamente vívido, detallado e involuntario de un evento traumático, que se impone en la conciencia y puede ser tan intenso que se vive como una reviviscencia (similar a flashback). Se diferencia del flashback por su carácter predominantemente mnésico (no multisensorial necesariamente) y por la conservación del insight.",
+    "required_features": [
+      "recuerdo involuntario y muy vívido de un trauma",
+      "cualidad de 'actualidad' pero con conciencia de que es un recuerdo",
+      "asociado a malestar y evitación"
+    ],
+    "subjective_marker": "“No puedo dejar de recordar aquel día con todo detalle; es como si estuviera viendo una película muy real, pero sé que es un recuerdo”.",
+    "behavioral_marker": "Angustia al evocar el recuerdo, conductas de evitación de desencadenantes."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clínica (TEPT)"
+    ],
+    "time_relation": [
+      "recurrente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": "memoria_traumática"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_013",
+      "canonical_name": "Flashback",
+      "reason": "En el flashback hay pérdida transitoria del juicio de realidad y cualidad multisensorial; en la hipermnesia se mantiene el insight."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Central en el TEPT; puede confundirse con síntomas psicóticos si no se explora el insight."
+    }
+  ],
+  "teaching_notes": [
+    "La hipermnesia traumática es un recuerdo, no una alucinación."
+  ],
+  "cognitive_pitfalls": [
+    "Diagnosticar psicosis por la vividez del recuerdo sin explorar la conciencia de irrealidad."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente con TEPT: “Cada vez que oigo un coche frenar, recuerdo el accidente con todos los detalles: el ruido, el color del otro coche, la posición de las manos. Sé que es un recuerdo, pero es muy real”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Janet",
+      "van der Kolk"
+    ],
+    "clinical_tradition": [
+      "Trauma studies",
+      "TEPT"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

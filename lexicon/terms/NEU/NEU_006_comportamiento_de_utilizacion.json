@@ -1,0 +1,87 @@
+{
+  "term_id": "NEU_006",
+  "canonical_name": "Comportamiento de utilización",
+  "synonyms_and_slang": [
+    {
+      "term": "utilization behaviour",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    },
+    {
+      "term": "conducta de agarre automático",
+      "context": "clinical",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Tendencia a utilizar objetos del entorno de forma automática e inapropiada cuando se presentan, sin poder inhibir la acción. Descrito por Lhermitte (1983) en lesiones frontales.",
+    "required_features": [
+      "uso forzado de objetos colocados frente al paciente",
+      "incapacidad de inhibir la acción",
+      "el paciente reconoce lo inapropiado pero no puede evitarlo"
+    ],
+    "subjective_marker": "“Veo unas gafas y me las pongo aunque no las necesite; no puedo evitarlo”.",
+    "behavioral_marker": "Toma un martillo y comienza a golpear sin que se le haya pedido; bebe de un vaso vacío; usa un peine aunque tenga el pelo liso."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "examen_clínico_conductual"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "impulsividad_frontal"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "MOT_009",
+      "canonical_name": "Mitgehen",
+      "reason": "En mitgehen la respuesta es al movimiento del examinador; en utilización es al objeto."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Sugiere lesión del lóbulo frontal (áreas premotoras y cinguladas)."
+    }
+  ],
+  "teaching_notes": [
+    "Es una forma de 'desinhibición conductual' relacionada con el fenómeno de 'dependencia ambiental'."
+  ],
+  "cognitive_pitfalls": [
+    "Interpretar como oposicionismo o negativismo; es todo lo contrario: obediencia exagerada al objeto."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El examinador coloca un cepillo de dientes sobre la mesa; el paciente lo toma y comienza a cepillarse los dientes aunque acabe de hacerlo."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Lhermitte"
+    ],
+    "clinical_tradition": [
+      "Neurología conductual",
+      "Neuropsicología"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "snomed_ct": {
+      "concept_id": "248739009",
+      "preferred_term": "Utilization behaviour (finding)"
+    }
+  }
+}

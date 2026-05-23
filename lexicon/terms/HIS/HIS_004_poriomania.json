@@ -1,0 +1,82 @@
+{
+  "term_id": "HIS_004",
+  "canonical_name": "Poriomanía",
+  "synonyms_and_slang": [
+    {
+      "term": "fuga impulsiva",
+      "context": "clinical_historical",
+      "locale": "es"
+    },
+    {
+      "term": "deambulación patológica",
+      "context": "clinical_historical",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Tendencia irresistible y periódica a la fuga o deambulación, a menudo con vagabundeo sin propósito, a veces asociada a amnesia del episodio. Término utilizado por la escuela francesa (Legrand du Saulle, Magnan) para describir una forma de impulsión motora.",
+    "required_features": [
+      "impulso súbito a alejarse del entorno habitual",
+      "deambulación prolongada sin meta clara",
+      "puede acompañarse de amnesia o estado crepuscular"
+    ],
+    "subjective_marker": "“De pronto siento que debo irme, caminar sin rumbo; no puedo evitarlo”.",
+    "behavioral_marker": "Ausencias del hogar por horas o días, encontrado en lugares lejanos sin recordar cómo llegó."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "historia_clínica",
+      "colateral"
+    ],
+    "time_relation": [
+      "episódica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "historical_precursor",
+      "context": "impulsividad"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "historical_precursor",
+      "context": "fuga_disociativa"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término en desuso. Sus manifestaciones se incluyen hoy en fuga disociativa, trastorno de control de impulsos o episodios complejos parciales."
+    }
+  ],
+  "teaching_notes": [
+    "Se diferencia de la fuga disociativa por la ausencia de asunción de nueva identidad y por el componente de impulsividad irrefrenable."
+  ],
+  "cognitive_pitfalls": [
+    "No confundir con conductas de evitación fóbica o con deambulación en demencias."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente que cada pocas semanas abandona su domicilio y camina durante horas, hasta ser encontrado en otra ciudad sin recordar bien cómo llegó, sin cambiar de nombre ni profesión."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Magnan",
+      "Legrand du Saulle"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría francesa siglo XIX"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

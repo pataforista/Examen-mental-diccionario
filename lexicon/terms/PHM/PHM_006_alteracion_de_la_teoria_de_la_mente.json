@@ -1,0 +1,77 @@
+{
+  "term_id": "PHM_006",
+  "canonical_name": "Alteración de la teoría de la mente",
+  "synonyms_and_slang": [
+    {
+      "term": "mentalización alterada",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "theory of mind deficit",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "constructo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Dificultad para atribuir estados mentales (creencias, intenciones, deseos, emociones) a uno mismo o a los demás, y para predecir la conducta basada en dichas atribuciones. Central en el trastorno del espectro autista, pero también presente en esquizofrenia (especialmente síntomas negativos y paranoia) y trastornos de personalidad límite.",
+    "required_features": [
+      "incapacidad para inferir las intenciones de otros",
+      "dificultad para entender que otros pueden tener creencias falsas",
+      "tendencia a interpretar las acciones de otros como directamente causadas por eventos externos"
+    ],
+    "subjective_marker": "“No sé por qué hizo eso; no entiendo qué piensa la gente”.",
+    "behavioral_marker": "Falla en pruebas de falsa creencia (Sally-Anne), conducta social ingenua o desajustada, falta de empatía."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "pruebas_de_teoría_de_la_mente",
+      "entrevista_clínica"
+    ],
+    "time_relation": [
+      "rasgo",
+      "episódica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-03",
+      "relation": "cognitive_deficit",
+      "context": "cognición_social"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [],
+  "teaching_notes": [
+    "En esquizofrenia, el déficit de teoría de la mente se asocia a síntomas paranoides (sobreinterpretación de intenciones hostiles)."
+  ],
+  "cognitive_pitfalls": [
+    "No confundir con falta de inteligencia; la teoría de la mente es un dominio específico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente no comprende por qué su amigo se enfadó cuando él no acudió a la cita; dice: “Yo no llegué, pero él podía ir solo, no entiendo su reacción”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Premack",
+      "Woodruff",
+      "Baron-Cohen",
+      "Frith"
+    ],
+    "clinical_tradition": [
+      "Neurociencia cognitiva",
+      "Autismo",
+      "Esquizofrenia"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

@@ -1,0 +1,88 @@
+{
+  "term_id": "HIS_001",
+  "canonical_name": "Folie à deux",
+  "synonyms_and_slang": [
+    {
+      "term": "psicosis compartida",
+      "context": "clinical_modern",
+      "locale": "es"
+    },
+    {
+      "term": "trastorno psicótico inducido",
+      "context": "clinical_modern",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "síndrome",
+  "granularity": "cluster",
+  "risk_weight": 2,
+  "definition_clinical": {
+    "core": "Síndrome en el cual una persona desarrolla un sistema delirante inducido por la estrecha relación con otra que ya presenta un delirio primario. Descrito por Lasègue y Falret (1877).",
+    "required_features": [
+      "delirio primario en un sujeto (inductor)",
+      "delirio secundario en otro sujeto (inducido) que estaría ausente en aislamiento",
+      "relación cercana y a menudo aislada socialmente"
+    ],
+    "subjective_marker": "El paciente inducido comparte las mismas ideas delirantes que el inductor, a menudo con menor sistematización.",
+    "behavioral_marker": "Pareja o familiares que sostienen creencias idénticas, a veces actuando en consecuencia."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "colateral",
+      "observación_diádica"
+    ],
+    "time_relation": [
+      "persistente",
+      "resolución_con_separación"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-07",
+      "relation": "historical_precursor",
+      "context": "trastorno_psicótico_inducido"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término clásico; en CIE-11 corresponde a 'Trastorno psicótico inducido (6A25.0)'. El término 'folie à deux' se mantiene por tradición clínica."
+    }
+  ],
+  "teaching_notes": [
+    "La separación del par suele resolver el cuadro en el sujeto inducido."
+  ],
+  "cognitive_pitfalls": [
+    "No confundir con creencias compartidas culturalmente o por sectas sin base delirante."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Dos hermanas que viven juntas y aisladas: una tiene delirio paranoide sobre vecinos que las espían; la otra, sin antecedentes, termina compartiendo la misma convicción y vigilando con ella."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Lasègue",
+      "Falret"
+    ],
+    "clinical_tradition": [
+      "Psicopatología clásica"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "cie11": {
+      "code": "6A25.0",
+      "label": "Induced delusional disorder"
+    },
+    "snomed_ct": {
+      "concept_id": "191521003",
+      "preferred_term": "Folie à deux (disorder)"
+    }
+  }
+}

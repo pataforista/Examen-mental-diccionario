@@ -1,0 +1,95 @@
+{
+  "term_id": "NEU_005",
+  "canonical_name": "Síndrome de la mano alienígena",
+  "synonyms_and_slang": [
+    {
+      "term": "mano extraña",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "alien hand syndrome",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "síndrome",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Fenómeno en el cual una extremidad (generalmente la mano) realiza movimientos involuntarios, complejos y dirigidos a un objetivo, que el paciente no reconoce como propios o siente que actúa con voluntad propia. Asociado a lesiones del cuerpo calloso, lóbulo frontal medial o parietal.",
+    "required_features": [
+      "movimientos involuntarios de una mano",
+      "sensación de que la mano actúa por sí misma",
+      "el paciente puede intentar sujetar la mano con la otra"
+    ],
+    "subjective_marker": "“Mi mano izquierda me agarra la ropa y yo no la controlo; a veces me da golpes sin querer”.",
+    "behavioral_marker": "Una mano desabotona la camisa mientras la otra la abotona; la mano alienígena interfiere con acciones voluntarias."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observación_clínica",
+      "neuroimagen"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "pasividad_motora"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SELF_001",
+      "canonical_name": "Actos impuestos",
+      "reason": "En la mano alienígena no suele haber atribución a una fuerza externa personalizada; es más un fallo del control motor."
+    },
+    {
+      "term_id": "",
+      "canonical_name": "Apraxia ideomotora",
+      "reason": "En la mano alienígena los movimientos son propositivos, en la apraxia hay falla en la ejecución del plan motor."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Lesión típica: cuerpo calloso + lóbulo frontal medial (síndrome de desconexión)."
+    }
+  ],
+  "teaching_notes": [
+    "Se diferencia de la apraxia ideomotora porque los movimientos son complejos y propositivos, aunque no deseados."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con discinesia o corea; en mano alienígena los movimientos son más organizados."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente con lesión del cuerpo calloso: la mano izquierda agarra un objeto y no lo suelta; la mano derecha intenta liberarlo, creando una lucha entre ambas manos."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Brion",
+      "Jedynak",
+      "Goldstein"
+    ],
+    "clinical_tradition": [
+      "Neuropsiquiatría",
+      "Neurología conductual"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "snomed_ct": {
+      "concept_id": "230262000",
+      "preferred_term": "Alien hand syndrome (finding)"
+    }
+  }
+}

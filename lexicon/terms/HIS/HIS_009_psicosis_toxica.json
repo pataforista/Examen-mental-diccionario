@@ -1,0 +1,59 @@
+{
+  "term_id": "HIS_009",
+  "canonical_name": "Psicosis tóxica",
+  "synonyms_and_slang": [
+    {
+      "term": "psicosis exógena",
+      "context": "historical"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Término usado por Kraepelin y Bonhoeffer para describir psicosis agudas secundarias a intoxicaciones, infecciones o trastornos metabólicos, caracterizadas por delirium, alucinaciones y desorganización. Actualmente se engloban en 'delirium', 'trastorno psicótico inducido por sustancias' o 'trastorno psicótico debido a enfermedad médica'.",
+    "required_features": [
+      "inicio agudo",
+      "relación temporal con agente tóxico o infeccioso",
+      "fluctuación del nivel de conciencia"
+    ],
+    "subjective_marker": "",
+    "behavioral_marker": ""
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-16",
+      "relation": "historical_precursor",
+      "context": "psicosis_orgánicas"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término en desuso; reemplazado por diagnósticos más específicos (delirium, psicosis inducida)."
+    }
+  ],
+  "teaching_notes": [
+    "Bonhoeffer describió las 'psicosis exógenas' como un grupo limitado de reacciones (delirium, amnesia, estupor, etc.) independientemente del agente causal."
+  ],
+  "cognitive_pitfalls": [],
+  "examples": [],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Kraepelin",
+      "Bonhoeffer"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría alemana siglo XX"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

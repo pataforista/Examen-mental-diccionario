@@ -1,0 +1,55 @@
+{
+  "term_id": "HIS_006",
+  "canonical_name": "Furor uterino",
+  "synonyms_and_slang": [
+    {
+      "term": "furia uterina",
+      "context": "historical"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Antigua entidad nosológica que atribuía la ninfomanía a una supuesta enfermedad del útero. Término usado en la medicina hipocrática y hasta el siglo XIX. Carece de validez actual.",
+    "required_features": [],
+    "subjective_marker": "",
+    "behavioral_marker": ""
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-16",
+      "relation": "obsolete_concept",
+      "context": "historia_de_la_psiquiatría"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Concepto obsoleto y sexista. Solo interés histórico."
+    }
+  ],
+  "teaching_notes": [
+    "Ilustra cómo teorías anatómicas erróneas influyeron en la psiquiatría."
+  ],
+  "cognitive_pitfalls": [],
+  "examples": [],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Hipócrates",
+      "Galeno"
+    ],
+    "clinical_tradition": [
+      "Medicina antigua"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

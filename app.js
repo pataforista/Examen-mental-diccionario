@@ -396,7 +396,7 @@ const App = {
         this.data.fuse = new Fuse(this.data.terms, {
             keys: [
                 { name: 'canonical_name', weight: 1.0 },
-                { name: 'synonyms_and_slang', weight: 0.7 },
+                { name: 'synonyms_and_slang.term', weight: 0.7 },
                 { name: 'definition_clinical.core', weight: 0.4 }
             ],
             threshold: 0.4, // Higher tolerance for typos
@@ -442,7 +442,7 @@ const App = {
             .filter(term => {
                 const haystack = [
                     term.canonical_name,
-                    ...(term.synonyms_and_slang || []),
+                    ...(term.synonyms_and_slang || []).map(s => (s && s.term) || s),
                     term.definition_clinical?.core
                 ].map(item => this.normalizeText(item)).join(' ');
                 return haystack.includes(normalizedQuery);
