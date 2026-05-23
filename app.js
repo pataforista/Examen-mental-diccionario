@@ -639,7 +639,10 @@ const App = {
             const teachingNotes = term.teaching_notes || [];
             const alerts = term.alerts || [];
             const examples = term.examples || [];
-            const domainLinks = term.domain_links || [];
+            // Only show links to domains we actually loaded, so terms pointing at
+            // an undefined domain don't render dead/empty tags.
+            const knownDomainIds = new Set(this.data.domains.map(d => d.domain_id));
+            const domainLinks = (term.domain_links || []).filter(l => knownDomainIds.has(l.domain_id));
 
             this.nodes.termView.innerHTML = `
             <div class="view-actions-header" style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
