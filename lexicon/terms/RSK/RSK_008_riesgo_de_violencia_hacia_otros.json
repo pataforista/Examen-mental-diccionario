@@ -13,7 +13,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "risk_state",
+  "term_kind": "estado de riesgo",
   "granularity": "atomic",
   "risk_weight": 5,
   "definition_clinical": {

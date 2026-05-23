@@ -13,7 +13,7 @@
       "locale": "en"
     }
   ],
-  "term_kind": "event",
+  "term_kind": "evento",
   "granularity": "atomic",
   "risk_weight": 5,
   "definition_clinical": {

@@ -9,7 +9,12 @@ const termKindMap = {
     'syndrome': 'síndrome',
     'state': 'estado',
     'capacity': 'capacidad',
-    'phenomenon': 'fenómeno'
+    'phenomenon': 'fenómeno',
+    'behavior': 'conducta',
+    'event': 'evento',
+    'modifier': 'modificador',
+    'risk_factor': 'factor de riesgo',
+    'risk_state': 'estado de riesgo'
 };
 
 const domainRemaps = {

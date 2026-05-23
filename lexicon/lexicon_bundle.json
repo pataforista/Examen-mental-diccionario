@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-05-23T14:52:23.021Z",
+  "generated_at": "2026-05-23T15:11:18.569Z",
   "total_terms": 294,
   "terms": [
     {
@@ -18329,7 +18329,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "risk_factor",
+      "term_kind": "factor de riesgo",
       "granularity": "atomic",
       "risk_weight": 5,
       "definition_clinical": {
@@ -18461,7 +18461,7 @@
           "locale": "en"
         }
       ],
-      "term_kind": "behavior",
+      "term_kind": "conducta",
       "granularity": "atomic",
       "risk_weight": 2,
       "definition_clinical": {
@@ -18621,7 +18621,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "modifier",
+      "term_kind": "modificador",
       "granularity": "atomic",
       "risk_weight": 4,
       "definition_clinical": {
@@ -18735,7 +18735,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "behavior",
+      "term_kind": "conducta",
       "granularity": "atomic",
       "risk_weight": 4,
       "definition_clinical": {
@@ -19014,7 +19014,7 @@
           "locale": "en"
         }
       ],
-      "term_kind": "event",
+      "term_kind": "evento",
       "granularity": "atomic",
       "risk_weight": 5,
       "definition_clinical": {
@@ -19156,7 +19156,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "risk_state",
+      "term_kind": "estado de riesgo",
       "granularity": "atomic",
       "risk_weight": 5,
       "definition_clinical": {
