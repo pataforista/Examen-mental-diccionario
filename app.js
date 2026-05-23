@@ -1123,7 +1123,7 @@ const App = {
                 description: "Evaluación del estado de alerta y ubicación."
             },
             {
-                id: 2, label: "Higiene, vestimenta y aliento", domain: "DOM-02", components: ["higiene", "vestimenta_y_alino", "aliento"],
+                id: 2, label: "Higiene, vestimenta y aliento", domain: "DOM-02", components: ["higiene", "vestimenta_y_aliño", "aliento"],
                 guide: "Ropa adecuada al clima/situación, limpia o descuidada.\nHigiene personal (olor corporal, cabello, uñas).\nAliento (alcohol, cetonas, fétido, normal).",
                 example: "Vestimenta desordenada, ropa sucia. Higiene deficiente. Aliento normal.",
                 description: "Observación de aliño y presentación física."
@@ -1159,19 +1159,19 @@ const App = {
                 description: "Conexión visual con el examinador."
             },
             {
-                id: 8, label: "Habla (volumen, cantidad, tono)", domain: "DOM-05", components: ["habla"],
+                id: 8, label: "Habla (volumen, cantidad, tono)", domain: "DOM-05", components: ["volumen_y_tono", "velocidad_y_ritmo"],
                 guide: "Volumen (alto, bajo, normal), Cantidad (escasa, logorrea, pobre), Tono (monótono, modulado, enfático).",
                 example: "Habla espontánea, volumen bajo, cantidad escasa, tono monótono.",
                 description: "Características sonoras del lenguaje."
             },
             {
-                id: 9, label: "Discurso", domain: "DOM-05", components: ["discurso"],
+                id: 9, label: "Discurso", domain: "DOM-05", components: ["articulacion"],
                 guide: "Velocidad (lento, presionado, normal), Organización (coherente, divagante, tangencial, circunstancial).",
                 example: "Discurso lento, coherente pero con tendencia a divagaciones.",
                 description: "Forma y fluidez del relato."
             },
             {
-                id: 10, label: "Lenguaje", domain: "DOM-05", components: ["lenguaje"],
+                id: 10, label: "Lenguaje", domain: "DOM-05", components: ["lenguaje_simbolico"],
                 guide: "Neologismos, parafasias, jergafasia, ecolalia, mutismo.",
                 example: "Lenguaje sin alteraciones; sin neologismos ni parafasias.",
                 description: "Uso de símbolos y reglas gramaticales."
@@ -1195,13 +1195,13 @@ const App = {
                 description: "El qué de lo que el paciente piensa."
             },
             {
-                id: 14, label: "Ánimo", domain: "DOM-09", components: ["animo"],
+                id: 14, label: "Ánimo", domain: "DOM-09", components: ["animo_subjetivo"],
                 guide: "¿Cómo se ha sentido? ¿Triste, alegre, irritable?\nEscala subjetiva 0-10.",
                 example: "Ánimo disfórico, refiere tristeza 8/10.",
                 description: "Estado subjetivo reportado por el paciente."
             },
             {
-                id: 15, label: "Afecto", domain: "DOM-09", components: ["afecto"],
+                id: 15, label: "Afecto", domain: "DOM-09", components: ["afecto_observable", "reactividad_afectiva", "rango_afectivo", "regulacion_afectiva", "congruencia_afectiva"],
                 guide: "Tipo (depresivo, ansioso, irritable), Modulación (reactivo, lábil, restringido). Adecuación al discurso.",
                 example: "Afecto ansioso, reactivo, adecuado al contenido verbal.",
                 description: "Expresión emocional observable."
@@ -1941,6 +1941,11 @@ const App = {
     // ─────────────────────────────────────────────────────────────────────────
 
     renderView: function (viewName) {
+        // Stop the game timer whenever we leave the game view, so it can't keep
+        // draining lives / playing sounds from a background tab.
+        if (viewName !== 'game' && this.game && this.game.stopTimer) {
+            this.game.stopTimer();
+        }
         const views = ['dictionary', 'results', 'term', 'domain', 'cases', 'integrator', 'about', 'game'];
         views.forEach(v => {
             const node = this.nodes[`${v}View`];
