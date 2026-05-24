@@ -318,7 +318,7 @@ const App = {
             // Start parallel fetches for all critical resources
             const lexiconPromise = fetch('lexicon/lexicon_bundle.json').then(r => r.json());
 
-            const domainIds = Array.from({ length: 14 }, (_, i) => `DOM-${(i + 1).toString().padStart(2, '0')}`);
+            const domainIds = Array.from({ length: 15 }, (_, i) => `DOM-${(i + 1).toString().padStart(2, '0')}`);
             const domainPromises = domainIds.map(async id => {
                 const slug = this.getDomainSlug(id);
                 try {
@@ -376,7 +376,8 @@ const App = {
             'DOM-11': 'juicio_insight',
             'DOM-12': 'riesgo',
             'DOM-13': 'integracion_sindromatica',
-            'DOM-14': 'docencia'
+            'DOM-14': 'docencia',
+            'DOM-15': 'fenomenologia_historica'
         };
         return slugs[id] || '';
     },
@@ -386,7 +387,7 @@ const App = {
             'DOM-01': '🧠', 'DOM-02': '👤', 'DOM-03': '🤝', 'DOM-04': '🏃',
             'DOM-05': '🗣️', 'DOM-06': '🔄', 'DOM-07': '💡', 'DOM-08': '👁️',
             'DOM-09': '🎭', 'DOM-10': '🧩', 'DOM-11': '⚖️', 'DOM-12': '⚠️',
-            'DOM-13': '🏥', 'DOM-14': '🎓'
+            'DOM-13': '🏥', 'DOM-14': '🎓', 'DOM-15': '📜'
         };
         return icons[id] || '🔹';
     },

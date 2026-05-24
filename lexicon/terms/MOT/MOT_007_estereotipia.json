@@ -24,7 +24,13 @@
     ],
     "pharmacological_link": false
   },
-  "domain_links": [],
+  "domain_links": [
+    {
+      "domain_id": "DOM-04",
+      "relation": "primary_expression",
+      "context": "psicomotricidad_conacion"
+    }
+  ],
   "exclusions": [
     {
       "term_id": "SPE_001",
