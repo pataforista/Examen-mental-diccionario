@@ -793,6 +793,23 @@ main {
         margin: 0 auto;
         display: block;
     }
+
+    /* Bottom nav: constrain to body max-width on wide screens */
+    .bottom-nav {
+        max-width: 1200px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 100%;
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+
+    .bottom-nav button {
+        flex: 1;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .tag-container {
@@ -1098,7 +1115,7 @@ main {
     --y: 50%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .chroma-grid {
         grid-template-columns: 1fr;
     }
@@ -1710,10 +1727,12 @@ main {
 
     .bottom-nav button {
         flex: 0 0 auto;
-        min-width: 68px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         font-size: 0.6rem;
         gap: 0.3rem;
         scroll-snap-align: start;
+        white-space: nowrap;
     }
 
     .bottom-nav button .nav-icon {
@@ -2285,6 +2304,27 @@ main {
     opacity: 0.9;
 }
 
+[data-theme="dark"] .stepper-label {
+    color: var(--ok);
+    border-bottom-color: var(--ok);
+    opacity: 1;
+}
+
+/* On mobile (≤767px) the label sits above the horizontal chips — keep it visible */
+@media (max-width: 767px) {
+    .stepper-label {
+        font-size: 0.55rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+/* Tablet main padding — slightly reduced so more content is visible */
+@media (max-width: 767px) and (min-width: 481px) {
+    main {
+        padding: 1.25rem 1rem 6.5rem;
+    }
+}
+
 /* Responsive Integrator */
 @media (max-width: 1024px) {
     .integrator-container {
@@ -2767,6 +2807,42 @@ main {
 }
 
 .btn-install-dismiss:hover { opacity: 1; }
+
+/* ─── Tablet nav scroll (481–767px) ─── */
+@media (max-width: 767px) and (min-width: 481px) {
+    .bottom-nav {
+        justify-content: flex-start;
+    }
+    .bottom-nav button {
+        flex: 0 0 auto;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        scroll-snap-align: start;
+        white-space: nowrap;
+    }
+}
+
+/* ─── Desktop: game controls always visible, no toggle needed ─── */
+@media (min-width: 768px) {
+    .game-config-toggle {
+        display: none;
+    }
+    .game-controls-collapsible {
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible;
+        transition: none;
+    }
+}
+
+/* ─── Desktop: constrain PWA banner to search width ─── */
+@media (min-width: 768px) {
+    .pwa-install-banner {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 /* Game Controls Collapsible */
 .game-config-toggle {
