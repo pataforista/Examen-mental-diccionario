@@ -1,0 +1,93 @@
+{
+  "term_id": "NEU_001",
+  "canonical_name": "Agnosia visual",
+  "synonyms_and_slang": [
+    {
+      "term": "ceguera psíquica",
+      "context": "clinical_historical",
+      "locale": "es"
+    },
+    {
+      "term": "visual agnosia",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "signo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Incapacidad de reconocer objetos, rostros o formas a través de la vía visual a pesar de una agudeza visual, campos visuales y funciones cognitivas básicas preservadas. Se debe a lesiones en áreas de asociación occipitotemporales (vía ventral).",
+    "required_features": [
+      "preservación de la percepción elemental (forma, color, movimiento)",
+      "incapacidad de identificar el significado del objeto",
+      "no explicable por demencia o afasia"
+    ],
+    "subjective_marker": "“Veo esto pero no sé qué es; puedo describirlo pero no nombrarlo ni usarlo”.",
+    "behavioral_marker": "Falla en pruebas de nombrar objetos, emparejar por categoría, o imitar el uso de utensilios comunes."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "exploración_neuropsicológica",
+      "pruebas_de_nombramiento"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "primary_expression",
+      "context": "agnosia"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_001",
+      "canonical_name": "Alucinación",
+      "reason": "En la agnosia no hay percepción falsa, sino falla de reconocimiento."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Sugiere lesión cortical en la vía ventral (occipitotemporal). Descartar tumor, ACV, demencia."
+    }
+  ],
+  "teaching_notes": [
+    "Se divide en aperceptiva (no integra la forma) y asociativa (ve la forma pero no la identifica)."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con afasia óptica (donde falla el nombrar pero puede demostrar uso gestual)."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente no puede nombrar un lápiz, pero describe: “Es alargado, amarillo, de madera con punta negra”. Al pedirle que lo use, lo toma y garabatea, demostrando que percibe la función pero no puede nombrar."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Lissauer",
+      "Freud"
+    ],
+    "clinical_tradition": [
+      "Neuropsicología",
+      "Neurología"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "cie11": {
+      "code": "MB21.2",
+      "label": "Agnosia"
+    },
+    "snomed_ct": {
+      "concept_id": "85440001",
+      "preferred_term": "Visual agnosia (finding)"
+    }
+  }
+}

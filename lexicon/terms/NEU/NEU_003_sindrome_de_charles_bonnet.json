@@ -1,0 +1,95 @@
+{
+  "term_id": "NEU_003",
+  "canonical_name": "Síndrome de Charles Bonnet",
+  "synonyms_and_slang": [
+    {
+      "term": "alucinosis visual del anciano",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "Charles Bonnet syndrome",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "síndrome",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Presencia de alucinaciones visuales complejas, lúcidas y con insight conservado en personas con deterioro visual significativo, sin otras causas neurológicas o psiquiátricas.",
+    "required_features": [
+      "alucinaciones visuales (figuras, personas, animales, escenas)",
+      "conciencia de la irrealidad (insight)",
+      "deterioro visual (macular, glaucoma, catarata)",
+      "ausencia de delirium o psicosis"
+    ],
+    "subjective_marker": "“Veo personas pequeñas vestidas de colores caminando sobre la mesa; sé que no están ahí, es por mis ojos”.",
+    "behavioral_marker": "Puede describir las imágenes con detalle, pero no interactúa con ellas como reales."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clínica",
+      "examen_oftalmológico"
+    ],
+    "time_relation": [
+      "persistente",
+      "episódica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "alucinosis"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_011",
+      "canonical_name": "Alucinosis",
+      "reason": "El síndrome de Charles Bonnet es una causa específica de alucinosis."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "management_warning",
+      "message": "No requiere antipsicóticos; la explicación y la mejora visual (si es posible) son lo principal."
+    }
+  ],
+  "teaching_notes": [
+    "El insight suele estar intacto, pero en algunos casos puede haber duda inicial."
+  ],
+  "cognitive_pitfalls": [
+    "Diagnosticar psicosis o demencia por las alucinaciones sin explorar la agudeza visual."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Mujer de 80 años con degeneración macular avanzada refiere: “Veo niños jugando en la esquina de la habitación; cuando les hablo, desaparecen. Sé que es por la vista”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Charles Bonnet",
+      "de Morsier"
+    ],
+    "clinical_tradition": [
+      "Oftalmología",
+      "Neuropsiquiatría geriátrica"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "cie11": {
+      "code": "MB27.2",
+      "label": "Visual hallucinations with insight"
+    },
+    "snomed_ct": {
+      "concept_id": "43944008",
+      "preferred_term": "Charles Bonnet syndrome (disorder)"
+    }
+  }
+}

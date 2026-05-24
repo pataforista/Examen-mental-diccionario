@@ -1,0 +1,83 @@
+{
+  "term_id": "HIS_005",
+  "canonical_name": "Nimfomanía / Satiriasis",
+  "synonyms_and_slang": [
+    {
+      "term": "hipersexualidad patológica",
+      "context": "clinical_modern",
+      "locale": "es"
+    },
+    {
+      "term": "nymphomania / satyriasis",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Términos históricos (siglos XVIII-XIX) para describir un deseo sexual incontrolable, excesivo y patológico en mujeres (nimfomanía) y hombres (satiriasis). Considerados hoy dentro de los trastornos del control de impulsos o la hipersexualidad (compulsión sexual).",
+    "required_features": [
+      "deseo sexual intenso, recurrente e incontrolable",
+      "conductas sexuales desinhibidas y repetitivas",
+      "malestar o deterioro funcional"
+    ],
+    "subjective_marker": "“No puedo dejar de pensar en sexo; necesito tener relaciones varias veces al día, aunque no quiera”.",
+    "behavioral_marker": "Búsqueda constante de parejas sexuales, masturbación excesiva, uso de pornografía adictivo."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clínica"
+    ],
+    "time_relation": [
+      "persistente",
+      "episódica"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Agonistas dopaminérgicos (Parkinson)",
+        "risk": "high"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-12",
+      "relation": "historical_precursor",
+      "context": "hipersexualidad"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Términos en desuso por su carga moral y de género. En CIE-11 se usa 'trastorno de control de impulsos con hipersexualidad' o 'compulsión sexual'."
+    }
+  ],
+  "teaching_notes": [
+    "La hipersexualidad puede ser secundaria a trastorno bipolar (manía), lesiones neurológicas, o trastorno del control de impulsos primario."
+  ],
+  "cognitive_pitfalls": [
+    "Patologizar una libido alta normal; debe causar malestar o deterioro."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Mujer de 35 años que refiere: “Tengo que tener sexo varias veces al día, si no, siento una tensión insoportable; he perdido mi trabajo por faltar para buscar encuentros”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Esquirol",
+      "Krafft-Ebing"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría clásica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

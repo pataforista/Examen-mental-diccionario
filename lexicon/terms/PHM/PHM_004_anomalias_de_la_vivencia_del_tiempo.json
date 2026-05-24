@@ -1,0 +1,93 @@
+{
+  "term_id": "PHM_004",
+  "canonical_name": "Anomalías de la vivencia del tiempo",
+  "synonyms_and_slang": [
+    {
+      "term": "distorsión del tiempo subjetivo",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "time experience disturbance",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Alteración de la experiencia subjetiva del tiempo, que puede manifestarse como aceleración, enlentecimiento, fragmentación, detención o pérdida de la continuidad temporal. No se debe a fármacos ni a trastornos afectivos puros (aunque puede coexistir).",
+    "required_features": [
+      "cambio cualitativo en la vivencia del paso del tiempo",
+      "no atribuible a intoxicación o privación de sueño",
+      "puede ser prodrómico de psicosis"
+    ],
+    "subjective_marker": "“El tiempo se ha detenido, como si estuviéramos en el mismo momento para siempre” o “el tiempo pasa en pedazos, no hay continuidad”.",
+    "behavioral_marker": "Relatos de que los segundos duran minutos o viceversa; desorientación temporal sin confusión."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_fenomenológica"
+    ],
+    "time_relation": [
+      "persistente",
+      "episódica"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Psicodélicos",
+        "risk": "high"
+      },
+      {
+        "class": "Ketamina",
+        "risk": "high"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "ipseidad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "AFF_003",
+      "canonical_name": "Bradipsiquia",
+      "reason": "La bradipsiquia es lentitud objetiva del pensamiento; aquí es alteración cualitativa del tiempo."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Puede ser un marcador prodrómico de esquizofrenia (EASE)."
+    }
+  ],
+  "teaching_notes": [
+    "Diferente de la aceleración maníaca (donde el tiempo 'vuela' subjetivamente) porque incluye fenómenos de fragmentación o detención."
+  ],
+  "cognitive_pitfalls": [
+    "Atribuir a simple aburrimiento o impaciencia."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "“A veces siento que el tiempo se para y yo quedo congelado; luego de repente pasa muy rápido y no sé cómo llegué al final del día”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Minkowski",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Psicopatología fenomenológica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

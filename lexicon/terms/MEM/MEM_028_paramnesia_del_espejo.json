@@ -1,0 +1,84 @@
+{
+  "term_id": "MEM_028",
+  "canonical_name": "Paramnesia del espejo",
+  "synonyms_and_slang": [
+    {
+      "term": "mirror misidentification",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    },
+    {
+      "term": "síndrome del espejo",
+      "context": "clinical",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "síntoma",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Creencia de que la propia imagen reflejada en un espejo es otra persona (a menudo un impostor o un familiar). Asociado a lesiones frontales derechas, demencias (especialmente Alzheimer y Lewy) y a veces a psicosis.",
+    "required_features": [
+      "reconocimiento de que la imagen es la suya pero con atribución errónea de identidad",
+      "o no reconocimiento de sí mismo en el espejo",
+      "no se debe a agnosia visual primaria"
+    ],
+    "subjective_marker": "“Hay una señora en el espejo que me sigue; no sé quién es”.",
+    "behavioral_marker": "Hablarle al espejo, intentar comunicarse con el 'otro', o cubrir los espejos."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "observación_clínica",
+      "exploración_cognitiva"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_del_yo"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "DEL_028",
+      "canonical_name": "Síndrome de Capgras",
+      "reason": "Capgras afecta a personas reales; aquí afecta al reflejo."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Frecuente en demencia de cuerpos de Lewy y en daño prefrontal derecho."
+    }
+  ],
+  "teaching_notes": [
+    "Se diferencia de la prosopagnosia porque aquí la imagen es reconocida como humana pero no como uno mismo."
+  ],
+  "cognitive_pitfalls": [
+    "No confundir con alucinación visual (el reflejo es real, la interpretación es errónea)."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente con demencia avanzada: al mirarse al espejo dice: “¿Quién es esa vieja? ¡Que se vaya!”, y trata de agredir el espejo."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Mendez",
+      "Breen"
+    ],
+    "clinical_tradition": [
+      "Neuropsiquiatría",
+      "Demencias"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

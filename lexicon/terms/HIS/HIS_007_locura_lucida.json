@@ -1,0 +1,58 @@
+{
+  "term_id": "HIS_007",
+  "canonical_name": "Locura lúcida",
+  "synonyms_and_slang": [
+    {
+      "term": "mania sin delirio",
+      "context": "historical"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Concepto de Pinel (manie sans délire) que describía a pacientes con conducta desordenada e impulsiva, sin alteración de las facultades intelectuales ni delirios. Precursor del trastorno antisocial de la personalidad y de los trastornos del control de impulsos.",
+    "required_features": [
+      "excitación o impulsividad patológica",
+      "ausencia de delirio o alucinaciones claros",
+      "preservación del juicio en áreas no afectadas"
+    ],
+    "subjective_marker": "",
+    "behavioral_marker": "Arrebatos de furia, conductas criminales sin justificación delirante."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-15",
+      "relation": "historical_precursor",
+      "context": "trastornos_de_la_personalidad"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término histórico, reemplazado por 'moral insanity' (Prichard) y luego por trastornos de personalidad."
+    }
+  ],
+  "teaching_notes": [
+    "Pinel observó que algunos pacientes en Bicêtre tenían furia pero razonaban bien."
+  ],
+  "cognitive_pitfalls": [],
+  "examples": [],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Pinel"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría francesa siglo XVIII"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

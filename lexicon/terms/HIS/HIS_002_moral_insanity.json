@@ -1,0 +1,76 @@
+{
+  "term_id": "HIS_002",
+  "canonical_name": "Moral insanity",
+  "synonyms_and_slang": [
+    {
+      "term": "locura moral",
+      "context": "historical",
+      "locale": "es"
+    },
+    {
+      "term": "insania moral",
+      "context": "historical",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Término acuñado por James Cowles Prichard (1835) para describir un trastorno caracterizado por una perversión patológica de los sentimientos, hábitos y conducta moral sin deterioro intelectual aparente ni delirios. Considerado precursor del trastorno antisocial de la personalidad y de la psicopatía.",
+    "required_features": [
+      "ausencia de delirio o alucinaciones",
+      "preservación de las capacidades intelectuales",
+      "conducta antisocial o inmoral persistente"
+    ],
+    "subjective_marker": "El sujeto no experimenta remordimiento ni conciencia de transgresión.",
+    "behavioral_marker": "Mentiras, fraudes, agresiones, falta de empatía, incapacidad para aprender del castigo."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "historia_clínica_longitudinal",
+      "colateral"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-15",
+      "relation": "historical_precursor",
+      "context": "trastorno_antisocial"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Concepto obsoleto y cargado de connotaciones morales. Su interés es histórico para entender la evolución hacia los trastornos de personalidad."
+    }
+  ],
+  "teaching_notes": [
+    "Influyó en el desarrollo de los conceptos de 'psicopatía' (Cleckley, Hare) y 'trastorno antisocial de la personalidad' (DSM)."
+  ],
+  "cognitive_pitfalls": [
+    "No usar como diagnóstico actual; solo referencia histórica."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente con inteligencia normal, sin síntomas psicóticos, que miente, roba y agrede repetidamente sin mostrar arrepentimiento ni aprender de las consecuencias."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Prichard"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría británica siglo XIX"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

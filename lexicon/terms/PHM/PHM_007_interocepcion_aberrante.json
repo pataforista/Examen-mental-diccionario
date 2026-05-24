@@ -1,0 +1,100 @@
+{
+  "term_id": "PHM_007",
+  "canonical_name": "Interocepción aberrante",
+  "synonyms_and_slang": [
+    {
+      "term": "alteración de la sensación corporal interna",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "aberrant interoception",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "constructo",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Percepción anómala de las sensaciones viscerales y corporales internas (latido cardíaco, respiración, hambre, saciedad, temperatura), que puede ser aumentada (hipersensibilidad) o disminuida (insensibilidad). Relacionado con trastornos de ansiedad, pánico, trastornos alimentarios, depresión y alexitimia.",
+    "required_features": [
+      "sensación exagerada o atenuada de señales corporales",
+      "malestar o desconexión respecto al propio cuerpo",
+      "puede llevar a catastrofización o a ignorar señales de alarma"
+    ],
+    "subjective_marker": "“Siento cada latido de mi corazón como si fuera un martillazo” o “no siento hambre nunca, como por obligación”.",
+    "behavioral_marker": "Búsqueda excesiva de atención médica (hipocondría) o descuido de necesidades básicas."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "tareas_de_detección_cardíaca",
+      "cuestionarios_de_interocepción (BPQ, MAIA)"
+    ],
+    "time_relation": [
+      "rasgo",
+      "estado"
+    ],
+    "pharmacological_link": true,
+    "pharmacological_triggers": [
+      {
+        "class": "Estimulantes",
+        "risk": "high"
+      },
+      {
+        "class": "Ansiolíticos",
+        "risk": "low"
+      },
+      {
+        "class": "Antipsicóticos de primera generación",
+        "risk": "moderate"
+      }
+    ]
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-14",
+      "relation": "primary_expression",
+      "context": "conciencia_corporal"
+    },
+    {
+      "domain_id": "DOM-09",
+      "relation": "risk_factor",
+      "context": "ansiedad_pánico"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SOM_002",
+      "canonical_name": "Hipocondría",
+      "reason": "La hipocondría es la preocupación cognitiva por la enfermedad; la interocepción aberrante es una alteración perceptiva basal."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "La interocepción aumentada es típica en el trastorno de pánico; la disminuida, en la anorexia nerviosa."
+  ],
+  "cognitive_pitfalls": [
+    "Atribuir a quejas somáticas inespecíficas sin explorar la dimensión perceptiva."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente con trastorno de pánico: “Siento que mi corazón late muy fuerte y rápido; eso me da miedo y creo que voy a infartar” (hipersensibilidad interoceptiva)."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Craig",
+      "Khalsa",
+      "Paulus"
+    ],
+    "clinical_tradition": [
+      "Neurociencia afectiva",
+      "Psiquiatría de enlace"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

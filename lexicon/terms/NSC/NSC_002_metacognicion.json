@@ -1,0 +1,82 @@
+{
+  "term_id": "NSC_002",
+  "canonical_name": "Metacognición",
+  "synonyms_and_slang": [
+    {
+      "term": "pensar sobre el pensar",
+      "context": "patient_report",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "capacidad",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Capacidad de reflexionar sobre los propios procesos cognitivos, monitorizar el conocimiento y regular la conducta basada en esa reflexión. Incluye conocimiento metacognitivo (saber sobre el propio saber) y regulación metacognitiva (control de la cognición).",
+    "required_features": [
+      "capacidad de autoobservación cognitiva",
+      "capacidad de evaluar la certeza o validez de los propios pensamientos",
+      "capacidad de modificar estrategias cognitivas ante el error"
+    ],
+    "subjective_marker": "“Me doy cuenta de que a veces confundo mis pensamientos con la realidad; puedo parar y revisar si es lógico”.",
+    "behavioral_marker": "Pausas para corregir el discurso, expresión de dudas razonables sobre la propia memoria o percepción."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "escalas_metacognitivas (MCQ-30)",
+      "pruebas_narrativas"
+    ],
+    "time_relation": [
+      "rasgo",
+      "fluctuante"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "cognitive_insight",
+      "context": "insight_psicótico"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "cognitive_domain",
+      "context": "funciones_ejecutivas"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "INS_004",
+      "canonical_name": "Insight intelectual",
+      "reason": "El insight es un tipo de conocimiento metacognitivo sobre la enfermedad; la metacognición es un dominio más amplio."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "Su déficit es central en la esquizofrenia (pobre insight) y en el TOC (metacogniciones disfuncionales)."
+  ],
+  "cognitive_pitfalls": [
+    "Confundir con inteligencia general; un paciente inteligente puede tener pobre metacognición."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "El paciente refiere: “Cuando me pongo ansioso, sé que mis pensamientos se vuelven catastróficos sin motivo; entonces intento relajarme y cambiar el foco”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Flavell",
+      "Wells"
+    ],
+    "clinical_tradition": [
+      "Psicología cognitiva",
+      "Esquizofrenia",
+      "TOC"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

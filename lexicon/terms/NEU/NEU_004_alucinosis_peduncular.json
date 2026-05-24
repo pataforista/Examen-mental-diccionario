@@ -1,0 +1,90 @@
+{
+  "term_id": "NEU_004",
+  "canonical_name": "Alucinosis peduncular",
+  "synonyms_and_slang": [
+    {
+      "term": "alucinosis de Lhermitte",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "peduncular hallucinosis",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "síndrome",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Alucinaciones visuales vívidas, a menudo complejas (figuras, animales, escenas), con insight preservado, asociadas a lesiones del mesencéfalo (pedúnculos cerebrales) o tálamo. Descrita por Lhermitte (1922).",
+    "required_features": [
+      "alucinaciones visuales lúcidas",
+      "conciencia de irrealidad (insight)",
+      "lesión estructural en mesencéfalo o tálamo (infarto, tumor, inflamación)"
+    ],
+    "subjective_marker": "“Veo animales y personas que sé que no existen, pero son tan reales como si estuvieran ahí”.",
+    "behavioral_marker": "Describe las alucinaciones con detalle, no actúa como si fueran reales."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clínica",
+      "neuroimagen"
+    ],
+    "time_relation": [
+      "aguda",
+      "subaguda"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-08",
+      "relation": "primary_expression",
+      "context": "alucinosis_orgánica"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_011",
+      "canonical_name": "Alucinosis",
+      "reason": "La alucinosis peduncular es una subcategoría etiológica."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Sospechar lesión vascular o tumoral en mesencéfalo; realizar neuroimagen urgente."
+    }
+  ],
+  "teaching_notes": [
+    "Las alucinaciones suelen ser más floridas y con mayor insight que en el delirium."
+  ],
+  "cognitive_pitfalls": [
+    "Atribuir a psicosis funcional y retrasar el diagnóstico neurológico."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Paciente con infarto talámico refiere: “Veo soldados marchando en mi habitación, sé que no son reales, pero los veo claramente”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Lhermitte",
+      "van Bogaert"
+    ],
+    "clinical_tradition": [
+      "Neurología",
+      "Neurooftalmología"
+    ]
+  },
+  "status": "active",
+  "mappings": {
+    "snomed_ct": {
+      "concept_id": "230263005",
+      "preferred_term": "Peduncular hallucinosis (finding)"
+    }
+  }
+}

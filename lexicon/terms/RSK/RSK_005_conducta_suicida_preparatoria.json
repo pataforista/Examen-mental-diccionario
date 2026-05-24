@@ -13,7 +13,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "behavior",
+  "term_kind": "conducta",
   "granularity": "atomic",
   "risk_weight": 4,
   "definition_clinical": {

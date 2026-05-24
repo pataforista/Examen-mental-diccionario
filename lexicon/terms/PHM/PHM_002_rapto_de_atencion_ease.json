@@ -1,0 +1,83 @@
+{
+  "term_id": "PHM_002",
+  "canonical_name": "Rapto de atención (EASE)",
+  "synonyms_and_slang": [
+    {
+      "term": "captura involuntaria de la atención",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "attentional capture",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Fenómeno en el cual la atención es capturada de manera súbita e involuntaria por un estímulo externo trivial, interrumpiendo la línea de pensamiento o acción, y generando una sensación de que el estímulo 'exige' ser atendido. Descrito en la EASE.",
+    "required_features": [
+      "captura atencional involuntaria por estímulos banales",
+      "sensación de que el estímulo 'tira' de la atención",
+      "dificultad para desengancharse"
+    ],
+    "subjective_marker": "“De repente mi atención se va a una mota de polvo en la pared y no puedo dejar de mirarla; me cuesta volver a la conversación”.",
+    "behavioral_marker": "Pausas BRUSCAS en el habla para mirar algo irrelevante; fijación ocular en detalles sin propósito."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_fenomenológica (EASE)"
+    ],
+    "time_relation": [
+      "prodrómica",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "ipseidad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "PER_010",
+      "canonical_name": "Ilusión",
+      "reason": "En la ilusión hay una interpretación errónea; en el rapto no hay distorsión, solo captura."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_attention",
+      "message": "Frecuente en pródromos de esquizofrenia y en estados de hiperreflexividad."
+    }
+  ],
+  "teaching_notes": [
+    "Se diferencia de la distractibilidad en la manía (donde hay cambio rápido de interés) por la cualidad de 'imposición' y la dificultad de desenganche."
+  ],
+  "cognitive_pitfalls": [
+    "Atribuir a falta de interés o aburrimiento."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "Mientras habla, el paciente se detiene y mira fijamente una mancha en la pared: “Es que esa mancha me llamó la atención; no puedo dejar de mirarla aunque quiera seguir la conversación”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Parnas",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Psicopatología fenomenológica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

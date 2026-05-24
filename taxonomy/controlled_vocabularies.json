@@ -1,34 +1,89 @@
 {
   "taxonomy_id": "RISK_CLASSIFICATION_V1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "controlled_vocabularies": {
     "term_kind": [
-      "symptom",
-      "sign",
-      "syndrome",
-      "state"
+      "capacidad",
+      "concepto_histórico",
+      "conducta",
+      "constructo",
+      "distinción_clínica",
+      "estado",
+      "estado de riesgo",
+      "evento",
+      "factor de riesgo",
+      "fenómeno",
+      "modificador",
+      "signo",
+      "síndrome",
+      "síntoma"
     ],
     "granularity": [
       "atomic",
+      "cluster",
       "composite"
     ],
     "risk_weight": [
       0,
       1,
-      2
+      2,
+      3,
+      4,
+      5
     ],
     "alert_type": [
-      "safety_critical",
-      "iatrogenic_risk",
+      "clinical_assessment",
+      "clinical_attention",
+      "clinical_differentiation",
+      "clinical_severity",
+      "clinical_significance",
+      "clinical_warning",
+      "conceptual_note",
+      "diagnostic_clue",
+      "diagnostic_critical",
       "diagnostic_error",
-      "management_warning"
+      "diagnostic_warning",
+      "documentation_warning",
+      "early_warning",
+      "historical_note",
+      "management_warning",
+      "medical_emergency",
+      "neurological_note",
+      "neurological_warning",
+      "organic_warning",
+      "safety_attention",
+      "safety_critical",
+      "suicide_risk",
+      "toxicological_warning"
     ],
     "domain_relation": [
-      "primary_expression",
-      "secondary_expression",
-      "frequent_misclassification",
+      "associated_defect",
+      "associated_deficit",
+      "associated_delusion",
+      "associated_sign",
+      "associated_symptom",
+      "baseline_reference",
+      "cognitive_deficit",
+      "cognitive_domain",
+      "cognitive_insight",
+      "coping_mechanism",
       "differential_anchor",
-      "risk_factor"
+      "etiological_anchor",
+      "historical_framework",
+      "historical_precursor",
+      "modifier",
+      "neurobiological_substrate",
+      "obsolete_concept",
+      "primary_expression",
+      "prodromal_marker",
+      "risk_context",
+      "risk_factor",
+      "risk_marker",
+      "risk_modifier",
+      "secondary_expression",
+      "severity_anchor",
+      "severity_marker",
+      "syndrome_builder"
     ]
   },
   "axes": {
@@ -88,6 +143,7 @@
   },
   "notes": [
     "Mantener separado ideation vs suicidal behaviour.",
-    "Permitir compatibilidad NSSI vs self-harm usando intent_to_die."
+    "Permitir compatibilidad NSSI vs self-harm usando intent_to_die.",
+    "controlled_vocabularies refleja los valores realmente presentes en el lexicón (sincronizado automáticamente). Algunos descriptores son históricos o mixtos es/en."
   ]
 }

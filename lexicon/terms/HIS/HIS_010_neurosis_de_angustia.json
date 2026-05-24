@@ -1,0 +1,60 @@
+{
+  "term_id": "HIS_010",
+  "canonical_name": "Neurosis de angustia",
+  "synonyms_and_slang": [
+    {
+      "term": "anxiety neurosis",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Término freudiano (1895) para describir un cuadro de ansiedad flotante, ataques de angustia, fobias y síntomas somáticos, atribuido a acumulación de tensión sexual no descargada. En las clasificaciones actuales se corresponde con el trastorno de ansiedad generalizada, el trastorno de pánico y las fobias.",
+    "required_features": [
+      "ansiedad crónica o paroxística",
+      "síntomas somáticos (palpitaciones, sudoración)",
+      "ausencia de causa orgánica"
+    ],
+    "subjective_marker": "",
+    "behavioral_marker": ""
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-15",
+      "relation": "historical_precursor",
+      "context": "trastornos_de_ansiedad"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término histórico; en CIE-11 y DSM-5 se utilizan categorías más específicas (trastorno de pánico, ansiedad generalizada, etc.)."
+    }
+  ],
+  "teaching_notes": [
+    "Freud la distinguió de la 'neurastenia' (fatiga) y de la 'neurosis obsesiva'."
+  ],
+  "cognitive_pitfalls": [],
+  "examples": [],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Freud"
+    ],
+    "clinical_tradition": [
+      "Psicoanálisis",
+      "Psiquiatría dinámica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

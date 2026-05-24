@@ -1,0 +1,78 @@
+{
+  "term_id": "PHM_008",
+  "canonical_name": "Anomalías del sentido de pertenencia",
+  "synonyms_and_slang": [
+    {
+      "term": "ipseidad alterada",
+      "context": "clinical",
+      "locale": "es"
+    },
+    {
+      "term": "sense of ownership",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "fenómeno",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Vivencia de que el propio cuerpo, pensamientos o sentimientos no le pertenecen completamente, sin llegar a la atribución delirante externa. Se experimenta como una extrañeza o falta de familiaridad con uno mismo. Forma parte del trastorno de la ipseidad en la EASE.",
+    "required_features": [
+      "sensación de que los pensamientos o el cuerpo son 'como de otro'",
+      "no hay atribución a una fuerza externa específica",
+      "preservación del juicio de realidad (insight)"
+    ],
+    "subjective_marker": "“Mis manos son mías pero no las siento como mías; hay como una distancia”.",
+    "behavioral_marker": "Tocarse repetidamente para verificar la pertenencia, o mirarse en el espejo con extrañeza."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_fenomenológica (EASE)"
+    ],
+    "time_relation": [
+      "prodrómica",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "ipseidad"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SELF_005",
+      "canonical_name": "Despersonalización",
+      "reason": "La despersonalización incluye esta sensación, pero la anomalía del sentido de pertenencia es más específica y no siempre con la cualidad de 'como en un sueño'."
+    }
+  ],
+  "alerts": [],
+  "teaching_notes": [
+    "Se diferencia de los fenómenos de pasividad porque no hay agente externo."
+  ],
+  "cognitive_pitfalls": [
+    "No confundir con falta de interés por el propio cuerpo."
+  ],
+  "examples": [
+    {
+      "type": "observation",
+      "text": "“Miro mis manos y sé que son mías, pero se sienten como si no lo fueran; es difícil de explicar, como si hubiera un vidrio entre ellas y yo”."
+    }
+  ],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Parnas",
+      "EASE"
+    ],
+    "clinical_tradition": [
+      "Psicopatología fenomenológica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}

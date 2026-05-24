@@ -1,0 +1,59 @@
+{
+  "term_id": "HIS_008",
+  "canonical_name": "Esquizofrenia simple (concepto histórico)",
+  "synonyms_and_slang": [
+    {
+      "term": "simple schizophrenia",
+      "context": "clinical_bilingual",
+      "locale": "en"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Subtipo de esquizofrenia descrito por Bleuler que se caracterizaba por un inicio insidioso, predominio de síntomas negativos (abulia, anhedonia, retraimiento) sin episodios psicóticos francos. Eliminado de las clasificaciones modernas (DSM-5, CIE-11) por falta de especificidad y solapamiento con otros trastornos.",
+    "required_features": [
+      "síntomas negativos prominentes",
+      "ausencia de delirios o alucinaciones claros",
+      "curso progresivo"
+    ],
+    "subjective_marker": "",
+    "behavioral_marker": "Aislamiento progresivo, descuido personal, pérdida de funcionalidad."
+  },
+  "operationalization": {
+    "detectable_by": [],
+    "time_relation": [],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-15",
+      "relation": "historical_precursor",
+      "context": "esquizofrenia"
+    }
+  ],
+  "exclusions": [],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Categoría obsoleta. Los casos que se diagnosticaban así hoy suelen considerarse trastorno esquizotípico de la personalidad, trastorno depresivo mayor con síntomas negativos, o síndrome negativo primario."
+    }
+  ],
+  "teaching_notes": [
+    "Su eliminación refleja el cambio hacia criterios más operativos y la necesidad de síntomas positivos para el diagnóstico de esquizofrenia."
+  ],
+  "cognitive_pitfalls": [],
+  "examples": [],
+  "version": "1.0.0",
+  "provenance": {
+    "phenomenology": [
+      "Bleuler"
+    ],
+    "clinical_tradition": [
+      "Psiquiatría clásica"
+    ]
+  },
+  "status": "active",
+  "mappings": {}
+}
