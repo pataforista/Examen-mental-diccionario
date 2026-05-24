@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clinical-pwa-v2.4';
+const CACHE_NAME = 'clinical-pwa-v2.5';
 const ASSETS = [
     '/',
     'index.html',

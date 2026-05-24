@@ -56,7 +56,7 @@
     --accent: var(--v-accent);
     --accent-rgb: 149, 33, 92;
     --primary: var(--v-primary);
-    --primary-rgb: 0, 85, 255;
+    --primary-rgb: 122, 205, 191;
     --primary-container: var(--v-primary-container);
     --on-primary-container: var(--v-on-primary-container);
     --secondary-container: var(--v-secondary-container);
@@ -99,7 +99,7 @@
     --accent: var(--o-accent-a);
     --accent-rgb: 185, 224, 166;
     --primary: var(--o-accent-b);
-    --primary-rgb: 128, 246, 205;
+    --primary-rgb: 93, 202, 165;
     --primary-container: var(--o-primary-container);
     --on-primary-container: var(--o-on-primary-container);
     --secondary-container: var(--o-secondary-container);
@@ -1939,10 +1939,6 @@ main {
 
 .support-nudge p {
     color: var(--text-secondary);
-}
-
-.animate-pulse {
-    animation: pulse 0.5s ease-in-out alternate;
 }
 
 .integrator-view {
