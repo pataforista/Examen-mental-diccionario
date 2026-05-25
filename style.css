@@ -589,10 +589,19 @@ main {
     padding: 0.75rem 0 1.5rem;
     border-top: 1px solid var(--border-subtle);
     z-index: 100;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+}
+
+.bottom-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .bottom-nav button {
     flex: 1;
+    min-width: 0;
     background: none;
     border: none;
     color: var(--text-p);
@@ -783,6 +792,23 @@ main {
         max-width: 800px;
         margin: 0 auto;
         display: block;
+    }
+
+    /* Bottom nav: constrain to body max-width on wide screens */
+    .bottom-nav {
+        max-width: 1200px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 100%;
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+
+    .bottom-nav button {
+        flex: 1;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
@@ -1089,7 +1115,7 @@ main {
     --y: 50%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .chroma-grid {
         grid-template-columns: 1fr;
     }
@@ -1695,12 +1721,18 @@ main {
 
     /* Bottom nav */
     .bottom-nav {
-        padding: 0.6rem 0.25rem 1.2rem;
+        padding: 0.6rem 0 1.2rem;
+        justify-content: flex-start;
     }
 
     .bottom-nav button {
+        flex: 0 0 auto;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         font-size: 0.6rem;
         gap: 0.3rem;
+        scroll-snap-align: start;
+        white-space: nowrap;
     }
 
     .bottom-nav button .nav-icon {
@@ -2258,6 +2290,41 @@ main {
     justify-content: flex-end;
 }
 
+/* Stepper sidebar label */
+.stepper-label {
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--primary);
+    display: block;
+    padding: 0 0.25rem 0.5rem;
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+[data-theme="dark"] .stepper-label {
+    color: var(--ok);
+    border-bottom-color: var(--ok);
+    opacity: 1;
+}
+
+/* On mobile (≤767px) the label sits above the horizontal chips — keep it visible */
+@media (max-width: 767px) {
+    .stepper-label {
+        font-size: 0.55rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+/* Tablet main padding — slightly reduced so more content is visible */
+@media (max-width: 767px) and (min-width: 481px) {
+    main {
+        padding: 1.25rem 1rem 6.5rem;
+    }
+}
+
 /* Responsive Integrator */
 @media (max-width: 1024px) {
     .integrator-container {
@@ -2270,31 +2337,46 @@ main {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .integrator-container {
         grid-template-columns: 1fr;
     }
     .stepper-sidebar {
         position: static;
-        max-height: 120px;
-        margin-bottom: 1rem;
+        max-height: none;
+        margin-bottom: 0.75rem;
+        padding: 0.75rem;
+    }
+    .report-preview-panel {
+        grid-column: auto;
+        position: static;
+        max-height: none;
     }
     #integrator-steps-list {
         display: flex;
         gap: 0.5rem;
         overflow-x: auto;
         padding-bottom: 0.5rem;
+        scrollbar-width: none;
     }
+    #integrator-steps-list::-webkit-scrollbar { display: none; }
     .step-item {
         flex-shrink: 0;
         white-space: nowrap;
-        padding: 0.4rem 0.6rem;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
     }
     .step-content {
         min-height: auto;
     }
     #step-label {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .step-content {
+        padding: 1.25rem;
     }
 }
 
@@ -2672,3 +2754,150 @@ main {
 /* ----------------------------------------------------------
    FIN DEL PARCHE
    ============================================================ */
+
+/* ============================================================
+   MOBILE UI IMPROVEMENTS
+   ============================================================ */
+
+/* PWA Install Banner */
+.pwa-install-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.65rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(var(--primary-rgb), 0.1);
+    border: 1px solid rgba(var(--primary-rgb), 0.35);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+}
+
+.pwa-install-banner span {
+    flex: 1;
+    font-weight: 600;
+    color: var(--text-p);
+}
+
+.btn-install-action {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.btn-install-action:hover { opacity: 0.85; }
+
+.btn-install-dismiss {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.35rem;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.btn-install-dismiss:hover { opacity: 1; }
+
+/* ─── Tablet nav scroll (481–767px) ─── */
+@media (max-width: 767px) and (min-width: 481px) {
+    .bottom-nav {
+        justify-content: flex-start;
+    }
+    .bottom-nav button {
+        flex: 0 0 auto;
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        scroll-snap-align: start;
+        white-space: nowrap;
+    }
+}
+
+/* ─── Desktop: game controls always visible, no toggle needed ─── */
+@media (min-width: 768px) {
+    .game-config-toggle {
+        display: none;
+    }
+    .game-controls-collapsible {
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible;
+        transition: none;
+    }
+}
+
+/* ─── Desktop: constrain PWA banner to search width ─── */
+@media (min-width: 768px) {
+    .pwa-install-banner {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Game Controls Collapsible */
+.game-config-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0 0.75rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-main);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.game-config-toggle:hover { color: var(--primary); }
+
+#game-config-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+}
+
+.game-controls-collapsible {
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+    max-height: 600px;
+    opacity: 1;
+}
+
+.game-controls-collapsible.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+[data-theme="dark"] .game-config-toggle {
+    color: var(--sub);
+    border-bottom-color: var(--line);
+}
+
+[data-theme="dark"] .game-config-toggle:hover {
+    color: var(--ok);
+}
+
+[data-theme="dark"] .pwa-install-banner {
+    background: rgba(93, 202, 165, 0.08);
+    border-color: rgba(93, 202, 165, 0.3);
+}
+
+[data-theme="dark"] .btn-install-action {
+    background: var(--ok);
+    color: #1a151b;
+}

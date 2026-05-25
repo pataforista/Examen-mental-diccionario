@@ -21,6 +21,7 @@ const App = {
         this.renderTermOfTheDay();
         this.theme.init();
         this.donation.init();
+        this.pwa.init();
         this.handleInitialHash();
         this.checkOnboarding();
         this.setupSWUpdates();
@@ -1479,7 +1480,27 @@ const App = {
             this.cacheDOM();
             this.bindEvents();
             this.renderStats();
+            this.initControlsToggle();
             if (!this.currentRound) this.nextRound(); // Only start if not already started
+        },
+
+        initControlsToggle: function () {
+            const toggle = document.getElementById('game-config-toggle');
+            const body = document.getElementById('game-controls-body');
+            const arrow = document.getElementById('game-config-arrow');
+            if (!toggle || !body) return;
+            if (!toggle._toggleBound) {
+                toggle._toggleBound = true;
+                toggle.addEventListener('click', () => {
+                    const isCollapsed = body.classList.toggle('collapsed');
+                    if (arrow) arrow.textContent = isCollapsed ? '▶' : '▼';
+                });
+            }
+            // Auto-collapse on mobile so game card is visible immediately
+            if (window.innerWidth <= 768) {
+                body.classList.add('collapsed');
+                if (arrow) arrow.textContent = '▶';
+            }
         },
 
         cacheDOM: function () {
@@ -1943,6 +1964,41 @@ const App = {
         }
     },
     // ─────────────────────────────────────────────────────────────────────────
+
+    pwa: {
+        deferredPrompt: null,
+        init: function () {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                this.deferredPrompt = e;
+                const banner = document.getElementById('pwa-install-banner');
+                if (banner) banner.classList.remove('hidden');
+            });
+            window.addEventListener('appinstalled', () => {
+                this.deferredPrompt = null;
+                const banner = document.getElementById('pwa-install-banner');
+                if (banner) banner.classList.add('hidden');
+            });
+            const installBtn = document.getElementById('pwa-install-btn');
+            if (installBtn) {
+                installBtn.addEventListener('click', async () => {
+                    if (!this.deferredPrompt) return;
+                    this.deferredPrompt.prompt();
+                    const { outcome } = await this.deferredPrompt.userChoice;
+                    this.deferredPrompt = null;
+                    const banner = document.getElementById('pwa-install-banner');
+                    if (banner) banner.classList.add('hidden');
+                });
+            }
+            const dismissBtn = document.getElementById('pwa-install-dismiss');
+            if (dismissBtn) {
+                dismissBtn.addEventListener('click', () => {
+                    const banner = document.getElementById('pwa-install-banner');
+                    if (banner) banner.classList.add('hidden');
+                });
+            }
+        }
+    },
 
     renderView: function (viewName) {
         // Stop the game timer whenever we leave the game view, so it can't keep
