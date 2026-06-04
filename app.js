@@ -533,17 +533,30 @@ const App = {
     renderTermOfTheDay: function () {
         if (!this.nodes.termOfTheDay || !this.data.terms || this.data.terms.length === 0) return;
 
-        // Deterministic daily selection
         const filterTerms = this.data.terms.filter(t => t && t.definition_clinical && t.definition_clinical.core);
         if (filterTerms.length === 0) return;
 
-        const dateStr = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD"
-        let seed = 0;
-        for (let i = 0; i < dateStr.length; i++) {
-            seed += dateStr.charCodeAt(i);
+        const now = new Date();
+        const year = now.getFullYear();
+        const dayOfYear = Math.floor((now - new Date(year, 0, 1)) / 86400000);
+
+        // Mulberry32 PRNG seeded by year — produces a different shuffle each year
+        let s = (year * 0x9e3779b9) >>> 0;
+        const rand = () => {
+            s = (s + 0x6d2b79f5) >>> 0;
+            let t = Math.imul(s ^ (s >>> 15), 1 | s);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+
+        // Fisher-Yates shuffle ensures every term appears before any repeats
+        const indices = filterTerms.map((_, i) => i);
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(rand() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
         }
-        const dailyIndex = seed % filterTerms.length;
-        const dailyTerm = filterTerms[dailyIndex];
+
+        const dailyTerm = filterTerms[indices[dayOfYear % filterTerms.length]];
 
         // Determine a clinical marker if available
         const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
