@@ -36,12 +36,14 @@ const App = {
     },
 
     checkOnboarding: function () {
-        if (!localStorage.getItem('mse_onboarded_v2.2')) {
-            setTimeout(() => {
-                alert("¡Nuevo! Ya puedes compartir términos clínicos usando tarjetas artísticas diseñadas por el Dr. Celada. Busca el botón 📤.");
-                localStorage.setItem('mse_onboarded_v2.2', 'true');
-            }, 1500);
-        }
+        try {
+            if (!localStorage.getItem('mse_onboarded_v2.2')) {
+                setTimeout(() => {
+                    alert("¡Nuevo! Ya puedes compartir términos clínicos usando tarjetas artísticas diseñadas por el Dr. Celada. Busca el botón 📤.");
+                    try { localStorage.setItem('mse_onboarded_v2.2', 'true'); } catch (e) { }
+                }, 1500);
+            }
+        } catch (e) { }
     },
 
     speakTerm: function (termId) {
@@ -136,6 +138,7 @@ const App = {
             canvas.width = 1080;
             canvas.height = 1080;
             const ctx = canvas.getContext('2d');
+            if (!ctx) throw new Error('Canvas context unavailable');
 
             // Colors (Updated Bauhaus/Memphis Palette)
             const cream = '#FFF8E7';
@@ -184,14 +187,15 @@ const App = {
             ctx.fillStyle = black;
             ctx.font = '900 110px Outfit, sans-serif';
             const termName = term.canonical_name.toUpperCase();
-            this.wrapText(ctx, termName, 80, 350, 920, 120);
+            const nameLines = this.wrapText(ctx, termName, 80, 350, 920, 120);
+            const badgeY = 350 + nameLines * 120 + 20;
 
-            // Term Kind Badge
+            // Term Kind Badge — positioned below the (possibly multi-line) term name
             ctx.fillStyle = magenta;
-            ctx.fillRect(80, 400, 250, 50);
+            ctx.fillRect(80, badgeY, 250, 50);
             ctx.fillStyle = '#FFFFFF';
             ctx.font = '800 30px Outfit, sans-serif';
-            ctx.fillText(term.term_kind.toUpperCase(), 100, 435);
+            ctx.fillText(term.term_kind.toUpperCase(), 100, badgeY + 35);
 
             // Definition Text
             ctx.fillStyle = black;
@@ -303,6 +307,10 @@ const App = {
         if (state.view === 'term' && state.termId) {
             this.viewTerm(state.termId, true);
         } else if (state.view === 'domain' && state.domainId) {
+            if (!document.getElementById('domain-detail-container')) {
+                this.renderView('domain');
+                this.renderDomains();
+            }
             this.viewDomainDetails(state.domainId, true);
         } else if (state.view.startsWith('nav-')) {
             this.switchTab(state.view);
@@ -355,10 +363,17 @@ const App = {
             console.log(`🚀 Clinical Data Loaded in ${Math.round(performance.now() - startTime)}ms`);
         } catch (error) {
             console.error("Critical error loading clinical data:", error);
-            // Fallback to empty to prevent UI crash
             this.data.terms = this.data.terms || [];
             this.data.domains = this.data.domains || [];
             this.data.cases = this.data.cases || [];
+            if (this.nodes.allTermsList) {
+                this.nodes.allTermsList.innerHTML = `
+                    <div style="padding:2rem; text-align:center; opacity:0.7;">
+                        <p style="font-size:1.1rem; margin-bottom:1rem;">Sin conexión</p>
+                        <p style="font-size:0.9rem;">No se pudo cargar el diccionario. Verifica tu conexión e intenta de nuevo.</p>
+                        <button class="btn secondary" style="margin-top:1rem;" onclick="window.location.reload()">Reintentar</button>
+                    </div>`;
+            }
         }
     },
 
@@ -533,17 +548,30 @@ const App = {
     renderTermOfTheDay: function () {
         if (!this.nodes.termOfTheDay || !this.data.terms || this.data.terms.length === 0) return;
 
-        // Deterministic daily selection
         const filterTerms = this.data.terms.filter(t => t && t.definition_clinical && t.definition_clinical.core);
         if (filterTerms.length === 0) return;
 
-        const dateStr = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD"
-        let seed = 0;
-        for (let i = 0; i < dateStr.length; i++) {
-            seed += dateStr.charCodeAt(i);
+        const now = new Date();
+        const year = now.getFullYear();
+        const dayOfYear = Math.floor((now - new Date(year, 0, 1)) / 86400000);
+
+        // Mulberry32 PRNG seeded by year — produces a different shuffle each year
+        let s = (year * 0x9e3779b9) >>> 0;
+        const rand = () => {
+            s = (s + 0x6d2b79f5) >>> 0;
+            let t = Math.imul(s ^ (s >>> 15), 1 | s);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+
+        // Fisher-Yates shuffle ensures every term appears before any repeats
+        const indices = filterTerms.map((_, i) => i);
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(rand() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
         }
-        const dailyIndex = seed % filterTerms.length;
-        const dailyTerm = filterTerms[dailyIndex];
+
+        const dailyTerm = filterTerms[indices[dayOfYear % filterTerms.length]];
 
         // Determine a clinical marker if available
         const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
@@ -688,11 +716,14 @@ const App = {
                     <span class="section-label">Dominios Asociados</span>
                     <div class="tag-container" style="margin-top: 0.5rem;">
                         ${domainLinks.length > 0 ?
-                    domainLinks.map(link => `
+                    domainLinks.map(link => {
+                        const domain = this.data.domains.find(d => d.domain_id === link.domain_id);
+                        const label = domain?.label_es || this.getDomainSlug(link.domain_id).replace(/_/g, ' ');
+                        return `
                                 <span class="tag" onclick="event.stopPropagation(); App.viewDomainDetails('${link.domain_id}')">
-                                    ${this.getDomainIcon(link.domain_id)} ${this.utils.sanitizeHTML(this.getDomainSlug(link.domain_id).replace(/_/g, ' '))}
-                                </span>
-                            `).join('') : '<span style="font-size: 0.8rem; opacity: 0.5;">No categorizado</span>'}
+                                    ${this.getDomainIcon(link.domain_id)} ${this.utils.sanitizeHTML(label)}
+                                </span>`;
+                    }).join('') : '<span style="font-size: 0.8rem; opacity: 0.5;">No categorizado</span>'}
                     </div>
                 </div>
 
@@ -735,10 +766,14 @@ const App = {
     },
 
     loadRecentSearches: function () {
-        const saved = localStorage.getItem('recentSearches');
-        if (saved) {
-            this.data.recentSearches = JSON.parse(saved);
-            this.renderRecentSearches();
+        try {
+            const saved = localStorage.getItem('recentSearches');
+            if (saved) {
+                this.data.recentSearches = JSON.parse(saved);
+                this.renderRecentSearches();
+            }
+        } catch (e) {
+            this.data.recentSearches = [];
         }
     },
 
@@ -763,7 +798,7 @@ const App = {
         this.nodes.recentList.innerHTML = this.data.recentSearches.map(id => {
             const term = this.data.terms.find(t => t.term_id === id);
             if (!term) return '';
-            return `<span class="recent-search-tag" onclick="App.viewTerm('${term.term_id}')">${term.canonical_name}</span>`;
+            return `<span class="recent-search-tag" onclick="App.viewTerm('${term.term_id}')">${this.utils.sanitizeHTML(term.canonical_name)}</span>`;
         }).join('');
     },
 
@@ -841,6 +876,7 @@ const App = {
     setupChromaGrid: function () {
         const grid = document.getElementById('about-chroma-grid');
         if (!grid || typeof gsap === 'undefined') return;
+        gsap.killTweensOf(this.data.chromaPos);
 
         // Mouse follow on grid
         const setX = gsap.quickSetter(grid, '--x', 'px');
@@ -1806,7 +1842,9 @@ const App = {
 
             // Create options: Target + Random Distractors from other cases
             const otherCases = App.data.cases.filter(x => x.case_id !== c.case_id);
-            const distractors = this.sampleMany(otherCases, 3).map(x => x.expected_engine_output.primary_syndrome);
+            const distractors = this.sampleMany(otherCases, 3)
+                .map(x => x.expected_engine_output?.primary_syndrome)
+                .filter(Boolean);
 
             // Unique set
             const uniqueOptions = [...new Set([targetName, ...distractors])];
