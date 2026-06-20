@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clinical-pwa-v2.6';
+const CACHE_NAME = 'clinical-pwa-v2.7';
 const ASSETS = [
     '/',
     'index.html',
@@ -48,15 +48,14 @@ self.addEventListener('message', (event) => {
 
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (cacheName !== CACHE_NAME) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        }).then(() => self.clients.claim())
+        (async () => {
+            const keys = await caches.keys();
+            await Promise.all(keys.map(k => k !== CACHE_NAME ? caches.delete(k) : null));
+            await self.clients.claim();
+            // Broadcast to all open windows so every browser (incl. Firefox) reloads
+            const windows = await self.clients.matchAll({ includeUncontrolled: true, type: 'window' });
+            windows.forEach(w => w.postMessage({ type: 'SW_UPDATED' }));
+        })()
     );
 });
 

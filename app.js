@@ -100,9 +100,23 @@ const App = {
     registerSW: function () {
         if (!('serviceWorker' in navigator)) return;
 
-        // Register controllerchange BEFORE registering the SW to never miss the event
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
+        // Snapshot taken at load time: true only when there is an existing SW
+        // (i.e. this is an UPDATE, not a first install). Guards against reloading
+        // on first install and against double-reload if both paths fire.
+        const hadController = !!navigator.serviceWorker.controller;
+        let reloading = false;
+        const reloadOnce = () => {
+            if (!hadController || reloading) return;
+            reloading = true;
             window.location.reload();
+        };
+
+        // Path 1: Chrome/Edge – fires when the controlling SW changes
+        navigator.serviceWorker.addEventListener('controllerchange', reloadOnce);
+
+        // Path 2: Firefox-reliable – SW broadcasts SW_UPDATED after clients.claim()
+        navigator.serviceWorker.addEventListener('message', (event) => {
+            if (event.data?.type === 'SW_UPDATED') reloadOnce();
         });
 
         navigator.serviceWorker.register('sw.js')
@@ -115,8 +129,6 @@ const App = {
                     const incoming = reg.installing;
                     incoming.addEventListener('statechange', () => {
                         if (incoming.state === 'installed' && navigator.serviceWorker.controller) {
-                            // skipWaiting() in sw.js will activate the new SW;
-                            // controllerchange fires next and reloads the page.
                             incoming.postMessage({ type: 'SKIP_WAITING' });
                         }
                     });
