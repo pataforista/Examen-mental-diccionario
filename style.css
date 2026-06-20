@@ -2901,3 +2901,355 @@ main {
     background: var(--ok);
     color: #1a151b;
 }
+
+/* ============================================================
+   MODERN UX LAYER — Physical Feel & Microinteractions
+   ============================================================ */
+
+/* ── 1. ACTIVE PRESS STATES (Direct Manipulation) ─────────── */
+.btn:active,
+.share-pill:active,
+.tag:active,
+.recent-search-tag:active,
+.icon-btn:active {
+    transform: scale(0.94) !important;
+    transition: transform 0.08s ease !important;
+}
+
+.opt:active {
+    transform: translate(2px, 2px) scale(0.97) !important;
+    transition: transform 0.08s ease !important;
+}
+
+.term-card-simple:active,
+.list-item:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: 2px 2px 0px var(--bau-black) !important;
+    transition: transform 0.08s ease, box-shadow 0.08s ease !important;
+}
+
+[data-theme="dark"] .term-card-simple:active,
+[data-theme="dark"] .list-item:active {
+    box-shadow: 2px 2px 0px var(--primary) !important;
+}
+
+.domain-card:active,
+.card[onclick]:active,
+.totd-card:active,
+.subcomponent-item:active {
+    transform: translate(3px, 3px) !important;
+    box-shadow: 3px 3px 0px var(--bau-black) !important;
+    transition: transform 0.08s ease !important;
+}
+
+.bottom-nav button:active .nav-icon {
+    transform: scale(0.82);
+    transition: transform 0.08s ease;
+}
+
+.int-opt:active {
+    transform: scale(0.91) !important;
+    transition: transform 0.08s ease !important;
+}
+
+.btn-back:active {
+    transform: translateX(-8px) !important;
+    transition: transform 0.1s ease !important;
+}
+
+/* ── 2. TOAST NOTIFICATION SYSTEM ─────────────────────────── */
+.toast-container {
+    position: fixed;
+    bottom: 88px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: none;
+    width: calc(100% - 2rem);
+    max-width: 380px;
+}
+
+.toast {
+    background: var(--bau-black);
+    color: #ffffff;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    font-weight: 700;
+    font-family: var(--font-main);
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    animation: toast-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    pointer-events: auto;
+    max-width: 100%;
+    letter-spacing: 0.01em;
+}
+
+.toast.success {
+    background: var(--success, #2ecc71);
+    color: #0a1a0a;
+}
+
+.toast.error {
+    background: #c53030;
+    color: #ffffff;
+}
+
+.toast.info {
+    background: var(--primary);
+    color: var(--bau-black);
+}
+
+.toast.warning {
+    background: var(--bau-gold);
+    color: var(--bau-black);
+}
+
+.toast.leaving {
+    animation: toast-out 0.22s ease forwards;
+}
+
+@keyframes toast-in {
+    from { opacity: 0; transform: translateY(14px) scale(0.88); }
+    to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+@keyframes toast-out {
+    to { opacity: 0; transform: translateY(10px) scale(0.9); }
+}
+
+[data-theme="dark"] .toast {
+    background: var(--card, #2d1d2b);
+    color: #f5f5f5;
+    border: 1px solid var(--line, #4e3a4b);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .toast.success {
+    background: var(--ok, #5dcaa5);
+    color: #1a151b;
+    border-color: var(--ok, #5dcaa5);
+}
+
+[data-theme="dark"] .toast.info {
+    background: var(--primary);
+    color: #1a151b;
+}
+
+/* ── 3. VIEW TRANSITION ANIMATION ─────────────────────────── */
+.view-enter {
+    animation: view-fade-up 0.28s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+@keyframes view-fade-up {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── 4. ANIMATED NAV INDICATOR ─────────────────────────────── */
+.nav-indicator {
+    position: absolute;
+    top: 0;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 0 0 3px 3px;
+    transition: left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                width 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+[data-theme="dark"] .nav-indicator {
+    background: var(--ok, #5dcaa5);
+    box-shadow: 0 0 10px var(--ok, #5dcaa5);
+}
+
+/* Override old CSS ::after indicator */
+.bottom-nav button.active::after {
+    display: none !important;
+}
+
+/* ── 5. SCORE POP & COUNTER ANIMATION ─────────────────────── */
+@keyframes score-pop {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.55); color: var(--success, #2ecc71); }
+    100% { transform: scale(1); }
+}
+
+.score-pop {
+    display: inline-block;
+    animation: score-pop 0.42s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ── 6. GAME FEEDBACK FLASHES ──────────────────────────────── */
+@keyframes correct-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); }
+    100% { box-shadow: 0 0 0 24px rgba(46, 204, 113, 0); }
+}
+
+.opt.correct-flash {
+    background: rgba(46, 204, 113, 0.15) !important;
+    border-color: var(--success, #2ecc71) !important;
+    color: #1a4731 !important;
+    animation: correct-ring 0.5s ease-out;
+}
+
+[data-theme="dark"] .opt.correct-flash {
+    background: rgba(93, 202, 165, 0.18) !important;
+    border-color: var(--ok, #5dcaa5) !important;
+    color: var(--ok, #5dcaa5) !important;
+}
+
+.opt.wrong-flash {
+    background: rgba(197, 48, 48, 0.12) !important;
+    border-color: #c53030 !important;
+    color: #742a2a !important;
+}
+
+[data-theme="dark"] .opt.wrong-flash {
+    background: rgba(240, 149, 149, 0.12) !important;
+    border-color: var(--bad, #f09595) !important;
+    color: var(--bad, #f09595) !important;
+}
+
+/* ── 7. SKELETON SCREENS ───────────────────────────────────── */
+@keyframes skeleton-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-block {
+    background: linear-gradient(90deg,
+        rgba(0,0,0,0.06) 25%,
+        rgba(0,0,0,0.13) 50%,
+        rgba(0,0,0,0.06) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+    border-radius: var(--radius-sm);
+}
+
+[data-theme="dark"] .skeleton-block {
+    background: linear-gradient(90deg,
+        rgba(255,255,255,0.04) 25%,
+        rgba(255,255,255,0.09) 50%,
+        rgba(255,255,255,0.04) 75%);
+    background-size: 200% 100%;
+}
+
+.skeleton-card {
+    border: var(--v-border);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    box-shadow: var(--v-shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+[data-theme="dark"] .skeleton-card {
+    border: 1px solid var(--line, #4e3a4b);
+    box-shadow: none;
+    background: var(--card, #2d1d2b);
+}
+
+.skeleton-title   { height: 1.1rem; width: 58%; }
+.skeleton-text    { height: 0.75rem; width: 88%; }
+.skeleton-text-sm { height: 0.75rem; width: 65%; }
+
+/* ── 8. EMPTY STATE FLOAT ──────────────────────────────────── */
+@keyframes gentle-float {
+    0%, 100% { transform: translateY(0);   }
+    50%       { transform: translateY(-7px); }
+}
+
+.empty-state-icon {
+    display: inline-block;
+    animation: gentle-float 2.8s ease-in-out infinite;
+}
+
+/* ── 9. HEADER COMPACT (scroll) ────────────────────────────── */
+.app-header {
+    transition: padding 0.3s var(--md-sys-motion-standard),
+                box-shadow 0.3s ease;
+}
+
+.app-header.compact {
+    padding-top: 0.45rem;
+    padding-bottom: 0.55rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.app-header.compact .header-top {
+    margin-bottom: 0.45rem;
+}
+
+.app-header.compact h1 {
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.app-header.compact .ritual-subtitle {
+    display: none;
+}
+
+.app-header h1 {
+    transition: font-size 0.3s var(--md-sys-motion-standard);
+}
+
+[data-theme="dark"] .app-header.compact {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ── 10. RIPPLE EFFECT ─────────────────────────────────────── */
+.ripple-wave {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: scale(0);
+    animation: ripple-expand 0.55s ease-out forwards;
+    background: rgba(var(--primary-rgb, 122, 205, 191), 0.22);
+}
+
+@keyframes ripple-expand {
+    to { transform: scale(3); opacity: 0; }
+}
+
+/* Ensure ripple-able elements are positioned */
+.btn.primary,
+.btn.secondary {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ── 11. HAPTIC / COMBO BURST ──────────────────────────────── */
+@keyframes combo-burst {
+    0%   { transform: scale(1);    opacity: 1; }
+    50%  { transform: scale(1.8);  opacity: 0.7; }
+    100% { transform: scale(1);    opacity: 1; }
+}
+
+.combo-burst {
+    animation: combo-burst 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ── 12. PREFERS-REDUCED-MOTION ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:       0.01ms !important;
+        animation-iteration-count: 1     !important;
+        transition-duration:      0.01ms !important;
+        scroll-behavior:          auto   !important;
+    }
+    .skeleton-block {
+        animation: none;
+        background: rgba(0, 0, 0, 0.07);
+    }
+    [data-theme="dark"] .skeleton-block {
+        background: rgba(255, 255, 255, 0.06);
+    }
+}
