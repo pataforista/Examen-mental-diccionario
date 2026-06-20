@@ -25,7 +25,6 @@ const App = {
         this.pwa.init();
         this.handleInitialHash();
         this.checkOnboarding();
-        this.setupSWUpdates();
         // Modern UX layer
         this.navIndicator.init();
         this._setupScrollCompact();
@@ -60,13 +59,6 @@ const App = {
         }, { passive: true });
     },
 
-    setupSWUpdates: function () {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-                window.location.reload();
-            });
-        }
-    },
 
     checkOnboarding: function () {
         try {
@@ -106,14 +98,31 @@ const App = {
     },
 
     registerSW: function () {
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(reg => {
-                    console.log('Service Worker Registered', reg.scope);
-                    setInterval(() => reg.update(), 1000 * 60 * 60);
-                })
-                .catch(err => console.error('Service Worker Registration Failed', err));
-        }
+        if (!('serviceWorker' in navigator)) return;
+
+        // Register controllerchange BEFORE registering the SW to never miss the event
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            window.location.reload();
+        });
+
+        navigator.serviceWorker.register('sw.js')
+            .then(reg => {
+                // Check immediately on load, then every hour
+                reg.update();
+                setInterval(() => reg.update(), 1000 * 60 * 60);
+
+                reg.addEventListener('updatefound', () => {
+                    const incoming = reg.installing;
+                    incoming.addEventListener('statechange', () => {
+                        if (incoming.state === 'installed' && navigator.serviceWorker.controller) {
+                            // skipWaiting() in sw.js will activate the new SW;
+                            // controllerchange fires next and reloads the page.
+                            incoming.postMessage({ type: 'SKIP_WAITING' });
+                        }
+                    });
+                });
+            })
+            .catch(err => console.error('Service Worker registration failed:', err));
     },
 
     utils: {
