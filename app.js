@@ -13,6 +13,7 @@ const App = {
     init: async function () {
         this.cacheDOM();
         this.registerSW();
+        this._showSkeletonTerms();
         this.bindEvents();
         await this.loadData();
         this.setupSearch();
@@ -25,6 +26,38 @@ const App = {
         this.handleInitialHash();
         this.checkOnboarding();
         this.setupSWUpdates();
+        // Modern UX layer
+        this.navIndicator.init();
+        this._setupScrollCompact();
+        // Sync indicator after hash routing
+        setTimeout(() => this.navIndicator.update(), 50);
+    },
+
+    _showSkeletonTerms: function () {
+        if (!this.nodes.allTermsList) return;
+        const skeletons = Array.from({ length: 8 }, () => `
+            <div class="skeleton-card">
+                <div class="skeleton-block skeleton-title"></div>
+                <div class="skeleton-block skeleton-text"></div>
+                <div class="skeleton-block skeleton-text-sm"></div>
+            </div>`).join('');
+        this.nodes.allTermsList.innerHTML = skeletons;
+    },
+
+    _setupScrollCompact: function () {
+        const header = document.querySelector('.app-header');
+        const main   = document.querySelector('main');
+        if (!header || !main) return;
+        let lastY = 0;
+        main.addEventListener('scroll', () => {
+            const y = main.scrollTop;
+            if (y > 60 && y > lastY) {
+                header.classList.add('compact');
+            } else if (y < lastY || y < 20) {
+                header.classList.remove('compact');
+            }
+            lastY = y;
+        }, { passive: true });
     },
 
     setupSWUpdates: function () {
@@ -39,9 +72,9 @@ const App = {
         try {
             if (!localStorage.getItem('mse_onboarded_v2.2')) {
                 setTimeout(() => {
-                    alert("¡Nuevo! Ya puedes compartir términos clínicos usando tarjetas artísticas diseñadas por el Dr. Celada. Busca el botón 📤.");
+                    App.toast.show('📤 Nuevo: comparte términos como tarjetas clínicas. Pulsa el botón compartir en cualquier ficha.', 'info', 5000);
                     try { localStorage.setItem('mse_onboarded_v2.2', 'true'); } catch (e) { }
-                }, 1500);
+                }, 1800);
             }
         } catch (e) { }
     },
@@ -297,6 +330,28 @@ const App = {
 
         // History API support
         window.addEventListener('popstate', (e) => this.handlePopState(e.state));
+
+        // Keyboard shortcut: '/' focuses search (skip if already in an input)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                this.nodes.search.focus();
+                this.nodes.search.select();
+            }
+        });
+
+        // Ripple effect on primary/secondary buttons
+        document.addEventListener('pointerdown', (e) => {
+            const btn = e.target.closest('.btn.primary, .btn.secondary');
+            if (!btn) return;
+            const rect = btn.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height) * 1.6;
+            const wave = document.createElement('span');
+            wave.className = 'ripple-wave';
+            wave.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
+            btn.appendChild(wave);
+            wave.addEventListener('animationend', () => wave.remove(), { once: true });
+        });
     },
 
     handlePopState: function (state) {
@@ -639,17 +694,18 @@ const App = {
                 a.download = `MSE_${term.canonical_name}.png`;
                 a.click();
                 URL.revokeObjectURL(url);
-                alert("La tarjeta se ha descargado a tu equipo.");
+                App.toast.show('🖼️ Tarjeta descargada en tu dispositivo', 'success');
             }
         } catch (error) {
             console.error("Error sharing:", error);
-            // Simple text share if failed
             if (navigator.share) {
                 navigator.share({
                     title: `Diccionario MSE: ${term.canonical_name}`,
                     text: `${term.canonical_name}: ${term.definition_clinical?.core}`,
                     url: this.utils.getTermUrl(termId)
                 }).catch(() => { });
+            } else {
+                App.toast.show('No se pudo compartir. Copia el enlace manualmente.', 'warning');
             }
         }
     },
@@ -658,6 +714,7 @@ const App = {
         try {
             const term = this.data.terms.find(t => t.term_id === termId);
             if (!term) return;
+            this.utils.haptic();
 
             if (!isPopState) {
                 history.pushState({ view: 'term', termId: termId }, '', `#term/${termId}`);
@@ -1126,7 +1183,9 @@ const App = {
     },
 
     switchTab: function (id) {
+        this.utils.haptic();
         this.nodes.navButtons.forEach(btn => btn.classList.toggle('active', btn.id === id));
+        this.navIndicator.update();
         this.nodes.search.value = '';
 
         if (id === 'nav-dictionary') {
@@ -1418,6 +1477,7 @@ const App = {
         },
 
         toggleTerm: function (term) {
+            App.utils.haptic();
             const step = this.steps[this.currentStep];
             const cleanTerm = term.replace(/_/g, ' ');
             let current = this.responses[step.id] || '';
@@ -1442,13 +1502,14 @@ const App = {
         },
 
         navigate: function (dir) {
+            App.utils.haptic();
             const next = this.currentStep + dir;
             if (next >= 0 && next < this.steps.length) {
                 this.currentStep = next;
                 this.renderCurrentStep();
                 App.nodes.content.scrollTop = 0;
             } else if (next === this.steps.length) {
-                alert("¡Examen mental completado! Puedes revisar y copiar el reporte final.");
+                App.toast.show('✅ ¡Examen completado! Revisa y copia el reporte final.', 'success', 4000);
             }
         },
 
@@ -1474,24 +1535,30 @@ const App = {
 
         copyReport: function () {
             const text = this.nodes.reportOutput.innerText;
+            if (!text || text.startsWith('Tu reporte')) {
+                App.toast.show('Completa al menos un paso antes de copiar.', 'warning');
+                return;
+            }
             navigator.clipboard.writeText(text).then(() => {
-                const original = this.nodes.copyBtn.textContent;
-                this.nodes.copyBtn.textContent = "¡Copiado!";
-                this.nodes.copyBtn.classList.add('success');
-                setTimeout(() => {
-                    this.nodes.copyBtn.textContent = original;
-                    this.nodes.copyBtn.classList.remove('success');
-                }, 2000);
+                App.utils.haptic();
+                App.toast.show('📋 Reporte copiado al portapapeles', 'success');
+                const original = this.nodes.copyBtn.innerHTML;
+                this.nodes.copyBtn.textContent = '✅ ¡Copiado!';
+                setTimeout(() => { this.nodes.copyBtn.innerHTML = original; }, 2200);
+            }).catch(() => {
+                App.toast.show('No se pudo copiar. Selecciona el texto manualmente.', 'error');
             });
         },
 
         reset: function () {
-            if (confirm("¿Estás seguro de reiniciar todo el asistente? Se borrarán tus respuestas actuales.")) {
+            if (confirm("¿Reiniciar el asistente? Se borrarán todas tus respuestas.")) {
                 this.responses = {};
                 this.currentStep = 0;
                 this.renderStepsList();
                 this.renderCurrentStep();
                 this.updateReport();
+                this.updateProgressBar();
+                App.toast.show('Examen reiniciado', 'info');
             }
         }
     },
@@ -1657,6 +1724,7 @@ const App = {
         loseLife: function (reason) {
             this.arcade.lives--;
             this.arcade.multiplier = 1;
+            if ('vibrate' in navigator) try { navigator.vibrate([60, 30, 60, 30, 60]); } catch (_) {}
             this.playAudio('error');
             this.showFeedback(reason || "Error.", "bad");
             this.nodes.gameCard.classList.add('animate-shake');
@@ -1802,20 +1870,55 @@ const App = {
             this.stopTimer();
             if (isCorrect) {
                 const timeBonus = Math.floor(this.arcade.timeLeft / 10);
+                const prevScore = this.stats.score;
                 this.stats.score += (10 + timeBonus) * this.arcade.multiplier;
                 this.stats.streak += 1;
                 if (this.stats.streak % 3 === 0) this.arcade.multiplier++;
 
+                if ('vibrate' in navigator) try { navigator.vibrate([10, 30, 10]); } catch (_) {}
                 this.playAudio('correct');
                 this.showFeedback(`¡Correcto! +${10 + timeBonus}${this.arcade.multiplier > 1 ? ' x' + this.arcade.multiplier : ''}`, "ok");
                 if (target.teaching_notes) this.nodes.hint.textContent = `Nota: ${target.teaching_notes[0]}`;
                 this.nodes.gameCard.classList.add('animate-pulse');
                 setTimeout(() => this.nodes.gameCard.classList.remove('animate-pulse'), 400);
+                this._flashOptions(true);
+                this._animateScore(prevScore, this.stats.score);
                 this.disableOptions();
             } else {
+                if ('vibrate' in navigator) try { navigator.vibrate([40, 20, 40]); } catch (_) {}
+                this._flashOptions(false);
                 this.loseLife("Incorrecto.");
             }
             this.saveStats();
+        },
+
+        _flashOptions: function (correct) {
+            const cls = correct ? 'correct-flash' : 'wrong-flash';
+            const btns = this.nodes.options.querySelectorAll('button');
+            btns.forEach(b => {
+                b.classList.add(cls);
+                setTimeout(() => b.classList.remove(cls), 600);
+            });
+        },
+
+        _animateScore: function (from, to) {
+            const el = this.nodes.score;
+            if (!el || from === to) return;
+            const duration = 450;
+            const start = performance.now();
+            const tick = (now) => {
+                const t = Math.min((now - start) / duration, 1);
+                const ease = 1 - Math.pow(1 - t, 3);
+                el.textContent = Math.round(from + (to - from) * ease);
+                if (t < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    el.textContent = to;
+                    el.classList.add('score-pop');
+                    setTimeout(() => el.classList.remove('score-pop'), 450);
+                }
+            };
+            requestAnimationFrame(tick);
         },
 
         // --- DIFFERENTIAL LOGIC ---
@@ -1901,22 +2004,28 @@ const App = {
         renderDiffPhase2: function (round) {
             this.nodes.prompt.textContent = "Paso 2: Selecciona el criterio discriminante válido";
             this.nodes.options.innerHTML = '';
-            this.startTimer(); // Reset timer for phase 2
+            this.startTimer();
             this.renderOptions(round.discOptions, (opt) => {
                 this.stopTimer();
                 if (opt.correct) {
+                    const prevScore = this.stats.score;
                     const timeBonus = Math.floor(this.arcade.timeLeft / 10);
                     this.stats.score += (20 + timeBonus) * this.arcade.multiplier;
                     this.stats.streak += 1;
                     if (this.stats.streak % 3 === 0) this.arcade.multiplier++;
 
+                    if ('vibrate' in navigator) try { navigator.vibrate([10, 30, 10]); } catch (_) {}
                     this.playAudio('correct');
                     this.showFeedback("¡Excelente! Caso resuelto.", "ok");
                     this.nodes.hint.textContent = `Clave: ${opt.text}`;
                     this.nodes.gameCard.classList.add('animate-pulse');
                     setTimeout(() => this.nodes.gameCard.classList.remove('animate-pulse'), 400);
+                    this._flashOptions(true);
+                    this._animateScore(prevScore, this.stats.score);
                     this.disableOptions();
                 } else {
+                    if ('vibrate' in navigator) try { navigator.vibrate([60, 30, 60]); } catch (_) {}
+                    this._flashOptions(false);
                     this.loseLife("Criterio incorrecto.");
                 }
                 this.saveStats();
@@ -2039,8 +2148,6 @@ const App = {
     },
 
     renderView: function (viewName) {
-        // Stop the game timer whenever we leave the game view, so it can't keep
-        // draining lives / playing sounds from a background tab.
         if (viewName !== 'game' && this.game && this.game.stopTimer) {
             this.game.stopTimer();
         }
@@ -2048,10 +2155,66 @@ const App = {
         views.forEach(v => {
             const node = this.nodes[`${v}View`];
             if (node) {
-                if (v === viewName) node.classList.remove('hidden');
-                else node.classList.add('hidden');
+                if (v === viewName) {
+                    node.classList.remove('hidden');
+                    // Spring entrance animation
+                    node.classList.remove('view-enter');
+                    void node.offsetWidth; // force reflow
+                    node.classList.add('view-enter');
+                } else {
+                    node.classList.add('hidden');
+                }
             }
         });
+    }
+};
+
+// ── Toast notification system ─────────────────────────────────
+App.toast = {
+    _container: null,
+    _get: function () {
+        if (!this._container) {
+            this._container = document.createElement('div');
+            this._container.className = 'toast-container';
+            document.body.appendChild(this._container);
+        }
+        return this._container;
+    },
+    show: function (message, type = 'info', duration = 2800) {
+        const container = this._get();
+        const el = document.createElement('div');
+        el.className = `toast ${type}`;
+        el.textContent = message;
+        container.appendChild(el);
+        const dismiss = () => {
+            el.classList.add('leaving');
+            setTimeout(() => el.remove(), 250);
+        };
+        el.addEventListener('click', dismiss);
+        setTimeout(dismiss, duration);
+        return el;
+    }
+};
+
+// ── Animated bottom-nav indicator ────────────────────────────
+App.navIndicator = {
+    el: null,
+    init: function () {
+        const nav = document.querySelector('.bottom-nav');
+        if (!nav || this.el) return;
+        this.el = document.createElement('div');
+        this.el.className = 'nav-indicator';
+        nav.appendChild(this.el);
+        this.update();
+    },
+    update: function () {
+        const nav = document.querySelector('.bottom-nav');
+        const active = nav && nav.querySelector('button.active');
+        if (!active || !this.el) return;
+        const navRect = nav.getBoundingClientRect();
+        const btnRect = active.getBoundingClientRect();
+        this.el.style.left  = `${btnRect.left - navRect.left}px`;
+        this.el.style.width = `${btnRect.width}px`;
     }
 };
 
