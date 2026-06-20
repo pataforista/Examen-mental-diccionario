@@ -2070,11 +2070,21 @@ const App = {
         },
         sampleMany: function (arr, n) {
             if (!arr || arr.length === 0) return [];
-            return [...arr].sort(() => 0.5 - Math.random()).slice(0, n);
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy.slice(0, n);
         },
         shuffle: function (arr) {
             if (!arr) return [];
-            return arr.sort(() => 0.5 - Math.random());
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
         }
     },
 
