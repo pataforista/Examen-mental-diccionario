@@ -39,13 +39,7 @@
       "context": "psicomotricidad_conacion"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "MOT_013",
-      "canonical_name": "Discinesia",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "safety_critical",

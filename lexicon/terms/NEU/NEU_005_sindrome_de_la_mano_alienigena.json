@@ -50,7 +50,7 @@
       "reason": "En la mano alienígena no suele haber atribución a una fuerza externa personalizada; es más un fallo del control motor."
     },
     {
-      "term_id": "",
+      "term_id": "MOT_003",
       "canonical_name": "Apraxia ideomotora",
       "reason": "En la mano alienígena los movimientos son propositivos, en la apraxia hay falla en la ejecución del plan motor."
     }

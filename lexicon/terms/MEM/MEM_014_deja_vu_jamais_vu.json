@@ -28,13 +28,7 @@
       "context": "funciones_cognitivas"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "MEM_003",
-      "canonical_name": "Déjà vu / Jamais vu",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_clue",

@@ -69,7 +69,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "COG_002",
+      "term_id": "CNS_002",
       "canonical_name": "Coma",
       "reason": "En el coma hay pérdida de conciencia; en el mutismo la vigilia suele estar conservada.",
       "ref_status": "forward"

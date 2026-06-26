@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_009",
       "canonical_name": "Confabulación provocada",
       "reason": "La espontánea emerge sin ser elicitada; la provocada aparece en respuesta a preguntas directas."
     },

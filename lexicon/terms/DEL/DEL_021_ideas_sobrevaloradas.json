@@ -37,13 +37,7 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "DEL_025",
-      "canonical_name": "Ideas sobrevaloradas",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

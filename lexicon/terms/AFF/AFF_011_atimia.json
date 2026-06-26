@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_005",
+      "term_id": "AFF_010",
       "canonical_name": "Aplanamiento afectivo",
       "reason": "El aplanamiento es una reducción de la expresión; la atimia es la ausencia profunda de la vivencia afectiva."
     }

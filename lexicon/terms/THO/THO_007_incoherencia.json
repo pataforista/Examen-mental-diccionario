@@ -74,7 +74,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "THO_003",
+      "term_id": "THO_001",
       "canonical_name": "Asociaciones laxas",
       "reason": "En las asociaciones laxas hay vínculos remotos o idiosincrásicos; en la incoherencia el vínculo se ha perdido totalmente.",
       "ref_status": "forward"

@@ -111,7 +111,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_017",
+      "term_id": "AFF_023",
       "canonical_name": "Ira",
       "reason": "La ira es estado afectivo; el riesgo de violencia requiere intención/medios/desinhibición y evaluación de inminencia.",
       "ref_status": "forward"

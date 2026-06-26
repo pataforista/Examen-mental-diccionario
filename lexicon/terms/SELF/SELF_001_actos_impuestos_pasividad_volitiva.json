@@ -67,7 +67,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_010",
+      "term_id": "SELF_009",
       "canonical_name": "Impulsos impuestos",
       "reason": "En los actos impuestos se describe la acción ya en curso o realizada; en los impulsos, es la urgencia de actuar lo que se siente impuesto.",
       "ref_status": "forward"

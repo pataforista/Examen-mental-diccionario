@@ -69,12 +69,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_004",
       "canonical_name": "Amnesia disociativa",
       "reason": "La AGT tiene sustrato neurológico vascular, duración autolimitada y no responde a trauma psíquico."
     },
     {
-      "term_id": "",
+      "term_id": "MEM_011",
       "canonical_name": "Delirium",
       "reason": "En AGT no hay fluctuación de conciencia ni inatención global."
     }

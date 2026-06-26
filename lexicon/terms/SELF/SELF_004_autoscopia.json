@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_001",
+      "term_id": "SELF_005",
       "canonical_name": "Despersonalización",
       "reason": "La autoscopia es una alteración visual/espacial del yo; la despersonalización es un sentimiento de extrañeza cualitativa sin necesariamente verse por fuera.",
       "ref_status": "forward"

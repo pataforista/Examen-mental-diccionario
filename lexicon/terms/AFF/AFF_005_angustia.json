@@ -80,7 +80,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_007",
+      "term_id": "AFF_008",
       "canonical_name": "Ansiedad afectiva",
       "reason": "La ansiedad afectiva es sostenida y de menor intensidad.",
       "ref_status": "forward"

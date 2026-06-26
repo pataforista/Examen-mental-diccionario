@@ -37,13 +37,7 @@
       "context": "funciones_cognitivas"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "MEM_007",
-      "canonical_name": "Inatención",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

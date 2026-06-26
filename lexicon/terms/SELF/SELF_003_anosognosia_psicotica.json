@@ -64,7 +64,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_003",
+      "term_id": "INS_001",
       "canonical_name": "Anosognosia",
       "reason": "Anosognosia es el término neuropsicológico más amplio.",
       "ref_status": "forward"

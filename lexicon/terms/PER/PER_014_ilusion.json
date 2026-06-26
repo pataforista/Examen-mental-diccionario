@@ -50,7 +50,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
+      "term_id": "PER_010",
       "canonical_name": "Alucinación verdadera",
       "reason": "En la alucinación no existe estímulo externo real.",
       "ref_status": "forward"

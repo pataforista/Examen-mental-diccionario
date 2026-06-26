@@ -68,7 +68,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_001",
+      "term_id": "SELF_005",
       "canonical_name": "Despersonalización",
       "reason": "La desrealización es externa (entorno); la despersonalización es interna (uno mismo). Suelen coexistir.",
       "ref_status": "forward"

@@ -38,13 +38,7 @@
       "context": "conciencia_orientacion"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "COG_001",
-      "canonical_name": "Orientación",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "clinical_attention",

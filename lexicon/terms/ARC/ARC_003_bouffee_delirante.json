@@ -47,7 +47,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "ARC_002",
+      "term_id": "ARC_006",
       "canonical_name": "Dementia Praecox",
       "reason": "La bouffée délirante es esencialmente reversible y aguda; la dementia praecox es crónica y deteriorante."
     }

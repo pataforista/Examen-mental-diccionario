@@ -46,7 +46,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SPE_002",
+      "term_id": "SPE_008",
       "canonical_name": "Palilalia",
       "reason": "La palilalia suele repetir palabras o frases completas; la logoclonia se restringe a la sílaba final.",
       "ref_status": "forward"

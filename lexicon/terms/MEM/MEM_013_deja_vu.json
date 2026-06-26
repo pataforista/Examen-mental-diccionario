@@ -63,7 +63,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_019",
       "canonical_name": "Jamais vu",
       "reason": "El jamais vu es la extrañeza de lo conocido; el déjà vu es la familiaridad de lo nuevo."
     },

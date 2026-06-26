@@ -62,12 +62,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_027",
       "canonical_name": "Manía",
       "reason": "La manía tiene actividad aumentada, verborrea y conductas de riesgo; la euforia puede ser pasiva y silenciosa."
     },
     {
-      "term_id": "",
+      "term_id": "AFF_019",
       "canonical_name": "Hipomanía",
       "reason": "La hipomanía incluye aumento de actividad y es episódica; la euforia puede ser signo orgánico estable."
     }

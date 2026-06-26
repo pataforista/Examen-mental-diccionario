@@ -66,13 +66,13 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
+      "term_id": "PER_010",
       "canonical_name": "Alucinación verdadera",
       "reason": "El flashback es una intrusión de memoria autobiográfica, no una percepción sin referente.",
       "ref_status": "forward"
     },
     {
-      "term_id": "PER_003",
+      "term_id": "PER_011",
       "canonical_name": "Alucinosis",
       "reason": "En la alucinosis el insight se conserva de forma estable; en el flashback suele perderse transitoriamente.",
       "ref_status": "forward"

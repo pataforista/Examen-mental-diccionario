@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_009",
       "canonical_name": "Apatía",
       "reason": "La apatía es falta de motivación/interés; la abulia es la incapacidad ejecutiva de la acción voluntaria (pueden coexistir)."
     },

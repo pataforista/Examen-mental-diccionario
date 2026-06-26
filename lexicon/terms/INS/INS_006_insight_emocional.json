@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "INS_007",
       "canonical_name": "Insight intelectual",
       "reason": "El insight intelectual falla en la traducción conductual y afectiva."
     }

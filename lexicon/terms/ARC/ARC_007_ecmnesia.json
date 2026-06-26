@@ -46,7 +46,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_005",
+      "term_id": "PER_013",
       "canonical_name": "Flashback",
       "reason": "El flashback es una intrusión breve; la ecmnesia es un estado más prolongado y desorientador."
     }

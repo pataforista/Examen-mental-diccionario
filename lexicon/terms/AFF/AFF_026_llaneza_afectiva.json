@@ -63,7 +63,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_010",
       "canonical_name": "Aplanamiento afectivo",
       "reason": "La llaneza afectiva es estilo normal; el aplanamiento es síntoma con pérdida de experiencia o expresión patológica."
     }

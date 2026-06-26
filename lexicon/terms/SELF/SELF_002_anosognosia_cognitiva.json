@@ -59,7 +59,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_003",
+      "term_id": "INS_001",
       "canonical_name": "Anosognosia",
       "reason": "La anosognosia es el término general neurológico.",
       "ref_status": "forward"

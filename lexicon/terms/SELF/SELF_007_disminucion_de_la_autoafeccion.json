@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_002",
+      "term_id": "AFF_006",
       "canonical_name": "Anhedonia",
       "reason": "La anhedonia es pérdida de placer; la autoafección es pérdida del sentido de 'ser' el sujeto de la experiencia.",
       "ref_status": "forward"

@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_008",
+      "term_id": "PER_007",
       "canonical_name": "Alucinación Extracampina",
       "reason": "En la extracampina hay una cualidad visual clara; en el sentido de presencia es una 'cuasi-percepción' sin imagen."
     }

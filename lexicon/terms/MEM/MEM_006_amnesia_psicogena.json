@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_004",
       "canonical_name": "Amnesia disociativa",
       "reason": "La psicógena enfatiza explícitamente el mecanismo psicodinámico; son conceptos solapados pero con énfasis distinto."
     }

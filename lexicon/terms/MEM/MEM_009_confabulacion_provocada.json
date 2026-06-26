@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_008",
       "canonical_name": "Confabulación espontánea",
       "reason": "La provocada requiere estimulación externa; la espontánea emerge sin ella."
     }

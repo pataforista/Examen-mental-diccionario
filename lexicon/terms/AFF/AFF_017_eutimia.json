@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_020",
       "canonical_name": "Hipotimia",
       "reason": "La hipotimia implica descenso leve pero clínicamente significativo del tono afectivo."
     }

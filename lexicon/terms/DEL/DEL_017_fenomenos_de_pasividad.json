@@ -35,13 +35,7 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "DEL_002",
-      "canonical_name": "Fenómenos de pasividad",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

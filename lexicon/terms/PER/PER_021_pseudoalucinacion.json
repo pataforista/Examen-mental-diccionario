@@ -47,7 +47,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
+      "term_id": "PER_010",
       "canonical_name": "Alucinación verdadera",
       "reason": "En la alucinación verdadera existe atribución externa y pérdida del juicio de realidad.",
       "ref_status": "forward"

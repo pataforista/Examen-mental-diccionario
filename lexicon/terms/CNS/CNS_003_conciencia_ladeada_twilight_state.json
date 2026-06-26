@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_011",
       "canonical_name": "Delirium",
       "reason": "El estado crepuscular (twilight) se diferencia en poseer un campo de concentración más preservado (pero estrechado y rígido a una temática) con un fin más abrupto en lugar del inicio-fin difuso o la inatención-fluctuación continua patognomónica del delirium metabólico-tóxico."
     }

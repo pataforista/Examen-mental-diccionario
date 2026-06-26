@@ -67,12 +67,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_013",
       "canonical_name": "Depresión",
       "reason": "La disforia incluye componente de irritabilidad y tensión no central en depresión pura."
     },
     {
-      "term_id": "",
+      "term_id": "AFF_007",
       "canonical_name": "Ansiedad",
       "reason": "La disforia incluye tristeza; la ansiedad pura es aprensión sin tristeza necesariamente."
     }

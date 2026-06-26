@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "CON_001",
+      "term_id": "CNT_002",
       "canonical_name": "Obsesión",
       "reason": "La folie du doute es esencialmente la descripción clásica de las obsesiones de duda y compulsiones de verificación."
     }

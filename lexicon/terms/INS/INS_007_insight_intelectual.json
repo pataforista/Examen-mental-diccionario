@@ -52,7 +52,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "INS_006",
       "canonical_name": "Insight emocional",
       "reason": "El insight intelectual es 'saber sin sentir'; el emocional es la verdadera integración de ese conocimiento."
     }

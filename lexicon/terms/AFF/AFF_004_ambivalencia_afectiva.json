@@ -52,7 +52,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "VOL_002",
       "canonical_name": "Ambivalencia volitiva",
       "reason": "La ambivalencia afectiva es emocional; la volitiva es de impulsos de acción."
     }

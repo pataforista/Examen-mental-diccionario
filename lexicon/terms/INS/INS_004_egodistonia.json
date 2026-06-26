@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "INS_003",
       "canonical_name": "Egocintonía",
       "reason": "El opuesto fenoménico directo. Diferencia, por ejemplo, los pensamientos restrictivos del TOC (egodistónicos) de los de la Anorexia Nerviosa (egosintónicos)."
     }

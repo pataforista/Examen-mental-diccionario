@@ -61,7 +61,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_011",
       "canonical_name": "Delirium",
       "reason": "El estado confusional es más inespecífico; el delirium requiere inatención prominente, inicio agudo y fluctuación."
     }

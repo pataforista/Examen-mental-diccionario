@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_007",
       "canonical_name": "Ansiedad",
       "reason": "El miedo tiene objeto identificable; la ansiedad puede ser difusa y sin objeto claro."
     }

@@ -37,13 +37,7 @@
       "context": "pensamiento_curso_forma"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "THO_010",
-      "canonical_name": "Asociación por consonancia (clang)",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

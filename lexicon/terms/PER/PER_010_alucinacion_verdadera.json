@@ -80,13 +80,13 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_004",
+      "term_id": "PER_021",
       "canonical_name": "Pseudoalucinación",
       "reason": "En la pseudoalucinación existe atribución interna y juicio de realidad conservado.",
       "ref_status": "forward"
     },
     {
-      "term_id": "PER_010",
+      "term_id": "PER_014",
       "canonical_name": "Ilusión",
       "reason": "La ilusión requiere un estímulo real malinterpretado.",
       "ref_status": "forward"

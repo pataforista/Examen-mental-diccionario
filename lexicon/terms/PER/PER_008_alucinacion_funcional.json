@@ -39,7 +39,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_010",
+      "term_id": "PER_014",
       "canonical_name": "Ilusión",
       "reason": "En la ilusión el estímulo real se transforma; en la alucinación funcional, se perciben ambos simultáneamente."
     }

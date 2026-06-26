@@ -46,7 +46,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "MEM_005",
+      "term_id": "MEM_011",
       "canonical_name": "Delirium",
       "reason": "La amentia fue el término centroeuropeo para lo que hoy se clasifica globalmente como delirium o psicosis orgánica aguda."
     }

@@ -44,7 +44,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "DEL_020",
+      "term_id": "DEL_014",
       "canonical_name": "Delirio somático monotemático",
       "reason": "En la hipocondría hay una preocupación/miedo que puede ser cuestionado (idea sobrevalorada o ansiosa); en el delirio la certeza es absoluta e inamovible."
     }

@@ -87,7 +87,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "RSK_003",
+      "term_id": "RSK_007",
       "canonical_name": "Intento suicida",
       "reason": "En el intento existe acto autolesivo con intención de morir; aquí no hay lesión/acto autolesivo en el episodio.",
       "ref_status": "forward"

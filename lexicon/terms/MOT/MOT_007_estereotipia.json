@@ -33,7 +33,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SPE_001",
+      "term_id": "SPE_003",
       "canonical_name": "Ecolalia",
       "reason": "Ecolalia es repetición de lo dicho por otros; estereotipia verbal es repetición de palabras propias.",
       "ref_status": "forward"

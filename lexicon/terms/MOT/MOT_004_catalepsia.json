@@ -40,7 +40,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "MOT_002",
+      "term_id": "VOL_004",
       "canonical_name": "Flexibilidad cérea",
       "reason": "La flexibilidad cérea es la cualidad de resistencia al movimiento (como moldear cera); la catalepsia es el mantenimiento de la postura resultante."
     }

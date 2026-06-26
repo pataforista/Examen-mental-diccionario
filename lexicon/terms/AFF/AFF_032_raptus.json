@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "VOL_002",
+      "term_id": "VOL_007",
       "canonical_name": "Impulsividad",
       "reason": "El raptus es un episodio agudo y explosivo; la impulsividad puede ser un rasgo o síntoma más sostenido."
     }

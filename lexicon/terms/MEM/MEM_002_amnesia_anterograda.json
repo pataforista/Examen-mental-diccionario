@@ -67,12 +67,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_007",
       "canonical_name": "Amnesia retrógrada",
       "reason": "La anterógrada afecta información post-lesión; la retrógrada afecta información pre-lesión."
     },
     {
-      "term_id": "",
+      "term_id": "COG_002",
       "canonical_name": "Confabulación",
       "reason": "La confabulación es un fenómeno acompañante, no la amnesia en sí."
     }
