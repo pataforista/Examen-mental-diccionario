@@ -146,14 +146,14 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    background-image: url("texture-light.png");
     opacity: 0.05;
     pointer-events: none;
     z-index: 1000;
 }
 
 [data-theme="dark"] body::before {
-    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    background-image: url("texture-dark.png");
     opacity: 0.1;
 }
 
