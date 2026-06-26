@@ -61,7 +61,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "THO_006",
+      "term_id": "THO_010",
       "canonical_name": "Tangencialidad",
       "reason": "En la circunstancialidad se llega a la meta; en la tangencialidad se pierde el hilo y no se alcanza la respuesta.",
       "ref_status": "forward"

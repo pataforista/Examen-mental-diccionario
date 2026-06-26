@@ -72,7 +72,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_020",
       "canonical_name": "Hipotimia",
       "reason": "La depresión mayor supera el umbral en intensidad, número de síntomas y duración."
     },

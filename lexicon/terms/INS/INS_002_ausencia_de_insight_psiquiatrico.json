@@ -56,7 +56,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "INS_009",
       "canonical_name": "Insight parcial",
       "reason": "El que presenta inicio parcial acepta que 'algo no está bien' aunque mantenga el sistema delirante intacto."
     }

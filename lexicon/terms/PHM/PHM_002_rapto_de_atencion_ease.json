@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_010",
+      "term_id": "PER_014",
       "canonical_name": "Ilusión",
       "reason": "En la ilusión hay una interpretación errónea; en el rapto no hay distorsión, solo captura."
     }

@@ -67,7 +67,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_017",
       "canonical_name": "Eutimia",
       "reason": "La hipotimia implica descenso clínicamente significativo; la eutimia está en rango normativo."
     },

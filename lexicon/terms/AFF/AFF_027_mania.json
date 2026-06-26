@@ -68,12 +68,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_019",
       "canonical_name": "Hipomanía",
       "reason": "La hipomanía no causa deterioro funcional marcado ni requiere hospitalización; dura ≥ 4 días."
     },
     {
-      "term_id": "",
+      "term_id": "AFF_016",
       "canonical_name": "Euforia",
       "reason": "La euforia es un estado afectivo de bienestar que puede ser normal; la manía implica patología con impacto funcional."
     }

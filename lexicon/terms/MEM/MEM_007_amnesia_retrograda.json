@@ -57,12 +57,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_002",
       "canonical_name": "Amnesia anterógrada",
       "reason": "La retrógrada afecta el pasado; la anterógrada el futuro post-lesión."
     },
     {
-      "term_id": "",
+      "term_id": "MEM_004",
       "canonical_name": "Amnesia disociativa",
       "reason": "La retrógrada orgánica tiene causa neurológica demostrable; la disociativa responde a trauma psíquico."
     }

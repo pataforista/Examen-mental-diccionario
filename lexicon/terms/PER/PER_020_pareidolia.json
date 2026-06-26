@@ -88,7 +88,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
+      "term_id": "PER_010",
       "canonical_name": "Alucinación verdadera",
       "reason": "La pareidolia requiere estímulo real; la alucinación ocurre sin estímulo.",
       "ref_status": "forward"

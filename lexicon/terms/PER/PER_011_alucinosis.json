@@ -65,13 +65,13 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
+      "term_id": "PER_010",
       "canonical_name": "Alucinación verdadera",
       "reason": "En la alucinación verdadera el juicio de realidad está perdido.",
       "ref_status": "forward"
     },
     {
-      "term_id": "PER_004",
+      "term_id": "PER_021",
       "canonical_name": "Pseudoalucinación",
       "reason": "La pseudoalucinación se percibe en el espacio interno, no externo.",
       "ref_status": "forward"

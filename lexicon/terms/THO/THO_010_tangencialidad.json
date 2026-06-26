@@ -52,7 +52,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "THO_005",
+      "term_id": "THO_004",
       "canonical_name": "Circunstancialidad",
       "reason": "La circunstancialidad alcanza la meta eventualmente; la tangencialidad no.",
       "ref_status": "forward"

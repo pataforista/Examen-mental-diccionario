@@ -78,7 +78,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_002",
+      "term_id": "SELF_006",
       "canonical_name": "Desrealización",
       "reason": "La desrealización se refiere a la extrañeza del entorno; la despersonalización a la extrañeza de uno mismo.",
       "ref_status": "forward"

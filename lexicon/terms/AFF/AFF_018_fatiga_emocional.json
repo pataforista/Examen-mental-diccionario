@@ -68,7 +68,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_010",
       "canonical_name": "Aplanamiento afectivo",
       "reason": "El aplanamiento es síntoma primario; la fatiga emocional es reactiva a sobrecarga crónica."
     },

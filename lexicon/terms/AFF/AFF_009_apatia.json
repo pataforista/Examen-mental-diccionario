@@ -62,12 +62,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_006",
       "canonical_name": "Anhedonia",
       "reason": "La apatía es reducción de motivación; la anhedonia es reducción de experiencia de placer. Diferentes constructos aunque frecuentemente solapados."
     },
     {
-      "term_id": "",
+      "term_id": "VOL_001",
       "canonical_name": "Abulia",
       "reason": "La abulia es falta de voluntad; la apatía es más amplia (motivación, iniciativa, emoción)."
     }

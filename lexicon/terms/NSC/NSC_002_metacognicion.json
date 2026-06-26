@@ -47,7 +47,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "INS_004",
+      "term_id": "INS_007",
       "canonical_name": "Insight intelectual",
       "reason": "El insight es un tipo de conocimiento metacognitivo sobre la enfermedad; la metacognición es un dominio más amplio."
     }

@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "INS_007",
       "canonical_name": "Insight intelectual",
       "reason": "El intelectual reconoce la enfermedad teóricamente pero falla en aplicarla a sus acciones."
     }

@@ -93,13 +93,13 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_011",
+      "term_id": "AFF_024",
       "canonical_name": "Irritabilidad",
       "reason": "La irritabilidad es una disposición basal; la ira es un estado afectivo agudo con descarga emocional.",
       "ref_status": "forward"
     },
     {
-      "term_id": "AFF_004",
+      "term_id": "AFF_014",
       "canonical_name": "Disforia",
       "reason": "La disforia es malestar mixto sostenido; la ira es un pico afectivo específico de enojo.",
       "ref_status": "forward"

@@ -44,7 +44,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "CAT_005",
+      "term_id": "VOL_004",
       "canonical_name": "Flexibilidad cérea",
       "reason": "En la flexibilidad cérea hay una resistencia plástica inicial; en el Mitmachen la resistencia es nula."
     }

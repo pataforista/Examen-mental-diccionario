@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "COG_001",
+      "term_id": "COG_004",
       "canonical_name": "Orientación",
       "reason": "La orientación no es evaluable en estado de sopor."
     }

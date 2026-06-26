@@ -38,13 +38,7 @@
       "context": "psicomotricidad_conacion"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "MOT_012",
-      "canonical_name": "Distonía aguda",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "safety_critical",

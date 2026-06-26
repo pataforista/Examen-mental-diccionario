@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_028",
       "canonical_name": "Miedo",
       "reason": "El miedo tiene objeto identificable; la ansiedad puede ser sin objeto claro (flotante)."
     },

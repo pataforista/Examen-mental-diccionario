@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "MEM_013",
       "canonical_name": "Déjà vu",
       "reason": "El déjà senti es interno/emocional; el déjà vu es perceptivo-situacional (la escena exterior)."
     }

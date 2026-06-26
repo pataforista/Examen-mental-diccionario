@@ -52,7 +52,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "INS_004",
       "canonical_name": "Egodistonía",
       "reason": "En la egodistonía el síntoma causa repulsión e incongruencia consigo mismo."
     }

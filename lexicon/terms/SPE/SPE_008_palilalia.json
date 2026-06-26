@@ -70,7 +70,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SPE_001",
+      "term_id": "SPE_003",
       "canonical_name": "Ecolalia",
       "reason": "La palilalia es autorrepetición; la ecolalia es repetición de otros.",
       "ref_status": "forward"

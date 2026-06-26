@@ -37,13 +37,7 @@
       "context": "psicomotricidad_conacion"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "MOT_007",
-      "canonical_name": "Apraxia ideomotora",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

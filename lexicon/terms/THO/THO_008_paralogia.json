@@ -44,7 +44,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "THO_009",
+      "term_id": "THO_007",
       "canonical_name": "Incoherencia",
       "reason": "En la paralogia hay una estructura formal que se mantiene; en la incoherencia la estructura misma está rota."
     }

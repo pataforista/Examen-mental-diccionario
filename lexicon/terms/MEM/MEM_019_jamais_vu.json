@@ -62,12 +62,12 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "SELF_006",
       "canonical_name": "Desrealización",
       "reason": "La desrealización es más global y sostenida; el jamais vu es focal y transitorio."
     },
     {
-      "term_id": "",
+      "term_id": "MEM_013",
       "canonical_name": "Déjà vu",
       "reason": "Fenómenos inversos: familiaridad espuria vs. extrañeza de lo familiar."
     }

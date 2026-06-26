@@ -111,7 +111,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "RSK_003",
+      "term_id": "RSK_007",
       "canonical_name": "Intento suicida",
       "reason": "El intento implica un evento conductual autolesivo con intención de morir; la ideación es cognitivo-afectiva.",
       "ref_status": "forward"

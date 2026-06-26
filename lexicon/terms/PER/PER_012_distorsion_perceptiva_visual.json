@@ -117,19 +117,19 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
+      "term_id": "PER_010",
       "canonical_name": "Alucinación verdadera",
       "reason": "Existe estímulo visual real y el juicio de realidad está conservado.",
       "ref_status": "forward"
     },
     {
-      "term_id": "PER_010",
+      "term_id": "PER_014",
       "canonical_name": "Ilusión",
       "reason": "La distorsión es geométrica y sistemática, no una mala interpretación puntual.",
       "ref_status": "forward"
     },
     {
-      "term_id": "PER_003",
+      "term_id": "PER_011",
       "canonical_name": "Alucinosis",
       "reason": "La alucinosis ocurre sin estímulo real.",
       "ref_status": "forward"

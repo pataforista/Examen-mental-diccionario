@@ -29,13 +29,7 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "DEL_004",
-      "canonical_name": "Robo del pensamiento",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

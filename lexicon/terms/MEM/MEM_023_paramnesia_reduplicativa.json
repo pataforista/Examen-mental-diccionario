@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "DEL_028",
       "canonical_name": "Síndrome de Capgras",
       "reason": "Capgras afecta a personas (impostores), la paramnesia reduplicativa afecta a lugares u objetos."
     },

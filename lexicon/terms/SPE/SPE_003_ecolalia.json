@@ -71,7 +71,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SPE_002",
+      "term_id": "SPE_008",
       "canonical_name": "Palilalia",
       "reason": "La palilalia es la repetición de las *propias* palabras; la ecolalia es la de las palabras de otros.",
       "ref_status": "forward"

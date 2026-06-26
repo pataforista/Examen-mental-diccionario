@@ -113,13 +113,13 @@
   ],
   "exclusions": [
     {
-      "term_id": "RSK_003",
+      "term_id": "RSK_007",
       "canonical_name": "Intento suicida",
       "reason": "El intento implica intención de morir en el episodio; la NSSI no.",
       "ref_status": "forward"
     },
     {
-      "term_id": "RSK_002",
+      "term_id": "RSK_005",
       "canonical_name": "Conducta suicida preparatoria",
       "reason": "La preparatoria busca posibilitar un suicidio futuro; la NSSI busca alivio/regulación en el presente.",
       "ref_status": "forward"

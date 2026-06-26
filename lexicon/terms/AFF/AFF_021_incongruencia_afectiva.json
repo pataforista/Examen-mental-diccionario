@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_025",
       "canonical_name": "Labilidad afectiva",
       "reason": "La labilidad implica variaciones rápidas apropiadas o desproporcionadas; la incongruencia implica discordancia cualitativa."
     }

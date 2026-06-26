@@ -52,7 +52,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_003",
+      "term_id": "AFF_025",
       "canonical_name": "Labilidad afectiva",
       "reason": "El ánimo elevado es sostenido; la labilidad es fluctuante.",
       "ref_status": "forward"

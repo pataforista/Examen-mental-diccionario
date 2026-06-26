@@ -39,13 +39,7 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "DEL_015",
-      "canonical_name": "Delirio persecutorio",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "safety_critical",

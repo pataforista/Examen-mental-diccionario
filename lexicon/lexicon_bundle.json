@@ -83,13 +83,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_006",
+          "term_id": "AFF_015",
           "canonical_name": "Embotamiento afectivo",
           "reason": "En el embotamiento la intensidad y reactividad están marcadamente reducidas; en el constreñido se conservan.",
           "ref_status": "forward"
         },
         {
-          "term_id": "AFF_005",
+          "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "El aplanamiento implica ausencia casi total de expresión emocional.",
           "ref_status": "forward"
@@ -193,7 +193,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "El aplanamiento es un signo de reducción de expresión; la alexitimia es una dificultad metacognitiva para identificar y verbalizar emociones."
         }
@@ -312,7 +312,7 @@
           "ref_status": "forward"
         },
         {
-          "term_id": "AFF_003",
+          "term_id": "AFF_025",
           "canonical_name": "Labilidad afectiva",
           "reason": "La labilidad es oscilación temporal del afecto; la ambivalencia es simultaneidad o co-presencia de polos opuestos respecto al mismo objeto.",
           "ref_status": "forward"
@@ -409,7 +409,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "VOL_002",
           "canonical_name": "Ambivalencia volitiva",
           "reason": "La ambivalencia afectiva es emocional; la volitiva es de impulsos de acción."
         }
@@ -508,7 +508,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_007",
+          "term_id": "AFF_008",
           "canonical_name": "Ansiedad afectiva",
           "reason": "La ansiedad afectiva es sostenida y de menor intensidad.",
           "ref_status": "forward"
@@ -632,12 +632,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_009",
           "canonical_name": "Apatía",
           "reason": "La apatía implica reducción de motivación e iniciativa; la anhedonia es específicamente la incapacidad hedónica."
         },
         {
-          "term_id": "",
+          "term_id": "VOL_001",
           "canonical_name": "Abulia",
           "reason": "La abulia es falta de voluntad; la anhedonia es falta de placer. Pueden coexistir."
         }
@@ -720,7 +720,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_028",
           "canonical_name": "Miedo",
           "reason": "El miedo tiene objeto identificable; la ansiedad puede ser sin objeto claro (flotante)."
         },
@@ -816,7 +816,7 @@
           "ref_status": "forward"
         },
         {
-          "term_id": "AFF_008",
+          "term_id": "AFF_005",
           "canonical_name": "Angustia",
           "reason": "La angustia es paroxística e intensa; la ansiedad afectiva es sostenida.",
           "ref_status": "forward"
@@ -928,12 +928,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_006",
           "canonical_name": "Anhedonia",
           "reason": "La apatía es reducción de motivación; la anhedonia es reducción de experiencia de placer. Diferentes constructos aunque frecuentemente solapados."
         },
         {
-          "term_id": "",
+          "term_id": "VOL_001",
           "canonical_name": "Abulia",
           "reason": "La abulia es falta de voluntad; la apatía es más amplia (motivación, iniciativa, emoción)."
         }
@@ -1021,7 +1021,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_015",
           "canonical_name": "Embotamiento afectivo",
           "reason": "El embotamiento es cuantitativo (reducción); el aplanamiento es más severo, cualitativo (ausencia)."
         },
@@ -1092,7 +1092,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_005",
+          "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "El aplanamiento es una reducción de la expresión; la atimia es la ausencia profunda de la vivencia afectiva."
         }
@@ -1287,7 +1287,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_020",
           "canonical_name": "Hipotimia",
           "reason": "La depresión mayor supera el umbral en intensidad, número de síntomas y duración."
         },
@@ -1380,12 +1380,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_013",
           "canonical_name": "Depresión",
           "reason": "La disforia incluye componente de irritabilidad y tensión no central en depresión pura."
         },
         {
-          "term_id": "",
+          "term_id": "AFF_007",
           "canonical_name": "Ansiedad",
           "reason": "La disforia incluye tristeza; la ansiedad pura es aprensión sin tristeza necesariamente."
         }
@@ -1468,7 +1468,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "El aplanamiento es más severo; el embotamiento preserva respuestas a estímulos intensos."
         }
@@ -1551,12 +1551,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_027",
           "canonical_name": "Manía",
           "reason": "La manía tiene actividad aumentada, verborrea y conductas de riesgo; la euforia puede ser pasiva y silenciosa."
         },
         {
-          "term_id": "",
+          "term_id": "AFF_019",
           "canonical_name": "Hipomanía",
           "reason": "La hipomanía incluye aumento de actividad y es episódica; la euforia puede ser signo orgánico estable."
         }
@@ -1639,7 +1639,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_020",
           "canonical_name": "Hipotimia",
           "reason": "La hipotimia implica descenso leve pero clínicamente significativo del tono afectivo."
         }
@@ -1724,7 +1724,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "El aplanamiento es síntoma primario; la fatiga emocional es reactiva a sobrecarga crónica."
         },
@@ -1816,7 +1816,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_027",
           "canonical_name": "Manía",
           "reason": "La manía es más severa, con psicosis posible y deterioro marcado; la hipomanía no alcanza ese umbral."
         },
@@ -1909,7 +1909,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_017",
           "canonical_name": "Eutimia",
           "reason": "La hipotimia implica descenso clínicamente significativo; la eutimia está en rango normativo."
         },
@@ -1990,7 +1990,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_025",
           "canonical_name": "Labilidad afectiva",
           "reason": "La labilidad implica variaciones rápidas apropiadas o desproporcionadas; la incongruencia implica discordancia cualitativa."
         }
@@ -2185,13 +2185,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_011",
+          "term_id": "AFF_024",
           "canonical_name": "Irritabilidad",
           "reason": "La irritabilidad es una disposición basal; la ira es un estado afectivo agudo con descarga emocional.",
           "ref_status": "forward"
         },
         {
-          "term_id": "AFF_004",
+          "term_id": "AFF_014",
           "canonical_name": "Disforia",
           "reason": "La disforia es malestar mixto sostenido; la ira es un pico afectivo específico de enojo.",
           "ref_status": "forward"
@@ -2470,7 +2470,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "La llaneza afectiva es estilo normal; el aplanamiento es síntoma con pérdida de experiencia o expresión patológica."
         }
@@ -2555,12 +2555,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_019",
           "canonical_name": "Hipomanía",
           "reason": "La hipomanía no causa deterioro funcional marcado ni requiere hospitalización; dura ≥ 4 días."
         },
         {
-          "term_id": "",
+          "term_id": "AFF_016",
           "canonical_name": "Euforia",
           "reason": "La euforia es un estado afectivo de bienestar que puede ser normal; la manía implica patología con impacto funcional."
         }
@@ -2643,7 +2643,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_007",
           "canonical_name": "Ansiedad",
           "reason": "El miedo tiene objeto identificable; la ansiedad puede ser difusa y sin objeto claro."
         }
@@ -2966,7 +2966,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "VOL_002",
+          "term_id": "VOL_007",
           "canonical_name": "Impulsividad",
           "reason": "El raptus es un episodio agudo y explosivo; la impulsividad puede ser un rasgo o síntoma más sostenido."
         }
@@ -3048,7 +3048,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_005",
+          "term_id": "AFF_015",
           "canonical_name": "Embotamiento afectivo",
           "reason": "En la rigidez el afecto puede ser intenso pero inamovible; en el embotamiento hay una pérdida de la intensidad general."
         }
@@ -3224,7 +3224,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_003",
+          "term_id": "AFF_025",
           "canonical_name": "Labilidad afectiva",
           "reason": "La labilidad implica fluctuaciones rápidas; aquí el ánimo es estable y bajo.",
           "ref_status": "forward"
@@ -3327,7 +3327,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_003",
+          "term_id": "AFF_025",
           "canonical_name": "Labilidad afectiva",
           "reason": "El ánimo elevado es sostenido; la labilidad es fluctuante.",
           "ref_status": "forward"
@@ -3529,13 +3529,7 @@
           "context": "actitud_interaccion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "APP_003",
-          "canonical_name": "Actitud hacia el entrevistador",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -3616,13 +3610,7 @@
           "context": "apariencia_general"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "APP_001",
-          "canonical_name": "Aliño e higiene",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -3693,13 +3681,7 @@
           "context": "actitud_interaccion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "APP_002",
-          "canonical_name": "Contacto visual",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -3859,7 +3841,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_016",
+          "term_id": "AFF_003",
           "canonical_name": "Ambivalencia",
           "reason": "La ambivalencia es afectiva; la ambitendencia es motora/volitiva (conativa)."
         }
@@ -3953,7 +3935,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "MEM_005",
+          "term_id": "MEM_011",
           "canonical_name": "Delirium",
           "reason": "La amentia fue el término centroeuropeo para lo que hoy se clasifica globalmente como delirium o psicosis orgánica aguda."
         }
@@ -4042,7 +4024,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "ARC_002",
+          "term_id": "ARC_006",
           "canonical_name": "Dementia Praecox",
           "reason": "La bouffée délirante es esencialmente reversible y aguda; la dementia praecox es crónica y deteriorante."
         }
@@ -4352,7 +4334,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_005",
+          "term_id": "PER_013",
           "canonical_name": "Flashback",
           "reason": "El flashback es una intrusión breve; la ecmnesia es un estado más prolongado y desorientador."
         }
@@ -4655,7 +4637,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "ARC_002",
+          "term_id": "ARC_006",
           "canonical_name": "Dementia Praecox",
           "reason": "La locura circular se distingue por la restitución ad integrum tras las crisis; la dementia praecox conduce al deterioro."
         }
@@ -4743,7 +4725,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "CON_001",
+          "term_id": "CNT_002",
           "canonical_name": "Obsesión",
           "reason": "La folie du doute es esencialmente la descripción clásica de las obsesiones de duda y compulsiones de verificación."
         }
@@ -5164,7 +5146,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "ARC_002",
+          "term_id": "ARC_006",
           "canonical_name": "Dementia Praecox",
           "reason": "La parafrenia se distingue por la falta de deterioro (dementia) y la riqueza imaginativa."
         }
@@ -5253,7 +5235,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "DEL_017",
+          "term_id": "DEL_012",
           "canonical_name": "Delirio querulante",
           "reason": "La paranoia querulans es el término latino/clásico para el cuadro; el delirio querulante es su descripción moderna."
         }
@@ -5340,7 +5322,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "ARC_005",
+          "term_id": "ARC_012",
           "canonical_name": "Locura de la Duda",
           "reason": "La psicastenia es un síndrome más amplio que incluye la folie du doute."
         }
@@ -5679,7 +5661,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "CAT_005",
+          "term_id": "VOL_004",
           "canonical_name": "Flexibilidad cérea",
           "reason": "En la flexibilidad cérea hay una resistencia plástica inicial; en el Mitmachen la resistencia es nula."
         }
@@ -6095,7 +6077,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_011",
           "canonical_name": "Delirium",
           "reason": "El estado crepuscular (twilight) se diferencia en poseer un campo de concentración más preservado (pero estrechado y rígido a una temática) con un fin más abrupto en lugar del inicio-fin difuso o la inatención-fluctuación continua patognomónica del delirium metabólico-tóxico."
         }
@@ -6771,13 +6753,7 @@
           "context": "funciones_cognitivas"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "COG_002",
-          "canonical_name": "Atención y concentración",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7000,13 +6976,7 @@
           "context": "conciencia_orientacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "COG_001",
-          "canonical_name": "Orientación",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "clinical_attention",
@@ -7167,13 +7137,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_009",
-          "canonical_name": "Apofanía",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7241,13 +7205,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_010",
-          "canonical_name": "BLIPS",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7306,13 +7264,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_008",
-          "canonical_name": "Celotipia (Síndrome de Otelo)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7395,13 +7347,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_011",
-          "canonical_name": "Cristalización delirante",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7469,13 +7415,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_013",
-          "canonical_name": "Delirio de infestación (Ekbom)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7543,13 +7483,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_019",
-          "canonical_name": "Delirio de ruina/pobreza",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7627,13 +7561,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_012",
-          "canonical_name": "Delirio grandioso",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7711,13 +7639,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_014",
-          "canonical_name": "Delirio místico-religioso de mandato",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7797,13 +7719,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_015",
-          "canonical_name": "Delirio persecutorio",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "safety_critical",
@@ -7898,13 +7814,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_016",
-          "canonical_name": "Delirio primario (Jaspers)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -7979,13 +7889,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_001",
-          "canonical_name": "Delirio primario (autóctono)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8061,13 +7965,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_017",
-          "canonical_name": "Delirio querulante",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8135,13 +8033,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_018",
-          "canonical_name": "Delirio referencial",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8219,13 +8111,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_020",
-          "canonical_name": "Delirio somático monotemático",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8294,13 +8180,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_005",
-          "canonical_name": "Difusión del pensamiento",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8373,13 +8253,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_031",
-          "canonical_name": "Erotomanía (Síndrome de Clérambault)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8455,13 +8329,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_002",
-          "canonical_name": "Fenómenos de pasividad",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8537,13 +8405,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_023",
-          "canonical_name": "Humor delirante (Wahnstimmung)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8686,13 +8548,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_024",
-          "canonical_name": "Ideas de referencia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8760,13 +8616,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_025",
-          "canonical_name": "Ideas sobrevaloradas",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8826,13 +8676,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_003",
-          "canonical_name": "Inserción del pensamiento",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8905,13 +8749,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_026",
-          "canonical_name": "Intermetamorfosis",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8979,13 +8817,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_027",
-          "canonical_name": "Interpretación delirante",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9053,13 +8885,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_028",
-          "canonical_name": "Perplejidad delirante",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9127,13 +8953,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_029",
-          "canonical_name": "Revelación delirante (intuición delirante)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9193,13 +9013,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_004",
-          "canonical_name": "Robo del pensamiento",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9263,13 +9077,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_006",
-          "canonical_name": "Síndrome de Capgras",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9393,13 +9201,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_022",
-          "canonical_name": "Síndrome de Fregoli",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9467,13 +9269,7 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "DEL_030",
-          "canonical_name": "Síntomas positivos atenuados",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -10340,7 +10136,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "INS_009",
           "canonical_name": "Insight parcial",
           "reason": "El que presenta inicio parcial acepta que 'algo no está bien' aunque mantenga el sistema delirante intacto."
         }
@@ -10413,7 +10209,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "INS_004",
           "canonical_name": "Egodistonía",
           "reason": "En la egodistonía el síntoma causa repulsión e incongruencia consigo mismo."
         }
@@ -10491,7 +10287,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "INS_003",
           "canonical_name": "Egocintonía",
           "reason": "El opuesto fenoménico directo. Diferencia, por ejemplo, los pensamientos restrictivos del TOC (egodistónicos) de los de la Anorexia Nerviosa (egosintónicos)."
         }
@@ -10645,7 +10441,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "INS_007",
           "canonical_name": "Insight intelectual",
           "reason": "El insight intelectual falla en la traducción conductual y afectiva."
         }
@@ -10716,7 +10512,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "INS_006",
           "canonical_name": "Insight emocional",
           "reason": "El insight intelectual es 'saber sin sentir'; el emocional es la verdadera integración de ese conocimiento."
         }
@@ -10863,7 +10659,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "INS_007",
           "canonical_name": "Insight intelectual",
           "reason": "El intelectual reconoce la enfermedad teóricamente pero falla en aplicarla a sus acciones."
         }
@@ -11136,13 +10932,7 @@
           "context": "funciones_cognitivas"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MEM_004",
-          "canonical_name": "Alteración de conciencia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -11240,12 +11030,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_007",
           "canonical_name": "Amnesia retrógrada",
           "reason": "La anterógrada afecta información post-lesión; la retrógrada afecta información pre-lesión."
         },
         {
-          "term_id": "",
+          "term_id": "COG_002",
           "canonical_name": "Confabulación",
           "reason": "La confabulación es un fenómeno acompañante, no la amnesia en sí."
         }
@@ -11381,13 +11171,7 @@
           "context": "funciones_cognitivas"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MEM_001",
-          "canonical_name": "Amnesia disociativa",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -11504,12 +11288,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_004",
           "canonical_name": "Amnesia disociativa",
           "reason": "La AGT tiene sustrato neurológico vascular, duración autolimitada y no responde a trauma psíquico."
         },
         {
-          "term_id": "",
+          "term_id": "MEM_011",
           "canonical_name": "Delirium",
           "reason": "En AGT no hay fluctuación de conciencia ni inatención global."
         }
@@ -11587,7 +11371,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_004",
           "canonical_name": "Amnesia disociativa",
           "reason": "La psicógena enfatiza explícitamente el mecanismo psicodinámico; son conceptos solapados pero con énfasis distinto."
         }
@@ -11665,12 +11449,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_002",
           "canonical_name": "Amnesia anterógrada",
           "reason": "La retrógrada afecta el pasado; la anterógrada el futuro post-lesión."
         },
         {
-          "term_id": "",
+          "term_id": "MEM_004",
           "canonical_name": "Amnesia disociativa",
           "reason": "La retrógrada orgánica tiene causa neurológica demostrable; la disociativa responde a trauma psíquico."
         }
@@ -11748,7 +11532,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_009",
           "canonical_name": "Confabulación provocada",
           "reason": "La espontánea emerge sin ser elicitada; la provocada aparece en respuesta a preguntas directas."
         },
@@ -11831,7 +11615,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_008",
           "canonical_name": "Confabulación espontánea",
           "reason": "La provocada requiere estimulación externa; la espontánea emerge sin ella."
         }
@@ -12095,7 +11879,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_013",
           "canonical_name": "Déjà vu",
           "reason": "El déjà senti es interno/emocional; el déjà vu es perceptivo-situacional (la escena exterior)."
         }
@@ -12177,7 +11961,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_019",
           "canonical_name": "Jamais vu",
           "reason": "El jamais vu es la extrañeza de lo conocido; el déjà vu es la familiaridad de lo nuevo."
         },
@@ -12231,13 +12015,7 @@
           "context": "funciones_cognitivas"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MEM_003",
-          "canonical_name": "Déjà vu / Jamais vu",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_clue",
@@ -12334,7 +12112,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "MEM_011",
           "canonical_name": "Delirium",
           "reason": "El estado confusional es más inespecífico; el delirium requiere inatención prominente, inicio agudo y fluctuación."
         }
@@ -12395,7 +12173,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "MEM_001",
+          "term_id": "MEM_004",
           "canonical_name": "Amnesia disociativa",
           "reason": "La fuga es un sub-especificador de la amnesia disociativa que incluye el desplazamiento físico."
         }
@@ -12574,13 +12352,7 @@
           "context": "funciones_cognitivas"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MEM_007",
-          "canonical_name": "Inatención",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -12673,12 +12445,12 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "SELF_006",
           "canonical_name": "Desrealización",
           "reason": "La desrealización es más global y sostenida; el jamais vu es focal y transitorio."
         },
         {
-          "term_id": "",
+          "term_id": "MEM_013",
           "canonical_name": "Déjà vu",
           "reason": "Fenómenos inversos: familiaridad espuria vs. extrañeza de lo familiar."
         }
@@ -12818,7 +12590,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "MEM_005",
+          "term_id": "MEM_011",
           "canonical_name": "Delirium",
           "reason": "La obnubilación es un nivel de alerta; el delirium es un síndrome que puede incluir obnubilación pero con desorganización y alucinaciones."
         }
@@ -12911,7 +12683,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "MEM_005",
+          "term_id": "MEM_011",
           "canonical_name": "Delirium",
           "reason": "El onirismo es el componente fenoménico-alucinatorio del delirium."
         }
@@ -13010,7 +12782,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "DEL_028",
           "canonical_name": "Síndrome de Capgras",
           "reason": "Capgras afecta a personas (impostores), la paramnesia reduplicativa afecta a lugares u objetos."
         },
@@ -13162,7 +12934,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "COG_001",
+          "term_id": "COG_004",
           "canonical_name": "Orientación",
           "reason": "La orientación no es evaluable en estado de sopor."
         }
@@ -13508,13 +13280,7 @@
           "context": "psicomotricidad_conacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MOT_005",
-          "canonical_name": "Apraxia constructiva",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -13588,13 +13354,7 @@
           "context": "psicomotricidad_conacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MOT_006",
-          "canonical_name": "Apraxia ideacional",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -13668,13 +13428,7 @@
           "context": "psicomotricidad_conacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MOT_007",
-          "canonical_name": "Apraxia ideomotora",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -13751,7 +13505,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "MOT_002",
+          "term_id": "VOL_004",
           "canonical_name": "Flexibilidad cérea",
           "reason": "La flexibilidad cérea es la cualidad de resistencia al movimiento (como moldear cera); la catalepsia es el mantenimiento de la postura resultante."
         }
@@ -13838,13 +13592,7 @@
           "context": "psicomotricidad_conacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MOT_013",
-          "canonical_name": "Discinesia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "safety_critical",
@@ -13915,13 +13663,7 @@
           "context": "psicomotricidad_conacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MOT_012",
-          "canonical_name": "Distonía aguda",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "safety_critical",
@@ -13981,7 +13723,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SPE_001",
+          "term_id": "SPE_003",
           "canonical_name": "Ecolalia",
           "reason": "Ecolalia es repetición de lo dicho por otros; estereotipia verbal es repetición de palabras propias.",
           "ref_status": "forward"
@@ -14196,13 +13938,7 @@
           "context": "psicomotricidad_conacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "MOT_011",
-          "canonical_name": "Tics",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -14861,7 +14597,7 @@
           "reason": "En la mano alienígena no suele haber atribución a una fuerza externa personalizada; es más un fallo del control motor."
         },
         {
-          "term_id": "",
+          "term_id": "MOT_003",
           "canonical_name": "Apraxia ideomotora",
           "reason": "En la mano alienígena los movimientos son propositivos, en la apraxia hay falla en la ejecución del plan motor."
         }
@@ -15228,7 +14964,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "INS_004",
+          "term_id": "INS_007",
           "canonical_name": "Insight intelectual",
           "reason": "El insight es un tipo de conocimiento metacognitivo sobre la enfermedad; la metacognición es un dominio más amplio."
         }
@@ -15401,13 +15137,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_015",
-          "canonical_name": "Acoasmas",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -15481,13 +15211,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_016",
-          "canonical_name": "Alucinaciones auditivas comentadoras",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -15580,13 +15304,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_017",
-          "canonical_name": "Alucinaciones auditivas dialogantes",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -15660,13 +15378,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_018",
-          "canonical_name": "Alucinaciones cenestésicas",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -15776,13 +15488,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "Las alucinaciones verdaderas no dependen de la transición sueño-vigilia y pueden ocurrir durante el día.",
           "ref_status": "forward"
         },
         {
-          "term_id": "PER_004",
+          "term_id": "PER_021",
           "canonical_name": "Pseudoalucinación",
           "reason": "En pseudoalucinación predomina la atribución interna, no el anclaje a sueño.",
           "ref_status": "forward"
@@ -15895,7 +15607,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "Las alucinaciones verdaderas pueden ocurrir fuera de transiciones sueño-vigilia.",
           "ref_status": "forward"
@@ -16048,7 +15760,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_010",
+          "term_id": "PER_014",
           "canonical_name": "Ilusión",
           "reason": "En la ilusión el estímulo real se transforma; en la alucinación funcional, se perciben ambos simultáneamente."
         }
@@ -16258,13 +15970,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_004",
+          "term_id": "PER_021",
           "canonical_name": "Pseudoalucinación",
           "reason": "En la pseudoalucinación existe atribución interna y juicio de realidad conservado.",
           "ref_status": "forward"
         },
         {
-          "term_id": "PER_010",
+          "term_id": "PER_014",
           "canonical_name": "Ilusión",
           "reason": "La ilusión requiere un estímulo real malinterpretado.",
           "ref_status": "forward"
@@ -16374,13 +16086,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "En la alucinación verdadera el juicio de realidad está perdido.",
           "ref_status": "forward"
         },
         {
-          "term_id": "PER_004",
+          "term_id": "PER_021",
           "canonical_name": "Pseudoalucinación",
           "reason": "La pseudoalucinación se percibe en el espacio interno, no externo.",
           "ref_status": "forward"
@@ -16542,19 +16254,19 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "Existe estímulo visual real y el juicio de realidad está conservado.",
           "ref_status": "forward"
         },
         {
-          "term_id": "PER_010",
+          "term_id": "PER_014",
           "canonical_name": "Ilusión",
           "reason": "La distorsión es geométrica y sistemática, no una mala interpretación puntual.",
           "ref_status": "forward"
         },
         {
-          "term_id": "PER_003",
+          "term_id": "PER_011",
           "canonical_name": "Alucinosis",
           "reason": "La alucinosis ocurre sin estímulo real.",
           "ref_status": "forward"
@@ -16678,13 +16390,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "El flashback es una intrusión de memoria autobiográfica, no una percepción sin referente.",
           "ref_status": "forward"
         },
         {
-          "term_id": "PER_003",
+          "term_id": "PER_011",
           "canonical_name": "Alucinosis",
           "reason": "En la alucinosis el insight se conserva de forma estable; en el flashback suele perderse transitoriamente.",
           "ref_status": "forward"
@@ -16775,7 +16487,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "En la alucinación no existe estímulo externo real.",
           "ref_status": "forward"
@@ -16859,7 +16571,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "La imagen eidética suele ser reconocida como no real o dependiente de una percepción previa."
         }
@@ -16943,13 +16655,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_019",
-          "canonical_name": "Macropsia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -17023,13 +16729,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_020",
-          "canonical_name": "Metamorfopsia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -17103,13 +16803,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_021",
-          "canonical_name": "Micropsia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -17196,13 +16890,7 @@
           "context": "sensopercepcion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "PER_022",
-          "canonical_name": "Palinopsia",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -17327,7 +17015,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "La pareidolia requiere estímulo real; la alucinación ocurre sin estímulo.",
           "ref_status": "forward"
@@ -17415,7 +17103,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
+          "term_id": "PER_010",
           "canonical_name": "Alucinación verdadera",
           "reason": "En la alucinación verdadera existe atribución externa y pérdida del juicio de realidad.",
           "ref_status": "forward"
@@ -17501,7 +17189,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_008",
+          "term_id": "PER_007",
           "canonical_name": "Alucinación Extracampina",
           "reason": "En la extracampina hay una cualidad visual clara; en el sentido de presencia es una 'cuasi-percepción' sin imagen."
         }
@@ -17761,7 +17449,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_010",
+          "term_id": "PER_014",
           "canonical_name": "Ilusión",
           "reason": "En la ilusión hay una interpretación errónea; en el rapto no hay distorsión, solo captura."
         }
@@ -18407,13 +18095,7 @@
           "context": "riesgo_suicida_y_violencia"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "RSK_006",
-          "canonical_name": "Acceso a medios letales",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "safety_critical",
@@ -18562,13 +18244,13 @@
       ],
       "exclusions": [
         {
-          "term_id": "RSK_003",
+          "term_id": "RSK_007",
           "canonical_name": "Intento suicida",
           "reason": "El intento implica intención de morir en el episodio; la NSSI no.",
           "ref_status": "forward"
         },
         {
-          "term_id": "RSK_002",
+          "term_id": "RSK_005",
           "canonical_name": "Conducta suicida preparatoria",
           "reason": "La preparatoria busca posibilitar un suicidio futuro; la NSSI busca alivio/regulación en el presente.",
           "ref_status": "forward"
@@ -18686,13 +18368,7 @@
           "context": "disposicion_y_contencion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "RSK_007",
-          "canonical_name": "Capacidad de colaboración para seguridad",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "safety_critical",
@@ -18815,7 +18491,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "RSK_003",
+          "term_id": "RSK_007",
           "canonical_name": "Intento suicida",
           "reason": "En el intento existe acto autolesivo con intención de morir; aquí no hay lesión/acto autolesivo en el episodio.",
           "ref_status": "forward"
@@ -18966,7 +18642,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "RSK_003",
+          "term_id": "RSK_007",
           "canonical_name": "Intento suicida",
           "reason": "El intento implica un evento conductual autolesivo con intención de morir; la ideación es cognitivo-afectiva.",
           "ref_status": "forward"
@@ -19260,7 +18936,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_017",
+          "term_id": "AFF_023",
           "canonical_name": "Ira",
           "reason": "La ira es estado afectivo; el riesgo de violencia requiere intención/medios/desinhibición y evaluación de inminencia.",
           "ref_status": "forward"
@@ -19368,7 +19044,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_010",
+          "term_id": "SELF_009",
           "canonical_name": "Impulsos impuestos",
           "reason": "En los actos impuestos se describe la acción ya en curso o realizada; en los impulsos, es la urgencia de actuar lo que se siente impuesto.",
           "ref_status": "forward"
@@ -19469,7 +19145,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_003",
+          "term_id": "INS_001",
           "canonical_name": "Anosognosia",
           "reason": "La anosognosia es el término general neurológico.",
           "ref_status": "forward"
@@ -19575,7 +19251,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_003",
+          "term_id": "INS_001",
           "canonical_name": "Anosognosia",
           "reason": "Anosognosia es el término neuropsicológico más amplio.",
           "ref_status": "forward"
@@ -19679,7 +19355,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_001",
+          "term_id": "SELF_005",
           "canonical_name": "Despersonalización",
           "reason": "La autoscopia es una alteración visual/espacial del yo; la despersonalización es un sentimiento de extrañeza cualitativa sin necesariamente verse por fuera.",
           "ref_status": "forward"
@@ -19799,7 +19475,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_002",
+          "term_id": "SELF_006",
           "canonical_name": "Desrealización",
           "reason": "La desrealización se refiere a la extrañeza del entorno; la despersonalización a la extrañeza de uno mismo.",
           "ref_status": "forward"
@@ -19909,7 +19585,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_001",
+          "term_id": "SELF_005",
           "canonical_name": "Despersonalización",
           "reason": "La desrealización es externa (entorno); la despersonalización es interna (uno mismo). Suelen coexistir.",
           "ref_status": "forward"
@@ -20008,7 +19684,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_002",
+          "term_id": "AFF_006",
           "canonical_name": "Anhedonia",
           "reason": "La anhedonia es pérdida de placer; la autoafección es pérdida del sentido de 'ser' el sujeto de la experiencia.",
           "ref_status": "forward"
@@ -20798,7 +20474,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "DEL_020",
+          "term_id": "DEL_014",
           "canonical_name": "Delirio somático monotemático",
           "reason": "En la hipocondría hay una preocupación/miedo que puede ser cuestionado (idea sobrevalorada o ansiosa); en el delirio la certeza es absoluta e inamovible."
         }
@@ -21143,7 +20819,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SPE_002",
+          "term_id": "SPE_008",
           "canonical_name": "Palilalia",
           "reason": "La palilalia es la repetición de las *propias* palabras; la ecolalia es la de las palabras de otros.",
           "ref_status": "forward"
@@ -21306,7 +20982,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SPE_002",
+          "term_id": "SPE_008",
           "canonical_name": "Palilalia",
           "reason": "La palilalia suele repetir palabras o frases completas; la logoclonia se restringe a la sílaba final.",
           "ref_status": "forward"
@@ -21510,7 +21186,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "COG_002",
+          "term_id": "CNS_002",
           "canonical_name": "Coma",
           "reason": "En el coma hay pérdida de conciencia; en el mutismo la vigilia suele estar conservada.",
           "ref_status": "forward"
@@ -21625,7 +21301,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "SPE_001",
+          "term_id": "SPE_003",
           "canonical_name": "Ecolalia",
           "reason": "La palilalia es autorrepetición; la ecolalia es repetición de otros.",
           "ref_status": "forward"
@@ -23821,13 +23497,7 @@
           "context": "pensamiento_curso_forma"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "THO_010",
-          "canonical_name": "Asociación por consonancia (clang)",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -24006,7 +23676,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "THO_006",
+          "term_id": "THO_010",
           "canonical_name": "Tangencialidad",
           "reason": "En la circunstancialidad se llega a la meta; en la tangencialidad se pierde el hilo y no se alcanza la respuesta.",
           "ref_status": "forward"
@@ -24277,7 +23947,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "THO_003",
+          "term_id": "THO_001",
           "canonical_name": "Asociaciones laxas",
           "reason": "En las asociaciones laxas hay vínculos remotos o idiosincrásicos; en la incoherencia el vínculo se ha perdido totalmente.",
           "ref_status": "forward"
@@ -24366,7 +24036,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "THO_009",
+          "term_id": "THO_007",
           "canonical_name": "Incoherencia",
           "reason": "En la paralogia hay una estructura formal que se mantiene; en la incoherencia la estructura misma está rota."
         }
@@ -24538,7 +24208,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "THO_005",
+          "term_id": "THO_004",
           "canonical_name": "Circunstancialidad",
           "reason": "La circunstancialidad alcanza la meta eventualmente; la tangencialidad no.",
           "ref_status": "forward"
@@ -24642,7 +24312,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "AFF_009",
           "canonical_name": "Apatía",
           "reason": "La apatía es falta de motivación/interés; la abulia es la incapacidad ejecutiva de la acción voluntaria (pueden coexistir)."
         },
@@ -24802,7 +24472,7 @@
           "reason": "El mirroring es sutil y facilita el rapport; la ecopraxia es burda, grosera y no contextual."
         },
         {
-          "term_id": "",
+          "term_id": "CAT_005",
           "canonical_name": "Obediencia automática",
           "reason": "En la ecopraxia se copia la acción visualizada; en la obediencia automática se sigue la orden verbal sin vacilar."
         }
@@ -24884,7 +24554,7 @@
           "reason": "La patología extrapiramidal (parkinsonismo) tiene cata escalonada por temblor superpuesto, distinto de la plasticidad constante de la cera."
         },
         {
-          "term_id": "",
+          "term_id": "NEU_007",
           "canonical_name": "Paratonía (Gegenhalten)",
           "reason": "La paratonía es un negativismo motor donde la resistencia del paciente aumenta en proporción a la fuerza del examinador."
         }
@@ -25038,7 +24708,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "",
+          "term_id": "VOL_001",
           "canonical_name": "Abulia",
           "reason": "La hipobulia es un déficit cuantitativamente menor, permitiendo alguna acción autónoma pobre."
         }

@@ -47,7 +47,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "DEL_017",
+      "term_id": "DEL_012",
       "canonical_name": "Delirio querulante",
       "reason": "La paranoia querulans es el término latino/clásico para el cuadro; el delirio querulante es su descripción moderna."
     }

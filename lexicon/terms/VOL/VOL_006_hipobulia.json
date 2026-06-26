@@ -57,7 +57,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "VOL_001",
       "canonical_name": "Abulia",
       "reason": "La hipobulia es un déficit cuantitativamente menor, permitiendo alguna acción autónoma pobre."
     }

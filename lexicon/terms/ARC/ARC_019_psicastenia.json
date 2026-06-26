@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "ARC_005",
+      "term_id": "ARC_012",
       "canonical_name": "Locura de la Duda",
       "reason": "La psicastenia es un síndrome más amplio que incluye la folie du doute."
     }

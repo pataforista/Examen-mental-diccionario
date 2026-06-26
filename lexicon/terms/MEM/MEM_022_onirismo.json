@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "MEM_005",
+      "term_id": "MEM_011",
       "canonical_name": "Delirium",
       "reason": "El onirismo es el componente fenoménico-alucinatorio del delirium."
     }

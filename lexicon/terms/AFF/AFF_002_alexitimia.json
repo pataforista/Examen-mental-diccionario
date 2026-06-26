@@ -62,7 +62,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "",
+      "term_id": "AFF_010",
       "canonical_name": "Aplanamiento afectivo",
       "reason": "El aplanamiento es un signo de reducción de expresión; la alexitimia es una dificultad metacognitiva para identificar y verbalizar emociones."
     }
