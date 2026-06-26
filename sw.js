@@ -1,10 +1,12 @@
-const CACHE_NAME = 'clinical-pwa-v2.6';
+const CACHE_NAME = 'clinical-pwa-v2.7';
 const ASSETS = [
     '/',
     'index.html',
     'style.css',
     'app.js',
-    'icon.png',
+    'icon-192.png',
+    'icon-512.png',
+    'apple-touch-icon.png',
     'manifest.json',
     'lexicon/lexicon_bundle.json',
     'assets/celada.jpeg',

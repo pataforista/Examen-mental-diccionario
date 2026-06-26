@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Diccionario de Examen Mental</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Diccionario de Examen Mental | Semiología Psiquiátrica</title>
     <!-- Fonts: Outfit (Valley) & Space Grotesk (Void) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,20 +13,35 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="icon.png">
-    <link rel="canonical" href="https://examenmental.pages.dev">
-    <meta name="theme-color" content="#FFF8E7">
-    <meta name="description" content="Diccionario especializado de Examen Mental. Herramienta clínica interactiva para psiquiatría y psicología con esquema de 20 puntos e integración sindromática.">
-    <meta name="keywords" content="examen mental, psiquiatría, psicología, clínica, semiología, diagnóstico, médico, diccionario médico">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="canonical" href="https://examenmental.pages.dev/">
+    <meta name="theme-color" content="#FFF8E7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#231f20" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Diccionario clínico interactivo de Examen Mental para psiquiatría y psicología: semiología, esquema de 20 puntos, integración sindromática, casos OSCE y entrenamiento. Funciona sin conexión.">
+    <meta name="keywords" content="examen mental, estado mental, semiología psiquiátrica, psiquiatría, psicología clínica, diagnóstico, MSE, mental status exam, casos OSCE, diccionario médico">
     <meta name="author" content="Dr. Cesar Celada">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="MSE Diccionario">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Social Media (Open Graph & Twitter) -->
+    <meta property="og:site_name" content="Diccionario de Examen Mental">
     <meta property="og:title" content="Diccionario de Examen Mental | Dr. Cesar Celada">
-    <meta property="og:description" content="Integra y redacta tus exámenes mentales de forma profesional con este asistente clínico.">
+    <meta property="og:description" content="Integra y redacta tus exámenes mentales de forma profesional con este asistente clínico interactivo: semiología, casos OSCE y entrenamiento.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://examenmental.pages.dev">
-    <meta property="og:image" content="https://examenmental.pages.dev/icon.png">
+    <meta property="og:url" content="https://examenmental.pages.dev/">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:image" content="https://examenmental.pages.dev/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Diccionario de Examen Mental — herramienta clínica para psiquiatría">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diccionario de Examen Mental | Dr. Cesar Celada">
+    <meta name="twitter:description" content="Asistente clínico interactivo de Examen Mental: semiología, casos OSCE y entrenamiento. Funciona sin conexión.">
+    <meta name="twitter:image" content="https://examenmental.pages.dev/og-image.png">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -34,13 +49,27 @@
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
       "name": "Diccionario de Examen Mental",
-      "description": "Herramienta digital para la formación en semiología psiquiátrica y redacción de examen mental.",
+      "url": "https://examenmental.pages.dev/",
+      "description": "Herramienta digital para la formación en semiología psiquiátrica y redacción de examen mental, con casos OSCE y entrenamiento interactivo.",
+      "inLanguage": "es",
+      "isAccessibleForFree": true,
+      "image": "https://examenmental.pages.dev/og-image.png",
+      "keywords": "examen mental, semiología psiquiátrica, psiquiatría, psicología clínica, casos OSCE",
+      "datePublished": "2026-04-02",
+      "dateModified": "2026-06-26",
+      "medicalSpecialty": "Psychiatry",
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Medical Professionals"
+      },
       "author": {
         "@type": "Person",
         "name": "Dr. Cesar Celada"
       },
-      "medicalSpecialty": "Psychiatry",
-      "audience": "Medical Professionals"
+      "publisher": {
+        "@type": "Person",
+        "name": "Dr. Cesar Celada"
+      }
     }
     </script>
 
@@ -49,17 +78,19 @@
 </head>
 
 <body data-theme="light">
+    <a href="#app-content" class="skip-link">Saltar al contenido</a>
     <header class="app-header">
         <div class="header-top">
-            <button id="theme-toggle" class="icon-btn" title="Cambiar modo visual">🌓</button>
+            <button id="theme-toggle" class="icon-btn" title="Cambiar modo visual" aria-label="Cambiar modo visual (claro/oscuro)">🌓</button>
             <div class="ritual-header">
                 <span class="ritual-subtitle">REFERENCIA RÁPIDA</span>
                 <h1 id="app-title">DICCIONARIO DE EXAMEN MENTAL</h1>
             </div>
-            <button id="about-btn" class="icon-btn">ℹ️</button>
+            <button id="about-btn" class="icon-btn" title="Acerca de" aria-label="Acerca de la aplicación">ℹ️</button>
         </div>
         <div class="search-container">
-            <input type="text" id="global-search" placeholder="Buscar término..." autocomplete="off">
+            <label for="global-search" class="visually-hidden">Buscar término clínico</label>
+            <input type="text" id="global-search" placeholder="Buscar término..." autocomplete="off" enterkeyhint="search" aria-label="Buscar término clínico">
             <button id="clear-search" class="clear-btn hidden" title="Limpiar búsqueda">✕</button>
         </div>
         <div id="pwa-install-banner" class="pwa-install-banner hidden">
@@ -248,7 +279,7 @@
         <section id="about-view" class="hidden"></section>
     </main>
 
-    <nav class="bottom-nav">
+    <nav class="bottom-nav" aria-label="Navegación principal">
         <button id="nav-dictionary" class="active">
             <span class="nav-icon">📖</span>
             <span>Diccionario</span>
