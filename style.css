@@ -322,6 +322,9 @@ main {
     /* El padding inferior libera la nav fija (incl. home indicator); laterales respetan notch en horizontal */
     padding: 1.5rem max(1rem, env(safe-area-inset-right, 0px)) calc(7rem + env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left, 0px));
     scroll-behavior: smooth;
+    /* Scroll contenido: corta el rubber-band/pull-to-refresh que se propaga a la página (feel nativo) */
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Cards & Items Bauhaus-Memphis Style */
@@ -2909,6 +2912,47 @@ main {
 /* ============================================================
    MODERN UX LAYER — Physical Feel & Microinteractions
    ============================================================ */
+
+/* ── 0. APP-LIKE TOUCH BEHAVIOR (Instant, no web flicker) ─── */
+/* Respuesta inmediata: sin retardo de 300ms ni zoom accidental al tocar controles */
+button,
+.btn,
+.opt,
+.int-opt,
+.tag,
+.recent-search-tag,
+.share-pill,
+.icon-btn,
+.list-item,
+.term-card-simple,
+.domain-card,
+.totd-card,
+.subcomponent-item,
+.segmented-btn,
+.nav-icon,
+.skip-link {
+    touch-action: manipulation;
+}
+
+/* Evita el parpadeo de selección de texto al tocar/mantener controles (se siente como app, no web).
+   Se aplica solo al chrome/controles — NUNCA a definiciones, fichas ni al reporte editable. */
+.bottom-nav,
+.icon-btn,
+.btn,
+.opt,
+.int-opt,
+.tag,
+.recent-search-tag,
+.share-pill,
+.segmented-btn,
+.nav-icon,
+.ritual-subtitle,
+.section-label,
+.stat-label,
+.stepper-label {
+    -webkit-user-select: none;
+    user-select: none;
+}
 
 /* ── 1. ACTIVE PRESS STATES (Direct Manipulation) ─────────── */
 .btn:active,
