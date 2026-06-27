@@ -80,6 +80,18 @@
 </head>
 
 <body data-theme="light">
+    <script>
+        /* Fija el tema antes del primer pintado: usa la elección guardada o el modo del sistema (evita flash claro→oscuro) */
+        (function () {
+            try {
+                var s = localStorage.getItem('mse-theme');
+                var t = (s === 'light' || s === 'dark')
+                    ? s
+                    : ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
+                document.body.setAttribute('data-theme', t);
+            } catch (e) { }
+        })();
+    </script>
     <a href="#app-content" class="skip-link">Saltar al contenido</a>
     <header class="app-header">
         <div class="header-top">
@@ -282,7 +294,7 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Navegación principal">
-        <button id="nav-dictionary" class="active">
+        <button id="nav-dictionary" class="active" aria-current="page">
             <span class="nav-icon">📖</span>
             <span>Diccionario</span>
         </button>

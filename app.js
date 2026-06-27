@@ -265,20 +265,40 @@ const App = {
 
     theme: {
         current: 'light',
+        systemPref: function () {
+            return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        },
         init: function () {
-            const saved = localStorage.getItem('mse-theme') || 'light';
-            this.set(saved);
+            const saved = localStorage.getItem('mse-theme');
+            if (saved === 'light' || saved === 'dark') {
+                // El usuario ya eligió manualmente: respetar su preferencia
+                this.set(saved);
+            } else {
+                // Sin elección previa: seguir el modo del sistema (sin persistir)
+                this.set(this.systemPref(), false);
+                this.watchSystem();
+            }
+        },
+        watchSystem: function () {
+            if (!window.matchMedia) return;
+            const mq = window.matchMedia('(prefers-color-scheme: dark)');
+            const handler = (e) => {
+                // Solo seguir al sistema mientras el usuario no haya elegido manualmente
+                if (!localStorage.getItem('mse-theme')) this.set(e.matches ? 'dark' : 'light', false);
+            };
+            if (mq.addEventListener) mq.addEventListener('change', handler);
+            else if (mq.addListener) mq.addListener(handler); // Safari antiguo
         },
         toggle: function () {
             const next = this.current === 'light' ? 'dark' : 'light';
-            this.set(next);
+            this.set(next); // persiste: desde aquí manda la elección del usuario
         },
-        set: function (theme) {
+        set: function (theme, persist = true) {
             this.current = theme;
             document.body.setAttribute('data-theme', theme);
             document.getElementById('theme-toggle').innerHTML = theme === 'light' ? '🌞' : '🌙';
             document.getElementById('app-title').innerText = 'DICCIONARIO DE EXAMEN MENTAL';
-            localStorage.setItem('mse-theme', theme);
+            if (persist) localStorage.setItem('mse-theme', theme);
 
             // Update meta theme color
             const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -1193,7 +1213,13 @@ const App = {
 
     switchTab: function (id) {
         this.utils.haptic();
-        this.nodes.navButtons.forEach(btn => btn.classList.toggle('active', btn.id === id));
+        this.nodes.navButtons.forEach(btn => {
+            const isActive = btn.id === id;
+            btn.classList.toggle('active', isActive);
+            // aria-current expone la pestaña activa a lectores de pantalla
+            if (isActive) btn.setAttribute('aria-current', 'page');
+            else btn.removeAttribute('aria-current');
+        });
         this.navIndicator.update();
         this.nodes.search.value = '';
 
@@ -2218,22 +2244,33 @@ App.toast = {
 // ── Animated bottom-nav indicator ────────────────────────────
 App.navIndicator = {
     el: null,
+    _raf: null,
     init: function () {
         const nav = document.querySelector('.bottom-nav');
         if (!nav || this.el) return;
         this.el = document.createElement('div');
         this.el.className = 'nav-indicator';
         nav.appendChild(this.el);
+        // Reposicionar al rotar/redimensionar para que no se desalinee del botón activo
+        const reflow = () => {
+            if (this._raf) cancelAnimationFrame(this._raf);
+            this._raf = requestAnimationFrame(() => this.update());
+        };
+        window.addEventListener('resize', reflow);
+        window.addEventListener('orientationchange', reflow);
         this.update();
     },
     update: function () {
         const nav = document.querySelector('.bottom-nav');
         const active = nav && nav.querySelector('button.active');
         if (!active || !this.el) return;
-        const navRect = nav.getBoundingClientRect();
-        const btnRect = active.getBoundingClientRect();
-        this.el.style.left  = `${btnRect.left - navRect.left}px`;
-        this.el.style.width = `${btnRect.width}px`;
+        // offsetLeft/Width son relativos a la nav e inmunes al scroll horizontal en móvil
+        this.el.style.left  = `${active.offsetLeft}px`;
+        this.el.style.width = `${active.offsetWidth}px`;
+        // Mantener el botón activo visible cuando la nav scrollea en pantallas estrechas
+        if (typeof active.scrollIntoView === 'function') {
+            active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+        }
     }
 };
 
