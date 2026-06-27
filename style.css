@@ -1771,13 +1771,45 @@ main {
 }
 
 /* ========================================
+   LANDSCAPE / SHORT VIEWPORT (teléfono girado)
+   Recupera espacio vertical: el header y la nav fijos
+   no deben comerse la pantalla cuando la altura es baja.
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .app-header {
+        padding-top: calc(0.45rem + env(safe-area-inset-top, 0px));
+        padding-bottom: 0.5rem;
+    }
+    .header-top {
+        margin-bottom: 0.5rem;
+    }
+    .ritual-subtitle {
+        display: none; /* decorativo: se oculta para ganar altura */
+    }
+    .app-header h1 {
+        font-size: 1.05rem;
+    }
+    .search-container input {
+        padding-top: 0.55rem;
+        padding-bottom: 0.55rem;
+    }
+    main {
+        padding-top: 0.75rem;
+    }
+    /* La tarjeta de juego no exige altura completa en horizontal */
+    .game-card {
+        min-height: 220px;
+    }
+}
+
+/* ========================================
    DONATION WIDGET
    ======================================== */
 
 .donation-widget {
     position: fixed;
-    bottom: 80px; /* above bottom nav */
-    right: 16px;
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px)); /* sobre la nav, incl. home indicator */
+    right: calc(16px + env(safe-area-inset-right, 0px));
     z-index: 900;
     display: flex;
     align-items: center;
@@ -3008,7 +3040,7 @@ button,
 /* ── 2. TOAST NOTIFICATION SYSTEM ─────────────────────────── */
 .toast-container {
     position: fixed;
-    bottom: 88px;
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
