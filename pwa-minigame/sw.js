@@ -1,5 +1,5 @@
 // sw.js
-const CACHE_VERSION = "v1.0.0";
+const CACHE_VERSION = "v1.0.1";
 const CACHE_NAME = `minigame-cache-${CACHE_VERSION}`;
 
 const ASSETS = [
@@ -15,9 +15,23 @@ const ASSETS = [
 
 self.addEventListener("install", (event) => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+        // Best-effort caching: a single failed asset must not abort the install,
+        // or the forced update would never activate.
+        caches.open(CACHE_NAME).then((cache) =>
+            Promise.all(
+                ASSETS.map((url) =>
+                    cache.add(url).catch((err) => {
+                        console.warn("SW: failed to cache", url, err);
+                    })
+                )
+            )
+        )
     );
     self.skipWaiting();
+});
+
+self.addEventListener("message", (event) => {
+    if (event.data?.type === "SKIP_WAITING") self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
