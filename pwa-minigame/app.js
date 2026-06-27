@@ -53,7 +53,33 @@
     // ---------------- PWA / Install / SW ----------------
     function initPWA() {
         if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("./sw.js").catch(() => { });
+            const hadController = !!navigator.serviceWorker.controller;
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener("controllerchange", () => {
+                if (refreshing || !hadController) return;
+                refreshing = true;
+                window.location.reload();
+            });
+
+            navigator.serviceWorker.register("./sw.js").then((reg) => {
+                const checkForUpdate = () => reg.update().catch(() => { });
+                checkForUpdate();
+                setInterval(checkForUpdate, 1000 * 60 * 60);
+                window.addEventListener("focus", checkForUpdate);
+
+                const promote = (worker) => {
+                    if (!worker) return;
+                    worker.addEventListener("statechange", () => {
+                        if (worker.state === "installed" && navigator.serviceWorker.controller) {
+                            worker.postMessage({ type: "SKIP_WAITING" });
+                        }
+                    });
+                };
+                if (reg.waiting && navigator.serviceWorker.controller) {
+                    reg.waiting.postMessage({ type: "SKIP_WAITING" });
+                }
+                reg.addEventListener("updatefound", () => promote(reg.installing));
+            }).catch(() => { });
         }
 
         window.addEventListener("beforeinstallprompt", (e) => {

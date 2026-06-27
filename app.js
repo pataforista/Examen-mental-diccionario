@@ -100,27 +100,49 @@ const App = {
     registerSW: function () {
         if (!('serviceWorker' in navigator)) return;
 
-        // Register controllerchange BEFORE registering the SW to never miss the event
+        // Whether the page was already controlled by a SW at startup. We only
+        // force a reload when an *update* replaces an existing controller, never
+        // on the first-ever install (clients.claim() also fires controllerchange).
+        const hadController = !!navigator.serviceWorker.controller;
+        let refreshing = false;
+
+        // Register controllerchange BEFORE registering the SW to never miss the event.
         navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (refreshing || !hadController) return; // guard against reload loops / first install
+            refreshing = true;
             window.location.reload();
         });
 
+        // Tell a freshly-installed worker to take over immediately.
+        const promote = (worker) => {
+            if (!worker) return;
+            worker.addEventListener('statechange', () => {
+                if (worker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // skipWaiting() in sw.js activates the new SW; controllerchange
+                    // fires next and reloads the page.
+                    worker.postMessage({ type: 'SKIP_WAITING' });
+                }
+            });
+        };
+
         navigator.serviceWorker.register('sw.js')
             .then(reg => {
-                // Check immediately on load, then every hour
-                reg.update();
-                setInterval(() => reg.update(), 1000 * 60 * 60);
-
-                reg.addEventListener('updatefound', () => {
-                    const incoming = reg.installing;
-                    incoming.addEventListener('statechange', () => {
-                        if (incoming.state === 'installed' && navigator.serviceWorker.controller) {
-                            // skipWaiting() in sw.js will activate the new SW;
-                            // controllerchange fires next and reloads the page.
-                            incoming.postMessage({ type: 'SKIP_WAITING' });
-                        }
-                    });
+                // Check for updates now, hourly, and whenever the tab regains focus.
+                const checkForUpdate = () => reg.update().catch(() => {});
+                checkForUpdate();
+                setInterval(checkForUpdate, 1000 * 60 * 60);
+                window.addEventListener('focus', checkForUpdate);
+                document.addEventListener('visibilitychange', () => {
+                    if (document.visibilityState === 'visible') checkForUpdate();
                 });
+
+                // A new SW may already be waiting (installed before this listener
+                // was attached, e.g. on a fast reload) — promote it right away.
+                if (reg.waiting && navigator.serviceWorker.controller) {
+                    reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+                }
+
+                reg.addEventListener('updatefound', () => promote(reg.installing));
             })
             .catch(err => console.error('Service Worker registration failed:', err));
     },

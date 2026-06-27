@@ -1,4 +1,4 @@
-const CACHE_NAME = 'clinical-pwa-v2.8';
+const CACHE_NAME = 'clinical-pwa-v2.9';
 const ASSETS = [
     '/',
     'index.html',
@@ -42,9 +42,22 @@ const ASSETS = [
 ];
 
 self.addEventListener('install', (event) => {
+    // Activate this new SW immediately instead of waiting for old tabs to close.
     self.skipWaiting();
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+        caches.open(CACHE_NAME).then((cache) =>
+            // Best-effort caching: cache.addAll() is atomic, so a single failed
+            // asset (e.g. an offline/blocked CDN file) would abort the whole
+            // install and the update would never activate. Cache each asset
+            // independently so the forced update always completes.
+            Promise.all(
+                ASSETS.map((url) =>
+                    cache.add(url).catch((err) => {
+                        console.warn('SW: failed to cache', url, err);
+                    })
+                )
+            )
+        )
     );
 });
 
