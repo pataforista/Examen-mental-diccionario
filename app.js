@@ -1193,7 +1193,13 @@ const App = {
 
     switchTab: function (id) {
         this.utils.haptic();
-        this.nodes.navButtons.forEach(btn => btn.classList.toggle('active', btn.id === id));
+        this.nodes.navButtons.forEach(btn => {
+            const isActive = btn.id === id;
+            btn.classList.toggle('active', isActive);
+            // aria-current expone la pestaña activa a lectores de pantalla
+            if (isActive) btn.setAttribute('aria-current', 'page');
+            else btn.removeAttribute('aria-current');
+        });
         this.navIndicator.update();
         this.nodes.search.value = '';
 
@@ -2218,22 +2224,33 @@ App.toast = {
 // ── Animated bottom-nav indicator ────────────────────────────
 App.navIndicator = {
     el: null,
+    _raf: null,
     init: function () {
         const nav = document.querySelector('.bottom-nav');
         if (!nav || this.el) return;
         this.el = document.createElement('div');
         this.el.className = 'nav-indicator';
         nav.appendChild(this.el);
+        // Reposicionar al rotar/redimensionar para que no se desalinee del botón activo
+        const reflow = () => {
+            if (this._raf) cancelAnimationFrame(this._raf);
+            this._raf = requestAnimationFrame(() => this.update());
+        };
+        window.addEventListener('resize', reflow);
+        window.addEventListener('orientationchange', reflow);
         this.update();
     },
     update: function () {
         const nav = document.querySelector('.bottom-nav');
         const active = nav && nav.querySelector('button.active');
         if (!active || !this.el) return;
-        const navRect = nav.getBoundingClientRect();
-        const btnRect = active.getBoundingClientRect();
-        this.el.style.left  = `${btnRect.left - navRect.left}px`;
-        this.el.style.width = `${btnRect.width}px`;
+        // offsetLeft/Width son relativos a la nav e inmunes al scroll horizontal en móvil
+        this.el.style.left  = `${active.offsetLeft}px`;
+        this.el.style.width = `${active.offsetWidth}px`;
+        // Mantener el botón activo visible cuando la nav scrollea en pantallas estrechas
+        if (typeof active.scrollIntoView === 'function') {
+            active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+        }
     }
 };
 
