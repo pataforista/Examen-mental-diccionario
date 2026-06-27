@@ -265,20 +265,40 @@ const App = {
 
     theme: {
         current: 'light',
+        systemPref: function () {
+            return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        },
         init: function () {
-            const saved = localStorage.getItem('mse-theme') || 'light';
-            this.set(saved);
+            const saved = localStorage.getItem('mse-theme');
+            if (saved === 'light' || saved === 'dark') {
+                // El usuario ya eligió manualmente: respetar su preferencia
+                this.set(saved);
+            } else {
+                // Sin elección previa: seguir el modo del sistema (sin persistir)
+                this.set(this.systemPref(), false);
+                this.watchSystem();
+            }
+        },
+        watchSystem: function () {
+            if (!window.matchMedia) return;
+            const mq = window.matchMedia('(prefers-color-scheme: dark)');
+            const handler = (e) => {
+                // Solo seguir al sistema mientras el usuario no haya elegido manualmente
+                if (!localStorage.getItem('mse-theme')) this.set(e.matches ? 'dark' : 'light', false);
+            };
+            if (mq.addEventListener) mq.addEventListener('change', handler);
+            else if (mq.addListener) mq.addListener(handler); // Safari antiguo
         },
         toggle: function () {
             const next = this.current === 'light' ? 'dark' : 'light';
-            this.set(next);
+            this.set(next); // persiste: desde aquí manda la elección del usuario
         },
-        set: function (theme) {
+        set: function (theme, persist = true) {
             this.current = theme;
             document.body.setAttribute('data-theme', theme);
             document.getElementById('theme-toggle').innerHTML = theme === 'light' ? '🌞' : '🌙';
             document.getElementById('app-title').innerText = 'DICCIONARIO DE EXAMEN MENTAL';
-            localStorage.setItem('mse-theme', theme);
+            if (persist) localStorage.setItem('mse-theme', theme);
 
             // Update meta theme color
             const metaTheme = document.querySelector('meta[name="theme-color"]');
