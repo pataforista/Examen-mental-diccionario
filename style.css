@@ -1427,6 +1427,15 @@ main {
     transform: translateY(-1px);
 }
 
+/* Chips wrap onto multiple lines instead of forcing horizontal page overflow */
+#recent-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 1 1 100%;
+    min-width: 0;
+}
+
 /* Domain Detail Header */
 .domain-detail-header {
     margin-bottom: 1.5rem;
