@@ -1,7 +1,7 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-06-29T23:02:40.456Z",
-  "total_terms": 295,
+  "generated_at": "2026-06-29T23:12:44.835Z",
+  "total_terms": 291,
   "terms": [
     {
       "term_id": "AFF_001",
@@ -364,77 +364,6 @@
       },
       "status": "active",
       "mappings": {}
-    },
-    {
-      "term_id": "AFF_004",
-      "canonical_name": "Ambivalencia afectiva",
-      "synonyms_and_slang": [
-        {
-          "term": "sentimientos contradictorios",
-          "context": "clínico",
-          "locale": "es"
-        },
-        {
-          "term": "ambivalencia emocional",
-          "context": "clínico",
-          "locale": "es"
-        }
-      ],
-      "term_kind": "síntoma",
-      "granularity": "atomic",
-      "risk_weight": 1,
-      "definition_clinical": {
-        "core": "Coexistencia simultánea de sentimientos opuestos (amor y odio, atracción y repulsión) hacia la misma persona u objeto. Bleuler lo incluyó entre los síntomas fundamentales de la esquizofrenia. En grado leve, fenómeno normal en relaciones complejas.",
-        "required_features": [
-          "coexistencia de sentimientos opuestos",
-          "hacia el mismo objeto/persona",
-          "sin resolución posible"
-        ],
-        "subjective_marker": "El paciente refiere querer y odiar a la misma persona simultáneamente, sin poder resolverlo ni decantarse.",
-        "behavioral_marker": "Conductas contradictorias hacia el mismo objeto; aproximación y huida alternantes."
-      },
-      "operationalization": {
-        "detectable_by": [],
-        "time_relation": [],
-        "pharmacological_link": false,
-        "computable_markers": [
-          {
-            "marker": "sentimientos_opuestos",
-            "type": "string",
-            "expected": "simultaneos"
-          },
-          {
-            "marker": "objeto_comun",
-            "type": "string",
-            "expected": "sí"
-          }
-        ]
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-09",
-          "relation": "secondary_expression",
-          "context": ""
-        }
-      ],
-      "exclusions": [
-        {
-          "term_id": "VOL_002",
-          "canonical_name": "Ambivalencia volitiva",
-          "reason": "La ambivalencia afectiva es emocional; la volitiva es de impulsos de acción."
-        }
-      ],
-      "alerts": [],
-      "teaching_notes": [],
-      "cognitive_pitfalls": [],
-      "mappings": {
-        "cie11": {
-          "code": "MB24.Y"
-        },
-        "snomed_ct": {}
-      },
-      "version": "1.0.0",
-      "status": "active"
     },
     {
       "term_id": "AFF_005",
@@ -2652,93 +2581,6 @@
       "status": "active"
     },
     {
-      "term_id": "AFF_029",
-      "canonical_name": "Paratimia",
-      "synonyms_and_slang": [
-        {
-          "term": "afecto incongruente",
-          "context": "clínico",
-          "locale": "es"
-        },
-        {
-          "term": "discordancia afectiva",
-          "context": "clínico",
-          "locale": "es"
-        }
-      ],
-      "term_kind": "síntoma",
-      "granularity": "atomic",
-      "risk_weight": 1,
-      "definition_clinical": {
-        "core": "Disociación o falta de correspondencia entre el contenido de la vivencia (pensamiento o situación) y la emoción expresada por el paciente.",
-        "required_features": [
-          "expresión emocional opuesta o extraña al tema tratado",
-          "falta de sintonía entre contenido y afecto",
-          "naturaleza involuntaria"
-        ],
-        "subjective_marker": "El paciente puede relatar una tragedia personal mientras sonríe o ríe sin sentir alegría real.",
-        "behavioral_marker": "Risa inmotivada ante noticias tristes; llanto ante situaciones placenteras."
-      },
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica",
-          "observacion"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-09",
-          "relation": "primary_expression",
-          "context": "afectividad"
-        }
-      ],
-      "exclusions": [],
-      "alerts": [
-        {
-          "type": "diagnostic_critical",
-          "message": "Signo clásico de la serie esquizofrénica; indica una desorganización profunda de la vida psíquica."
-        }
-      ],
-      "teaching_notes": [
-        "A diferencia del cinismo, en la paratimia no hay una intención social de burla, sino una ruptura interna de la asociación afectiva.",
-        "Bleuler lo consideraba uno de los síntomas fundamentales de la esquizofrenia (una de las '4 A')."
-      ],
-      "version": "1.1.0",
-      "mappings": {
-        "cie11": {
-          "code": "6A20.Z",
-          "label": "Schizophrenia or other primary psychotic disorders"
-        },
-        "snomed_ct": {
-          "concept_id": "422502008",
-          "preferred_term": "Inappropriate affect (finding)"
-        }
-      },
-      "clinical_assessment": {
-        "recommended_scales": [
-          {
-            "name": "PANSS",
-            "item": "N1 - Embotamiento afectivo (ítem de modulación)",
-            "scale_id": "PANSS"
-          }
-        ]
-      },
-      "provenance": {
-        "phenomenology": [
-          "Bleuler",
-          "Sims"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clasica"
-        ]
-      },
-      "status": "active"
-    },
-    {
       "term_id": "AFF_030",
       "canonical_name": "Perplejidad",
       "synonyms_and_slang": [
@@ -4118,57 +3960,6 @@
       "status": "active"
     },
     {
-      "term_id": "ARC_005",
-      "canonical_name": "Demencia precox (concepto Kraepeliano)",
-      "synonyms_and_slang": [
-        {
-          "term": "Demencia Temprana (Kraeplin)",
-          "context": "clínico",
-          "locale": "es"
-        }
-      ],
-      "term_kind": "concepto_histórico",
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "definition_clinical": {
-        "core": "Dementia praecox (del latín: 'locura prematura') es un diagnóstico psiquiátrico histórico ideado por el psiquiatra alemán Emil Kraepelin (originario de su libro de texto de 1893 pero fundamentado teóricamente como síndrome clínico maestro en 1899 en la 6ta ed.) para clasificar y aglomerar una entidad y proceso de afección cerebral crónico y degenerativo, inexorable que típicamente iniciaba de modo muy grave (y se caracterizaba primariamente en la fase crónica por un proceso devastador de desintegración y atrofia cognitiva-conativa, no primariamente intelectual a la usanza de las demencias seniles orgánicas o la de un déficit focal sino integrativo final) impactando y destrozando en primera mitad de la vida adulta o juventud ('temprana') fundamentalmente en sus aspectos prácticos integrativos sociales en fase terminal a pesar de cursar a grandes tramos con los síntomas activos como el Delirio, catatonia y hebefrenia y alucinaciones transitorias paranoicas pero resultando todos aquellos y cada uno irremediablemente y subsumidos en el deterioro/falta integrativa final residual y definitivo sin recuperación basal a nivel psicosocial.",
-        "required_features": [
-          "Concepto fundacional etiológico unitario propuesto en contraposición de su 'Locura Maníaco Defensiva' de evolución cíclica que recupera al basal e integridad final, sirviendo de progenitor teórico inmediato del constructo esquizofrenico actual. Posteriormente, Bleuler acuña su término de 'Grupo de las Esquizofrenias' para reemplazar el término al evidenciar que estos individuos ni empezaban siempre siempre precozmente su enfermedad y ni se deterioraban en un deterioro estrictamente 'Demenciado' y terminal idéntico al Alzheimer en todas sus facultades por igual en vez su mente que se fragmentaba / disociaba primariamente las funciones basales operativas del fluir unificado o 'escindía'."
-        ],
-        "subjective_marker": "N/A - Término nosológico histórico (La vivencia subjetiva correspondería a los síntomas de lo que hoy conocemos como esquizofrenia que incluye esta entidad en estado crónico de gran déficit / deterioro tardío y empobrecimiento volitivo/lógico-social pero donde se agrupaba los subgrupos paranoides de curso devastador, la forma hebefrénica juvenil rápida y el grupo Catatónico -que era un constructo originario de Kahlbaum, y Kraepelin lo incluyó como un grupo de la misma entidad de Deterioro Precoz).",
-        "behavioral_marker": "Deterioro social progresivo irremediable en un estado con embotamiento atroz e infuncional persistente juvenil subintrante (lo que se catalogaba como curso deteriorante de este paradigma patológico alemán decimonónico)."
-      },
-      "operationalization": {
-        "detectable_by": [],
-        "time_relation": [],
-        "pharmacological_link": false,
-        "computable_markers": [
-          {
-            "marker": "Clasificación nosológica Histórica. (Kraepelin 1899).",
-            "type": "string",
-            "expected": ""
-          }
-        ]
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-08",
-          "relation": "secondary_expression",
-          "context": ""
-        }
-      ],
-      "exclusions": [],
-      "alerts": [],
-      "teaching_notes": [],
-      "cognitive_pitfalls": [],
-      "mappings": {
-        "cie11": {},
-        "snomed_ct": {}
-      },
-      "version": "1.0.0",
-      "status": "active"
-    },
-    {
       "term_id": "ARC_006",
       "canonical_name": "Dementia praecox",
       "synonyms_and_slang": [
@@ -4518,57 +4309,6 @@
           "psiquiatria_francesa_siglo_XIX"
         ]
       },
-      "status": "active"
-    },
-    {
-      "term_id": "ARC_010",
-      "canonical_name": "Histeria (Neurosis Histérica)",
-      "synonyms_and_slang": [
-        {
-          "term": "Neurosis Histérica de Freud / Histeria de Conversión y Disociativa Somática Clásica de Charcot a Pinel.",
-          "context": "clínico",
-          "locale": "es"
-        }
-      ],
-      "term_kind": "concepto_histórico",
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "definition_clinical": {
-        "core": "Es un constructo psico-somático histórico originado desde la antigüedad griega e hipocrática pero pulido por el esplendor fenomenológico de base francesa y psicosomática vienesa a fines del siglo XIX y principios del XX, en la cual se asocia un conglomerado y amplia y confusa gama de grandiosas o floridas afecciones/conversiones sensorio-motoras, somáticas 'bizarramente' inexplicadas (anestesias en calcetín o guante anatómicamente imposibles para vías orgánicas de nervios periféricos), pérdidas de funciones súbitas de los sentidos (Ceguera y sordera Histérica sin base de lesiones visual u oído), paralisis de toda clase, y manifestaciones teatrales psíquico-comportamentales mayores convulsiones dramáticas con 'Arco de círculo', alteraciones severas disociativas del nivel de la memoria o conciencia (fugas, o incluso múltiples egos transitorios pseudo o hipnóticamente inducidas) o anestesias profundas para tratar de explicar y categorizar 'la psiconeurose' de etiología base fundamental traumático/defensiva en la esfera y aparato psíquico íntimo-funcional frente al dolor del super-yo vs represión inconsciente. Fue desmantelada conceptualmente por completo y fragmentada operativamente a mediados final del siglo XX desde el DSM y la CIE moderna en múltiples diagnósticos fenomenológicamente des-psicoanalizados en base a sus hallazgos empíricos puros sin proponer etiología analítica para el manual.",
-        "required_features": [
-          "Uso terminológico de época con un sustrato y constructos teóricos (modelo psicoanalítico defensivo conversivo clásico y su disociación psíquica histérica primaria fundacional post-traumática-represiva) inoperante pero basal para el vocabulario, estudio de la evolución de historia de la psiquiatría e inmensamente rico fenomenológicamente descripto como entidad nosológica en su mayor furor empírico Europeo y con un fuerte impacto socio-cultural antropológico vigente."
-        ],
-        "subjective_marker": "N/A",
-        "behavioral_marker": "El amplio compendio descrito por las neurosis histero-conversivas del siglo pasado de Salpêtrière bajo Jean-Martin Charcot, sus fases: Epileptoide – Grandes movimientos /Clownismo/ Posesiones – Actitudes pasionales delusivas transitorias emocionales intensas y – Delirio y disolución dramática de final afectivo sombrío o lloroso, resuelto (Ataque histérico clásico de París – hoy sumergidos en Trastornos somatomorfos y disociativos de conversión pseudoneurológica masiva psicógena)."
-      },
-      "operationalization": {
-        "detectable_by": [],
-        "time_relation": [],
-        "pharmacological_link": false,
-        "computable_markers": [
-          {
-            "marker": "Clasificación nosológica Histórica. (Charcot, Janet, Freud 1880 - 1980 DSM II).",
-            "type": "string",
-            "expected": ""
-          }
-        ]
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-15",
-          "relation": "primary_expression",
-          "context": ""
-        }
-      ],
-      "exclusions": [],
-      "alerts": [],
-      "teaching_notes": [],
-      "cognitive_pitfalls": [],
-      "mappings": {
-        "cie11": {},
-        "snomed_ct": {}
-      },
-      "version": "1.0.0",
       "status": "active"
     },
     {

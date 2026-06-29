@@ -157,10 +157,6 @@
       "path": "lexicon/terms/AFF/AFF_003_ambivalencia.json"
     },
     {
-      "term_id": "AFF_004",
-      "path": "lexicon/terms/_deprecated/AFF_004_ambivalencia_afectiva.json"
-    },
-    {
       "term_id": "AFF_005",
       "path": "lexicon/terms/AFF/AFF_005_angustia.json"
     },
@@ -257,10 +253,6 @@
       "path": "lexicon/terms/AFF/AFF_028_miedo.json"
     },
     {
-      "term_id": "AFF_029",
-      "path": "lexicon/terms/_deprecated/AFF_029_paratimia.json"
-    },
-    {
       "term_id": "AFF_030",
       "path": "lexicon/terms/AFF/AFF_030_perplejidad.json"
     },
@@ -325,10 +317,6 @@
       "path": "lexicon/terms/ARC/ARC_004_degeneracionismo.json"
     },
     {
-      "term_id": "ARC_005",
-      "path": "lexicon/terms/_deprecated/ARC_005_demencia_precox_concepto_kraepeliano.json"
-    },
-    {
       "term_id": "ARC_006",
       "path": "lexicon/terms/ARC/ARC_006_dementia_praecox.json"
     },
@@ -343,10 +331,6 @@
     {
       "term_id": "ARC_009",
       "path": "lexicon/terms/ARC/ARC_009_histeria.json"
-    },
-    {
-      "term_id": "ARC_010",
-      "path": "lexicon/terms/_deprecated/ARC_010_histeria_neurosis_histerica.json"
     },
     {
       "term_id": "ARC_011",
