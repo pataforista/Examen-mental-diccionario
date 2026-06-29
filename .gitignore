@@ -1,0 +1,12 @@
+# Desarrollo / diagnóstico (no forman parte del producto)
+scratch_*.py
+audit_tool.js
+lexicon_audit.txt
+validation_errors.txt
+validation_output.txt
+build/
+
+# Entorno
+node_modules/
+.DS_Store
+*.log
