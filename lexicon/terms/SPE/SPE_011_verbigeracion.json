@@ -56,14 +56,7 @@
       "context": "catatonia_o_desorganizacion"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "THO_012",
-      "canonical_name": "Obsesiones",
-      "reason": "La obsesión es una lucha mental interna; la verbigeración es una conducta verbal motora y repetitiva sin lucha.",
-      "ref_status": "forward"
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "clinical_warning",

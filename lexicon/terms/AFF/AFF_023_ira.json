@@ -18,7 +18,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "estado",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {

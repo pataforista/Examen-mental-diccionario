@@ -1,6 +1,6 @@
 {
   "registry_version": "1.3.0",
-  "last_updated": "2026-05-24",
+  "last_updated": "2026-06-29",
   "prefixes": {
     "AFF": {
       "description": "Affect and Mood",
@@ -158,7 +158,7 @@
     },
     {
       "term_id": "AFF_004",
-      "path": "lexicon/terms/AFF/AFF_004_ambivalencia_afectiva.json"
+      "path": "lexicon/terms/_deprecated/AFF_004_ambivalencia_afectiva.json"
     },
     {
       "term_id": "AFF_005",
@@ -258,7 +258,7 @@
     },
     {
       "term_id": "AFF_029",
-      "path": "lexicon/terms/AFF/AFF_029_paratimia.json"
+      "path": "lexicon/terms/_deprecated/AFF_029_paratimia.json"
     },
     {
       "term_id": "AFF_030",
@@ -326,7 +326,7 @@
     },
     {
       "term_id": "ARC_005",
-      "path": "lexicon/terms/ARC/ARC_005_demencia_precox_concepto_kraepeliano.json"
+      "path": "lexicon/terms/_deprecated/ARC_005_demencia_precox_concepto_kraepeliano.json"
     },
     {
       "term_id": "ARC_006",
@@ -346,7 +346,7 @@
     },
     {
       "term_id": "ARC_010",
-      "path": "lexicon/terms/ARC/ARC_010_histeria_neurosis_histerica.json"
+      "path": "lexicon/terms/_deprecated/ARC_010_histeria_neurosis_histerica.json"
     },
     {
       "term_id": "ARC_011",
@@ -1015,6 +1015,10 @@
     {
       "term_id": "PHM_008",
       "path": "lexicon/terms/PHM/PHM_008_anomalias_del_sentido_de_pertenencia.json"
+    },
+    {
+      "term_id": "RSK_001",
+      "path": "lexicon/terms/RSK/RSK_001_riesgo_autolitico.json"
     },
     {
       "term_id": "RSK_002",

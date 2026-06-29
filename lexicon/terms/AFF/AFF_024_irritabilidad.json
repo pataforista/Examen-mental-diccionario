@@ -60,13 +60,7 @@
       "context": ""
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "",
-      "canonical_name": "Hostilidad",
-      "reason": "La hostilidad es una actitud generalizada hacia otros; la irritabilidad es un estado de umbral bajo no necesariamente dirigido."
-    }
-  ],
+  "exclusions": [],
   "alerts": [],
   "teaching_notes": [],
   "cognitive_pitfalls": [],

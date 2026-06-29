@@ -1,0 +1,14 @@
+{
+  "term_id": "THO_004",
+  "coding_standards": {
+    "ICD-11": [
+      {
+        "code": "MB24.Y",
+        "label": "Other specified symptoms or signs involving appearance or behaviour",
+        "relationship": "broad"
+      }
+    ]
+  },
+  "notes": "Generated automatically. Please refine with specific codes if available.",
+  "version": "1.0.0"
+}

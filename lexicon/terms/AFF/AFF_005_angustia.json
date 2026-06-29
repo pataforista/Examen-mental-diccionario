@@ -1,11 +1,11 @@
 {
   "term_id": "AFF_005",
   "canonical_name": "Angustia",
-  "term_kind": "estado",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {
-    "core": "Sufrimiento intenso con sensación de dolor psíquico o ansiedad severa.",
+    "core": "Estado de malestar intenso y paroxístico, con predominio de sensaciones somáticas de opresión (pecho, nudo en la garganta) y una vivencia de desbordamiento o inminencia catastrófica, que puede acompañarse de agitación o inmovilidad.",
     "required_features": [
       "inicio brusco",
       "intensidad elevada",
@@ -83,12 +83,6 @@
       "term_id": "AFF_008",
       "canonical_name": "Ansiedad afectiva",
       "reason": "La ansiedad afectiva es sostenida y de menor intensidad.",
-      "ref_status": "forward"
-    },
-    {
-      "term_id": "PAN_001",
-      "canonical_name": "Ataque de pánico",
-      "reason": "El pánico exige un cluster autonómico y temor a morir/perder control; la angustia puede ser un 'grito corporal' sin ese contenido.",
       "ref_status": "forward"
     }
   ],

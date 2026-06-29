@@ -71,11 +71,6 @@
       "term_id": "AFF_010",
       "canonical_name": "Aplanamiento afectivo",
       "reason": "El aplanamiento es síntoma primario; la fatiga emocional es reactiva a sobrecarga crónica."
-    },
-    {
-      "term_id": "",
-      "canonical_name": "Depresión mayor",
-      "reason": "La fatiga emocional puede preceder o acompañar la depresión, pero su especificidad está en la relación con sobrecarga de cuidado/trabajo."
     }
   ],
   "alerts": [],

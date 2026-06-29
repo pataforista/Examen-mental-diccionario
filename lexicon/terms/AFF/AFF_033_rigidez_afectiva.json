@@ -1,6 +1,6 @@
 {
   "term_id": "AFF_033",
-  "canonical_name": "Rigidez Afectiva",
+  "canonical_name": "Rigidez afectiva",
   "synonyms_and_slang": [
     {
       "term": "escasa modulación afectiva",
@@ -10,7 +10,7 @@
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 1,
   "definition_clinical": {
     "core": "Incapacidad o dificultad marcada del paciente para modificar su estado de ánimo y su expresión afectiva según las variaciones del entorno o el contenido del pensamiento.",
     "required_features": [

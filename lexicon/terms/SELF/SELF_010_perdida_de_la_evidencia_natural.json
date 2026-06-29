@@ -50,14 +50,7 @@
       "context": "conciencia_del_yo_y_mundo"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "COG_001",
-      "canonical_name": "Confusión",
-      "reason": "La confusión es desorientación global; aquí la orientación es normal pero la 'familiaridad' se ha perdido.",
-      "ref_status": "forward"
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "clinical_significance",

@@ -1,0 +1,53 @@
+{
+  "term_id": "RSK_001",
+  "canonical_name": "Riesgo autolítico (general)",
+  "term_kind": "factor de riesgo",
+  "granularity": "atomic",
+  "risk_weight": 3,
+  "definition_clinical": {
+    "core": "Presencia de cualquier ideación, conducta o planificación dirigida a causarse daño a sí mismo, sin especificar el tipo o nivel de inminencia.",
+    "required_features": [
+      "Potencial de daño autoinfligido",
+      "Puede o no haber intencionalidad letal clara"
+    ]
+  },
+  "operationalization": {
+    "detectable_by": [
+      "clinical_interview",
+      "patient_report",
+      "collateral_history"
+    ],
+    "time_relation": [
+      "current",
+      "past"
+    ]
+  },
+  "alerts": [
+    "Requiere evaluación urgente de la inminencia, intencionalidad letal y planificación.",
+    "Activar protocolos de seguridad y prevención del suicidio si se confirma."
+  ],
+  "synonyms_and_slang": [
+    {
+      "term": "Riesgo de suicidio",
+      "context": "clínico",
+      "region": "universal",
+      "notes": "Término genérico"
+    }
+  ],
+  "exclusions": [],
+  "related_terms": [
+    {
+      "term_id": "RSK_006",
+      "relationship": "broadens"
+    },
+    {
+      "term_id": "RSK_007",
+      "relationship": "broadens"
+    }
+  ],
+  "teaching_notes": [
+    "Término paraguas que incluye desde ideación suicida pasiva hasta intento suicida. Útil cuando no se puede o no se ha especificado el nivel exacto de riesgo."
+  ],
+  "cognitive_pitfalls": [],
+  "version": "1.0.0"
+}

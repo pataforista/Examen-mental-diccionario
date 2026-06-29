@@ -11,6 +11,17 @@
       "term": "gran histeria de Charcot",
       "context": "clínico",
       "locale": "es"
+    },
+    {
+      "term": "Histeria (Neurosis Histérica)",
+      "context": "clínico",
+      "region": "universal",
+      "notes": "Término unificado"
+    },
+    {
+      "term": "Neurosis Histérica de Freud / Histeria de Conversión y Disociativa Somática Clásica de Charcot a Pinel.",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "estado",

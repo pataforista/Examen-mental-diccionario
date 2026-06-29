@@ -43,13 +43,7 @@
       "context": "funciones_cognitivas"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "COG_006",
-      "canonical_name": "Pseudología fantástica",
-      "reason": "En la confabulación el fin es rellenar un hueco amnésico; en la pseudología el fin es la gratificación narcisista."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "neurological_note",

@@ -45,7 +45,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "DEL_001",
+      "term_id": "DEL_010",
       "canonical_name": "Delirio primario",
       "reason": "La monomanía es el término decimonónico para lo que hoy llamaríamos trastorno delirante."
     }

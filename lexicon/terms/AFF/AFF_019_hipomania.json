@@ -71,11 +71,6 @@
       "term_id": "AFF_027",
       "canonical_name": "Manía",
       "reason": "La manía es más severa, con psicosis posible y deterioro marcado; la hipomanía no alcanza ese umbral."
-    },
-    {
-      "term_id": "",
-      "canonical_name": "Temperamento hipertímico",
-      "reason": "El temperamento hipertímico es rasgo estable, no episódico; la hipomanía es un cambio notorio respecto al basal."
     }
   ],
   "alerts": [],

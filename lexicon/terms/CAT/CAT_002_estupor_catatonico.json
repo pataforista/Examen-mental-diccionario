@@ -1,6 +1,6 @@
 {
   "term_id": "CAT_002",
-  "canonical_name": "Estupor Catatónico",
+  "canonical_name": "Estupor catatónico",
   "synonyms_and_slang": [
     {
       "term": "estupor psiquiátrico",
@@ -38,13 +38,7 @@
       "context": "conducta_motriz"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "CAT_999",
-      "canonical_name": "Estupor orgánico",
-      "reason": "En el estupor orgánico suele haber compromiso del nivel de conciencia y ausencia de reflejos posturales complejos."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "medical_emergency",

@@ -50,14 +50,7 @@
       "context": "conciencia_del_yo_limites"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "COG_001",
-      "canonical_name": "Confusión",
-      "reason": "En la confusión la falla es de orientación global; el transitivismo es una falla específica de la frontera del yo.",
-      "ref_status": "forward"
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "clinical_severity",

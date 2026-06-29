@@ -4,17 +4,17 @@
   "synonyms_and_slang": [
     {
       "term": "aseo",
-      "context": "clinical",
+      "context": "clínico",
       "locale": "es"
     },
     {
       "term": "desaliñado",
-      "context": "clinical",
+      "context": "clínico",
       "locale": "es"
     },
     {
       "term": "disheveled",
-      "context": "clinical",
+      "context": "clínico",
       "locale": "en"
     }
   ],

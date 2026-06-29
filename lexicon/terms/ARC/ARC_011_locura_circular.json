@@ -1,6 +1,6 @@
 {
   "term_id": "ARC_011",
-  "canonical_name": "Locura Circular",
+  "canonical_name": "Locura circular",
   "synonyms_and_slang": [
     {
       "term": "folie circulaire",
@@ -13,7 +13,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "estado",
+  "term_kind": "concepto_histórico",
   "granularity": "atomic",
   "risk_weight": 2,
   "definition_clinical": {

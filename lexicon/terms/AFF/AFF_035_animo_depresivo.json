@@ -1,7 +1,7 @@
 {
   "term_id": "AFF_035",
   "canonical_name": "Ánimo depresivo",
-  "term_kind": "estado",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {

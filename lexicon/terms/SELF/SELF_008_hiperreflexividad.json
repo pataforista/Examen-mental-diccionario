@@ -50,14 +50,7 @@
       "context": "conciencia_del_yo"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "THO_012",
-      "canonical_name": "Obsesiones",
-      "reason": "La obsesión es un pensamiento intrusivo sobre un tema; la hiperreflexividad es una alteración de la estructura de la conciencia sobre procesos automáticos.",
-      "ref_status": "forward"
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "clinical_significance",

@@ -1,6 +1,6 @@
 {
   "term_id": "ARC_003",
-  "canonical_name": "Bouffée Délirante",
+  "canonical_name": "Bouffée délirante",
   "synonyms_and_slang": [
     {
       "term": "psicosis delirante aguda",
@@ -48,7 +48,7 @@
   "exclusions": [
     {
       "term_id": "ARC_006",
-      "canonical_name": "Dementia Praecox",
+      "canonical_name": "Dementia praecox",
       "reason": "La bouffée délirante es esencialmente reversible y aguda; la dementia praecox es crónica y deteriorante."
     }
   ],

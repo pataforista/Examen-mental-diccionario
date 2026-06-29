@@ -43,13 +43,7 @@
       "context": "conciencia_corporal"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "SOM_003",
-      "canonical_name": "Anorexia nerviosa",
-      "reason": "En la anorexia la preocupación es global sobre el peso/figura; en la dismorfofobia suele ser sobre una parte específica del cuerpo."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_warning",

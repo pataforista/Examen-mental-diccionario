@@ -16,6 +16,22 @@
       "term": "desacuerdo afecto-contenido",
       "context": "clínico",
       "locale": "es"
+    },
+    {
+      "term": "Paratimia",
+      "context": "clínico",
+      "region": "universal",
+      "notes": "Término unificado"
+    },
+    {
+      "term": "afecto incongruente",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "discordancia afectiva",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "signo",

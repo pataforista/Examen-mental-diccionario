@@ -15,7 +15,7 @@
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 1,
   "definition_clinical": {
     "core": "Coexistencia simultánea de sentimientos opuestos (amor y odio, atracción y repulsión) hacia la misma persona u objeto. Bleuler lo incluyó entre los síntomas fundamentales de la esquizofrenia. En grado leve, fenómeno normal en relaciones complejas.",
     "required_features": [

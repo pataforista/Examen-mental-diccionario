@@ -60,13 +60,7 @@
       "context": ""
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "",
-      "canonical_name": "Confusión",
-      "reason": "La confusión es desorientación cognitiva; la perplejidad es desconcierto afectivo-fenomenológico."
-    }
-  ],
+  "exclusions": [],
   "alerts": [],
   "teaching_notes": [],
   "cognitive_pitfalls": [],

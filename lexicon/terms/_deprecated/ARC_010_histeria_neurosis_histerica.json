@@ -38,13 +38,7 @@
       "context": ""
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "",
-      "canonical_name": "DSM-5 o CIE-11 Trastorno de Síntomas Neurológicos Funcionales o el Trastorno Disociativo",
-      "reason": "En la actual escuela el constructo unitario histórico de la gigantesca 'Neurosis Histérica/Histeria' se subdividió quirúrgicamente separando los síntomas corporales / neurológicos bizarros puros en el grupo y capítulo de Síntomas Somáticos (Ej, Trastorno Funcional Neurológico Ciego/Motor –Conversivos somáticos sin alusión etiológica obligatoria–) hacia un lado, y los fenómenos y desvíos de memoria, y pérdida identitaria hacia un gran distinto cajón de manual en los Trastornos de tipo Disociador de nivel Conciencia/Identidad en otros espectros distintos, perdiendo en la actualidad cualquier lazo nominal/terminológico a nivel de diagnóstico con dicho histórico concepto decimonónico por considerarse o peyorativo, mal estandarizado en investigación neurobiológica o demasiado ligado a un constructo psicoanalítico de base etio patológica dogmática no validada en consensos biomédicos generales amplios modernos."
-    }
-  ],
+  "exclusions": [],
   "alerts": [],
   "teaching_notes": [],
   "cognitive_pitfalls": [],

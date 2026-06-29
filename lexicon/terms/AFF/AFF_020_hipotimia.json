@@ -70,11 +70,6 @@
       "term_id": "AFF_017",
       "canonical_name": "Eutimia",
       "reason": "La hipotimia implica descenso clínicamente significativo; la eutimia está en rango normativo."
-    },
-    {
-      "term_id": "",
-      "canonical_name": "Depresión mayor",
-      "reason": "La hipotimia no alcanza criterios de episodio depresivo mayor en número, intensidad o duración."
     }
   ],
   "alerts": [],

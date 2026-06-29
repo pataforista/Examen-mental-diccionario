@@ -75,11 +75,6 @@
       "term_id": "AFF_020",
       "canonical_name": "Hipotimia",
       "reason": "La depresión mayor supera el umbral en intensidad, número de síntomas y duración."
-    },
-    {
-      "term_id": "",
-      "canonical_name": "Duelo normal",
-      "reason": "El duelo tiene desencadenante identificable, curva temporal esperada y ausencia de pérdida de autoestima global."
     }
   ],
   "alerts": [],

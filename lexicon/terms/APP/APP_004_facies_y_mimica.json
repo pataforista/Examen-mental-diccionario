@@ -4,12 +4,12 @@
   "synonyms_and_slang": [
     {
       "term": "hipomimia",
-      "context": "clinical",
+      "context": "clínico",
       "locale": "es"
     },
     {
       "term": "amimia",
-      "context": "clinical",
+      "context": "clínico",
       "locale": "es"
     }
   ],
@@ -43,13 +43,7 @@
       "context": "apariencia_general"
     }
   ],
-  "exclusions": [
-    {
-      "term_id": "APP_004",
-      "canonical_name": "Facies y mímica",
-      "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-    }
-  ],
+  "exclusions": [],
   "alerts": [
     {
       "type": "diagnostic_error",

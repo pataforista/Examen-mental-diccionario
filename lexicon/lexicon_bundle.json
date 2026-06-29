@@ -1,7 +1,7 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-05-24T00:54:50.368Z",
-  "total_terms": 294,
+  "generated_at": "2026-06-29T23:02:40.456Z",
+  "total_terms": 295,
   "terms": [
     {
       "term_id": "AFF_001",
@@ -228,9 +228,25 @@
           "term": "no puedo decidirme",
           "context": "patient_report",
           "locale": "es"
+        },
+        {
+          "term": "Ambivalencia afectiva",
+          "context": "clínico",
+          "region": "universal",
+          "notes": "Término unificado"
+        },
+        {
+          "term": "sentimientos contradictorios",
+          "context": "clínico",
+          "locale": "es"
+        },
+        {
+          "term": "ambivalencia emocional",
+          "context": "clínico",
+          "locale": "es"
         }
       ],
-      "term_kind": "fenómeno",
+      "term_kind": "síntoma",
       "granularity": "atomic",
       "risk_weight": 1,
       "definition_clinical": {
@@ -306,12 +322,6 @@
       ],
       "exclusions": [
         {
-          "term_id": "COG_0XX",
-          "canonical_name": "Indecisión por rumiación/obsesión",
-          "reason": "En obsesivo-rumiativo predomina duda iterativa con rituales/chequeos o intrusiones egodistónicas; en ambivalencia hay conflicto de polos afectivos hacia el mismo objeto sin estructura obsesiva necesaria.",
-          "ref_status": "forward"
-        },
-        {
           "term_id": "AFF_025",
           "canonical_name": "Labilidad afectiva",
           "reason": "La labilidad es oscilación temporal del afecto; la ambivalencia es simultaneidad o co-presencia de polos opuestos respecto al mismo objeto.",
@@ -372,7 +382,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 1,
       "definition_clinical": {
         "core": "Coexistencia simultánea de sentimientos opuestos (amor y odio, atracción y repulsión) hacia la misma persona u objeto. Bleuler lo incluyó entre los síntomas fundamentales de la esquizofrenia. En grado leve, fenómeno normal en relaciones complejas.",
         "required_features": [
@@ -429,11 +439,11 @@
     {
       "term_id": "AFF_005",
       "canonical_name": "Angustia",
-      "term_kind": "estado",
+      "term_kind": "síntoma",
       "granularity": "atomic",
       "risk_weight": 2,
       "definition_clinical": {
-        "core": "Sufrimiento intenso con sensación de dolor psíquico o ansiedad severa.",
+        "core": "Estado de malestar intenso y paroxístico, con predominio de sensaciones somáticas de opresión (pecho, nudo en la garganta) y una vivencia de desbordamiento o inminencia catastrófica, que puede acompañarse de agitación o inmovilidad.",
         "required_features": [
           "inicio brusco",
           "intensidad elevada",
@@ -511,12 +521,6 @@
           "term_id": "AFF_008",
           "canonical_name": "Ansiedad afectiva",
           "reason": "La ansiedad afectiva es sostenida y de menor intensidad.",
-          "ref_status": "forward"
-        },
-        {
-          "term_id": "PAN_001",
-          "canonical_name": "Ataque de pánico",
-          "reason": "El pánico exige un cluster autonómico y temor a morir/perder control; la angustia puede ser un 'grito corporal' sin ese contenido.",
           "ref_status": "forward"
         }
       ],
@@ -747,7 +751,7 @@
     {
       "term_id": "AFF_008",
       "canonical_name": "Ansiedad afectiva",
-      "term_kind": "estado",
+      "term_kind": "síntoma",
       "granularity": "atomic",
       "risk_weight": 1,
       "definition_clinical": {
@@ -1024,11 +1028,6 @@
           "term_id": "AFF_015",
           "canonical_name": "Embotamiento afectivo",
           "reason": "El embotamiento es cuantitativo (reducción); el aplanamiento es más severo, cualitativo (ausencia)."
-        },
-        {
-          "term_id": "",
-          "canonical_name": "Depresión mayor",
-          "reason": "La depresión se acompaña de tristeza subjetiva intensa; el aplanamiento puede ocurrir sin sufrimiento subjetivo reportado."
         }
       ],
       "alerts": [],
@@ -1290,11 +1289,6 @@
           "term_id": "AFF_020",
           "canonical_name": "Hipotimia",
           "reason": "La depresión mayor supera el umbral en intensidad, número de síntomas y duración."
-        },
-        {
-          "term_id": "",
-          "canonical_name": "Duelo normal",
-          "reason": "El duelo tiene desencadenante identificable, curva temporal esperada y ausencia de pérdida de autoestima global."
         }
       ],
       "alerts": [],
@@ -1727,11 +1721,6 @@
           "term_id": "AFF_010",
           "canonical_name": "Aplanamiento afectivo",
           "reason": "El aplanamiento es síntoma primario; la fatiga emocional es reactiva a sobrecarga crónica."
-        },
-        {
-          "term_id": "",
-          "canonical_name": "Depresión mayor",
-          "reason": "La fatiga emocional puede preceder o acompañar la depresión, pero su especificidad está en la relación con sobrecarga de cuidado/trabajo."
         }
       ],
       "alerts": [],
@@ -1819,11 +1808,6 @@
           "term_id": "AFF_027",
           "canonical_name": "Manía",
           "reason": "La manía es más severa, con psicosis posible y deterioro marcado; la hipomanía no alcanza ese umbral."
-        },
-        {
-          "term_id": "",
-          "canonical_name": "Temperamento hipertímico",
-          "reason": "El temperamento hipertímico es rasgo estable, no episódico; la hipomanía es un cambio notorio respecto al basal."
         }
       ],
       "alerts": [],
@@ -1912,11 +1896,6 @@
           "term_id": "AFF_017",
           "canonical_name": "Eutimia",
           "reason": "La hipotimia implica descenso clínicamente significativo; la eutimia está en rango normativo."
-        },
-        {
-          "term_id": "",
-          "canonical_name": "Depresión mayor",
-          "reason": "La hipotimia no alcanza criterios de episodio depresivo mayor en número, intensidad o duración."
         }
       ],
       "alerts": [],
@@ -1947,6 +1926,22 @@
         },
         {
           "term": "desacuerdo afecto-contenido",
+          "context": "clínico",
+          "locale": "es"
+        },
+        {
+          "term": "Paratimia",
+          "context": "clínico",
+          "region": "universal",
+          "notes": "Término unificado"
+        },
+        {
+          "term": "afecto incongruente",
+          "context": "clínico",
+          "locale": "es"
+        },
+        {
+          "term": "discordancia afectiva",
           "context": "clínico",
           "locale": "es"
         }
@@ -2011,7 +2006,7 @@
     },
     {
       "term_id": "AFF_022",
-      "canonical_name": "Incontinencia Afectiva",
+      "canonical_name": "Incontinencia afectiva",
       "synonyms_and_slang": [
         {
           "term": "labilidad extrema",
@@ -2026,7 +2021,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 1,
       "definition_clinical": {
         "core": "Incapacidad para contener las reacciones emocionales, que surgen de forma rápida, intensa y a menudo desproporcionada ante estímulos mínimos.",
         "required_features": [
@@ -2110,7 +2105,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "estado",
+      "term_kind": "síntoma",
       "granularity": "atomic",
       "risk_weight": 3,
       "definition_clinical": {
@@ -2296,13 +2291,7 @@
           "context": ""
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "",
-          "canonical_name": "Hostilidad",
-          "reason": "La hostilidad es una actitud generalizada hacia otros; la irritabilidad es un estado de umbral bajo no necesariamente dirigido."
-        }
-      ],
+      "exclusions": [],
       "alerts": [],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
@@ -2811,13 +2800,7 @@
           "context": ""
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "",
-          "canonical_name": "Confusión",
-          "reason": "La confusión es desorientación cognitiva; la perplejidad es desconcierto afectivo-fenomenológico."
-        }
-      ],
+      "exclusions": [],
       "alerts": [],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
@@ -2894,11 +2877,6 @@
         }
       ],
       "exclusions": [
-        {
-          "term_id": "",
-          "canonical_name": "Ansiedad generalizada",
-          "reason": "La ansiedad generalizada es crónica y difusa; el pánico es episódico y agudo."
-        },
         {
           "term_id": "",
           "canonical_name": "Crisis autonómica médica",
@@ -3008,7 +2986,7 @@
     },
     {
       "term_id": "AFF_033",
-      "canonical_name": "Rigidez Afectiva",
+      "canonical_name": "Rigidez afectiva",
       "synonyms_and_slang": [
         {
           "term": "escasa modulación afectiva",
@@ -3018,7 +2996,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 1,
       "definition_clinical": {
         "core": "Incapacidad o dificultad marcada del paciente para modificar su estado de ánimo y su expresión afectiva según las variaciones del entorno o el contenido del pensamiento.",
         "required_features": [
@@ -3167,7 +3145,7 @@
     {
       "term_id": "AFF_035",
       "canonical_name": "Ánimo depresivo",
-      "term_kind": "estado",
+      "term_kind": "síntoma",
       "granularity": "atomic",
       "risk_weight": 1,
       "definition_clinical": {
@@ -3276,7 +3254,7 @@
     {
       "term_id": "AFF_036",
       "canonical_name": "Ánimo elevado",
-      "term_kind": "estado",
+      "term_kind": "síntoma",
       "granularity": "atomic",
       "risk_weight": 1,
       "definition_clinical": {
@@ -3566,17 +3544,17 @@
       "synonyms_and_slang": [
         {
           "term": "aseo",
-          "context": "clinical",
+          "context": "clínico",
           "locale": "es"
         },
         {
           "term": "desaliñado",
-          "context": "clinical",
+          "context": "clínico",
           "locale": "es"
         },
         {
           "term": "disheveled",
-          "context": "clinical",
+          "context": "clínico",
           "locale": "en"
         }
       ],
@@ -3718,12 +3696,12 @@
       "synonyms_and_slang": [
         {
           "term": "hipomimia",
-          "context": "clinical",
+          "context": "clínico",
           "locale": "es"
         },
         {
           "term": "amimia",
-          "context": "clinical",
+          "context": "clínico",
           "locale": "es"
         }
       ],
@@ -3757,13 +3735,7 @@
           "context": "apariencia_general"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "APP_004",
-          "canonical_name": "Facies y mímica",
-          "reason": "Sin exclusiones diferenciales obligatorias documentadas en esta versión."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -3977,7 +3949,7 @@
     },
     {
       "term_id": "ARC_003",
-      "canonical_name": "Bouffée Délirante",
+      "canonical_name": "Bouffée délirante",
       "synonyms_and_slang": [
         {
           "term": "psicosis delirante aguda",
@@ -4025,7 +3997,7 @@
       "exclusions": [
         {
           "term_id": "ARC_006",
-          "canonical_name": "Dementia Praecox",
+          "canonical_name": "Dementia praecox",
           "reason": "La bouffée délirante es esencialmente reversible y aguda; la dementia praecox es crónica y deteriorante."
         }
       ],
@@ -4147,7 +4119,7 @@
     },
     {
       "term_id": "ARC_005",
-      "canonical_name": "Demencia Precox (Concepto Kraepeliano)",
+      "canonical_name": "Demencia precox (concepto Kraepeliano)",
       "synonyms_and_slang": [
         {
           "term": "Demencia Temprana (Kraeplin)",
@@ -4159,7 +4131,7 @@
       "granularity": "atomic",
       "risk_weight": 0,
       "definition_clinical": {
-        "core": "Dementia praecox (del latín: 'locura prematura') es un diagnóstico psiquiátrico histórico ideado por el psiquiatra alemán Emil Kraepelin (originario de su libro de texto de 1893 pero fundamentado teóricamente como síndrome clínico maestro en 1899 en la 6ta ed.) para clasificar y aglomerar una entidad y proceso de afección cerebral crónico y degenerativo, inexorable que típicamente iniciaba de modo muy grave (y se caracterizaba primariamente en la fase crónica por un proceso devastador de desintegración y atrofia cognitiva-conativa, no primariamente intelectual a la usanza de las demencias seniles orgánicas o la de un déficit focal sino integrativo final) impactando y destrozando en primera mitad de la vida adulta o juventud ('temprana') fundamentalmente en sus aspectos prácticos integrativos sociales en fase terminal a pesar de cursar a grandes tramos con los síntomas activos como el Delirio, catatonia y hebefrénia y alucionaciones transitorias paranoicas pero resultando todos aquellos y cada uno irremediablemente y subsumidos en el deterioro/falta integrativa final residual y definitivo sin recuperación basal a nivel psicosocial.",
+        "core": "Dementia praecox (del latín: 'locura prematura') es un diagnóstico psiquiátrico histórico ideado por el psiquiatra alemán Emil Kraepelin (originario de su libro de texto de 1893 pero fundamentado teóricamente como síndrome clínico maestro en 1899 en la 6ta ed.) para clasificar y aglomerar una entidad y proceso de afección cerebral crónico y degenerativo, inexorable que típicamente iniciaba de modo muy grave (y se caracterizaba primariamente en la fase crónica por un proceso devastador de desintegración y atrofia cognitiva-conativa, no primariamente intelectual a la usanza de las demencias seniles orgánicas o la de un déficit focal sino integrativo final) impactando y destrozando en primera mitad de la vida adulta o juventud ('temprana') fundamentalmente en sus aspectos prácticos integrativos sociales en fase terminal a pesar de cursar a grandes tramos con los síntomas activos como el Delirio, catatonia y hebefrenia y alucinaciones transitorias paranoicas pero resultando todos aquellos y cada uno irremediablemente y subsumidos en el deterioro/falta integrativa final residual y definitivo sin recuperación basal a nivel psicosocial.",
         "required_features": [
           "Concepto fundacional etiológico unitario propuesto en contraposición de su 'Locura Maníaco Defensiva' de evolución cíclica que recupera al basal e integridad final, sirviendo de progenitor teórico inmediato del constructo esquizofrenico actual. Posteriormente, Bleuler acuña su término de 'Grupo de las Esquizofrenias' para reemplazar el término al evidenciar que estos individuos ni empezaban siempre siempre precozmente su enfermedad y ni se deterioraban en un deterioro estrictamente 'Demenciado' y terminal idéntico al Alzheimer en todas sus facultades por igual en vez su mente que se fragmentaba / disociaba primariamente las funciones basales operativas del fluir unificado o 'escindía'."
         ],
@@ -4185,13 +4157,7 @@
           "context": ""
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "",
-          "canonical_name": "Esquizofrenia concepto Bleuleriano",
-          "reason": "Bleuler rebautizó la Dementia Praecox prestando mucha menos importancia nuclear de diagnostico a un futuro curso inexorable siempre o a un deterioro total como piedra filosofal unificadora del mismo o al inicio cronológico obligatorio previo a los 30 años; él prefirió focalizar e incluir pacientes por la psicopatología primaria observada activa de su 'escisión' patológica vivencial basal (Esquizofrenia - las cuatro 'A': Asociaciones, Afecto, Autismo y Ambivalencia) lo que a la postre resultó ser la escuela que influyó más al DSM contemporáneo en USA. (El DSM hoy usa un concepto mixto pero eminentemente Bleuleriano con criterio cronológico y de deterioro de vuelta para el core sintomático a futuro, tratando de amalgamar los sistemas diagnósticos de ambas históricas fundaciones epistemológicas de la psicopatología fenomenológica estricta que no logró unirse del todo hasta decenios más tarde en consensos)."
-        }
-      ],
+      "exclusions": [],
       "alerts": [],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
@@ -4204,15 +4170,26 @@
     },
     {
       "term_id": "ARC_006",
-      "canonical_name": "Dementia Praecox",
+      "canonical_name": "Dementia praecox",
       "synonyms_and_slang": [
         {
           "term": "demencia precoz",
           "context": "clínico",
           "locale": "es"
+        },
+        {
+          "term": "Demencia precox (concepto Kraepeliano)",
+          "context": "clínico",
+          "region": "universal",
+          "notes": "Término unificado"
+        },
+        {
+          "term": "Demencia Temprana (Kraeplin)",
+          "context": "clínico",
+          "locale": "es"
         }
       ],
-      "term_kind": "estado",
+      "term_kind": "concepto_histórico",
       "granularity": "atomic",
       "risk_weight": 3,
       "definition_clinical": {
@@ -4462,6 +4439,17 @@
           "term": "gran histeria de Charcot",
           "context": "clínico",
           "locale": "es"
+        },
+        {
+          "term": "Histeria (Neurosis Histérica)",
+          "context": "clínico",
+          "region": "universal",
+          "notes": "Término unificado"
+        },
+        {
+          "term": "Neurosis Histérica de Freud / Histeria de Conversión y Disociativa Somática Clásica de Charcot a Pinel.",
+          "context": "clínico",
+          "locale": "es"
         }
       ],
       "term_kind": "estado",
@@ -4572,13 +4560,7 @@
           "context": ""
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "",
-          "canonical_name": "DSM-5 o CIE-11 Trastorno de Síntomas Neurológicos Funcionales o el Trastorno Disociativo",
-          "reason": "En la actual escuela el constructo unitario histórico de la gigantesca 'Neurosis Histérica/Histeria' se subdividió quirúrgicamente separando los síntomas corporales / neurológicos bizarros puros en el grupo y capítulo de Síntomas Somáticos (Ej, Trastorno Funcional Neurológico Ciego/Motor –Conversivos somáticos sin alusión etiológica obligatoria–) hacia un lado, y los fenómenos y desvíos de memoria, y pérdida identitaria hacia un gran distinto cajón de manual en los Trastornos de tipo Disociador de nivel Conciencia/Identidad en otros espectros distintos, perdiendo en la actualidad cualquier lazo nominal/terminológico a nivel de diagnóstico con dicho histórico concepto decimonónico por considerarse o peyorativo, mal estandarizado en investigación neurobiológica o demasiado ligado a un constructo psicoanalítico de base etio patológica dogmática no validada en consensos biomédicos generales amplios modernos."
-        }
-      ],
+      "exclusions": [],
       "alerts": [],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
@@ -4591,7 +4573,7 @@
     },
     {
       "term_id": "ARC_011",
-      "canonical_name": "Locura Circular",
+      "canonical_name": "Locura circular",
       "synonyms_and_slang": [
         {
           "term": "folie circulaire",
@@ -4604,7 +4586,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "estado",
+      "term_kind": "concepto_histórico",
       "granularity": "atomic",
       "risk_weight": 2,
       "definition_clinical": {
@@ -4680,7 +4662,7 @@
     },
     {
       "term_id": "ARC_012",
-      "canonical_name": "Locura de la Duda",
+      "canonical_name": "Locura de la duda",
       "synonyms_and_slang": [
         {
           "term": "folie du doute",
@@ -4849,7 +4831,7 @@
     },
     {
       "term_id": "ARC_014",
-      "canonical_name": "Manía sin Delirio",
+      "canonical_name": "Manía sin delirio",
       "synonyms_and_slang": [
         {
           "term": "manie sans délire",
@@ -4974,7 +4956,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "DEL_001",
+          "term_id": "DEL_010",
           "canonical_name": "Delirio primario",
           "reason": "La monomanía es el término decimonónico para lo que hoy llamaríamos trastorno delirante."
         }
@@ -5188,7 +5170,7 @@
     },
     {
       "term_id": "ARC_018",
-      "canonical_name": "Paranoia Querulans",
+      "canonical_name": "Paranoia querulans",
       "synonyms_and_slang": [
         {
           "term": "delirio de querulancia",
@@ -5414,7 +5396,7 @@
       ],
       "exclusions": [
         {
-          "term_id": "DEL_023",
+          "term_id": "DEL_018",
           "canonical_name": "Humor delirante",
           "reason": "Wahnstimmung es el término técnico original en alemán usado en fenomenología pura."
         }
@@ -5529,7 +5511,7 @@
     },
     {
       "term_id": "CAT_002",
-      "canonical_name": "Estupor Catatónico",
+      "canonical_name": "Estupor catatónico",
       "synonyms_and_slang": [
         {
           "term": "estupor psiquiátrico",
@@ -5567,13 +5549,7 @@
           "context": "conducta_motriz"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "CAT_999",
-          "canonical_name": "Estupor orgánico",
-          "reason": "En el estupor orgánico suele haber compromiso del nivel de conciencia y ausencia de reflejos posturales complejos."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "medical_emergency",
@@ -5704,7 +5680,7 @@
     },
     {
       "term_id": "CAT_004",
-      "canonical_name": "Mutismo Catatónico",
+      "canonical_name": "Mutismo catatónico",
       "synonyms_and_slang": [
         {
           "term": "mutismo acinético",
@@ -5792,7 +5768,7 @@
     },
     {
       "term_id": "CAT_005",
-      "canonical_name": "Obediencia Automática",
+      "canonical_name": "Obediencia automática",
       "synonyms_and_slang": [
         {
           "term": "automatismo de mando",
@@ -6020,15 +5996,15 @@
     },
     {
       "term_id": "CNS_003",
-      "canonical_name": "Conciencia Ladeada (Twilight state)",
+      "canonical_name": "Estado crepuscular",
       "synonyms_and_slang": [
         {
-          "term": "Estado Crepuscular",
+          "term": "Estado crepuscular",
           "context": "clínico",
           "locale": "es"
         },
         {
-          "term": "ESTADO ONIROIDE EPILÉPTICO",
+          "term": "Estado oniroide epiléptico",
           "context": "clínico",
           "locale": "es"
         }
@@ -6167,7 +6143,7 @@
     },
     {
       "term_id": "CNS_005",
-      "canonical_name": "Estupor Psiquiátrico",
+      "canonical_name": "Estupor psiquiátrico",
       "synonyms_and_slang": [
         {
           "term": "mutismo acinético funcional",
@@ -6823,13 +6799,7 @@
           "context": "funciones_cognitivas"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "COG_006",
-          "canonical_name": "Pseudología fantástica",
-          "reason": "En la confabulación el fin es rellenar un hueco amnésico; en la pseudología el fin es la gratificación narcisista."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "neurological_note",
@@ -18004,6 +17974,59 @@
       "mappings": {}
     },
     {
+      "term_id": "RSK_001",
+      "canonical_name": "Riesgo autolítico (general)",
+      "term_kind": "factor de riesgo",
+      "granularity": "atomic",
+      "risk_weight": 3,
+      "definition_clinical": {
+        "core": "Presencia de cualquier ideación, conducta o planificación dirigida a causarse daño a sí mismo, sin especificar el tipo o nivel de inminencia.",
+        "required_features": [
+          "Potencial de daño autoinfligido",
+          "Puede o no haber intencionalidad letal clara"
+        ]
+      },
+      "operationalization": {
+        "detectable_by": [
+          "clinical_interview",
+          "patient_report",
+          "collateral_history"
+        ],
+        "time_relation": [
+          "current",
+          "past"
+        ]
+      },
+      "alerts": [
+        "Requiere evaluación urgente de la inminencia, intencionalidad letal y planificación.",
+        "Activar protocolos de seguridad y prevención del suicidio si se confirma."
+      ],
+      "synonyms_and_slang": [
+        {
+          "term": "Riesgo de suicidio",
+          "context": "clínico",
+          "region": "universal",
+          "notes": "Término genérico"
+        }
+      ],
+      "exclusions": [],
+      "related_terms": [
+        {
+          "term_id": "RSK_006",
+          "relationship": "broadens"
+        },
+        {
+          "term_id": "RSK_007",
+          "relationship": "broadens"
+        }
+      ],
+      "teaching_notes": [
+        "Término paraguas que incluye desde ideación suicida pasiva hasta intento suicida. Útil cuando no se puede o no se ha especificado el nivel exacto de riesgo."
+      ],
+      "cognitive_pitfalls": [],
+      "version": "1.0.0"
+    },
+    {
       "term_id": "RSK_002",
       "canonical_name": "Acceso a medios letales",
       "synonyms_and_slang": [
@@ -19777,14 +19800,7 @@
           "context": "conciencia_del_yo"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "THO_012",
-          "canonical_name": "Obsesiones",
-          "reason": "La obsesión es un pensamiento intrusivo sobre un tema; la hiperreflexividad es una alteración de la estructura de la conciencia sobre procesos automáticos.",
-          "ref_status": "forward"
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "clinical_significance",
@@ -19969,14 +19985,7 @@
           "context": "conciencia_del_yo_y_mundo"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "COG_001",
-          "canonical_name": "Confusión",
-          "reason": "La confusión es desorientación global; aquí la orientación es normal pero la 'familiaridad' se ha perdido.",
-          "ref_status": "forward"
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "clinical_significance",
@@ -20062,14 +20071,7 @@
           "context": "conciencia_del_yo_limites"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "COG_001",
-          "canonical_name": "Confusión",
-          "reason": "En la confusión la falla es de orientación global; el transitivismo es una falla específica de la frontera del yo.",
-          "ref_status": "forward"
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "clinical_severity",
@@ -20380,13 +20382,7 @@
           "context": "conciencia_corporal"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "SOM_003",
-          "canonical_name": "Anorexia nerviosa",
-          "reason": "En la anorexia la preocupación es global sobre el peso/figura; en la dismorfofobia suele ser sobre una parte específica del cuerpo."
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "diagnostic_warning",
@@ -21570,14 +21566,7 @@
           "context": "catatonia_o_desorganizacion"
         }
       ],
-      "exclusions": [
-        {
-          "term_id": "THO_012",
-          "canonical_name": "Obsesiones",
-          "reason": "La obsesión es una lucha mental interna; la verbigeración es una conducta verbal motora y repetitiva sin lucha.",
-          "ref_status": "forward"
-        }
-      ],
+      "exclusions": [],
       "alerts": [
         {
           "type": "clinical_warning",

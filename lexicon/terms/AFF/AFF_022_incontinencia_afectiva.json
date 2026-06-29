@@ -1,6 +1,6 @@
 {
   "term_id": "AFF_022",
-  "canonical_name": "Incontinencia Afectiva",
+  "canonical_name": "Incontinencia afectiva",
   "synonyms_and_slang": [
     {
       "term": "labilidad extrema",
@@ -15,7 +15,7 @@
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 1,
   "definition_clinical": {
     "core": "Incapacidad para contener las reacciones emocionales, que surgen de forma rápida, intensa y a menudo desproporcionada ante estímulos mínimos.",
     "required_features": [

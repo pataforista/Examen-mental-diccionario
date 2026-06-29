@@ -1,7 +1,7 @@
-# Cobertura del lexicón vs. Oyeobode (Symptoms in the Mind)
+# Cobertura del lexicón vs. Oyebode (Symptoms in the Mind)
 
 > Esta matriz es una guía de cobertura basada en los apartados clínicos clásicos del
-> examen mental descritos por Oyeobode. No reproduce texto del libro; sirve para
+> examen mental descritos por Oyebode. No reproduce texto del libro; sirve para
 > orientar la ampliación del lexicón con términos ampliamente aceptados en MSE.
 
 ## 1) Afecto / estado de ánimo (AFF)

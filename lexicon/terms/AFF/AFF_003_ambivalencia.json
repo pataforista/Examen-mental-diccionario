@@ -16,9 +16,25 @@
       "term": "no puedo decidirme",
       "context": "patient_report",
       "locale": "es"
+    },
+    {
+      "term": "Ambivalencia afectiva",
+      "context": "clínico",
+      "region": "universal",
+      "notes": "Término unificado"
+    },
+    {
+      "term": "sentimientos contradictorios",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "ambivalencia emocional",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
-  "term_kind": "fenómeno",
+  "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -93,12 +109,6 @@
     }
   ],
   "exclusions": [
-    {
-      "term_id": "COG_0XX",
-      "canonical_name": "Indecisión por rumiación/obsesión",
-      "reason": "En obsesivo-rumiativo predomina duda iterativa con rituales/chequeos o intrusiones egodistónicas; en ambivalencia hay conflicto de polos afectivos hacia el mismo objeto sin estructura obsesiva necesaria.",
-      "ref_status": "forward"
-    },
     {
       "term_id": "AFF_025",
       "canonical_name": "Labilidad afectiva",

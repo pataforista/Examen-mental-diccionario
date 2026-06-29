@@ -64,11 +64,6 @@
   "exclusions": [
     {
       "term_id": "",
-      "canonical_name": "Ansiedad generalizada",
-      "reason": "La ansiedad generalizada es crónica y difusa; el pánico es episódico y agudo."
-    },
-    {
-      "term_id": "",
       "canonical_name": "Crisis autonómica médica",
       "reason": "Descartar causas médicas (arritmias, hipoglucemia, feocromocitoma) antes de codificar como pánico."
     }

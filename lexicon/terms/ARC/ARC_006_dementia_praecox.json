@@ -1,14 +1,25 @@
 {
   "term_id": "ARC_006",
-  "canonical_name": "Dementia Praecox",
+  "canonical_name": "Dementia praecox",
   "synonyms_and_slang": [
     {
       "term": "demencia precoz",
       "context": "clínico",
       "locale": "es"
+    },
+    {
+      "term": "Demencia precox (concepto Kraepeliano)",
+      "context": "clínico",
+      "region": "universal",
+      "notes": "Término unificado"
+    },
+    {
+      "term": "Demencia Temprana (Kraeplin)",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
-  "term_kind": "estado",
+  "term_kind": "concepto_histórico",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {
