@@ -1,0 +1,51 @@
+{
+  "id": "/",
+  "name": "Diccionario de Examen Mental",
+  "short_name": "MSE Diccionario",
+  "description": "Recurso clínico especializado para psiquiatría y psicología médica. Incluye herramientas de semiología, asistente de redacción y escenarios diagnósticos (OSCE).",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF8E7",
+  "theme_color": "#FFF8E7",
+  "dir": "ltr",
+  "lang": "es-MX",
+  "categories": ["medical", "education", "productivity"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile.png",
+      "sizes": "540x960",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Diccionario de términos de examen mental"
+    },
+    {
+      "src": "screenshots/desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Vista de escritorio del diccionario clínico"
+    }
+  ],
+  "orientation": "portrait"
+}
