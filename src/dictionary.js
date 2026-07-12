@@ -931,6 +931,15 @@ export const dictionary = {
         `;
     window.scrollTo(0, 0);
   },
+  navIndicator: {
+    // The active-tab underline is rendered purely in CSS via
+    // `.bottom-nav button.active::after`, so there is no DOM node to move.
+    // These no-ops exist so the calls in init()/switchTab() don't throw a
+    // TypeError (which previously aborted switchTab before it could render
+    // the target view, breaking every bottom-nav button).
+    init: function () {},
+    update: function () {}
+  },
   switchTab: function (id) {
     this.utils.haptic();
     this.nodes.navButtons.forEach(btn => {
