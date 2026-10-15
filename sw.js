@@ -1,9 +1,19 @@
-const CACHE_NAME = "clinical-pwa-v3.1";
+const CACHE_NAME = "clinical-pwa-v3.2";
 const ASSETS = [
   "/",
   "index.html",
   "style.css",
-  "app.js",
+  // ES modules loaded by index.html (no bundling step needed to serve the app)
+  "src/main.js",
+  "src/state.js",
+  "src/utils.js",
+  "src/theme.js",
+  "src/toast.js",
+  "src/integrator.js",
+  "src/game.js",
+  "src/donation.js",
+  "src/pwa.js",
+  "src/dictionary.js",
   "icon-192.png",
   "icon-512.png",
   "apple-touch-icon.png",
@@ -36,7 +46,7 @@ const ASSETS = [
   "OSCE_010–OSCE_015.json",
   "OSCE_016–025.json",
   "OSCE_026–035.json",
-  "https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js",
+  "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js",
   "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;600;700&display=swap",
 ];
@@ -104,10 +114,20 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Default: Cache-First for static assets
+  // Default: Cache-First for static assets. Successful same-origin GETs that
+  // were not precached (e.g. hashed bundles from a Vite build) are stored on
+  // first use so the app keeps working offline.
   event.respondWith(
     caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+      if (response) return response;
+      return fetch(event.request).then((networkResponse) => {
+        const sameOrigin = new URL(event.request.url).origin === self.location.origin;
+        if (event.request.method === "GET" && sameOrigin && networkResponse.ok) {
+          const copy = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
+        return networkResponse;
+      });
     }),
   );
 });

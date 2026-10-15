@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint src sw.js",
+    "validate": "node scripts/validate_terms.js",
+    "test": "npm run lint && npm run validate"
   },
   "repository": {
     "type": "git",

@@ -57,6 +57,9 @@
     --accent-rgb: 149, 33, 92;
     --primary: var(--v-primary);
     --primary-rgb: 122, 205, 191;
+    /* Teal oscuro para TEXTO sobre fondos claros: --primary (#7acdbf) solo da 1.8:1 */
+    --primary-text: #1b6e60;
+    --alert-text: #742a2a;
     --primary-container: var(--v-primary-container);
     --on-primary-container: var(--v-on-primary-container);
     --secondary-container: var(--v-secondary-container);
@@ -100,6 +103,8 @@
     --accent-rgb: 185, 224, 166;
     --primary: var(--o-accent-b);
     --primary-rgb: 93, 202, 165;
+    --primary-text: var(--primary);
+    --alert-text: #f09595;
     --primary-container: var(--o-primary-container);
     --on-primary-container: var(--o-on-primary-container);
     --secondary-container: var(--o-secondary-container);
@@ -263,7 +268,7 @@ body::before {
 
 .search-container input {
     width: 100%;
-    padding: 1rem 1rem 1rem 3.5rem;
+    padding: 1rem 3rem 1rem 3.5rem;
     border: 4px solid var(--bau-black);
     border-radius: var(--radius-sm);
     background: white;
@@ -587,6 +592,7 @@ main {
 
 [data-theme="dark"] .badge-risk-critical {
     background: var(--o-accent-a);
+    color: var(--btn-text);
     box-shadow: var(--o-shadow-red);
     border: none;
 }
@@ -669,7 +675,15 @@ main {
     transition: background 0.3s var(--md-sys-motion-standard), color 0.3s;
 }
 
-[data-theme="dark"] .bottom-nav button.active .nav-icon {
+/* Pestaña activa: misma píldora en ambos temas (antes solo existía en oscuro
+   y en claro la pestaña activa era indistinguible) */
+.bottom-nav button.active {
+    opacity: 1;
+    font-weight: 800;
+    color: var(--primary-text);
+}
+
+.bottom-nav button.active .nav-icon {
     background: var(--primary);
     color: var(--bau-black);
 }
@@ -737,7 +751,7 @@ main {
 
 .domain-card .domain-subtitle {
     font-size: 0.65rem;
-    opacity: 0.6;
+    opacity: 0.8;
     text-transform: none;
     font-style: italic;
 }
@@ -884,7 +898,7 @@ main {
 [data-theme="dark"] .tag {
     background: var(--bau-black);
     border-color: var(--primary);
-    color: var(--primary);
+    color: var(--primary-text);
     box-shadow: 2px 2px 0px var(--primary);
 }
 
@@ -930,14 +944,14 @@ main {
     font-weight: 600;
     transition: all 0.2s;
     color: var(--text-p);
-    opacity: 0.6;
+    opacity: 0.75;
 }
 
 .segmented-btn[aria-selected="true"] {
     background: var(--bg);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 1;
-    color: var(--primary);
+    color: var(--primary-text);
 }
 
 [data-theme="dark"] .segmented-btn[aria-selected="true"] {
@@ -1103,7 +1117,7 @@ main {
     background: none;
     border: none;
     color: var(--text-p);
-    opacity: 0.6;
+    opacity: 0.75;
     font-size: 0.8rem;
     cursor: pointer;
     text-decoration: underline;
@@ -1243,7 +1257,7 @@ main {
 .chroma-info .handle {
     display: block;
     font-size: 0.85rem;
-    color: var(--primary);
+    color: var(--primary-text);
     margin-bottom: 0.5rem;
 }
 
@@ -1474,7 +1488,7 @@ main {
 
 .recent-search-tag {
     background: rgba(var(--primary-rgb), 0.12);
-    color: var(--primary);
+    color: var(--primary-text);
     padding: 0.3rem 0.75rem;
     border-radius: 20px;
     font-size: 0.78rem;
@@ -1712,7 +1726,8 @@ main {
 
     /* Search */
     .search-container input {
-        padding: 0.7rem 1rem;
+        /* deja espacio a la lupa (izq.) y al botón ✕ (der.) */
+        padding: 0.7rem 2.75rem 0.7rem 3.25rem;
         font-size: 1rem; /* prevents iOS zoom */
         border-radius: 14px;
     }
@@ -2044,7 +2059,7 @@ main {
 
 .game-instructions-banner h4 {
     margin: 0 0 0.25rem 0;
-    color: var(--primary);
+    color: var(--primary-text);
     font-size: 0.9rem;
     text-transform: uppercase;
 }
@@ -2076,7 +2091,7 @@ main {
 
 .footer-content p {
     font-size: 0.8rem;
-    opacity: 0.6;
+    opacity: 0.75;
     margin: 0;
 }
 
@@ -2098,7 +2113,7 @@ main {
 .m3-title {
     font-family: 'Outfit', sans-serif;
     font-weight: 800;
-    color: var(--primary);
+    color: var(--primary-text);
     margin: 1rem 0 0.25rem;
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -2249,7 +2264,7 @@ main {
     font-size: 1.6rem;
     font-weight: 800;
     margin: 0;
-    color: var(--primary);
+    color: var(--primary-text);
     letter-spacing: -0.01em;
 }
 
@@ -2384,7 +2399,7 @@ main {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--primary);
+    color: var(--primary-text);
 }
 
 [data-theme="dark"] .report-output {
@@ -2416,7 +2431,7 @@ main {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--primary);
+    color: var(--primary-text);
     display: block;
     padding: 0 0.25rem 0.5rem;
     border-bottom: 2px solid var(--primary);
@@ -2630,7 +2645,7 @@ main {
 }
 
 [data-theme="dark"] .section-label {
-    color: var(--sub);
+    color: var(--btn-text);
 }
 
 [data-theme="dark"] .alpha-group-header {
@@ -2983,7 +2998,7 @@ main {
     text-align: left;
 }
 
-.game-config-toggle:hover { color: var(--primary); }
+.game-config-toggle:hover { color: var(--primary-text); }
 
 #game-config-arrow {
     font-size: 0.7rem;
@@ -3504,4 +3519,9 @@ textarea:focus-visible,
   inset: 0;
   background: repeating-linear-gradient(45deg, transparent 0px, transparent 8px, rgba(0,0,0,0.05) 8px, rgba(0,0,0,0.05) 10px);
   pointer-events: none;
+}
+
+/* Contraste en modo oscuro: el ladrillo (#974443) no se lee sobre fondo oscuro */
+[data-theme="dark"] .subcomponent-label {
+    color: var(--bad);
 }

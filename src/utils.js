@@ -15,7 +15,8 @@ export const utils = {
     }
   },
   haptic: function () {
-    if (("vibrate" in navigator)) {
+    // Chrome blocks (and logs) vibrate() before the first user gesture.
+    if (("vibrate" in navigator) && navigator.userActivation?.hasBeenActive !== false) {
       try {
         navigator.vibrate(10);
       } catch(e) { console.warn(e); }
