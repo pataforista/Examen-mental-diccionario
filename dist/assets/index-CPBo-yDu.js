@@ -53,7 +53,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                 ${e.map(e=>`
                     <div class="card" onclick="App.viewTerm('${e.item.term_id}')" style="cursor: pointer; padding: 1.25rem;">
                         <div style="display:flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <strong style="color: var(--primary); font-size: 1.1rem; letter-spacing: -0.02em;">
+                            <strong style="color: var(--primary-text); font-size: 1.1rem; letter-spacing: -0.02em;">
                                 ${this.utils.sanitizeHTML(e.item.canonical_name)}
                             </strong>
                             <div class="badge ${e.item.risk_weight>1?`badge-risk-critical`:``}" style="font-size: 0.65rem; border: 1px solid var(--border-subtle);">
@@ -110,7 +110,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                         <div class="alert-critical-header">
                             <span>⚠️</span> ALERTA DE RIESGO CLÍNICO
                         </div>
-                        <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: #742a2a;">
+                        <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: var(--alert-text);">
                             ${i.length>0?this.utils.sanitizeHTML(i[0].message):`Este término implica un riesgo de seguridad o manejo crítico.`}
                         </p>
                     </div>
@@ -233,7 +233,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
         `,this.renderView(`about`),this.nodes.navButtons.forEach(e=>e.classList.remove(`active`)),this.setupChromaGrid()},setupChromaGrid:function(){let e=document.getElementById(`about-chroma-grid`);if(!e||typeof gsap>`u`)return;gsap.killTweensOf(this.data.chromaPos);let t=gsap.quickSetter(e,`--x`,`px`),n=gsap.quickSetter(e,`--y`,`px`);e.addEventListener(`pointermove`,r=>{let i=e.getBoundingClientRect(),a=r.clientX-i.left,o=r.clientY-i.top;gsap.to(this.data.chromaPos,{x:a,y:o,duration:.45,ease:`power3.out`,onUpdate:()=>{t(this.data.chromaPos.x),n(this.data.chromaPos.y)},overwrite:!0})}),e.querySelectorAll(`.chroma-card`).forEach(e=>{e.addEventListener(`mousemove`,t=>{let n=e.getBoundingClientRect(),r=t.clientX-n.left,i=t.clientY-n.top;e.style.setProperty(`--mouse-x`,`${r}px`),e.style.setProperty(`--mouse-y`,`${i}px`)})})},closeTerm:function(){this.nodes.search.value.length>=2?this.renderView(`results`):history.back()},renderDomains:function(){this.nodes.domainView.innerHTML=`
             <div id="domain-grid-container">
                 <div class="clinical-box" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(var(--primary-rgb), 0.05); border-radius: 12px;">
-                    <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary);">Explorador de Dominios</h3>
+                    <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary-text);">Explorador de Dominios</h3>
                     <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">Seleccione un dominio para ver su estructura clínica y términos asociados.</p>
                 </div>
                 <div class="domain-grid">
@@ -241,7 +241,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                         <div class="domain-card" onclick="App.viewDomainDetails('${e.domain_id}')">
                             <div class="domain-icon">${this.getDomainIcon(e.domain_id)}</div>
                             <span class="domain-title">${this.utils.sanitizeHTML(e.label_es||e.domain_name||e.domain_id)}</span>
-                            <div class="domain-subtitle" style="font-size: 0.6rem; opacity: 0.6; text-transform: none;">
+                            <div class="domain-subtitle" style="font-size: 0.65rem; opacity: 0.8; text-transform: none;">
                                 ${e.subcomponents?e.subcomponents.length+` áreas`:`Detalles`}
                             </div>
                         </div>
@@ -303,13 +303,13 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                 </div>
             `:``}
         `,this.nodes.content.scrollTop=0},closeDomainDetails:function(){document.getElementById(`domain-detail-container`).classList.add(`hidden`),document.getElementById(`domain-grid-container`).classList.remove(`hidden`),this.nodes.content.scrollTop=0},renderCases:function(){this.nodes.casesView.innerHTML=`
-            <h3 style="margin-top:0; color: var(--primary);">Escenarios OSCE</h3>
+            <h3 style="margin-top:0; color: var(--primary-text);">Escenarios OSCE</h3>
             <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">Seleccione un caso para practicar el diagnóstico diferencial.</p>
             ${this.data.cases.map(e=>`
                 <div class="card" onclick="App.renderCase('${e.case_id}')" style="padding: 1rem; cursor: pointer;">
                     <div style="display:flex; justify-content: space-between; align-items: center;">
                         <span class="badge" style="background:#edf2f7; color: #2d3748;">Nivel ${this.utils.sanitizeHTML(String(e.level))}</span>
-                        <code style="font-size: 0.7rem; opacity: 0.5;">${this.utils.sanitizeHTML(e.case_id)}</code>
+                        <code style="font-size: 0.7rem; opacity: 0.75;">${this.utils.sanitizeHTML(e.case_id)}</code>
                     </div>
                     <p style="margin: 0.75rem 0; font-weight: 600; color: var(--primary-dark);">
                         ${this.utils.sanitizeHTML(e.stem.setting.replace(/_/g,` `))}
@@ -317,14 +317,14 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
                         ${this.utils.sanitizeHTML(e.stem.contextual_notes)}
                     </p>
-                    <div style="font-size: 0.75rem; color: var(--primary); font-weight: 600; text-align: right;">
+                    <div style="font-size: 0.75rem; color: var(--primary-text); font-weight: 600; text-align: right;">
                         Ver Caso →
                     </div>
                 </div>
             `).join(``)}
         `},renderCase:function(e){let t=this.data.cases.find(t=>t.case_id===e);if(!t)return;this.donation.increment();let n=Object.entries(t.domains).map(([e,t])=>`
                 <div class="domain-card" style="border: 1px solid var(--border); padding: 0.75rem; border-radius: 8px; font-size: 0.85rem;">
-                    <div style="font-weight:bold; color:var(--primary); margin-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">${e}</div>
+                    <div style="font-weight:bold; color:var(--primary-text); margin-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">${e}</div>
                     <ul style="padding-left: 1rem; margin:0;">${Object.entries(t).map(([e,t])=>`<li><strong>${e.replace(/_/g,` `)}:</strong> ${String(t||``).replace(/_/g,` `)}</li>`).join(``)}</ul>
                 </div>
             `).join(``);this.nodes.casesView.innerHTML=`
@@ -355,7 +355,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
 
                     <div id="analysis-content" style="display: none; text-align: left; margin-top: 1.5rem; animation: fadeIn 0.5s;">
                         <div style="background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
-                            <h4 style="margin-top:0; color: var(--primary);">Síndrome Principal</h4>
+                            <h4 style="margin-top:0; color: var(--primary-text);">Síndrome Principal</h4>
                             <p style="font-size: 1.1rem; font-weight: bold;">${this.utils.sanitizeHTML(t.expected_engine_output.primary_syndrome.replace(/_/g,` `))}</p>
                             
                             <div style="margin-top: 1rem; display:flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -368,7 +368,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                                 <strong>Claves Diagnósticas:</strong>
                                 <ul>${t.assessment_keys.key_discriminators.map(e=>`<li>${this.utils.sanitizeHTML(e.replace(/_/g,` `))}</li>`).join(``)}</ul>
                             </div>
-                            <div style="background: rgba(197, 48, 48, 0.1); color: #742a2a; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
+                            <div style="background: rgba(197, 48, 48, 0.1); color: var(--alert-text); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
                                 <strong>Errores a Evitar:</strong>
                                 <ul>${t.assessment_keys.errors_to_avoid.map(e=>`<li>${this.utils.sanitizeHTML(e.replace(/_/g,` `))}</li>`).join(``)}</ul>
                             </div>
@@ -376,4 +376,4 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                     </div>
                 </div>
             </div>
-        `,window.scrollTo(0,0)},navIndicator:{init:function(){},update:function(){}},switchTab:function(e){this.utils.haptic(),this.nodes.navButtons.forEach(t=>{let n=t.id===e;t.classList.toggle(`active`,n),n?t.setAttribute(`aria-current`,`page`):t.removeAttribute(`aria-current`)}),this.navIndicator.update(),this.nodes.search.value=``,e===`nav-dictionary`?(this.data.currentView=`dictionary`,this.renderView(`dictionary`)):e===`nav-domains`?(this.data.currentView=`domain`,this.renderView(`domain`),this.renderDomains()):e===`nav-cases`?(this.data.currentView=`cases`,this.renderView(`cases`),this.renderCases()):e===`nav-integrator`?(this.data.currentView=`integrator`,this.integrator.init(),this.renderView(`integrator`)):e===`nav-game`?(this.data.currentView=`game`,this.game.init(),this.renderView(`game`)):this.game&&this.game.stopTimer&&this.game.stopTimer()},renderView:function(e){e!==`game`&&this.game&&this.game.stopTimer&&this.game.stopTimer(),[`dictionary`,`results`,`term`,`domain`,`cases`,`integrator`,`about`,`game`].forEach(t=>{let n=this.nodes[`${t}View`];n&&(t===e?(n.classList.remove(`hidden`),n.classList.remove(`view-enter`),n.offsetWidth,n.classList.add(`view-enter`)):n.classList.add(`hidden`))})}}}));t((()=>{r(),a(),s(),l(),d(),p(),h(),_(),y();var e={data:n,utils:i,theme:o,integrator:c,game:u,donation:f,pwa:m,toast:g,...v};window.App=e,document.addEventListener(`DOMContentLoaded`,()=>{e.init()})}))();
+        `,window.scrollTo(0,0)},navIndicator:{init:function(){},update:function(){}},switchTab:function(e){this.utils.haptic(),this.nodes.navButtons.forEach(t=>{let n=t.id===e;t.classList.toggle(`active`,n),n?t.setAttribute(`aria-current`,`page`):t.removeAttribute(`aria-current`)}),this.navIndicator.update(),this.nodes.search.value=``,this.nodes.clearSearchBtn&&this.nodes.clearSearchBtn.classList.add(`hidden`),e===`nav-dictionary`?(this.data.currentView=`dictionary`,this.renderView(`dictionary`)):e===`nav-domains`?(this.data.currentView=`domain`,this.renderView(`domain`),this.renderDomains()):e===`nav-cases`?(this.data.currentView=`cases`,this.renderView(`cases`),this.renderCases()):e===`nav-integrator`?(this.data.currentView=`integrator`,this.integrator.init(),this.renderView(`integrator`)):e===`nav-game`?(this.data.currentView=`game`,this.game.init(),this.renderView(`game`)):this.game&&this.game.stopTimer&&this.game.stopTimer()},renderView:function(e){e!==`game`&&this.game&&this.game.stopTimer&&this.game.stopTimer(),[`dictionary`,`results`,`term`,`domain`,`cases`,`integrator`,`about`,`game`].forEach(t=>{let n=this.nodes[`${t}View`];n&&(t===e?(n.classList.remove(`hidden`),n.classList.remove(`view-enter`),n.offsetWidth,n.classList.add(`view-enter`)):n.classList.add(`hidden`))})}}}));t((()=>{r(),a(),s(),l(),d(),p(),h(),_(),y();var e={data:n,utils:i,theme:o,integrator:c,game:u,donation:f,pwa:m,toast:g,...v};window.App=e,document.addEventListener(`DOMContentLoaded`,()=>{e.init()})}))();

@@ -393,7 +393,7 @@ export const dictionary = {
                 ${results.map(r => `
                     <div class="card" onclick="App.viewTerm('${r.item.term_id}')" style="cursor: pointer; padding: 1.25rem;">
                         <div style="display:flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <strong style="color: var(--primary); font-size: 1.1rem; letter-spacing: -0.02em;">
+                            <strong style="color: var(--primary-text); font-size: 1.1rem; letter-spacing: -0.02em;">
                                 ${this.utils.sanitizeHTML(r.item.canonical_name)}
                             </strong>
                             <div class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}" style="font-size: 0.65rem; border: 1px solid var(--border-subtle);">
@@ -537,7 +537,7 @@ export const dictionary = {
                         <div class="alert-critical-header">
                             <span>⚠️</span> ALERTA DE RIESGO CLÍNICO
                         </div>
-                        <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: #742a2a;">
+                        <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: var(--alert-text);">
                             ${alerts.length > 0 ? this.utils.sanitizeHTML(alerts[0].message) : "Este término implica un riesgo de seguridad o manejo crítico."}
                         </p>
                     </div>
@@ -748,7 +748,7 @@ export const dictionary = {
     this.nodes.domainView.innerHTML = `
             <div id="domain-grid-container">
                 <div class="clinical-box" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(var(--primary-rgb), 0.05); border-radius: 12px;">
-                    <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary);">Explorador de Dominios</h3>
+                    <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary-text);">Explorador de Dominios</h3>
                     <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">Seleccione un dominio para ver su estructura clínica y términos asociados.</p>
                 </div>
                 <div class="domain-grid">
@@ -756,7 +756,7 @@ export const dictionary = {
                         <div class="domain-card" onclick="App.viewDomainDetails('${d.domain_id}')">
                             <div class="domain-icon">${this.getDomainIcon(d.domain_id)}</div>
                             <span class="domain-title">${this.utils.sanitizeHTML(d.label_es || d.domain_name || d.domain_id)}</span>
-                            <div class="domain-subtitle" style="font-size: 0.6rem; opacity: 0.6; text-transform: none;">
+                            <div class="domain-subtitle" style="font-size: 0.65rem; opacity: 0.8; text-transform: none;">
                                 ${d.subcomponents ? d.subcomponents.length + " áreas" : "Detalles"}
                             </div>
                         </div>
@@ -844,13 +844,13 @@ export const dictionary = {
   },
   renderCases: function () {
     this.nodes.casesView.innerHTML = `
-            <h3 style="margin-top:0; color: var(--primary);">Escenarios OSCE</h3>
+            <h3 style="margin-top:0; color: var(--primary-text);">Escenarios OSCE</h3>
             <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">Seleccione un caso para practicar el diagnóstico diferencial.</p>
             ${this.data.cases.map(c => `
                 <div class="card" onclick="App.renderCase('${c.case_id}')" style="padding: 1rem; cursor: pointer;">
                     <div style="display:flex; justify-content: space-between; align-items: center;">
                         <span class="badge" style="background:#edf2f7; color: #2d3748;">Nivel ${this.utils.sanitizeHTML(String(c.level))}</span>
-                        <code style="font-size: 0.7rem; opacity: 0.5;">${this.utils.sanitizeHTML(c.case_id)}</code>
+                        <code style="font-size: 0.7rem; opacity: 0.75;">${this.utils.sanitizeHTML(c.case_id)}</code>
                     </div>
                     <p style="margin: 0.75rem 0; font-weight: 600; color: var(--primary-dark);">
                         ${this.utils.sanitizeHTML(c.stem.setting.replace(/_/g, " "))}
@@ -858,7 +858,7 @@ export const dictionary = {
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
                         ${this.utils.sanitizeHTML(c.stem.contextual_notes)}
                     </p>
-                    <div style="font-size: 0.75rem; color: var(--primary); font-weight: 600; text-align: right;">
+                    <div style="font-size: 0.75rem; color: var(--primary-text); font-weight: 600; text-align: right;">
                         Ver Caso →
                     </div>
                 </div>
@@ -874,7 +874,7 @@ export const dictionary = {
       const content = Object.entries(data).map(([k, v]) => `<li><strong>${k.replace(/_/g, " ")}:</strong> ${String(v || "").replace(/_/g, " ")}</li>`).join("");
       return `
                 <div class="domain-card" style="border: 1px solid var(--border); padding: 0.75rem; border-radius: 8px; font-size: 0.85rem;">
-                    <div style="font-weight:bold; color:var(--primary); margin-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">${domainName}</div>
+                    <div style="font-weight:bold; color:var(--primary-text); margin-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">${domainName}</div>
                     <ul style="padding-left: 1rem; margin:0;">${content}</ul>
                 </div>
             `;
@@ -907,7 +907,7 @@ export const dictionary = {
 
                     <div id="analysis-content" style="display: none; text-align: left; margin-top: 1.5rem; animation: fadeIn 0.5s;">
                         <div style="background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
-                            <h4 style="margin-top:0; color: var(--primary);">Síndrome Principal</h4>
+                            <h4 style="margin-top:0; color: var(--primary-text);">Síndrome Principal</h4>
                             <p style="font-size: 1.1rem; font-weight: bold;">${this.utils.sanitizeHTML(c.expected_engine_output.primary_syndrome.replace(/_/g, " "))}</p>
                             
                             <div style="margin-top: 1rem; display:flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -920,7 +920,7 @@ export const dictionary = {
                                 <strong>Claves Diagnósticas:</strong>
                                 <ul>${c.assessment_keys.key_discriminators.map(x => `<li>${this.utils.sanitizeHTML(x.replace(/_/g, " "))}</li>`).join("")}</ul>
                             </div>
-                            <div style="background: rgba(197, 48, 48, 0.1); color: #742a2a; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
+                            <div style="background: rgba(197, 48, 48, 0.1); color: var(--alert-text); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
                                 <strong>Errores a Evitar:</strong>
                                 <ul>${c.assessment_keys.errors_to_avoid.map(x => `<li>${this.utils.sanitizeHTML(x.replace(/_/g, " "))}</li>`).join("")}</ul>
                             </div>
@@ -949,6 +949,7 @@ export const dictionary = {
     });
     this.navIndicator.update();
     this.nodes.search.value = "";
+    if (this.nodes.clearSearchBtn) this.nodes.clearSearchBtn.classList.add("hidden");
     if (id === "nav-dictionary") {
       this.data.currentView = "dictionary";
       this.renderView("dictionary");
