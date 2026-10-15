@@ -226,7 +226,7 @@ export const dictionary = {
           const response = await fetch(`domains/${id}_${slug}.json`);
           if (!response.ok) throw new Error(`Domain ${id} not found`);
           return await response.json();
-        } catch (e) {
+        } catch {
           return {
             domain_id: id,
             domain_name: id.replace("-", " "),
@@ -613,7 +613,7 @@ export const dictionary = {
         this.data.recentSearches = JSON.parse(saved);
         this.renderRecentSearches();
       }
-    } catch (e) {
+    } catch {
       this.data.recentSearches = [];
     }
   },

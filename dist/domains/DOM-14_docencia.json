@@ -1,0 +1,67 @@
+{
+  "domain_id": "DOM-14",
+  "label_es": "Feedback docente y razonamiento clínico",
+  "version": "1.1.0",
+  "definition_es": "Módulo educativo que explica el razonamiento detrás de la integración sindromática generada por el motor. Su finalidad es didáctica: mostrar vínculos entre fenomenología, síndromes y errores comunes, sin producir notas clínicas ni diagnósticos.",
+  "is_output_only": true,
+  "inputs_required": [
+    "DOM-01 a DOM-12",
+    "DOM-13.trazabilidad"
+  ],
+  "subcomponents": [
+    {
+      "id": "razonamiento_clinico",
+      "label_es": "Razonamiento clínico",
+      "type": "generated_text",
+      "notes": "Explicación causal breve basada en reglas activadas y dominios clave. No es una nota médica."
+    },
+    {
+      "id": "key_links",
+      "label_es": "Vínculos signo → significado",
+      "type": "dynamic_list",
+      "source": "DOM-13.trazabilidad.matched_rules",
+      "item_schema": {
+        "domain": "string",
+        "subcomponent": "string",
+        "term": "string",
+        "clinical_meaning": "string"
+      },
+      "notes": "Conecta hallazgos específicos con su valor semiológico."
+    },
+    {
+      "id": "perlas_clinicas",
+      "label_es": "Perlas clínicas",
+      "type": "dynamic_list",
+      "source": "rules_engine_matches",
+      "notes": "Aprendizajes de alto rendimiento activados por el caso concreto."
+    },
+    {
+      "id": "alertas_y_pitfalls",
+      "label_es": "Alertas y pitfalls",
+      "type": "warning_list",
+      "source": "DOM-13.trazabilidad.guardrails_triggered",
+      "notes": "Errores frecuentes que deben evitarse en la interpretación clínica."
+    },
+    {
+      "id": "mecanismos_probables",
+      "label_es": "Mecanismos subyacentes probables",
+      "type": "static_mapping",
+      "notes": "Relación síndrome → mecanismo fisiopatológico general (sin afirmar etiología)."
+    }
+  ],
+  "output_safety": {
+    "no_copy_ready_text": true,
+    "educational_only": true
+  },
+  "forbidden_wording": [
+    "diagnóstico definitivo",
+    "cumple criterios DSM/CIE",
+    "etiología confirmada",
+    "indicación terapéutica directa"
+  ],
+  "didactic_notes": [
+    "DOM-14 busca transparentar el razonamiento, no sustituir supervisión clínica.",
+    "Las explicaciones se adaptan a los hallazgos del caso, no son genéricas.",
+    "Útil para discusión docente, retroalimentación y entrenamiento supervisado."
+  ]
+}

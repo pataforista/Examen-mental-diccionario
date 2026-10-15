@@ -17,7 +17,7 @@ export const pwa = {
       installBtn.addEventListener("click", async () => {
         if (!this.deferredPrompt) return;
         this.deferredPrompt.prompt();
-        const {outcome} = await this.deferredPrompt.userChoice;
+        await this.deferredPrompt.userChoice;
         this.deferredPrompt = null;
         const banner = document.getElementById("pwa-install-banner");
         if (banner) banner.classList.add("hidden");

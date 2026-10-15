@@ -1,0 +1,60 @@
+{
+  "domain_id": "DOM-15",
+  "label_es": "Fenomenología histórica y conceptos clásicos",
+  "version": "1.0.0",
+  "definition_es": "Agrupa categorías nosológicas y descriptores fenomenológicos de valor histórico o clásico que ya no forman parte de las clasificaciones vigentes (CIE-11 / DSM-5-TR). Su finalidad es estrictamente didáctica y de referencia: comprender la evolución del pensamiento psicopatológico y reconocer términos que aún aparecen en la literatura. No deben emplearse como diagnósticos actuales.",
+  "evaluates": [
+    "conceptos_arcaicos",
+    "sindromes_historicos"
+  ],
+  "excludes": [
+    "diagnosticos_vigentes",
+    "categorias_cie11",
+    "categorias_dsm5"
+  ],
+  "subcomponents": [
+    {
+      "id": "conceptos_arcaicos",
+      "label_es": "Conceptos arcaicos",
+      "accepted_terms": [
+        "degeneracionismo",
+        "histeria",
+        "neurosis_histerica",
+        "mania_sin_delirio",
+        "neurastenia"
+      ],
+      "notes": "Construcciones teóricas y descriptores en desuso, de interés para la historia de la psiquiatría y la lectura de fuentes clásicas."
+    },
+    {
+      "id": "sindromes_historicos",
+      "label_es": "Síndromes históricos",
+      "accepted_terms": [
+        "moral_insanity",
+        "furor_uterino",
+        "locura_lucida",
+        "esquizofrenia_simple",
+        "psicosis_toxica",
+        "neurosis_de_angustia"
+      ],
+      "notes": "Cuadros clínicos descritos en periodos previos cuya denominación ha sido reemplazada o subsumida por categorías actuales."
+    }
+  ],
+  "allowed_features": [
+    "historical_period",
+    "modern_equivalent",
+    "observation_type"
+  ],
+  "recommended_wording": [
+    "Término de valor histórico; correlacionar con la categoría vigente equivalente antes de documentar.",
+    "Concepto clásico citado con fines didácticos, no como diagnóstico actual."
+  ],
+  "forbidden_wording": [
+    "Diagnóstico de histeria (preferir: describir fenomenología actual y categoría CIE-11 correspondiente).",
+    "Paciente con moral insanity (preferir: descripción conductual observable y categoría vigente)."
+  ],
+  "clinical_notes": [
+    "Este dominio es de carácter histórico y educativo; sus términos no constituyen diagnósticos vigentes.",
+    "Útil para interpretar literatura clásica y comprender la evolución de la nosología psiquiátrica.",
+    "Al redactar el examen mental debe emplearse la terminología actual; estos conceptos solo se citan como referencia."
+  ]
+}

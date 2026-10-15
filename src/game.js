@@ -243,7 +243,7 @@ export const game = {
     const el = document.getElementById("game-instructions");
     if (el) el.classList.toggle("hidden");
   },
-  buildMcqRound: function (domainId, diffObj) {
+  buildMcqRound: function (domainId, _diffObj) {
     let pool = App.data.terms.filter(t => t.definition_clinical && t.definition_clinical.core);
     if (domainId !== "any") {
       pool = pool.filter(t => t.domain_links && t.domain_links.some(l => l.domain_id === domainId));
@@ -356,9 +356,11 @@ export const game = {
     if (!targetName) return {
       error: "Caso incompleto: falta síndrome primario."
     };
-    const otherCases = App.data.cases.filter(x => x.case_id !== c.case_id);
-    const distractors = this.sampleMany(otherCases, 3).map(x => x.expected_engine_output?.primary_syndrome).filter(Boolean);
-    const uniqueOptions = [...new Set([targetName, ...distractors])];
+    // Distractors must be distinct syndromes: several cases share the same
+    // primary syndrome, so sampling cases directly could repeat the answer.
+    const otherSyndromes = [...new Set(App.data.cases.map(x => x.expected_engine_output?.primary_syndrome))].filter(name => name && name !== targetName);
+    const distractors = this.sampleMany(otherSyndromes, 3);
+    const uniqueOptions = [targetName, ...distractors];
     const termOptions = this.shuffle(uniqueOptions.map(name => ({
       id: name,
       text: name.replace(/_/g, " "),

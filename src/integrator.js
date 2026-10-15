@@ -221,7 +221,6 @@ export const integrator = {
       this.updateReport();
       this.updateStepStatus(step.id);
     });
-    this.nodes.reportOutput.addEventListener("input", e => {});
   },
   renderStepsList: function () {
     this.nodes.stepsList.innerHTML = this.steps.map((step, index) => `

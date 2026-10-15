@@ -5,6 +5,7 @@ import { integrator } from './integrator.js';
 import { game } from './game.js';
 import { donation } from './donation.js';
 import { pwa } from './pwa.js';
+import { toast } from './toast.js';
 import { dictionary } from './dictionary.js';
 
 const App = {
@@ -15,6 +16,7 @@ const App = {
     game,
     donation,
     pwa,
+    toast,
     ...dictionary
 };
 
