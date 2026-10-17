@@ -229,6 +229,10 @@ Tiene `styles.css` propio. Dos opciones:
 
 Decisión (EM1, §10): opción A. La B queda fuera de este plan.
 
+Actualización (2026-10-17): tras aplicar la opción A se comprobó que el minijuego no se publicaba
+(no estaba en el build) y repetía los dos modos de "Entrenamiento" con un conjunto de datos de prueba.
+Se eliminó `pwa-minigame/` por redundante.
+
 ---
 
 ## 7. Secuencia de PR
@@ -294,7 +298,7 @@ vocabularios (§1.4) heredaban sus contradicciones a cualquier alias.
 | E2 | `data-theme` y `.theme-dark/.theme-light` en `<html>`; clave `theme` con migración única de `mse-theme`; `theme-color` `#FBF1EC`/`#191A2B` desde el script del `<head>`; ícono SVG; el título ya no se reescribe |
 | E3 | Header de vidrio con inicial frambuesa, buscador del hero, nav inferior común, tarjetas, chips, botones primario/fantasma/secundario, "término del día" con degradado y blobs, dominios con paleta categórica de 6 tonos (EM5), integrador con stepper común, juego con temporizador índigo → ámbar → frambuesa, toast y banner PWA comunes |
 | E4 | `index.html` y vistas JS: 0 emojis en la interfaz (antes 59), 0 `style="…"` (antes 127), sin mayúsculas forzadas; `src/icons.js` con `getIcon()` de trazo; tarjeta para compartir (canvas) en la paleta común; se retiró la tarjeta "chroma" y con ella GSAP |
-| E5 | Minijuego con opción A (EM1): tokens enlazados, hoja aliasada, tema en `<html>` con la clave común. Texturas eliminadas (EM3) de raíz, `RUNTIME_FILES` y SW. `CACHE_NAME` con prefijo `em-` (maestra §9) |
+| E5 | Minijuego: primero opción A (EM1); después eliminado por redundante (§6). Texturas eliminadas (EM3) de raíz, `RUNTIME_FILES` y SW. `CACHE_NAME` con prefijo `em-` (maestra §9) |
 | EM6 | `npm test` = lint + validación + `scripts/check_contrast.js` (todos los pares ≥ 4.5:1, ambos temas, incluida la paleta categórica) + `scripts/check_blacklist.js` (lista negra §5 en 0) |
 | E6 | **Pendiente.** Requiere configurar el build en Cloudflare Pages (EM2, paso 1). Mientras tanto, `dist/` se regeneró en este cambio |
 

@@ -7,7 +7,7 @@ const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
 const read = f => fs.readFileSync(path.join(root, f), "utf8");
-const CSS = ["style.css", "shared/humano-tokens.css", "pwa-minigame/styles.css"];
+const CSS = ["style.css", "shared/humano-tokens.css"];
 // Emojis: cualquier archivo de texto versionado, salvo el build generado (dist/).
 const { execSync } = require("node:child_process");
 const TEXT = /\.(js|mjs|cjs|html|css|json|md|webmanifest|txt|xml)$/;
