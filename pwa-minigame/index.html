@@ -4,9 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#111111" />
+    <meta name="theme-color" content="#FBF1EC" />
     <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="../shared/fonts.css" />
+    <link rel="stylesheet" href="../shared/humano-tokens.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) { console.warn('Tema: no se pudo leer la preferencia', e); }
+            if (t !== 'light' && t !== 'dark') t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <title>MiniGame MCQ + Diferencial</title>
 </head>
 
@@ -18,9 +28,9 @@
         </div>
 
         <div class="top-actions">
-            <button id="btnTheme" class="btn ghost" title="Alternar Tema">🌞</button>
+            <button id="btnTheme" class="btn ghost" title="Cambiar modo visual" aria-label="Cambiar modo visual"></button>
             <button id="btnInstall" class="btn ghost" hidden>Instalar</button>
-            <button id="btnReset" class="btn ghost" title="Borra progreso local">Reset</button>
+            <button id="btnReset" class="btn ghost" title="Borra progreso local">Reiniciar</button>
         </div>
     </header>
 

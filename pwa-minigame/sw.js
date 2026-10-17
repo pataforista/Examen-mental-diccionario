@@ -1,11 +1,13 @@
 // sw.js
-const CACHE_VERSION = "v1.0.1";
+const CACHE_VERSION = "v1.1.0";
 const CACHE_NAME = `minigame-cache-${CACHE_VERSION}`;
 
 const ASSETS = [
     "./",
     "./index.html",
     "./styles.css",
+    "../shared/fonts.css",
+    "../shared/humano-tokens.css",
     "./app.js",
     "./data.js",
     "./manifest.webmanifest",

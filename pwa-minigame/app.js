@@ -112,25 +112,41 @@
         });
     }
 
+    // Contrato común de tema: data-theme en <html> y clave "theme" (la antigua se migra una vez).
+    const ICON_SUN = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>';
+    const ICON_MOON = '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
     function initTheme() {
-        const saved = localStorage.getItem(THEME_KEY) || "light";
-        setTheme(saved);
+        let saved = null;
+        try {
+            saved = localStorage.getItem("theme");
+            if (saved !== "light" && saved !== "dark") {
+                const legacy = localStorage.getItem(THEME_KEY);
+                if (legacy === "light" || legacy === "dark") saved = legacy;
+                localStorage.removeItem(THEME_KEY);
+            }
+        } catch (e) { console.warn("Tema: no se pudo leer la preferencia", e); }
+        if (saved !== "light" && saved !== "dark") {
+            saved = document.documentElement.getAttribute("data-theme") || "light";
+            setTheme(saved, false);
+        } else {
+            setTheme(saved);
+        }
     }
 
     function toggleTheme() {
-        const current = document.body.getAttribute("data-theme") || "light";
-        const next = current === "light" ? "dark" : "light";
-        setTheme(next);
+        const current = document.documentElement.getAttribute("data-theme") || "light";
+        setTheme(current === "light" ? "dark" : "light");
     }
 
-    function setTheme(theme) {
-        document.body.setAttribute("data-theme", theme);
-        btnTheme.textContent = theme === "light" ? "🌞" : "🌙";
-        localStorage.setItem(THEME_KEY, theme);
-        
-        // Update manifest color
+    function setTheme(theme, persist = true) {
+        document.documentElement.setAttribute("data-theme", theme);
+        btnTheme.innerHTML = theme === "light" ? ICON_MOON : ICON_SUN;
+        if (persist) {
+            try { localStorage.setItem("theme", theme); } catch (e) { console.warn("Tema: no se pudo guardar", e); }
+        }
         const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "light" ? "#FFF8E7" : "#1a151b");
+        if (meta) meta.setAttribute("content", theme === "light" ? "#FBF1EC" : "#191A2B");
     }
 
     function setMode(mode) {
