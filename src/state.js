@@ -5,9 +5,5 @@ export const state = {
   fuse: null,
   currentView: "dictionary",
   recentSearches: [],
-  searchDebounceTimer: null,
-  chromaPos: {
-    x: 0,
-    y: 0
-  }
+  searchDebounceTimer: null
 };

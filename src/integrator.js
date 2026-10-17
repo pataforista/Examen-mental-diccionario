@@ -1,3 +1,5 @@
+import { getIcon } from "./icons.js";
+
 export const integrator = {
   currentStep: 0,
   steps: [{
@@ -236,15 +238,15 @@ export const integrator = {
     if (!step) return;
     this.nodes.stepLabel.textContent = `${this.currentStep + 1}. ${step.label}`;
     this.nodes.stepDescription.innerHTML = `
-                <div style="margin-bottom:0.75rem; color:var(--text-p); font-size:0.9rem; font-weight:500;">${App.utils.sanitizeHTML(step.description)}</div>
-                ${step.guide ? `<div class="mnemonic-hint" style="background:rgba(var(--accent-rgb), 0.1); border-color:var(--accent); margin-top:0.5rem; padding:0.75rem; border-radius:8px; font-size:0.85rem;"><strong>🔎 QUÉ OBSERVAR / PREGUNTAR:</strong><br>${App.utils.sanitizeHTML(step.guide).replace(/\n/g, "<br>")}</div>` : ""}
-                ${step.example ? `<div class="mnemonic-hint" style="background:rgba(var(--primary-rgb), 0.05); color:var(--text-secondary); border-style:dashed; margin-top:0.5rem; padding:0.75rem; border-radius:8px; font-size:0.85rem;"><strong>✍️ REDACCIÓN EJEMPLO:</strong><br>${App.utils.sanitizeHTML(step.example)}</div>` : ""}
+                <div class="step-desc">${App.utils.sanitizeHTML(step.description)}</div>
+                ${step.guide ? `<div class="mnemonic-hint"><span class="hint-title">${getIcon("search")} Qué observar o preguntar</span>${App.utils.sanitizeHTML(step.guide).replace(/\n/g, "<br>")}</div>` : ""}
+                ${step.example ? `<div class="mnemonic-hint mnemonic-hint--example"><span class="hint-title">${getIcon("pencil")} Redacción de ejemplo</span>${App.utils.sanitizeHTML(step.example)}</div>` : ""}
             `;
     this.nodes.stepText.value = this.responses[step.id] || "";
     this.nodes.stepText.placeholder = step.example || "Escribe tus observaciones aquí...";
     this.renderOptionsForStep(step);
     this.nodes.prevBtn.disabled = this.currentStep === 0;
-    this.nodes.nextBtn.textContent = this.currentStep === this.steps.length - 1 ? "Finalizar" : "Siguiente →";
+    this.nodes.nextBtn.innerHTML = this.currentStep === this.steps.length - 1 ? `Finalizar ${getIcon("check")}` : `Siguiente ${getIcon("arrow-right")}`;
     const items = this.nodes.stepsList.querySelectorAll(".step-item");
     items.forEach((item, i) => item.classList.toggle("active", i === this.currentStep));
   },
@@ -252,7 +254,7 @@ export const integrator = {
     const domain = App.data.domains.find(d => d.domain_id === step.domain);
     if (!domain) {
       this.nodes.optionsContainer.textContent = "";
-      this.nodes.optionsContainer.insertAdjacentHTML("beforeend", '<p style="font-size:0.8rem; opacity:0.5;">No hay términos asociados.</p>');
+      this.nodes.optionsContainer.insertAdjacentHTML("beforeend", '<p class="empty-hint">No hay términos asociados.</p>');
       return;
     }
     let terms = [];
@@ -269,12 +271,12 @@ export const integrator = {
     terms = [...new Set(terms)];
     if (terms.length === 0) {
       this.nodes.optionsContainer.textContent = "";
-      this.nodes.optionsContainer.insertAdjacentHTML("beforeend", '<p style="font-size:0.8rem; opacity:0.5;">No hay términos asociados.</p>');
+      this.nodes.optionsContainer.insertAdjacentHTML("beforeend", '<p class="empty-hint">No hay términos asociados.</p>');
       return;
     }
     this.nodes.optionsContainer.innerHTML = terms.map(t => {
       const isSelected = this.responses[step.id]?.includes(t.replace(/_/g, " "));
-      return `<div class="int-opt ${isSelected ? "selected" : ""}" onclick="App.integrator.toggleTerm('${t}')">${t.replace(/_/g, " ")}</div>`;
+      return `<button type="button" class="int-opt ${isSelected ? "selected" : ""}" aria-pressed="${isSelected ? "true" : "false"}" onclick="App.integrator.toggleTerm('${t}')">${t.replace(/_/g, " ")}</button>`;
     }).join("");
   },
   toggleTerm: function (term) {
@@ -306,7 +308,7 @@ export const integrator = {
       this.renderCurrentStep();
       App.nodes.content.scrollTop = 0;
     } else if (next === this.steps.length) {
-      App.toast.show("✅ ¡Examen completado! Revisa y copia el reporte final.", "success", 4000);
+      App.toast.show("Examen completado. Revisa y copia el reporte final.", "success", 4000);
     }
   },
   goToStep: function (index) {
@@ -334,9 +336,9 @@ export const integrator = {
     }
     navigator.clipboard.writeText(text).then(() => {
       App.utils.haptic();
-      App.toast.show("📋 Reporte copiado al portapapeles", "success");
+      App.toast.show("Reporte copiado al portapapeles", "success");
       const original = this.nodes.copyBtn.innerHTML;
-      this.nodes.copyBtn.textContent = "✅ ¡Copiado!";
+      this.nodes.copyBtn.innerHTML = `${getIcon("check")} Copiado`;
       setTimeout(() => {
         this.nodes.copyBtn.innerHTML = original;
       }, 2200);

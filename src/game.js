@@ -1,3 +1,5 @@
+import { getIcon } from "./icons.js";
+
 export const game = {
   stats: {
     score: 0,
@@ -34,12 +36,14 @@ export const game = {
       toggle._toggleBound = true;
       toggle.addEventListener("click", () => {
         const isCollapsed = body.classList.toggle("collapsed");
-        if (arrow) arrow.textContent = isCollapsed ? "▶" : "▼";
+        if (arrow) arrow.classList.toggle("is-collapsed", isCollapsed);
+        toggle.setAttribute("aria-expanded", String(!isCollapsed));
       });
     }
     if (window.innerWidth <= 768) {
       body.classList.add("collapsed");
-      if (arrow) arrow.textContent = "▶";
+      if (arrow) arrow.classList.add("is-collapsed");
+      toggle.setAttribute("aria-expanded", "false");
     }
   },
   cacheDOM: function () {
@@ -69,11 +73,15 @@ export const game = {
     this.nodes.modeDiff.addEventListener("click", () => this.setMode("diff"));
     this.nodes.btnNext.addEventListener("click", () => this.nextRound());
     this.nodes.btnReset.addEventListener("click", () => this.resetStats());
+    const helpBtn = document.getElementById("game-help-btn");
+    const helpClose = document.getElementById("game-help-close");
+    if (helpBtn) helpBtn.addEventListener("click", () => this.toggleInstructions());
+    if (helpClose) helpClose.addEventListener("click", () => this.toggleInstructions());
     this.populateDomains();
   },
   populateDomains: function () {
     const domains = App.data.domains;
-    this.nodes.domainSelect.innerHTML = '<option value="any">Todos los Dominios</option>';
+    this.nodes.domainSelect.innerHTML = '<option value="any">Todos los dominios</option>';
     domains.forEach(d => {
       const opt = document.createElement("option");
       opt.value = d.domain_id;
@@ -112,7 +120,11 @@ export const game = {
     if (this.nodes.correct) this.nodes.correct.innerText = this.stats.correct;
     if (this.nodes.wrong) this.nodes.wrong.innerText = this.stats.wrong;
     const elLives = document.getElementById("game-lives");
-    if (elLives) elLives.innerText = ("❤️").repeat(Math.max(0, this.arcade.lives));
+    if (elLives) {
+      const lives = Math.max(0, this.arcade.lives);
+      elLives.innerHTML = getIcon("heart").repeat(lives) || "0";
+      elLives.setAttribute("aria-label", `${lives} ${lives === 1 ? "vida" : "vidas"}`);
+    }
     const elMult = document.getElementById("game-multiplier");
     if (elMult) {
       elMult.innerText = `x${this.arcade.multiplier}`;
@@ -125,10 +137,19 @@ export const game = {
     const timerBar = document.getElementById("game-timer-bar");
     const timerContainer = document.getElementById("game-timer-container");
     if (timerContainer) timerContainer.classList.remove("hidden");
+    if (timerBar) {
+      timerBar.classList.remove("is-warn", "is-danger");
+      timerBar.style.transform = "scaleX(1)";
+    }
     const step = 100 / (this.arcade.maxTime * 10);
     this.arcade.timerInterval = setInterval(() => {
       this.arcade.timeLeft -= step;
-      if (timerBar) timerBar.style.transform = `scaleX(${this.arcade.timeLeft / 100})`;
+      if (timerBar) {
+        timerBar.style.transform = `scaleX(${Math.max(0, this.arcade.timeLeft) / 100})`;
+        // El color es estado: índigo → ámbar (≤ 50 %) → frambuesa (≤ 20 %).
+        timerBar.classList.toggle("is-warn", this.arcade.timeLeft <= 50 && this.arcade.timeLeft > 20);
+        timerBar.classList.toggle("is-danger", this.arcade.timeLeft <= 20);
+      }
       if (this.arcade.timeLeft <= 0) {
         this.onTimeUp();
       }
@@ -164,10 +185,10 @@ export const game = {
     this.arcade.isGameOver = true;
     this.stopTimer();
     this.nodes.prompt.textContent = "";
-    this.nodes.prompt.insertAdjacentHTML("beforeend", `<span style="color:var(--v-accent); font-size: 2rem;">GAME OVER</span>`);
+    this.nodes.prompt.insertAdjacentHTML("beforeend", `<span class="game-over">Fin de la partida</span>`);
     this.nodes.subprompt.textContent = `Puntaje final: ${this.stats.score}`;
     this.nodes.options.textContent = "";
-    this.nodes.options.insertAdjacentHTML("beforeend", `<button class="btn primary" onclick="App.game.restart()">Reiniciar Partida</button>`);
+    this.nodes.options.insertAdjacentHTML("beforeend", `<button class="btn primary" onclick="App.game.restart()">${getIcon("refresh")} Reiniciar partida</button>`);
     this.playAudio("gameover");
   },
   restart: function () {
