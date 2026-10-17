@@ -165,7 +165,6 @@ export const integrator = {
     this.updateReport();
     this.updateProgressBar();
   },
-  teachingMode: true,
   updateProgressBar: function () {
     const total = this.steps.length;
     const completed = this.steps.filter(s => !!this.responses[s.id]).length;
@@ -174,26 +173,6 @@ export const integrator = {
       this.nodes.progressBar.style.width = `${pct}%`;
       this.nodes.progressBar.parentElement?.setAttribute("aria-valuenow", String(Math.round(pct)));
     }
-  },
-  loadPedagogicalData: function () {
-    this.discriminators = {
-      PER_001: {
-        label: "Alucinación verdadera",
-        why: "Sin objeto, externa, con convicción."
-      },
-      PER_004: {
-        label: "Pseudoalucinación",
-        why: "Sin objeto, interna (dentro de la mente)."
-      },
-      THO_010: {
-        label: "Fuga de ideas",
-        why: "Asociaciones rápidas pero con hilo conductor superficial."
-      },
-      THO_020: {
-        label: "Incoherencia",
-        why: "Pérdida total de sintaxis y sentido."
-      }
-    };
   },
   cacheDOM: function () {
     this.nodes = {
@@ -207,8 +186,7 @@ export const integrator = {
       reportOutput: document.getElementById("report-output"),
       copyBtn: document.getElementById("int-copy-btn"),
       resetBtn: document.getElementById("int-reset-btn"),
-      progressBar: document.getElementById("int-progress-bar"),
-      teachingToggle: document.getElementById("int-teaching-mode")
+      progressBar: document.getElementById("int-progress-bar")
     };
   },
   bindEvents: function () {

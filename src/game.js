@@ -78,6 +78,7 @@ export const game = {
     if (helpBtn) helpBtn.addEventListener("click", () => this.toggleInstructions());
     if (helpClose) helpClose.addEventListener("click", () => this.toggleInstructions());
     this.populateDomains();
+    this.syncDifficulty();
   },
   populateDomains: function () {
     const domains = App.data.domains;
@@ -93,7 +94,12 @@ export const game = {
     this.currentMode = mode;
     this.nodes.modeMcq.setAttribute("aria-selected", mode === "mcq");
     this.nodes.modeDiff.setAttribute("aria-selected", mode === "diff");
+    this.syncDifficulty();
     this.nextRound();
+  },
+  // Los términos no traen dificultad; el nivel sólo filtra casos del modo diferencial.
+  syncDifficulty: function () {
+    this.nodes.difficultySelect.classList.toggle("hidden", this.currentMode !== "diff");
   },
   loadStats: function () {
     const saved = localStorage.getItem("mse_game_stats");
@@ -250,7 +256,7 @@ export const game = {
     if (this.currentMode === "mcq") {
       this.diffPhase = 1;
       if (manual) manual.innerHTML = "<strong>Modo Definiciones:</strong> Identifica el término correcto basado en la descripción mostrada.";
-      this.currentRound = this.buildMcqRound(domain, diff);
+      this.currentRound = this.buildMcqRound(domain);
       this.renderMcqRound(this.currentRound);
     } else {
       this.diffPhase = 1;
@@ -264,7 +270,7 @@ export const game = {
     const el = document.getElementById("game-instructions");
     if (el) el.classList.toggle("hidden");
   },
-  buildMcqRound: function (domainId, _diffObj) {
+  buildMcqRound: function (domainId) {
     let pool = App.data.terms.filter(t => t.definition_clinical && t.definition_clinical.core);
     if (domainId !== "any") {
       pool = pool.filter(t => t.domain_links && t.domain_links.some(l => l.domain_id === domainId));
