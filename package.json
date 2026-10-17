@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint src sw.js",
     "validate": "node scripts/validate_terms.js",
-    "test": "npm run lint && npm run validate"
+    "test": "npm run lint && npm run validate && npm run contrast && npm run blacklist",
+    "contrast": "node scripts/check_contrast.js",
+    "blacklist": "node scripts/check_blacklist.js"
   },
   "repository": {
     "type": "git",
