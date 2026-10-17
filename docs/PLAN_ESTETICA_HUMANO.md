@@ -49,8 +49,8 @@ letra.
 ### 1.3 Fuera del CSS
 | Archivo | Problema |
 | --- | --- |
-| `src/theme.js` | Pone `data-theme` en `<body>` (las otras apps en `<html>`); clave `mse-theme`; reescribe el título a `"DICCIONARIO DE EXAMEN MENTAL"` en cada cambio de tema; el botón de tema es un emoji (🌞/🌙, inicialmente 🌓); `theme-color` oscuro `#120C18` no coincide con el del HTML (`#231f20`) |
-| `index.html` | Título y subtítulo en mayúsculas en el marcado ("REFERENCIA RÁPIDA", "MODO MAESTRO"); 19 emojis (navegación inferior 📖 🧩 📋 📝 🧠, ℹ️, 📲, ☕, ✕); 18 `style="…"`; `onclick` en línea en el pie; Google Fonts (Outfit, Space Grotesk) |
+| `src/theme.js` | Pone `data-theme` en `<body>` (las otras apps en `<html>`); clave `mse-theme`; reescribe el título a `"DICCIONARIO DE EXAMEN MENTAL"` en cada cambio de tema; el botón de tema es un emoji (sol/luna, inicialmente media luna); `theme-color` oscuro `#120C18` no coincide con el del HTML (`#231f20`) |
+| `index.html` | Título y subtítulo en mayúsculas en el marcado ("REFERENCIA RÁPIDA", "MODO MAESTRO"); 19 emojis (navegación inferior: libro, rompecabezas, portapapeles, libreta, cerebro; información, móvil, taza, cruz); 18 `style="…"`; `onclick` en línea en el pie; Google Fonts (Outfit, Space Grotesk) |
 | `src/dictionary.js` | 104 `style=` y 35 emojis generados en vistas |
 | `src/integrator.js` | 5 `style=`, 5 emojis |
 | `pwa-minigame/` | Hoja propia `styles.css` con un tercer vocabulario (`--bg/--card/--line/--btn`, `--shadow: 6px 6px 0`, radio 4 px) |
@@ -202,8 +202,8 @@ set(theme, persist = true) {
 | --- | --- |
 | `<h1 id="app-title">DICCIONARIO DE EXAMEN MENTAL</h1>` | "Diccionario de examen mental" (y quitar la reescritura en `theme.js`) |
 | `REFERENCIA RÁPIDA`, `MODO MAESTRO` | Frase normal; estilos en línea → clase |
-| Navegación inferior 📖 🧩 📋 📝 🧠 | Íconos SVG de trazo (libro, cuadrícula, portapapeles, lápiz, cerebro/diana) |
-| 🌓 ℹ️ ✕ 📲 ☕ | SVG; ☕ fuera del botón (texto "Apoyar el proyecto") |
+| Navegación inferior con emojis | Íconos SVG de trazo (libro, cuadrícula, portapapeles, lápiz, cerebro/diana) |
+| Emojis de tema, información, cerrar, instalar y café | SVG; el café fuera del botón (texto "Apoyar el proyecto") |
 | `onclick="window.open(...)"` del pie | `<a href target="_blank" rel="noopener">` con clase `.donation-cta` |
 | Google Fonts | Fuentes locales compartidas; CSP `font-src 'self'` y quitar `fonts.googleapis.com` de `default-src`/`style-src` |
 | `theme-color` | `#FBF1EC` / `#191A2B` |

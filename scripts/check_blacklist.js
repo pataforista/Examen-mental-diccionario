@@ -1,5 +1,5 @@
 // Lista negra del sistema "humano" (maestra §5). Falla si aparece alguna regla
-// prohibida en el CSS migrado o emojis en la interfaz. Las excepciones permitidas
+// prohibida en el CSS migrado o algún emoji en el repositorio. Las excepciones permitidas
 // (foco de 2 px, borde izquierdo de alerta) se marcan en la misma línea con
 // un comentario que contiene "excepción permitida" o "no es trazo".
 const fs = require("node:fs");
@@ -8,7 +8,12 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const read = f => fs.readFileSync(path.join(root, f), "utf8");
 const CSS = ["style.css", "shared/humano-tokens.css", "pwa-minigame/styles.css"];
-const UI = ["index.html", "pwa-minigame/index.html", "pwa-minigame/app.js", ...fs.readdirSync(path.join(root, "src")).map(f => `src/${f}`)];
+// Emojis: cualquier archivo de texto versionado, salvo el build generado (dist/).
+const { execSync } = require("node:child_process");
+const TEXT = /\.(js|mjs|cjs|html|css|json|md|webmanifest|txt|xml)$/;
+const UI = execSync("git ls-files", { cwd: root, encoding: "utf8" })
+  .split("\n")
+  .filter(f => f && !f.startsWith("dist/") && TEXT.test(f));
 
 const RULES = [
   ["sombra desplazada", /\b[1-9]\d*px [1-9]\d*px 0(px)?\s/],
@@ -36,7 +41,7 @@ for (const f of UI) {
   read(f).split("\n").forEach((line, i) => {
     if (EMOJI.test(line)) {
       problems++;
-      console.log(`${f}:${i + 1} emoji en la interfaz: ${line.trim().slice(0, 100)}`);
+      console.log(`${f}:${i + 1} emoji: ${line.trim().slice(0, 100)}`);
     }
   });
 }

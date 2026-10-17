@@ -17,14 +17,14 @@
             document.documentElement.setAttribute('data-theme', t);
         })();
     </script>
-    <title>MiniGame MCQ + Diferencial</title>
+    <title>Entrenamiento | Diccionario de examen mental</title>
 </head>
 
 <body>
     <header class="topbar">
         <div class="brand">
-            <div class="title">MiniGame</div>
-            <div class="subtitle">MCQ + Diferencial en 2 pasos (offline)</div>
+            <div class="title">Entrenamiento</div>
+            <div class="subtitle">Definiciones y diagnóstico diferencial en dos pasos</div>
         </div>
 
         <div class="top-actions">
@@ -39,7 +39,7 @@
             <div class="row">
                 <label class="label">Modo</label>
                 <div class="segmented" role="tablist">
-                    <button class="seg" id="modeMcq" aria-selected="true">MCQ definición</button>
+                    <button class="seg" id="modeMcq" aria-selected="true">Definiciones</button>
                     <button class="seg" id="modeDiff" aria-selected="false">Diferencial 2 pasos</button>
                 </div>
             </div>
@@ -77,18 +77,6 @@
             <div class="footer">
                 <div class="hint" id="hint"></div>
             </div>
-        </section>
-
-        <section class="card muted">
-            <details>
-                <summary>Notas técnicas</summary>
-                <ul>
-                    <li>Dataset local en <code>data.js</code>. Sustituye por tu DB real.</li>
-                    <li>Offline: cachea assets (SW). Si cambias versión, incrementa <code>CACHE_VERSION</code> en
-                        <code>sw.js</code>.</li>
-                    <li>Progreso: <code>localStorage</code> (simple, portable).</li>
-                </ul>
-            </details>
         </section>
     </main>
 

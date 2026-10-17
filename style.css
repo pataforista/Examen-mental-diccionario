@@ -836,8 +836,6 @@ button.tag:hover,
    8. Botones
    -------------------------------------------------------------------------- */
 .btn {
-  position: relative;
-  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -925,21 +923,6 @@ button.tag:hover,
 
 .btn-icon:hover { background: var(--bg-hover); }
 .btn-icon .icon { width: 18px; height: 18px; }
-
-.ripple-wave {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: scale(0);
-  animation: ripple-expand 0.55s ease-out forwards;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.btn.secondary .ripple-wave { background: var(--accent-soft); }
-
-@keyframes ripple-expand {
-  to { transform: scale(3); opacity: 0; }
-}
 
 /* --------------------------------------------------------------------------
    9. Ficha de término

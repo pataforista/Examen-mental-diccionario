@@ -1,6 +1,6 @@
 {
-    "name": "MiniGame MCQ + Diferencial",
-    "short_name": "MiniGame",
+    "name": "Entrenamiento de examen mental",
+    "short_name": "Entrenamiento",
     "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#FFF8E7",

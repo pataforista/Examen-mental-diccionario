@@ -1,4 +1,3 @@
-// app.js
 (() => {
     "use strict";
 
@@ -192,7 +191,7 @@
         }
     }
 
-    // -------- MCQ: término -> 4 definiciones --------
+    // -------- Definiciones: término -> 4 definiciones --------
     function buildMcqRound(domain, diff) {
         const pool = filterTerms({ domain, diff });
         if (pool.length < 4) {
@@ -243,7 +242,6 @@
             saveStats(stats);
             renderStats();
             showFeedback("Incorrecto. Revisa el rasgo discriminante.", "bad");
-            // No bloquea inmediatamente: puedes decidir bloquear tras 1 error (aquí lo dejamos abierto)
         }
     }
 

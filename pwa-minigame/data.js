@@ -1,4 +1,3 @@
-// data.js
 // Estructura mínima:
 // TERMS: {id, term, definition, domain, difficulty, features:[...], discriminators:[{id,label,why}]}
 // CASES: {id, stem, domain, difficulty, target_term_id, distractor_term_ids:[...], key_discriminator_id}

@@ -16,9 +16,7 @@ export const dictionary = {
     this.pwa.init();
     this.handleInitialHash();
     this.checkOnboarding();
-    this.navIndicator.init();
     this._setupScrollCompact();
-    setTimeout(() => this.navIndicator.update(), 50);
   },
   _showSkeletonTerms: function () {
     if (!this.nodes.allTermsList) return;
@@ -180,19 +178,6 @@ export const dictionary = {
         this.nodes.search.select();
       }
     });
-    document.addEventListener("pointerdown", e => {
-      const btn = e.target.closest(".btn.primary, .btn.secondary");
-      if (!btn) return;
-      const rect = btn.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height) * 1.6;
-      const wave = document.createElement("span");
-      wave.className = "ripple-wave";
-      wave.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
-      btn.appendChild(wave);
-      wave.addEventListener("animationend", () => wave.remove(), {
-        once: true
-      });
-    });
   },
   handlePopState: function (state) {
     if (!state) {
@@ -216,7 +201,6 @@ export const dictionary = {
     }
   },
   loadData: async function () {
-    const startTime = performance.now();
     try {
       const lexiconPromise = fetch("lexicon/lexicon_bundle.json").then(r => r.json());
       const domainIds = Array.from({
@@ -243,7 +227,6 @@ export const dictionary = {
       this.data.domains = domainsData;
       this.data.cases = (casesDataArrays || []).flat();
       this.data.terms.sort((a, b) => (a.canonical_name || "").localeCompare(b.canonical_name || ""));
-      console.log(`Clinical data loaded in ${Math.round(performance.now() - startTime)}ms`);
     } catch (error) {
       console.error("Critical error loading clinical data:", error);
       this.data.terms = this.data.terms || [];
@@ -445,7 +428,6 @@ export const dictionary = {
     const term = this.data.terms.find(t => t.term_id === termId);
     if (!term) return;
     this.utils.haptic();
-    console.log(`Generating card for ${term.canonical_name}...`);
     try {
       const blob = await this.utils.generateShareCard(term);
       const file = new File([blob], `MSE_${term.canonical_name}.png`, {
@@ -867,15 +849,6 @@ export const dictionary = {
         `;
     this.nodes.content.scrollTop = 0;
   },
-  navIndicator: {
-    // The active-tab underline is rendered purely in CSS via
-    // `.bottom-nav button.active::after`, so there is no DOM node to move.
-    // These no-ops exist so the calls in init()/switchTab() don't throw a
-    // TypeError (which previously aborted switchTab before it could render
-    // the target view, breaking every bottom-nav button).
-    init: function () {},
-    update: function () {}
-  },
   _setActiveNav: function (id) {
     this.nodes.navButtons.forEach(btn => {
       const isActive = btn.id === id;
@@ -886,7 +859,6 @@ export const dictionary = {
   switchTab: function (id) {
     this.utils.haptic();
     this._setActiveNav(id);
-    this.navIndicator.update();
     this.nodes.search.value = "";
     if (this.nodes.clearSearchBtn) this.nodes.clearSearchBtn.classList.add("hidden");
     if (id === "nav-dictionary") {

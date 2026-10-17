@@ -5,7 +5,7 @@ const REGISTRY_PATH = path.join(__dirname, '../lexicon/term_id_registry.json');
 const SCHEMA_PATH = path.join(__dirname, '../lexicon/lexicon.term.schema.json');
 
 async function validate() {
-    console.log('🔍 Starting Lexicon Validation Audit...');
+    console.log('Validando el léxico...');
 
     try {
         const registry = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
@@ -19,7 +19,7 @@ async function validate() {
         for (const entry of termsIndex) {
             const termPath = path.join(__dirname, '..', entry.path);
             if (!fs.existsSync(termPath)) {
-                console.error(`❌ [ERROR] Missing file for ${entry.term_id} at ${entry.path}`);
+                console.error(`[ERROR] Missing file for ${entry.term_id} at ${entry.path}`);
                 errors++;
                 continue;
             }
@@ -28,18 +28,18 @@ async function validate() {
 
             // Critical checks
             if (termData.term_id !== entry.term_id) {
-                console.error(`❌ [ERROR] ID mismatch in ${entry.path}. Expected ${entry.term_id}, found ${termData.term_id}`);
+                console.error(`[ERROR] ID mismatch in ${entry.path}. Expected ${entry.term_id}, found ${termData.term_id}`);
                 errors++;
             }
 
             if (!termData.canonical_name || !termData.definition_clinical?.core) {
-                console.error(`❌ [ERROR] Missing core definition fields in ${entry.path}`);
+                console.error(`[ERROR] Missing core definition fields in ${entry.path}`);
                 errors++;
             }
 
             // Semantic checks
             if (!termData.mappings?.cie11?.code && !termData.term_id.startsWith('ARC')) {
-                console.warn(`⚠️ [WARN] Missing CIE-11 mapping for modern term: ${termData.canonical_name} (${termData.term_id})`);
+                console.warn(`[AVISO] Missing CIE-11 mapping for modern term: ${termData.canonical_name} (${termData.term_id})`);
                 warnings++;
             }
         }
@@ -50,14 +50,14 @@ async function validate() {
         console.log(`Warnings: ${warnings}`);
 
         if (errors > 0) {
-            console.error('\n❌ Validation failed. Please fix the errors listed above.');
+            console.error('\nValidación fallida: corrige los errores listados arriba.');
             process.exit(1);
         } else {
-            console.log('\n✅ Lexicon validation passed successfully!');
+            console.log('\nValidación del léxico: sin errores.');
         }
 
     } catch (error) {
-        console.error('❌ Critical system error during validation:', error);
+        console.error('Error inesperado durante la validación:', error);
         process.exit(1);
     }
 }

@@ -1,8 +1,7 @@
 {
   "name": "examen-mental-diccionario",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Diccionario clínico de examen mental: semiología, integrador de 20 puntos, casos OSCE y entrenamiento. PWA sin conexión.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,14 +10,20 @@
     "validate": "node scripts/validate_terms.js",
     "test": "npm run lint && npm run validate && npm run contrast && npm run blacklist",
     "contrast": "node scripts/check_contrast.js",
-    "blacklist": "node scripts/check_blacklist.js"
+    "blacklist": "node scripts/check_blacklist.js",
+    "build:lexicon": "node scripts/optimize_lexicon.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pataforista/Examen-mental-diccionario.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "examen mental",
+    "semiología psiquiátrica",
+    "psiquiatría",
+    "pwa"
+  ],
+  "author": "Dr. Cesar Celada",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
@@ -27,8 +32,6 @@
   "homepage": "https://github.com/pataforista/Examen-mental-diccionario#readme",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "acorn": "^8.17.0",
-    "astring": "^1.9.0",
     "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.7.0",
