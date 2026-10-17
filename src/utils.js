@@ -51,56 +51,91 @@ export const utils = {
     canvas.height = 1080;
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("Canvas context unavailable");
-    const cream = "#FFF8E7";
-    const black = "#211f1f";
-    const magenta = "#95215c";
-    const gold = "#9a8238";
-    const teal = "#7acdbf";
-    ctx.fillStyle = cream;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = magenta;
+    // roundRect falta en navegadores anteriores a 2023: degrada a rectángulo.
+    if (!ctx.roundRect) ctx.roundRect = function (x, y, w, h) { this.rect(x, y, w, h); };
+    // Colores de la paleta base (independientes del tema): la tarjeta siempre sale en claro.
+    const css = getComputedStyle(document.documentElement);
+    const tok = name => css.getPropertyValue(name).trim();
+    const peach = tok("--h-peach");
+    const pinkSoft = tok("--h-pink-soft");
+    const pink = tok("--h-pink");
+    const indigo = tok("--h-indigo");
+    const ink = tok("--h-indigo-deep");
+    const raspberry = tok("--h-raspberry");
+    if (document.fonts && document.fonts.load) {
+      await Promise.all([document.fonts.load('600 96px "Poppins"'), document.fonts.load('400 44px "Inter"')]).catch(() => {});
+    }
+    const bg = ctx.createLinearGradient(0, 0, 1080, 1080);
+    bg.addColorStop(0, peach);
+    bg.addColorStop(1, pinkSoft);
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, 1080, 1080);
+    // Blobs orgánicos, como en las cabeceras de la app
+    const blob = (x, y, r, color, alpha) => {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+      g.addColorStop(0, color);
+      g.addColorStop(1, "rgba(255, 255, 255, 0)");
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    };
+    blob(960, 110, 340, pink, 0.55);
+    blob(90, 1000, 300, indigo, 0.18);
+    // Tarjeta blanca central
+    ctx.save();
+    ctx.shadowColor = "rgba(46, 56, 112, 0.12)";
+    ctx.shadowBlur = 48;
+    ctx.shadowOffsetY = 20;
+    ctx.fillStyle = "rgba(255, 255, 255, 0.94)";
     ctx.beginPath();
-    ctx.arc(950, 130, 180, 0, Math.PI * 2);
+    ctx.roundRect(60, 60, 960, 960, 56);
     ctx.fill();
-    ctx.fillStyle = teal;
-    ctx.fillRect(-50, 900, 300, 300);
-    ctx.fillStyle = gold;
+    ctx.restore();
+    // Etiqueta superior (píldora)
+    ctx.fillStyle = tok("--h-indigo-soft");
     ctx.beginPath();
-    ctx.moveTo(100, 350);
-    ctx.lineTo(980, 200);
-    ctx.lineTo(800, 500);
-    ctx.closePath();
+    ctx.roundRect(120, 130, 380, 64, 32);
     ctx.fill();
-    ctx.strokeStyle = black;
-    ctx.lineWidth = 40;
-    ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
-    ctx.fillStyle = black;
-    ctx.fillRect(80, 80, 480, 80);
-    ctx.fillStyle = "#FFFFFF";
-    ctx.font = "900 40px Outfit, sans-serif";
-    ctx.fillText("TERMINOLOGÍA CLÍNICA", 110, 135);
-    ctx.fillStyle = black;
-    ctx.font = "900 110px Outfit, sans-serif";
-    const termName = term.canonical_name.toUpperCase();
-    const nameLines = this.wrapText(ctx, termName, 80, 350, 920, 120);
-    const badgeY = 350 + nameLines * 120 + 20;
-    ctx.fillStyle = magenta;
-    ctx.fillRect(80, badgeY, 250, 50);
-    ctx.fillStyle = "#FFFFFF";
-    ctx.font = "800 30px Outfit, sans-serif";
-    ctx.fillText(term.term_kind.toUpperCase(), 100, badgeY + 35);
-    ctx.fillStyle = black;
-    ctx.font = "500 48px Outfit, sans-serif";
+    ctx.fillStyle = indigo;
+    ctx.font = '600 30px "Inter", sans-serif';
+    ctx.fillText("Terminología clínica", 152, 173);
+    // Nombre del término
+    ctx.fillStyle = ink;
+    ctx.font = '600 92px "Poppins", "Inter", sans-serif';
+    const nameLines = this.wrapText(ctx, term.canonical_name, 120, 330, 840, 104);
+    let y = 330 + nameLines * 104;
+    // Tipo de término
+    const kind = term.term_kind || "término";
+    const isCritical = term.risk_weight > 1;
+    ctx.font = '600 30px "Inter", sans-serif';
+    const kindW = ctx.measureText(kind).width + 56;
+    ctx.fillStyle = isCritical ? "rgba(190, 54, 80, 0.10)" : tok("--h-indigo-soft");
+    ctx.beginPath();
+    ctx.roundRect(120, y - 10, kindW, 56, 28);
+    ctx.fill();
+    ctx.fillStyle = isCritical ? raspberry : indigo;
+    ctx.fillText(kind, 148, y + 28);
+    y += 120;
+    // Definición
+    ctx.fillStyle = ink;
+    ctx.font = '400 42px "Inter", sans-serif';
     const definition = term.definition_clinical?.core || "";
-    const shortDef = definition.length > 280 ? definition.substring(0, 280) + "..." : definition;
-    this.wrapText(ctx, shortDef, 80, 550, 920, 65);
-    ctx.fillStyle = black;
-    ctx.font = "800 35px Outfit, sans-serif";
-    ctx.fillText("DICCIONARIO DE EXAMEN MENTAL", 80, 980);
-    ctx.font = "400 30px Outfit, sans-serif";
-    ctx.fillText("examen-mental.pages.dev", 80, 1020);
-    ctx.font = "900 32px Outfit, sans-serif";
-    ctx.fillText("📱 DESCARGA LA APP", 620, 985);
+    const maxLines = Math.max(2, Math.floor((900 - y) / 60));
+    let shortDef = definition;
+    const approxChars = maxLines * 38;
+    if (shortDef.length > approxChars) shortDef = shortDef.substring(0, approxChars).trim() + "…";
+    this.wrapText(ctx, shortDef, 120, y, 840, 60);
+    // Pie
+    ctx.fillStyle = ink;
+    ctx.font = '600 34px "Poppins", "Inter", sans-serif';
+    ctx.fillText("Diccionario de examen mental", 120, 950);
+    ctx.fillStyle = indigo;
+    ctx.font = '500 28px "Inter", sans-serif';
+    ctx.fillText("examenmental.pages.dev", 120, 990);
     return new Promise(resolve => {
       canvas.toBlob(resolve, "image/png");
     });

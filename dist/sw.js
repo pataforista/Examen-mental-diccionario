@@ -1,13 +1,26 @@
-const CACHE_NAME = "clinical-pwa-v3.2";
+const CACHE_NAME = "em-clinical-pwa-v4.0";
 const ASSETS = [
   "/",
   "index.html",
   "style.css",
+  "shared/fonts.css",
+  "shared/humano-tokens.css",
+  "shared/fonts/inter-latin-wght-normal.woff2",
+  "shared/fonts/inter-latin-ext-wght-normal.woff2",
+  "shared/fonts/poppins-latin-500-normal.woff2",
+  "shared/fonts/poppins-latin-600-normal.woff2",
+  "shared/fonts/poppins-latin-700-normal.woff2",
+  "shared/fonts/poppins-latin-ext-500-normal.woff2",
+  "shared/fonts/poppins-latin-ext-600-normal.woff2",
+  "shared/fonts/poppins-latin-ext-700-normal.woff2",
+  "shared/fonts/jetbrains-mono-latin-500-normal.woff2",
+  "shared/fonts/jetbrains-mono-latin-ext-500-normal.woff2",
   // ES modules loaded by index.html (no bundling step needed to serve the app)
   "src/main.js",
   "src/state.js",
   "src/utils.js",
   "src/theme.js",
+  "src/icons.js",
   "src/toast.js",
   "src/integrator.js",
   "src/game.js",
@@ -19,8 +32,6 @@ const ASSETS = [
   "apple-touch-icon.png",
   "favicon-32.png",
   "favicon-16.png",
-  "texture-light.png",
-  "texture-dark.png",
   "manifest.json",
   "lexicon/lexicon_bundle.json",
   "assets/celada.jpeg",
@@ -47,8 +58,6 @@ const ASSETS = [
   "OSCE_016–025.json",
   "OSCE_026–035.json",
   "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js",
-  "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;600;700&display=swap",
 ];
 
 self.addEventListener("install", (event) => {

@@ -24,7 +24,7 @@ function compareTermId(a, b) {
 }
 
 function bundle() {
-    console.log('🚀 Building lexicon bundle from term files (source of truth)...');
+    console.log('Generando lexicon_bundle.json desde los archivos de término (fuente de verdad)...');
 
     const files = walk(TERMS_DIR);
     const terms = [];
@@ -36,12 +36,12 @@ function bundle() {
         try {
             data = JSON.parse(fs.readFileSync(file, 'utf8'));
         } catch (e) {
-            console.error(`❌ Skipping ${path.relative(ROOT, file)}: invalid JSON (${e.message})`);
+            console.error(`[ERROR] Se omite ${path.relative(ROOT, file)}: invalid JSON (${e.message})`);
             skipped++;
             continue;
         }
         if (!data.term_id || !data.canonical_name) {
-            console.warn(`⚠️  Skipping ${path.relative(ROOT, file)}: missing term_id or canonical_name`);
+            console.warn(`[AVISO] Se omite ${path.relative(ROOT, file)}: missing term_id or canonical_name`);
             skipped++;
             continue;
         }
@@ -54,7 +54,7 @@ function bundle() {
     for (const t of terms) seen.set(t.term_id, (seen.get(t.term_id) || 0) + 1);
     const dups = [...seen].filter(([, n]) => n > 1).map(([id]) => id);
     if (dups.length) {
-        console.error(`❌ Duplicate term_ids found: ${dups.join(', ')}`);
+        console.error(`[ERROR] term_id duplicados: ${dups.join(', ')}`);
         process.exit(1);
     }
 
@@ -103,13 +103,13 @@ function bundle() {
     fs.writeFileSync(REGISTRY_PATH, JSON.stringify(registryData, null, 2) + '\n');
 
     const sizeKB = (fs.statSync(BUNDLE_PATH).size / 1024).toFixed(2);
-    console.log(`✅ Bundled ${terms.length} terms (${skipped} skipped) → ${path.relative(ROOT, BUNDLE_PATH)} (${sizeKB} KB)`);
-    console.log(`✅ Regenerated registry → ${path.relative(ROOT, REGISTRY_PATH)} (${index.length} entries, ${Object.keys(prefixes).length} prefixes)`);
+    console.log(`Empaquetados ${terms.length} terms (${skipped} skipped) → ${path.relative(ROOT, BUNDLE_PATH)} (${sizeKB} KB)`);
+    console.log(`Registro regenerado → ${path.relative(ROOT, REGISTRY_PATH)} (${index.length} entries, ${Object.keys(prefixes).length} prefixes)`);
 }
 
 try {
     bundle();
 } catch (error) {
-    console.error('❌ Error during bundling:', error);
+    console.error('Error al generar el bundle:', error);
     process.exit(1);
 }

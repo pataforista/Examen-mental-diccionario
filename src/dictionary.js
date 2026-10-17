@@ -1,22 +1,22 @@
+import { getIcon, DOMAIN_ICONS } from "./icons.js";
+
 export const dictionary = {
   init: async function () {
     this.cacheDOM();
     this.registerSW();
     this._showSkeletonTerms();
     this.bindEvents();
+    this.theme.init();
     await this.loadData();
     this.setupSearch();
     this.loadRecentSearches();
     this.renderAllTerms();
     this.renderTermOfTheDay();
-    this.theme.init();
     this.donation.init();
     this.pwa.init();
     this.handleInitialHash();
     this.checkOnboarding();
-    this.navIndicator.init();
     this._setupScrollCompact();
-    setTimeout(() => this.navIndicator.update(), 50);
   },
   _showSkeletonTerms: function () {
     if (!this.nodes.allTermsList) return;
@@ -51,7 +51,7 @@ export const dictionary = {
     try {
       if (!localStorage.getItem("mse_onboarded_v2.2")) {
         setTimeout(() => {
-          App.toast.show("📤 Nuevo: comparte términos como tarjetas clínicas. Pulsa el botón compartir en cualquier ficha.", "info", 5000);
+          App.toast.show("Nuevo: comparte términos como tarjetas clínicas. Pulsa el botón compartir en cualquier ficha.", "info", 5000);
           try {
             localStorage.setItem("mse_onboarded_v2.2", "true");
           } catch(e) { console.warn(e); }
@@ -178,19 +178,6 @@ export const dictionary = {
         this.nodes.search.select();
       }
     });
-    document.addEventListener("pointerdown", e => {
-      const btn = e.target.closest(".btn.primary, .btn.secondary");
-      if (!btn) return;
-      const rect = btn.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height) * 1.6;
-      const wave = document.createElement("span");
-      wave.className = "ripple-wave";
-      wave.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px`;
-      btn.appendChild(wave);
-      wave.addEventListener("animationend", () => wave.remove(), {
-        once: true
-      });
-    });
   },
   handlePopState: function (state) {
     if (!state) {
@@ -214,7 +201,6 @@ export const dictionary = {
     }
   },
   loadData: async function () {
-    const startTime = performance.now();
     try {
       const lexiconPromise = fetch("lexicon/lexicon_bundle.json").then(r => r.json());
       const domainIds = Array.from({
@@ -241,7 +227,6 @@ export const dictionary = {
       this.data.domains = domainsData;
       this.data.cases = (casesDataArrays || []).flat();
       this.data.terms.sort((a, b) => (a.canonical_name || "").localeCompare(b.canonical_name || ""));
-      console.log(`🚀 Clinical Data Loaded in ${Math.round(performance.now() - startTime)}ms`);
     } catch (error) {
       console.error("Critical error loading clinical data:", error);
       this.data.terms = this.data.terms || [];
@@ -249,10 +234,11 @@ export const dictionary = {
       this.data.cases = this.data.cases || [];
       if (this.nodes.allTermsList) {
         this.nodes.allTermsList.innerHTML = `
-                    <div style="padding:2rem; text-align:center; opacity:0.7;">
-                        <p style="font-size:1.1rem; margin-bottom:1rem;">Sin conexión</p>
-                        <p style="font-size:0.9rem;">No se pudo cargar el diccionario. Verifica tu conexión e intenta de nuevo.</p>
-                        <button class="btn secondary" style="margin-top:1rem;" onclick="window.location.reload()">Reintentar</button>
+                    <div class="card empty-state">
+                        <div class="empty-state__icon">${getIcon("alert")}</div>
+                        <h3>Sin conexión</h3>
+                        <p>No se pudo cargar el diccionario. Verifica tu conexión e intenta de nuevo.</p>
+                        <button class="btn secondary" onclick="window.location.reload()">${getIcon("refresh")} Reintentar</button>
                     </div>`;
       }
     }
@@ -278,24 +264,12 @@ export const dictionary = {
     return slugs[id] || "";
   },
   getDomainIcon: function (id) {
-    const icons = {
-      "DOM-01": "🧠",
-      "DOM-02": "👤",
-      "DOM-03": "🤝",
-      "DOM-04": "🏃",
-      "DOM-05": "🗣️",
-      "DOM-06": "🔄",
-      "DOM-07": "💡",
-      "DOM-08": "👁️",
-      "DOM-09": "🎭",
-      "DOM-10": "🧩",
-      "DOM-11": "⚖️",
-      "DOM-12": "⚠️",
-      "DOM-13": "🏥",
-      "DOM-14": "🎓",
-      "DOM-15": "📜"
-    };
-    return icons[id] || "🔹";
+    return getIcon(DOMAIN_ICONS[id] || "compass");
+  },
+  // Paleta categórica de 6 tonos (EM5): DOM-01 → cat-1 … DOM-07 → cat-1.
+  getDomainCat: function (id) {
+    const n = parseInt(String(id).replace(/\D/g, ""), 10) || 1;
+    return `cat-${((n - 1) % 6) + 1}`;
   },
   setupSearch: function () {
     if (!window.Fuse) return;
@@ -354,12 +328,13 @@ export const dictionary = {
     });
   },
   renderTermCard: function (term) {
-    const div = document.createElement("div");
+    const div = document.createElement("button");
+    div.type = "button";
     div.className = "term-card-simple";
     div.onclick = () => this.viewTerm(term.term_id);
     div.innerHTML = `
-            <div class="term-name">${this.utils.sanitizeHTML(term.canonical_name)}</div>
-            <div class="term-snippet">${this.utils.sanitizeHTML(term.definition_clinical?.core?.substring(0, 60) || "")}...</div>
+            <span class="term-name">${this.utils.sanitizeHTML(term.canonical_name)}</span>
+            <span class="term-snippet">${this.utils.sanitizeHTML(term.definition_clinical?.core?.substring(0, 60) || "")}...</span>
         `;
     return div;
   },
@@ -368,41 +343,33 @@ export const dictionary = {
       const pearls = ["¿Sabías que la 'Saliencia aberrante' es el mecanismo neurocognitivo central detrás de la formación de delirios?", "La fenomenología (EASE) sugiere que los trastornos de la ipseidad suelen preceder a los síntomas psicóticos positivos.", "En el examen mental, las 'acoasmas' se refieren a alucinaciones auditivas elementales como chasquidos o zumbidos.", "El concepto de 'Insight' en psiquiatría es multidimensional e incluye la conciencia de enfermedad y la adherencia al tratamiento.", "La 'prosopagnosia' es la incapacidad de reconocer rostros conocidos, a menudo por lesiones en el área fusiforme."];
       const randomPearl = pearls[Math.floor(Math.random() * pearls.length)];
       this.nodes.resultsView.innerHTML = `
-                <div class="card animate-pop" style="text-align: center; padding: 2.5rem 1.5rem; border-color: var(--bau-yellow);">
-                    <div style="font-size: 3.5rem; margin-bottom: 1rem;">🕳️</div>
-                    <h3 style="margin: 0; color: var(--bau-black); font-family: 'Outfit', sans-serif; font-weight: 800;">¿PERDIDO EN EL PSIQUISMO?</h3>
-                    <p style="font-size: 0.95rem; margin-top: 0.75rem; color: var(--text-p);">No encontramos el término exacto, pero no te vayas sin aprender algo:</p>
-                    
-                    <div style="margin-top: 1.5rem; padding: 1.25rem; background: var(--bau-yellow); border: 3px solid var(--bau-black); box-shadow: 4px 4px 0px var(--bau-black); border-radius: 12px; text-align: left;">
-                        <span style="font-weight: 900; font-size: 0.7rem; text-transform: uppercase; color: var(--bau-red); display: block; margin-bottom: 0.5rem;">💡 Sabías que...</span>
-                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--bau-black); font-weight: 600;">${randomPearl}</p>
+                <div class="card empty-state">
+                    <div class="empty-state__icon">${getIcon("compass")}</div>
+                    <h3>Sin coincidencias exactas</h3>
+                    <p>No encontramos ese término. Mientras tanto, una perla clínica:</p>
+                    <div class="empty-state__pearl">
+                        <strong>${getIcon("bulb")} Sabías que…</strong>
+                        <p>${randomPearl}</p>
                     </div>
-
-                    <button class="btn" style="margin-top: 1.5rem; width: 100%;" onclick="App.viewTerm(App.data.terms[Math.floor(Math.random()*App.data.terms.length)].term_id)">
-                        🎲 Explorar término aleatorio
+                    <button class="btn primary btn-block" onclick="App.viewTerm(App.data.terms[Math.floor(Math.random()*App.data.terms.length)].term_id)">
+                        ${getIcon("shuffle")} Explorar un término al azar
                     </button>
-                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;" onclick="App.switchTab('nav-dictionary')">O vuelve al <span style="text-decoration: underline; cursor: pointer;">índice general</span></p>
+                    <p class="muted-note">O vuelve al <button class="link-btn" onclick="App.switchTab('nav-dictionary')">índice general</button></p>
                 </div>
             `;
       return;
     } else {
       this.nodes.resultsView.innerHTML = `
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0 0.5rem;">
-                    <span class="section-label" style="margin:0;">Resultados (${results.length})</span>
+                <div class="results-head">
+                    <span class="section-label">Resultados (${results.length})</span>
                 </div>
                 ${results.map(r => `
-                    <div class="card" onclick="App.viewTerm('${r.item.term_id}')" style="cursor: pointer; padding: 1.25rem;">
-                        <div style="display:flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
-                            <strong style="color: var(--primary-text); font-size: 1.1rem; letter-spacing: -0.02em;">
-                                ${this.utils.sanitizeHTML(r.item.canonical_name)}
-                            </strong>
-                            <div class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}" style="font-size: 0.65rem; border: 1px solid var(--border-subtle);">
-                                ${this.utils.sanitizeHTML(r.item.term_kind)}
-                            </div>
+                    <div class="card card--interactive result-card" role="button" tabindex="0" onclick="App.viewTerm('${r.item.term_id}')" onkeydown="if(event.key==='Enter' && event.target === this){App.viewTerm('${r.item.term_id}')}">
+                        <div class="result-card__head">
+                            <span class="result-card__title">${this.utils.sanitizeHTML(r.item.canonical_name)}</span>
+                            <span class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(r.item.term_kind)}</span>
                         </div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-                            ${this.utils.sanitizeHTML(r.item.definition_clinical?.core || "Sin definición disponible.")}
-                        </p>
+                        <p class="result-card__def">${this.utils.sanitizeHTML(r.item.definition_clinical?.core || "Sin definición disponible.")}</p>
                     </div>
                 `).join("")}
             `;
@@ -431,29 +398,25 @@ export const dictionary = {
     const dailyTerm = filterTerms[indices[dayOfYear % filterTerms.length]];
     const objMarker = dailyTerm.definition_clinical.subjective_marker || dailyTerm.definition_clinical.behavioral_marker || (dailyTerm.teaching_notes ? dailyTerm.teaching_notes[0] : null);
     const tipHtml = objMarker ? `
-            <div style="background: rgba(var(--v-on-primary-container-rgb, 0,0,0), 0.08); padding: 1rem; border-left: 6px solid var(--bau-blue); margin-bottom: 1.25rem; border-radius: 4px; border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
-                <strong style="display:block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem; color: inherit; opacity: 0.7;">💡 Perla Clínica:</strong>
-                <span style="font-size: 0.9rem; font-style: italic; color: inherit; line-height: 1.4; display: block;">${this.utils.sanitizeHTML(objMarker)}</span>
+            <div class="totd-pearl">
+                <strong>${getIcon("bulb")} Perla clínica</strong>
+                <span>${this.utils.sanitizeHTML(objMarker)}</span>
             </div>
         ` : "";
     const fullDef = dailyTerm.definition_clinical.core || "";
-    const truncatedDef = fullDef.length > 160 ? fullDef.substring(0, 160).trim() + "..." : fullDef;
+    const truncatedDef = fullDef.length > 160 ? fullDef.substring(0, 160).trim() + "…" : fullDef;
     this.nodes.termOfTheDay.innerHTML = `
-            <div class="totd-card" onclick="App.viewTerm('${dailyTerm.term_id}')">
-                <div class="totd-ribbon">Término del Día</div>
+            <div class="totd-card" role="link" tabindex="0" onclick="App.viewTerm('${dailyTerm.term_id}')" onkeydown="if(event.key==='Enter' && event.target === this){App.viewTerm('${dailyTerm.term_id}')}">
+                <span class="totd-ribbon">${getIcon("bulb")} Término del día</span>
                 <div class="totd-content">
-                    <h3 class="totd-title" style="color: inherit;">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h3>
-                    <div class="badge ${dailyTerm.risk_weight > 1 ? "badge-risk-critical" : ""}" style="display:inline-block; margin-bottom: 0.75rem; font-size: 0.7rem; background: var(--bau-magenta); color: white; border: none;">
-                        ${this.utils.sanitizeHTML(dailyTerm.term_kind)}
-                    </div>
-                    <p class="totd-snippet" style="color: inherit;">
-                        ${this.utils.sanitizeHTML(truncatedDef)}
-                    </p>
+                    <h2 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h2>
+                    <span class="badge ${dailyTerm.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(dailyTerm.term_kind)}</span>
+                    <p class="totd-snippet">${this.utils.sanitizeHTML(truncatedDef)}</p>
                     ${tipHtml}
-                    <div style="display:flex; gap:1rem; align-items: center; justify-content: space-between;">
-                        <div class="totd-action" style="color: inherit;">Explorar Ficha Completa →</div>
+                    <div class="totd-footer">
+                        <span class="totd-action">Ver ficha completa ${getIcon("arrow-right")}</span>
                         <button class="share-pill" onclick="event.stopPropagation(); App.shareTerm('${dailyTerm.term_id}')">
-                            <span>📤</span> COMPARTIR
+                            ${getIcon("share")} Compartir
                         </button>
                     </div>
                 </div>
@@ -465,7 +428,6 @@ export const dictionary = {
     const term = this.data.terms.find(t => t.term_id === termId);
     if (!term) return;
     this.utils.haptic();
-    console.log(`Generating card for ${term.canonical_name}...`);
     try {
       const blob = await this.utils.generateShareCard(term);
       const file = new File([blob], `MSE_${term.canonical_name}.png`, {
@@ -485,7 +447,7 @@ export const dictionary = {
         a.download = `MSE_${term.canonical_name}.png`;
         a.click();
         URL.revokeObjectURL(url);
-        App.toast.show("🖼️ Tarjeta descargada en tu dispositivo", "success");
+        App.toast.show("Tarjeta descargada en tu dispositivo", "success");
       }
     } catch (error) {
       console.error("Error sharing:", error);
@@ -517,84 +479,86 @@ export const dictionary = {
       const examples = term.examples || [];
       const knownDomainIds = new Set(this.data.domains.map(d => d.domain_id));
       const domainLinks = (term.domain_links || []).filter(l => knownDomainIds.has(l.domain_id));
+      const sanitize = v => this.utils.sanitizeHTML(v);
+      const isCritical = term.risk_weight > 1;
       this.nodes.termView.innerHTML = `
-            <div class="view-actions-header" style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <div class="btn-back" onclick="App.closeTerm()" style="margin:0;">← Volver</div>
-                <div style="display:flex; gap:0.5rem;">
-                    <button class="btn-icon" onclick="App.speakTerm('${term.term_id}')" title="Leer definición">🔊 Leer</button>
-                    <button class="btn-icon" onclick="App.shareTerm('${term.term_id}')" title="Compartir">📤</button>
+            <div class="view-actions-header">
+                <button class="btn-back" onclick="App.closeTerm()">${getIcon("arrow-left")} Volver</button>
+                <div class="view-actions">
+                    <button class="btn-icon" onclick="App.speakTerm('${term.term_id}')" title="Leer definición">${getIcon("volume")} Leer</button>
+                    <button class="btn-icon" onclick="App.shareTerm('${term.term_id}')" title="Compartir" aria-label="Compartir">${getIcon("share")}</button>
                 </div>
             </div>
             <div class="card">
-                <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                    <div class="badge badge-risk-${term.risk_weight > 1 ? "critical" : "alert"}">${this.utils.sanitizeHTML(term.term_kind || "término")}</div>
-                    ${term.status === "active" ? "✅" : ""}
+                <div class="term-head">
+                    <span class="badge ${isCritical ? "badge-risk-critical" : ""}">${sanitize(term.term_kind || "término")}</span>
+                    ${term.status === "active" ? '<span class="status-dot status-dot--ok" title="Término activo" aria-label="Término activo"></span>' : ""}
                 </div>
-                <h2 class="term-title">${this.utils.sanitizeHTML(term.canonical_name)}</h2>
-                
-                ${term.risk_weight > 1 ? `
-                    <div class="alert-critical-banner">
-                        <div class="alert-critical-header">
-                            <span>⚠️</span> ALERTA DE RIESGO CLÍNICO
-                        </div>
-                        <p style="font-weight: 700; margin: 0; font-size: 0.95rem; color: var(--alert-text);">
-                            ${alerts.length > 0 ? this.utils.sanitizeHTML(alerts[0].message) : "Este término implica un riesgo de seguridad o manejo crítico."}
+                <h2 class="term-title">${sanitize(term.canonical_name)}</h2>
+
+                ${isCritical ? `
+                    <div class="alert-critical-banner" role="note">
+                        <div class="alert-critical-header">${getIcon("alert")} Alerta de riesgo clínico</div>
+                        <p class="alert-critical-text">
+                            ${alerts.length > 0 ? sanitize(alerts[0].message) : "Este término implica un riesgo de seguridad o manejo crítico."}
                         </p>
                     </div>
                 ` : ""}
 
                 <div class="definition-section">
-                    <span class="section-label">Definición Clínica</span>
-                    <p>${this.utils.sanitizeHTML(term.definition_clinical?.core || "Sin definición disponible.")}</p>
+                    <span class="section-label">Definición clínica</span>
+                    <p>${sanitize(term.definition_clinical?.core || "Sin definición disponible.")}</p>
                 </div>
 
                 ${term.definition_clinical?.subjective_marker ? `
                     <div class="definition-section">
-                        <span class="section-label">Marcador Subjetivo</span>
-                        <p><em>"${this.utils.sanitizeHTML(term.definition_clinical.subjective_marker)}"</em></p>
+                        <span class="section-label">Marcador subjetivo</span>
+                        <p><em>"${sanitize(term.definition_clinical.subjective_marker)}"</em></p>
                     </div>
                 ` : ""}
 
                 <div class="definition-section">
-                    <span class="section-label">Dominios Asociados</span>
-                    <div class="tag-container" style="margin-top: 0.5rem;">
+                    <span class="section-label">Dominios asociados</span>
+                    <div class="tag-container">
                         ${domainLinks.length > 0 ? domainLinks.map(link => {
         const domain = this.data.domains.find(d => d.domain_id === link.domain_id);
         const label = domain?.label_es || this.getDomainSlug(link.domain_id).replace(/_/g, " ");
         return `
-                                <span class="tag" onclick="event.stopPropagation(); App.viewDomainDetails('${link.domain_id}')">
-                                    ${this.getDomainIcon(link.domain_id)} ${this.utils.sanitizeHTML(label)}
-                                </span>`;
-      }).join("") : '<span style="font-size: 0.8rem; opacity: 0.5;">No categorizado</span>'}
+                                <button class="tag" onclick="event.stopPropagation(); App.viewDomainDetails('${link.domain_id}')">
+                                    ${this.getDomainIcon(link.domain_id)} ${sanitize(label)}
+                                </button>`;
+      }).join("") : '<span class="muted-note">No categorizado</span>'}
                     </div>
                 </div>
 
                 ${teachingNotes.length > 0 ? `
                 <div class="definition-section">
-                    <span class="section-label">Docencia & Perlas</span>
-                    <ul style="padding-left: 1.25rem; font-size: 0.95rem;">
-                        ${teachingNotes.map(note => `<li style="margin-bottom: 0.5rem;">${this.utils.sanitizeHTML(note)}</li>`).join("")}
+                    <span class="section-label">Docencia y perlas</span>
+                    <ul class="notes-list">
+                        ${teachingNotes.map(note => `<li>${sanitize(note)}</li>`).join("")}
                     </ul>
                 </div>
                 ` : ""}
 
                 ${examples.length > 0 ? `
                     <div class="definition-section">
-                        <span class="section-label">Ejemplos Clínicos</span>
+                        <span class="section-label">Ejemplos clínicos</span>
                         <div class="examples-container">
                             ${examples.map(ex => `
-                                <div class="example-item ${ex.type}">
-                                    <div class="example-type-badge">${ex.type === "patient_quote" ? "💬 Paciente" : "👁️ Observación"}</div>
-                                    <p>${ex.type === "patient_quote" ? `<em>"${this.utils.sanitizeHTML(ex.text)}"</em>` : this.utils.sanitizeHTML(ex.text)}</p>
+                                <div class="example-item">
+                                    ${ex.type === "patient_quote"
+        ? `<span class="example-type-badge example-type-badge--patient">${getIcon("quote")} Paciente</span>`
+        : `<span class="example-type-badge example-type-badge--observation">${getIcon("eye")} Observación</span>`}
+                                    <p>${ex.type === "patient_quote" ? `<em>"${sanitize(ex.text)}"</em>` : sanitize(ex.text)}</p>
                                 </div>
                             `).join("")}
                         </div>
                     </div>
                 ` : ""}
 
-                <div class="support-nudge" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed var(--border-subtle); text-align: center;">
-                    <p style="font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.75rem;">¿Te fue útil esta definición? Apoya el proyecto independiente.</p>
-                    <button class="btn secondary" style="font-size: 0.75rem; padding: 0.5rem 1rem;" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">☕ Invitame un café</button>
+                <div class="support-nudge">
+                    <p>¿Te fue útil esta definición? Apoya el proyecto independiente.</p>
+                    <a class="donation-cta" href="https://buymeacoffee.com/herramente" target="_blank" rel="noopener noreferrer">${getIcon("coffee")} Invítame un café</a>
                 </div>
             </div>
             `;
@@ -636,106 +600,61 @@ export const dictionary = {
   },
   viewAbout: function () {
     this.nodes.aboutView.innerHTML = `
-            <div class="btn-back" onclick="App.switchTab('nav-dictionary')">← Volver</div>
-            
-            <div class="chroma-grid" id="about-chroma-grid">
-                <article class="chroma-card" style="--card-border: #56D8B6; --cols: 1;">
-                    <div class="chroma-img-wrapper">
-                        <img src="assets/celada.jpeg" alt="Dr. Cesar Celada">
-                    </div>
-                    <footer class="chroma-info">
-                        <h3 class="name">Dr. Cesar Celada</h3>
-                        <span class="handle">Autor Principal</span>
-                        <p class="role">Médico Psiquiatra</p>
-                        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">
-                            Médico Cirujano y Especialista en Psiquiatría (INPRFM). Apasionado por la intersección entre la tecnología y la salud mental de precisión.
-                        </p>
-                    </footer>
+            <button class="btn-back" onclick="App.switchTab('nav-dictionary')">${getIcon("arrow-left")} Volver</button>
+
+            <div class="about-grid">
+                <article class="profile-card">
+                    <img class="profile-card__avatar" src="assets/celada.jpeg" alt="Dr. Cesar Celada">
+                    <h2 class="profile-card__name">Dr. Cesar Celada</h2>
+                    <span class="profile-card__handle">Autor principal</span>
+                    <p class="profile-card__role">Médico psiquiatra</p>
+                    <p class="profile-card__bio">
+                        Médico Cirujano y Especialista en Psiquiatría (INPRFM). Apasionado por la intersección entre la tecnología y la salud mental de precisión.
+                    </p>
                 </article>
 
-                <article class="chroma-card" style="--card-border: #F59E0B;" onclick="window.location.href='mailto:cesar.celada@gmail.com'">
-                    <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(var(--primary-rgb), 0.1);">
-                        <span style="font-size: 3rem;">📩</span>
-                    </div>
-                    <footer class="chroma-info">
-                        <h3 class="name">Contacto</h3>
-                        <span class="handle">Aclaraciones y Mejoras</span>
-                        <p class="role">cesar.celada@gmail.com</p>
-                    </footer>
-                </article>
-
-                <article class="chroma-card" style="--card-border: #FF3C3C;" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">
-                    <div class="chroma-img-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(var(--accent-rgb), 0.1);">
-                        <span style="font-size: 3rem;">☕</span>
-                    </div>
-                    <footer class="chroma-info">
-                        <h3 class="name">Apoyo</h3>
-                        <span class="handle">Donaciones</span>
-                        <p class="role">Invitame un café</p>
-                    </footer>
-                </article>
+                <div class="action-row">
+                    <a class="action-card cat-1" href="mailto:cesar.celada@gmail.com">
+                        <span class="action-card__icon">${getIcon("mail")}</span>
+                        <span>
+                            <span class="action-card__title">Contacto</span>
+                            <span class="action-card__sub">Aclaraciones y mejoras · cesar.celada@gmail.com</span>
+                        </span>
+                    </a>
+                    <a class="action-card cat-5" href="https://buymeacoffee.com/herramente" target="_blank" rel="noopener noreferrer">
+                        <span class="action-card__icon">${getIcon("coffee")}</span>
+                        <span>
+                            <span class="action-card__title">Apoyo</span>
+                            <span class="action-card__sub">Invítame un café</span>
+                        </span>
+                    </a>
+                </div>
             </div>
 
-            <div class="card" style="margin-top: 2rem;">
+            <div class="card">
                 <div class="definition-section">
-                    <span class="section-label">Fuentes y Referencias (APA 7)</span>
-                    <ul style="font-size: 0.75rem; padding-left: 1.25rem; line-height: 1.4; opacity: 0.8;">
-                        <li style="margin-bottom: 0.5rem;"><strong>Oyebode, F.</strong> (2022). <em>Sims' Symptoms in the Mind: Textbook of Descriptive Psychopathology</em> (7ª ed.). Elsevier.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>Jaspers, K.</strong> (1997). <em>General Psychopathology</em>. Johns Hopkins University Press.</li>
-                        <li style="margin-bottom: 0.5rem;"><strong>CIE-11 / ICD-11</strong> for Mortality and Morbidity Statistics. World Health Organization.</li>
+                    <span class="section-label">Fuentes y referencias (APA 7)</span>
+                    <ul class="ref-list">
+                        <li><strong>Oyebode, F.</strong> (2022). <em>Sims' Symptoms in the Mind: Textbook of Descriptive Psychopathology</em> (7ª ed.). Elsevier.</li>
+                        <li><strong>Jaspers, K.</strong> (1997). <em>General Psychopathology</em>. Johns Hopkins University Press.</li>
+                        <li><strong>CIE-11 / ICD-11</strong> for Mortality and Morbidity Statistics. World Health Organization.</li>
                     </ul>
                 </div>
 
-                <div class="card clinical-box" style="margin-top: 2rem; border-left: 4px solid var(--accent); background: rgba(255, 60, 60, 0.05);">
-                    <span class="section-label" style="color: var(--o-accent-a);">AVISO LEGAL Y CLÍNICO</span>
-                    <p style="font-size: 0.8rem; line-height: 1.5; color: var(--text-p);">
+                <div class="disclaimer-box" role="note">
+                    <span class="section-label">Aviso legal y clínico</span>
+                    <p>
                         1. Esta herramienta es de carácter estrictamente informativo y pedagógico.
-                        <br>2. **No constituye consejo médico** ni sustituye el juicio clínico soberano del profesional.
+                        <br>2. <strong>No constituye consejo médico</strong> ni sustituye el juicio clínico soberano del profesional.
                         <br>3. El autor no se hace responsable de las decisiones clínicas tomadas basadas en esta guía rápida.
                     </p>
                 </div>
-                
-                <p style="font-size: 0.7rem; color: var(--text-secondary); text-align: center; margin-top: 2rem; opacity: 0.5;">
-                    Diccionario MSE | Dr. Cesar Celada © 2026
-                </p>
+
+                <p class="about-foot">Diccionario MSE · Dr. Cesar Celada © 2026</p>
             </div>
         `;
     this.renderView("about");
     this.nodes.navButtons.forEach(btn => btn.classList.remove("active"));
-    this.setupChromaGrid();
-  },
-  setupChromaGrid: function () {
-    const grid = document.getElementById("about-chroma-grid");
-    if (!grid || typeof gsap === "undefined") return;
-    gsap.killTweensOf(this.data.chromaPos);
-    const setX = gsap.quickSetter(grid, "--x", "px");
-    const setY = gsap.quickSetter(grid, "--y", "px");
-    grid.addEventListener("pointermove", e => {
-      const rect = grid.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      gsap.to(this.data.chromaPos, {
-        x,
-        y,
-        duration: 0.45,
-        ease: "power3.out",
-        onUpdate: () => {
-          setX(this.data.chromaPos.x);
-          setY(this.data.chromaPos.y);
-        },
-        overwrite: true
-      });
-    });
-    const cards = grid.querySelectorAll(".chroma-card");
-    cards.forEach(card => {
-      card.addEventListener("mousemove", e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
-      });
-    });
   },
   closeTerm: function () {
     if (this.nodes.search.value.length >= 2) {
@@ -747,19 +666,19 @@ export const dictionary = {
   renderDomains: function () {
     this.nodes.domainView.innerHTML = `
             <div id="domain-grid-container">
-                <div class="clinical-box" style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(var(--primary-rgb), 0.05); border-radius: 12px;">
-                    <h3 style="margin-top:0; font-size: 1.2rem; color: var(--primary-text);">Explorador de Dominios</h3>
-                    <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">Seleccione un dominio para ver su estructura clínica y términos asociados.</p>
+                <div class="intro-box">
+                    <h2>Explorador de dominios</h2>
+                    <p>Seleccione un dominio para ver su estructura clínica y términos asociados.</p>
                 </div>
                 <div class="domain-grid">
                     ${this.data.domains.map(d => `
-                        <div class="domain-card" onclick="App.viewDomainDetails('${d.domain_id}')">
-                            <div class="domain-icon">${this.getDomainIcon(d.domain_id)}</div>
-                            <span class="domain-title">${this.utils.sanitizeHTML(d.label_es || d.domain_name || d.domain_id)}</span>
-                            <div class="domain-subtitle" style="font-size: 0.65rem; opacity: 0.8; text-transform: none;">
-                                ${d.subcomponents ? d.subcomponents.length + " áreas" : "Detalles"}
-                            </div>
-                        </div>
+                        <button class="domain-card ${this.getDomainCat(d.domain_id)}" onclick="App.viewDomainDetails('${d.domain_id}')">
+                            <span class="domain-icon">${this.getDomainIcon(d.domain_id)}</span>
+                            <span>
+                                <span class="domain-title">${this.utils.sanitizeHTML(d.label_es || d.domain_name || d.domain_id)}</span>
+                                <span class="domain-subtitle">${d.subcomponents ? d.subcomponents.length + " áreas" : "Detalles"}</span>
+                            </span>
+                        </button>
                     `).join("")}
                 </div>
             </div>
@@ -769,6 +688,12 @@ export const dictionary = {
   viewDomainDetails: function (domainId, isPopState = false) {
     const domain = this.data.domains.find(d => d.domain_id === domainId);
     if (!domain) return;
+    // Puede llegarse desde una ficha de término: asegura la vista y su contenedor.
+    if (!document.getElementById("domain-detail-container")) this.renderDomains();
+    if (this.nodes.domainView.classList.contains("hidden")) {
+      this.renderView("domain");
+      this._setActiveNav("nav-domains");
+    }
     if (!isPopState) {
       history.pushState({
         view: "domain",
@@ -781,56 +706,57 @@ export const dictionary = {
     detailContainer.classList.remove("hidden");
     this.donation.increment();
     document.title = `Dominio: ${domain.label_es || domain.domain_name} | Diccionario MSE`;
+    const sanitize = v => this.utils.sanitizeHTML(v);
     detailContainer.innerHTML = `
-            <div class="btn-back" onclick="App.closeDomainDetails()">← Volver a Dominios</div>
-            
-            <div class="domain-detail-header">
+            <button class="btn-back" onclick="App.closeDomainDetails()">${getIcon("arrow-left")} Volver a dominios</button>
+
+            <div class="domain-detail-header ${this.getDomainCat(domain.domain_id)}">
                 <h2 class="domain-detail-title">
-                    <span>${this.getDomainIcon(domain.domain_id)}</span>
-                    ${this.utils.sanitizeHTML(domain.label_es || domain.domain_name)}
+                    <span class="domain-icon">${this.getDomainIcon(domain.domain_id)}</span>
+                    ${sanitize(domain.label_es || domain.domain_name)}
                 </h2>
-                <p style="margin-top: 1rem; opacity: 0.9; line-height: 1.5;">${this.utils.sanitizeHTML(domain.definition_es || "Sin definición disponible.")}</p>
+                <p class="domain-detail-def">${sanitize(domain.definition_es || "Sin definición disponible.")}</p>
             </div>
 
             <div class="section-container">
-                <h3 class="section-label" style="font-size: 1rem;">Subcomponentes y Términos Aceptados</h3>
+                <h3 class="section-title">Subcomponentes y términos aceptados</h3>
                 ${domain.subcomponents ? domain.subcomponents.map(sub => `
                     <div class="subcomponent-item">
-                        <span class="subcomponent-label">${this.utils.sanitizeHTML(sub.label_es)}</span>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">${this.utils.sanitizeHTML(sub.notes || "")}</p>
+                        <span class="subcomponent-label">${sanitize(sub.label_es)}</span>
+                        ${sub.notes ? `<p class="subcomponent-notes">${sanitize(sub.notes)}</p>` : ""}
                         <div class="tag-container">
-                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${this.utils.sanitizeHTML(term)}</span>`).join("") : ""}
+                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${sanitize(term)}</span>`).join("") : ""}
                         </div>
                     </div>
-                `).join("") : "<p>No hay subcomponentes definidos.</p>"}
+                `).join("") : '<p class="muted-note">No hay subcomponentes definidos.</p>'}
             </div>
 
             ${domain.clinical_notes ? `
-                <div class="section-container" style="margin-top: 1.5rem;">
-                    <h3 class="section-label" style="font-size: 1rem;">Notas Clínicas</h3>
-                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--text-secondary);">
-                        ${domain.clinical_notes.map(note => `<li style="margin-bottom: 0.5rem;">${this.utils.sanitizeHTML(note)}</li>`).join("")}
+                <div class="section-container">
+                    <h3 class="section-title">Notas clínicas</h3>
+                    <ul class="notes-list">
+                        ${domain.clinical_notes.map(note => `<li>${sanitize(note)}</li>`).join("")}
                     </ul>
                 </div>
             ` : ""}
 
-            <div class="section-container" style="margin-top: 1.5rem;">
-                <h3 class="section-label" style="font-size: 1rem;">Términos en el Diccionario</h3>
-                <div class="card" style="padding: 0.5rem;">
+            <div class="section-container">
+                <h3 class="section-title">Términos en el diccionario</h3>
+                <div class="card list-card">
                     ${filteredTerms.length ? filteredTerms.map(t => `
-                        <div class="list-item" onclick="App.viewTerm('${t.term_id}')">
-                            <span>${this.utils.sanitizeHTML(t.canonical_name)}</span>
-                            <span style="font-size: 0.7rem; color: var(--text-secondary); opacity: 0.6;">${this.utils.sanitizeHTML(t.term_kind)}</span>
-                        </div>
-                    `).join("") : '<p style="padding: 1rem; font-size: 0.9rem;">No hay términos específicos registrados aún.</p>'}
+                        <button class="list-item" onclick="App.viewTerm('${t.term_id}')">
+                            <span>${sanitize(t.canonical_name)}</span>
+                            <span class="list-item__meta">${sanitize(t.term_kind)}</span>
+                        </button>
+                    `).join("") : '<p class="muted-note list-card__empty">No hay términos específicos registrados aún.</p>'}
                 </div>
             </div>
 
             ${domain.recommended_wording ? `
-                <div class="wording-box wording-recommended" style="margin-top: 1.5rem;">
-                    <span class="section-label" style="color: #2f855a;">Lenguaje Recomendado</span>
+                <div class="wording-box wording-recommended">
+                    <span class="section-label">Lenguaje recomendado</span>
                     <ul class="wording-list">
-                        ${domain.recommended_wording.map(w => `<li>${this.utils.sanitizeHTML(w)}</li>`).join("")}
+                        ${domain.recommended_wording.map(w => `<li>${sanitize(w)}</li>`).join("")}
                     </ul>
                 </div>
             ` : ""}
@@ -843,24 +769,21 @@ export const dictionary = {
     this.nodes.content.scrollTop = 0;
   },
   renderCases: function () {
+    const sanitize = v => this.utils.sanitizeHTML(v);
     this.nodes.casesView.innerHTML = `
-            <h3 style="margin-top:0; color: var(--primary-text);">Escenarios OSCE</h3>
-            <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 1rem;">Seleccione un caso para practicar el diagnóstico diferencial.</p>
+            <div class="view-intro">
+                <h2>Escenarios OSCE</h2>
+                <p>Seleccione un caso para practicar el diagnóstico diferencial.</p>
+            </div>
             ${this.data.cases.map(c => `
-                <div class="card" onclick="App.renderCase('${c.case_id}')" style="padding: 1rem; cursor: pointer;">
-                    <div style="display:flex; justify-content: space-between; align-items: center;">
-                        <span class="badge" style="background:#edf2f7; color: #2d3748;">Nivel ${this.utils.sanitizeHTML(String(c.level))}</span>
-                        <code style="font-size: 0.7rem; opacity: 0.75;">${this.utils.sanitizeHTML(c.case_id)}</code>
+                <div class="card card--interactive case-card" role="button" tabindex="0" onclick="App.renderCase('${c.case_id}')" onkeydown="if(event.key==='Enter' && event.target === this){App.renderCase('${c.case_id}')}">
+                    <div class="case-card__head">
+                        <span class="badge">Nivel ${sanitize(String(c.level))}</span>
+                        <code class="case-id">${sanitize(c.case_id)}</code>
                     </div>
-                    <p style="margin: 0.75rem 0; font-weight: 600; color: var(--primary-dark);">
-                        ${this.utils.sanitizeHTML(c.stem.setting.replace(/_/g, " "))}
-                    </p>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
-                        ${this.utils.sanitizeHTML(c.stem.contextual_notes)}
-                    </p>
-                    <div style="font-size: 0.75rem; color: var(--primary-text); font-weight: 600; text-align: right;">
-                        Ver Caso →
-                    </div>
+                    <p class="case-card__setting">${sanitize(c.stem.setting.replace(/_/g, " "))}</p>
+                    <p class="case-card__notes">${sanitize(c.stem.contextual_notes)}</p>
+                    <div class="case-card__cta">Ver caso ${getIcon("arrow-right")}</div>
                 </div>
             `).join("")}
         `;
@@ -869,85 +792,73 @@ export const dictionary = {
     const c = this.data.cases.find(x => x.case_id === caseId);
     if (!c) return;
     this.donation.increment();
+    const sanitize = v => this.utils.sanitizeHTML(v);
     const domainGrid = Object.entries(c.domains).map(([key, data]) => {
-      const domainName = key;
-      const content = Object.entries(data).map(([k, v]) => `<li><strong>${k.replace(/_/g, " ")}:</strong> ${String(v || "").replace(/_/g, " ")}</li>`).join("");
+      const content = Object.entries(data).map(([k, v]) => `<li><strong>${sanitize(k.replace(/_/g, " "))}:</strong> ${sanitize(String(v || "").replace(/_/g, " "))}</li>`).join("");
       return `
-                <div class="domain-card" style="border: 1px solid var(--border); padding: 0.75rem; border-radius: 8px; font-size: 0.85rem;">
-                    <div style="font-weight:bold; color:var(--primary-text); margin-bottom:0.5rem; border-bottom:1px solid var(--border-subtle);">${domainName}</div>
-                    <ul style="padding-left: 1rem; margin:0;">${content}</ul>
+                <div class="case-domain">
+                    <div class="case-domain__title">${sanitize(key)}</div>
+                    <ul>${content}</ul>
                 </div>
             `;
     }).join("");
     this.nodes.casesView.innerHTML = `
-            <div class="btn-back" onclick="App.renderCases()">← Volver a Lista de Casos</div>
-            <div class="card">
-                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                    <h2 class="term-title">${c.case_id}: ${c.stem.sex}, ${c.stem.age_range}</h2>
-                    <span class="badge">${c.stem.setting.replace(/_/g, " ")}</span>
+            <button class="btn-back" onclick="App.renderCases()">${getIcon("arrow-left")} Volver a la lista de casos</button>
+            <div class="card case-detail-view">
+                <div class="case-head">
+                    <h2 class="term-title">${sanitize(c.case_id)}: ${sanitize(c.stem.sex)}, ${sanitize(c.stem.age_range)}</h2>
+                    <span class="badge">${sanitize(c.stem.setting.replace(/_/g, " "))}</span>
                 </div>
-                <p style="font-style:italic; border-left: 3px solid var(--primary); padding-left: 1rem; color: var(--text-secondary); margin: 1.5rem 0;">
-                    "${c.stem.contextual_notes}"
-                </p>
+                <p class="case-quote">"${sanitize(c.stem.contextual_notes)}"</p>
 
-                <h3 style="margin-top: 1.5rem;">Exploración por Dominios</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                <h3 class="section-title">Exploración por dominios</h3>
+                <div class="case-domain-grid">
                     ${domainGrid}
                 </div>
 
-                <!-- Interaction Zone -->
-                <div class="interaction-zone" style="background: var(--surface-2); padding: 1.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border);">
-                    <h3 style="margin-top:0;">Análisis Clínico y Diagnóstico</h3>
-                    <p style="margin-bottom: 1rem; opacity: 0.8;">Intenta formular tu diagnóstico antes de revelar la respuesta.</p>
-                    
-                    <button id="reveal-btn" class="filter-chip" style="background: var(--primary); color: #fff; font-weight: bold; padding: 0.75rem 1.5rem; cursor: pointer; border: none; border-radius: 50px;" 
-                            onclick="document.getElementById('analysis-content').style.display='block'; this.style.display='none';">
-                        👁️ Revelar Análisis
+                <div class="interaction-zone">
+                    <h3>Análisis clínico y diagnóstico</h3>
+                    <p>Intenta formular tu diagnóstico antes de revelar la respuesta.</p>
+
+                    <button id="reveal-btn" class="btn primary" onclick="document.getElementById('analysis-content').classList.remove('hidden'); this.classList.add('hidden');">
+                        ${getIcon("eye")} Revelar análisis
                     </button>
 
-                    <div id="analysis-content" style="display: none; text-align: left; margin-top: 1.5rem; animation: fadeIn 0.5s;">
-                        <div style="background: var(--bg); padding: 1rem; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
-                            <h4 style="margin-top:0; color: var(--primary-text);">Síndrome Principal</h4>
-                            <p style="font-size: 1.1rem; font-weight: bold;">${this.utils.sanitizeHTML(c.expected_engine_output.primary_syndrome.replace(/_/g, " "))}</p>
-                            
-                            <div style="margin-top: 1rem; display:flex; gap: 0.5rem; flex-wrap: wrap;">
-                                ${c.expected_engine_output.critical_flags.map(f => `<span class="badge" style="background: #fed7d7; color: #742a2a;">🚩 ${this.utils.sanitizeHTML(f.replace(/_/g, " "))}</span>`).join("")}
+                    <div id="analysis-content" class="analysis-content hidden">
+                        <div class="analysis-block">
+                            <h4>Síndrome principal</h4>
+                            <p class="analysis-syndrome">${sanitize(c.expected_engine_output.primary_syndrome.replace(/_/g, " "))}</p>
+                            <div class="flag-list">
+                                ${c.expected_engine_output.critical_flags.map(f => `<span class="badge badge-risk-critical">${getIcon("flag")} ${sanitize(f.replace(/_/g, " "))}</span>`).join("")}
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                            <div style="background: rgba(47, 133, 90, 0.1); color: #22543d; padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
-                                <strong>Claves Diagnósticas:</strong>
-                                <ul>${c.assessment_keys.key_discriminators.map(x => `<li>${this.utils.sanitizeHTML(x.replace(/_/g, " "))}</li>`).join("")}</ul>
+                        <div class="analysis-cols">
+                            <div class="analysis-col analysis-col--ok">
+                                <strong>Claves diagnósticas</strong>
+                                <ul>${c.assessment_keys.key_discriminators.map(x => `<li>${sanitize(x.replace(/_/g, " "))}</li>`).join("")}</ul>
                             </div>
-                            <div style="background: rgba(197, 48, 48, 0.1); color: var(--alert-text); padding: 0.75rem; border-radius: 6px; font-size: 0.9rem;">
-                                <strong>Errores a Evitar:</strong>
-                                <ul>${c.assessment_keys.errors_to_avoid.map(x => `<li>${this.utils.sanitizeHTML(x.replace(/_/g, " "))}</li>`).join("")}</ul>
+                            <div class="analysis-col analysis-col--risk">
+                                <strong>Errores a evitar</strong>
+                                <ul>${c.assessment_keys.errors_to_avoid.map(x => `<li>${sanitize(x.replace(/_/g, " "))}</li>`).join("")}</ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         `;
-    window.scrollTo(0, 0);
+    this.nodes.content.scrollTop = 0;
   },
-  navIndicator: {
-    // The active-tab underline is rendered purely in CSS via
-    // `.bottom-nav button.active::after`, so there is no DOM node to move.
-    // These no-ops exist so the calls in init()/switchTab() don't throw a
-    // TypeError (which previously aborted switchTab before it could render
-    // the target view, breaking every bottom-nav button).
-    init: function () {},
-    update: function () {}
-  },
-  switchTab: function (id) {
-    this.utils.haptic();
+  _setActiveNav: function (id) {
     this.nodes.navButtons.forEach(btn => {
       const isActive = btn.id === id;
       btn.classList.toggle("active", isActive);
       if (isActive) btn.setAttribute("aria-current", "page"); else btn.removeAttribute("aria-current");
     });
-    this.navIndicator.update();
+  },
+  switchTab: function (id) {
+    this.utils.haptic();
+    this._setActiveNav(id);
     this.nodes.search.value = "";
     if (this.nodes.clearSearchBtn) this.nodes.clearSearchBtn.classList.add("hidden");
     if (id === "nav-dictionary") {
