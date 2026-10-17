@@ -281,3 +281,23 @@ Delegadas por el responsable del proyecto. Las comunes están justificadas en la
 | EM4 | Clave de tema: se lee `theme` y, si no existe, `mse-theme`; se escribe sólo `theme`. `mse-theme` se borra al leerla | Migración de un solo paso: el valor viejo se copia la primera vez y no queda estado duplicado |
 | EM5 | Las tarjetas de dominio usan una paleta categórica de 6 tonos derivada del sistema, nunca frambuesa sólida | Los dominios no son riesgo (maestra §6); mantienen diferenciación sin romper la semántica |
 | EM6 | Se añade una prueba de contraste de tokens (copiada de antipsicóticos) a `npm test` | Hoy `npm test` es lint + validación de términos; sin esta red, la Fase E1 podría bajar AA sin que nadie lo note |
+
+## 11. Estado de ejecución (2026-10-17)
+
+Fases E0–E5 aplicadas en la rama `claude/cambio-estetica-completo-ehptmk`. E0 y E1 no se hicieron
+como capas sobre el CSS viejo: `style.css` se reescribió sobre los tokens, porque los tres
+vocabularios (§1.4) heredaban sus contradicciones a cualquier alias.
+
+| Fase | Resultado |
+| --- | --- |
+| E0–E1 | `shared/humano-tokens.css` (copia v1.0.0 + extensiones listadas en su cabecera), `shared/fonts.css` con `woff2` locales (Inter variable, Poppins 500–700, JetBrains Mono 500; latin + latin-ext). `style.css`: 3 527 → ~2 600 líneas, un solo bloque oscuro, `--border` partido en `--border-width/--border-color`, sin transición en `*`, sin `--bau-*`, `--v-*` ni `--o-*` |
+| E2 | `data-theme` y `.theme-dark/.theme-light` en `<html>`; clave `theme` con migración única de `mse-theme`; `theme-color` `#FBF1EC`/`#191A2B` desde el script del `<head>`; ícono SVG; el título ya no se reescribe |
+| E3 | Header de vidrio con inicial frambuesa, buscador del hero, nav inferior común, tarjetas, chips, botones primario/fantasma/secundario, "término del día" con degradado y blobs, dominios con paleta categórica de 6 tonos (EM5), integrador con stepper común, juego con temporizador índigo → ámbar → frambuesa, toast y banner PWA comunes |
+| E4 | `index.html` y vistas JS: 0 emojis en la interfaz (antes 59), 0 `style="…"` (antes 127), sin mayúsculas forzadas; `src/icons.js` con `getIcon()` de trazo; tarjeta para compartir (canvas) en la paleta común; se retiró la tarjeta "chroma" y con ella GSAP |
+| E5 | Minijuego con opción A (EM1): tokens enlazados, hoja aliasada, tema en `<html>` con la clave común. Texturas eliminadas (EM3) de raíz, `RUNTIME_FILES` y SW. `CACHE_NAME` con prefijo `em-` (maestra §9) |
+| EM6 | `npm test` = lint + validación + `scripts/check_contrast.js` (todos los pares ≥ 4.5:1, ambos temas, incluida la paleta categórica) + `scripts/check_blacklist.js` (lista negra §5 en 0) |
+| E6 | **Pendiente.** Requiere configurar el build en Cloudflare Pages (EM2, paso 1). Mientras tanto, `dist/` se regeneró en este cambio |
+
+Pendientes fuera de esta app: subir las extensiones de tokens a antipsicóticos (su Fase 0) y, cuando
+exista una versión publicada, añadir `scripts/check-tokens.mjs` con el hash de referencia (maestra §8).
+Fuse.js sigue cargándose del CDN (no es parte de la estética).

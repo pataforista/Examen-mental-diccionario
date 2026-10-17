@@ -5,20 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Diccionario de Examen Mental | Semiología Psiquiátrica</title>
-    <!-- Fonts: Outfit (Valley) & Space Grotesk (Void) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Fuentes locales y tokens comunes del sistema "humano" -->
+    <link rel="preload" href="/assets/inter-latin-wght-normal-Dx4kXJAl.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/poppins-latin-600-normal-zEkxB9Mr.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32-DmKxD-PY.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16-BxOO8r3p.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192-BE24A7Mv.png">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon-BLvn2_6K.png">
     <link rel="canonical" href="https://examenmental.pages.dev/">
-    <meta name="theme-color" content="#FFF8E7" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#231f20" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#FBF1EC">
     <meta name="description" content="Diccionario clínico interactivo de Examen Mental para psiquiatría y psicología: semiología, esquema de 20 puntos, integración sindromática, casos OSCE y entrenamiento. Funciona sin conexión.">
     <meta name="keywords" content="examen mental, estado mental, semiología psiquiátrica, psiquiatría, psicología clínica, diagnóstico, MSE, mental status exam, casos OSCE, diccionario médico">
     <meta name="author" content="Dr. Cesar Celada">
@@ -75,43 +71,55 @@
     </script>
 
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; connect-src 'self'; object-src 'none'; base-uri 'self';">
-  <script type="module" crossorigin src="/assets/index-CPBo-yDu.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-abLbMy4h.css">
-</head>
-
-<body data-theme="light">
+        content="default-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; object-src 'none'; base-uri 'self';">
     <script>
-        /* Fija el tema antes del primer pintado: usa la elección guardada o el modo del sistema (evita flash claro→oscuro) */
+        /* Fija el tema antes del primer pintado (contrato común: data-theme en <html>,
+           clave localStorage "theme"; "mse-theme" se migra una sola vez). */
         (function () {
+            var t;
             try {
-                var s = localStorage.getItem('mse-theme');
-                var t = (s === 'light' || s === 'dark')
-                    ? s
-                    : ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light');
-                document.body.setAttribute('data-theme', t);
-            } catch (e) { }
+                var s = localStorage.getItem('theme');
+                if (s !== 'light' && s !== 'dark') {
+                    var old = localStorage.getItem('mse-theme');
+                    if (old === 'light' || old === 'dark') { s = old; localStorage.setItem('theme', old); }
+                    localStorage.removeItem('mse-theme');
+                }
+                t = (s === 'light' || s === 'dark') ? s : null;
+            } catch (e) { console.warn('Tema: no se pudo leer la preferencia guardada', e); }
+            if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            var root = document.documentElement;
+            root.setAttribute('data-theme', t);
+            root.classList.add(t === 'dark' ? 'theme-dark' : 'theme-light');
+            var meta = document.querySelector('meta[name="theme-color"]');
+            if (meta) meta.setAttribute('content', t === 'dark' ? '#191A2B' : '#FBF1EC');
         })();
     </script>
+  <script type="module" crossorigin src="/assets/index-DS3YLNNu.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-J0fh1sVk.css">
+</head>
+
+<body>
     <a href="#app-content" class="skip-link">Saltar al contenido</a>
     <header class="app-header">
         <div class="header-top">
-            <button id="theme-toggle" class="icon-btn" title="Cambiar modo visual" aria-label="Cambiar modo visual (claro/oscuro)">🌓</button>
+            <button id="theme-toggle" class="icon-btn" title="Cambiar modo visual" aria-label="Cambiar modo visual (claro/oscuro)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
             <div class="ritual-header">
-                <span class="ritual-subtitle">REFERENCIA RÁPIDA</span>
-                <h1 id="app-title">DICCIONARIO DE EXAMEN MENTAL</h1>
+                <span class="ritual-subtitle">Referencia rápida de semiología</span>
+                <h1 id="app-title"><span class="brand-initial">D</span>iccionario de examen mental</h1>
             </div>
-            <button id="about-btn" class="icon-btn" title="Acerca de" aria-label="Acerca de la aplicación">ℹ️</button>
+            <button id="about-btn" class="icon-btn" title="Acerca de" aria-label="Acerca de la aplicación"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></button>
         </div>
         <div class="search-container">
             <label for="global-search" class="visually-hidden">Buscar término clínico</label>
-            <input type="text" id="global-search" placeholder="Buscar término..." autocomplete="off" enterkeyhint="search" aria-label="Buscar término clínico">
-            <button id="clear-search" class="clear-btn hidden" title="Limpiar búsqueda">✕</button>
+            <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="global-search" placeholder="Buscar término…" autocomplete="off" enterkeyhint="search" aria-label="Buscar término clínico">
+            <button id="clear-search" class="clear-btn hidden" title="Limpiar búsqueda" aria-label="Limpiar búsqueda"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         </div>
         <div id="pwa-install-banner" class="pwa-install-banner hidden">
-            <span>📲 Instalar app (acceso sin conexión)</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+            <span>Instala la app para usarla sin conexión</span>
             <button id="pwa-install-btn" class="btn-install-action">Instalar</button>
-            <button id="pwa-install-dismiss" class="btn-install-dismiss" title="Cerrar">✕</button>
+            <button id="pwa-install-dismiss" class="btn-install-dismiss" title="Cerrar" aria-label="Cerrar aviso de instalación"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         </div>
     </header>
 
@@ -122,9 +130,7 @@
                 <span class="section-label">Recientes</span>
                 <div id="recent-list"></div>
             </div>
-            <div id="all-terms-list">
-                <!-- Alphabetical list will be rendered here -->
-            </div>
+            <div id="all-terms-list"></div>
         </section>
         <section id="results-view" class="hidden"></section>
         <section id="term-view" class="hidden"></section>
@@ -133,16 +139,16 @@
 
         <section id="integrator-view" class="hidden">
             <div class="integrator-header">
-                <div class="m3-progress-container">
+                <div class="m3-progress-container" role="progressbar" aria-label="Avance del examen">
                     <div id="int-progress-bar" class="m3-progress-bar"></div>
                 </div>
-                <h2 class="m3-title">Constructor del Examen Mental</h2>
-                <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 0.5rem;">
-                    <p class="section-subtitle" style="margin:0;">Sigue los 20 puntos para generar tu reporte</p>
+                <h2 class="m3-title">Constructor del examen mental</h2>
+                <div class="integrator-sub">
+                    <p class="section-subtitle">Sigue los 20 puntos para generar tu reporte</p>
                     <label class="m3-switch" title="Activa perlas clínicas y diagnósticos diferenciales">
                         <input type="checkbox" id="int-teaching-mode">
                         <span class="m3-switch-slider"></span>
-                        <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary-text);">MODO MAESTRO</span>
+                        <span class="switch-label">Modo maestro</span>
                     </label>
                 </div>
             </div>
@@ -156,43 +162,39 @@
                 <div class="step-content card">
                     <div id="step-title-container">
                         <h3 id="step-label"></h3>
-                        <p id="step-description"></p>
+                        <div id="step-description"></div>
                     </div>
 
                     <div id="step-options-container" class="options-grid"></div>
 
                     <div class="step-writing-area">
-                        <label for="step-text">Redacción para este punto:</label>
-                        <textarea id="step-text" placeholder="Selecciona términos arriba o escribe aquí..."></textarea>
+                        <label for="step-text">Redacción para este punto</label>
+                        <textarea id="step-text" placeholder="Selecciona términos arriba o escribe aquí…"></textarea>
                     </div>
 
                     <div class="step-navigation">
-                        <button id="int-prev-btn" class="btn secondary">← Anterior</button>
-                        <button id="int-next-btn" class="btn primary">Siguiente →</button>
+                        <button id="int-prev-btn" class="btn secondary"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Anterior</button>
+                        <button id="int-next-btn" class="btn primary">Siguiente <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
                     </div>
                 </div>
 
                 <div class="report-preview-panel card">
                     <div class="preview-header">
-                        <h3><span style="margin-right: 0.5rem;">📄</span> Vista Previa del Reporte</h3>
-                        <button id="int-reset-btn" class="btn-icon" title="Reiniciar">🔄</button>
+                        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Vista previa del reporte</h3>
+                        <button id="int-reset-btn" class="btn-icon" title="Reiniciar" aria-label="Reiniciar el examen"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M8 16H3v5"/></svg></button>
                     </div>
-                    <div id="report-output" class="report-output" contenteditable="true">
-                        Tu reporte aparecerá aquí a medida que avances...
-                    </div>
+                    <div id="report-output" class="report-output" contenteditable="true">Tu reporte aparecerá aquí a medida que avances...</div>
                     <div class="report-actions">
-                        <button id="int-copy-btn" class="btn primary" style="width: 100%;">
-                            <span style="margin-right:0.5rem;">📋</span> Copiar Reporte
-                        </button>
+                        <button id="int-copy-btn" class="btn primary btn-block"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar reporte</button>
                     </div>
                 </div>
             </div>
         </section>
         <section id="game-view" class="hidden">
             <div class="card" id="game-controls-card">
-                <button id="game-config-toggle" class="game-config-toggle">
-                    <span>⚙️ Modo y configuración</span>
-                    <span id="game-config-arrow">▼</span>
+                <button id="game-config-toggle" class="game-config-toggle" aria-controls="game-controls-body">
+                    <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg> Modo y configuración</span>
+                    <span id="game-config-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
                 </button>
                 <div id="game-controls-body" class="game-controls-collapsible">
                 <div class="game-controls-row">
@@ -203,32 +205,31 @@
                 </div>
 
                 <div class="game-controls-row">
-                    <select id="domainSelect" class="game-select"></select>
-                    <select id="difficultySelect" class="game-select">
-                        <option value="any">Dificultad: Cualquiera</option>
-                        <option value="1">Nivel 1 (Básico)</option>
-                        <option value="2">Nivel 2 (Intermedio)</option>
-                        <option value="3">Nivel 3 (Avanzado)</option>
+                    <select id="domainSelect" class="game-select" aria-label="Dominio"></select>
+                    <select id="difficultySelect" class="game-select" aria-label="Dificultad">
+                        <option value="any">Dificultad: cualquiera</option>
+                        <option value="1">Nivel 1 (básico)</option>
+                        <option value="2">Nivel 2 (intermedio)</option>
+                        <option value="3">Nivel 3 (avanzado)</option>
                     </select>
                 </div>
 
                 <div class="game-stats">
-                    <div class="stat-item" style="cursor: pointer;" onclick="App.game.toggleInstructions()"
-                        title="Ver instrucciones">
+                    <button type="button" class="stat-item stat-item--button" id="game-help-btn" title="Ver instrucciones">
                         <span class="stat-label">Ayuda</span>
-                        <span class="stat-value">?</span>
-                    </div>
+                        <span class="stat-value stat-value--accent"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg></span>
+                    </button>
                     <div class="stat-item">
-                        <span class="stat-label">Corazón</span>
-                        <span id="game-lives" class="stat-value" style="color: #ff3c3c;">❤️❤️❤️</span>
+                        <span class="stat-label">Vidas</span>
+                        <span id="game-lives" class="stat-value stat-value--risk lives" aria-label="3 vidas"></span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">Combo</span>
-                        <span id="game-multiplier" class="stat-value" style="color: var(--v-accent);">x1</span>
+                        <span id="game-multiplier" class="stat-value stat-value--accent">x1</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">Puntaje</span>
-                        <span id="score" class="stat-value" style="color: var(--primary-text);">0</span>
+                        <span id="score" class="stat-value">0</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">Racha</span>
@@ -236,44 +237,41 @@
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">Aciertos</span>
-                        <span id="correct" class="stat-value" style="color: var(--success, #2ecc71);">0</span>
+                        <span id="correct" class="stat-value stat-value--ok">0</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">Errores</span>
-                        <span id="wrong" class="stat-value" style="color: #ff3c3c;">0</span>
+                        <span id="wrong" class="stat-value stat-value--risk">0</span>
                     </div>
                 </div>
 
-                <!-- Timer Bar -->
                 <div id="game-timer-container" class="game-timer-container hidden">
                     <div id="game-timer-bar" class="game-timer-bar"></div>
                 </div>
 
-                <div id="game-instructions" class="hidden"
-                    style="margin-top: 1rem; padding: 1rem; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 0.85rem;">
-                    <h4 style="margin-top: 0; color: var(--primary-text);">Cómo Jugar</h4>
-                    <ul style="padding-left: 1.2rem; margin-bottom: 0.5rem;">
-                        <li><strong>Objetivo:</strong> Entrenar el juicio clínico y reconocimiento de términos.</li>
-                        <li><strong>Modo Definiciones:</strong> Identifica el término correcto para la definición dada.
-                            <br><em>(+10 pts acierto, -5 error)</em>
+                <div id="game-instructions" class="game-instructions hidden">
+                    <h4>Cómo jugar</h4>
+                    <ul>
+                        <li><strong>Objetivo:</strong> entrenar el juicio clínico y el reconocimiento de términos.</li>
+                        <li><strong>Modo definiciones:</strong> identifica el término correcto para la definición dada.
+                            <br><em>(+10 pts por acierto, −5 por error)</em>
                         </li>
-                        <li><strong>Modo Diferencial:</strong>
-                            <ol style="padding-left: 1rem; margin-top: 0.3rem;">
-                                <li>Lee el mini-caso clínico.</li>
+                        <li><strong>Modo diferencial:</strong>
+                            <ol>
+                                <li>Lee el minicaso clínico.</li>
                                 <li>Selecciona el diagnóstico principal.</li>
                                 <li>Identifica el criterio discriminante clave.</li>
                             </ol>
                             <em>(Puntaje compuesto por fases)</em>
                         </li>
                     </ul>
-                    <button class="btn ghost" style="width: 100%; font-size: 0.8rem;"
-                        onclick="App.game.toggleInstructions()">Cerrar Ayuda</button>
+                    <button class="btn ghost btn-block small" id="game-help-close">Cerrar ayuda</button>
                 </div>
 
-                <div style="margin-top: 1rem; text-align: right;">
-                    <button id="btnReset" class="btn ghost">Resetear Progreso</button>
+                <div class="game-reset-row">
+                    <button id="btnReset" class="btn secondary small">Reiniciar progreso</button>
                 </div>
-                </div><!-- end game-controls-body -->
+                </div>
             </div>
 
             <section class="card game-card" id="gameCard">
@@ -286,56 +284,54 @@
 
                 <div class="game-actions">
                     <div class="game-hint" id="hint"></div>
-                    <button id="btnNext" class="btn primary">Siguiente Ronda →</button>
+                    <button id="btnNext" class="btn primary">Siguiente ronda <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
                 </div>
             </section>
         </section>
 
         <section id="about-view" class="hidden"></section>
+
+        <footer class="global-footer">
+            <div class="footer-content">
+                <p>© 2026 Dr. Cesar Celada · Diccionario de examen mental</p>
+                <a class="donation-cta" href="https://buymeacoffee.com/herramente" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg> Apoyar el proyecto</a>
+            </div>
+        </footer>
     </main>
 
     <nav class="bottom-nav" aria-label="Navegación principal">
         <button id="nav-dictionary" class="active" aria-current="page">
-            <span class="nav-icon">📖</span>
+            <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
             <span>Diccionario</span>
         </button>
         <button id="nav-domains">
-            <span class="nav-icon">🧩</span>
+            <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg></span>
             <span>Dominios</span>
         </button>
         <button id="nav-cases">
-            <span class="nav-icon">📋</span>
+            <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6M9 16h4"/></svg></span>
             <span>Casos OSCE</span>
         </button>
         <button id="nav-integrator">
-            <span class="nav-icon">📝</span>
+            <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"/><path d="m15 5 4 4"/></svg></span>
             <span>Integrador</span>
         </button>
         <button id="nav-game">
-            <span class="nav-icon">🧠</span>
+            <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
             <span>Entrenamiento</span>
         </button>
     </nav>
 
-    <footer class="global-footer">
-        <div class="footer-content">
-            <p>© 2026 Dr. Cesar Celada | Diccionario de Examen Mental</p>
-            <button class="btn secondary small" onclick="window.open('https://buymeacoffee.com/herramente', '_blank')">
-                ☕ Apoyar Proyecto
-            </button>
-        </div>
-    </footer>
 
     <div id="donation-widget" class="donation-widget hidden">
         <a href="https://buymeacoffee.com/herramente" target="_blank" rel="noopener noreferrer" class="donation-link">
-            <span class="donation-icon">☕</span>
-            <span class="donation-text">Apoyar proyecto</span>
+            <span class="donation-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z"/></svg></span>
+            <span class="donation-text">Apoyar el proyecto</span>
         </a>
-        <button id="donation-close" class="donation-close" title="Cerrar">✕</button>
+        <button id="donation-close" class="donation-close" title="Cerrar" aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </body>
 
 </html>
