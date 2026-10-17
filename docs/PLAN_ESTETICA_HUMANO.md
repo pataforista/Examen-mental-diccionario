@@ -1,6 +1,6 @@
 # Plan de migración estética: Diccionario de Examen Mental → sistema "humano"
 
-Versión 1.0 · 2026-10-17
+Versión 1.1 (decisiones cerradas, §10) · 2026-10-17
 
 Especificación maestra (valores, componentes, lista negra, contrato de integración):
 `antipsicoticos-v3/docs/PLAN_UNIFICACION_ESTETICA.md`. Este documento dice **qué cambia aquí,
@@ -188,8 +188,8 @@ set(theme, persist = true) {
   meta.setAttribute("content", theme === "light" ? "#FBF1EC" : "#191A2B");
 }
 ```
-- Leer `localStorage["theme"]` primero y `mse-theme` como respaldo (migración suave; no borrar la vieja
-  hasta la integración).
+- Leer `localStorage["theme"]` primero y `mse-theme` como respaldo; al encontrar la vieja, copiarla a
+  `theme` y borrarla (EM4).
 - Selectores `[data-theme="dark"] body`, `[data-theme="dark"] .x` siguen funcionando con el atributo en
   `<html>`; buscar los que dependan de `body[data-theme]` (`grep -n "body\[data-theme" style.css`).
 - El script de arranque en línea de `index.html` (línea ~83) ya evita el destello, pero escribe en
@@ -227,7 +227,7 @@ Tiene `styles.css` propio. Dos opciones:
 | A. Enlazar `humano-tokens.css` y aliasar su vocabulario (`--bg/--card/--line/--btn/--shadow/--radius`) | Poco trabajo, mismo resultado visual | Sigue siendo una hoja aparte |
 | B. Absorberlo en la vista "Entrenamiento" de la app principal | Una sola base de código | Más trabajo; requiere revisar si se publica por separado |
 
-Recomendación: A ahora, B cuando se decida la estructura del dominio (Fase 3 de la maestra).
+Decisión (EM1, §10): opción A. La B queda fuera de este plan.
 
 ---
 
@@ -241,7 +241,8 @@ Recomendación: A ahora, B cuando se decida la estructura del dominio (Fase 3 de
 | E3a | Header, búsqueda, nav inferior, botones, tarjetas, chips (§4) | Medio | Diccionario y detalle de término |
 | E3b | Dominios, juego, integrador (§4) | Medio | Recorrer un juego y un informe completo |
 | E4 | Marcado: mayúsculas, emojis, estilos en línea (§5.2–5.3) | Medio: toca JS de vistas | `npm test` (lint + validación de términos) |
-| E5 | Minijuego (§6), quitar texturas, limpiar `--bau-*` muertos, decidir `dist/` | Bajo | Build y despliegue de prueba |
+| E5 | Minijuego (opción A), quitar texturas, limpiar `--bau-*` muertos | Bajo | Build y despliegue de prueba |
+| E6 | Dejar de versionar `dist/` (EM2, sólo tras configurar el build en Pages) | Medio: afecta la publicación | Despliegue de vista previa antes de fusionar |
 
 ## 8. Verificación (cada PR)
 
@@ -259,16 +260,24 @@ Recomendación: A ahora, B cuando se decida la estructura del dominio (Fase 3 de
 
 | Riesgo | Mitigación |
 | --- | --- |
-| Perder la identidad que hacía reconocible la app | Decisión abierta: teal sólo en el ícono de app; el resto, sistema común |
+| Perder la identidad que hacía reconocible la app | Teal en el ícono de app (D2); el resto, sistema común |
 | `--border` con dos significados rompe bordes al aliasar | Partirlo en E0 antes de cualquier alias |
 | Mover `data-theme` a `<html>` rompe selectores que asumen el atributo en `body` | Hoy no hay `body[data-theme]` en `style.css`; repetir el `grep` en `src/` y `pwa-minigame/` en E2 |
 | Quitar la transición en `*` elimina suavidad en el cambio de tema | Transición explícita sólo en `body`, tarjetas y botones |
 | Las tarjetas de dominio pierden su color diferenciador | Paleta categórica de 6 tonos (§3.2) |
 | Build viejo en `dist/` | Ver §8 |
 
-## 10. Pendiente de decisión
+## 10. Decisiones tomadas (2026-10-17)
 
-- ¿Teal como acento de la app (sólo ícono y marca) o índigo pleno?
-- Minijuego: opción A o B (§6).
-- ¿`dist/` deja de versionarse? (la regla 12 de antipsicóticos dice que los artefactos de build no se versionan).
-- Versión en inglés: hoy no existe; la maestra pregunta si es requisito del shell común.
+Delegadas por el responsable del proyecto. Las comunes están justificadas en la maestra (§13).
+
+| # | Decisión | Por qué / efecto aquí |
+| --- | --- | --- |
+| D2 (maestra) | **Índigo pleno** en la interfaz; el teal queda sólo en el ícono de la app (manifest, favicon, `apple-touch-icon`) | El teal no llega a AA como texto (1.8:1) y hoy necesita un parche (`--primary-text`). Un color que exige parches no debe ser el de trabajo |
+| D5 (maestra) | Sin versión en inglés por ahora; el selector de idioma del shell se oculta en esta app | Traducir el léxico es contenido clínico, fuera de este plan |
+| EM1 | Minijuego: **opción A** (enlazar tokens y aliasar su hoja) | Cambio pequeño y reversible. La opción B (absorberlo en "Entrenamiento") es un refactor de producto, no de estética; si se quiere, va en un plan propio después de la Fase 3 |
+| EM2 | **`dist/` deja de versionarse**, en dos pasos y en este orden: (1) configurar el proyecto de Cloudflare Pages con comando `npm run build` y directorio `dist`, y comprobar un despliegue de vista previa; (2) en un PR aparte, añadir `dist/` a `.gitignore` y `git rm -r --cached dist` | Un artefacto versionado se desincroniza del código (ya hay commits "Regenera dist/…" a mano) y duplica cada diff. El orden evita dejar el sitio sin publicar: hoy no hay configuración de despliegue en el repo, así que es probable que Pages sirva `dist/` tal cual. Hasta completar el paso 1, cada PR de estética regenera `dist/` |
+| EM3 | Las texturas (`texture-*.png`) **se eliminan**, no se sustituyen | La calidez la dan el fondo durazno y los blobs; un `position: fixed` con `z-index: 1000` sobre toda la app es costo de pintado sin información. Se borran también de `RUNTIME_FILES` y del precache del SW |
+| EM4 | Clave de tema: se lee `theme` y, si no existe, `mse-theme`; se escribe sólo `theme`. `mse-theme` se borra al leerla | Migración de un solo paso: el valor viejo se copia la primera vez y no queda estado duplicado |
+| EM5 | Las tarjetas de dominio usan una paleta categórica de 6 tonos derivada del sistema, nunca frambuesa sólida | Los dominios no son riesgo (maestra §6); mantienen diferenciación sin romper la semántica |
+| EM6 | Se añade una prueba de contraste de tokens (copiada de antipsicóticos) a `npm test` | Hoy `npm test` es lint + validación de términos; sin esta red, la Fase E1 podría bajar AA sin que nadie lo note |
