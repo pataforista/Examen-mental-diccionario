@@ -6,12 +6,12 @@ export const dictionary = {
     this.registerSW();
     this._showSkeletonTerms();
     this.bindEvents();
+    this.theme.init();
     await this.loadData();
     this.setupSearch();
     this.loadRecentSearches();
     this.renderAllTerms();
     this.renderTermOfTheDay();
-    this.theme.init();
     this.donation.init();
     this.pwa.init();
     this.handleInitialHash();
@@ -345,12 +345,13 @@ export const dictionary = {
     });
   },
   renderTermCard: function (term) {
-    const div = document.createElement("div");
+    const div = document.createElement("button");
+    div.type = "button";
     div.className = "term-card-simple";
     div.onclick = () => this.viewTerm(term.term_id);
     div.innerHTML = `
-            <div class="term-name">${this.utils.sanitizeHTML(term.canonical_name)}</div>
-            <div class="term-snippet">${this.utils.sanitizeHTML(term.definition_clinical?.core?.substring(0, 60) || "")}...</div>
+            <span class="term-name">${this.utils.sanitizeHTML(term.canonical_name)}</span>
+            <span class="term-snippet">${this.utils.sanitizeHTML(term.definition_clinical?.core?.substring(0, 60) || "")}...</span>
         `;
     return div;
   },
@@ -380,7 +381,7 @@ export const dictionary = {
                     <span class="section-label">Resultados (${results.length})</span>
                 </div>
                 ${results.map(r => `
-                    <div class="card card--interactive result-card" onclick="App.viewTerm('${r.item.term_id}')">
+                    <div class="card card--interactive result-card" role="button" tabindex="0" onclick="App.viewTerm('${r.item.term_id}')" onkeydown="if(event.key==='Enter' && event.target === this){App.viewTerm('${r.item.term_id}')}">
                         <div class="result-card__head">
                             <span class="result-card__title">${this.utils.sanitizeHTML(r.item.canonical_name)}</span>
                             <span class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(r.item.term_kind)}</span>
@@ -422,7 +423,7 @@ export const dictionary = {
     const fullDef = dailyTerm.definition_clinical.core || "";
     const truncatedDef = fullDef.length > 160 ? fullDef.substring(0, 160).trim() + "…" : fullDef;
     this.nodes.termOfTheDay.innerHTML = `
-            <div class="totd-card" role="link" tabindex="0" onclick="App.viewTerm('${dailyTerm.term_id}')" onkeydown="if(event.key==='Enter'){App.viewTerm('${dailyTerm.term_id}')}">
+            <div class="totd-card" role="link" tabindex="0" onclick="App.viewTerm('${dailyTerm.term_id}')" onkeydown="if(event.key==='Enter' && event.target === this){App.viewTerm('${dailyTerm.term_id}')}">
                 <span class="totd-ribbon">${getIcon("bulb")} Término del día</span>
                 <div class="totd-content">
                     <h2 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h2>
@@ -705,6 +706,12 @@ export const dictionary = {
   viewDomainDetails: function (domainId, isPopState = false) {
     const domain = this.data.domains.find(d => d.domain_id === domainId);
     if (!domain) return;
+    // Puede llegarse desde una ficha de término: asegura la vista y su contenedor.
+    if (!document.getElementById("domain-detail-container")) this.renderDomains();
+    if (this.nodes.domainView.classList.contains("hidden")) {
+      this.renderView("domain");
+      this._setActiveNav("nav-domains");
+    }
     if (!isPopState) {
       history.pushState({
         view: "domain",
@@ -787,7 +794,7 @@ export const dictionary = {
                 <p>Seleccione un caso para practicar el diagnóstico diferencial.</p>
             </div>
             ${this.data.cases.map(c => `
-                <div class="card card--interactive case-card" role="button" tabindex="0" onclick="App.renderCase('${c.case_id}')" onkeydown="if(event.key==='Enter'){App.renderCase('${c.case_id}')}">
+                <div class="card card--interactive case-card" role="button" tabindex="0" onclick="App.renderCase('${c.case_id}')" onkeydown="if(event.key==='Enter' && event.target === this){App.renderCase('${c.case_id}')}">
                     <div class="case-card__head">
                         <span class="badge">Nivel ${sanitize(String(c.level))}</span>
                         <code class="case-id">${sanitize(c.case_id)}</code>
@@ -869,13 +876,16 @@ export const dictionary = {
     init: function () {},
     update: function () {}
   },
-  switchTab: function (id) {
-    this.utils.haptic();
+  _setActiveNav: function (id) {
     this.nodes.navButtons.forEach(btn => {
       const isActive = btn.id === id;
       btn.classList.toggle("active", isActive);
       if (isActive) btn.setAttribute("aria-current", "page"); else btn.removeAttribute("aria-current");
     });
+  },
+  switchTab: function (id) {
+    this.utils.haptic();
+    this._setActiveNav(id);
     this.navIndicator.update();
     this.nodes.search.value = "";
     if (this.nodes.clearSearchBtn) this.nodes.clearSearchBtn.classList.add("hidden");

@@ -51,6 +51,8 @@ export const utils = {
     canvas.height = 1080;
     const ctx = canvas.getContext("2d");
     if (!ctx) throw new Error("Canvas context unavailable");
+    // roundRect falta en navegadores anteriores a 2023: degrada a rectángulo.
+    if (!ctx.roundRect) ctx.roundRect = function (x, y, w, h) { this.rect(x, y, w, h); };
     // Colores de la paleta base (independientes del tema): la tarjeta siempre sale en claro.
     const css = getComputedStyle(document.documentElement);
     const tok = name => css.getPropertyValue(name).trim();

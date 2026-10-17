@@ -172,6 +172,7 @@ export const integrator = {
     const pct = completed / total * 100;
     if (this.nodes.progressBar) {
       this.nodes.progressBar.style.width = `${pct}%`;
+      this.nodes.progressBar.parentElement?.setAttribute("aria-valuenow", String(Math.round(pct)));
     }
   },
   loadPedagogicalData: function () {
@@ -337,10 +338,12 @@ export const integrator = {
     navigator.clipboard.writeText(text).then(() => {
       App.utils.haptic();
       App.toast.show("Reporte copiado al portapapeles", "success");
-      const original = this.nodes.copyBtn.innerHTML;
+      // Guarda el contenido original una sola vez: dos clics seguidos no deben dejarlo en "Copiado".
+      if (!this._copyLabel) this._copyLabel = this.nodes.copyBtn.innerHTML;
+      clearTimeout(this._copyTimer);
       this.nodes.copyBtn.innerHTML = `${getIcon("check")} Copiado`;
-      setTimeout(() => {
-        this.nodes.copyBtn.innerHTML = original;
+      this._copyTimer = setTimeout(() => {
+        this.nodes.copyBtn.innerHTML = this._copyLabel;
       }, 2200);
     }).catch(() => {
       App.toast.show("No se pudo copiar. Selecciona el texto manualmente.", "error");
