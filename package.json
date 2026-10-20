@@ -11,7 +11,8 @@
     "test": "npm run lint && npm run validate && npm run contrast && npm run blacklist",
     "contrast": "node scripts/check_contrast.js",
     "blacklist": "node scripts/check_blacklist.js",
-    "build:lexicon": "node scripts/optimize_lexicon.js"
+    "build:lexicon": "node scripts/optimize_lexicon.js",
+    "test:pwa": "node scripts/test_pwa_dialog.mjs"
   },
   "repository": {
     "type": "git",

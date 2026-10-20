@@ -300,32 +300,43 @@ summary:focus-visible,
 .clear-btn:hover { background: var(--bg-hover); color: var(--text-main); }
 .clear-btn .icon { width: 18px; height: 18px; }
 
-/* Banner de instalación (toast/banner común, sin emoji) */
+/* Banner de instalación */
 .pwa-install-banner {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   max-width: 640px;
   margin: var(--space-3) auto 0;
-  padding: 8px 8px 8px 14px;
-  background: var(--bg-surface);
+  padding: 8px 8px 8px 10px;
+  background: var(--hero-gradient), var(--bg-surface);
   border: var(--border-width) solid var(--border-subtle);
-  border-radius: 16px;
-  box-shadow: var(--shadow-neo-sm);
-  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-neo-md);
+  animation: pwa-rise 360ms var(--ease-standard) both;
 }
 
-.pwa-install-banner > .icon { color: var(--accent); width: 18px; height: 18px; }
+.pwa-install-banner__app {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  box-shadow: 0 2px 8px rgba(46, 56, 112, 0.18);
+}
 
-.pwa-install-banner span {
+.pwa-install-banner__text {
   flex: 1;
-  font-weight: 500;
-  color: var(--text-main);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
 }
+
+.pwa-install-banner__text strong { font-size: 14px; color: var(--text-main); }
+.pwa-install-banner__text span { font-size: 12.5px; color: var(--text-muted); }
 
 .btn-install-action {
-  min-height: 36px;
-  padding: 6px 14px;
+  min-height: 38px;
+  padding: 6px 16px;
   border: none;
   border-radius: var(--radius-pill);
   background: var(--h-btn);
@@ -333,11 +344,15 @@ summary:focus-visible,
   font: 600 13px var(--font-base);
   cursor: pointer;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(46, 56, 112, 0.22);
+  transition: transform var(--dur-fast) var(--ease-standard), background var(--dur-fast);
 }
 
 .btn-install-action:hover { background: var(--h-btn-hover); }
+.btn-install-action:active { transform: scale(0.96); }
 
 .btn-install-dismiss {
+  flex: none;
   width: 36px;
   height: 36px;
   display: inline-flex;
@@ -352,6 +367,386 @@ summary:focus-visible,
 
 .btn-install-dismiss:hover { background: var(--bg-hover); color: var(--text-main); }
 .btn-install-dismiss .icon { width: 16px; height: 16px; }
+
+@keyframes pwa-rise {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Guía de instalación: hoja inferior en móvil, tarjeta centrada en pantallas anchas */
+.pwa-guide {
+  position: fixed;
+  inset: auto 0 0 0;
+  width: 100%;
+  max-width: 520px;
+  max-height: 92dvh;
+  margin: 0 auto;
+  padding: var(--space-2) var(--space-5) calc(var(--space-5) + env(safe-area-inset-bottom));
+  border: none;
+  border-radius: var(--radius-modal) var(--radius-modal) 0 0;
+  background: var(--bg-surface);
+  color: var(--text-main);
+  box-shadow: 0 -12px 40px rgba(25, 26, 43, 0.25);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.pwa-guide[open] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  animation: pwa-sheet 340ms var(--ease-standard) both;
+}
+
+.pwa-guide[open] > * { flex: none; }
+
+#pwa-guide-tabs .segmented-btn {
+  padding-inline: 6px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+#pwa-guide-tabs .segmented-btn[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: var(--shadow-neo-xs);
+}
+
+html.pwa-guide-open { overflow: hidden; }
+
+.pwa-guide::backdrop {
+  background: rgba(25, 26, 43, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: pwa-fade 240ms ease both;
+}
+
+@keyframes pwa-sheet { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes pwa-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.pwa-guide__grip {
+  align-self: center;
+  width: 40px;
+  height: 4px;
+  margin-bottom: 2px;
+  border-radius: 2px;
+  background: var(--border-subtle);
+}
+
+.pwa-guide__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 1;
+}
+
+.pwa-guide__hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  margin: 0 calc(-1 * var(--space-2));
+  padding: var(--space-4) var(--space-4) var(--space-4);
+  border-radius: 24px;
+  background: var(--hero-gradient), var(--bg-surface);
+  overflow: hidden;
+}
+
+.pwa-guide__app {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(46, 56, 112, 0.28);
+  animation: pwa-pop 520ms 120ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes pwa-pop { from { transform: scale(0.6); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.pwa-guide__hero h2 { margin: var(--space-2) 0 0; font-size: 22px; line-height: 1.2; }
+.pwa-guide__hero p { margin: 0; max-width: 32ch; font-size: 14px; line-height: 1.45; color: var(--text-muted); }
+
+.pwa-perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pwa-perks li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px 5px 9px;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--bg-surface) 82%, transparent);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.pwa-perks .icon { width: 14px; height: 14px; color: var(--accent); }
+
+.pwa-guide__detected {
+  align-self: center;
+  margin: calc(-1 * var(--space-1)) 0 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.pwa-chips {
+  display: flex;
+  gap: var(--space-2);
+  margin: 0 calc(-1 * var(--space-5));
+  padding: 2px var(--space-5);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pwa-chips::-webkit-scrollbar { display: none; }
+
+.pwa-chip {
+  position: relative;
+  flex: none;
+  min-height: 40px;
+  padding: 6px 16px;
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  font: 600 13.5px var(--font-base);
+  cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast), transform var(--dur-fast);
+}
+
+.pwa-chip:active { transform: scale(0.96); }
+
+.pwa-chip[aria-pressed="true"] {
+  border-color: var(--h-btn);
+  background: var(--h-btn);
+  color: #fff;
+}
+
+.pwa-chip__dot {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg-surface);
+}
+
+.pwa-chip[aria-pressed="true"] .pwa-chip__dot { background: #fff; box-shadow: 0 0 0 2px var(--h-btn); }
+
+.pwa-notice {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--accent) 9%, var(--bg-surface));
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--text-main);
+}
+
+.pwa-notice .icon { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--accent); }
+.pwa-notice--warn { background: var(--h-warn-bg); }
+.pwa-notice--warn .icon { color: var(--h-amber-text); }
+
+.pwa-steps {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: pwa-step;
+}
+
+.pwa-step {
+  position: relative;
+  display: flex;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  counter-increment: pwa-step;
+  animation: pwa-rise 360ms var(--ease-standard) both;
+}
+
+.pwa-step:nth-child(2) { animation-delay: 60ms; }
+.pwa-step:nth-child(3) { animation-delay: 120ms; }
+.pwa-step:nth-child(4) { animation-delay: 180ms; }
+
+.pwa-step::before {
+  content: counter(pwa-step);
+  flex: none;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--h-btn);
+  color: #fff;
+  font: 700 14px var(--font-base);
+  box-shadow: 0 0 0 4px var(--bg-surface);
+}
+
+.pwa-step::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  left: 14px;
+  width: 2px;
+  background: var(--border-subtle);
+}
+
+.pwa-step:last-child { padding-bottom: 0; }
+.pwa-step:last-child::after { display: none; }
+
+.pwa-step__body { flex: 1; min-width: 0; padding-top: 3px; }
+.pwa-step__text { margin: 0; font-size: 15px; line-height: 1.5; }
+
+.pwa-mock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: var(--space-2);
+  padding: 6px 8px;
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: 16px;
+  background: var(--bg-hover);
+}
+
+.pwa-mock__item {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--text-muted);
+}
+
+.pwa-mock__item .icon { width: 20px; height: 20px; }
+
+.pwa-mock__item--url {
+  flex: 3;
+  justify-content: flex-start;
+  padding: 0 12px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-pill);
+  font-size: 12.5px;
+}
+
+.pwa-mock__item--url span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.pwa-mock__item.is-active {
+  flex: none;
+  width: 44px;
+  background: var(--h-btn);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(46, 56, 112, 0.3);
+}
+
+.pwa-mock__item.is-active::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  animation: pwa-ping 1.8s ease-out infinite;
+}
+
+@keyframes pwa-ping {
+  0% { opacity: 0.9; transform: scale(0.9); }
+  80%, 100% { opacity: 0; transform: scale(1.25); }
+}
+
+/* Tarjeta en "Acerca de" */
+.pwa-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  background: var(--hero-gradient), var(--bg-surface);
+}
+
+.pwa-card__app {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(46, 56, 112, 0.25);
+}
+
+.pwa-card__main { flex: 1; min-width: 0; }
+
+.pwa-card__text {
+  margin: var(--space-1) 0 var(--space-3);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pwa-card--done .pwa-card__text { margin-bottom: 0; font-weight: 500; }
+
+.pwa-card__badge {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 14%, var(--bg-surface));
+  color: var(--accent);
+}
+
+.pwa-card__badge .icon { width: 24px; height: 24px; }
+
+@media (min-width: 600px) {
+  .pwa-guide {
+    inset: 0;
+    margin: auto;
+    height: fit-content;
+    padding-bottom: var(--space-5);
+    border-radius: var(--radius-modal);
+    box-shadow: var(--shadow-neo-md), 0 24px 64px rgba(25, 26, 43, 0.35);
+  }
+
+  .pwa-guide__grip { display: none; }
+  @keyframes pwa-sheet { from { transform: translateY(12px) scale(0.97); opacity: 0; } to { transform: none; opacity: 1; } }
+}
+
+@media (max-height: 720px) {
+  .pwa-guide__hero p,
+  .pwa-perks { display: none; }
+}
+
+@media (max-width: 380px) {
+  .pwa-card { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pwa-install-banner,
+  .pwa-guide[open],
+  .pwa-guide::backdrop,
+  .pwa-guide__app,
+  .pwa-step,
+  .pwa-mock__item.is-active::after { animation: none; }
+}
 
 /* --------------------------------------------------------------------------
    5. Contenido y tipografía de vistas

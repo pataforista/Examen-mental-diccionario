@@ -94,8 +94,8 @@
             if (meta) meta.setAttribute('content', t === 'dark' ? '#191A2B' : '#FBF1EC');
         })();
     </script>
-  <script type="module" crossorigin src="/assets/index-CnbvFfXH.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DzjUIpKQ.css">
+  <script type="module" crossorigin src="/assets/index-CyS5ZVx4.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BoG9ufAb.css">
 </head>
 
 <body>
@@ -116,8 +116,11 @@
             <button id="clear-search" class="clear-btn hidden" title="Limpiar búsqueda" aria-label="Limpiar búsqueda"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         </div>
         <div id="pwa-install-banner" class="pwa-install-banner hidden">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
-            <span>Instala la app para usarla sin conexión</span>
+            <img class="pwa-install-banner__app" src="/assets/icon-192-BE24A7Mv.png" alt="" width="40" height="40">
+            <div class="pwa-install-banner__text">
+                <strong>Instala la app</strong>
+                <span id="pwa-install-text">Sin conexión y a pantalla completa</span>
+            </div>
             <button id="pwa-install-btn" class="btn-install-action">Instalar</button>
             <button id="pwa-install-dismiss" class="btn-install-dismiss" title="Cerrar" aria-label="Cerrar aviso de instalación"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         </div>
@@ -317,6 +320,30 @@
         </button>
     </nav>
 
+
+    <dialog id="pwa-guide" class="pwa-guide" aria-labelledby="pwa-guide-title">
+        <div class="pwa-guide__grip" aria-hidden="true"></div>
+        <button id="pwa-guide-close" class="btn-install-dismiss pwa-guide__close" title="Cerrar" aria-label="Cerrar guía de instalación"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <header class="pwa-guide__hero">
+            <img class="pwa-guide__app" src="/assets/icon-192-BE24A7Mv.png" alt="" width="72" height="72">
+            <h2 id="pwa-guide-title">Instala el Diccionario</h2>
+            <p>Ábrela con un toque, como cualquier otra app.</p>
+            <ul class="pwa-perks">
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 8.8a15 15 0 0 1 4.2-2.5M22 8.8A15 15 0 0 0 10 5.1M5 12.9a10 10 0 0 1 5.2-2.7M19 12.9a10 10 0 0 0-2-1.5M8.5 16.4a5 5 0 0 1 7 0M12 20h.01M2 2l20 20"/></svg> Sin conexión</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg> Pantalla completa</li>
+                <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg> Acceso rápido</li>
+            </ul>
+        </header>
+        <p id="pwa-guide-detected" class="pwa-guide__detected hidden"></p>
+        <div id="pwa-guide-tabs" class="segmented-control" role="group" aria-label="Dispositivo">
+            <button type="button" class="segmented-btn" data-platform="ios" aria-pressed="false">iPhone / iPad</button>
+            <button type="button" class="segmented-btn" data-platform="android" aria-pressed="false">Android</button>
+            <button type="button" class="segmented-btn" data-platform="desktop" aria-pressed="false">Computadora</button>
+        </div>
+        <div id="pwa-guide-browsers" class="pwa-chips" role="group" aria-label="Navegador"></div>
+        <div id="pwa-guide-body" class="pwa-guide__body"></div>
+        <button id="pwa-guide-done" class="btn primary btn-block">Entendido</button>
+    </dialog>
 
     <div id="donation-widget" class="donation-widget hidden">
         <a href="https://buymeacoffee.com/herramente" target="_blank" rel="noopener noreferrer" class="donation-link">
