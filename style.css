@@ -406,6 +406,14 @@ summary:focus-visible,
   white-space: nowrap;
 }
 
+#pwa-guide-tabs .segmented-btn[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: var(--shadow-neo-xs);
+}
+
+html.pwa-guide-open { overflow: hidden; }
+
 .pwa-guide::backdrop {
   background: rgba(25, 26, 43, 0.5);
   backdrop-filter: blur(3px);
@@ -518,7 +526,7 @@ summary:focus-visible,
 
 .pwa-chip:active { transform: scale(0.96); }
 
-.pwa-chip[aria-selected="true"] {
+.pwa-chip[aria-pressed="true"] {
   border-color: var(--h-btn);
   background: var(--h-btn);
   color: #fff;
@@ -535,7 +543,7 @@ summary:focus-visible,
   box-shadow: 0 0 0 2px var(--bg-surface);
 }
 
-.pwa-chip[aria-selected="true"] .pwa-chip__dot { background: #fff; box-shadow: 0 0 0 2px var(--h-btn); }
+.pwa-chip[aria-pressed="true"] .pwa-chip__dot { background: #fff; box-shadow: 0 0 0 2px var(--h-btn); }
 
 .pwa-notice {
   display: flex;

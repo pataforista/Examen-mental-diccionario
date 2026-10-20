@@ -173,8 +173,6 @@ const GUIDES = {
   }
 };
 
-const PLATFORM_ORDER = ["ios", "android", "desktop"];
-
 export const pwa = {
   deferredPrompt: null,
   platform: null,
@@ -182,6 +180,7 @@ export const pwa = {
   inApp: false,
   _view: { platform: null, browser: null },
   _lastFocus: null,
+  _ready: false,
 
   detect: function () {
     const ua = navigator.userAgent || "";
@@ -211,7 +210,8 @@ export const pwa = {
   },
 
   isStandalone: function () {
-    return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    return window.navigator.standalone === true
+      || ["standalone", "fullscreen", "minimal-ui"].some(mode => window.matchMedia(`(display-mode: ${mode})`).matches);
   },
 
   isDismissed: function () {
@@ -257,14 +257,14 @@ export const pwa = {
     this._view = { platform, browser };
     const guide = group.browsers[browser];
 
-    const tabs = document.getElementById("pwa-guide-tabs");
-    tabs.innerHTML = PLATFORM_ORDER.map(key => `
-      <button class="segmented-btn" role="tab" data-platform="${key}" aria-selected="${key === platform}">${GUIDES[key].label}</button>`).join("");
+    document.querySelectorAll("#pwa-guide-tabs [data-platform]").forEach(tab => {
+      tab.setAttribute("aria-pressed", String(tab.dataset.platform === platform));
+    });
 
     const chips = document.getElementById("pwa-guide-browsers");
     chips.innerHTML = Object.entries(group.browsers).map(([key, g]) => {
       const mine = platform === this.platform && key === this.browser;
-      return `<button class="pwa-chip" role="tab" data-browser="${key}" aria-selected="${key === browser}">${g.label}${mine ? '<span class="pwa-chip__dot" title="Tu navegador"></span>' : ""}</button>`;
+      return `<button type="button" class="pwa-chip" data-browser="${key}" aria-pressed="${key === browser}">${g.label}${mine ? '<span class="pwa-chip__dot" role="img" aria-label="tu navegador"></span>' : ""}</button>`;
     }).join("");
 
     const notices = [];
@@ -296,7 +296,7 @@ export const pwa = {
   showGuide: function (platform, browser) {
     const dialog = document.getElementById("pwa-guide");
     if (!dialog) return;
-    this._lastFocus = document.activeElement;
+    if (!this.platform) this.detect();
     this.renderGuide(platform || this.platform, browser || this.browser);
     const who = document.getElementById("pwa-guide-detected");
     if (who) {
@@ -304,19 +304,43 @@ export const pwa = {
       who.textContent = label ? `Detectamos ${label} en ${GUIDES[this.platform].label}` : "";
       who.classList.toggle("hidden", !label);
     }
-    if (typeof dialog.showModal === "function") {
-      if (!dialog.open) dialog.showModal();
-    } else {
-      dialog.setAttribute("open", "");
-    }
+    if (dialog.open) return;
+    this._lastFocus = document.activeElement;
+    if (typeof dialog.showModal === "function") dialog.showModal();
+    else dialog.setAttribute("open", "");
+    this.onOpen();
+    // Estas medidas solo existen con el diálogo visible.
+    dialog.scrollTop = 0;
+    this.revealSelectedChip();
+  },
+
+  revealSelectedChip: function () {
+    const row = document.getElementById("pwa-guide-browsers");
+    const chip = row?.querySelector('[aria-pressed="true"]');
+    if (!row || !chip) return;
+    row.scrollLeft = chip.offsetLeft - (row.clientWidth - chip.offsetWidth) / 2;
   },
 
   closeGuide: function () {
     const dialog = document.getElementById("pwa-guide");
-    if (!dialog) return;
+    if (!dialog?.open) return;
     if (typeof dialog.close === "function") dialog.close();
-    else dialog.removeAttribute("open");
-    if (this._lastFocus && typeof this._lastFocus.focus === "function") this._lastFocus.focus();
+    else {
+      dialog.removeAttribute("open");
+      this.onClose();
+    }
+  },
+
+  // Se ejecutan al abrir y al cerrar, sea cual sea la vía (botón, Escape, fondo, Atrás).
+  onOpen: function () {
+    document.documentElement.classList.add("pwa-guide-open");
+  },
+
+  onClose: function () {
+    document.documentElement.classList.remove("pwa-guide-open");
+    const back = this._lastFocus;
+    this._lastFocus = null;
+    if (back && back.isConnected && typeof back.focus === "function") back.focus();
   },
 
   renderInstallCard: function () {
@@ -343,17 +367,26 @@ export const pwa = {
 
   // Diálogo nativo si el navegador lo ofrece; guía manual en cualquier otro caso.
   install: async function () {
-    if (this.deferredPrompt) {
-      this.deferredPrompt.prompt();
-      await this.deferredPrompt.userChoice;
+    const event = this.deferredPrompt;
+    if (event) {
+      // El evento solo sirve una vez, acepten o no.
       this.deferredPrompt = null;
-      this.setBanner(false);
-      return;
+      try {
+        await event.prompt();
+        await event.userChoice;
+        this.setBanner(false);
+        return;
+      } catch {
+        /* el navegador rechazó el diálogo nativo: se ofrece la guía manual */
+        this.configureBanner();
+      }
     }
     this.showGuide();
   },
 
   init: function () {
+    if (this._ready) return;
+    this._ready = true;
     this.detect();
     if (this.isStandalone()) return;
 
@@ -386,17 +419,39 @@ export const pwa = {
     if (!dialog) return;
     document.getElementById("pwa-guide-close")?.addEventListener("click", () => this.closeGuide());
     document.getElementById("pwa-guide-done")?.addEventListener("click", () => this.closeGuide());
-    // Clic sobre el fondo oscurecido.
+
+    // Escape, close() y cierre por fondo terminan todos aquí.
+    dialog.addEventListener("close", () => this.onClose());
+
+    // Clic en el fondo oscurecido: se compara con el rectángulo del diálogo, porque su
+    // propio padding también devuelve target === dialog.
+    let downOutside = false;
+    const outside = e => {
+      const r = dialog.getBoundingClientRect();
+      return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    };
+    dialog.addEventListener("pointerdown", e => { downOutside = e.target === dialog && outside(e); });
     dialog.addEventListener("click", e => {
-      if (e.target === dialog) this.closeGuide();
+      if (e.target === dialog && downOutside && outside(e)) this.closeGuide();
+      downOutside = false;
     });
+
+    // Atrás del navegador cambia la vista de fondo: no dejar el modal huérfano encima.
+    window.addEventListener("popstate", () => this.closeGuide());
+
     document.getElementById("pwa-guide-tabs")?.addEventListener("click", e => {
       const tab = e.target.closest("[data-platform]");
-      if (tab) this.renderGuide(tab.dataset.platform, tab.dataset.platform === this.platform ? this.browser : null);
+      if (!tab) return;
+      const platform = tab.dataset.platform;
+      this.renderGuide(platform, platform === this.platform ? this.browser : null);
+      this.revealSelectedChip();
     });
     document.getElementById("pwa-guide-browsers")?.addEventListener("click", e => {
       const chip = e.target.closest("[data-browser]");
-      if (chip) this.renderGuide(this._view.platform, chip.dataset.browser);
+      if (!chip) return;
+      this.renderGuide(this._view.platform, chip.dataset.browser);
+      // Los chips se reconstruyen: devolver el foco al que se acaba de pulsar.
+      document.querySelector(`#pwa-guide-browsers [data-browser="${chip.dataset.browser}"]`)?.focus();
     });
   }
 };

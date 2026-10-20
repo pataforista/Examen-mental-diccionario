@@ -94,8 +94,8 @@
             if (meta) meta.setAttribute('content', t === 'dark' ? '#191A2B' : '#FBF1EC');
         })();
     </script>
-  <script type="module" crossorigin src="/assets/index-CudM-Rlr.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-B8caAMdw.css">
+  <script type="module" crossorigin src="/assets/index-CyS5ZVx4.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BoG9ufAb.css">
 </head>
 
 <body>
@@ -335,8 +335,12 @@
             </ul>
         </header>
         <p id="pwa-guide-detected" class="pwa-guide__detected hidden"></p>
-        <div id="pwa-guide-tabs" class="segmented-control" role="tablist" aria-label="Dispositivo"></div>
-        <div id="pwa-guide-browsers" class="pwa-chips" role="tablist" aria-label="Navegador"></div>
+        <div id="pwa-guide-tabs" class="segmented-control" role="group" aria-label="Dispositivo">
+            <button type="button" class="segmented-btn" data-platform="ios" aria-pressed="false">iPhone / iPad</button>
+            <button type="button" class="segmented-btn" data-platform="android" aria-pressed="false">Android</button>
+            <button type="button" class="segmented-btn" data-platform="desktop" aria-pressed="false">Computadora</button>
+        </div>
+        <div id="pwa-guide-browsers" class="pwa-chips" role="group" aria-label="Navegador"></div>
         <div id="pwa-guide-body" class="pwa-guide__body"></div>
         <button id="pwa-guide-done" class="btn primary btn-block">Entendido</button>
     </dialog>

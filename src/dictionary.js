@@ -7,13 +7,15 @@ export const dictionary = {
     this._showSkeletonTerms();
     this.bindEvents();
     this.theme.init();
+    // Antes de cargar datos: beforeinstallprompt puede dispararse en cualquier momento
+    // y el diálogo de instalación debe poder abrirse y cerrarse desde el primer clic.
+    this.pwa.init();
     await this.loadData();
     this.setupSearch();
     this.loadRecentSearches();
     this.renderAllTerms();
     this.renderTermOfTheDay();
     this.donation.init();
-    this.pwa.init();
     this.handleInitialHash();
     this.checkOnboarding();
     this._setupScrollCompact();
