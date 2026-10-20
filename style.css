@@ -657,7 +657,7 @@ summary:focus-visible,
   content: "";
   position: absolute;
   inset: -4px;
-  border: 2px solid var(--accent);
+  border: 1px solid var(--accent);
   border-radius: 14px;
   animation: pwa-ping 1.8s ease-out infinite;
 }
