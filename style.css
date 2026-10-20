@@ -353,6 +353,83 @@ summary:focus-visible,
 .btn-install-dismiss:hover { background: var(--bg-hover); color: var(--text-main); }
 .btn-install-dismiss .icon { width: 16px; height: 16px; }
 
+/* Guía de instalación (iOS / Android) */
+.pwa-guide {
+  width: min(480px, calc(100% - 2 * var(--space-4)));
+  max-height: calc(100dvh - 2 * var(--space-4));
+  margin: auto;
+  padding: var(--space-5);
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--radius-modal);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  box-shadow: var(--shadow-neo-md);
+  overflow-y: auto;
+}
+
+.pwa-guide::backdrop { background: rgba(25, 26, 43, 0.55); }
+
+.pwa-guide[open] { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.pwa-guide__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.pwa-guide__head h2 { margin: 0; font-size: 20px; }
+
+.pwa-guide__note {
+  margin: 0 0 var(--space-3);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.pwa-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pwa-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.pwa-step__icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-surface));
+  color: var(--accent);
+}
+
+.pwa-step__icon .icon { width: 20px; height: 20px; }
+.pwa-step__text { flex: 1; padding-top: 6px; }
+
+.pwa-card { margin-bottom: var(--space-4); }
+.pwa-card__text {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.pwa-card__text .icon { flex: none; width: 18px; height: 18px; color: var(--accent); }
+
 /* --------------------------------------------------------------------------
    5. Contenido y tipografía de vistas
    -------------------------------------------------------------------------- */

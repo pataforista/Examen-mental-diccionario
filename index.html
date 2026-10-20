@@ -118,7 +118,7 @@
         </div>
         <div id="pwa-install-banner" class="pwa-install-banner hidden">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
-            <span>Instala la app para usarla sin conexión</span>
+            <span id="pwa-install-text">Instala la app para usarla sin conexión</span>
             <button id="pwa-install-btn" class="btn-install-action">Instalar</button>
             <button id="pwa-install-dismiss" class="btn-install-dismiss" title="Cerrar" aria-label="Cerrar aviso de instalación"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
         </div>
@@ -318,6 +318,19 @@
         </button>
     </nav>
 
+
+    <dialog id="pwa-guide" class="pwa-guide" aria-labelledby="pwa-guide-title">
+        <div class="pwa-guide__head">
+            <h2 id="pwa-guide-title">Instalar la app</h2>
+            <button id="pwa-guide-close" class="btn-install-dismiss" title="Cerrar" aria-label="Cerrar guía de instalación"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <div id="pwa-guide-tabs" class="segmented-control" role="tablist" aria-label="Sistema operativo">
+            <button class="segmented-btn" role="tab" data-platform="ios" aria-selected="true">iPhone / iPad</button>
+            <button class="segmented-btn" role="tab" data-platform="android" aria-selected="false">Android</button>
+        </div>
+        <div id="pwa-guide-body" class="pwa-guide__body"></div>
+        <button id="pwa-guide-done" class="btn primary btn-block">Entendido</button>
+    </dialog>
 
     <div id="donation-widget" class="donation-widget hidden">
         <a href="https://buymeacoffee.com/herramente" target="_blank" rel="noopener noreferrer" class="donation-link">

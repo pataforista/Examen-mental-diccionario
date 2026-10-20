@@ -631,6 +631,8 @@ export const dictionary = {
                 </div>
             </div>
 
+            ${this.pwa.renderInstallCard()}
+
             <div class="card">
                 <div class="definition-section">
                     <span class="section-label">Fuentes y referencias (APA 7)</span>
