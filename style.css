@@ -277,7 +277,7 @@ summary:focus-visible,
 .search-container input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
 
 .search-container input:focus {
-  outline: none; /* reemplazado por el anillo índigo de abajo */
+   /* reemplazado por el anillo índigo de abajo */
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-neo-sm);
 }
@@ -1831,7 +1831,7 @@ button.tag:hover { background: var(--bg-hover); }
   margin-bottom: var(--space-4);
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--bg-surface); /* aro del avatar sobre degradado, no es trazo de componente */
+  border: 1px solid var(--bg-surface); /* aro del avatar sobre degradado, no es trazo de componente */
   box-shadow: var(--shadow-neo-md);
 }
 
@@ -2160,7 +2160,7 @@ button.tag:hover { background: var(--bg-hover); }
 .step-writing-area textarea::placeholder { color: var(--text-muted); }
 
 .step-writing-area textarea:focus {
-  outline: none; /* reemplazado por el anillo índigo */
+   /* reemplazado por el anillo índigo */
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
