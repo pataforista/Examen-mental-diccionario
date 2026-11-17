@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
-const css = ["shared/humano-tokens.css", "style.css"].map(f => fs.readFileSync(path.join(root, f), "utf8")).join("\n");
+const css = ["shared/humano-tokens.css", "shared/humano-app.css", "style.css"].map(f => fs.readFileSync(path.join(root, f), "utf8")).join("\n");
 
 // Bloques de variables: ":root" (y el bloque claro) vs. "[data-theme=\"dark\"]".
 function collect(themeDark) {
