@@ -1,10 +1,13 @@
-const CACHE_NAME = "em-clinical-pwa-v4.2";
+const CACHE_NAME = "em-clinical-pwa-v4.3";
 const ASSETS = [
   "/",
   "index.html",
   "style.css",
   "shared/fonts.css",
   "shared/humano-tokens.css",
+  "shared/shell/shell.css",
+  "shared/shell/shell.js",
+  "shared/shell/apps.json",
   "shared/fonts/inter-latin-wght-normal.woff2",
   "shared/fonts/inter-latin-ext-wght-normal.woff2",
   "shared/fonts/poppins-latin-500-normal.woff2",
