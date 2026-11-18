@@ -99,11 +99,12 @@
         })();
     </script>
   <link rel="stylesheet" href="shared/shell/shell.css" />
+  <link rel="stylesheet" href="shared/humano-chrome.css" />
 </head>
 
 <body>
     <a href="#app-content" class="skip-link">Saltar al contenido</a>
-    <header class="app-header">
+    <header class="app-header" data-hs-header>
         <div class="header-top">
             <button id="theme-toggle" class="icon-btn" title="Cambiar modo visual" aria-label="Cambiar modo visual (claro/oscuro)"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
             <div class="ritual-header">
@@ -300,7 +301,7 @@
         </footer>
     </main>
 
-    <nav class="bottom-nav" aria-label="Navegación principal">
+    <nav class="bottom-nav" data-hs-tabbar aria-label="Navegación principal">
         <button id="nav-dictionary" class="active" aria-current="page">
             <span class="nav-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
             <span>Diccionario</span>
