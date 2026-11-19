@@ -1,4 +1,4 @@
-const CACHE_NAME = "em-clinical-pwa-v4.6";
+const CACHE_NAME = "em-clinical-pwa-v4.7";
 const ASSETS = [
   "/",
   "index.html",
@@ -8,6 +8,8 @@ const ASSETS = [
   "shared/shell/shell.css",
   "shared/shell/shell.js",
   "shared/shell/apps.json",
+  "shared/humano-app.css",
+  "shared/humano-chrome.css",
   "shared/fonts/inter-latin-wght-normal.woff2",
   "shared/fonts/inter-latin-ext-wght-normal.woff2",
   "shared/fonts/poppins-latin-500-normal.woff2",
