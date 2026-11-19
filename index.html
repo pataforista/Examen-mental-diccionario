@@ -159,7 +159,7 @@
             <div class="integrator-container">
                 <div class="stepper-sidebar">
                     <span class="stepper-label">Pasos del examen</span>
-                    <ul id="integrator-steps-list"></ul>
+                    <ul id="integrator-steps-list" tabindex="0" aria-label="Pasos del integrador"></ul>
                 </div>
 
                 <div class="step-content card">
@@ -201,9 +201,9 @@
                 </button>
                 <div id="game-controls-body" class="game-controls-collapsible">
                 <div class="game-controls-row">
-                    <div class="segmented-control" role="tablist">
-                        <button class="segmented-btn" id="modeMcq" aria-selected="true">Definiciones</button>
-                        <button class="segmented-btn" id="modeDiff" aria-selected="false">Diferencial</button>
+                    <div class="segmented-control" role="group" aria-label="Modo de juego">
+                        <button type="button" class="segmented-btn" id="modeMcq" aria-pressed="true">Definiciones</button>
+                        <button type="button" class="segmented-btn" id="modeDiff" aria-pressed="false">Diferencial</button>
                     </div>
                 </div>
 
@@ -224,7 +224,7 @@
                     </button>
                     <div class="stat-item">
                         <span class="stat-label">Vidas</span>
-                        <span id="game-lives" class="stat-value stat-value--risk lives" aria-label="3 vidas"></span>
+                        <span id="game-lives" class="stat-value stat-value--risk lives" role="img" aria-label="3 vidas"></span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-label">Combo</span>
