@@ -1,26 +1,59 @@
-/* humano-tokens v1.0.0 — fuente: antipsicoticos-v3/public/humano.css (§3 de la especificación maestra)
-   Copia fija: cambiar un token = PR en antipsicóticos, subir versión y volver a copiar.
-
-   Pendiente de subir a antipsicóticos (su Fase 0 aún no extrae este archivo). Extensiones
-   locales respecto a humano.css, todas derivadas de valores que la maestra ya fija:
-   --font-mono, --radius-modal (28 px), --radius-pill, --space-* (D4), --ease-standard y
-   --dur-* (§3.4), --h-amber-text y --h-warn-bg (§0.5 y §6), --mint-text (menta como texto,
-   ≥ 4.5:1), --h-btn/--h-btn-hover también en claro (= primario), --veil y --blob-* (§3.5). */
+/* humano-tokens v2.0.0 — núcleo común, idéntico en las siete apps (verificado por hash).
+   Tokens del sistema visual "humano" (paleta, superficies por tema, tipografía,
+   forma, sombra y espaciado). Especificación: docs/PLAN_UNIFICACION_ESTETICA.md §3.
+   Desde v2.0.0 no contiene tokens propios de una app: esos van en humano-app.css.
+   Ver docs/PLAN_COHERENCIA_ECOSISTEMA.md, E2.
+   Se carga después de styles.css y antes de humano.css. Cambiar un token =
+   PR aquí primero, subir la versión, luego copiar a las otras apps (§8). */
 
 :root {
   --font-display: "Poppins", "Inter", system-ui, sans-serif;
   --font-base: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-panel: 22px;
   --radius-card: 20px;
   --radius-btn: 14px;
   --radius-input: 12px;
-  --radius-modal: 28px;
-  --radius-pill: 999px;
   --stroke-hard: 1px;
 
-  /* Escala de espaciado de 8 pt (D4) */
+  /* Paleta */
+  --h-indigo: #3D4A8F;
+  --h-indigo-deep: #2E3870;
+  --h-indigo-soft: #E4E7F6;
+  --h-raspberry: #BE3650;   /* 5.5:1 sobre blanco (AA texto) */
+  --h-pink: #F08DB0;
+  --h-pink-soft: #FBE1EA;
+  --h-peach: #FCE5D8;
+  --h-peach-deep: #F6CDB8;
+  --h-mint: #3E9C7F;
+  --h-amber: #D98A3A;
+
+  --color-primary: var(--h-indigo);
+  --color-primary-light: #6874B8;
+  --color-primary-lighter: #C9CEEC;
+  --color-primary-dark: var(--h-indigo-deep);
+  --color-secondary: var(--h-raspberry);
+  --color-secondary-light: var(--h-pink);
+  --color-accent: var(--h-raspberry);
+  --color-success: var(--h-mint);
+  --color-warning: var(--h-amber);
+  --color-danger: var(--h-raspberry);
+
+  --ritual-red: var(--h-raspberry);
+  --ritual-red-muted: rgba(214, 69, 93, 0.08);
+  --ritual-red-bright: #E86A80;
+  --accent-muted: rgba(61, 74, 143, 0.1);
+  --accent-glow: rgba(61, 74, 143, 0.18);
+
+  /* Sombras difusas, teñidas de índigo (no grises ni negras) */
+  --shadow-neo-xs: 0 1px 2px rgba(46, 56, 112, 0.06);
+  --shadow-neo-sm: 0 4px 14px rgba(46, 56, 112, 0.07);
+  --shadow-neo-md: 0 8px 24px rgba(46, 56, 112, 0.09);
+  --shadow-neo-lg: 0 14px 34px rgba(46, 56, 112, 0.11);
+  --shadow-neo-xl: 0 20px 48px rgba(46, 56, 112, 0.13);
+  --shadow-press: 0 2px 6px rgba(46, 56, 112, 0.10);
+
+  /* Espaciado: rejilla de 8 pt común a las tres apps (D4). */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -29,36 +62,18 @@
   --space-6: 32px;
   --space-8: 48px;
 
-  /* Movimiento */
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
-  --dur-slow: 240ms;
-
-  /* Paleta base (independiente del tema) */
-  --h-indigo: #3D4A8F;
-  --h-indigo-deep: #2E3870;
-  --h-indigo-soft: #E4E7F6;
-  --h-raspberry: #BE3650;
-  --h-pink: #F08DB0;
-  --h-pink-soft: #FBE1EA;
-  --h-peach: #FCE5D8;
-  --h-peach-deep: #F6CDB8;
-  --h-mint: #3E9C7F;
-  --h-amber: #D98A3A;
-  --h-amber-text: #7A4310;
+  /* Aviso (toast de precaución): texto ámbar oscuro, nunca blanco sobre ámbar. */
   --h-warn-bg: #FFF3E6;
+  --h-warn-text: #7A4310;
 
-  --shadow-neo-xs: 0 1px 2px rgba(46, 56, 112, 0.06);
-  --shadow-neo-sm: 0 4px 14px rgba(46, 56, 112, 0.07);
-  --shadow-neo-md: 0 8px 24px rgba(46, 56, 112, 0.09);
-  --shadow-neo-lg: 0 14px 34px rgba(46, 56, 112, 0.11);
-  --shadow-neo-xl: 0 20px 48px rgba(46, 56, 112, 0.13);
-  --shadow-press: 0 2px 6px rgba(46, 56, 112, 0.10);
+  /* Semántica clínica como TEXTO (AA sobre superficies): riesgo alto / moderado / bajo.
+     Para rellenos y barras se pueden usar --h-raspberry, --h-amber y --h-mint. */
+  --risk-high: var(--ritual-red);
+  --risk-mod: #95540F;
+  --risk-low: #2E7A62;
+
 }
 
-/* Claro (también es el valor por omisión, antes de que el script fije el tema) */
-:root,
 .theme-light,
 [data-theme="light"] {
   --bg-app: #FBF1EC;
@@ -67,26 +82,16 @@
   --bg-input: #FDF6F2;
   --bg-hover: #F7E8E1;
   --text-main: #2A2D45;
-  --text-muted: #66687F;
+  --text-muted: #66687F;   /* ≥4.9:1 sobre fondos claros */
   --border-subtle: #EEDDD5;
   --border-strong: #2A2D45;
   --accent: var(--h-indigo);
   --accent-container: var(--h-indigo-soft);
   --accent-soft: #F1F2FA;
-  --color-primary: var(--h-indigo);
-  --color-primary-dark: var(--h-indigo-deep);
-  --h-btn: var(--h-indigo);
-  --h-btn-hover: var(--h-indigo-deep);
-  --ritual-red: var(--h-raspberry);
-  --mint-text: #276B56;
   --hero-gradient: linear-gradient(135deg, var(--h-peach) 0%, var(--h-pink-soft) 100%);
   --glass-bg: rgba(251, 241, 236, 0.92);
   --glass-border: rgba(42, 45, 69, 0.08);
-  --veil: rgba(42, 45, 69, 0.45);
-  --blob-a: var(--h-pink);
-  --blob-b: var(--h-indigo);
-  --blob-a-opacity: 0.55;
-  --blob-b-opacity: 0.16;
+  --theme-color: #FBF1EC;
 }
 
 .theme-dark,
@@ -103,27 +108,29 @@
   --accent: #A9B3EE;
   --accent-container: #2F3766;
   --accent-soft: #262B4D;
-  /* Primario claro: color de TEXTO. Los botones sólidos usan --h-btn. */
+  /* Primario claro: se usa como color de TEXTO en muchas reglas (7:1 sobre superficie).
+     Los botones sólidos usan --h-btn (5:1 con texto blanco); ver abajo. */
   --color-primary: #A9B3EE;
   --color-primary-dark: #8C97E0;
   --h-btn: #5D69BE;
   --h-btn-hover: #4E5AAE;
   --ritual-red: #EF6F86;
-  --mint-text: #6CC9A8;
-  --h-amber-text: #F2B878;
-  --h-warn-bg: rgba(217, 138, 58, 0.14);
   --hero-gradient: linear-gradient(135deg, rgba(240, 141, 176, 0.14) 0%, rgba(127, 139, 214, 0.10) 100%);
   --glass-bg: rgba(25, 26, 43, 0.9);
   --glass-border: rgba(243, 238, 243, 0.08);
-  --veil: rgba(10, 11, 22, 0.6);
-  --blob-a: #F08DB0;
-  --blob-b: #8C97E0;
-  --blob-a-opacity: 0.28;
-  --blob-b-opacity: 0.22;
+  --theme-color: #191A2B;
+  --h-warn-bg: #3A2E26;
+  --h-warn-text: #F6D3B0;
+  --risk-mod: #E8A45C;
+  --risk-low: #4FB596;
+  /* Cabeceras con blobs en oscuro (hero, modal): fondo y halos de noche. */
+  --hero-dark-a: #2A2D4B;
+  --hero-dark-b: #2C2742;
+  --blob-dark-pink-a: var(--h-pink);
+  --blob-dark-pink-b: #B8547A;
+  --blob-dark-indigo: #8C97E0;
   --shadow-neo-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
   --shadow-neo-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
   --shadow-neo-md: 0 8px 24px rgba(0, 0, 0, 0.3);
   --shadow-neo-lg: 0 14px 34px rgba(0, 0, 0, 0.35);
-  --shadow-neo-xl: 0 20px 48px rgba(0, 0, 0, 0.35);
-  --shadow-press: 0 2px 6px rgba(0, 0, 0, 0.3);
 }

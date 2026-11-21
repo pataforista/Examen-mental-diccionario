@@ -1,0 +1,45 @@
+/* humano-app v1.0.0 — capa de examen mental sobre humano-tokens v2.0.0 (PLAN_COHERENCIA_ECOSISTEMA.md, B5).
+   Tokens que usaba la copia anterior y que el núcleo ya no define. Mismos valores que tenía. */
+:root,
+[data-theme="light"] {
+  --blob-a: var(--h-pink);
+  --blob-a-opacity: 0.55;
+  --blob-b: var(--h-indigo);
+  --blob-b-opacity: 0.16;
+  --h-amber-text: #7A4310;
+  --mint-text: #276B56;
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 240ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-modal: 28px;
+  --radius-pill: 999px;
+  --h-btn: var(--h-indigo);
+  --h-btn-hover: var(--h-indigo-deep);
+  --veil: rgba(42, 45, 69, 0.45);
+}
+
+[data-theme="dark"] {
+  --blob-a: #F08DB0;
+  --blob-a-opacity: 0.28;
+  --blob-b: #8C97E0;
+  --blob-b-opacity: 0.22;
+  --h-amber-text: #F2B878;
+  --mint-text: #6CC9A8;
+  --veil: rgba(10, 11, 22, 0.6);
+  --shadow-neo-xl: 0 20px 48px rgba(0, 0, 0, 0.35);
+  --shadow-press: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark {
+  --blob-a: #F08DB0;
+  --blob-a-opacity: 0.28;
+  --blob-b: #8C97E0;
+  --blob-b-opacity: 0.22;
+  --h-amber-text: #F2B878;
+  --mint-text: #6CC9A8;
+  --veil: rgba(10, 11, 22, 0.6);
+  --shadow-neo-xl: 0 20px 48px rgba(0, 0, 0, 0.35);
+  --shadow-press: 0 2px 6px rgba(0, 0, 0, 0.3);
+}

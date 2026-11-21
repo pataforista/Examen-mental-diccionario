@@ -92,8 +92,8 @@ export const game = {
   },
   setMode: function (mode) {
     this.currentMode = mode;
-    this.nodes.modeMcq.setAttribute("aria-selected", mode === "mcq");
-    this.nodes.modeDiff.setAttribute("aria-selected", mode === "diff");
+    this.nodes.modeMcq.setAttribute("aria-pressed", String(mode === "mcq"));
+    this.nodes.modeDiff.setAttribute("aria-pressed", String(mode === "diff"));
     this.syncDifficulty();
     this.nextRound();
   },

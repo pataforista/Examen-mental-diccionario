@@ -277,7 +277,7 @@ summary:focus-visible,
 .search-container input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
 
 .search-container input:focus {
-  outline: none; /* reemplazado por el anillo índigo de abajo */
+   /* reemplazado por el anillo índigo de abajo */
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-neo-sm);
 }
@@ -1831,7 +1831,7 @@ button.tag:hover { background: var(--bg-hover); }
   margin-bottom: var(--space-4);
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid var(--bg-surface); /* aro del avatar sobre degradado, no es trazo de componente */
+  border: 1px solid var(--bg-surface); /* aro del avatar sobre degradado, no es trazo de componente */
   box-shadow: var(--shadow-neo-md);
 }
 
@@ -2160,7 +2160,7 @@ button.tag:hover { background: var(--bg-hover); }
 .step-writing-area textarea::placeholder { color: var(--text-muted); }
 
 .step-writing-area textarea:focus {
-  outline: none; /* reemplazado por el anillo índigo */
+   /* reemplazado por el anillo índigo */
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
@@ -2290,7 +2290,7 @@ button.tag:hover { background: var(--bg-hover); }
   transition: background-color var(--dur-fast) var(--ease-standard), color var(--dur-fast) var(--ease-standard);
 }
 
-.segmented-btn[aria-selected="true"] {
+.segmented-btn[aria-pressed="true"] {
   background: var(--accent-soft);
   color: var(--accent);
   box-shadow: var(--shadow-neo-xs);
@@ -2950,4 +2950,21 @@ button,
   }
 
   .skeleton-block { animation: none; background: var(--bg-hover); }
+}
+
+/* ── Cabecera única (docs/CABECERA_Y_NAVEGACION.md) ─────────────────
+   Título a la izquierda, acciones a la derecha (tema, Acerca de,
+   herramientas). Sin letra de color; altura compacta en móvil. */
+.header-top { flex-wrap: nowrap; }
+.ritual-header { order: 1; flex: 1 1 0; text-align: left; }
+#theme-toggle { order: 2; }
+#about-btn { order: 3; }
+#humano-shell-slot { order: 4; display: inline-flex; }
+.brand-initial { color: inherit; }
+[data-theme="dark"] .brand-initial { color: inherit; }
+@media (max-width: 480px) {
+  .app-header { flex-direction: column; align-items: stretch; }
+  .header-top { gap: var(--space-2); }
+  .ritual-subtitle { display: none; }
+  .app-header h1 { font-size: 19px; line-height: 1.2; }
 }
