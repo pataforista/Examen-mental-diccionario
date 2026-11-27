@@ -1,0 +1,77 @@
+{
+  "term_id": "ARC_021",
+  "canonical_name": "Psicosis maníaco-depresiva",
+  "synonyms_and_slang": [
+    {
+      "term": "locura maníaco-depresiva",
+      "context": "histórico",
+      "locale": "es"
+    },
+    {
+      "term": "enfermedad maníaco-depresiva",
+      "context": "histórico",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "concepto_histórico",
+  "granularity": "atomic",
+  "risk_weight": 0,
+  "definition_clinical": {
+    "core": "Categoría nosológica clásica introducida por Emil Kraepelin (1899) para agrupar los trastornos afectivos episódicos (manía, melancolía y estados mixtos) caracterizados por curso periódico y restitución interepisódica sin deterioro progresivo, en contraposición a la dementia praecox.",
+    "required_features": [
+      "curso episódico o periódico de alteraciones del estado de ánimo",
+      "ausencia de deterioro cognitivo-afectivo progresivo típico de la dementia praecox",
+      "categoría histórica precursora del trastorno bipolar y trastornos depresivos recurrentes"
+    ],
+    "subjective_marker": "“Paso temporadas en que no duermo y me siento invencible, y otras en que no puedo salir de la cama; luego vuelvo a ser el mismo”.",
+    "behavioral_marker": "Alternancia longitudinal entre episodios de exaltación afectiva/psicomotora y episodios de inhibición depresiva con periodos de remisión."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "historia_clinica_longitudinal"
+    ],
+    "time_relation": [
+      "historico",
+      "episodica"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-15",
+      "relation": "historical_precursor",
+      "context": "trastornos_del_estado_de_animo"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "ARC_006",
+      "canonical_name": "Dementia praecox",
+      "reason": "En la dicotomía kraepeliniana, la dementia praecox evolucionaba hacia deterioro crónico, mientras que la psicosis maníaco-depresiva cursaba por fases con recuperación."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "historical_note",
+      "message": "Término histórico en desuso; en la nosología vigente corresponde al espectro bipolar y a los trastornos depresivos recurrentes."
+    }
+  ],
+  "teaching_notes": [
+    "Constituye uno de los dos pilares de la dicotomía kraepeliniana (junto con dementia praecox), base de la clasificación psiquiátrica moderna.",
+    "No debe emplearse como diagnóstico actual en notas clínicas; usar categorías vigentes de la CIE-11."
+  ],
+  "version": "1.0.0",
+  "mappings": {},
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Kraepelin"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_alemana_clasica"
+    ]
+  },
+  "status": "active"
+}

@@ -1,0 +1,82 @@
+{
+  "term_id": "COG_006",
+  "canonical_name": "Déficit intelectual",
+  "synonyms_and_slang": [
+    {
+      "term": "discapacidad intelectual",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "trastorno del desarrollo intelectual",
+      "context": "clínico",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "estado",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Limitación significativa y persistente del funcionamiento intelectual general (razonamiento, resolución de problemas, pensamiento abstracto, aprendizaje) acompañada de dificultades en el funcionamiento adaptativo, con inicio en el periodo del desarrollo.",
+    "required_features": [
+      "rendimiento intelectual significativamente por debajo de lo esperado para la edad",
+      "compromiso del funcionamiento adaptativo (conceptual, social o práctico)",
+      "inicio durante el periodo del neurodesarrollo"
+    ],
+    "subjective_marker": "“Me cuesta mucho entender cuentas, leer textos largos o manejar dinero solo; siempre necesité ayuda en la escuela”.",
+    "behavioral_marker": "Respuestas concretas, vocabulario limitado, dificultad en abstracción y cálculo acordes a un nivel de funcionamiento basal persistente."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "historia_clinica_longitudinal"
+    ],
+    "time_relation": [
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-10",
+      "relation": "cognitive_deficit",
+      "context": "funcionamiento_intelectual_global"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SPE_009",
+      "canonical_name": "Pararrespuestas (Vorbeireden)",
+      "reason": "En el déficit intelectual los errores reflejan limitación basal de capacidad; en las pararrespuestas hay indicios de comprensión con respuesta aproximada errónea."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "clinical_assessment",
+      "message": "No diagnosticar por una sola entrevista; considerar nivel educativo, barreras culturales/lingüísticas y confirmar con historia del desarrollo y evaluación psicométrica."
+    }
+  ],
+  "teaching_notes": [
+    "En el examen mental permite contextualizar el nivel basal de abstracción, cálculo y vocabulario para no sobrediagnosticar deterioro adquirido o síntomas formales del pensamiento.",
+    "Distinguir siempre del deterioro cognitivo adquirido (demencia) y del delirium por el curso longitudinal."
+  ],
+  "version": "1.0.0",
+  "mappings": {
+    "cie11": {
+      "code": "6A00",
+      "label": "Disorders of intellectual development"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "CIE-11"
+    ],
+    "clinical_tradition": [
+      "psiquiatria_clinica"
+    ]
+  },
+  "status": "active"
+}

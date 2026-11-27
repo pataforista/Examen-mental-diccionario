@@ -81,10 +81,9 @@
   ],
   "exclusions": [
     {
-      "term_id": "SPE_005",
+      "term_id": "SPE_012",
       "canonical_name": "Afasia",
-      "reason": "En la afasia el problema es del lenguaje (simbólico/gramatical); en la disartria es del habla (motor/articulatorio).",
-      "ref_status": "forward"
+      "reason": "En la afasia el problema es del lenguaje (simbólico/gramatical); en la disartria es del habla (motor/articulatorio)."
     }
   ],
   "alerts": [

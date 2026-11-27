@@ -22,19 +22,16 @@ Edita `exclusions` en el archivo del término (`term_id`, `canonical_name`, `rea
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (4)
+## Casos pendientes (0)
 
-### Exclusión enlazada a otro término (4)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| ARC_006 · Dementia praecox <!-- k:56e0dc3e2d --> | "Psicosis maníaco-depresiva" enlaza a ARC_006, que es "Dementia praecox" (el propio término) |  |
-| CAT_004 · Mutismo catatónico <!-- k:0833b766cc --> | "Afasia" enlaza a SPE_001, que es "Aprosodia" |  |
-| SPE_002 · Disartria <!-- k:0abfdcd7f1 --> | "Afasia" enlaza a SPE_005, que es "Logoclonia" |  |
-| SPE_009 · Pararrespuestas (Vorbeireden) <!-- k:b572f29b50 --> | "Déficit intelectual" enlaza a COG_003, que es "Memoria de trabajo" |  |
+Ninguno.
 
 ## Resueltos
 
+- 2026-11-27 · SPE_009 · Pararrespuestas (Vorbeireden): "Déficit intelectual" enlaza a COG_003, que es "Memoria de trabajo" — decisión: Creado COG_006 Déficit intelectual y enlazado (2026-11-27)
+- 2026-11-27 · SPE_002 · Disartria: "Afasia" enlaza a SPE_005, que es "Logoclonia" — decisión: Creado SPE_012 Afasia y enlazado (2026-11-27)
+- 2026-11-27 · CAT_004 · Mutismo catatónico: "Afasia" enlaza a SPE_001, que es "Aprosodia" — decisión: Creado SPE_012 Afasia y enlazado (2026-11-27)
+- 2026-11-27 · ARC_006 · Dementia praecox: "Psicosis maníaco-depresiva" enlaza a ARC_006, que es "Dementia praecox" (el propio término) — decisión: Creado ARC_021 Psicosis maníaco-depresiva y enlazado (2026-11-27)
 - 2026-11-27 · SPE_001 · Aprosodia: "Afecto plano" enlaza a AFF_011, que es "Atimia" — decisión: Corregido a AFF_010 (2026-11-27)
 - 2026-11-27 · SNM_001 · Síndrome Neuroléptico Maligno: "Catatonía Maligna" enlaza a CAT_005, que es "Obediencia automática" — decisión: Corregido a CAT_001 (2026-11-27)
 - 2026-11-27 · SELF_009 · Impulsos impuestos: "Actos impuestos" enlaza a SELF_005, que es "Despersonalización" — decisión: Corregido a SELF_001 (2026-11-27)

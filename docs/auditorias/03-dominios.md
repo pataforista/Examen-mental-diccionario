@@ -22,9 +22,9 @@ Relación del término: `domain_links` en su archivo. Listas: `npm run term:new 
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (201)
+## Casos pendientes (202)
 
-### No figura en las listas de su dominio (Integrador y vista Dominios) (200)
+### No figura en las listas de su dominio (Integrador y vista Dominios) (201)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -199,6 +199,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SPE_009 · Pararrespuestas (Vorbeireden) <!-- k:e218f5478c --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SPE_010 · Presión de habla <!-- k:f8388090c6 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SPE_011 · Verbigeración <!-- k:093ea16643 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| SPE_012 · Afasia <!-- k:67e6aabc94 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_001 · Bloqueo <!-- k:a274ddcd38 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_002 · Concretismo <!-- k:48c853f750 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_004 · Disfunción Expresiva del Lenguaje <!-- k:e4de4a17d0 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |

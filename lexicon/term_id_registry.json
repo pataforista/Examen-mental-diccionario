@@ -19,7 +19,7 @@
     },
     "ARC": {
       "description": "Archaic and Classic Phenomenology",
-      "next_seq": 21,
+      "next_seq": 22,
       "reserved": []
     },
     "CAT": {
@@ -39,7 +39,7 @@
     },
     "COG": {
       "description": "Cognitive functions",
-      "next_seq": 6,
+      "next_seq": 7,
       "reserved": []
     },
     "DEL": {
@@ -124,7 +124,7 @@
     },
     "SPE": {
       "description": "Speech and language",
-      "next_seq": 12,
+      "next_seq": 13,
       "reserved": []
     },
     "TALD": {
@@ -373,6 +373,10 @@
       "path": "lexicon/terms/ARC/ARC_020_wahnstimmung.json"
     },
     {
+      "term_id": "ARC_021",
+      "path": "lexicon/terms/ARC/ARC_021_psicosis_maniaco_depresiva.json"
+    },
+    {
       "term_id": "CAT_001",
       "path": "lexicon/terms/CAT/CAT_001_catatonia_maligna.json"
     },
@@ -459,6 +463,10 @@
     {
       "term_id": "COG_005",
       "path": "lexicon/terms/COG/COG_005_pensamiento_abstracto_concreto.json"
+    },
+    {
+      "term_id": "COG_006",
+      "path": "lexicon/terms/COG/COG_006_deficit_intelectual.json"
     },
     {
       "term_id": "DEL_001",
@@ -1135,6 +1143,10 @@
     {
       "term_id": "SPE_011",
       "path": "lexicon/terms/SPE/SPE_011_verbigeracion.json"
+    },
+    {
+      "term_id": "SPE_012",
+      "path": "lexicon/terms/SPE/SPE_012_afasia.json"
     },
     {
       "term_id": "TALD_001",

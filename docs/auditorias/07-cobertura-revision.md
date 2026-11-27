@@ -21,7 +21,7 @@ La ficha solo muestra «Revisado clínicamente» cuando la revisión está vigen
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (291)
+## Casos pendientes (294)
 
 ### Riesgo alto (≥3) (16)
 
@@ -44,7 +44,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | RSK_008 · Riesgo de violencia hacia otros <!-- k:a1d329a485 --> | Sin revisar · riesgo 5/5 |  |
 | SPE_007 · Mutismo <!-- k:3bb8f11eb2 --> | Sin revisar · riesgo 3/5 |  |
 
-### Resto (275)
+### Resto (278)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -101,6 +101,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | ARC_018 · Paranoia querulans <!-- k:3c54f9a7b8 --> | Sin revisar · riesgo 1/5 |  |
 | ARC_019 · Psicastenia <!-- k:be3a42a13b --> | Sin revisar · riesgo 1/5 |  |
 | ARC_020 · Wahnstimmung <!-- k:2026df7a38 --> | Sin revisar · riesgo 2/5 |  |
+| ARC_021 · Psicosis maníaco-depresiva <!-- k:ffb3688a65 --> | Sin revisar · riesgo 0/5 |  |
 | CAT_003 · Mitmachen y Mitgehen <!-- k:2192692fa0 --> | Sin revisar · riesgo 2/5 |  |
 | CAT_004 · Mutismo catatónico <!-- k:febcb8c9c3 --> | Sin revisar · riesgo 2/5 |  |
 | CAT_005 · Obediencia automática <!-- k:1f5ea09541 --> | Sin revisar · riesgo 2/5 |  |
@@ -121,6 +122,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | COG_003 · Memoria de trabajo <!-- k:3860fbbe2c --> | Sin revisar · riesgo 1/5 |  |
 | COG_004 · Orientación <!-- k:e60229bb37 --> | Sin revisar · riesgo 1/5 |  |
 | COG_005 · Pensamiento Abstracto / Concreto <!-- k:786c04c56c --> | Sin revisar · riesgo 1/5 |  |
+| COG_006 · Déficit intelectual <!-- k:b6d5588a70 --> | Sin revisar · riesgo 1/5 |  |
 | DEL_001 · Apofanía <!-- k:5ba319a441 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_002 · BLIPS <!-- k:9b17780fc0 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_003 · Celotipia (Síndrome de Otelo) <!-- k:a53d276f4d --> | Sin revisar · riesgo 0/5 |  |
@@ -280,6 +282,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SPE_009 · Pararrespuestas (Vorbeireden) <!-- k:3eb7f2b23d --> | Sin revisar · riesgo 0/5 |  |
 | SPE_010 · Presión de habla <!-- k:09a9af6779 --> | Sin revisar · riesgo 0/5 |  |
 | SPE_011 · Verbigeración <!-- k:1c220dd275 --> | Sin revisar · riesgo 0/5 |  |
+| SPE_012 · Afasia <!-- k:d5fa9cd70b --> | Sin revisar · riesgo 1/5 |  |
 | TALD_001 · Bloqueo <!-- k:9d48e899cd --> | Sin revisar · riesgo 2/5 |  |
 | TALD_002 · Concretismo <!-- k:a676b56a8e --> | Sin revisar · riesgo 1/5 |  |
 | TALD_003 · Descarrilamiento <!-- k:e1cff2b7ba --> | Sin revisar · riesgo 1/5 |  |

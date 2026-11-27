@@ -41,10 +41,10 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
-| detectable_by <!-- k:da9832dab6 --> | Variantes del mismo valor: `entrevista_clinica` (171), `entrevista_clínica` (4), `entrevista_clínica (TEPT)` (1) |  |
-| detectable_by <!-- k:636df47ae3 --> | Variantes del mismo valor: `observacion_clinica` (8), `observación_clínica` (2) |  |
+| detectable_by <!-- k:09ba41120a --> | Variantes del mismo valor: `entrevista_clinica` (173), `entrevista_clínica` (4), `entrevista_clínica (TEPT)` (1) |  |
+| detectable_by <!-- k:7e8d6dca9b --> | Variantes del mismo valor: `observacion_clinica` (9), `observación_clínica` (2) |  |
 | detectable_by <!-- k:e6e4249434 --> | Variantes del mismo valor: `historia_clínica` (2), `historia_clinica` (1) |  |
-| detectable_by <!-- k:6e3c0ad6da --> | Variantes del mismo valor: `historia_clinica_longitudinal` (1), `historia_clínica_longitudinal` (1) |  |
+| detectable_by <!-- k:2970c8a162 --> | Variantes del mismo valor: `historia_clinica_longitudinal` (3), `historia_clínica_longitudinal` (1) |  |
 | detectable_by <!-- k:500b95c5ba --> | Variantes del mismo valor: `entrevista_clinica_fenomenologica` (3), `entrevista_clinica_fenomenológica` (1) |  |
 | detectable_by <!-- k:ca200f3173 --> | Variantes del mismo valor: `entrevista_fenomenológica (EASE)` (3), `entrevista_fenomenológica` (2) |  |
 | detectable_by <!-- k:4e7035ca81 --> | Valores en inglés: `clinical_interview`, `patient_report`, `collateral_history` |  |
@@ -53,12 +53,16 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
-| time_relation <!-- k:875a550c85 --> | Variantes del mismo valor: `episodica` (22), `episódica` (7), `episodico` (4) |  |
+| time_relation <!-- k:634ea4bb17 --> | Variantes del mismo valor: `episodica` (23), `episódica` (7), `episodico` (4) |  |
 | time_relation <!-- k:04dbe5889f --> | Variantes del mismo valor: `paroxistica` (3), `paroxística` (1) |  |
-| time_relation <!-- k:fa96f0ae9c --> | Variantes del mismo valor: `aguda` (3), `agudo` (1) |  |
+| time_relation <!-- k:f44e8f1e44 --> | Variantes del mismo valor: `aguda` (4), `agudo` (1) |  |
 | time_relation <!-- k:d1cd0142dd --> | Variantes del mismo valor: `prodrómica` (6), `prodrómico` (1) |  |
 | time_relation <!-- k:c576e7ab7c --> | Valores en inglés: `current`, `past` |  |
 
 ## Resueltos
 
-Aún ninguno.
+- 2026-11-27 · time_relation: Variantes del mismo valor: `aguda` (3), `agudo` (1)
+- 2026-11-27 · time_relation: Variantes del mismo valor: `episodica` (22), `episódica` (7), `episodico` (4)
+- 2026-11-27 · detectable_by: Variantes del mismo valor: `historia_clinica_longitudinal` (1), `historia_clínica_longitudinal` (1)
+- 2026-11-27 · detectable_by: Variantes del mismo valor: `observacion_clinica` (8), `observación_clínica` (2)
+- 2026-11-27 · detectable_by: Variantes del mismo valor: `entrevista_clinica` (171), `entrevista_clínica` (4), `entrevista_clínica (TEPT)` (1)

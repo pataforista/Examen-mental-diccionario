@@ -52,10 +52,9 @@
   ],
   "exclusions": [
     {
-      "term_id": "COG_003",
+      "term_id": "COG_006",
       "canonical_name": "Déficit intelectual",
-      "reason": "En el déficit el error es por falta de capacidad; en la pararrespuesta hay evidencia de que *entendió* la pregunta pero falla el enlace a la respuesta correcta.",
-      "ref_status": "forward"
+      "reason": "En el déficit el error es por falta de capacidad; en la pararrespuesta hay evidencia de que *entendió* la pregunta pero falla el enlace a la respuesta correcta."
     }
   ],
   "alerts": [

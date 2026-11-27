@@ -44,7 +44,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "SPE_001",
+      "term_id": "SPE_012",
       "canonical_name": "Afasia",
       "reason": "En la afasia hay un daño en el procesamiento del lenguaje; en el mutismo catatónico hay una inhibición de la voluntad de habla."
     }

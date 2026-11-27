@@ -1,0 +1,90 @@
+{
+  "term_id": "SPE_012",
+  "canonical_name": "Afasia",
+  "synonyms_and_slang": [
+    {
+      "term": "trastorno adquirido del lenguaje",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "disfasia adquirida",
+      "context": "clínico",
+      "locale": "es"
+    }
+  ],
+  "term_kind": "síndrome",
+  "granularity": "atomic",
+  "risk_weight": 1,
+  "definition_clinical": {
+    "core": "Alteración adquirida del procesamiento simbólico del lenguaje (comprensión, expresión, nominación, repetición, lectura o escritura) secundaria a lesión o disfunción cerebral focal, generalmente del hemisferio dominante.",
+    "required_features": [
+      "compromiso del sistema lingüístico (fonológico, léxico, sintáctico o semántico)",
+      "origen adquirido por lesión o disfunción cerebral",
+      "no explicable únicamente por déficit motor articulatorio o inhibición volitiva"
+    ],
+    "subjective_marker": "“Sé lo que quiero decir pero no me salen las palabras, o escucho hablar a la gente y no logro entender qué significan las frases”.",
+    "behavioral_marker": "Anomia, parafasias, agramatismo, habla no fluente o fluente vacía, o falla en la comprensión y repetición de órdenes verbales."
+  },
+  "operationalization": {
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion_clinica"
+    ],
+    "time_relation": [
+      "aguda",
+      "persistente"
+    ],
+    "pharmacological_link": false
+  },
+  "domain_links": [
+    {
+      "domain_id": "DOM-05",
+      "relation": "primary_expression",
+      "context": "procesamiento_simbolico_del_lenguaje"
+    }
+  ],
+  "exclusions": [
+    {
+      "term_id": "SPE_002",
+      "canonical_name": "Disartria",
+      "reason": "La disartria afecta la articulación motora del habla preservando el lenguaje simbólico; la afasia compromete el lenguaje mismo."
+    },
+    {
+      "term_id": "CAT_004",
+      "canonical_name": "Mutismo catatónico",
+      "reason": "En el mutismo catatónico hay inhibición psicomotora/volitiva del habla con sistema lingüístico intacto."
+    }
+  ],
+  "alerts": [
+    {
+      "type": "neurological_warning",
+      "message": "Una afasia fluente (p. ej. Wernicke) puede confundirse con incoherencia o ensalada de palabras psicótica; evaluar siempre signos focales y etiología cerebrovascular."
+    }
+  ],
+  "teaching_notes": [
+    "Evaluar sistemáticamente fluencia, comprensión, repetición y nominación para distinguir afasias fluentes, no fluentes y globales.",
+    "Diagnóstico diferencial indispensable ante discurso aparentemente incoherente de inicio agudo en urgencias."
+  ],
+  "version": "1.0.0",
+  "mappings": {
+    "cie11": {
+      "code": "MA80.0",
+      "label": "Aphasia"
+    }
+  },
+  "clinical_assessment": {
+    "recommended_scales": []
+  },
+  "provenance": {
+    "phenomenology": [
+      "Broca",
+      "Wernicke"
+    ],
+    "clinical_tradition": [
+      "neurologia_conductual",
+      "psicopatologia_clinica"
+    ]
+  },
+  "status": "active"
+}

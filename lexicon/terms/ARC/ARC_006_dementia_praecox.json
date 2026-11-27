@@ -53,7 +53,7 @@
   ],
   "exclusions": [
     {
-      "term_id": "ARC_006",
+      "term_id": "ARC_021",
       "canonical_name": "Psicosis maníaco-depresiva",
       "reason": "Kraepelin separó la demencia precoz (deterioro) de la psicosis maníaco-depresiva (periodicidad sin deterioro)."
     }
