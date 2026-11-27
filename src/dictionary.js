@@ -299,11 +299,14 @@ export const dictionary = {
     if (cleanQuery.length < 2) {
       // Al vaciar la búsqueda, la entrada del historial deja de ser una búsqueda.
       if (st && st.view === "search") history.replaceState({ view: "nav-dictionary" }, "", "#dictionary");
+      this._setActiveNav("nav-dictionary");
       this.renderAllTerms();
       this.renderView("dictionary");
       return;
     }
     // La consulta vive en el historial: al volver desde una ficha se recuperan los resultados.
+    // La búsqueda pertenece al diccionario: la barra inferior lo refleja aunque se busque desde otra pestaña.
+    this._setActiveNav("nav-dictionary");
     const searchState = { view: "search", q: cleanQuery };
     if (st && st.view === "search") history.replaceState(searchState, "", "#buscar");
     else history.pushState(searchState, "", "#buscar");
@@ -344,7 +347,7 @@ export const dictionary = {
       this.nodes.resultsView.innerHTML = `
                 <div class="card empty-state">
                     <div class="empty-state__icon">${getIcon("compass")}</div>
-                    <h3>Sin coincidencias exactas</h3>
+                    <h2>Sin coincidencias exactas</h2>
                     <p>No encontramos ese término. Mientras tanto, una perla clínica:</p>
                     <div class="empty-state__pearl">
                         <strong>${getIcon("bulb")} Sabías que…</strong>
@@ -356,6 +359,7 @@ export const dictionary = {
                     <p class="muted-note">O vuelve al <button class="link-btn" onclick="App.switchTab('nav-dictionary')">índice general</button></p>
                 </div>
             `;
+      this.renderView("results");
       return;
     } else {
       this.nodes.resultsView.innerHTML = `
@@ -366,7 +370,7 @@ export const dictionary = {
                     <div class="card card--interactive result-card" role="button" tabindex="0" onclick="App.viewTerm('${r.item.term_id}')" onkeydown="if((event.key==='Enter' || event.key===' ') && event.target === this){event.preventDefault();App.viewTerm('${r.item.term_id}')}">
                         <div class="result-card__head">
                             <span class="result-card__title">${this.utils.sanitizeHTML(r.item.canonical_name)}</span>
-                            <span class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(r.item.term_kind)}</span>
+                            <span class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(this.utils.humanize(r.item.term_kind))}</span>
                         </div>
                         <p class="result-card__def">${this.utils.sanitizeHTML(r.item.definition_clinical?.core || "Sin definición disponible.")}</p>
                     </div>
@@ -409,7 +413,7 @@ export const dictionary = {
                 <span class="totd-ribbon">${getIcon("bulb")} Término del día</span>
                 <div class="totd-content">
                     <h2 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h2>
-                    <span class="badge ${dailyTerm.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(dailyTerm.term_kind)}</span>
+                    <span class="badge ${dailyTerm.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(this.utils.humanize(dailyTerm.term_kind))}</span>
                     <p class="totd-snippet">${this.utils.sanitizeHTML(truncatedDef)}</p>
                     ${tipHtml}
                     <div class="totd-footer">
@@ -429,10 +433,13 @@ export const dictionary = {
     this.utils.haptic();
     try {
       const blob = await this.utils.generateShareCard(term);
-      const file = new File([blob], `MSE_${term.canonical_name}.png`, {
+      // Nombre de archivo válido en cualquier sistema ("ruina/pobreza" llevaba una barra).
+      const fileName = `MSE_${this.utils.humanize(term.canonical_name).replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, "_")}.png`;
+      const file = new File([blob], fileName, {
         type: "image/png"
       });
-      if (navigator.share) {
+      // Algunos navegadores tienen share() pero no aceptan archivos: se comprueba antes.
+      if (navigator.share && (!navigator.canShare || navigator.canShare({ files: [file] }))) {
         await navigator.share({
           title: `Diccionario MSE: ${term.canonical_name}`,
           text: `Definición de ${term.canonical_name}: ${term.definition_clinical?.core}`,
@@ -443,12 +450,17 @@ export const dictionary = {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = `MSE_${term.canonical_name}.png`;
+        a.download = fileName;
+        document.body.appendChild(a);
         a.click();
-        URL.revokeObjectURL(url);
+        a.remove();
+        // Revocar en el mismo instante cancela o renombra la descarga en algunos navegadores.
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
         App.toast.show("Tarjeta descargada en tu dispositivo", "success");
       }
     } catch (error) {
+      // Cerrar la hoja de compartir no es un error: no se abre otra.
+      if (error && error.name === "AbortError") return;
       console.error("Error sharing:", error);
       if (navigator.share) {
         navigator.share({
@@ -490,8 +502,7 @@ export const dictionary = {
             </div>
             <div class="card">
                 <div class="term-head">
-                    <span class="badge ${isCritical ? "badge-risk-critical" : ""}">${sanitize(term.term_kind || "término")}</span>
-                    ${term.status === "active" ? '<span class="status-dot status-dot--ok" title="Término activo" aria-label="Término activo"></span>' : ""}
+                    <span class="badge ${isCritical ? "badge-risk-critical" : ""}">${sanitize(this.utils.humanize(term.term_kind || "término"))}</span>
                 </div>
                 <h2 class="term-title">${sanitize(term.canonical_name)}</h2>
 
@@ -726,7 +737,7 @@ export const dictionary = {
                         <span class="subcomponent-label">${sanitize(sub.label_es)}</span>
                         ${sub.notes ? `<p class="subcomponent-notes">${sanitize(sub.notes)}</p>` : ""}
                         <div class="tag-container">
-                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${sanitize(term)}</span>`).join("") : ""}
+                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${sanitize(this.utils.humanize(term))}</span>`).join("") : ""}
                         </div>
                     </div>
                 `).join("") : '<p class="muted-note">No hay subcomponentes definidos.</p>'}
@@ -747,7 +758,7 @@ export const dictionary = {
                     ${filteredTerms.length ? filteredTerms.map(t => `
                         <button class="list-item" onclick="App.viewTerm('${t.term_id}')">
                             <span>${sanitize(t.canonical_name)}</span>
-                            <span class="list-item__meta">${sanitize(t.term_kind)}</span>
+                            <span class="list-item__meta">${sanitize(this.utils.humanize(t.term_kind))}</span>
                         </button>
                     `).join("") : '<p class="muted-note list-card__empty">No hay términos específicos registrados aún.</p>'}
                 </div>

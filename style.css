@@ -1096,6 +1096,7 @@ main {
 }
 
 .empty-state__icon .icon { width: 30px; height: 30px; }
+.empty-state h2,
 .empty-state h3 { margin: 0; font-size: 20px; }
 .empty-state > p { margin-top: var(--space-2); color: var(--text-muted); font-size: 15px; }
 

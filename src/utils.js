@@ -139,7 +139,7 @@ export const utils = {
     const nameLines = this.wrapText(ctx, term.canonical_name, 120, 330, 840, 104);
     let y = 330 + nameLines * 104;
     // Tipo de término
-    const kind = term.term_kind || "término";
+    const kind = this.humanize(term.term_kind || "término");
     const isCritical = term.risk_weight > 1;
     ctx.font = '600 30px "Inter", sans-serif';
     const kindW = ctx.measureText(kind).width + 56;

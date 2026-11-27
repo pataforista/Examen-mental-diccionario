@@ -37,6 +37,15 @@ const copyRuntimeFiles = () => ({
       const src = resolve(__dirname, file);
       if (existsSync(src)) cpSync(src, resolve(__dirname, "dist", file), { recursive: true });
     }
+    // Precaché del service worker: añade los archivos con hash de esta build.
+    const sw = resolve(__dirname, "dist/sw.js");
+    const built = readdirSync(resolve(__dirname, "dist/assets"))
+      .filter(f => !/^manifest-.+\.json$/.test(f))
+      .map(f => `  "assets/${f}",`)
+      .join("\n");
+    const swSrc = readFileSync(sw, "utf8");
+    if (!swSrc.includes("/* __VITE_ASSETS__ */")) throw new Error("sw.js: falta el marcador /* __VITE_ASSETS__ */");
+    writeFileSync(sw, swSrc.replace("  /* __VITE_ASSETS__ */", built));
     // Vite fingerprints the manifest into assets/, which breaks its relative
     // icon paths; point the page back at the root copy instead.
     const html = resolve(__dirname, "dist/index.html");

@@ -17,6 +17,7 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 2. `npm test` — mira el **código de salida**, no un `grep` del resumen: una línea filtrada puede ocultar un fallo (la lista negra imprime "N incidencia(s)" sin que se note en un resumen parcial).
 3. Si tocaste `src/pwa.js`, el `<dialog id="pwa-guide">`, el banner o su CSS: `npm run test:pwa`.
 4. Si cambió cualquier archivo que el service worker sirve (CSS, JS, HTML, íconos, datos): **sube `CACHE_NAME` en `sw.js`**. El SW responde cache-first; con el mismo nombre, quien ya lo instaló no recibe los cambios.
+5. Precaché: los archivos con hash de `dist/assets/` los inserta `vite.config.mjs` en el marcador `/* __VITE_ASSETS__ */` de `sw.js`; no los listes a mano ni borres el marcador. Las búsquedas en caché usan `ignoreVary` porque el JS/CSS se pide con `crossorigin` y un `Vary: Origin` del servidor impedía la coincidencia (la app quedaba vacía sin conexión tras la primera visita).
 
 ## Reglas del sistema de diseño ("humano")
 
