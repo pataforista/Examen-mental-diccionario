@@ -1,4 +1,4 @@
-const CACHE_NAME = "em-clinical-pwa-v4.8";
+const CACHE_NAME = "em-clinical-pwa-v4.9";
 const ASSETS = [
   "/",
   "index.html",
@@ -62,7 +62,6 @@ const ASSETS = [
   "OSCE_010–OSCE_015.json",
   "OSCE_016–025.json",
   "OSCE_026–035.json",
-  "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js",
 ];
 
 self.addEventListener("install", (event) => {

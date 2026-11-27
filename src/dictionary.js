@@ -1,4 +1,6 @@
+import Fuse from "fuse.js";
 import { getIcon, DOMAIN_ICONS } from "./icons.js";
+import { createSearch } from "./search.mjs";
 
 export const dictionary = {
   init: async function () {
@@ -284,26 +286,9 @@ export const dictionary = {
     return `cat-${((n - 1) % 6) + 1}`;
   },
   setupSearch: function () {
-    if (!window.Fuse) return;
-    this.data.fuse = new Fuse(this.data.terms, {
-      keys: [{
-        name: "canonical_name",
-        weight: 1.0
-      }, {
-        name: "synonyms_and_slang.term",
-        weight: 0.7
-      }, {
-        name: "definition_clinical.core",
-        weight: 0.4
-      }],
-      threshold: 0.4,
-      distance: 100,
-      location: 0,
-      minMatchCharLength: 2,
-      findAllMatches: true,
-      useExtendedSearch: true,
-      ignoreLocation: false
-    });
+    // Fuse va empaquetado con la app: la búsqueda tolerante funciona sin conexión
+    // y aunque la red bloquee CDNs. Lógica y criterios en src/search.mjs.
+    this.data.search = createSearch(this.data.terms, Fuse);
   },
   handleSearch: function (query) {
     const cleanQuery = query.trim();
@@ -322,21 +307,10 @@ export const dictionary = {
     const searchState = { view: "search", q: cleanQuery };
     if (st && st.view === "search") history.replaceState(searchState, "", "#buscar");
     else history.pushState(searchState, "", "#buscar");
-    const results = this.data.fuse ? this.data.fuse.search(cleanQuery) : this.fallbackSearch(cleanQuery);
+    const results = this.data.search ? this.data.search(cleanQuery).map(item => ({ item })) : [];
     this.renderResults(results);
   },
-  normalizeText: function (text) {
-    return String(text || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-  },
-  fallbackSearch: function (query) {
-    const normalizedQuery = this.normalizeText(query);
-    return this.data.terms.filter(term => {
-      const haystack = [term.canonical_name, ...(term.synonyms_and_slang || []).map(s => s && s.term || s), term.definition_clinical?.core].map(item => this.normalizeText(item)).join(" ");
-      return haystack.includes(normalizedQuery);
-    }).slice(0, 50).map(item => ({
-      item
-    }));
-  },
+
   renderAllTerms: function () {
     if (!this.nodes.allTermsList || !this.data.terms) return;
     this.nodes.allTermsList.textContent = "";

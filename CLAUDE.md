@@ -7,7 +7,8 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 | Comando | Qué hace |
 |---|---|
 | `npm run dev` / `npm run build` / `npm run preview` | Desarrollo, build a `dist/`, servir el build |
-| `npm test` | lint + validación del léxico + contraste + lista negra de diseño. **Es la puerta para subir** |
+| `npm test` | lint + validación del léxico + búsqueda + contraste + lista negra de diseño. **Es la puerta para subir** |
+| `npm run search` | Regresión de la búsqueda contra el léxico real (`scripts/test_search.mjs`) |
 | `npm run test:pwa` | Regresión del diálogo de instalación en navegador real (requiere Playwright y `preview` activo) |
 
 ## Antes de hacer commit
@@ -47,13 +48,14 @@ Cada punto de esta lista corresponde a un error real que ocurrió y que `npm run
 ## Trampas de entorno (sesiones en la nube / sandbox)
 
 - **No uses `pkill -f <patrón>` con un patrón que aparezca en tu propia línea de comando** (por ejemplo `vite preview`): mata el propio shell (código 144). Guarda el PID al lanzar (`cmd & echo $! > pid`) y usa `kill $(cat pid)`.
-- El proxy de la sandbox bloquea CDNs (p. ej. `cdn.jsdelivr.net`, que sirve `fuse.js`): los errores `ERR_TUNNEL_CONNECTION_FAILED` en consola de pruebas son del entorno, no del código.
+- El proxy de la sandbox bloquea CDNs. La app ya no depende de ninguno (Fuse va empaquetado); si aparece `ERR_TUNNEL_CONNECTION_FAILED`, revisa qué recurso externo se coló.
 - Con `serviceWorkers: "block"` en Playwright, `navigator.serviceWorker.register()` resuelve `undefined` y `registerSW` registra "Service Worker registration failed": es un artefacto de la prueba. Para probar el SW de verdad, deja los service workers habilitados.
 - Para ver el aspecto, haz capturas de móvil (390 px de ancho y también 320 px) en claro y oscuro; no des por buena una pantalla sin mirarla.
 
 ## Estructura útil
 
 - `src/dictionary.js` — arranque, navegación por pestañas e historial (`pushState`/`popstate`), vista "Acerca de".
+- `src/search.mjs` — búsqueda por niveles (nombre → sinónimos → definición → tolerancia a errores con Fuse). Sin DOM, para poder probarla en Node. Si cambias la lógica o el léxico, corre `npm run search`; si una consulta real falla, añádela a `CASES`.
 - `src/pwa.js` — instalación (detección, banner, guía, tarjeta).
 - `src/icons.js` — íconos SVG; agrega aquí los nuevos.
 - `sw.js` — service worker (`CACHE_NAME`, precaché `ASSETS`).

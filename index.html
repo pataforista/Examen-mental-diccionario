@@ -75,7 +75,7 @@
     </script>
 
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self'; object-src 'none'; base-uri 'self';">
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self';">
     <script>
         /* Fija el tema antes del primer pintado (contrato común: data-theme en <html>,
            clave localStorage "theme"; "mse-theme" se migra una sola vez). */
@@ -358,7 +358,6 @@
         <button id="donation-close" class="donation-close" title="Cerrar" aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js"></script>
     <script src="/src/main.js" type="module"></script>
 <script src="shared/shell/shell.js" data-app="examen-mental" defer></script>
 </body>
