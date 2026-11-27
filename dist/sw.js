@@ -1,7 +1,10 @@
-const CACHE_NAME = "em-clinical-pwa-v5.5";
+const CACHE_NAME = "em-clinical-pwa-v5.6";
+// Rutas relativas al propio sw.js, para que funcione en la raíz o bajo una subruta.
+// "index.html" no se precachea: Cloudflare Pages lo redirige (308) a "./", y una
+// respuesta redirigida servida a una navegación deja la página en blanco.
+const INDEX = "./";
 const ASSETS = [
-  "/",
-  "index.html",
+  INDEX,
   "shared/fonts.css",
   "shared/humano-tokens.css",
   "shared/shell/shell.css",
@@ -27,8 +30,8 @@ const ASSETS = [
   "assets/favicon-16-BxOO8r3p.png",
   "assets/favicon-32-DmKxD-PY.png",
   "assets/icon-192-BE24A7Mv.png",
-  "assets/index-CWtakVdb.css",
-  "assets/index-DFRr08CV.js",
+  "assets/index-BHw4sW-k.css",
+  "assets/index-cfvtWIZj.js",
   "assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
   "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
   "assets/jetbrains-mono-latin-500-normal-BWZEU5yA.woff2",
@@ -113,6 +116,26 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  // Navegaciones: red primero (así un despliegue nuevo llega sin esperar al SW) y,
+  // sin conexión, la página guardada. Nunca se responde con una respuesta
+  // "redirected": el navegador la rechaza en una navegación (ERR_FAILED).
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.ok && !networkResponse.redirected && networkResponse.type === "basic") {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(INDEX, copy));
+          }
+          return networkResponse;
+        })
+        .catch(() =>
+          caches.match(INDEX, { ignoreVary: true }).then((cached) => cleanRedirect(cached) || Response.error()),
+        ),
+    );
+    return;
+  }
+
   // Strategy: Stale-While-Revalidate for clinical data (JSON)
   if (event.request.url.includes(".json")) {
     event.respondWith(
@@ -153,3 +176,11 @@ self.addEventListener("fetch", (event) => {
     }),
   );
 });
+
+// Copia una respuesta sin la marca "redirected" (las cachés antiguas pueden tenerla).
+function cleanRedirect(response) {
+  if (!response || !response.redirected) return response;
+  return response.blob().then((body) =>
+    new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers }),
+  );
+}
