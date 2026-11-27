@@ -28,11 +28,11 @@
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_fenomenológica"
+      "entrevista_fenomenologica"
     ],
     "time_relation": [
       "persistente",
-      "episódica"
+      "episodica"
     ],
     "pharmacological_link": true,
     "pharmacological_triggers": [

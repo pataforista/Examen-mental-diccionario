@@ -19,7 +19,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "concepto_histórico",
+  "term_kind": "concepto_historico",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {

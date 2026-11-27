@@ -28,12 +28,12 @@
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_fenomenológica",
+      "entrevista_fenomenologica",
       "tareas_de_perspectiva_espacial"
     ],
     "time_relation": [
       "persistente",
-      "prodrómica"
+      "prodromica"
     ],
     "pharmacological_link": false
   },

@@ -28,10 +28,10 @@
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_fenomenológica (EASE)"
+      "entrevista_fenomenologica"
     ],
     "time_relation": [
-      "prodrómica",
+      "prodromica",
       "persistente"
     ],
     "pharmacological_link": false

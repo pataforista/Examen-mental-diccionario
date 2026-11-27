@@ -29,12 +29,12 @@
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_clínica",
+      "entrevista_clinica",
       "examen_oftalmológico"
     ],
     "time_relation": [
       "persistente",
-      "episódica"
+      "episodica"
     ],
     "pharmacological_link": false
   },

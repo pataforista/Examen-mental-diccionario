@@ -29,11 +29,11 @@
   "operationalization": {
     "detectable_by": [
       "pruebas_de_teoría_de_la_mente",
-      "entrevista_clínica"
+      "entrevista_clinica"
     ],
     "time_relation": [
       "rasgo",
-      "episódica"
+      "episodica"
     ],
     "pharmacological_link": false
   },

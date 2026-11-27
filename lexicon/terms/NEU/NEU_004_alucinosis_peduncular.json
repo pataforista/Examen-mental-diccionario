@@ -28,7 +28,7 @@
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_clínica",
+      "entrevista_clinica",
       "neuroimagen"
     ],
     "time_relation": [

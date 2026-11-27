@@ -18,7 +18,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "factor de riesgo",
+  "term_kind": "factor_de_riesgo",
   "granularity": "atomic",
   "risk_weight": 5,
   "definition_clinical": {

@@ -28,7 +28,7 @@
   },
   "operationalization": {
     "detectable_by": [
-      "observación_clínica",
+      "observacion_clinica",
       "neuroimagen"
     ],
     "time_relation": [

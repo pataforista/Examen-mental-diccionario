@@ -28,7 +28,7 @@
   },
   "operationalization": {
     "detectable_by": [
-      "observación_clínica",
+      "observacion_clinica",
       "exploración_cognitiva"
     ],
     "time_relation": [

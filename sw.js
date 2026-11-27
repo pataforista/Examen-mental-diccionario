@@ -1,4 +1,4 @@
-const CACHE_NAME = "em-clinical-pwa-v5.11";
+const CACHE_NAME = "em-clinical-pwa-v5.12";
 // Rutas relativas al propio sw.js, para que funcione en la raíz o bajo una subruta.
 // "index.html" no se precachea: Cloudflare Pages lo redirige (308) a "./", y una
 // respuesta redirigida servida a una navegación deja la página en blanco.

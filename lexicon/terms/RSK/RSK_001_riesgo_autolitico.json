@@ -1,7 +1,7 @@
 {
   "term_id": "RSK_001",
   "canonical_name": "Riesgo autolítico (general)",
-  "term_kind": "factor de riesgo",
+  "term_kind": "factor_de_riesgo",
   "granularity": "atomic",
   "risk_weight": 3,
   "definition_clinical": {
@@ -13,13 +13,13 @@
   },
   "operationalization": {
     "detectable_by": [
-      "clinical_interview",
-      "patient_report",
-      "collateral_history"
+      "entrevista_clinica",
+      "autoinforme",
+      "historia_colateral"
     ],
     "time_relation": [
-      "current",
-      "past"
+      "actual",
+      "historico"
     ]
   },
   "domain_links": [

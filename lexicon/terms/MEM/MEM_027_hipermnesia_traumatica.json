@@ -28,7 +28,7 @@
   },
   "operationalization": {
     "detectable_by": [
-      "entrevista_clínica (TEPT)"
+      "entrevista_clinica"
     ],
     "time_relation": [
       "recurrente"

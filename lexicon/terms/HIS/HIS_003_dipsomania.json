@@ -18,7 +18,7 @@
       "locale": "en"
     }
   ],
-  "term_kind": "concepto_histórico",
+  "term_kind": "concepto_historico",
   "granularity": "atomic",
   "risk_weight": 1,
   "definition_clinical": {
@@ -33,11 +33,11 @@
   },
   "operationalization": {
     "detectable_by": [
-      "historia_clínica",
+      "historia_clinica",
       "colateral"
     ],
     "time_relation": [
-      "episódica"
+      "episodica"
     ],
     "pharmacological_link": false
   },

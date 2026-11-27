@@ -238,6 +238,12 @@ const RULES = [
         if (!type) out.push("alerta sin tipo (la app mostraría el recuadro vacío)");
         else if (!inVocab(ctx, "alert_type", type)) out.push(`tipo de alerta "${type}"`);
       }
+      for (const d of list(t.operationalization?.detectable_by)) {
+        if (!inVocab(ctx, "detectable_by", d)) out.push(`detectable_by "${d}"`);
+      }
+      for (const r of list(t.operationalization?.time_relation)) {
+        if (!inVocab(ctx, "time_relation", r)) out.push(`time_relation "${r}"`);
+      }
       return out.length ? `${out.join("; ")} — valores válidos en taxonomy/controlled_vocabularies.json` : null;
     }
   },
