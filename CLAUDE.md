@@ -10,6 +10,7 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 | `npm test` | lint + validación del léxico + búsqueda + herramientas del léxico + contraste + lista negra de diseño. **Es la puerta para subir** |
 | `npm run validate` | Reglas del léxico: errores bloquean; avisos de calidad se resumen. `-- --detalle` o `-- --regla <id>` para verlos |
 | `npm run lexicon:report` | Genera `docs/revision-lexico.html` (no versionado): todos los términos con filtros y sus avisos |
+| `npm run lexicon:audit` | Regenera `docs/auditorias/` (versionado): un documento por tema con los casos actuales; conserva la columna «Decisión» y mueve lo corregido a «Resueltos» |
 | `npm run term:review -- ID… --por "Nombre"` | Firma la revisión clínica de términos (`--estado en_revision`, `--nota`, `--listar`) |
 | `npm run term:new -- --prefijo … --nombre … --tipo … --dominio … --definicion …` | Crea un término (ID asignado, borrador, detección de duplicados; `--lista DOM-xx/sub`, `--prueba`) |
 | `npm run lexicon:export` / `lexicon:import -- f.csv [--aplicar]` | Planilla de ida y vuelta de los campos clínicos (ver `docs/LEXICO.md`) |
@@ -62,12 +63,14 @@ Cada punto de esta lista corresponde a un error real que ocurrió y que `npm run
 ## Léxico (términos del diccionario)
 
 - **Fuente de verdad:** un archivo por término en `lexicon/terms/<PREFIJO>/<ID>_<nombre>.json`. La app no los lee: lee `lexicon/lexicon_bundle.json`, que genera `npm run build:lexicon`. Tras editar un término, corre ese comando; `npm test` falla si el bundle quedó desactualizado.
-- **Escribir términos** solo con las herramientas (`scripts/lexicon_edit.js` es el módulo común): mantienen el formato (2 espacios, salto final), no reutilizan IDs retirados (`lexicon/_deprecated/`) y detectan duplicados con el buscador de la app. Guía para personas: `docs/LEXICO.md`.
+- **Escribir términos** solo con las herramientas (`scripts/lexicon_edit.js` es el módulo común): mantienen el formato (2 espacios, salto final), no reutilizan IDs retirados (`lexicon/_deprecated/`) y detectan duplicados con el buscador de la app. Guía para personas: `docs/LEXICO.md` (herramientas) y `docs/GUIA_REVISION_CLINICA.md` (criterios de revisión).
 - **Reglas** en `scripts/lexicon_checks.js`, compartidas por el validador y la página de revisión. Para una regla nueva, añade un objeto a `RULES` (y su lugar en `WARNING_ORDER` si es aviso). Error = rompe la app o la integridad; aviso = calidad clínica o de redacción.
 - **Vocabularios cerrados** (`term_kind`, `granularity`, `risk_weight`, relaciones de dominio, tipos de alerta) en `taxonomy/controlled_vocabularies.json`. Un valor nuevo se añade ahí a propósito, no por accidente en un término.
 - `lexicon/mappings/` es una carpeta heredada que la app no usa; sus códigos CIE-11 contradicen a veces los del término. La regla `cie11-conflicto` los señala para decisión clínica: no elijas uno automáticamente.
 - **Dominios y léxico:** `domains/*.json` tienen descriptores para redactar (`accepted_terms`, cuyo **orden es clínico**: p. ej. alerta → somnolencia → … → coma). Los que son términos del diccionario se enlazan en `term_links` del subcomponente (`"descriptor": "ID"`) sin moverlos; en la vista Dominios abren la ficha. Enlaza por nombre exacto; un sinónimo puede no ser el mismo concepto (la regla `enlace-sugerido` lo deja a decisión clínica).
 - **Revisión clínica:** bloque `review` del término (`status`, `reviewer`, `date`, `content_hash`). Escríbelo solo con `npm run term:review`: la huella permite avisar si el término cambia después de revisado, y el bundle (vía `bundleTerm`) solo marca como revisado lo vigente, que es lo único que la ficha muestra. **No firmes revisiones en nombre de nadie**: es una afirmación clínica.
+- **Auditorías** (`docs/auditorias/`): las genera `scripts/lexicon_audit.js` a partir de las reglas. La columna «Decisión» la escriben personas: al regenerar se conserva por clave (`<!-- k:… -->`), no la borres. Un tema nuevo se añade en `TOPICS`.
+- **Escala de riesgo sin definir:** el esquema define 0–2, los datos usan 0–5; la ficha pinta la alerta roja con `risk_weight > 1`. No asignes niveles 3–5 sin la definición clínica (pendiente en la auditoría de taxonomía).
 - Las alertas son objetos `{ type, message }`; una alerta en texto suelto dejaba vacío el recuadro de riesgo de la ficha.
 
 ## Estructura útil

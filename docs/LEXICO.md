@@ -1,5 +1,7 @@
 # Cómo revisar y agregar términos del diccionario
 
+> Criterios clínicos de la revisión: [GUIA_REVISION_CLINICA.md](GUIA_REVISION_CLINICA.md). Auditorías por tema: [auditorias/](auditorias/README.md) (`npm run lexicon:audit`).
+
 Cada término vive en su propio archivo (`lexicon/terms/<PREFIJO>/<ID>_<nombre>.json`). No hace falta abrirlos para el trabajo habitual: estas herramientas cubren revisar, corregir, agregar y firmar.
 
 ## 1. Ver el estado del diccionario

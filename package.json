@@ -19,7 +19,8 @@
     "lexicon:export": "node scripts/lexicon_sheet.js exportar",
     "lexicon:import": "node scripts/lexicon_sheet.js importar",
     "term:new": "node scripts/term_new.js",
-    "lexicon:tools": "node scripts/test_lexicon_tools.mjs"
+    "lexicon:tools": "node scripts/test_lexicon_tools.mjs",
+    "lexicon:audit": "node scripts/lexicon_audit.js"
   },
   "repository": {
     "type": "git",
