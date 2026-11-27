@@ -44,7 +44,8 @@
         "delirio_somatico"
       ],
       "term_links": {
-        "delirio_persecutorio": "DEL_009"
+        "delirio_persecutorio": "DEL_009",
+        "delirio_nihilista": "DEL_029"
       },
       "notes": "Delirio fantástico: bizarro, viola leyes físicas/biológicas. Delirio somático: convicción de defecto/enfermedad irreales (distinguir de hipocondría delirante). Incluye fenómenos de pasividad."
     },

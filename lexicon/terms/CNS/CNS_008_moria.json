@@ -48,6 +48,11 @@
       "domain_id": "DOM-10",
       "relation": "secondary_expression",
       "context": ""
+    },
+    {
+      "domain_id": "DOM-09",
+      "relation": "associated_sign",
+      "context": "afecto_observable"
     }
   ],
   "exclusions": [

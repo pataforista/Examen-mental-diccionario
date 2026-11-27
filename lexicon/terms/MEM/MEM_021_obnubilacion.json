@@ -36,6 +36,11 @@
       "domain_id": "DOM-11",
       "relation": "primary_expression",
       "context": "conciencia_y_alerta"
+    },
+    {
+      "domain_id": "DOM-01",
+      "relation": "primary_expression",
+      "context": "nivel_de_conciencia"
     }
   ],
   "exclusions": [

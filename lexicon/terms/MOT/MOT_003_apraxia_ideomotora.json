@@ -35,6 +35,11 @@
       "domain_id": "DOM-04",
       "relation": "primary_expression",
       "context": "psicomotricidad_conacion"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "cognitive_deficit",
+      "context": "praxias_ideomotoras"
     }
   ],
   "exclusions": [],

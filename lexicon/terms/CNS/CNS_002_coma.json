@@ -53,6 +53,11 @@
       "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
+    },
+    {
+      "domain_id": "DOM-01",
+      "relation": "primary_expression",
+      "context": "nivel_de_conciencia"
     }
   ],
   "exclusions": [

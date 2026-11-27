@@ -52,6 +52,7 @@
       ],
       "term_links": {
         "aplanamiento_afectivo": "AFF_010",
+        "afecto_labil": "AFF_025",
         "moria": "CNS_008",
         "perplejidad": "AFF_030"
       },

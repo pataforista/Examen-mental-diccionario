@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-27T23:41:40.037Z",
+  "generated_at": "2026-11-27T23:45:27.923Z",
   "total_terms": 291,
   "terms": [
     {
@@ -5721,6 +5721,11 @@
           "domain_id": "DOM-10",
           "relation": "primary_expression",
           "context": ""
+        },
+        {
+          "domain_id": "DOM-01",
+          "relation": "primary_expression",
+          "context": "nivel_de_conciencia"
         }
       ],
       "exclusions": [
@@ -6173,6 +6178,11 @@
           "domain_id": "DOM-10",
           "relation": "secondary_expression",
           "context": ""
+        },
+        {
+          "domain_id": "DOM-09",
+          "relation": "associated_sign",
+          "context": "afecto_observable"
         }
       ],
       "exclusions": [
@@ -9801,6 +9811,11 @@
           "domain_id": "DOM-11",
           "relation": "primary_expression",
           "context": ""
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "associated_sign",
+          "context": "metacognicion_y_conciencia_de_deficit"
         }
       ],
       "exclusions": [
@@ -12332,6 +12347,11 @@
           "domain_id": "DOM-11",
           "relation": "primary_expression",
           "context": "conciencia_y_alerta"
+        },
+        {
+          "domain_id": "DOM-01",
+          "relation": "primary_expression",
+          "context": "nivel_de_conciencia"
         }
       ],
       "exclusions": [
@@ -13024,6 +13044,11 @@
           "domain_id": "DOM-04",
           "relation": "primary_expression",
           "context": "psicomotricidad_conacion"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "cognitive_deficit",
+          "context": "praxias_visuoconstructivas"
         }
       ],
       "exclusions": [],
@@ -13172,6 +13197,11 @@
           "domain_id": "DOM-04",
           "relation": "primary_expression",
           "context": "psicomotricidad_conacion"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "cognitive_deficit",
+          "context": "praxias_ideomotoras"
         }
       ],
       "exclusions": [],
@@ -21503,6 +21533,16 @@
           "domain_id": "DOM-06",
           "relation": "primary_expression",
           "context": "tald_scale"
+        },
+        {
+          "domain_id": "DOM-05",
+          "relation": "secondary_expression",
+          "context": "comprension_lenguaje_figurado"
+        },
+        {
+          "domain_id": "DOM-10",
+          "relation": "cognitive_deficit",
+          "context": "abstraccion_cognitiva"
         }
       ],
       "exclusions": [],
@@ -23532,6 +23572,11 @@
           "domain_id": "DOM-06",
           "relation": "primary_expression",
           "context": "desorganizacion_extrema"
+        },
+        {
+          "domain_id": "DOM-05",
+          "relation": "secondary_expression",
+          "context": "organizacion_del_discurso"
         }
       ],
       "examples": [

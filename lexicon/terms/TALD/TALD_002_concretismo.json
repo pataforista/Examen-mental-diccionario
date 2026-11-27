@@ -30,6 +30,16 @@
       "domain_id": "DOM-06",
       "relation": "primary_expression",
       "context": "tald_scale"
+    },
+    {
+      "domain_id": "DOM-05",
+      "relation": "secondary_expression",
+      "context": "comprension_lenguaje_figurado"
+    },
+    {
+      "domain_id": "DOM-10",
+      "relation": "cognitive_deficit",
+      "context": "abstraccion_cognitiva"
     }
   ],
   "exclusions": [],

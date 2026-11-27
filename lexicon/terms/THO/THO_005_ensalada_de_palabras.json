@@ -28,6 +28,11 @@
       "domain_id": "DOM-06",
       "relation": "primary_expression",
       "context": "desorganizacion_extrema"
+    },
+    {
+      "domain_id": "DOM-05",
+      "relation": "secondary_expression",
+      "context": "organizacion_del_discurso"
     }
   ],
   "examples": [

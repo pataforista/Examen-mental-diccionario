@@ -22,9 +22,9 @@ Relación del término: `domain_links` en su archivo. Listas: `npm run term:new 
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (213)
+## Casos pendientes (201)
 
-### No figura en las listas de su dominio (Integrador y vista Dominios) (201)
+### No figura en las listas de su dominio (Integrador y vista Dominios) (200)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -103,7 +103,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | DEL_026 · Revelación delirante (intuición delirante) <!-- k:7ba95e057d --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_027 · Robo del pensamiento <!-- k:2442184807 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_028 · Síndrome de Capgras <!-- k:c73bcc7865 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| DEL_029 · Síndrome de Cotard <!-- k:4ec02ac826 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_030 · Síndrome de Fregoli <!-- k:7b9ad6e6e3 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_031 · Síntomas positivos atenuados <!-- k:4043b8682f --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | INS_001 · Anosognosia <!-- k:5ac3e69c3d --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -230,28 +229,23 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | VOL_005 · Hiperbulia <!-- k:e60710d770 --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | VOL_008 · Impulsividad patológica <!-- k:ae8e08018b --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 
-### Un dominio lo lista, pero el término no enlaza ese dominio (8)
+### Descriptor que coincide con un término del léxico sin enlazar (1)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
-| CNS_002 · Coma <!-- k:7477df5b54 --> | aparece en las listas de DOM-01; agrega ese dominio a domain_links |  |
-| CNS_008 · Moria <!-- k:beeb56ada4 --> | aparece en las listas de DOM-09; agrega ese dominio a domain_links |  |
-| INS_001 · Anosognosia <!-- k:381a3efe53 --> | aparece en las listas de DOM-10; agrega ese dominio a domain_links |  |
-| MEM_021 · Obnubilación <!-- k:80e93f2d57 --> | aparece en las listas de DOM-01; agrega ese dominio a domain_links |  |
-| MOT_001 · Apraxia constructiva <!-- k:0ae159f7b4 --> | aparece en las listas de DOM-10; agrega ese dominio a domain_links |  |
-| MOT_003 · Apraxia ideomotora <!-- k:feb942fd00 --> | aparece en las listas de DOM-10; agrega ese dominio a domain_links |  |
-| TALD_002 · Concretismo <!-- k:558e6be1c1 --> | aparece en las listas de DOM-05, DOM-10; agrega ese dominio a domain_links |  |
-| THO_005 · Ensalada de palabras <!-- k:a966c4942b --> | aparece en las listas de DOM-05; agrega ese dominio a domain_links |  |
-
-### Descriptor que coincide con un término del léxico sin enlazar (4)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| DOM-05 · Habla y lenguaje <!-- k:7d27141f1a --> | velocidad_y_ritmo: "taquilalia" es sinónimo de SPE_010 (Presión de habla); enlázalo solo si es el mismo concepto |  |
-| DOM-07 · Pensamiento: contenido <!-- k:3593f874fa --> | ideas_delirantes: "delirio_nihilista" es sinónimo de DEL_029 (Síndrome de Cotard); enlázalo solo si es el mismo concepto |  |
-| DOM-09 · Estado afectivo (ánimo y afecto) <!-- k:bb2a363329 --> | afecto_observable: "afecto_labil" es sinónimo de AFF_025 (Labilidad afectiva); enlázalo solo si es el mismo concepto |  |
-| DOM-15 · Fenomenología histórica y conceptos clásicos <!-- k:70b7ea04d6 --> | conceptos_arcaicos: "neurosis_histerica" es sinónimo de ARC_009 (Histeria); enlázalo solo si es el mismo concepto |  |
+| DOM-05 · Habla y lenguaje <!-- k:7d27141f1a --> | velocidad_y_ritmo: "taquilalia" es sinónimo de SPE_010 (Presión de habla); enlázalo solo si es el mismo concepto | NO enlazar: taquilalia != presión de habla (contraejemplo de la guía) (2026-11-27) |
 
 ## Resueltos
 
-Aún ninguno.
+- 2026-11-27 · DOM-15 · Fenomenología histórica y conceptos clásicos: conceptos_arcaicos: "neurosis_histerica" es sinónimo de ARC_009 (Histeria); enlázalo solo si es el mismo concepto — decisión: Enlazado neurosis_histerica -> ARC_009 (histórico en DOM-15) (2026-11-27)
+- 2026-11-27 · DOM-09 · Estado afectivo (ánimo y afecto): afecto_observable: "afecto_labil" es sinónimo de AFF_025 (Labilidad afectiva); enlázalo solo si es el mismo concepto — decisión: Enlazado afecto_labil -> AFF_025 (2026-11-27)
+- 2026-11-27 · DOM-07 · Pensamiento: contenido: ideas_delirantes: "delirio_nihilista" es sinónimo de DEL_029 (Síndrome de Cotard); enlázalo solo si es el mismo concepto — decisión: Enlazado delirio_nihilista -> DEL_029 (2026-11-27)
+- 2026-11-27 · THO_005 · Ensalada de palabras: aparece en las listas de DOM-05; agrega ese dominio a domain_links — decisión: Añadido DOM-05 secondary_expression (2026-11-27)
+- 2026-11-27 · TALD_002 · Concretismo: aparece en las listas de DOM-05, DOM-10; agrega ese dominio a domain_links — decisión: Añadidos DOM-05 secondary_expression y DOM-10 cognitive_deficit; ya tenía DOM-06 primary_expression (2026-11-27)
+- 2026-11-27 · MOT_003 · Apraxia ideomotora: aparece en las listas de DOM-10; agrega ese dominio a domain_links — decisión: Añadido DOM-10 cognitive_deficit (2026-11-27)
+- 2026-11-27 · MOT_001 · Apraxia constructiva: aparece en las listas de DOM-10; agrega ese dominio a domain_links — decisión: Añadido DOM-10 cognitive_deficit (2026-11-27)
+- 2026-11-27 · MEM_021 · Obnubilación: aparece en las listas de DOM-01; agrega ese dominio a domain_links — decisión: Añadido DOM-01 primary_expression (2026-11-27)
+- 2026-11-27 · INS_001 · Anosognosia: aparece en las listas de DOM-10; agrega ese dominio a domain_links — decisión: Añadido DOM-10 associated_sign (2026-11-27)
+- 2026-11-27 · CNS_008 · Moria: aparece en las listas de DOM-09; agrega ese dominio a domain_links — decisión: Añadido DOM-09 associated_sign (2026-11-27)
+- 2026-11-27 · CNS_002 · Coma: aparece en las listas de DOM-01; agrega ese dominio a domain_links — decisión: Añadido DOM-01 primary_expression (2026-11-27)
+- 2026-11-27 · DEL_029 · Síndrome de Cotard: expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
