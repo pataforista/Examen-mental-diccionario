@@ -4,11 +4,12 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 const { parseCSV, toCSV } = require("./lexicon_edit.js");
-const SHEET = path.join(path.dirname(new URL(import.meta.url).pathname), "lexicon_sheet.js");
+const SHEET = path.join(path.dirname(fileURLToPath(import.meta.url)), "lexicon_sheet.js");
 
 let failures = 0;
 const check = (ok, label, detail = "") => {

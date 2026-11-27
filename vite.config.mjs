@@ -1,5 +1,5 @@
-import { cpSync, existsSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 import { defineConfig } from "vite";
 
 // Files the app fetches or references at runtime by URL. Vite only bundles
@@ -29,13 +29,23 @@ const RUNTIME_FILES = [
   "OSCE_026–035.json",
 ];
 
+const copyEntry = (src, dest) => {
+  if (statSync(src).isDirectory()) {
+    mkdirSync(dest, { recursive: true });
+    for (const entry of readdirSync(src)) copyEntry(resolve(src, entry), resolve(dest, entry));
+  } else {
+    mkdirSync(dirname(dest), { recursive: true });
+    copyFileSync(src, dest);
+  }
+};
+
 const copyRuntimeFiles = () => ({
   name: "copy-runtime-files",
   apply: "build",
   closeBundle() {
     for (const file of RUNTIME_FILES) {
       const src = resolve(__dirname, file);
-      if (existsSync(src)) cpSync(src, resolve(__dirname, "dist", file), { recursive: true });
+      if (existsSync(src)) copyEntry(src, resolve(__dirname, "dist", file));
     }
     // Precaché del service worker: añade los archivos con hash de esta build.
     const sw = resolve(__dirname, "dist/sw.js");
