@@ -94,8 +94,8 @@
             if (meta) meta.setAttribute('content', t === 'dark' ? '#191A2B' : '#FBF1EC');
         })();
     </script>
-  <script type="module" crossorigin src="/assets/index-X7Y7irbD.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CnrWKZJN.css">
+  <script type="module" crossorigin src="/assets/index-BSiaRNUM.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-GfppxLic.css">
 </head>
 
 <body>
@@ -155,7 +155,7 @@
             <div class="integrator-container">
                 <div class="stepper-sidebar">
                     <span class="stepper-label">Pasos del examen</span>
-                    <ul id="integrator-steps-list" tabindex="0" aria-label="Pasos del integrador"></ul>
+                    <ol id="integrator-steps-list" aria-label="Pasos del integrador"></ol>
                 </div>
 
                 <div class="step-content card">
@@ -191,7 +191,7 @@
         </section>
         <section id="game-view" class="hidden">
             <div class="card" id="game-controls-card">
-                <button id="game-config-toggle" class="game-config-toggle" aria-controls="game-controls-body">
+                <button id="game-config-toggle" class="game-config-toggle" aria-controls="game-controls-body" aria-expanded="true">
                     <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg> Modo y configuración</span>
                     <span id="game-config-arrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></span>
                 </button>
@@ -253,7 +253,7 @@
                     <ul>
                         <li><strong>Objetivo:</strong> entrenar el juicio clínico y el reconocimiento de términos.</li>
                         <li><strong>Modo definiciones:</strong> identifica el término correcto para la definición dada.
-                            <br><em>(+10 pts por acierto, −5 por error)</em>
+                            <br><em>(+10 pts por acierto, más bonificación por rapidez; cada 3 aciertos seguidos sube el combo. Un error cuesta una vida.)</em>
                         </li>
                         <li><strong>Modo diferencial:</strong>
                             <ol>
@@ -261,7 +261,7 @@
                                 <li>Selecciona el diagnóstico principal.</li>
                                 <li>Identifica el criterio discriminante clave.</li>
                             </ol>
-                            <em>(Puntaje compuesto por fases)</em>
+                            <em>(+20 pts al acertar el criterio, más bonificación por rapidez y combo)</em>
                         </li>
                     </ul>
                     <button class="btn ghost btn-block small" id="game-help-close">Cerrar ayuda</button>
