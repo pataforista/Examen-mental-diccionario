@@ -3,16 +3,9 @@
   "canonical_name": "Distorsión perceptiva visual",
   "synonyms_and_slang": [
     {
-      "term": "metamorfopsia",
-      "context": "clinical_neurology"
-    },
-    {
-      "term": "micropsia",
-      "context": "clinical_neurology"
-    },
-    {
-      "term": "macropsia",
-      "context": "clinical_neurology"
+      "term": "dismorfopsia visual",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "fenómeno",

@@ -53,5 +53,17 @@
     "phenomenology": [],
     "clinical_tradition": []
   },
-  "mappings": {}
+  "mappings": {},
+  "synonyms_and_slang": [
+    {
+      "term": "estereotipia motora",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "movimiento estereotipado",
+      "context": "clínico",
+      "locale": "es"
+    }
+  ]
 }

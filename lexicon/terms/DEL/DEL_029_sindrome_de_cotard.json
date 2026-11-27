@@ -47,5 +47,17 @@
     "phenomenology": [],
     "clinical_tradition": []
   },
-  "mappings": {}
+  "mappings": {},
+  "synonyms_and_slang": [
+    {
+      "term": "delirio nihilista",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "delirio de negación",
+      "context": "clínico",
+      "locale": "es"
+    }
+  ]
 }

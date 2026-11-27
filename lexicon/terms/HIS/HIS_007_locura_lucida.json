@@ -3,8 +3,9 @@
   "canonical_name": "Locura lúcida",
   "synonyms_and_slang": [
     {
-      "term": "mania sin delirio",
-      "context": "historical"
+      "term": "folie lucide",
+      "context": "histórico",
+      "locale": "fr"
     }
   ],
   "term_kind": "concepto_histórico",

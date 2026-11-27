@@ -69,5 +69,17 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {},
+  "synonyms_and_slang": [
+    {
+      "term": "catatonia letal",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "catatonia perniciosa",
+      "context": "clínico",
+      "locale": "es"
+    }
+  ]
 }

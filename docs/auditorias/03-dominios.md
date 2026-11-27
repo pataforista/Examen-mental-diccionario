@@ -22,7 +22,7 @@ Relación del término: `domain_links` en su archivo. Listas: `npm run term:new 
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (212)
+## Casos pendientes (213)
 
 ### No figura en las listas de su dominio (Integrador y vista Dominios) (201)
 
@@ -243,11 +243,12 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | TALD_002 · Concretismo <!-- k:558e6be1c1 --> | aparece en las listas de DOM-05, DOM-10; agrega ese dominio a domain_links |  |
 | THO_005 · Ensalada de palabras <!-- k:a966c4942b --> | aparece en las listas de DOM-05; agrega ese dominio a domain_links |  |
 
-### Descriptor que coincide con un término del léxico sin enlazar (3)
+### Descriptor que coincide con un término del léxico sin enlazar (4)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
 | DOM-05 · Habla y lenguaje <!-- k:7d27141f1a --> | velocidad_y_ritmo: "taquilalia" es sinónimo de SPE_010 (Presión de habla); enlázalo solo si es el mismo concepto |  |
+| DOM-07 · Pensamiento: contenido <!-- k:3593f874fa --> | ideas_delirantes: "delirio_nihilista" es sinónimo de DEL_029 (Síndrome de Cotard); enlázalo solo si es el mismo concepto |  |
 | DOM-09 · Estado afectivo (ánimo y afecto) <!-- k:bb2a363329 --> | afecto_observable: "afecto_labil" es sinónimo de AFF_025 (Labilidad afectiva); enlázalo solo si es el mismo concepto |  |
 | DOM-15 · Fenomenología histórica y conceptos clásicos <!-- k:70b7ea04d6 --> | conceptos_arcaicos: "neurosis_histerica" es sinónimo de ARC_009 (Histeria); enlázalo solo si es el mismo concepto |  |
 

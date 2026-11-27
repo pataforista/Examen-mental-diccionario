@@ -5,10 +5,6 @@
     {
       "term": "alucinación con insight",
       "context": "clinical_descriptive"
-    },
-    {
-      "term": "síndrome de Charles Bonnet",
-      "context": "neurology_context"
     }
   ],
   "term_kind": "fenómeno",

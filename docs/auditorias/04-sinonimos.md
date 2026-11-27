@@ -22,44 +22,38 @@ Columna `sinonimos` de la planilla (`npm run lexicon:export`) o `synonyms_and_sl
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (26)
+## Casos pendientes (1)
 
-### Sinónimo que también usa otro término (21)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| AFF_005 · Angustia <!-- k:ca0e12be79 --> | "angustia" también en AFF_007 |  |
-| AFF_007 · Ansiedad <!-- k:1892a2bd6e --> | "angustia" es el nombre de AFF_005 |  |
-| ARC_020 · Wahnstimmung <!-- k:e394236372 --> | "atmósfera delirante" también en DEL_011 |  |
-| CAT_002 · Estupor catatónico <!-- k:229790dff4 --> | "estupor psiquiátrico" es el nombre de CNS_005 |  |
-| COG_005 · Pensamiento Abstracto / Concreto <!-- k:93f54082c4 --> | "concretismo" es el nombre de TALD_002 |  |
-| DEL_011 · Delirio primario (autóctono) <!-- k:415a4d128e --> | "atmósfera delirante" también en ARC_020 |  |
-| HIS_007 · Locura lúcida <!-- k:06d5bf7965 --> | "mania sin delirio" es el nombre de ARC_014 |  |
-| MEM_016 · Fuga <!-- k:f61a6aecd0 --> | "fuga disociativa" es el nombre de MEM_017 |  |
-| NEG_002 · Alogia <!-- k:cd993ee001 --> | "pobreza del habla" es el nombre de TALD_021 |  |
-| PER_011 · Alucinosis <!-- k:c3f6506577 --> | "síndrome de Charles Bonnet" es el nombre de NEU_003 |  |
-| PER_012 · Distorsión perceptiva visual <!-- k:b17dfc0971 --> | "metamorfopsia" es el nombre de PER_017 |  |
-| PER_012 · Distorsión perceptiva visual <!-- k:9a5663b4ea --> | "micropsia" es el nombre de PER_018 |  |
-| PER_012 · Distorsión perceptiva visual <!-- k:6b86877481 --> | "macropsia" es el nombre de PER_016 |  |
-| PER_016 · Macropsia <!-- k:e11c3b6691 --> | "macropsia" también en PER_012 |  |
-| PER_017 · Metamorfopsia <!-- k:b3f2850b29 --> | "metamorfopsia" también en PER_012 |  |
-| PER_018 · Micropsia <!-- k:72b779cb3d --> | "micropsia" también en PER_012 |  |
-| TALD_002 · Concretismo <!-- k:904f322092 --> | "Concretismo" también en COG_005 |  |
-| TALD_021 · Pobreza del Habla <!-- k:9d7085751f --> | "Pobreza del Habla" también en NEG_002 |  |
-| THO_005 · Ensalada de palabras <!-- k:9699376152 --> | "ensalada de palabras" también en THO_007 |  |
-| THO_007 · Incoherencia <!-- k:72fd0cad77 --> | "ensalada de palabras" es el nombre de THO_005 |  |
-| VOL_002 · Ambivalencia volitiva <!-- k:b66806e400 --> | "ambitendencia" es el nombre de ARC_001 |  |
-
-### Sin sinónimos (más difícil de encontrar) (5)
+### Sinónimo que también usa otro término (1)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
-| CAT_001 · Catatonia maligna <!-- k:7812321586 --> | agregar cómo lo dicen pacientes o colegas |  |
-| CNT_001 · Idea sobrevalorada <!-- k:eab897132f --> | agregar cómo lo dicen pacientes o colegas |  |
-| CNT_002 · Obsesión <!-- k:16be423f24 --> | agregar cómo lo dicen pacientes o colegas |  |
-| DEL_029 · Síndrome de Cotard <!-- k:13e87761ac --> | agregar cómo lo dicen pacientes o colegas |  |
-| MOT_007 · Estereotipia <!-- k:49be1c6fce --> | agregar cómo lo dicen pacientes o colegas |  |
+| MEM_016 · Fuga <!-- k:f61a6aecd0 --> | "fuga disociativa" es el nombre de MEM_017 | Pendiente decisión taxonómica: posible duplicado de MEM_017 (2026-11-27) |
 
 ## Resueltos
 
-Aún ninguno.
+- 2026-11-27 · MOT_007 · Estereotipia: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: estereotipia motora, movimiento estereotipado (2026-11-27)
+- 2026-11-27 · DEL_029 · Síndrome de Cotard: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: delirio nihilista, delirio de negación (2026-11-27)
+- 2026-11-27 · CNT_002 · Obsesión: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: pensamiento obsesivo, idea obsesiva intrusiva (2026-11-27)
+- 2026-11-27 · CNT_001 · Idea sobrevalorada: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: creencia sobrevalorada, idea prevalente (2026-11-27)
+- 2026-11-27 · CAT_001 · Catatonia maligna: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: catatonia letal, catatonia perniciosa (2026-11-27)
+- 2026-11-27 · VOL_002 · Ambivalencia volitiva: "ambitendencia" es el nombre de ARC_001 — decisión: Quitado 'ambitendencia', propio de ARC_001 (2026-11-27)
+- 2026-11-27 · THO_007 · Incoherencia: "ensalada de palabras" es el nombre de THO_005 — decisión: Quitado 'ensalada de palabras', propio de THO_005 (2026-11-27)
+- 2026-11-27 · THO_005 · Ensalada de palabras: "ensalada de palabras" también en THO_007 — decisión: Quitado de THO_007 (2026-11-27)
+- 2026-11-27 · TALD_021 · Pobreza del Habla: "Pobreza del Habla" también en NEG_002 — decisión: Quitado de NEG_002 (2026-11-27)
+- 2026-11-27 · TALD_002 · Concretismo: "Concretismo" también en COG_005 — decisión: Quitado de COG_005 (2026-11-27)
+- 2026-11-27 · PER_018 · Micropsia: "micropsia" también en PER_012 — decisión: Quitado de PER_012 (2026-11-27)
+- 2026-11-27 · PER_017 · Metamorfopsia: "metamorfopsia" también en PER_012 — decisión: Quitado de PER_012 (2026-11-27)
+- 2026-11-27 · PER_016 · Macropsia: "macropsia" también en PER_012 — decisión: Quitado de PER_012 (2026-11-27)
+- 2026-11-27 · PER_012 · Distorsión perceptiva visual: "macropsia" es el nombre de PER_016 — decisión: Quitados subtipos; añadido 'dismorfopsia visual' (2026-11-27)
+- 2026-11-27 · PER_012 · Distorsión perceptiva visual: "micropsia" es el nombre de PER_018 — decisión: Quitados subtipos; añadido 'dismorfopsia visual' (2026-11-27)
+- 2026-11-27 · PER_012 · Distorsión perceptiva visual: "metamorfopsia" es el nombre de PER_017 — decisión: Quitados subtipos; añadido 'dismorfopsia visual' (2026-11-27)
+- 2026-11-27 · PER_011 · Alucinosis: "síndrome de Charles Bonnet" es el nombre de NEU_003 — decisión: Quitado 'síndrome de Charles Bonnet', propio de NEU_003 (2026-11-27)
+- 2026-11-27 · NEG_002 · Alogia: "pobreza del habla" es el nombre de TALD_021 — decisión: Quitado 'pobreza del habla', propio de TALD_021 (2026-11-27)
+- 2026-11-27 · HIS_007 · Locura lúcida: "mania sin delirio" es el nombre de ARC_014 — decisión: Reemplazado por 'folie lucide' (2026-11-27)
+- 2026-11-27 · DEL_011 · Delirio primario (autóctono): "atmósfera delirante" también en ARC_020 — decisión: Quitado 'atmósfera delirante', propio de ARC_020 (2026-11-27)
+- 2026-11-27 · COG_005 · Pensamiento Abstracto / Concreto: "concretismo" es el nombre de TALD_002 — decisión: Quitado 'concretismo', propio de TALD_002 (2026-11-27)
+- 2026-11-27 · CAT_002 · Estupor catatónico: "estupor psiquiátrico" es el nombre de CNS_005 — decisión: Reemplazado por 'inmovilidad catatónica' (2026-11-27)
+- 2026-11-27 · ARC_020 · Wahnstimmung: "atmósfera delirante" también en DEL_011 — decisión: Mantenido en ARC_020; quitado de DEL_011 (2026-11-27)
+- 2026-11-27 · AFF_007 · Ansiedad: "angustia" es el nombre de AFF_005 — decisión: Quitado 'angustia', propio de AFF_005 (2026-11-27)
+- 2026-11-27 · AFF_005 · Angustia: "angustia" también en AFF_007 — decisión: Quitado 'angustia' de AFF_007; conceptos distintos (2026-11-27)

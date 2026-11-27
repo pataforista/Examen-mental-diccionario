@@ -20,10 +20,6 @@
     {
       "term": "percepción delirante",
       "context": "clinical"
-    },
-    {
-      "term": "atmósfera delirante",
-      "context": "clinical"
     }
   ],
   "granularity": "atomic",

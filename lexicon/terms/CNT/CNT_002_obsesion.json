@@ -1,7 +1,18 @@
 {
   "term_id": "CNT_002",
   "canonical_name": "Obsesión",
-  "synonyms_and_slang": [],
+  "synonyms_and_slang": [
+    {
+      "term": "pensamiento obsesivo",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
+      "term": "idea obsesiva intrusiva",
+      "context": "clínico",
+      "locale": "es"
+    }
+  ],
   "term_kind": "síntoma",
   "granularity": "atomic",
   "risk_weight": 0,
