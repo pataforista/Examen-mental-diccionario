@@ -8,7 +8,7 @@
 // página de revisión (npm run lexicon:report).
 const fs = require("fs");
 const path = require("path");
-const { RULES, runChecks } = require("./lexicon_checks");
+const { RULES, runChecks, bundleTerm } = require("./lexicon_checks");
 
 const ROOT = path.join(__dirname, "..");
 const BUNDLE_PATH = path.join(ROOT, "lexicon/lexicon_bundle.json");
@@ -39,7 +39,7 @@ if (!onlyRule) {
     const inBundle = new Map((bundle.terms || []).map(t => [t.term_id, JSON.stringify(t)]));
     const stale = [];
     for (const { term } of lexicon.terms) {
-      if (inBundle.get(term.term_id) !== JSON.stringify(term)) stale.push(term.term_id);
+      if (inBundle.get(term.term_id) !== JSON.stringify(bundleTerm(term))) stale.push(term.term_id);
       inBundle.delete(term.term_id);
     }
     const extra = [...inBundle.keys()];

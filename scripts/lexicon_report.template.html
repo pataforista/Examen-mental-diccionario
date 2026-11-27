@@ -116,6 +116,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12.5px; }
 .chip { padding: 2px 9px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--muted); }
 .chip.kind { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.chip.review-vigente { background: transparent; border-color: var(--ok); color: var(--ok); }
+.chip.review-desactualizada { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn-fg); }
 .chip.risk-hi { background: var(--err-bg); border-color: transparent; color: var(--err-fg); }
 
 .issues { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
@@ -156,7 +158,7 @@ details h3 { font: 600 13px/1.4 var(--font-body); color: var(--muted); margin-to
 <div class="wrap">
   <header class="top">
     <h1>Revisión del léxico</h1>
-    <p>Diccionario de examen mental. Los avisos salen de las mismas reglas que <span class="mono">npm run validate</span>; para corregir, edita el archivo indicado en cada término y vuelve a generar esta página con <span class="mono">npm run lexicon:report</span>.</p>
+    <p>Diccionario de examen mental. Los avisos salen de las mismas reglas que <span class="mono">npm run validate</span>. Para corregir, edita el archivo indicado en cada término; para firmar una revisión, <span class="mono">npm run term:review -- ID --por "Nombre"</span>. Vuelve a generar esta página con <span class="mono">npm run lexicon:report</span>.</p>
     <div class="stats" id="stats"></div>
   </header>
   <ul class="rules" id="rules" aria-label="Filtrar por regla"></ul>
@@ -168,6 +170,14 @@ details h3 { font: 600 13px/1.4 var(--font-body); color: var(--muted); margin-to
       <input id="q" type="search" placeholder="Buscar nombre, definición, sinónimo o ID" aria-label="Buscar nombre, definición, sinónimo o ID" autocomplete="off">
       <select id="domain" aria-label="Dominio"></select>
       <select id="kind" aria-label="Tipo de término"></select>
+      <select id="review" aria-label="Estado de revisión">
+        <option value="">Toda revisión</option>
+        <option value="sin_revisar">Sin revisar</option>
+        <option value="borrador">Borrador</option>
+        <option value="en_revision">En revisión</option>
+        <option value="vigente">Revisados</option>
+        <option value="desactualizada">Cambiaron tras revisarse</option>
+      </select>
       <select id="sort" aria-label="Orden">
         <option value="issues">Con avisos primero</option>
         <option value="name">Alfabético</option>
@@ -196,7 +206,8 @@ const RELATION = {
   associated_sign: "signo asociado", syndrome_builder: "constituye síndrome", historical_framework: "marco histórico"
 };
 
-const state = { q: "", domain: "", kind: "", sort: "issues", pending: false, rule: "" };
+const state = { q: "", domain: "", kind: "", review: "", sort: "issues", pending: false, rule: "" };
+const REVIEW_LABEL = { sin_revisar: "Sin revisar", borrador: "Borrador", en_revision: "En revisión", vigente: "Revisado", desactualizada: "Cambió tras revisarse" };
 try { Object.assign(state, JSON.parse(localStorage.getItem("revision-lexico") || "{}")); } catch (e) { /* sin almacenamiento */ }
 const save = () => { try { localStorage.setItem("revision-lexico", JSON.stringify(state)); } catch (e) { /* sin almacenamiento */ } };
 
@@ -216,6 +227,7 @@ function renderHeader() {
     <div><b>${total - withIssues}</b><span>sin avisos</span></div>
     <div><b>${withIssues}</b><span>con algo que revisar</span></div>
     <div class="${errors ? "is-err" : ""}"><b>${errors}</b><span>errores que bloquean</span></div>
+    <div><b>${DATA.terms.filter(t => t.review.state === "vigente").length}</b><span>revisados clínicamente</span></div>
     <div><b style="font-size:15px;font-weight:500;font-family:var(--font-body)">${esc(date)}</b><span>generada</span></div>`;
 
   const rows = DATA.rules.map(r => {
@@ -269,7 +281,7 @@ function termHTML(t) {
       <span class="chip kind">${esc(t.kind.replace(/_/g, " ") || "sin tipo")}</span>
       ${t.risk !== null ? `<span class="chip ${t.risk >= 3 ? "risk-hi" : ""}">riesgo ${t.risk}/5</span>` : ""}
       ${t.cie11 ? `<span class="chip mono">CIE-11 ${esc(t.cie11)}</span>` : ""}
-      ${t.status ? "" : `<span class="chip">sin estado</span>`}
+      <span class="chip review-${t.review.state}" title="${esc(t.review.notes)}">${esc(REVIEW_LABEL[t.review.state] || t.review.state)}${t.review.by ? ` · ${esc(t.review.by)}` : ""}${t.review.date ? ` · ${esc(t.review.date)}` : ""}</span>
     </div>
     ${issues}
     <p class="def">${t.core ? esc(t.core) : '<span class="empty-val">Sin definición</span>'}</p>
@@ -290,6 +302,7 @@ function render() {
     (!q || q.split(/\s+/).every(w => t._hay.includes(w))) &&
     (!state.domain || t.domains.some(d => d.id === state.domain)) &&
     (!state.kind || t.kind === state.kind) &&
+    (!state.review || t.review.state === state.review) &&
     (!state.pending || t.issues.length) &&
     (!state.rule || t.issues.some(i => i.rule === state.rule)));
   const by = {
@@ -307,7 +320,7 @@ function render() {
 }
 
 function syncControls() {
-  $("q").value = state.q; $("domain").value = state.domain; $("kind").value = state.kind;
+  $("q").value = state.q; $("domain").value = state.domain; $("kind").value = state.kind; $("review").value = state.review;
   $("sort").value = state.sort; $("pending").checked = state.pending;
 }
 
@@ -318,7 +331,7 @@ render();
 
 let timer;
 $("q").addEventListener("input", e => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; render(); }, 120); });
-for (const id of ["domain", "kind", "sort"]) $(id).addEventListener("change", e => { state[id] = e.target.value; render(); });
+for (const id of ["domain", "kind", "review", "sort"]) $(id).addEventListener("change", e => { state[id] = e.target.value; render(); });
 $("pending").addEventListener("change", e => { state.pending = e.target.checked; render(); });
 $("rules").addEventListener("click", e => {
   const b = e.target.closest("button[data-rule]");
@@ -328,7 +341,7 @@ $("rules").addEventListener("click", e => {
   document.querySelector(".bar").scrollIntoView({ block: "start" });
 });
 $("reset").addEventListener("click", () => {
-  Object.assign(state, { q: "", domain: "", kind: "", sort: "issues", pending: false, rule: "" });
+  Object.assign(state, { q: "", domain: "", kind: "", review: "", sort: "issues", pending: false, rule: "" });
   syncControls(); render();
 });
 $("list").addEventListener("click", e => {

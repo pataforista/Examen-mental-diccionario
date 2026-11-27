@@ -14,7 +14,8 @@
     "build:lexicon": "node scripts/optimize_lexicon.js",
     "test:pwa": "node scripts/test_pwa_dialog.mjs",
     "search": "node scripts/test_search.mjs",
-    "lexicon:report": "node scripts/lexicon_report.js"
+    "lexicon:report": "node scripts/lexicon_report.js",
+    "term:review": "node scripts/term_review.js"
   },
   "repository": {
     "type": "git",

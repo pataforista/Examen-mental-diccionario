@@ -5,7 +5,7 @@
 // El HTML se genera, no se versiona (está en .gitignore): vuelve a correr el comando.
 const fs = require("fs");
 const path = require("path");
-const { RULES, runChecks } = require("./lexicon_checks");
+const { RULES, runChecks, reviewState } = require("./lexicon_checks");
 
 const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, "docs/revision-lexico.html");
@@ -33,6 +33,7 @@ const terms = lexicon.terms
     alerts: (t.alerts || []).map(text),
     excl: (t.exclusions || []).map(e => ({ id: e.term_id || "", name: e.canonical_name || "", reason: e.reason || "" })),
     cie11: t.mappings?.cie11?.code || "",
+    review: { state: reviewState(t), by: t.review?.reviewer || "", date: t.review?.date || "", notes: t.review?.notes || "" },
     issues: findings.filter(f => f.term_id === t.term_id).map(f => ({ rule: f.rule, sev: f.severity, msg: f.message }))
   }))
   .sort((a, b) => a.name.localeCompare(b.name, "es"));

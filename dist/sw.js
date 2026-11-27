@@ -1,4 +1,4 @@
-const CACHE_NAME = "em-clinical-pwa-v5.3";
+const CACHE_NAME = "em-clinical-pwa-v5.4";
 const ASSETS = [
   "/",
   "index.html",
@@ -27,8 +27,8 @@ const ASSETS = [
   "assets/favicon-16-BxOO8r3p.png",
   "assets/favicon-32-DmKxD-PY.png",
   "assets/icon-192-BE24A7Mv.png",
-  "assets/index-D8KWPzZc.css",
-  "assets/index-DtkHsyaU.js",
+  "assets/index-DKea4CJB.css",
+  "assets/index-i5N-2rJB.js",
   "assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
   "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
   "assets/jetbrains-mono-latin-500-normal-BWZEU5yA.woff2",

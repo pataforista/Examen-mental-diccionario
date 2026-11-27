@@ -323,6 +323,10 @@ export const dictionary = {
       this.nodes.allTermsList.appendChild(card);
     });
   },
+  _formatDate: function (iso) {
+    const d = new Date(`${iso}T12:00:00`);
+    return Number.isNaN(d.getTime()) ? String(iso || "") : d.toLocaleDateString("es-MX", { day: "numeric", month: "short", year: "numeric" });
+  },
   _snippet: function (text, max) {
     const t = String(text || "").trim();
     if (t.length <= max) return t;
@@ -505,6 +509,7 @@ export const dictionary = {
                     <span class="badge ${isCritical ? "badge-risk-critical" : ""}">${sanitize(this.utils.humanize(term.term_kind || "término"))}</span>
                 </div>
                 <h2 class="term-title">${sanitize(term.canonical_name)}</h2>
+                ${term.review?.status === "revisado" ? `<p class="term-reviewed">${getIcon("check")} Revisado clínicamente por ${sanitize(term.review.reviewer)} · ${sanitize(this._formatDate(term.review.date))}</p>` : ""}
 
                 ${isCritical ? `
                     <div class="alert-critical-banner" role="note">

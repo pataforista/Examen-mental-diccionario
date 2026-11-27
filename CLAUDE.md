@@ -10,6 +10,7 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 | `npm test` | lint + validación del léxico + búsqueda + contraste + lista negra de diseño. **Es la puerta para subir** |
 | `npm run validate` | Reglas del léxico: errores bloquean; avisos de calidad se resumen. `-- --detalle` o `-- --regla <id>` para verlos |
 | `npm run lexicon:report` | Genera `docs/revision-lexico.html` (no versionado): todos los términos con filtros y sus avisos |
+| `npm run term:review -- ID… --por "Nombre"` | Firma la revisión clínica de términos (`--estado en_revision`, `--nota`, `--listar`) |
 | `npm run build:lexicon` | Regenera `lexicon/lexicon_bundle.json` (lo que lee la app) desde `lexicon/terms/` |
 | `npm run search` | Regresión de la búsqueda contra el léxico real (`scripts/test_search.mjs`) |
 | `npm run test:pwa` | Regresión del diálogo de instalación en navegador real (requiere Playwright y `preview` activo) |
@@ -62,6 +63,7 @@ Cada punto de esta lista corresponde a un error real que ocurrió y que `npm run
 - **Reglas** en `scripts/lexicon_checks.js`, compartidas por el validador y la página de revisión. Para una regla nueva, añade un objeto a `RULES` (y su lugar en `WARNING_ORDER` si es aviso). Error = rompe la app o la integridad; aviso = calidad clínica o de redacción.
 - **Vocabularios cerrados** (`term_kind`, `granularity`, `risk_weight`, relaciones de dominio, tipos de alerta) en `taxonomy/controlled_vocabularies.json`. Un valor nuevo se añade ahí a propósito, no por accidente en un término.
 - `lexicon/mappings/` es una carpeta heredada que la app no usa; sus códigos CIE-11 contradicen a veces los del término. La regla `cie11-conflicto` los señala para decisión clínica: no elijas uno automáticamente.
+- **Revisión clínica:** bloque `review` del término (`status`, `reviewer`, `date`, `content_hash`). Escríbelo solo con `npm run term:review`: la huella permite avisar si el término cambia después de revisado, y el bundle (vía `bundleTerm`) solo marca como revisado lo vigente, que es lo único que la ficha muestra. **No firmes revisiones en nombre de nadie**: es una afirmación clínica.
 - Las alertas son objetos `{ type, message }`; una alerta en texto suelto dejaba vacío el recuadro de riesgo de la ficha.
 
 ## Estructura útil

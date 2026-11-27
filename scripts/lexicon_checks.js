@@ -17,6 +17,54 @@ const DOMAINS_DIR = path.join(ROOT, "domains");
 const MAPPINGS_DIR = path.join(ROOT, "lexicon/mappings");
 const VOCAB_PATH = path.join(ROOT, "taxonomy/controlled_vocabularies.json");
 
+const crypto = require("crypto");
+
+// Estado de revisión clínica (bloque "review" de cada término). Sin bloque = sin revisar.
+const REVIEW_STATUSES = ["borrador", "en_revision", "revisado"];
+
+// Huella del contenido clínico en el momento de revisarlo: todo el término salvo el
+// propio bloque "review", con las claves ordenadas (reordenar el archivo no la cambia).
+function stableStringify(v) {
+  if (Array.isArray(v)) return `[${v.map(stableStringify).join(",")}]`;
+  if (v && typeof v === "object") {
+    return `{${Object.keys(v)
+      .sort()
+      .map(k => `${JSON.stringify(k)}:${stableStringify(v[k])}`)
+      .join(",")}}`;
+  }
+  return JSON.stringify(v);
+}
+function reviewHash(term) {
+  const { review, ...content } = term; // eslint-disable-line no-unused-vars
+  return crypto.createHash("sha256").update(stableStringify(content)).digest("hex").slice(0, 16);
+}
+// "vigente" | "desactualizada" | "sin_revisar" | estado en curso ("borrador", "en_revision")
+function reviewState(term) {
+  const r = term.review;
+  if (!r || !r.status) return "sin_revisar";
+  if (r.status !== "revisado") return r.status;
+  return r.content_hash === reviewHash(term) ? "vigente" : "desactualizada";
+}
+
+// Cómo va un término al lexicon_bundle.json que lee la app: el bloque de revisión
+// se reduce a lo que la ficha puede mostrar, y una revisión desactualizada no
+// cuenta como revisión (la app nunca dice "revisado" de un contenido que cambió).
+function bundleTerm(term) {
+  if (!term.review) return term;
+  const state = reviewState(term);
+  const out = { ...term };
+  out.review =
+    state === "vigente"
+      ? { status: "revisado", reviewer: term.review.reviewer, date: term.review.date }
+      : { status: state === "desactualizada" ? "revision_desactualizada" : term.review.status };
+  return out;
+}
+
+// Formato único de los archivos de término (2 espacios y salto final).
+function writeTerm(file, term) {
+  fs.writeFileSync(path.isAbsolute(file) ? file : path.join(ROOT, file), `${JSON.stringify(term, null, 2)}\n`);
+}
+
 const normalize = s =>
   String(s || "")
     .normalize("NFD")
@@ -197,6 +245,25 @@ const RULES = [
     }
   },
 
+  {
+    id: "revision-invalida",
+    severity: "error",
+    title: "Bloque de revisión incompleto",
+    check: t => {
+      const r = t.review;
+      if (!r) return null;
+      const out = [];
+      if (!REVIEW_STATUSES.includes(r.status)) out.push(`estado "${r.status}" (válidos: ${REVIEW_STATUSES.join(", ")})`);
+      if (r.status === "revisado") {
+        if (!r.reviewer) out.push("falta quién revisó (reviewer)");
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(r.date || "") || Number.isNaN(Date.parse(r.date))) out.push(`fecha "${r.date || ""}" (formato AAAA-MM-DD)`);
+        else if (Date.parse(r.date) > Date.now() + 864e5) out.push(`fecha futura ${r.date}`);
+        if (!r.content_hash) out.push("falta la huella de contenido: márcalo con npm run term:review");
+      }
+      return out.length ? `${out.join("; ")}. Usa npm run term:review` : null;
+    }
+  },
+
   // ── Avisos: calidad clínica y de redacción ──────────────────────────
   {
     id: "cie11-conflicto",
@@ -256,6 +323,15 @@ const RULES = [
     }
   },
   {
+    id: "revision-desactualizada",
+    severity: "aviso",
+    title: "Cambió después de revisarse",
+    check: t =>
+      reviewState(t) === "desactualizada" && t.review.content_hash
+        ? `revisado por ${t.review.reviewer} el ${t.review.date}; el contenido cambió después. Vuelve a revisarlo y márcalo con npm run term:review`
+        : null
+  },
+  {
     // El nombre guardado no se parece al del término enlazado: el ID probablemente es otro.
     id: "exclusion-id-equivocado",
     severity: "aviso",
@@ -290,6 +366,7 @@ const RULES = [
 
 // Avisos en orden de importancia clínica: así los listan el validador y la página.
 const WARNING_ORDER = [
+  "revision-desactualizada",
   "exclusion-id-equivocado",
   "cie11-conflicto",
   "sinonimo-compartido",
@@ -322,4 +399,4 @@ function runChecks(lexicon = loadLexicon()) {
   return { findings, loadErrors: lexicon.loadErrors, lexicon, ctx };
 }
 
-module.exports = { RULES, loadLexicon, runChecks, normalize };
+module.exports = { RULES, REVIEW_STATUSES, loadLexicon, runChecks, normalize, reviewHash, reviewState, bundleTerm, writeTerm, walk, ROOT };
