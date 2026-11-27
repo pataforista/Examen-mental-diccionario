@@ -25,6 +25,9 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 3. Si tocaste `src/pwa.js`, el `<dialog id="pwa-guide">`, el banner o su CSS: `npm run test:pwa`.
 4. Si cambió cualquier archivo que el service worker sirve (CSS, JS, HTML, íconos, datos): **sube `CACHE_NAME` en `sw.js`**. El SW responde cache-first; con el mismo nombre, quien ya lo instaló no recibe los cambios.
 5. Precaché: los archivos con hash de `dist/assets/` los inserta `vite.config.mjs` en el marcador `/* __VITE_ASSETS__ */` de `sw.js`; no los listes a mano ni borres el marcador. Las búsquedas en caché usan `ignoreVary` porque el JS/CSS se pide con `crossorigin` y un `Vary: Origin` del servidor impedía la coincidencia (la app quedaba vacía sin conexión tras la primera visita).
+6. **Rutas relativas.** La app se sirve en la raíz (`examenmental.pages.dev`) y bajo `/examen-mental/` (`herramientaspsiquiatria.com`). `base: "./"` en Vite, `start_url`/`scope` `"./"` y rutas relativas en `sw.js`; una ruta que empiece por `/` rompe la subruta (página en blanco por 404 de `/assets/…`).
+7. **Carpeta publicada:** `wrangler.toml` fija `pages_build_output_dir = "./dist"`. Si Cloudflare publica la raíz, la página carga sin términos (el import de `fuse.js` en `src/` no se resuelve sin build).
+8. **Navegaciones en el SW:** red primero y, sin conexión, la copia de `./`. No precachees `index.html`: Cloudflare lo redirige (308) y servir una respuesta `redirected` a una navegación da `ERR_FAILED`.
 
 ## Reglas del sistema de diseño ("humano")
 

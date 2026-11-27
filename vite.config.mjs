@@ -49,7 +49,7 @@ const copyRuntimeFiles = () => ({
     // Vite fingerprints the manifest into assets/, which breaks its relative
     // icon paths; point the page back at the root copy instead.
     const html = resolve(__dirname, "dist/index.html");
-    writeFileSync(html, readFileSync(html, "utf8").replace(/href="\/assets\/manifest-[^"]+\.json"/, 'href="manifest.json"'));
+    writeFileSync(html, readFileSync(html, "utf8").replace(/href="(?:\.\/|\/)assets\/manifest-[^"]+\.json"/, 'href="manifest.json"'));
     for (const f of readdirSync(resolve(__dirname, "dist/assets"))) {
       if (/^manifest-.+\.json$/.test(f)) rmSync(resolve(__dirname, "dist/assets", f));
     }
@@ -57,5 +57,9 @@ const copyRuntimeFiles = () => ({
 });
 
 export default defineConfig({
+  // Rutas relativas: la app se sirve en la raíz (examenmental.pages.dev) y también
+  // bajo una subruta (herramientaspsiquiatria.com/examen-mental/). Con base "/" el
+  // HTML pedía /assets/… a la raíz del dominio y la página quedaba en blanco.
+  base: "./",
   plugins: [copyRuntimeFiles()],
 });

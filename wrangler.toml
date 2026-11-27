@@ -1,0 +1,8 @@
+# Configuración de Cloudflare Pages.
+# Publica dist/ (el build de Vite, versionado). Si Pages publicara la raíz, el
+# navegador cargaría src/main.js sin empaquetar, el import de "fuse.js" fallaría
+# y la app quedaría sin términos.
+# `name` debe coincidir con el nombre del proyecto en Cloudflare (examen-mental.pages.dev).
+name = "examen-mental"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-11-01"
