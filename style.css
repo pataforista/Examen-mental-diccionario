@@ -1221,6 +1221,9 @@ main {
 
 button.tag { min-height: 44px; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-standard); font-family: var(--font-base); }
 button.tag:hover { background: var(--bg-hover); }
+/* Descriptor enlazado a una ficha del diccionario */
+.tag--term { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, var(--border-subtle)); }
+.tag--term .icon { width: 13px; height: 13px; }
 
 /* --------------------------------------------------------------------------
    8. Botones

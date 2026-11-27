@@ -70,6 +70,17 @@ if (warnings.length) {
   if (!detail && !onlyRule) console.log(`\n  Detalle: node scripts/validate_terms.js --detalle  ·  Revisión visual: npm run lexicon:report`);
 }
 
+const infos = shown.filter(f => f.severity === "info");
+if (infos.length) {
+  console.log(`\nInformativo:`);
+  for (const rule of RULES.filter(r => r.severity === "info")) {
+    const of = infos.filter(f => f.rule === rule.id);
+    if (!of.length) continue;
+    console.log(`  ${String(new Set(of.map(f => f.term_id)).size).padStart(4)} término(s) · ${rule.title}  [--regla ${rule.id}]`);
+    if (detail || onlyRule) for (const f of of) console.log(`         ${f.term_id}: ${f.message}`);
+  }
+}
+
 const totalErrors = errors.length + loadErrors.length + bundleProblems.length;
 console.log(`\nErrores: ${totalErrors} · Avisos: ${warnings.length}`);
 if (totalErrors) {

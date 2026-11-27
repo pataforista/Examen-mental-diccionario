@@ -39,6 +39,11 @@
         "resonancia_o_rimas",
         "ensalada_de_palabras"
       ],
+      "term_links": {
+        "asociaciones_laxas": "THO_001",
+        "descarrilamiento": "TALD_003",
+        "ensalada_de_palabras": "THO_005"
+      },
       "notes": "Evalúa el nexo entre ideas sucesivas. 'Resonancia': asociación por sonido (ej. 'cine rima con fine, me siento fine'). 'Circunstancialidad' (con rodeos innecesarios) conserva meta final; 'tangencialidad' no."
     },
     {
@@ -51,6 +56,10 @@
         "perseveracion",
         "pobreza_informatica"
       ],
+      "term_links": {
+        "bloqueo_del_pensamiento": "THO_003",
+        "perseveracion": "THO_009"
+      },
       "notes": "Pobreza informática (o de contenido): discurso fluido pero con información mínima o redundante (v.g. 'las cosas son como son porque al final la vida es así'). El bloqueo es observable; la mente en blanco es subjetiva."
     },
     {
@@ -62,6 +71,9 @@
         "sin_direccion_aparente",
         "fuga_de_ideas"
       ],
+      "term_links": {
+        "fuga_de_ideas": "THO_006"
+      },
       "notes": "La fuga de ideas combina aceleración, distractibilidad y asociaciones superficiales; es típica de la manía."
     }
   ],

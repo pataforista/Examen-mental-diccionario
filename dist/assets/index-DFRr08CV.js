@@ -267,7 +267,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                         <span class="subcomponent-label">${a(e.label_es)}</span>
                         ${e.notes?`<p class="subcomponent-notes">${a(e.notes)}</p>`:``}
                         <div class="tag-container">
-                            ${e.accepted_terms?e.accepted_terms.map(e=>`<span class="tag">${a(this.utils.humanize(e))}</span>`).join(``):``}
+                            ${e.accepted_terms?e.accepted_terms.map(t=>{let n=e.term_links?.[t],r=n&&this.data.terms.find(e=>e.term_id===n),i=a(this.utils.humanize(t));return r?`<button type="button" class="tag tag--term" onclick="App.viewTerm('${a(r.term_id)}')" aria-label="${i}: ver ficha de ${a(r.canonical_name)}">${i} ${s(`arrow-right`)}</button>`:`<span class="tag">${i}</span>`}).join(``):``}
                         </div>
                     </div>
                 `).join(``):`<p class="muted-note">No hay subcomponentes definidos.</p>`}

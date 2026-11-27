@@ -60,6 +60,11 @@
         "insight_emocional",
         "insight_fluctuante"
       ],
+      "term_links": {
+        "insight_nulo": "INS_008",
+        "insight_intelectual": "INS_007",
+        "insight_emocional": "INS_006"
+      },
       "notes": "Escala: Nulo -> Síntoma -> Intelectual -> Emocional. Intelectual (ej. 'Sé que tengo esquizofrenia porque los test lo dicen, pero lo que me pasa es que el vecino me persigue'). Emocional (reconocimiento con duelo/apropiación)."
     },
     {

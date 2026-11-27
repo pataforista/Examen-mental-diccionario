@@ -87,6 +87,10 @@ header.top p { margin: 0; color: var(--muted); max-width: 65ch; }
 .rules .sev { font-size: 12px; padding: 1px 8px; border-radius: 999px; }
 .sev-error { background: var(--err-bg); color: var(--err-fg); }
 .sev-aviso { background: var(--warn-bg); color: var(--warn-fg); }
+.sev-info { background: var(--accent-soft); color: var(--accent); }
+.issues li.info { background: var(--surface-2); border-color: var(--line); color: var(--muted); }
+.domain-issues { margin: 0 0 8px; display: grid; gap: 6px; }
+.domain-issues h2 { font-size: 16px; }
 .rules .zero { color: var(--muted); }
 .rules .clean { padding: 7px 10px; color: var(--ok); font-size: 14px; }
 
@@ -162,6 +166,7 @@ details h3 { font: 600 13px/1.4 var(--font-body); color: var(--muted); margin-to
     <div class="stats" id="stats"></div>
   </header>
   <ul class="rules" id="rules" aria-label="Filtrar por regla"></ul>
+  <section class="domain-issues" id="domain-issues" hidden></section>
 </div>
 
 <div class="bar">
@@ -215,12 +220,13 @@ const save = () => { try { localStorage.setItem("revision-lexico", JSON.stringif
 for (const t of DATA.terms) {
   t._hay = norm([t.id, t.name, t.core, t.subj, t.behav, ...t.syn, ...t.features].join(" "));
   t._errors = t.issues.filter(i => i.sev === "error").length;
+  t._warn = t.issues.filter(i => i.sev !== "info").length;
 }
 
 function renderHeader() {
   const total = DATA.terms.length;
-  const withIssues = DATA.terms.filter(t => t.issues.length).length;
-  const errors = DATA.terms.reduce((n, t) => n + t._errors, 0) + DATA.loadErrors.length;
+  const withIssues = DATA.terms.filter(t => t._warn).length;
+  const errors = DATA.terms.reduce((n, t) => n + t._errors, 0) + DATA.loadErrors.length + DATA.domainIssues.filter(i => i.sev === "error").length;
   const date = new Date(DATA.generated).toLocaleString("es-MX", { dateStyle: "long", timeStyle: "short" });
   $("stats").innerHTML = `
     <div><b>${total}</b><span>términos</span></div>
@@ -231,7 +237,7 @@ function renderHeader() {
     <div><b style="font-size:15px;font-weight:500;font-family:var(--font-body)">${esc(date)}</b><span>generada</span></div>`;
 
   const rows = DATA.rules.map(r => {
-    const n = new Set(DATA.terms.filter(t => t.issues.some(i => i.rule === r.id)).map(t => t.id)).size;
+    const n = new Set([...DATA.terms.filter(t => t.issues.some(i => i.rule === r.id)).map(t => t.id), ...DATA.domainIssues.filter(i => i.rule === r.id).map(i => i.id)]).size;
     return { ...r, n };
   });
   // Las reglas de integridad sin hallazgos se resumen en una línea; el resto, en el orden de las reglas.
@@ -240,12 +246,24 @@ function renderHeader() {
   $("rules").innerHTML = (cleanErrors.length ? `<li class="clean">${cleanErrors.length === rows.filter(r => r.sev === "error").length ? "Integridad correcta" : "Sin hallazgos"}: ${cleanErrors.length} reglas de error sin problemas (IDs, campos obligatorios, vocabulario, dominios, exclusiones).</li>` : "") + shown.map(r => `
     <li><button type="button" data-rule="${r.id}" aria-pressed="${state.rule === r.id}">
       <span class="n ${r.n ? "" : "zero"}">${r.n}</span>
-      <span class="sev sev-${r.sev}">${r.sev === "error" ? "error" : "aviso"}</span>
+      <span class="sev sev-${r.sev}">${r.sev}</span>
       <span class="${r.n ? "" : "zero"}">${esc(r.title)}</span>
     </button></li>`).join("");
   if (DATA.loadErrors.length) {
     $("rules").insertAdjacentHTML("afterbegin", DATA.loadErrors.map(e => `<li><ul class="issues"><li class="error"><b>No se pudo leer</b> ${esc(e.file)}: ${esc(e.message)}</li></ul></li>`).join(""));
   }
+}
+
+// Hallazgos de los archivos de dominio (no pertenecen a un término).
+function renderDomainIssues() {
+  const list = DATA.domainIssues.filter(i => !state.rule || i.rule === state.rule);
+  const box = $("domain-issues");
+  box.hidden = !list.length;
+  if (!list.length) return;
+  box.innerHTML = `<h2>Archivos de dominio</h2><ul class="issues">${list.map(i => {
+    const rule = DATA.rules.find(r => r.id === i.rule);
+    return `<li class="${i.sev}"><b>${esc(i.id)} · ${esc(rule ? rule.title : i.rule)}:</b> ${esc(i.msg)} <span class="mono">(${esc(i.file)})</span></li>`;
+  }).join("")}</ul>`;
 }
 
 function fillSelects() {
@@ -269,7 +287,8 @@ function termHTML(t) {
         const rule = DATA.rules.find(r => r.id === i.rule);
         return `<li class="${i.sev}"><b>${esc(rule ? rule.title : i.rule)}:</b> ${esc(i.msg)}</li>`;
       }).join("")}</ul>`
-    : `<span class="ok-badge">Sin avisos</span>`;
+    : "";
+  const clean = t._warn ? "" : `<span class="ok-badge">Sin avisos</span>`;
   const domains = t.domains.map(d => `${DATA.domains[d.id] || d.id}${RELATION[d.rel] ? ` (${RELATION[d.rel]})` : ""}`);
   const excl = t.excl.map(e => `${e.name || "sin nombre"}${e.id ? ` [${e.id}]` : ""}${e.reason ? `: ${e.reason}` : ""}`);
   const more = [bullets("Rasgos requeridos", t.features), bullets("Notas docentes", t.teaching), bullets("Errores cognitivos frecuentes", t.pitfalls),
@@ -283,7 +302,7 @@ function termHTML(t) {
       ${t.cie11 ? `<span class="chip mono">CIE-11 ${esc(t.cie11)}</span>` : ""}
       <span class="chip review-${t.review.state}" title="${esc(t.review.notes)}">${esc(REVIEW_LABEL[t.review.state] || t.review.state)}${t.review.by ? ` · ${esc(t.review.by)}` : ""}${t.review.date ? ` · ${esc(t.review.date)}` : ""}</span>
     </div>
-    ${issues}
+    ${issues}${clean}
     <p class="def">${t.core ? esc(t.core) : '<span class="empty-val">Sin definición</span>'}</p>
     <dl class="fields">
       ${field("Marcador subjetivo", t.subj)}
@@ -303,19 +322,20 @@ function render() {
     (!state.domain || t.domains.some(d => d.id === state.domain)) &&
     (!state.kind || t.kind === state.kind) &&
     (!state.review || t.review.state === state.review) &&
-    (!state.pending || t.issues.length) &&
+    (!state.pending || t._warn) &&
     (!state.rule || t.issues.some(i => i.rule === state.rule)));
   const by = {
     name: (a, b) => a.name.localeCompare(b.name, "es"),
     id: (a, b) => a.id.localeCompare(b.id, "en", { numeric: true }),
     risk: (a, b) => (b.risk ?? -1) - (a.risk ?? -1) || a.name.localeCompare(b.name, "es"),
-    issues: (a, b) => b._errors - a._errors || b.issues.length - a.issues.length || a.name.localeCompare(b.name, "es")
+    issues: (a, b) => b._errors - a._errors || b._warn - a._warn || a.name.localeCompare(b.name, "es")
   };
   list = list.sort(by[state.sort] || by.issues);
   const rule = DATA.rules.find(r => r.id === state.rule);
   $("count").textContent = `Mostrando ${list.length} de ${DATA.terms.length}${rule ? ` · regla: ${rule.title}` : ""}`;
   $("list").innerHTML = list.length ? list.map(termHTML).join("") : `<p class="nothing">Ningún término coincide con estos filtros.</p>`;
   document.querySelectorAll("#rules button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.rule === state.rule)));
+  renderDomainIssues();
   save();
 }
 

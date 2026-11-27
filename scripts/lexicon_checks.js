@@ -94,10 +94,15 @@ function loadLexicon() {
       loadErrors.push({ file: rel, message: `JSON inválido: ${e.message}` });
     }
   }
+  const domainFiles = {};
   const domains = fs
     .readdirSync(DOMAINS_DIR)
     .filter(f => /^DOM-\d+_.+\.json$/.test(f))
-    .map(f => JSON.parse(fs.readFileSync(path.join(DOMAINS_DIR, f), "utf8")));
+    .map(f => {
+      const d = JSON.parse(fs.readFileSync(path.join(DOMAINS_DIR, f), "utf8"));
+      domainFiles[d.domain_id] = `domains/${f}`;
+      return d;
+    });
   const vocab = JSON.parse(fs.readFileSync(VOCAB_PATH, "utf8")).controlled_vocabularies;
   // Códigos en lexicon/mappings/ (carpeta heredada que la app no lee): solo se comparan.
   const externalCodes = {};
@@ -111,10 +116,20 @@ function loadLexicon() {
       }
     }
   }
-  return { terms, domains, vocab, externalCodes, loadErrors };
+  return { terms, domains, domainFiles, vocab, externalCodes, loadErrors };
 }
 
 function buildContext({ terms, domains, vocab, externalCodes }) {
+  // Qué términos del léxico enlaza cada dominio desde sus listas (term_links).
+  const linkedFrom = new Map(); // term_id → Set(domain_id)
+  for (const d of domains) {
+    for (const sc of d.subcomponents || []) {
+      for (const id of Object.values(sc.term_links || {})) {
+        if (!linkedFrom.has(id)) linkedFrom.set(id, new Set());
+        linkedFrom.get(id).add(d.domain_id);
+      }
+    }
+  }
   const byId = new Map();
   const idCount = new Map();
   const nameOwners = new Map();
@@ -138,6 +153,7 @@ function buildContext({ terms, domains, vocab, externalCodes }) {
     nameOwners,
     synonymOwners,
     domainIds: new Set(domains.map(d => d.domain_id)),
+    linkedFrom,
     vocab,
     externalCodes
   };
@@ -323,6 +339,27 @@ const RULES = [
     }
   },
   {
+    id: "dominio-no-reciproco",
+    severity: "aviso",
+    title: "Un dominio lo lista, pero el término no enlaza ese dominio",
+    check: (t, ctx) => {
+      const own = new Set(list(t.domain_links).map(l => l.domain_id));
+      const missing = [...(ctx.linkedFrom.get(t.term_id) || [])].filter(d => !own.has(d));
+      return missing.length ? `aparece en las listas de ${missing.join(", ")}; agrega ese dominio a domain_links` : null;
+    }
+  },
+  {
+    id: "fuera-de-listas",
+    severity: "info",
+    title: "No figura en las listas de su dominio (Integrador y vista Dominios)",
+    check: (t, ctx) => {
+      const primary = list(t.domain_links).filter(l => l.relation === "primary_expression").map(l => l.domain_id);
+      const linked = ctx.linkedFrom.get(t.term_id) || new Set();
+      const out = primary.filter(d => !linked.has(d));
+      return out.length ? `expresión principal en ${out.join(", ")}, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio` : null;
+    }
+  },
+  {
     id: "revision-desactualizada",
     severity: "aviso",
     title: "Cambió después de revisarse",
@@ -371,13 +408,56 @@ const WARNING_ORDER = [
   "cie11-conflicto",
   "sinonimo-compartido",
   "marcador-generico",
+  "dominio-no-reciproco",
+  "enlace-sugerido",
   "exclusion-nombre",
   "mayusculas",
   "sin-sinonimos",
   "sin-docencia"
 ];
-const rank = r => (r.severity === "error" ? -1 : WARNING_ORDER.indexOf(r.id) === -1 ? WARNING_ORDER.length : WARNING_ORDER.indexOf(r.id));
+const rank = r => (r.severity === "error" ? -1 : r.severity === "info" ? 1e3 : WARNING_ORDER.indexOf(r.id) === -1 ? WARNING_ORDER.length : WARNING_ORDER.indexOf(r.id));
 RULES.sort((a, b) => rank(a) - rank(b));
+
+// Reglas sobre los archivos de dominio (sus hallazgos llevan el ID del dominio).
+const DOMAIN_RULES = [
+  {
+    id: "enlace-dominio-roto",
+    severity: "error",
+    title: "Enlace de dominio a un término inexistente",
+    check: (d, ctx) => {
+      const out = [];
+      for (const sc of d.subcomponents || []) {
+        for (const [label, id] of Object.entries(sc.term_links || {})) {
+          if (!ctx.byId.has(id)) out.push(`${sc.id}: "${label}" → ${id} no existe`);
+          if (!(sc.accepted_terms || []).includes(label)) out.push(`${sc.id}: "${label}" está en term_links pero no en accepted_terms`);
+        }
+      }
+      return out;
+    }
+  },
+  {
+    id: "enlace-sugerido",
+    severity: "aviso",
+    title: "Descriptor que coincide con un término del léxico sin enlazar",
+    check: (d, ctx) => {
+      const out = [];
+      for (const sc of d.subcomponents || []) {
+        for (const label of sc.accepted_terms || []) {
+          if ((sc.term_links || {})[label]) continue;
+          const k = normalize(label.replace(/_/g, " "));
+          const byName = ctx.nameOwners.get(k) || ctx.nameOwners.get(k.replace(/\(.*?\)/g, "").trim());
+          if (byName && byName.length === 1) {
+            out.push(`${sc.id}: "${label}" = ${byName[0]} (${ctx.byId.get(byName[0]).canonical_name}); enlázalo en term_links`);
+            continue;
+          }
+          const bySyn = [...(ctx.synonymOwners.get(k) || [])];
+          if (bySyn.length === 1) out.push(`${sc.id}: "${label}" es sinónimo de ${bySyn[0]} (${ctx.byId.get(bySyn[0]).canonical_name}); enlázalo solo si es el mismo concepto`);
+        }
+      }
+      return out;
+    }
+  }
+];
 
 // Devuelve { findings: [{term_id, file, rule, severity, title, message}], loadErrors }.
 function runChecks(lexicon = loadLexicon()) {
@@ -396,7 +476,23 @@ function runChecks(lexicon = loadLexicon()) {
       }
     }
   }
+  for (const d of lexicon.domains) {
+    for (const rule of DOMAIN_RULES) {
+      let res;
+      try {
+        res = rule.check(d, ctx);
+      } catch (e) {
+        res = `la regla falló: ${e.message}`;
+      }
+      for (const message of [].concat(res || [])) {
+        findings.push({ term_id: d.domain_id, file: lexicon.domainFiles[d.domain_id], rule: rule.id, severity: rule.severity, title: rule.title, message, scope: "domain" });
+      }
+    }
+  }
   return { findings, loadErrors: lexicon.loadErrors, lexicon, ctx };
 }
 
-module.exports = { RULES, REVIEW_STATUSES, loadLexicon, runChecks, normalize, reviewHash, reviewState, bundleTerm, writeTerm, walk, ROOT };
+// Todas las reglas, para listarlas (validador y página).
+const ALL_RULES = [...RULES, ...DOMAIN_RULES].sort((a, b) => rank(a) - rank(b));
+
+module.exports = { RULES: ALL_RULES, REVIEW_STATUSES, loadLexicon, runChecks, normalize, reviewHash, reviewState, bundleTerm, writeTerm, walk, ROOT };

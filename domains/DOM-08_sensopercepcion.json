@@ -30,6 +30,12 @@
         "alucinacion_hipnopompica",
         "ilusion"
       ],
+      "term_links": {
+        "alucinacion_verdadera": "PER_010",
+        "pseudoalucinacion": "PER_021",
+        "alucinosis": "PER_011",
+        "ilusion": "PER_014"
+      },
       "notes": "Alucinación verdadera: percepción con corporeidad y objetividad en espacio externo. Pseudoalucinación: experiencia vívida en espacio interno; carece de corporeidad y objetividad (Jaspers). Alucinosis: fenómeno externo con juicio de realidad conservado (frecuente en abstinencia; ej. 'Veo siluetas pero sé que no están')."
     },
     {
@@ -84,6 +90,10 @@
         "macropsia",
         "metamorfopsias"
       ],
+      "term_links": {
+        "micropsia": "PER_018",
+        "macropsia": "PER_016"
+      },
       "notes": "Distorsión de estímulos reales en intensidad, tamaño o forma. No implican creación de objetos inexistentes."
     }
   ],

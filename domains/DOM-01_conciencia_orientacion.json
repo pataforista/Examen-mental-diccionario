@@ -26,6 +26,10 @@
         "estupor",
         "coma"
       ],
+      "term_links": {
+        "obnubilacion": "MEM_021",
+        "coma": "CNS_002"
+      },
       "notes": "Describe el grado de vigilia clínica (wakefulness)."
     },
     {

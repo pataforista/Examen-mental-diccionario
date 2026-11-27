@@ -742,7 +742,15 @@ export const dictionary = {
                         <span class="subcomponent-label">${sanitize(sub.label_es)}</span>
                         ${sub.notes ? `<p class="subcomponent-notes">${sanitize(sub.notes)}</p>` : ""}
                         <div class="tag-container">
-                            ${sub.accepted_terms ? sub.accepted_terms.map(term => `<span class="tag">${sanitize(this.utils.humanize(term))}</span>`).join("") : ""}
+                            ${sub.accepted_terms ? sub.accepted_terms.map(term => {
+                              // Un descriptor enlazado a un término del diccionario abre su ficha.
+                              const linked = sub.term_links?.[term];
+                              const target = linked && this.data.terms.find(t => t.term_id === linked);
+                              const label = sanitize(this.utils.humanize(term));
+                              return target
+                                ? `<button type="button" class="tag tag--term" onclick="App.viewTerm('${sanitize(target.term_id)}')" aria-label="${label}: ver ficha de ${sanitize(target.canonical_name)}">${label} ${getIcon("arrow-right")}</button>`
+                                : `<span class="tag">${label}</span>`;
+                            }).join("") : ""}
                         </div>
                     </div>
                 `).join("") : '<p class="muted-note">No hay subcomponentes definidos.</p>'}

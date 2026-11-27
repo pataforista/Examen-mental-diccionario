@@ -44,6 +44,10 @@
         "confabulaciones",
         "queja_subjetiva_de_memoria"
       ],
+      "term_links": {
+        "amnesia_anterograda": "MEM_002",
+        "amnesia_retrograda": "MEM_007"
+      },
       "notes": "Diferenciar queja subjetiva (ansiedad/depresión) de confabulación o fallos objetivos (organicidad)."
     },
     {
@@ -80,6 +84,10 @@
         "apraxia_ideomotora",
         "apraxia_del_vestido"
       ],
+      "term_links": {
+        "apraxia_constructiva": "MOT_001",
+        "apraxia_ideomotora": "MOT_003"
+      },
       "notes": "El fallo en el test del reloj o copia de figuras es un marcador sensible de deterioro cortical."
     },
     {
@@ -92,6 +100,9 @@
         "verborrea_sin_contenido",
         "dificultad_inferencias_sociales"
       ],
+      "term_links": {
+        "concretismo": "TALD_002"
+      },
       "notes": "Evalúa comprensión de refranes, ironía y normas sociales implícitas."
     },
     {
@@ -106,6 +117,11 @@
         "prosopagnosia",
         "anosognosia"
       ],
+      "term_links": {
+        "agnosia_visual": "NEU_001",
+        "prosopagnosia": "NEU_002",
+        "anosognosia": "INS_001"
+      },
       "notes": "Agnosia auditiva: falla en reconocimiento de sonidos (ej. miau). Simultagnosia: falla en ver múltiples objetos. Anosognosia: falla en reconocer el déficit (signo neurológico; distinguir de negación psicológica)."
     },
     {

@@ -26,6 +26,9 @@
         "presion_del_habla",
         "logorrea"
       ],
+      "term_links": {
+        "logorrea": "SPE_006"
+      },
       "notes": "Presión del habla: urgencia subjetiva y volumen alto. Logorrea: flujo verborrágico constante y difícil de interrumpir (manía)."
     },
     {
@@ -51,6 +54,9 @@
         "dislalia",
         "tartamudez"
       ],
+      "term_links": {
+        "disartria": "SPE_002"
+      },
       "notes": "Disartria: origen motor/neurológico (ej. 'Soy peshiente de la clinisha'). Tartamudez: bloqueos o prolongaciones (distinguir de latencia)."
     },
     {
@@ -73,6 +79,12 @@
         "concretismo",
         "uso_pragmatico_inadecuado"
       ],
+      "term_links": {
+        "neologismos": "TALD_012",
+        "ensalada_de_palabras": "THO_005",
+        "ecolalia": "SPE_003",
+        "concretismo": "TALD_002"
+      },
       "notes": "Anomia: dificultad de recuperación léxical (deterioro, ansiedad, fármacos). Circunloquio: rodeos para compensar anomia. Parafasias fonéticas (motoras) vs fonémicas (sustitución simbólica). Neologismos: palabras nuevas (sin sentido o funcionales)."
     }
   ],

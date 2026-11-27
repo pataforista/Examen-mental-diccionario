@@ -50,6 +50,11 @@
         "perplejidad",
         "afecto_dramático_o_teatral"
       ],
+      "term_links": {
+        "aplanamiento_afectivo": "AFF_010",
+        "moria": "CNS_008",
+        "perplejidad": "AFF_030"
+      },
       "notes": "Afecto: expresión observable durante la entrevista (minutos). Moria: jocosidad insulsa (ej. reír al hablar del clima en contexto de demencia). Afecto dramático/teatral: expresión exagerada e incongruente."
     },
     {
@@ -82,6 +87,10 @@
         "incontinencia_afectiva",
         "viscosidad_afectiva"
       ],
+      "term_links": {
+        "labilidad_afectiva": "AFF_025",
+        "incontinencia_afectiva": "AFF_022"
+      },
       "notes": "Labilidad: cambios rápidos de afecto ante estímulos. Incontinencia pseudobulbar: incapacidad de frenar risa o llanto espasmódico ante estímulos mínimos, con desconexión ideo-afectiva."
     },
     {

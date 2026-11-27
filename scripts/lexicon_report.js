@@ -43,6 +43,7 @@ const data = {
   terms,
   domains: domainLabels,
   rules: RULES.map(r => ({ id: r.id, sev: r.severity, title: r.title })),
+  domainIssues: findings.filter(f => f.scope === "domain").map(f => ({ id: f.term_id, file: f.file, rule: f.rule, sev: f.severity, msg: f.message })),
   loadErrors
 };
 // Seguro dentro de <script>: ningún "</script>" ni "<!--" del contenido cierra la etiqueta.
@@ -53,6 +54,6 @@ if (!template.includes("/*__DATA__*/null")) throw new Error("La plantilla no tie
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, template.replace("/*__DATA__*/null", () => json));
 
-const withIssues = terms.filter(t => t.issues.length).length;
+const withIssues = terms.filter(t => t.issues.some(i => i.sev !== "info")).length;
 console.log(`Revisión del léxico → ${path.relative(ROOT, OUT)}`);
 console.log(`${terms.length} términos · ${withIssues} con avisos o errores · ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB`);
