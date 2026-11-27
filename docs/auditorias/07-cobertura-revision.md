@@ -108,7 +108,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | CNS_001 · Anergia <!-- k:3eb6e9d50a --> | Sin revisar · riesgo 1/5 |  |
 | CNS_002 · Coma <!-- k:ddcdf70003 --> | Sin revisar · riesgo 2/5 |  |
 | CNS_003 · Estado crepuscular <!-- k:4c5727ad45 --> | Sin revisar · riesgo 2/5 |  |
-| CNS_004 · Estados Oniroides o de Trastorno Hipnagógico patológico <!-- k:6e74c3e3c3 --> | Sin revisar · riesgo 1/5 |  |
+| CNS_004 · Estados oniroides o de trastorno hipnagógico patológico <!-- k:6e74c3e3c3 --> | Sin revisar · riesgo 1/5 |  |
 | CNS_005 · Estupor psiquiátrico <!-- k:37029bfd2a --> | Sin revisar · riesgo 2/5 |  |
 | CNS_006 · Lentitud del Pensamiento (Bradipsiquia) <!-- k:8e73edfc48 --> | Sin revisar · riesgo 1/5 |  |
 | CNS_007 · Letargo <!-- k:29fdf8b7e0 --> | Sin revisar · riesgo 1/5 |  |
@@ -121,7 +121,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | COG_002 · Confabulación <!-- k:d3e90fa4ed --> | Sin revisar · riesgo 1/5 |  |
 | COG_003 · Memoria de trabajo <!-- k:3860fbbe2c --> | Sin revisar · riesgo 1/5 |  |
 | COG_004 · Orientación <!-- k:e60229bb37 --> | Sin revisar · riesgo 1/5 |  |
-| COG_005 · Pensamiento Abstracto / Concreto <!-- k:786c04c56c --> | Sin revisar · riesgo 1/5 |  |
+| COG_005 · Pensamiento abstracto/concreto <!-- k:786c04c56c --> | Sin revisar · riesgo 1/5 |  |
 | COG_006 · Déficit intelectual <!-- k:b6d5588a70 --> | Sin revisar · riesgo 1/5 |  |
 | DEL_001 · Apofanía <!-- k:5ba319a441 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_002 · BLIPS <!-- k:9b17780fc0 --> | Sin revisar · riesgo 0/5 |  |
@@ -212,9 +212,9 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MOT_008 · Manierismos <!-- k:6538f93c0a --> | Sin revisar · riesgo 0/5 |  |
 | MOT_009 · Mitgehen <!-- k:fe4ef9735c --> | Sin revisar · riesgo 0/5 |  |
 | MOT_010 · Tics <!-- k:be22332221 --> | Sin revisar · riesgo 0/5 |  |
-| NEG_001 · Aislamiento / Retraimiento Social (Social Withdrawal / Asociality) <!-- k:880663cce8 --> | Sin revisar · riesgo 1/5 |  |
+| NEG_001 · Aislamiento/retraimiento social (social withdrawal/asociality) <!-- k:880663cce8 --> | Sin revisar · riesgo 1/5 |  |
 | NEG_002 · Alogia <!-- k:30b70b035d --> | Sin revisar · riesgo 2/5 |  |
-| NEG_003 · Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto) <!-- k:24779a0347 --> | Sin revisar · riesgo 2/5 |  |
+| NEG_003 · Deterioro o descuido grave del autocuidado/higiene (síndrome negativo/defecto) <!-- k:24779a0347 --> | Sin revisar · riesgo 2/5 |  |
 | NEU_001 · Agnosia visual <!-- k:cc1c4fdb74 --> | Sin revisar · riesgo 1/5 |  |
 | NEU_002 · Prosopagnosia <!-- k:5ca1a04e37 --> | Sin revisar · riesgo 1/5 |  |
 | NEU_003 · Síndrome de Charles Bonnet <!-- k:4c44181ccb --> | Sin revisar · riesgo 1/5 |  |
@@ -231,15 +231,15 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | PER_004 · Alucinaciones cenestésicas <!-- k:0383da77e5 --> | Sin revisar · riesgo 0/5 |  |
 | PER_005 · Alucinaciones hipnagógicas <!-- k:6a65de3a28 --> | Sin revisar · riesgo 0/5 |  |
 | PER_006 · Alucinaciones hipnopómpicas <!-- k:28915d898d --> | Sin revisar · riesgo 0/5 |  |
-| PER_007 · Alucinación Extracampina <!-- k:7c583f9409 --> | Sin revisar · riesgo 1/5 |  |
-| PER_008 · Alucinación Funcional <!-- k:e00fd0c884 --> | Sin revisar · riesgo 1/5 |  |
-| PER_009 · Alucinación Refleja <!-- k:980ef7fe39 --> | Sin revisar · riesgo 1/5 |  |
+| PER_007 · Alucinación extracampina <!-- k:7c583f9409 --> | Sin revisar · riesgo 1/5 |  |
+| PER_008 · Alucinación funcional <!-- k:e00fd0c884 --> | Sin revisar · riesgo 1/5 |  |
+| PER_009 · Alucinación refleja <!-- k:980ef7fe39 --> | Sin revisar · riesgo 1/5 |  |
 | PER_010 · Alucinación verdadera <!-- k:a2c13de2be --> | Sin revisar · riesgo 2/5 |  |
 | PER_011 · Alucinosis <!-- k:781040d721 --> | Sin revisar · riesgo 1/5 |  |
 | PER_012 · Distorsión perceptiva visual <!-- k:840b454462 --> | Sin revisar · riesgo 1/5 |  |
 | PER_013 · Flashback <!-- k:c32d3d48ed --> | Sin revisar · riesgo 2/5 |  |
 | PER_014 · Ilusión <!-- k:679181ad20 --> | Sin revisar · riesgo 0/5 |  |
-| PER_015 · Imagen Eidética <!-- k:eb6a1f3f97 --> | Sin revisar · riesgo 0/5 |  |
+| PER_015 · Imagen eidética <!-- k:eb6a1f3f97 --> | Sin revisar · riesgo 0/5 |  |
 | PER_016 · Macropsia <!-- k:441229b460 --> | Sin revisar · riesgo 0/5 |  |
 | PER_017 · Metamorfopsia <!-- k:d4a861c6a5 --> | Sin revisar · riesgo 0/5 |  |
 | PER_018 · Micropsia <!-- k:bc1109da23 --> | Sin revisar · riesgo 0/5 |  |
@@ -268,8 +268,8 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SELF_009 · Impulsos impuestos <!-- k:c8b593303d --> | Sin revisar · riesgo 1/5 |  |
 | SELF_010 · Pérdida de la evidencia natural <!-- k:b1767ead81 --> | Sin revisar · riesgo 0/5 |  |
 | SELF_011 · Transitivismo <!-- k:d455d87df0 --> | Sin revisar · riesgo 1/5 |  |
-| SER_001 · Síndrome Serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 2/5 |  |
-| SNM_001 · Síndrome Neuroléptico Maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 2/5 |  |
+| SER_001 · Síndrome serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 2/5 |  |
+| SNM_001 · Síndrome neuroléptico maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 2/5 |  |
 | SOM_001 · Dismorfofobia <!-- k:8f9486d650 --> | Sin revisar · riesgo 2/5 |  |
 | SOM_002 · Hipocondría <!-- k:67f8241850 --> | Sin revisar · riesgo 1/5 |  |
 | SPE_001 · Aprosodia <!-- k:7bad45b75b --> | Sin revisar · riesgo 0/5 |  |
@@ -286,21 +286,21 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | TALD_001 · Bloqueo <!-- k:9d48e899cd --> | Sin revisar · riesgo 2/5 |  |
 | TALD_002 · Concretismo <!-- k:a676b56a8e --> | Sin revisar · riesgo 1/5 |  |
 | TALD_003 · Descarrilamiento <!-- k:e1cff2b7ba --> | Sin revisar · riesgo 1/5 |  |
-| TALD_004 · Disfunción Expresiva del Lenguaje <!-- k:1b11a7e9ae --> | Sin revisar · riesgo 2/5 |  |
-| TALD_005 · Disfunción Receptiva del Lenguaje <!-- k:a646ac35d4 --> | Sin revisar · riesgo 2/5 |  |
-| TALD_006 · Disfunción de la Iniciativa e Intencionalidad <!-- k:e1eabfc46d --> | Sin revisar · riesgo 2/5 |  |
+| TALD_004 · Disfunción expresiva del lenguaje <!-- k:1b11a7e9ae --> | Sin revisar · riesgo 2/5 |  |
+| TALD_005 · Disfunción receptiva del lenguaje <!-- k:a646ac35d4 --> | Sin revisar · riesgo 2/5 |  |
+| TALD_006 · Disfunción de la iniciativa e intencionalidad <!-- k:e1eabfc46d --> | Sin revisar · riesgo 2/5 |  |
 | TALD_007 · Disociación del Pensamiento <!-- k:105adad7be --> | Sin revisar · riesgo 1/5 |  |
 | TALD_008 · Glosomanía / Clanging <!-- k:a38622dd18 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_009 · Habla Manierista <!-- k:f0587a3025 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_010 · Habla Presionada <!-- k:10ad04f2ef --> | Sin revisar · riesgo 1/5 |  |
+| TALD_009 · Habla manierista <!-- k:f0587a3025 --> | Sin revisar · riesgo 1/5 |  |
+| TALD_010 · Habla presionada <!-- k:10ad04f2ef --> | Sin revisar · riesgo 1/5 |  |
 | TALD_011 · Interferencia del Pensamiento <!-- k:42a36f4187 --> | Sin revisar · riesgo 2/5 |  |
 | TALD_012 · Neologismos <!-- k:fcc4f8e080 --> | Sin revisar · riesgo 1/5 |  |
 | TALD_013 · Para-respuesta / Crosstalk <!-- k:fbbec73940 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_014 · Parafasia Fonémica <!-- k:377d2dae2b --> | Sin revisar · riesgo 1/5 |  |
-| TALD_015 · Parafasia Semántica <!-- k:68471df421 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_016 · Pensamiento Enlentecido <!-- k:6ce8f09b25 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_017 · Pensamiento Inhibido <!-- k:870019b193 --> | Sin revisar · riesgo 2/5 |  |
-| TALD_018 · Pensamiento Restringido <!-- k:d3cf4cb40a --> | Sin revisar · riesgo 1/5 |  |
+| TALD_014 · Parafasia fonémica <!-- k:377d2dae2b --> | Sin revisar · riesgo 1/5 |  |
+| TALD_015 · Parafasia semántica <!-- k:68471df421 --> | Sin revisar · riesgo 1/5 |  |
+| TALD_016 · Pensamiento enlentecido <!-- k:6ce8f09b25 --> | Sin revisar · riesgo 1/5 |  |
+| TALD_017 · Pensamiento inhibido <!-- k:870019b193 --> | Sin revisar · riesgo 2/5 |  |
+| TALD_018 · Pensamiento restringido <!-- k:d3cf4cb40a --> | Sin revisar · riesgo 1/5 |  |
 | TALD_019 · Pobreza de Contenido del Habla <!-- k:9e0063d86f --> | Sin revisar · riesgo 1/5 |  |
 | TALD_020 · Pobreza de Pensamiento <!-- k:90d14364d5 --> | Sin revisar · riesgo 2/5 |  |
 | TALD_021 · Pobreza del Habla <!-- k:70547a28e7 --> | Sin revisar · riesgo 1/5 |  |

@@ -75,7 +75,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | COG_002 · Confabulación <!-- k:0312a5ed1d --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | COG_003 · Memoria de trabajo <!-- k:65838d3b92 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | COG_004 · Orientación <!-- k:932f1f2033 --> | expresión principal en DOM-01, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| COG_005 · Pensamiento Abstracto / Concreto <!-- k:bd26e17213 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| COG_005 · Pensamiento abstracto/concreto <!-- k:bd26e17213 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_001 · Apofanía <!-- k:5d3b5e7601 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_002 · BLIPS <!-- k:db492bcef9 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_003 · Celotipia (Síndrome de Otelo) <!-- k:3622579690 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -136,9 +136,9 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MOT_005 · Discinesia <!-- k:12be23ceba --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MOT_007 · Estereotipia <!-- k:fb1d451a8b --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MOT_009 · Mitgehen <!-- k:3e107e17ab --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| NEG_001 · Aislamiento / Retraimiento Social (Social Withdrawal / Asociality) <!-- k:1d50411b96 --> | expresión principal en DOM-09, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| NEG_001 · Aislamiento/retraimiento social (social withdrawal/asociality) <!-- k:1d50411b96 --> | expresión principal en DOM-09, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | NEG_002 · Alogia <!-- k:d077ceb952 --> | expresión principal en DOM-09, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| NEG_003 · Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto) <!-- k:4f806867b6 --> | expresión principal en DOM-09, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| NEG_003 · Deterioro o descuido grave del autocuidado/higiene (síndrome negativo/defecto) <!-- k:4f806867b6 --> | expresión principal en DOM-09, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | NEU_003 · Síndrome de Charles Bonnet <!-- k:a4b79fa5fe --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | NEU_004 · Alucinosis peduncular <!-- k:04cc9be2fc --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | NEU_005 · Síndrome de la mano alienígena <!-- k:ad835b1a54 --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -151,12 +151,12 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | PER_004 · Alucinaciones cenestésicas <!-- k:93a2033fee --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_005 · Alucinaciones hipnagógicas <!-- k:80cd6518c8 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_006 · Alucinaciones hipnopómpicas <!-- k:9aa156d9c4 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| PER_007 · Alucinación Extracampina <!-- k:56b09deced --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| PER_008 · Alucinación Funcional <!-- k:f5965f2b4c --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| PER_009 · Alucinación Refleja <!-- k:e95390bec7 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| PER_007 · Alucinación extracampina <!-- k:56b09deced --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| PER_008 · Alucinación funcional <!-- k:f5965f2b4c --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| PER_009 · Alucinación refleja <!-- k:e95390bec7 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_012 · Distorsión perceptiva visual <!-- k:cefd5a799e --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_013 · Flashback <!-- k:9a4e601908 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| PER_015 · Imagen Eidética <!-- k:04fffb037e --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| PER_015 · Imagen eidética <!-- k:04fffb037e --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_017 · Metamorfopsia <!-- k:48e39c67b9 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_019 · Palinopsia <!-- k:f60f642609 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | PER_020 · Pareidolia <!-- k:634f20d942 --> | expresión principal en DOM-08, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -187,8 +187,8 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SELF_009 · Impulsos impuestos <!-- k:4e070d684a --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SELF_010 · Pérdida de la evidencia natural <!-- k:80df1498b3 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SELF_011 · Transitivismo <!-- k:1e98976854 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| SER_001 · Síndrome Serotoninérgico <!-- k:1ab50aa3fb --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| SNM_001 · Síndrome Neuroléptico Maligno <!-- k:7eb5cb6759 --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| SER_001 · Síndrome serotoninérgico <!-- k:1ab50aa3fb --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| SNM_001 · Síndrome neuroléptico maligno <!-- k:7eb5cb6759 --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SOM_001 · Dismorfofobia <!-- k:af4ab921a1 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SOM_002 · Hipocondría <!-- k:7f9cabf79c --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | SPE_001 · Aprosodia <!-- k:6fe54cb8c5 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -202,20 +202,20 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SPE_012 · Afasia <!-- k:67e6aabc94 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_001 · Bloqueo <!-- k:a274ddcd38 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_002 · Concretismo <!-- k:48c853f750 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_004 · Disfunción Expresiva del Lenguaje <!-- k:e4de4a17d0 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_005 · Disfunción Receptiva del Lenguaje <!-- k:5faf2ce775 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_006 · Disfunción de la Iniciativa e Intencionalidad <!-- k:523e70193d --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_004 · Disfunción expresiva del lenguaje <!-- k:e4de4a17d0 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_005 · Disfunción receptiva del lenguaje <!-- k:5faf2ce775 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_006 · Disfunción de la iniciativa e intencionalidad <!-- k:523e70193d --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_007 · Disociación del Pensamiento <!-- k:f60b0a6816 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_008 · Glosomanía / Clanging <!-- k:0f41e66f49 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_009 · Habla Manierista <!-- k:028d5a164d --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_010 · Habla Presionada <!-- k:aa68d28f3c --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_009 · Habla manierista <!-- k:028d5a164d --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_010 · Habla presionada <!-- k:aa68d28f3c --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_011 · Interferencia del Pensamiento <!-- k:40d38f29cd --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_013 · Para-respuesta / Crosstalk <!-- k:2e32ee478a --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_014 · Parafasia Fonémica <!-- k:4886b3fe6e --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_015 · Parafasia Semántica <!-- k:acb42489a1 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_016 · Pensamiento Enlentecido <!-- k:e0436a0663 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_017 · Pensamiento Inhibido <!-- k:0d1bb103c5 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_018 · Pensamiento Restringido <!-- k:c156dd2140 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_014 · Parafasia fonémica <!-- k:4886b3fe6e --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_015 · Parafasia semántica <!-- k:acb42489a1 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_016 · Pensamiento enlentecido <!-- k:e0436a0663 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_017 · Pensamiento inhibido <!-- k:0d1bb103c5 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| TALD_018 · Pensamiento restringido <!-- k:c156dd2140 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_019 · Pobreza de Contenido del Habla <!-- k:4eb1809f3c --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_020 · Pobreza de Pensamiento <!-- k:02feaaba46 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_021 · Pobreza del Habla <!-- k:0f6942bc58 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |

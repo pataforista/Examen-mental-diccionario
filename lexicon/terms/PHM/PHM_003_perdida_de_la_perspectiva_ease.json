@@ -47,7 +47,7 @@
   "exclusions": [
     {
       "term_id": "COG_005",
-      "canonical_name": "Pensamiento Abstracto / Concreto",
+      "canonical_name": "Pensamiento abstracto/concreto",
       "reason": "El pensamiento concreto es una dificultad de abstracción; la pérdida de perspectiva es más amplia (espacial, temporal, social)."
     }
   ],

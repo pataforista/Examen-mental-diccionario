@@ -22,7 +22,7 @@ Planilla (`marcador_subjetivo`, `nombre`, `notas_docentes`) o el archivo del té
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (130)
+## Casos pendientes (110)
 
 ### Sin notas docentes (73)
 
@@ -55,7 +55,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | CNS_001 · Anergia <!-- k:ac304396f1 --> | sin teaching_notes |  |
 | CNS_002 · Coma <!-- k:a56067768f --> | sin teaching_notes |  |
 | CNS_003 · Estado crepuscular <!-- k:bdfbe804c6 --> | sin teaching_notes |  |
-| CNS_004 · Estados Oniroides o de Trastorno Hipnagógico patológico <!-- k:7e0bd7ca2b --> | sin teaching_notes |  |
+| CNS_004 · Estados oniroides o de trastorno hipnagógico patológico <!-- k:7e0bd7ca2b --> | sin teaching_notes |  |
 | CNS_005 · Estupor psiquiátrico <!-- k:b53f93ea0c --> | sin teaching_notes |  |
 | CNS_006 · Lentitud del Pensamiento (Bradipsiquia) <!-- k:01765ca881 --> | sin teaching_notes |  |
 | CNS_007 · Letargo <!-- k:5ac92bc9f8 --> | sin teaching_notes |  |
@@ -90,9 +90,9 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MEM_024 · Presque vu patológico <!-- k:bf5cd77256 --> | sin teaching_notes |  |
 | MEM_026 · Síndrome de Korsakoff <!-- k:4da788b216 --> | sin teaching_notes |  |
 | MOT_007 · Estereotipia <!-- k:9efb19beaf --> | sin teaching_notes |  |
-| NEG_001 · Aislamiento / Retraimiento Social (Social Withdrawal / Asociality) <!-- k:5aefa374e1 --> | sin teaching_notes |  |
+| NEG_001 · Aislamiento/retraimiento social (social withdrawal/asociality) <!-- k:5aefa374e1 --> | sin teaching_notes |  |
 | NEG_002 · Alogia <!-- k:45b1168b05 --> | sin teaching_notes |  |
-| NEG_003 · Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto) <!-- k:3765a2ea8f --> | sin teaching_notes |  |
+| NEG_003 · Deterioro o descuido grave del autocuidado/higiene (síndrome negativo/defecto) <!-- k:3765a2ea8f --> | sin teaching_notes |  |
 | VOL_001 · Abulia <!-- k:17d2271175 --> | sin teaching_notes |  |
 | VOL_002 · Ambivalencia volitiva <!-- k:6599f26479 --> | sin teaching_notes |  |
 | VOL_003 · Ecopraxia <!-- k:e9b6566bc4 --> | sin teaching_notes |  |
@@ -101,31 +101,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | VOL_006 · Hipobulia <!-- k:138df43934 --> | sin teaching_notes |  |
 | VOL_008 · Impulsividad patológica <!-- k:f1ecf43763 --> | sin teaching_notes |  |
 | VOL_009 · Negativismo <!-- k:f1a8f11620 --> | sin teaching_notes |  |
-
-### Nombre con Mayúscula En Cada Palabra (20)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| CNS_004 · Estados Oniroides o de Trastorno Hipnagógico patológico <!-- k:326c17c78b --> | "Estados Oniroides o de Trastorno Hipnagógico patológico" — en español solo la primera palabra |  |
-| COG_005 · Pensamiento Abstracto / Concreto <!-- k:d36f95b741 --> | "Pensamiento Abstracto / Concreto" — en español solo la primera palabra |  |
-| NEG_001 · Aislamiento / Retraimiento Social (Social Withdrawal / Asociality) <!-- k:9c9df2c2ba --> | "Aislamiento / Retraimiento Social (Social Withdrawal / Asociality)" — en español solo la primera palabra |  |
-| NEG_003 · Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto) <!-- k:4a09ce1684 --> | "Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto)" — en español solo la primera palabra |  |
-| PER_007 · Alucinación Extracampina <!-- k:44a815408f --> | "Alucinación Extracampina" — en español solo la primera palabra |  |
-| PER_008 · Alucinación Funcional <!-- k:302e672d3d --> | "Alucinación Funcional" — en español solo la primera palabra |  |
-| PER_009 · Alucinación Refleja <!-- k:d15223e4f3 --> | "Alucinación Refleja" — en español solo la primera palabra |  |
-| PER_015 · Imagen Eidética <!-- k:25495901be --> | "Imagen Eidética" — en español solo la primera palabra |  |
-| SER_001 · Síndrome Serotoninérgico <!-- k:149f648993 --> | "Síndrome Serotoninérgico" — en español solo la primera palabra |  |
-| SNM_001 · Síndrome Neuroléptico Maligno <!-- k:a97a465313 --> | "Síndrome Neuroléptico Maligno" — en español solo la primera palabra |  |
-| TALD_004 · Disfunción Expresiva del Lenguaje <!-- k:45a2cd9058 --> | "Disfunción Expresiva del Lenguaje" — en español solo la primera palabra |  |
-| TALD_005 · Disfunción Receptiva del Lenguaje <!-- k:9f0d4f9b2c --> | "Disfunción Receptiva del Lenguaje" — en español solo la primera palabra |  |
-| TALD_006 · Disfunción de la Iniciativa e Intencionalidad <!-- k:9db825734c --> | "Disfunción de la Iniciativa e Intencionalidad" — en español solo la primera palabra |  |
-| TALD_009 · Habla Manierista <!-- k:3943bf66a6 --> | "Habla Manierista" — en español solo la primera palabra |  |
-| TALD_010 · Habla Presionada <!-- k:380332c181 --> | "Habla Presionada" — en español solo la primera palabra |  |
-| TALD_014 · Parafasia Fonémica <!-- k:056fc58ca3 --> | "Parafasia Fonémica" — en español solo la primera palabra |  |
-| TALD_015 · Parafasia Semántica <!-- k:a1f054852a --> | "Parafasia Semántica" — en español solo la primera palabra |  |
-| TALD_016 · Pensamiento Enlentecido <!-- k:4a5f234d68 --> | "Pensamiento Enlentecido" — en español solo la primera palabra |  |
-| TALD_017 · Pensamiento Inhibido <!-- k:4a3c1c8448 --> | "Pensamiento Inhibido" — en español solo la primera palabra |  |
-| TALD_018 · Pensamiento Restringido <!-- k:0047aff5f5 --> | "Pensamiento Restringido" — en español solo la primera palabra |  |
 
 ### Marcador subjetivo genérico (37)
 
@@ -171,4 +146,23 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
-Aún ninguno.
+- 2026-11-27 · TALD_018 · Pensamiento Restringido: "Pensamiento Restringido" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento restringido" (2026-11-27)
+- 2026-11-27 · TALD_017 · Pensamiento Inhibido: "Pensamiento Inhibido" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento inhibido" (2026-11-27)
+- 2026-11-27 · TALD_016 · Pensamiento Enlentecido: "Pensamiento Enlentecido" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento enlentecido" (2026-11-27)
+- 2026-11-27 · TALD_015 · Parafasia Semántica: "Parafasia Semántica" — en español solo la primera palabra — decisión: Normalizado a "Parafasia semántica" (2026-11-27)
+- 2026-11-27 · TALD_014 · Parafasia Fonémica: "Parafasia Fonémica" — en español solo la primera palabra — decisión: Normalizado a "Parafasia fonémica" (2026-11-27)
+- 2026-11-27 · TALD_010 · Habla Presionada: "Habla Presionada" — en español solo la primera palabra — decisión: Normalizado a "Habla presionada" (2026-11-27)
+- 2026-11-27 · TALD_009 · Habla Manierista: "Habla Manierista" — en español solo la primera palabra — decisión: Normalizado a "Habla manierista" (2026-11-27)
+- 2026-11-27 · TALD_006 · Disfunción de la Iniciativa e Intencionalidad: "Disfunción de la Iniciativa e Intencionalidad" — en español solo la primera palabra — decisión: Normalizado a "Disfunción de la iniciativa e intencionalidad" (2026-11-27)
+- 2026-11-27 · TALD_005 · Disfunción Receptiva del Lenguaje: "Disfunción Receptiva del Lenguaje" — en español solo la primera palabra — decisión: Normalizado a "Disfunción receptiva del lenguaje" (2026-11-27)
+- 2026-11-27 · TALD_004 · Disfunción Expresiva del Lenguaje: "Disfunción Expresiva del Lenguaje" — en español solo la primera palabra — decisión: Normalizado a "Disfunción expresiva del lenguaje" (2026-11-27)
+- 2026-11-27 · SNM_001 · Síndrome Neuroléptico Maligno: "Síndrome Neuroléptico Maligno" — en español solo la primera palabra — decisión: Normalizado a "Síndrome neuroléptico maligno" (2026-11-27)
+- 2026-11-27 · SER_001 · Síndrome Serotoninérgico: "Síndrome Serotoninérgico" — en español solo la primera palabra — decisión: Normalizado a "Síndrome serotoninérgico" (2026-11-27)
+- 2026-11-27 · PER_015 · Imagen Eidética: "Imagen Eidética" — en español solo la primera palabra — decisión: Normalizado a "Imagen eidética" (2026-11-27)
+- 2026-11-27 · PER_009 · Alucinación Refleja: "Alucinación Refleja" — en español solo la primera palabra — decisión: Normalizado a "Alucinación refleja" (2026-11-27)
+- 2026-11-27 · PER_008 · Alucinación Funcional: "Alucinación Funcional" — en español solo la primera palabra — decisión: Normalizado a "Alucinación funcional" (2026-11-27)
+- 2026-11-27 · PER_007 · Alucinación Extracampina: "Alucinación Extracampina" — en español solo la primera palabra — decisión: Normalizado a "Alucinación extracampina" (2026-11-27)
+- 2026-11-27 · NEG_003 · Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto): "Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto)" — en español solo la primera palabra — decisión: Normalizado a "Deterioro o descuido grave del autocuidado/higiene (síndrome negativo/defecto)" (2026-11-27)
+- 2026-11-27 · NEG_001 · Aislamiento / Retraimiento Social (Social Withdrawal / Asociality): "Aislamiento / Retraimiento Social (Social Withdrawal / Asociality)" — en español solo la primera palabra — decisión: Normalizado a "Aislamiento/retraimiento social (social withdrawal/asociality)" (2026-11-27)
+- 2026-11-27 · COG_005 · Pensamiento Abstracto / Concreto: "Pensamiento Abstracto / Concreto" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento abstracto/concreto" (2026-11-27)
+- 2026-11-27 · CNS_004 · Estados Oniroides o de Trastorno Hipnagógico patológico: "Estados Oniroides o de Trastorno Hipnagógico patológico" — en español solo la primera palabra — decisión: Normalizado a "Estados oniroides o de trastorno hipnagógico patológico" (2026-11-27)

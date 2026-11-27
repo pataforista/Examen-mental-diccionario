@@ -1,6 +1,6 @@
 {
   "term_id": "SNM_001",
-  "canonical_name": "Síndrome Neuroléptico Maligno",
+  "canonical_name": "Síndrome neuroléptico maligno",
   "synonyms_and_slang": [
     {
       "term": "SNM",
@@ -71,7 +71,7 @@
   "exclusions": [
     {
       "term_id": "SER_001",
-      "canonical_name": "Síndrome Serotoninérgico",
+      "canonical_name": "Síndrome serotoninérgico",
       "reason": "El serotoninérgico se caracteriza por clonus e hiperreflexia; el SNM por rigidez sostenida sin clonus predominante.",
       "ref_status": "forward"
     },

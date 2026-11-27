@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-27T23:54:07.736Z",
+  "generated_at": "2026-11-27T23:56:21.815Z",
   "total_terms": 294,
   "terms": [
     {
@@ -5287,7 +5287,7 @@
       "exclusions": [
         {
           "term_id": "SNM_001",
-          "canonical_name": "Síndrome Neuroléptico Maligno",
+          "canonical_name": "Síndrome neuroléptico maligno",
           "reason": "El SNM es una toxicidad por bloqueo dopaminérgico con rigidez sostenida y CPK típicamente muy elevada.",
           "ref_status": "forward"
         }
@@ -5906,7 +5906,7 @@
     },
     {
       "term_id": "CNS_004",
-      "canonical_name": "Estados Oniroides o de Trastorno Hipnagógico patológico",
+      "canonical_name": "Estados oniroides o de trastorno hipnagógico patológico",
       "synonyms_and_slang": [
         {
           "term": "trastorno límite sueño-vigilia patológico",
@@ -6842,7 +6842,7 @@
     },
     {
       "term_id": "COG_005",
-      "canonical_name": "Pensamiento Abstracto / Concreto",
+      "canonical_name": "Pensamiento abstracto/concreto",
       "synonyms_and_slang": [
         {
           "term": "literalismo",
@@ -13912,7 +13912,7 @@
     },
     {
       "term_id": "NEG_001",
-      "canonical_name": "Aislamiento / Retraimiento Social (Social Withdrawal / Asociality)",
+      "canonical_name": "Aislamiento/retraimiento social (social withdrawal/asociality)",
       "synonyms_and_slang": [
         {
           "term": "Asocialidad primaria patológica",
@@ -14054,7 +14054,7 @@
     },
     {
       "term_id": "NEG_003",
-      "canonical_name": "Deterioro o Descuido Grave del Autocuidado / Higiene (Síndrome Negativo / Defecto)",
+      "canonical_name": "Deterioro o descuido grave del autocuidado/higiene (síndrome negativo/defecto)",
       "synonyms_and_slang": [
         {
           "term": "Avolición grave enfocada al si-mismo (self-care neglect en psicosis/demencia severa - NO el Sindrome de Diogenes / Senil per se)",
@@ -15594,7 +15594,7 @@
     },
     {
       "term_id": "PER_007",
-      "canonical_name": "Alucinación Extracampina",
+      "canonical_name": "Alucinación extracampina",
       "synonyms_and_slang": [
         {
           "term": "alucinación fuera de campo",
@@ -15668,7 +15668,7 @@
     },
     {
       "term_id": "PER_008",
-      "canonical_name": "Alucinación Funcional",
+      "canonical_name": "Alucinación funcional",
       "synonyms_and_slang": [
         {
           "term": "alucinación desencadenada",
@@ -15759,7 +15759,7 @@
     },
     {
       "term_id": "PER_009",
-      "canonical_name": "Alucinación Refleja",
+      "canonical_name": "Alucinación refleja",
       "synonyms_and_slang": [
         {
           "term": "sinestesia patológica",
@@ -16473,7 +16473,7 @@
     },
     {
       "term_id": "PER_015",
-      "canonical_name": "Imagen Eidética",
+      "canonical_name": "Imagen eidética",
       "synonyms_and_slang": [
         {
           "term": "eidetismo",
@@ -17136,7 +17136,7 @@
       "exclusions": [
         {
           "term_id": "PER_007",
-          "canonical_name": "Alucinación Extracampina",
+          "canonical_name": "Alucinación extracampina",
           "reason": "En la extracampina hay una cualidad visual clara; en el sentido de presencia es una 'cuasi-percepción' sin imagen."
         }
       ],
@@ -17480,7 +17480,7 @@
       "exclusions": [
         {
           "term_id": "COG_005",
-          "canonical_name": "Pensamiento Abstracto / Concreto",
+          "canonical_name": "Pensamiento abstracto/concreto",
           "reason": "El pensamiento concreto es una dificultad de abstracción; la pérdida de perspectiva es más amplia (espacial, temporal, social)."
         }
       ],
@@ -20094,7 +20094,7 @@
     },
     {
       "term_id": "SER_001",
-      "canonical_name": "Síndrome Serotoninérgico",
+      "canonical_name": "Síndrome serotoninérgico",
       "synonyms_and_slang": [
         {
           "term": "toxicidad serotoninérgica",
@@ -20171,7 +20171,7 @@
       "exclusions": [
         {
           "term_id": "SNM_001",
-          "canonical_name": "Síndrome Neuroléptico Maligno",
+          "canonical_name": "Síndrome neuroléptico maligno",
           "reason": "El SNM cursa con rigidez sostenida tipo 'tubo de plomo' y menor prominencia de clonus/hiperreflexia.",
           "ref_status": "forward"
         }
@@ -20209,7 +20209,7 @@
     },
     {
       "term_id": "SNM_001",
-      "canonical_name": "Síndrome Neuroléptico Maligno",
+      "canonical_name": "Síndrome neuroléptico maligno",
       "synonyms_and_slang": [
         {
           "term": "SNM",
@@ -20280,7 +20280,7 @@
       "exclusions": [
         {
           "term_id": "SER_001",
-          "canonical_name": "Síndrome Serotoninérgico",
+          "canonical_name": "Síndrome serotoninérgico",
           "reason": "El serotoninérgico se caracteriza por clonus e hiperreflexia; el SNM por rigidez sostenida sin clonus predominante.",
           "ref_status": "forward"
         },
@@ -21910,7 +21910,7 @@
     },
     {
       "term_id": "TALD_004",
-      "canonical_name": "Disfunción Expresiva del Lenguaje",
+      "canonical_name": "Disfunción expresiva del lenguaje",
       "synonyms_and_slang": [
         {
           "term": "Disfunción Expresiva del Lenguaje",
@@ -21983,7 +21983,7 @@
     },
     {
       "term_id": "TALD_005",
-      "canonical_name": "Disfunción Receptiva del Lenguaje",
+      "canonical_name": "Disfunción receptiva del lenguaje",
       "synonyms_and_slang": [
         {
           "term": "Disfunción Receptiva del Lenguaje",
@@ -22056,7 +22056,7 @@
     },
     {
       "term_id": "TALD_006",
-      "canonical_name": "Disfunción de la Iniciativa e Intencionalidad",
+      "canonical_name": "Disfunción de la iniciativa e intencionalidad",
       "synonyms_and_slang": [
         {
           "term": "Disfunción de la Iniciativa e Intencionalidad",
@@ -22275,7 +22275,7 @@
     },
     {
       "term_id": "TALD_009",
-      "canonical_name": "Habla Manierista",
+      "canonical_name": "Habla manierista",
       "synonyms_and_slang": [
         {
           "term": "Habla Manierista",
@@ -22348,7 +22348,7 @@
     },
     {
       "term_id": "TALD_010",
-      "canonical_name": "Habla Presionada",
+      "canonical_name": "Habla presionada",
       "synonyms_and_slang": [
         {
           "term": "Habla Presionada",
@@ -22640,7 +22640,7 @@
     },
     {
       "term_id": "TALD_014",
-      "canonical_name": "Parafasia Fonémica",
+      "canonical_name": "Parafasia fonémica",
       "synonyms_and_slang": [
         {
           "term": "Parafasia Fonémica",
@@ -22713,7 +22713,7 @@
     },
     {
       "term_id": "TALD_015",
-      "canonical_name": "Parafasia Semántica",
+      "canonical_name": "Parafasia semántica",
       "synonyms_and_slang": [
         {
           "term": "Parafasia Semántica",
@@ -22786,7 +22786,7 @@
     },
     {
       "term_id": "TALD_016",
-      "canonical_name": "Pensamiento Enlentecido",
+      "canonical_name": "Pensamiento enlentecido",
       "synonyms_and_slang": [
         {
           "term": "Pensamiento Enlentecido",
@@ -22859,7 +22859,7 @@
     },
     {
       "term_id": "TALD_017",
-      "canonical_name": "Pensamiento Inhibido",
+      "canonical_name": "Pensamiento inhibido",
       "synonyms_and_slang": [
         {
           "term": "Pensamiento Inhibido",
@@ -22932,7 +22932,7 @@
     },
     {
       "term_id": "TALD_018",
-      "canonical_name": "Pensamiento Restringido",
+      "canonical_name": "Pensamiento restringido",
       "synonyms_and_slang": [
         {
           "term": "Pensamiento Restringido",

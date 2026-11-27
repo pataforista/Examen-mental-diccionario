@@ -34,7 +34,7 @@
   "exclusions": [
     {
       "term_id": "SNM_001",
-      "canonical_name": "Síndrome Neuroléptico Maligno",
+      "canonical_name": "Síndrome neuroléptico maligno",
       "reason": "El SNM es una toxicidad por bloqueo dopaminérgico con rigidez sostenida y CPK típicamente muy elevada.",
       "ref_status": "forward"
     }

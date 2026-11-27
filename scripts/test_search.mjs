@@ -15,7 +15,7 @@ const CASES = [
   ["ecolalia", "Ecolalia", 1],
   ["ecolalía", "Ecolalia", 1],
   ["despersonalizacion", "Despersonalización", 1],
-  ["sindrome serotoninergico", "Síndrome Serotoninérgico", 1],
+  ["sindrome serotoninergico", "Síndrome serotoninérgico", 1],
   ["mania", "Manía", 1],
   // Errores de escritura
   ["alusinacion", "Alucinación verdadera", 5],
@@ -27,7 +27,7 @@ const CASES = [
   ["delirio de persecucion", "Delirio persecutorio", 1],
   // Palabras que solo aparecen dentro de la definición (más allá de los primeros caracteres)
   ["zumbidos", "Acoasmas", 1],
-  ["serotonina", "Síndrome Serotoninérgico", 1],
+  ["serotonina", "Síndrome serotoninérgico", 1],
   ["tristeza", "Depresión", 3]
 ];
 
