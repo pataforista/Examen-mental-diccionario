@@ -6,6 +6,9 @@ validation_errors.txt
 validation_output.txt
 build/
 
+# Página de revisión del léxico: se genera con npm run lexicon:report
+docs/revision-lexico.html
+
 # Entorno
 node_modules/
 .DS_Store

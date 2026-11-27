@@ -8,6 +8,9 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 |---|---|
 | `npm run dev` / `npm run build` / `npm run preview` | Desarrollo, build a `dist/`, servir el build |
 | `npm test` | lint + validación del léxico + búsqueda + contraste + lista negra de diseño. **Es la puerta para subir** |
+| `npm run validate` | Reglas del léxico: errores bloquean; avisos de calidad se resumen. `-- --detalle` o `-- --regla <id>` para verlos |
+| `npm run lexicon:report` | Genera `docs/revision-lexico.html` (no versionado): todos los términos con filtros y sus avisos |
+| `npm run build:lexicon` | Regenera `lexicon/lexicon_bundle.json` (lo que lee la app) desde `lexicon/terms/` |
 | `npm run search` | Regresión de la búsqueda contra el léxico real (`scripts/test_search.mjs`) |
 | `npm run test:pwa` | Regresión del diálogo de instalación en navegador real (requiere Playwright y `preview` activo) |
 
@@ -52,6 +55,14 @@ Cada punto de esta lista corresponde a un error real que ocurrió y que `npm run
 - El proxy de la sandbox bloquea CDNs. La app ya no depende de ninguno (Fuse va empaquetado); si aparece `ERR_TUNNEL_CONNECTION_FAILED`, revisa qué recurso externo se coló.
 - Con `serviceWorkers: "block"` en Playwright, `navigator.serviceWorker.register()` resuelve `undefined` y `registerSW` registra "Service Worker registration failed": es un artefacto de la prueba. Para probar el SW de verdad, deja los service workers habilitados.
 - Para ver el aspecto, haz capturas de móvil (390 px de ancho y también 320 px) en claro y oscuro; no des por buena una pantalla sin mirarla.
+
+## Léxico (términos del diccionario)
+
+- **Fuente de verdad:** un archivo por término en `lexicon/terms/<PREFIJO>/<ID>_<nombre>.json`. La app no los lee: lee `lexicon/lexicon_bundle.json`, que genera `npm run build:lexicon`. Tras editar un término, corre ese comando; `npm test` falla si el bundle quedó desactualizado.
+- **Reglas** en `scripts/lexicon_checks.js`, compartidas por el validador y la página de revisión. Para una regla nueva, añade un objeto a `RULES` (y su lugar en `WARNING_ORDER` si es aviso). Error = rompe la app o la integridad; aviso = calidad clínica o de redacción.
+- **Vocabularios cerrados** (`term_kind`, `granularity`, `risk_weight`, relaciones de dominio, tipos de alerta) en `taxonomy/controlled_vocabularies.json`. Un valor nuevo se añade ahí a propósito, no por accidente en un término.
+- `lexicon/mappings/` es una carpeta heredada que la app no usa; sus códigos CIE-11 contradicen a veces los del término. La regla `cie11-conflicto` los señala para decisión clínica: no elijas uno automáticamente.
+- Las alertas son objetos `{ type, message }`; una alerta en texto suelto dejaba vacío el recuadro de riesgo de la ficha.
 
 ## Estructura útil
 

@@ -510,7 +510,7 @@ export const dictionary = {
                     <div class="alert-critical-banner" role="note">
                         <div class="alert-critical-header">${getIcon("alert")} Alerta de riesgo clínico</div>
                         <p class="alert-critical-text">
-                            ${alerts.length > 0 ? sanitize(alerts[0].message) : "Este término implica un riesgo de seguridad o manejo crítico."}
+                            ${sanitize((typeof alerts[0] === "string" ? alerts[0] : alerts[0]?.message) || "Este término implica un riesgo de seguridad o manejo crítico.")}
                         </p>
                     </div>
                 ` : ""}

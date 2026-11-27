@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-06-29T23:12:44.835Z",
+  "generated_at": "2026-11-27T03:25:05.174Z",
   "total_terms": 291,
   "terms": [
     {
@@ -17737,9 +17737,22 @@
           "past"
         ]
       },
+      "domain_links": [
+        {
+          "domain_id": "DOM-12",
+          "relation": "primary_expression",
+          "context": "riesgo_suicida"
+        }
+      ],
       "alerts": [
-        "Requiere evaluación urgente de la inminencia, intencionalidad letal y planificación.",
-        "Activar protocolos de seguridad y prevención del suicidio si se confirma."
+        {
+          "type": "safety_critical",
+          "message": "Requiere evaluación urgente de la inminencia, intencionalidad letal y planificación."
+        },
+        {
+          "type": "safety_critical",
+          "message": "Activar protocolos de seguridad y prevención del suicidio si se confirma."
+        }
       ],
       "synonyms_and_slang": [
         {

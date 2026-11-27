@@ -13,7 +13,8 @@
     "blacklist": "node scripts/check_blacklist.js",
     "build:lexicon": "node scripts/optimize_lexicon.js",
     "test:pwa": "node scripts/test_pwa_dialog.mjs",
-    "search": "node scripts/test_search.mjs"
+    "search": "node scripts/test_search.mjs",
+    "lexicon:report": "node scripts/lexicon_report.js"
   },
   "repository": {
     "type": "git",

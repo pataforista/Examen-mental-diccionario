@@ -119,7 +119,7 @@ e) Conocimiento (Gnosias, info general)`,example:`Memoria y atención conservada
                     <div class="alert-critical-banner" role="note">
                         <div class="alert-critical-header">${s(`alert`)} Alerta de riesgo clínico</div>
                         <p class="alert-critical-text">
-                            ${i.length>0?l(i[0].message):`Este término implica un riesgo de seguridad o manejo crítico.`}
+                            ${l((typeof i[0]==`string`?i[0]:i[0]?.message)||`Este término implica un riesgo de seguridad o manejo crítico.`)}
                         </p>
                     </div>
                 `:``}
