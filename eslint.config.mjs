@@ -8,7 +8,6 @@ export default [
       globals: {
         ...globals.browser, 
         ...globals.node,
-        Fuse: "readonly",
         App: "readonly"
       } 
     }

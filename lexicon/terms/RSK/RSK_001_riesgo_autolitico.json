@@ -22,9 +22,22 @@
       "past"
     ]
   },
+  "domain_links": [
+    {
+      "domain_id": "DOM-12",
+      "relation": "primary_expression",
+      "context": "riesgo_suicida"
+    }
+  ],
   "alerts": [
-    "Requiere evaluación urgente de la inminencia, intencionalidad letal y planificación.",
-    "Activar protocolos de seguridad y prevención del suicidio si se confirma."
+    {
+      "type": "safety_critical",
+      "message": "Requiere evaluación urgente de la inminencia, intencionalidad letal y planificación."
+    },
+    {
+      "type": "safety_critical",
+      "message": "Activar protocolos de seguridad y prevención del suicidio si se confirma."
+    }
   ],
   "synonyms_and_slang": [
     {

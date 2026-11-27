@@ -1033,6 +1033,7 @@ main {
   border: var(--border-width) solid transparent;
   font-size: 14px;
   font-weight: 500;
+  font-family: var(--font-base);
   white-space: nowrap;
   cursor: pointer;
   transition: background-color var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
@@ -1095,6 +1096,7 @@ main {
 }
 
 .empty-state__icon .icon { width: 30px; height: 30px; }
+.empty-state h2,
 .empty-state h3 { margin: 0; font-size: 20px; }
 .empty-state > p { margin-top: var(--space-2); color: var(--text-muted); font-size: 15px; }
 
@@ -1219,6 +1221,9 @@ main {
 
 button.tag { min-height: 44px; cursor: pointer; transition: background-color var(--dur-fast) var(--ease-standard); font-family: var(--font-base); }
 button.tag:hover { background: var(--bg-hover); }
+/* Descriptor enlazado a una ficha del diccionario */
+.tag--term { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, var(--border-subtle)); }
+.tag--term .icon { width: 13px; height: 13px; }
 
 /* --------------------------------------------------------------------------
    8. Botones
@@ -1689,7 +1694,18 @@ button.tag:hover { background: var(--bg-hover); }
   flex-wrap: wrap;
 }
 
+.term-reviewed {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: calc(-1 * var(--space-2)) 0 var(--space-3);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.term-reviewed .icon { width: 15px; height: 15px; color: var(--h-mint); flex: none; }
+
 .case-head .term-title { margin-bottom: var(--space-2); }
+.case-head .case-id { flex-basis: 100%; font-size: 13px; font-weight: 500; }
 
 .case-quote {
   margin: var(--space-4) 0 var(--space-5);
@@ -1986,7 +2002,7 @@ button.tag:hover { background: var(--bg-hover); }
   align-items: center;
   gap: var(--space-3);
   margin-bottom: 2px;
-  padding: 10px 12px;
+  padding: 0 12px 0 0;
   border-radius: var(--radius-btn);
   font-size: 14px;
   color: var(--text-muted);
@@ -1995,6 +2011,23 @@ button.tag:hover { background: var(--bg-hover); }
 }
 
 .step-item:hover { background: var(--bg-hover); color: var(--text-main); }
+
+.step-item__btn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 0 10px 12px;
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 
 .step-item.active {
   background: var(--bg-surface);
@@ -2259,6 +2292,16 @@ button.tag:hover { background: var(--bg-hover); }
 .game-controls-collapsible.collapsed {
   max-height: 0;
   opacity: 0;
+  /* Fuera del orden de tabulación mientras está plegado. */
+  visibility: hidden;
+  transition: max-height 0.35s var(--ease-standard), opacity var(--dur-base) ease, visibility 0s linear 0.35s;
+}
+
+/* Plegado: sin la línea divisoria ni el hueco inferior. */
+.game-config-toggle[aria-expanded="false"] {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom-color: transparent;
 }
 
 .game-controls-row {
@@ -2460,6 +2503,18 @@ button.tag:hover { background: var(--bg-hover); }
   color: var(--ritual-red);
   opacity: 1;
 }
+
+/* El estado no depende solo del color: una etiqueta de texto lo nombra. */
+.opt.correct-flash::before,
+.opt.wrong-flash::before {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.opt.correct-flash::before { content: "Correcta"; }
+.opt.wrong-flash::before { content: "Tu elección"; }
 
 @keyframes correct-ring {
   0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--h-mint) 45%, transparent); }
@@ -2827,6 +2882,7 @@ button,
     max-height: none;
     opacity: 1;
     overflow: visible;
+    visibility: visible;
     transition: none;
   }
 
@@ -2878,8 +2934,12 @@ button,
   .step-item {
     flex-shrink: 0;
     margin-bottom: 0;
-    padding: 6px 12px 6px 6px;
+    padding: 0 12px 0 0;
     white-space: nowrap;
+  }
+
+  .step-item__btn {
+    padding: 6px 0 6px 6px;
     font-size: 13px;
   }
 
@@ -2968,3 +3028,26 @@ button,
   .ritual-subtitle { display: none; }
   .app-header h1 { font-size: 19px; line-height: 1.2; }
 }
+
+/* Pantallas de 360 px o menos: las cinco pestañas caben sin desplazamiento lateral
+   (con el mínimo de 56 px por botón la última quedaba cortada a 320 px). */
+@media (max-width: 360px) {
+  .bottom-nav[data-hs-tabbar] {
+    width: calc(100% - 2 * var(--space-2, 8px));
+    gap: 0;
+    padding-inline: var(--space-1, 4px);
+  }
+  .bottom-nav[data-hs-tabbar] > button {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 0;
+    font-size: 10.5px;
+    letter-spacing: -0.01em;
+  }
+  .bottom-nav button { font-size: 10.5px; }
+  .nav-icon { width: 40px; }
+  /* El título ocupaba tres líneas junto a los tres botones de la cabecera. */
+  .app-header h1 { font-size: 17px; }
+  .header-top { gap: var(--space-1); }
+}
+

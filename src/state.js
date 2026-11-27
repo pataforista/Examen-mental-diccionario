@@ -2,7 +2,7 @@ export const state = {
   terms: [],
   domains: [],
   cases: [],
-  fuse: null,
+  search: null,
   currentView: "dictionary",
   recentSearches: [],
   searchDebounceTimer: null

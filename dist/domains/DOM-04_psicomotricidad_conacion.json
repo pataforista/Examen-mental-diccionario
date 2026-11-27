@@ -46,6 +46,12 @@
         "estereotipias",
         "manierismos"
       ],
+      "term_links": {
+        "acatisia": "AKT_001",
+        "distonia_aguda": "MOT_006",
+        "tics": "MOT_010",
+        "manierismos": "MOT_008"
+      },
       "notes": "Si hay acatisia, especificar si es subjetiva (sensación interna) u objetiva (marcha tasikinética). Estereotipias: repetitivas, sin finalidad consciente. Manierismos: gestos peculiares con función aparente (ej. social or defensiva)."
     },
     {
@@ -61,6 +67,15 @@
         "obediencia_automatica",
         "ambitendencia"
       ],
+      "term_links": {
+        "estupor_catatonico": "CAT_002",
+        "negativismo": "VOL_009",
+        "mutismo": "SPE_007",
+        "flexibilidad_cerea": "VOL_004",
+        "ecopraxia": "VOL_003",
+        "obediencia_automatica": "CAT_005",
+        "ambitendencia": "ARC_001"
+      },
       "notes": "Registrar solo si están presentes. La catatonía puede coexistir con múltiples etiologías psiquiátricas y médicas."
     },
     {
@@ -72,6 +87,10 @@
         "abulia",
         "apragmatismo"
       ],
+      "term_links": {
+        "hipobulia": "VOL_006",
+        "abulia": "VOL_001"
+      },
       "notes": "Hipobulia/Abulia: déficit de voluntad e inicio. Apragmatismo: incapacidad para realizar acciones complejas a pesar de conservar la voluntad inicial (lesión frontal)."
     },
     {
@@ -83,6 +102,9 @@
         "desinhibicion",
         "actos_compulsivos"
       ],
+      "term_links": {
+        "impulsividad": "VOL_007"
+      },
       "notes": "Impulsividad: acción sin planificación. Compulsión: acto repetitivo para reducir ansiedad. Fenomenológicamente distintos."
     },
     {

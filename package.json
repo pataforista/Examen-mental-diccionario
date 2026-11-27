@@ -8,11 +8,19 @@
     "preview": "vite preview",
     "lint": "eslint src sw.js",
     "validate": "node scripts/validate_terms.js",
-    "test": "npm run lint && npm run validate && npm run contrast && npm run blacklist",
+    "test": "npm run lint && npm run validate && npm run search && npm run lexicon:tools && npm run contrast && npm run blacklist",
     "contrast": "node scripts/check_contrast.js",
     "blacklist": "node scripts/check_blacklist.js",
     "build:lexicon": "node scripts/optimize_lexicon.js",
-    "test:pwa": "node scripts/test_pwa_dialog.mjs"
+    "test:pwa": "node scripts/test_pwa_dialog.mjs",
+    "search": "node scripts/test_search.mjs",
+    "lexicon:report": "node scripts/lexicon_report.js",
+    "term:review": "node scripts/term_review.js",
+    "lexicon:export": "node scripts/lexicon_sheet.js exportar",
+    "lexicon:import": "node scripts/lexicon_sheet.js importar",
+    "term:new": "node scripts/term_new.js",
+    "lexicon:tools": "node scripts/test_lexicon_tools.mjs",
+    "lexicon:audit": "node scripts/lexicon_audit.js"
   },
   "repository": {
     "type": "git",
@@ -38,5 +46,8 @@
     "globals": "^17.7.0",
     "prettier": "^3.9.5",
     "vite": "^8.1.4"
+  },
+  "dependencies": {
+    "fuse.js": "7.1.0"
   }
 }

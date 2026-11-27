@@ -205,10 +205,11 @@ export const integrator = {
   },
   renderStepsList: function () {
     this.nodes.stepsList.innerHTML = this.steps.map((step, index) => `
-                <li class="step-item ${index === this.currentStep ? "active" : ""} ${this.responses[step.id] ? "completed" : ""}" 
-                    onclick="App.integrator.goToStep(${index})" id="step-nav-${step.id}">
-                    <span class="step-number">${index + 1}</span>
-                    <span class="step-text-label">${step.label}</span>
+                <li class="step-item ${index === this.currentStep ? "active" : ""} ${this.responses[step.id] ? "completed" : ""}" id="step-nav-${step.id}">
+                    <button type="button" class="step-item__btn" onclick="App.integrator.goToStep(${index})"${index === this.currentStep ? ' aria-current="step"' : ""}>
+                        <span class="step-number">${index + 1}</span>
+                        <span class="step-text-label">${step.label}</span>
+                    </button>
                 </li>
             `).join("");
   },
@@ -227,7 +228,15 @@ export const integrator = {
     this.nodes.prevBtn.disabled = this.currentStep === 0;
     this.nodes.nextBtn.innerHTML = this.currentStep === this.steps.length - 1 ? `Finalizar ${getIcon("check")}` : `Siguiente ${getIcon("arrow-right")}`;
     const items = this.nodes.stepsList.querySelectorAll(".step-item");
-    items.forEach((item, i) => item.classList.toggle("active", i === this.currentStep));
+    items.forEach((item, i) => {
+      const isActive = i === this.currentStep;
+      item.classList.toggle("active", isActive);
+      const btn = item.querySelector(".step-item__btn");
+      if (btn) {
+        if (isActive) btn.setAttribute("aria-current", "step"); else btn.removeAttribute("aria-current");
+      }
+      if (isActive && this.nodes.stepsList.offsetParent) item.scrollIntoView({ block: "nearest", inline: "nearest" });
+    });
   },
   renderOptionsForStep: function (step) {
     const domain = App.data.domains.find(d => d.domain_id === step.domain);
@@ -254,30 +263,33 @@ export const integrator = {
       return;
     }
     this.nodes.optionsContainer.innerHTML = terms.map(t => {
-      const isSelected = this.responses[step.id]?.includes(t.replace(/_/g, " "));
-      return `<button type="button" class="int-opt ${isSelected ? "selected" : ""}" aria-pressed="${isSelected ? "true" : "false"}" onclick="App.integrator.toggleTerm('${t}')">${t.replace(/_/g, " ")}</button>`;
+      const isSelected = this._tokens(this.responses[step.id]).includes(App.utils.humanize(t));
+      return `<button type="button" class="int-opt ${isSelected ? "selected" : ""}" aria-pressed="${isSelected ? "true" : "false"}" onclick="App.integrator.toggleTerm('${t}')">${App.utils.humanize(t)}</button>`;
     }).join("");
   },
   toggleTerm: function (term) {
     App.utils.haptic();
     const step = this.steps[this.currentStep];
-    const cleanTerm = term.replace(/_/g, " ");
-    let current = this.responses[step.id] || "";
-    if (current.includes(cleanTerm)) {
-      current = current.replace(new RegExp(`${cleanTerm},?\\s?`, "g"), "").trim();
-      if (current.endsWith(",")) current = current.slice(0, -1);
-    } else {
-      current = current ? `${current}, ${cleanTerm}` : cleanTerm;
-    }
+    const cleanTerm = App.utils.humanize(term);
+    // Se compara por elemento completo, no por subcadena: "orientado" no debe
+    // coincidir con "desorientado". Lo que la persona escribió a mano se conserva.
+    const tokens = this._tokens(this.responses[step.id]);
+    const idx = tokens.indexOf(cleanTerm);
+    if (idx >= 0) tokens.splice(idx, 1); else tokens.push(cleanTerm);
+    const current = tokens.join(", ");
     this.responses[step.id] = current;
     this.nodes.stepText.value = current;
     this.updateReport();
     this.renderOptionsForStep(step);
     this.updateStepStatus(step.id);
   },
+  _tokens: function (text) {
+    return String(text || "").split(",").map(t => t.trim()).filter(Boolean);
+  },
   updateStepStatus: function (stepId) {
     const el = document.getElementById(`step-nav-${stepId}`);
     if (el) el.classList.toggle("completed", !!this.responses[stepId]);
+    this.updateProgressBar();
   },
   navigate: function (dir) {
     App.utils.haptic();

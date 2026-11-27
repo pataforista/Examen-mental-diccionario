@@ -306,10 +306,13 @@ export const game = {
       return;
     }
     this.nodes.prompt.textContent = `¿Cuál define mejor: "${round.target.canonical_name}"?`;
-    this.nodes.subprompt.textContent = `${round.target.term_kind} · ${App.getDomainSlug(round.target.domain_links?.[0]?.domain_id || "")}`;
-    this.renderOptions(round.options, opt => this.gradeMcq(opt.correct, round.target));
+    const domainId = round.target.domain_links?.[0]?.domain_id || "";
+    const domain = App.data.domains.find(d => d.domain_id === domainId);
+    const domainLabel = domain?.label_es || App.utils.humanize(App.getDomainSlug(domainId));
+    this.nodes.subprompt.textContent = [App.utils.humanize(round.target.term_kind, true), domainLabel].filter(Boolean).join(" · ");
+    this.renderOptions(round.options, (opt, btn) => this.gradeMcq(opt.correct, round.target, btn));
   },
-  gradeMcq: function (isCorrect, target) {
+  gradeMcq: function (isCorrect, target, chosenBtn) {
     this.stopTimer();
     if (isCorrect) {
       const timeBonus = Math.floor(this.arcade.timeLeft / 10);
@@ -325,25 +328,29 @@ export const game = {
       if (target.teaching_notes) this.nodes.hint.textContent = `Nota: ${target.teaching_notes[0]}`;
       this.nodes.gameCard.classList.add("animate-pulse");
       setTimeout(() => this.nodes.gameCard.classList.remove("animate-pulse"), 400);
-      this._flashOptions(true);
+      this._markAnswer(chosenBtn, true);
       this._animateScore(prevScore, this.stats.score);
       this.disableOptions();
     } else {
       if (("vibrate" in navigator)) try {
         navigator.vibrate([40, 20, 40]);
       } catch(e) { console.warn(e); }
-      this._flashOptions(false);
-      this.loseLife("Incorrecto.");
+      // Marca la elegida como error y revela la correcta: sin esto la ronda no enseña nada.
+      this._markAnswer(chosenBtn, false, true);
+      this.loseLife("Incorrecto. Abajo queda señalada la definición correcta.");
     }
     this.saveStats();
   },
-  _flashOptions: function (correct) {
-    const cls = correct ? "correct-flash" : "wrong-flash";
-    const btns = this.nodes.options.querySelectorAll("button");
-    btns.forEach(b => {
-      b.classList.add(cls);
-      setTimeout(() => b.classList.remove(cls), 600);
-    });
+  _markAnswer: function (chosenBtn, correct, revealCorrect = false) {
+    if (chosenBtn) {
+      chosenBtn.classList.add(correct ? "correct-flash" : "wrong-flash");
+      chosenBtn.disabled = true;
+    }
+    if (revealCorrect) {
+      this.nodes.options.querySelectorAll("button.opt").forEach(b => {
+        if (b._opt && b._opt.correct) b.classList.add("correct-flash");
+      });
+    }
   },
   _animateScore: function (from, to) {
     const el = this.nodes.score;
@@ -390,7 +397,7 @@ export const game = {
     const uniqueOptions = [targetName, ...distractors];
     const termOptions = this.shuffle(uniqueOptions.map(name => ({
       id: name,
-      text: name.replace(/_/g, " "),
+      text: App.utils.humanize(name, true),
       correct: name === targetName
     })));
     const correctKeys = c.assessment_keys?.key_discriminators || [];
@@ -401,11 +408,11 @@ export const game = {
       };
     }
     const discOptions = this.shuffle([{
-      text: this.sampleOne(correctKeys),
+      text: App.utils.humanize(this.sampleOne(correctKeys), true),
       correct: true,
       why: "Criterio discriminante clave."
     }, {
-      text: this.sampleOne(wrongKeys),
+      text: App.utils.humanize(this.sampleOne(wrongKeys), true),
       correct: false,
       why: "Error común a evitar."
     }]);
@@ -422,11 +429,12 @@ export const game = {
       this.nodes.subprompt.textContent = round.error;
       return;
     }
-    this.nodes.prompt.textContent = "Paso 1: Identifica el Síndrome / Diagnóstico";
+    this.nodes.prompt.textContent = "Paso 1: identifica el síndrome o diagnóstico";
     const contextNotes = round.case?.stem?.contextual_notes || "Caso clínico sin descripción";
     this.nodes.subprompt.textContent = `"${contextNotes}"`;
-    this.renderOptions(round.termOptions, opt => {
+    this.renderOptions(round.termOptions, (opt, btn) => {
       if (opt.correct) {
+        this._markAnswer(btn, true);
         this.playAudio("correct");
         this.showFeedback("Correcto. Ahora valida el criterio clave.", "ok");
         this.disableOptions();
@@ -435,15 +443,16 @@ export const game = {
           this.renderDiffPhase2(round);
         }, 500);
       } else {
-        this.loseLife("Diagnóstico incorrecto.");
+        this._markAnswer(btn, false);
+        this.loseLife("Diagnóstico incorrecto. Prueba otra opción.");
       }
     });
   },
   renderDiffPhase2: function (round) {
-    this.nodes.prompt.textContent = "Paso 2: Selecciona el criterio discriminante válido";
+    this.nodes.prompt.textContent = "Paso 2: elige el criterio que lo distingue";
     this.nodes.options.textContent = "";
     this.startTimer();
-    this.renderOptions(round.discOptions, opt => {
+    this.renderOptions(round.discOptions, (opt, btn) => {
       this.stopTimer();
       if (opt.correct) {
         const prevScore = this.stats.score;
@@ -459,15 +468,15 @@ export const game = {
         this.nodes.hint.textContent = `Clave: ${opt.text}`;
         this.nodes.gameCard.classList.add("animate-pulse");
         setTimeout(() => this.nodes.gameCard.classList.remove("animate-pulse"), 400);
-        this._flashOptions(true);
+        this._markAnswer(btn, true);
         this._animateScore(prevScore, this.stats.score);
         this.disableOptions();
       } else {
         if (("vibrate" in navigator)) try {
           navigator.vibrate([60, 30, 60]);
         } catch(e) { console.warn(e); }
-        this._flashOptions(false);
-        this.loseLife("Criterio incorrecto.");
+        this._markAnswer(btn, false);
+        this.loseLife(`Criterio incorrecto: es un ${opt.why ? opt.why.toLowerCase().replace(/\.$/, "") : "error común"}.`);
       }
       this.saveStats();
     });
@@ -478,7 +487,9 @@ export const game = {
       const btn = document.createElement("button");
       btn.className = "opt";
       btn.textContent = opt.text;
-      btn.onclick = () => callback(opt);
+      btn.type = "button";
+      btn._opt = opt;
+      btn.onclick = () => callback(opt, btn);
       this.nodes.options.appendChild(btn);
     });
   },

@@ -23,6 +23,12 @@
         "mania_sin_delirio",
         "neurastenia"
       ],
+      "term_links": {
+        "degeneracionismo": "ARC_004",
+        "histeria": "ARC_009",
+        "mania_sin_delirio": "ARC_014",
+        "neurastenia": "ARC_016"
+      },
       "notes": "Construcciones teóricas y descriptores en desuso, de interés para la historia de la psiquiatría y la lectura de fuentes clásicas."
     },
     {
@@ -36,6 +42,14 @@
         "psicosis_toxica",
         "neurosis_de_angustia"
       ],
+      "term_links": {
+        "moral_insanity": "HIS_002",
+        "furor_uterino": "HIS_006",
+        "locura_lucida": "HIS_007",
+        "esquizofrenia_simple": "HIS_008",
+        "psicosis_toxica": "HIS_009",
+        "neurosis_de_angustia": "HIS_010"
+      },
       "notes": "Cuadros clínicos descritos en periodos previos cuya denominación ha sido reemplazada o subsumida por categorías actuales."
     }
   ],

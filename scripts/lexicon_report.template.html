@@ -1,0 +1,375 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Revisión del léxico</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Una columna de lectura (≈ 70 ch) bajo una barra de filtros fija; los avisos van
+   arriba de cada término porque son lo que se revisa. Paleta "humano" del Diccionario. */
+:root {
+  --bg: #FBF1EC;
+  --surface: #FFFFFF;
+  --surface-2: #FDF6F2;
+  --line: #EEDDD5;
+  --fg: #2A2D45;
+  --muted: #66687F;
+  --accent: #3D4A8F;
+  --accent-soft: #E4E7F6;
+  --warn-bg: #FFF3E6;
+  --warn-fg: #7A4310;
+  --warn-line: #F0C9A0;
+  --err-bg: #FBE1EA;
+  --err-fg: #9E2A42;
+  --err-line: #EBA9B9;
+  --ok: #2F7A63;
+  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #191A2B; --surface: #23253A; --surface-2: #2B2E47; --line: #363955;
+    --fg: #F3EEF3; --muted: #A6A8C0; --accent: #A9B3EE; --accent-soft: #2F3766;
+    --warn-bg: #3A2E26; --warn-fg: #F6D3B0; --warn-line: #6B4A2E;
+    --err-bg: #3D2230; --err-fg: #F7B3C2; --err-line: #7A3A50; --ok: #7FD0B5;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #191A2B; --surface: #23253A; --surface-2: #2B2E47; --line: #363955;
+  --fg: #F3EEF3; --muted: #A6A8C0; --accent: #A9B3EE; --accent-soft: #2F3766;
+  --warn-bg: #3A2E26; --warn-fg: #F6D3B0; --warn-line: #6B4A2E;
+  --err-bg: #3D2230; --err-fg: #F7B3C2; --err-line: #7A3A50; --ok: #7FD0B5;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 15px/1.55 var(--font-body);
+}
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
+.mono { font-family: var(--font-mono); font-size: 0.82em; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Cabecera */
+header.top { padding-block: 28px 8px; display: grid; gap: 6px; }
+header.top h1 { font-size: 26px; line-height: 1.2; }
+header.top p { margin: 0; color: var(--muted); max-width: 65ch; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 10px; font-variant-numeric: tabular-nums; }
+.stats div { display: grid; }
+.stats b { font: 600 22px/1.2 var(--font-display); }
+.stats span { color: var(--muted); font-size: 13px; }
+.stats .is-err b { color: var(--err-fg); }
+
+/* Resumen por regla: cada fila filtra */
+.rules { display: grid; gap: 4px; margin-block: 18px 8px; padding: 0; list-style: none; }
+.rules button {
+  width: 100%; display: flex; gap: 10px; align-items: baseline; text-align: left;
+  padding: 7px 10px; border: 1px solid transparent; border-radius: 10px; background: none; cursor: pointer;
+}
+.rules button:hover { background: var(--surface-2); }
+.rules button[aria-pressed="true"] { background: var(--surface); border-color: var(--accent); }
+.rules .n { min-width: 3ch; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.rules .sev { font-size: 12px; padding: 1px 8px; border-radius: 999px; }
+.sev-error { background: var(--err-bg); color: var(--err-fg); }
+.sev-aviso { background: var(--warn-bg); color: var(--warn-fg); }
+.sev-info { background: var(--accent-soft); color: var(--accent); }
+.issues li.info { background: var(--surface-2); border-color: var(--line); color: var(--muted); }
+.domain-issues { margin: 0 0 8px; display: grid; gap: 6px; }
+.domain-issues h2 { font-size: 16px; }
+.rules .zero { color: var(--muted); }
+.rules .clean { padding: 7px 10px; color: var(--ok); font-size: 14px; }
+
+/* Barra de filtros */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+  padding-block: 10px;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filters input[type="search"] {
+  flex: 1 1 220px; min-width: 0; padding: 9px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface);
+}
+.filters select { padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); max-width: 100%; }
+.filters label.check { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; }
+.count { margin-top: 6px; font-size: 13px; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; }
+.count button { border: 0; background: none; color: var(--accent); padding: 0; cursor: pointer; text-decoration: underline; }
+
+/* Términos */
+.list { display: grid; gap: 14px; padding-block: 16px 48px; }
+.term { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
+.term-head { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.term-head h2 { font-size: 19px; line-height: 1.3; }
+.term-head .id { color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12.5px; }
+.chip { padding: 2px 9px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--muted); }
+.chip.kind { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.chip.review-vigente { background: transparent; border-color: var(--ok); color: var(--ok); }
+.chip.review-desactualizada { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn-fg); }
+.chip.risk-hi { background: var(--err-bg); border-color: transparent; color: var(--err-fg); }
+
+.issues { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.issues li { padding: 7px 10px; border-radius: 10px; border: 1px solid; font-size: 14px; }
+.issues li.error { background: var(--err-bg); border-color: var(--err-line); color: var(--err-fg); }
+.issues li.aviso { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn-fg); }
+.issues li b { font-weight: 600; }
+
+.def { margin: 0; max-width: 70ch; }
+dl.fields { margin: 0; display: grid; gap: 6px; }
+dl.fields div { display: grid; grid-template-columns: 150px 1fr; gap: 10px; }
+dl.fields dt { color: var(--muted); font-size: 13px; padding-top: 2px; }
+dl.fields dd { margin: 0; min-width: 0; }
+.empty-val { color: var(--muted); font-style: italic; }
+
+details { border-top: 1px solid var(--line); padding-top: 8px; }
+summary { cursor: pointer; color: var(--accent); font-size: 14px; width: fit-content; }
+details ul { margin: 6px 0 0; padding-left: 20px; }
+details h3 { font: 600 13px/1.4 var(--font-body); color: var(--muted); margin-top: 10px; }
+
+.file { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
+.file code { overflow-wrap: anywhere; }
+.file button { border: 1px solid var(--line); background: var(--surface-2); border-radius: 8px; padding: 2px 8px; cursor: pointer; font-size: 12px; }
+.ok-badge { color: var(--ok); font-size: 13px; }
+.nothing { text-align: center; color: var(--muted); padding: 40px 0; }
+
+@media (max-width: 560px) {
+  /* En el teléfono la barra con cuatro filtros ocuparía media pantalla: no se fija. */
+  .bar { position: static; }
+  .filters input[type="search"] { flex-basis: 100%; }
+  dl.fields div { grid-template-columns: 1fr; gap: 0; }
+  header.top h1 { font-size: 22px; }
+  .filters select { flex: 1 1 45%; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Revisión del léxico</h1>
+    <p>Diccionario de examen mental. Los avisos salen de las mismas reglas que <span class="mono">npm run validate</span>. Para corregir, edita el archivo indicado en cada término; para firmar una revisión, <span class="mono">npm run term:review -- ID --por "Nombre"</span>. Vuelve a generar esta página con <span class="mono">npm run lexicon:report</span>.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+  <ul class="rules" id="rules" aria-label="Filtrar por regla"></ul>
+  <section class="domain-issues" id="domain-issues" hidden></section>
+</div>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="filters" role="search">
+      <input id="q" type="search" placeholder="Buscar nombre, definición, sinónimo o ID" aria-label="Buscar nombre, definición, sinónimo o ID" autocomplete="off">
+      <select id="domain" aria-label="Dominio"></select>
+      <select id="kind" aria-label="Tipo de término"></select>
+      <select id="review" aria-label="Estado de revisión">
+        <option value="">Toda revisión</option>
+        <option value="sin_revisar">Sin revisar</option>
+        <option value="borrador">Borrador</option>
+        <option value="en_revision">En revisión</option>
+        <option value="vigente">Revisados</option>
+        <option value="desactualizada">Cambiaron tras revisarse</option>
+      </select>
+      <select id="sort" aria-label="Orden">
+        <option value="issues">Con avisos primero</option>
+        <option value="name">Alfabético</option>
+        <option value="id">Por ID</option>
+        <option value="risk">Mayor riesgo primero</option>
+      </select>
+      <label class="check"><input id="pending" type="checkbox"> Solo con avisos</label>
+    </div>
+    <div class="count"><span id="count" aria-live="polite"></span><button id="reset" type="button">Quitar filtros</button></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="list" id="list"></div>
+</main>
+
+<script>
+const DATA = /*__DATA__*/null;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const RELATION = {
+  primary_expression: "expresión principal", secondary_expression: "expresión secundaria", differential_anchor: "ancla diferencial",
+  risk_context: "contexto de riesgo", risk_factor: "factor de riesgo", modifier: "modificador", associated_symptom: "síntoma asociado",
+  associated_sign: "signo asociado", syndrome_builder: "constituye síndrome", historical_framework: "marco histórico"
+};
+
+const state = { q: "", domain: "", kind: "", review: "", sort: "issues", pending: false, rule: "" };
+const REVIEW_LABEL = { sin_revisar: "Sin revisar", borrador: "Borrador", en_revision: "En revisión", vigente: "Revisado", desactualizada: "Cambió tras revisarse" };
+try { Object.assign(state, JSON.parse(localStorage.getItem("revision-lexico") || "{}")); } catch (e) { /* sin almacenamiento */ }
+const save = () => { try { localStorage.setItem("revision-lexico", JSON.stringify(state)); } catch (e) { /* sin almacenamiento */ } };
+
+// Índice de búsqueda por término
+for (const t of DATA.terms) {
+  t._hay = norm([t.id, t.name, t.core, t.subj, t.behav, ...t.syn, ...t.features].join(" "));
+  t._errors = t.issues.filter(i => i.sev === "error").length;
+  t._warn = t.issues.filter(i => i.sev !== "info").length;
+}
+
+function renderHeader() {
+  const total = DATA.terms.length;
+  const withIssues = DATA.terms.filter(t => t._warn).length;
+  const errors = DATA.terms.reduce((n, t) => n + t._errors, 0) + DATA.loadErrors.length + DATA.domainIssues.filter(i => i.sev === "error").length;
+  const date = new Date(DATA.generated).toLocaleString("es-MX", { dateStyle: "long", timeStyle: "short" });
+  $("stats").innerHTML = `
+    <div><b>${total}</b><span>términos</span></div>
+    <div><b>${total - withIssues}</b><span>sin avisos</span></div>
+    <div><b>${withIssues}</b><span>con algo que revisar</span></div>
+    <div class="${errors ? "is-err" : ""}"><b>${errors}</b><span>errores que bloquean</span></div>
+    <div><b>${DATA.terms.filter(t => t.review.state === "vigente").length}</b><span>revisados clínicamente</span></div>
+    <div><b style="font-size:15px;font-weight:500;font-family:var(--font-body)">${esc(date)}</b><span>generada</span></div>`;
+
+  const rows = DATA.rules.map(r => {
+    const n = new Set([...DATA.terms.filter(t => t.issues.some(i => i.rule === r.id)).map(t => t.id), ...DATA.domainIssues.filter(i => i.rule === r.id).map(i => i.id)]).size;
+    return { ...r, n };
+  });
+  // Las reglas de integridad sin hallazgos se resumen en una línea; el resto, en el orden de las reglas.
+  const cleanErrors = rows.filter(r => r.sev === "error" && !r.n);
+  const shown = rows.filter(r => r.n || r.sev !== "error");
+  $("rules").innerHTML = (cleanErrors.length ? `<li class="clean">${cleanErrors.length === rows.filter(r => r.sev === "error").length ? "Integridad correcta" : "Sin hallazgos"}: ${cleanErrors.length} reglas de error sin problemas (IDs, campos obligatorios, vocabulario, dominios, exclusiones).</li>` : "") + shown.map(r => `
+    <li><button type="button" data-rule="${r.id}" aria-pressed="${state.rule === r.id}">
+      <span class="n ${r.n ? "" : "zero"}">${r.n}</span>
+      <span class="sev sev-${r.sev}">${r.sev}</span>
+      <span class="${r.n ? "" : "zero"}">${esc(r.title)}</span>
+    </button></li>`).join("");
+  if (DATA.loadErrors.length) {
+    $("rules").insertAdjacentHTML("afterbegin", DATA.loadErrors.map(e => `<li><ul class="issues"><li class="error"><b>No se pudo leer</b> ${esc(e.file)}: ${esc(e.message)}</li></ul></li>`).join(""));
+  }
+}
+
+// Hallazgos de los archivos de dominio (no pertenecen a un término).
+function renderDomainIssues() {
+  const list = DATA.domainIssues.filter(i => !state.rule || i.rule === state.rule);
+  const box = $("domain-issues");
+  box.hidden = !list.length;
+  if (!list.length) return;
+  box.innerHTML = `<h2>Archivos de dominio</h2><ul class="issues">${list.map(i => {
+    const rule = DATA.rules.find(r => r.id === i.rule);
+    return `<li class="${i.sev}"><b>${esc(i.id)} · ${esc(rule ? rule.title : i.rule)}:</b> ${esc(i.msg)} <span class="mono">(${esc(i.file)})</span></li>`;
+  }).join("")}</ul>`;
+}
+
+function fillSelects() {
+  const domains = Object.entries(DATA.domains).sort((a, b) => a[0].localeCompare(b[0]));
+  $("domain").innerHTML = `<option value="">Todos los dominios</option>` + domains.map(([id, label]) => `<option value="${id}">${esc(label)}</option>`).join("");
+  const kinds = [...new Set(DATA.terms.map(t => t.kind))].sort((a, b) => a.localeCompare(b, "es"));
+  $("kind").innerHTML = `<option value="">Todos los tipos</option>` + kinds.map(k => `<option value="${esc(k)}">${esc(k.replace(/_/g, " "))}</option>`).join("");
+}
+
+function field(label, value) {
+  const v = Array.isArray(value) ? value.filter(Boolean).join(" · ") : value;
+  return `<div><dt>${label}</dt><dd>${v ? esc(v) : '<span class="empty-val">sin dato</span>'}</dd></div>`;
+}
+function bullets(title, items) {
+  return items.length ? `<h3>${title}</h3><ul>${items.map(i => `<li>${esc(i)}</li>`).join("")}</ul>` : "";
+}
+
+function termHTML(t) {
+  const issues = t.issues.length
+    ? `<ul class="issues">${t.issues.map(i => {
+        const rule = DATA.rules.find(r => r.id === i.rule);
+        return `<li class="${i.sev}"><b>${esc(rule ? rule.title : i.rule)}:</b> ${esc(i.msg)}</li>`;
+      }).join("")}</ul>`
+    : "";
+  const clean = t._warn ? "" : `<span class="ok-badge">Sin avisos</span>`;
+  const domains = t.domains.map(d => `${DATA.domains[d.id] || d.id}${RELATION[d.rel] ? ` (${RELATION[d.rel]})` : ""}`);
+  const excl = t.excl.map(e => `${e.name || "sin nombre"}${e.id ? ` [${e.id}]` : ""}${e.reason ? `: ${e.reason}` : ""}`);
+  const more = [bullets("Rasgos requeridos", t.features), bullets("Notas docentes", t.teaching), bullets("Errores cognitivos frecuentes", t.pitfalls),
+    bullets("Alertas", t.alerts), bullets("Exclusiones (no confundir con)", excl)].join("");
+  return `
+  <article class="term" id="t-${esc(t.id)}">
+    <div class="term-head"><h2>${esc(t.name)}</h2><span class="id mono">${esc(t.id)}</span></div>
+    <div class="meta">
+      <span class="chip kind">${esc(t.kind.replace(/_/g, " ") || "sin tipo")}</span>
+      ${t.risk !== null ? `<span class="chip ${t.risk >= 3 ? "risk-hi" : ""}">riesgo ${t.risk}/5</span>` : ""}
+      ${t.cie11 ? `<span class="chip mono">CIE-11 ${esc(t.cie11)}</span>` : ""}
+      <span class="chip review-${t.review.state}" title="${esc(t.review.notes)}">${esc(REVIEW_LABEL[t.review.state] || t.review.state)}${t.review.by ? ` · ${esc(t.review.by)}` : ""}${t.review.date ? ` · ${esc(t.review.date)}` : ""}</span>
+    </div>
+    ${issues}${clean}
+    <p class="def">${t.core ? esc(t.core) : '<span class="empty-val">Sin definición</span>'}</p>
+    <dl class="fields">
+      ${field("Marcador subjetivo", t.subj)}
+      ${field("Marcador conductual", t.behav)}
+      ${field("Sinónimos", t.syn)}
+      ${field("Dominios", domains)}
+    </dl>
+    ${more ? `<details><summary>Rasgos, notas, alertas y exclusiones</summary>${more}</details>` : ""}
+    <div class="file"><span>Editar:</span><code class="mono">${esc(t.file)}</code><button type="button" data-copy="${esc(t.file)}">Copiar ruta</button></div>
+  </article>`;
+}
+
+function render() {
+  const q = norm(state.q.trim());
+  let list = DATA.terms.filter(t =>
+    (!q || q.split(/\s+/).every(w => t._hay.includes(w))) &&
+    (!state.domain || t.domains.some(d => d.id === state.domain)) &&
+    (!state.kind || t.kind === state.kind) &&
+    (!state.review || t.review.state === state.review) &&
+    (!state.pending || t._warn) &&
+    (!state.rule || t.issues.some(i => i.rule === state.rule)));
+  const by = {
+    name: (a, b) => a.name.localeCompare(b.name, "es"),
+    id: (a, b) => a.id.localeCompare(b.id, "en", { numeric: true }),
+    risk: (a, b) => (b.risk ?? -1) - (a.risk ?? -1) || a.name.localeCompare(b.name, "es"),
+    issues: (a, b) => b._errors - a._errors || b._warn - a._warn || a.name.localeCompare(b.name, "es")
+  };
+  list = list.sort(by[state.sort] || by.issues);
+  const rule = DATA.rules.find(r => r.id === state.rule);
+  $("count").textContent = `Mostrando ${list.length} de ${DATA.terms.length}${rule ? ` · regla: ${rule.title}` : ""}`;
+  $("list").innerHTML = list.length ? list.map(termHTML).join("") : `<p class="nothing">Ningún término coincide con estos filtros.</p>`;
+  document.querySelectorAll("#rules button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.rule === state.rule)));
+  renderDomainIssues();
+  save();
+}
+
+function syncControls() {
+  $("q").value = state.q; $("domain").value = state.domain; $("kind").value = state.kind; $("review").value = state.review;
+  $("sort").value = state.sort; $("pending").checked = state.pending;
+}
+
+renderHeader();
+fillSelects();
+syncControls();
+render();
+
+let timer;
+$("q").addEventListener("input", e => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value; render(); }, 120); });
+for (const id of ["domain", "kind", "review", "sort"]) $(id).addEventListener("change", e => { state[id] = e.target.value; render(); });
+$("pending").addEventListener("change", e => { state.pending = e.target.checked; render(); });
+$("rules").addEventListener("click", e => {
+  const b = e.target.closest("button[data-rule]");
+  if (!b) return;
+  state.rule = state.rule === b.dataset.rule ? "" : b.dataset.rule;
+  render();
+  document.querySelector(".bar").scrollIntoView({ block: "start" });
+});
+$("reset").addEventListener("click", () => {
+  Object.assign(state, { q: "", domain: "", kind: "", review: "", sort: "issues", pending: false, rule: "" });
+  syncControls(); render();
+});
+$("list").addEventListener("click", e => {
+  const b = e.target.closest("button[data-copy]");
+  if (!b) return;
+  const done = ok => { b.textContent = ok ? "Copiada" : "Selecciónala"; setTimeout(() => (b.textContent = "Copiar ruta"), 1600); };
+  const select = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  if (navigator.clipboard) navigator.clipboard.writeText(b.dataset.copy).then(() => done(true), () => { select(); done(false); });
+  else { select(); done(false); }
+});
+</script>

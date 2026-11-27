@@ -1,8 +1,7 @@
-const CACHE_NAME = "em-clinical-pwa-v4.7";
+const CACHE_NAME = "em-clinical-pwa-v5.5";
 const ASSETS = [
   "/",
   "index.html",
-  "style.css",
   "shared/fonts.css",
   "shared/humano-tokens.css",
   "shared/shell/shell.css",
@@ -20,18 +19,26 @@ const ASSETS = [
   "shared/fonts/poppins-latin-ext-700-normal.woff2",
   "shared/fonts/jetbrains-mono-latin-500-normal.woff2",
   "shared/fonts/jetbrains-mono-latin-ext-500-normal.woff2",
-  // ES modules loaded by index.html (no bundling step needed to serve the app)
-  "src/main.js",
-  "src/state.js",
-  "src/utils.js",
-  "src/theme.js",
-  "src/icons.js",
-  "src/toast.js",
-  "src/integrator.js",
-  "src/game.js",
-  "src/donation.js",
-  "src/pwa.js",
-  "src/dictionary.js",
+  // Archivos empaquetados por Vite (JS, CSS, fuentes e íconos con hash).
+  // vite.config.mjs reemplaza el marcador al construir; sin ellos, quien abre la
+  // app una sola vez y pierde la conexión ve una pantalla vacía.
+  "assets/apple-touch-icon-BLvn2_6K.png",
+  "assets/celada.jpeg",
+  "assets/favicon-16-BxOO8r3p.png",
+  "assets/favicon-32-DmKxD-PY.png",
+  "assets/icon-192-BE24A7Mv.png",
+  "assets/index-CWtakVdb.css",
+  "assets/index-DFRr08CV.js",
+  "assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
+  "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
+  "assets/jetbrains-mono-latin-500-normal-BWZEU5yA.woff2",
+  "assets/jetbrains-mono-latin-ext-500-normal-Cut-4mMH.woff2",
+  "assets/poppins-latin-500-normal-C8OXljZJ.woff2",
+  "assets/poppins-latin-600-normal-zEkxB9Mr.woff2",
+  "assets/poppins-latin-700-normal-Qrb0O0WB.woff2",
+  "assets/poppins-latin-ext-500-normal-CK-6C4Hw.woff2",
+  "assets/poppins-latin-ext-600-normal-CAhIAdZj.woff2",
+  "assets/poppins-latin-ext-700-normal-cby-RkWa.woff2",
   "icon-192.png",
   "icon-512.png",
   "apple-touch-icon.png",
@@ -62,7 +69,6 @@ const ASSETS = [
   "OSCE_010–OSCE_015.json",
   "OSCE_016–025.json",
   "OSCE_026–035.json",
-  "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js",
 ];
 
 self.addEventListener("install", (event) => {
@@ -111,7 +117,7 @@ self.addEventListener("fetch", (event) => {
   if (event.request.url.includes(".json")) {
     event.respondWith(
       caches.open(CACHE_NAME).then((cache) => {
-        return cache.match(event.request).then((cachedResponse) => {
+        return cache.match(event.request, { ignoreVary: true }).then((cachedResponse) => {
           const fetchPromise = fetch(event.request)
             .then((networkResponse) => {
               if (networkResponse.ok) {
@@ -132,7 +138,9 @@ self.addEventListener("fetch", (event) => {
   // were not precached (e.g. hashed bundles from a Vite build) are stored on
   // first use so the app keeps working offline.
   event.respondWith(
-    caches.match(event.request).then((response) => {
+    // ignoreVary: el JS y el CSS se piden con crossorigin (llevan cabecera Origin) y la
+    // precaché no; si el servidor responde "Vary: Origin", sin esto nada coincide offline.
+    caches.match(event.request, { ignoreVary: true }).then((response) => {
       if (response) return response;
       return fetch(event.request).then((networkResponse) => {
         const sameOrigin = new URL(event.request.url).origin === self.location.origin;

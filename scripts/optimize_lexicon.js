@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { bundleTerm } = require('./lexicon_checks');
 
 const ROOT = path.join(__dirname, '..');
 const TERMS_DIR = path.join(ROOT, 'lexicon/terms');
@@ -45,7 +46,7 @@ function bundle() {
             skipped++;
             continue;
         }
-        terms.push(data);
+        terms.push(bundleTerm(data));
         index.push({ term_id: data.term_id, path: path.relative(ROOT, file).split(path.sep).join('/') });
     }
 
@@ -68,7 +69,7 @@ function bundle() {
         const prev = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
         prevPrefixes = prev.prefixes || {};
         registryVersion = prev.registry_version || registryVersion;
-    } catch (e) { /* first build */ }
+    } catch { /* first build */ }
 
     const prefixes = {};
     for (const t of terms) {

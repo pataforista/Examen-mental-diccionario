@@ -1,4 +1,34 @@
+// Los datos clínicos guardan valores como identificadores ("urgencias_psiquiatricas").
+// Para mostrarlos: guiones bajos a espacios y tildes restituidas. Las palabras en
+// -cion siempre llevan tilde; el resto va en una lista explícita (no se adivina).
+const ACCENTS = {
+  alino: "aliño", animo: "ánimo", apatico: "apático", caracteristicas: "características",
+  catatonico: "catatónico", catatonicos: "catatónicos", dificil: "difícil", disforico: "disfórico",
+  erratico: "errático", euforico: "eufórico", eutimico: "eutímico", fenomeno: "fenómeno",
+  fenomenos: "fenómenos", fisica: "física", fisico: "físico", fobica: "fóbica", haptica: "háptica",
+  inespecificas: "inespecíficas", integra: "íntegra", labil: "lábil", logicas: "lógicas", magica: "mágica",
+  magico: "mágico", medica: "médica", medico: "médico", misticas: "místicas", monotono: "monótono",
+  paratimico: "paratímico", patologicas: "patológicas", practico: "práctico",
+  pragmatico: "pragmático", psicologica: "psicológica", psiquiatricas: "psiquiátricas",
+  psicotico: "psicótico", religion: "religión", rigida: "rígida", simbolico: "simbólico",
+  sindrome: "síndrome", sintoma: "síntoma", sintonico: "sintónico", solida: "sólida",
+  somatica: "somática", tactil: "táctil", tactiles: "táctiles", terapeutica: "terapéutica"
+};
+
 export const utils = {
+  humanize: function (value, capitalize = false) {
+    let out = String(value ?? "")
+      .replace(/_/g, " ")
+      .replace(/,(?=\S)/g, ", ")
+      .replace(/\p{L}+/gu, w => {
+        const lower = w.toLowerCase();
+        let fixed = ACCENTS[lower] || (lower.endsWith("cion") ? `${lower.slice(0, -4)}ción` : null);
+        if (!fixed) return w;
+        return w[0] === w[0].toUpperCase() ? fixed[0].toUpperCase() + fixed.slice(1) : fixed;
+      });
+    if (capitalize && out) out = out[0].toUpperCase() + out.slice(1);
+    return out;
+  },
   sanitizeHTML: function (str) {
     if (!str) return "";
     const temp = document.createElement("div");
@@ -109,7 +139,7 @@ export const utils = {
     const nameLines = this.wrapText(ctx, term.canonical_name, 120, 330, 840, 104);
     let y = 330 + nameLines * 104;
     // Tipo de término
-    const kind = term.term_kind || "término";
+    const kind = this.humanize(term.term_kind || "término");
     const isCritical = term.risk_weight > 1;
     ctx.font = '600 30px "Inter", sans-serif';
     const kindW = ctx.measureText(kind).width + 56;
