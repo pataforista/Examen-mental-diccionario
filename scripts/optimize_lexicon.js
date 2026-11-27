@@ -69,7 +69,7 @@ function bundle() {
         const prev = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf8'));
         prevPrefixes = prev.prefixes || {};
         registryVersion = prev.registry_version || registryVersion;
-    } catch (e) { /* first build */ }
+    } catch { /* first build */ }
 
     const prefixes = {};
     for (const t of terms) {

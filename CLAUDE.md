@@ -7,10 +7,12 @@ PWA clínica en español (Vite + JS sin framework). Se despliega desde `dist/`, 
 | Comando | Qué hace |
 |---|---|
 | `npm run dev` / `npm run build` / `npm run preview` | Desarrollo, build a `dist/`, servir el build |
-| `npm test` | lint + validación del léxico + búsqueda + contraste + lista negra de diseño. **Es la puerta para subir** |
+| `npm test` | lint + validación del léxico + búsqueda + herramientas del léxico + contraste + lista negra de diseño. **Es la puerta para subir** |
 | `npm run validate` | Reglas del léxico: errores bloquean; avisos de calidad se resumen. `-- --detalle` o `-- --regla <id>` para verlos |
 | `npm run lexicon:report` | Genera `docs/revision-lexico.html` (no versionado): todos los términos con filtros y sus avisos |
 | `npm run term:review -- ID… --por "Nombre"` | Firma la revisión clínica de términos (`--estado en_revision`, `--nota`, `--listar`) |
+| `npm run term:new -- --prefijo … --nombre … --tipo … --dominio … --definicion …` | Crea un término (ID asignado, borrador, detección de duplicados; `--lista DOM-xx/sub`, `--prueba`) |
+| `npm run lexicon:export` / `lexicon:import -- f.csv [--aplicar]` | Planilla de ida y vuelta de los campos clínicos (ver `docs/LEXICO.md`) |
 | `npm run build:lexicon` | Regenera `lexicon/lexicon_bundle.json` (lo que lee la app) desde `lexicon/terms/` |
 | `npm run search` | Regresión de la búsqueda contra el léxico real (`scripts/test_search.mjs`) |
 | `npm run test:pwa` | Regresión del diálogo de instalación en navegador real (requiere Playwright y `preview` activo) |
@@ -60,6 +62,7 @@ Cada punto de esta lista corresponde a un error real que ocurrió y que `npm run
 ## Léxico (términos del diccionario)
 
 - **Fuente de verdad:** un archivo por término en `lexicon/terms/<PREFIJO>/<ID>_<nombre>.json`. La app no los lee: lee `lexicon/lexicon_bundle.json`, que genera `npm run build:lexicon`. Tras editar un término, corre ese comando; `npm test` falla si el bundle quedó desactualizado.
+- **Escribir términos** solo con las herramientas (`scripts/lexicon_edit.js` es el módulo común): mantienen el formato (2 espacios, salto final), no reutilizan IDs retirados (`lexicon/_deprecated/`) y detectan duplicados con el buscador de la app. Guía para personas: `docs/LEXICO.md`.
 - **Reglas** en `scripts/lexicon_checks.js`, compartidas por el validador y la página de revisión. Para una regla nueva, añade un objeto a `RULES` (y su lugar en `WARNING_ORDER` si es aviso). Error = rompe la app o la integridad; aviso = calidad clínica o de redacción.
 - **Vocabularios cerrados** (`term_kind`, `granularity`, `risk_weight`, relaciones de dominio, tipos de alerta) en `taxonomy/controlled_vocabularies.json`. Un valor nuevo se añade ahí a propósito, no por accidente en un término.
 - `lexicon/mappings/` es una carpeta heredada que la app no usa; sus códigos CIE-11 contradicen a veces los del término. La regla `cie11-conflicto` los señala para decisión clínica: no elijas uno automáticamente.
