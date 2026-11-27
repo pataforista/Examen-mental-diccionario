@@ -70,7 +70,8 @@
   },
   "mappings": {
     "cie11": {
-      "code": "MB20.Z"
+      "code": "MB25.1",
+      "label": "Flight of ideas"
     }
   }
 }

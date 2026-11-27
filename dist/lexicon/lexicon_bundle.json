@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-27T03:35:08.971Z",
+  "generated_at": "2026-11-27T23:04:25.199Z",
   "total_terms": 291,
   "terms": [
     {
@@ -127,7 +127,12 @@
         ]
       },
       "status": "active",
-      "mappings": {}
+      "mappings": {
+        "cie11": {
+          "code": "MB24.60",
+          "label": "Constricted affect"
+        }
+      }
     },
     {
       "term_id": "AFF_002",
@@ -202,9 +207,6 @@
       "teaching_notes": [],
       "cognitive_pitfalls": [],
       "mappings": {
-        "cie11": {
-          "code": "MB24.Y"
-        },
         "snomed_ct": {}
       },
       "version": "1.0.0",
@@ -363,7 +365,12 @@
         ]
       },
       "status": "active",
-      "mappings": {}
+      "mappings": {
+        "cie11": {
+          "code": "MB24.0",
+          "label": "Ambivalence"
+        }
+      }
     },
     {
       "term_id": "AFF_005",
@@ -668,7 +675,8 @@
       "cognitive_pitfalls": [],
       "mappings": {
         "cie11": {
-          "code": "MB24.2"
+          "code": "MB24.3",
+          "label": "Anxiety"
         },
         "snomed_ct": {
           "concept_id": "48694002"
@@ -876,7 +884,8 @@
       "cognitive_pitfalls": [],
       "mappings": {
         "cie11": {
-          "code": "MB24.Y"
+          "code": "MB24.4",
+          "label": "Apathy"
         },
         "snomed_ct": {
           "concept_id": "20602000"
@@ -1037,10 +1046,6 @@
       ],
       "version": "1.1.0",
       "mappings": {
-        "cie11": {
-          "code": "MB24.Z",
-          "label": "Symptoms or signs involving emotional state"
-        },
         "snomed_ct": {
           "concept_id": "81014002",
           "preferred_term": "Athymia (finding)"
@@ -1318,7 +1323,8 @@
       "cognitive_pitfalls": [],
       "mappings": {
         "cie11": {
-          "code": "MB24.Y"
+          "code": "MB24.7",
+          "label": "Dysphoria"
         },
         "snomed_ct": {
           "concept_id": "191736004"
@@ -1489,7 +1495,8 @@
       "cognitive_pitfalls": [],
       "mappings": {
         "cie11": {
-          "code": "MB24.Y"
+          "code": "MB24.9",
+          "label": "Euphoria"
         },
         "snomed_ct": {
           "concept_id": "42892008"
@@ -1571,7 +1578,6 @@
       "teaching_notes": [],
       "cognitive_pitfalls": [],
       "mappings": {
-        "cie11": {},
         "snomed_ct": {}
       },
       "version": "1.0.0",
@@ -1656,9 +1662,6 @@
       "teaching_notes": [],
       "cognitive_pitfalls": [],
       "mappings": {
-        "cie11": {
-          "code": "QD85"
-        },
         "snomed_ct": {}
       },
       "version": "1.0.0",
@@ -4697,7 +4700,7 @@
       "exclusions": [
         {
           "term_id": "DEL_010",
-          "canonical_name": "Delirio primario",
+          "canonical_name": "Delirio primario (Jaspers)",
           "reason": "La monomanía es el término decimonónico para lo que hoy llamaríamos trastorno delirante."
         }
       ],
@@ -5137,7 +5140,7 @@
       "exclusions": [
         {
           "term_id": "DEL_018",
-          "canonical_name": "Humor delirante",
+          "canonical_name": "Humor delirante (Wahnstimmung)",
           "reason": "Wahnstimmung es el término técnico original en alemán usado en fenomenología pura."
         }
       ],
@@ -13933,8 +13936,8 @@
       ],
       "exclusions": [
         {
-          "term_id": "PER_001",
-          "canonical_name": "Alucinación",
+          "term_id": "PER_010",
+          "canonical_name": "Alucinación verdadera",
           "reason": "En la agnosia no hay percepción falsa, sino falla de reconocimiento."
         }
       ],
@@ -14303,7 +14306,7 @@
       "exclusions": [
         {
           "term_id": "SELF_001",
-          "canonical_name": "Actos impuestos",
+          "canonical_name": "Actos impuestos (pasividad volitiva)",
           "reason": "En la mano alienígena no suele haber atribución a una fuerza externa personalizada; es más un fallo del control motor."
         },
         {
@@ -14771,7 +14774,7 @@
       "exclusions": [
         {
           "term_id": "SELF_001",
-          "canonical_name": "Actos impuestos",
+          "canonical_name": "Actos impuestos (pasividad volitiva)",
           "reason": "En los actos impuestos hay atribución explícita a una fuerza externa; aquí hay extrañeza sin atribución."
         }
       ],
@@ -15240,7 +15243,12 @@
         ]
       },
       "status": "active",
-      "mappings": {}
+      "mappings": {
+        "cie11": {
+          "code": "MB27.23",
+          "label": "Hypnagogic hallucinations"
+        }
+      }
     },
     {
       "term_id": "PER_006",
@@ -15727,7 +15735,12 @@
         ]
       },
       "status": "active",
-      "mappings": {}
+      "mappings": {
+        "cie11": {
+          "code": "MB27.2",
+          "label": "Hallucinations"
+        }
+      }
     },
     {
       "term_id": "PER_011",
@@ -16233,7 +16246,12 @@
         ]
       },
       "status": "active",
-      "mappings": {}
+      "mappings": {
+        "cie11": {
+          "code": "MB27.4",
+          "label": "Illusions"
+        }
+      }
     },
     {
       "term_id": "PER_015",
@@ -17244,7 +17262,7 @@
       "exclusions": [
         {
           "term_id": "COG_005",
-          "canonical_name": "Pensamiento concreto",
+          "canonical_name": "Pensamiento Abstracto / Concreto",
           "reason": "El pensamiento concreto es una dificultad de abstracción; la pérdida de perspectiva es más amplia (espacial, temporal, social)."
         }
       ],
@@ -17331,8 +17349,8 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_003",
-          "canonical_name": "Bradipsiquia",
+          "term_id": "CNS_006",
+          "canonical_name": "Lentitud del Pensamiento (Bradipsiquia)",
           "reason": "La bradipsiquia es lentitud objetiva del pensamiento; aquí es alteración cualitativa del tiempo."
         }
       ],
@@ -18561,10 +18579,9 @@
       ],
       "exclusions": [
         {
-          "term_id": "RSK_004",
-          "canonical_name": "Autolesión no suicida",
-          "reason": "En NSSI la finalidad primaria no es morir; puede haber regulación emocional o comunicación de malestar.",
-          "ref_status": "forward"
+          "term_id": "RSK_003",
+          "canonical_name": "Autolesión no suicida (NSSI)",
+          "reason": "En NSSI la finalidad primaria no es morir; puede haber regulación emocional o comunicación de malestar."
         }
       ],
       "alerts": [
@@ -19647,10 +19664,9 @@
       ],
       "exclusions": [
         {
-          "term_id": "SELF_005",
-          "canonical_name": "Actos impuestos",
-          "reason": "En los actos es la acción ejecutada; aquí es la intención o urgencia previa.",
-          "ref_status": "forward"
+          "term_id": "SELF_001",
+          "canonical_name": "Actos impuestos (pasividad volitiva)",
+          "reason": "En los actos es la acción ejecutada; aquí es la intención o urgencia previa."
         }
       ],
       "alerts": [
@@ -20051,10 +20067,9 @@
           "ref_status": "forward"
         },
         {
-          "term_id": "CAT_005",
-          "canonical_name": "Catatonía Maligna",
-          "reason": "La catatonía maligna no requiere exposición a neurolépticos y suele presentar signos catatónicos nucleares.",
-          "ref_status": "forward"
+          "term_id": "CAT_001",
+          "canonical_name": "Catatonia maligna",
+          "reason": "La catatonía maligna no requiere exposición a neurolépticos y suele presentar signos catatónicos nucleares."
         }
       ],
       "alerts": [
@@ -20328,10 +20343,9 @@
       ],
       "exclusions": [
         {
-          "term_id": "AFF_011",
-          "canonical_name": "Afecto plano",
-          "reason": "El afecto plano es la falta de expresión emocional global (rostro, gestos, voz); la aprosodia es específicamente la falla en el componente melódico del habla.",
-          "ref_status": "forward"
+          "term_id": "AFF_010",
+          "canonical_name": "Aplanamiento afectivo",
+          "reason": "El afecto plano es la falta de expresión emocional global (rostro, gestos, voz); la aprosodia es específicamente la falla en el componente melódico del habla."
         }
       ],
       "alerts": [
@@ -20819,7 +20833,7 @@
       "exclusions": [
         {
           "term_id": "SPE_010",
-          "canonical_name": "Presión del habla",
+          "canonical_name": "Presión de habla",
           "reason": "La logorrea se refiere a la cantidad; la presión del habla a la urgencia y dificultad de interrupción (suelen coexistir)."
         }
       ],
@@ -23533,7 +23547,8 @@
       },
       "mappings": {
         "cie11": {
-          "code": "MB20.Z"
+          "code": "MB25.03",
+          "label": "Incoherence"
         }
       }
     },
@@ -23609,7 +23624,8 @@
       },
       "mappings": {
         "cie11": {
-          "code": "MB20.Z"
+          "code": "MB25.1",
+          "label": "Flight of ideas"
         }
       }
     },
@@ -23892,7 +23908,8 @@
       "status": "active",
       "mappings": {
         "cie11": {
-          "code": "MB20.Z"
+          "code": "MB21.9",
+          "label": "Perseveration"
         }
       }
     },

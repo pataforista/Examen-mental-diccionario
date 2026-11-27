@@ -72,7 +72,8 @@
   "status": "active",
   "mappings": {
     "cie11": {
-      "code": "MB20.Z"
+      "code": "MB21.9",
+      "label": "Perseveration"
     }
   }
 }

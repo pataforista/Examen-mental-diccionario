@@ -122,5 +122,10 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB24.60",
+      "label": "Constricted affect"
+    }
+  }
 }

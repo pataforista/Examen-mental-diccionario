@@ -62,10 +62,9 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_011",
-      "canonical_name": "Afecto plano",
-      "reason": "El afecto plano es la falta de expresión emocional global (rostro, gestos, voz); la aprosodia es específicamente la falla en el componente melódico del habla.",
-      "ref_status": "forward"
+      "term_id": "AFF_010",
+      "canonical_name": "Aplanamiento afectivo",
+      "reason": "El afecto plano es la falta de expresión emocional global (rostro, gestos, voz); la aprosodia es específicamente la falla en el componente melódico del habla."
     }
   ],
   "alerts": [

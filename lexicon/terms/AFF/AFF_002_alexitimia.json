@@ -71,9 +71,6 @@
   "teaching_notes": [],
   "cognitive_pitfalls": [],
   "mappings": {
-    "cie11": {
-      "code": "MB24.Y"
-    },
     "snomed_ct": {}
   },
   "version": "1.0.0",

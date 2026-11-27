@@ -13,7 +13,7 @@ const { execSync } = require("node:child_process");
 const TEXT = /\.(js|mjs|cjs|html|css|json|md|webmanifest|txt|xml)$/;
 const UI = execSync("git ls-files", { cwd: root, encoding: "utf8" })
   .split("\n")
-  .filter(f => f && !f.startsWith("dist/") && !f.startsWith(".beads/") && TEXT.test(f));
+  .filter(f => f && !f.startsWith("dist/") && !f.startsWith(".beads/") && TEXT.test(f) && fs.existsSync(path.join(root, f)));
 
 const RULES = [
   ["sombra desplazada", /\b[1-9]\d*px [1-9]\d*px 0(px)?\s/],

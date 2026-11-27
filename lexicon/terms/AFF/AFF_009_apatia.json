@@ -77,7 +77,8 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "MB24.Y"
+      "code": "MB24.4",
+      "label": "Apathy"
     },
     "snomed_ct": {
       "concept_id": "20602000"

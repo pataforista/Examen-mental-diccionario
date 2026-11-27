@@ -45,8 +45,8 @@
   ],
   "exclusions": [
     {
-      "term_id": "PER_001",
-      "canonical_name": "Alucinación",
+      "term_id": "PER_010",
+      "canonical_name": "Alucinación verdadera",
       "reason": "En la agnosia no hay percepción falsa, sino falla de reconocimiento."
     }
   ],

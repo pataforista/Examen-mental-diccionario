@@ -127,5 +127,10 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {
+    "cie11": {
+      "code": "MB27.2",
+      "label": "Hallucinations"
+    }
+  }
 }

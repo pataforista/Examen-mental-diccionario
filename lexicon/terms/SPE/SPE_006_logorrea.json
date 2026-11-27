@@ -46,7 +46,7 @@
   "exclusions": [
     {
       "term_id": "SPE_010",
-      "canonical_name": "Presión del habla",
+      "canonical_name": "Presión de habla",
       "reason": "La logorrea se refiere a la cantidad; la presión del habla a la urgencia y dificultad de interrupción (suelen coexistir)."
     }
   ],

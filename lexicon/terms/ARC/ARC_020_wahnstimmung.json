@@ -51,7 +51,7 @@
   "exclusions": [
     {
       "term_id": "DEL_018",
-      "canonical_name": "Humor delirante",
+      "canonical_name": "Humor delirante (Wahnstimmung)",
       "reason": "Wahnstimmung es el término técnico original en alemán usado en fenomenología pura."
     }
   ],

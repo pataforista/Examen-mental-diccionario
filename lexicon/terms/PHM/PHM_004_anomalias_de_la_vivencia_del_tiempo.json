@@ -55,8 +55,8 @@
   ],
   "exclusions": [
     {
-      "term_id": "AFF_003",
-      "canonical_name": "Bradipsiquia",
+      "term_id": "CNS_006",
+      "canonical_name": "Lentitud del Pensamiento (Bradipsiquia)",
       "reason": "La bradipsiquia es lentitud objetiva del pensamiento; aquí es alteración cualitativa del tiempo."
     }
   ],

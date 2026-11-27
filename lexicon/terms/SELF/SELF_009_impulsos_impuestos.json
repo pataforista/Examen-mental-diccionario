@@ -57,10 +57,9 @@
   ],
   "exclusions": [
     {
-      "term_id": "SELF_005",
-      "canonical_name": "Actos impuestos",
-      "reason": "En los actos es la acción ejecutada; aquí es la intención o urgencia previa.",
-      "ref_status": "forward"
+      "term_id": "SELF_001",
+      "canonical_name": "Actos impuestos (pasividad volitiva)",
+      "reason": "En los actos es la acción ejecutada; aquí es la intención o urgencia previa."
     }
   ],
   "alerts": [

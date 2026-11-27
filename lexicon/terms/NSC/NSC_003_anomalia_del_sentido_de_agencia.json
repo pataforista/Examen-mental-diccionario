@@ -62,7 +62,7 @@
   "exclusions": [
     {
       "term_id": "SELF_001",
-      "canonical_name": "Actos impuestos",
+      "canonical_name": "Actos impuestos (pasividad volitiva)",
       "reason": "En los actos impuestos hay atribución explícita a una fuerza externa; aquí hay extrañeza sin atribución."
     }
   ],

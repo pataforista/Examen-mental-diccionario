@@ -77,9 +77,6 @@
   "teaching_notes": [],
   "cognitive_pitfalls": [],
   "mappings": {
-    "cie11": {
-      "code": "QD85"
-    },
     "snomed_ct": {}
   },
   "version": "1.0.0",

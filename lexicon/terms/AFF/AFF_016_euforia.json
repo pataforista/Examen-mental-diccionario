@@ -77,7 +77,8 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "MB24.Y"
+      "code": "MB24.9",
+      "label": "Euphoria"
     },
     "snomed_ct": {
       "concept_id": "42892008"

@@ -102,10 +102,9 @@
   ],
   "exclusions": [
     {
-      "term_id": "RSK_004",
-      "canonical_name": "Autolesión no suicida",
-      "reason": "En NSSI la finalidad primaria no es morir; puede haber regulación emocional o comunicación de malestar.",
-      "ref_status": "forward"
+      "term_id": "RSK_003",
+      "canonical_name": "Autolesión no suicida (NSSI)",
+      "reason": "En NSSI la finalidad primaria no es morir; puede haber regulación emocional o comunicación de malestar."
     }
   ],
   "alerts": [

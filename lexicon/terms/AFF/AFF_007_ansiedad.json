@@ -77,7 +77,8 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "MB24.2"
+      "code": "MB24.3",
+      "label": "Anxiety"
     },
     "snomed_ct": {
       "concept_id": "48694002"

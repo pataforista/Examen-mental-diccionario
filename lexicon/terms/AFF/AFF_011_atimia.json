@@ -62,10 +62,6 @@
   ],
   "version": "1.1.0",
   "mappings": {
-    "cie11": {
-      "code": "MB24.Z",
-      "label": "Symptoms or signs involving emotional state"
-    },
     "snomed_ct": {
       "concept_id": "81014002",
       "preferred_term": "Athymia (finding)"

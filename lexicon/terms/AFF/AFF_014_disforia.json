@@ -82,7 +82,8 @@
   "cognitive_pitfalls": [],
   "mappings": {
     "cie11": {
-      "code": "MB24.Y"
+      "code": "MB24.7",
+      "label": "Dysphoria"
     },
     "snomed_ct": {
       "concept_id": "191736004"

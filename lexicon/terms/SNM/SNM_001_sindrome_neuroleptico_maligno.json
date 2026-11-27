@@ -76,10 +76,9 @@
       "ref_status": "forward"
     },
     {
-      "term_id": "CAT_005",
-      "canonical_name": "Catatonía Maligna",
-      "reason": "La catatonía maligna no requiere exposición a neurolépticos y suele presentar signos catatónicos nucleares.",
-      "ref_status": "forward"
+      "term_id": "CAT_001",
+      "canonical_name": "Catatonia maligna",
+      "reason": "La catatonía maligna no requiere exposición a neurolépticos y suele presentar signos catatónicos nucleares."
     }
   ],
   "alerts": [
