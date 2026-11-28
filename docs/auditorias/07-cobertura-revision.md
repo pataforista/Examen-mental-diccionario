@@ -23,11 +23,10 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Casos pendientes (291)
 
-### Riesgo alto (≥3) (16)
+### Riesgo alto (≥3) (15)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
-| AFF_023 · Ira <!-- k:c407e5267b --> | Sin revisar · riesgo 3/5 |  |
 | CAT_001 · Catatonia maligna <!-- k:9b45f2ecd4 --> | Sin revisar · riesgo 5/5 |  |
 | CAT_002 · Estupor catatónico <!-- k:ae1ea488d2 --> | Sin revisar · riesgo 3/5 |  |
 | CNS_002 · Coma <!-- k:ddcdf70003 --> | Sin revisar · riesgo 5/5 |  |
@@ -44,7 +43,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SER_001 · Síndrome serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 5/5 |  |
 | SNM_001 · Síndrome neuroléptico maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 5/5 |  |
 
-### Resto (275)
+### Resto (276)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -69,6 +68,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | AFF_020 · Hipotimia <!-- k:733ac095b0 --> | Sin revisar · riesgo 1/5 |  |
 | AFF_021 · Incongruencia afectiva <!-- k:1b691a1468 --> | Sin revisar · riesgo 1/5 |  |
 | AFF_022 · Incontinencia afectiva <!-- k:ac1bb7ef65 --> | Sin revisar · riesgo 1/5 |  |
+| AFF_023 · Ira <!-- k:c407e5267b --> | Sin revisar · riesgo 2/5 |  |
 | AFF_024 · Irritabilidad <!-- k:d3d5766b92 --> | Sin revisar · riesgo 1/5 |  |
 | AFF_025 · Labilidad afectiva <!-- k:cb7cd5a08c --> | Sin revisar · riesgo 1/5 |  |
 | AFF_026 · Llaneza afectiva <!-- k:a2634253ee --> | Sin revisar · riesgo 0/5 |  |

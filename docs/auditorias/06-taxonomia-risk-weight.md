@@ -31,9 +31,14 @@
 | `RSK_001` | Riesgo autolítico (general) | 3 | **3** | Revisado, se mantiene (riesgo alto / vigilancia prioritaria) |
 | `RSK_006` | Ideación suicida | 3 | **3** | Revisado, se mantiene (riesgo alto / vigilancia prioritaria) |
 | `CAT_002` | Estupor catatónico | 3 | **3** | Revisado, se mantiene (riesgo alto médico/nutricional/trombótico) |
-| `AFF_023` | Ira | 3 | **3** | Revisado, se mantiene; candidato a revisión clínica en `emd-y9e` |
+| `AFF_023` | Ira | 3 | **2** | Recalibrado en Commit F (2026-11-28): coherencia con manía/pánico (nivel 2); el riesgo conductual vive en `RSK_008` |
 
 ## Notas taxonómicas post-fusión (`emd-zf5`, 2026-11-28)
 
 - **C3 (`MEM_016` → `MEM_017`):** Fusión con colapso `síntoma` → `síndrome`; `MEM_017` mantiene `term_kind: "síndrome"`.
 - **C4 (`TALD_016` → `CNS_006`):** Revisar `term_kind` de `CNS_006` (`signo`) tras absorber `DOM-06 primary_expression` (Pensamiento) en `emd-y9e`.
+
+## Notas Commit F (previo a firma de Lote 1 `emd-y9e`, 2026-11-28)
+
+- `AFF_023` Ira bajado de `3 → 2` (distribución final `113/110/53/5/3/7`).
+- `MEM_011` Delirium: exclusiones en texto libre (`Demencia`, `Esquizofrenia`) pendientes de vinculación por `term_id` si se crean esos términos.

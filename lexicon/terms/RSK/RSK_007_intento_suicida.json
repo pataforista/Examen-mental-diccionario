@@ -105,6 +105,11 @@
       "term_id": "RSK_003",
       "canonical_name": "Autolesión no suicida (NSSI)",
       "reason": "En NSSI la finalidad primaria no es morir; puede haber regulación emocional o comunicación de malestar."
+    },
+    {
+      "term_id": "RSK_005",
+      "canonical_name": "Conducta suicida preparatoria",
+      "reason": "En la conducta preparatoria aún no se ejecutó el acto autolesivo, aunque exista planificación o acumulación de medios."
     }
   ],
   "alerts": [

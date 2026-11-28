@@ -125,7 +125,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MEM_021 · Obnubilación <!-- k:5d3376e807 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_022 · Onirismo <!-- k:48a8bb86e1 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_023 · Paramnesia reduplicativa <!-- k:c1152efd6c --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| MEM_025 · Sopor <!-- k:b2d65e2fe3 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| MEM_025 · Sopor <!-- k:5add522d8f --> | expresión principal en DOM-01, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_026 · Síndrome de Korsakoff <!-- k:bdd7cc25be --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_027 · Hipermnesia traumática <!-- k:d4655a677d --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_028 · Paramnesia del espejo <!-- k:00c6c8ee35 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -236,6 +236,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
+- 2026-11-28 · MEM_025 · Sopor: expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-28 · TALD_016 · Pensamiento enlentecido: expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-28 · TALD_010 · Habla presionada: expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-28 · MEM_017 · Fuga disociativa: expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio

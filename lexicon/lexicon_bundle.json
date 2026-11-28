@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-28T06:33:53.582Z",
+  "generated_at": "2026-11-28T06:44:51.298Z",
   "total_terms": 291,
   "terms": [
     {
@@ -2034,7 +2034,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 2,
       "definition_clinical": {
         "core": "Emoción intensa de enojo que puede acompañar a agresión verbal o física.",
         "required_features": [
@@ -5816,9 +5816,23 @@
           "term_id": "",
           "canonical_name": "Muerte Encefálica",
           "reason": "La muerte encefálica presupone daño irreversible total del encéfalo, incluyendo abolición de los reflejos del tronco y apnea sostenida; un coma puede tener reflejos troncoencefálicos conservados y preservar autonomía respiratoria."
+        },
+        {
+          "term_id": "MEM_025",
+          "canonical_name": "Sopor",
+          "reason": "En el sopor el paciente aún responde de forma transitoria a estímulos dolorosos intensos; en el coma existe arreactividad sostenida."
         }
       ],
-      "alerts": [],
+      "alerts": [
+        {
+          "type": "medical_emergency",
+          "message": "Emergencia médica: asegurar vía aérea, ventilación y estabilización hemodinámica; derivación inmediata."
+        },
+        {
+          "type": "medical_emergency",
+          "message": "Descartar causas reversibles (hipoglucemia, opioides, trauma, infección SNC) antes de atribuir a causa psiquiátrica."
+        }
+      ],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
       "mappings": {
@@ -11697,8 +11711,8 @@
           "causa médica subyacente",
           "curso reversible si se trata la causa"
         ],
-        "subjective_marker": "El paciente está confuso, no puede seguir una conversación, se muestra desorientado en tiempo y lugar; puede tener alucinaciones visuales.",
-        "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención."
+        "subjective_marker": null,
+        "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención. En grados leves puede referir confusión o extrañeza; en graves no es evaluable."
       },
       "operationalization": {
         "detectable_by": [
@@ -11757,7 +11771,12 @@
           "reason": "En esquizofrenia no hay fluctuación de conciencia ni causa médica aguda."
         }
       ],
-      "alerts": [],
+      "alerts": [
+        {
+          "type": "medical_emergency",
+          "message": "Urgencia médica: identificar y tratar la causa orgánica subyacente; monitorizar signos vitales y nivel de conciencia."
+        }
+      ],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
       "mappings": {
@@ -12794,7 +12813,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "síntoma",
+      "term_kind": "signo",
       "granularity": "atomic",
       "risk_weight": 4,
       "definition_clinical": {
@@ -12819,16 +12838,21 @@
       },
       "domain_links": [
         {
-          "domain_id": "DOM-11",
+          "domain_id": "DOM-01",
           "relation": "primary_expression",
-          "context": "conciencia_y_alerta"
+          "context": "nivel_de_conciencia"
         }
       ],
       "exclusions": [
         {
-          "term_id": "COG_004",
-          "canonical_name": "Orientación",
-          "reason": "La orientación no es evaluable en estado de sopor."
+          "term_id": "CNS_002",
+          "canonical_name": "Coma",
+          "reason": "El coma implica arreactividad completa sin respuesta de despertar; en el sopor hay respuesta breve ante estímulos dolorosos intensos."
+        },
+        {
+          "term_id": "MEM_011",
+          "canonical_name": "Delirium",
+          "reason": "El delirium cursa con inatención y nivel de conciencia fluctuante, no únicamente depresión profunda sostenida del despertar."
         }
       ],
       "alerts": [
@@ -18474,6 +18498,11 @@
           "canonical_name": "Intento suicida",
           "reason": "En el intento existe acto autolesivo con intención de morir; aquí no hay lesión/acto autolesivo en el episodio.",
           "ref_status": "forward"
+        },
+        {
+          "term_id": "RSK_003",
+          "canonical_name": "Autolesión no suicida (NSSI)",
+          "reason": "En NSSI no hay intención ni preparación para morir; la conducta preparatoria implica intencionalidad letal."
         }
       ],
       "alerts": [
@@ -18767,6 +18796,11 @@
           "term_id": "RSK_003",
           "canonical_name": "Autolesión no suicida (NSSI)",
           "reason": "En NSSI la finalidad primaria no es morir; puede haber regulación emocional o comunicación de malestar."
+        },
+        {
+          "term_id": "RSK_005",
+          "canonical_name": "Conducta suicida preparatoria",
+          "reason": "En la conducta preparatoria aún no se ejecutó el acto autolesivo, aunque exista planificación o acumulación de medios."
         }
       ],
       "alerts": [

@@ -13,7 +13,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "síntoma",
+  "term_kind": "signo",
   "granularity": "atomic",
   "risk_weight": 4,
   "definition_clinical": {
@@ -38,16 +38,21 @@
   },
   "domain_links": [
     {
-      "domain_id": "DOM-11",
+      "domain_id": "DOM-01",
       "relation": "primary_expression",
-      "context": "conciencia_y_alerta"
+      "context": "nivel_de_conciencia"
     }
   ],
   "exclusions": [
     {
-      "term_id": "COG_004",
-      "canonical_name": "Orientación",
-      "reason": "La orientación no es evaluable en estado de sopor."
+      "term_id": "CNS_002",
+      "canonical_name": "Coma",
+      "reason": "El coma implica arreactividad completa sin respuesta de despertar; en el sopor hay respuesta breve ante estímulos dolorosos intensos."
+    },
+    {
+      "term_id": "MEM_011",
+      "canonical_name": "Delirium",
+      "reason": "El delirium cursa con inatención y nivel de conciencia fluctuante, no únicamente depresión profunda sostenida del despertar."
     }
   ],
   "alerts": [

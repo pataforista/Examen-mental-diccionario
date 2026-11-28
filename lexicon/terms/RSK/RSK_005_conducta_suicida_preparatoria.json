@@ -91,6 +91,11 @@
       "canonical_name": "Intento suicida",
       "reason": "En el intento existe acto autolesivo con intención de morir; aquí no hay lesión/acto autolesivo en el episodio.",
       "ref_status": "forward"
+    },
+    {
+      "term_id": "RSK_003",
+      "canonical_name": "Autolesión no suicida (NSSI)",
+      "reason": "En NSSI no hay intención ni preparación para morir; la conducta preparatoria implica intencionalidad letal."
     }
   ],
   "alerts": [

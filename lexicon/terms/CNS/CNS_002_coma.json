@@ -71,9 +71,23 @@
       "term_id": "",
       "canonical_name": "Muerte Encefálica",
       "reason": "La muerte encefálica presupone daño irreversible total del encéfalo, incluyendo abolición de los reflejos del tronco y apnea sostenida; un coma puede tener reflejos troncoencefálicos conservados y preservar autonomía respiratoria."
+    },
+    {
+      "term_id": "MEM_025",
+      "canonical_name": "Sopor",
+      "reason": "En el sopor el paciente aún responde de forma transitoria a estímulos dolorosos intensos; en el coma existe arreactividad sostenida."
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "medical_emergency",
+      "message": "Emergencia médica: asegurar vía aérea, ventilación y estabilización hemodinámica; derivación inmediata."
+    },
+    {
+      "type": "medical_emergency",
+      "message": "Descartar causas reversibles (hipoglucemia, opioides, trauma, infección SNC) antes de atribuir a causa psiquiátrica."
+    }
+  ],
   "teaching_notes": [],
   "cognitive_pitfalls": [],
   "mappings": {

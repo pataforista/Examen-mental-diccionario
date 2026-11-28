@@ -35,8 +35,8 @@
       "causa médica subyacente",
       "curso reversible si se trata la causa"
     ],
-    "subjective_marker": "El paciente está confuso, no puede seguir una conversación, se muestra desorientado en tiempo y lugar; puede tener alucinaciones visuales.",
-    "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención."
+    "subjective_marker": null,
+    "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención. En grados leves puede referir confusión o extrañeza; en graves no es evaluable."
   },
   "operationalization": {
     "detectable_by": [
@@ -95,7 +95,12 @@
       "reason": "En esquizofrenia no hay fluctuación de conciencia ni causa médica aguda."
     }
   ],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "medical_emergency",
+      "message": "Urgencia médica: identificar y tratar la causa orgánica subyacente; monitorizar signos vitales y nivel de conciencia."
+    }
+  ],
   "teaching_notes": [],
   "cognitive_pitfalls": [],
   "mappings": {
