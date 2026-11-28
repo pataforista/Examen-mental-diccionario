@@ -22,7 +22,7 @@ Planilla (`marcador_subjetivo`, `nombre`, `notas_docentes`) o el archivo del té
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (110)
+## Casos pendientes (82)
 
 ### Sin notas docentes (73)
 
@@ -102,50 +102,50 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | VOL_008 · Impulsividad patológica <!-- k:f1ecf43763 --> | sin teaching_notes |  |
 | VOL_009 · Negativismo <!-- k:f1a8f11620 --> | sin teaching_notes |  |
 
-### Marcador subjetivo genérico (37)
+### Marcador subjetivo genérico (9)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
 | DEL_002 · BLIPS <!-- k:eeb55c43e0 --> | "El paciente refiere experiencia compatible con blips." — describir lo que la persona refiere, con sus palabras |  |
 | DEL_004 · Cristalización delirante <!-- k:6f902f3163 --> | "El paciente refiere experiencia compatible con cristalización delirante." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_005 · Delirio de infestación (Ekbom) <!-- k:3c71938e3a --> | "El paciente refiere experiencia compatible con delirio de infestación (ekbom)." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_006 · Delirio de ruina/pobreza <!-- k:f8ef14e87c --> | "El paciente refiere experiencia compatible con delirio de ruina/pobreza." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_007 · Delirio grandioso <!-- k:805d1dba76 --> | "El paciente refiere experiencia compatible con delirio grandioso." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_008 · Delirio místico-religioso de mandato <!-- k:da882d34a8 --> | "El paciente refiere experiencia compatible con delirio místico-religioso de mandato." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_010 · Delirio primario (Jaspers) <!-- k:7a86c645d4 --> | "El paciente refiere experiencia compatible con delirio primario (jaspers)." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_012 · Delirio querulante <!-- k:9202faab31 --> | "El paciente refiere experiencia compatible con delirio querulante." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_013 · Delirio referencial <!-- k:1b78ec53b8 --> | "El paciente refiere experiencia compatible con delirio referencial." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_014 · Delirio somático monotemático <!-- k:6f942731fc --> | "El paciente refiere experiencia compatible con delirio somático monotemático." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_016 · Erotomanía (Síndrome de Clérambault) <!-- k:eab8014cae --> | "El paciente refiere experiencia compatible con erotomanía (síndrome de clérambault)." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_020 · Ideas de referencia <!-- k:c91676d901 --> | "El paciente refiere experiencia compatible con ideas de referencia." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_021 · Ideas sobrevaloradas <!-- k:a2b2104a78 --> | "El paciente refiere experiencia compatible con ideas sobrevaloradas." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_023 · Intermetamorfosis <!-- k:ddd3fada86 --> | "El paciente refiere experiencia compatible con intermetamorfosis." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_024 · Interpretación delirante <!-- k:2a2374ed36 --> | "El paciente refiere experiencia compatible con interpretación delirante." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_025 · Perplejidad delirante <!-- k:8dc74e2578 --> | "El paciente refiere experiencia compatible con perplejidad delirante." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_026 · Revelación delirante (intuición delirante) <!-- k:8ee21d65fb --> | "El paciente refiere experiencia compatible con revelación delirante (intuición delirante)." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_030 · Síndrome de Fregoli <!-- k:5c96806da1 --> | "El paciente refiere experiencia compatible con síndrome de fregoli." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_031 · Síntomas positivos atenuados <!-- k:8ea5956b2d --> | "El paciente refiere experiencia compatible con síntomas positivos atenuados." — describir lo que la persona refiere, con sus palabras |  |
 | MEM_001 · Alteración de conciencia <!-- k:41356ed58f --> | "El paciente refiere experiencia compatible con alteración de conciencia." — describir lo que la persona refiere, con sus palabras |  |
-| MEM_004 · Amnesia disociativa <!-- k:835f22a023 --> | "El paciente refiere experiencia compatible con amnesia disociativa." — describir lo que la persona refiere, con sus palabras |  |
-| MEM_018 · Inatención <!-- k:c3c32e7bac --> | "El paciente refiere experiencia compatible con inatención." — describir lo que la persona refiere, con sus palabras |  |
 | MOT_001 · Apraxia constructiva <!-- k:cb5d7d3102 --> | "El paciente refiere experiencia compatible con apraxia constructiva." — describir lo que la persona refiere, con sus palabras |  |
 | MOT_002 · Apraxia ideacional <!-- k:c0c2676b5e --> | "El paciente refiere experiencia compatible con apraxia ideacional." — describir lo que la persona refiere, con sus palabras |  |
 | MOT_003 · Apraxia ideomotora <!-- k:80bb921631 --> | "El paciente refiere experiencia compatible con apraxia ideomotora." — describir lo que la persona refiere, con sus palabras |  |
 | MOT_009 · Mitgehen <!-- k:918124442a --> | "El paciente refiere experiencia compatible con mitgehen." — describir lo que la persona refiere, con sus palabras |  |
-| PER_001 · Acoasmas <!-- k:afe2eb604d --> | "El paciente refiere experiencia compatible con acoasmas." — describir lo que la persona refiere, con sus palabras |  |
-| PER_002 · Alucinaciones auditivas comentadoras <!-- k:4d324dd704 --> | "El paciente refiere experiencia compatible con alucinaciones auditivas comentadoras." — describir lo que la persona refiere, con sus palabras |  |
-| PER_003 · Alucinaciones auditivas dialogantes <!-- k:570f264eca --> | "El paciente refiere experiencia compatible con alucinaciones auditivas dialogantes." — describir lo que la persona refiere, con sus palabras |  |
-| PER_004 · Alucinaciones cenestésicas <!-- k:36e60fd026 --> | "El paciente refiere experiencia compatible con alucinaciones cenestésicas." — describir lo que la persona refiere, con sus palabras |  |
-| PER_016 · Macropsia <!-- k:b709124bc8 --> | "El paciente refiere experiencia compatible con macropsia." — describir lo que la persona refiere, con sus palabras |  |
-| PER_017 · Metamorfopsia <!-- k:aa3f883dc3 --> | "El paciente refiere experiencia compatible con metamorfopsia." — describir lo que la persona refiere, con sus palabras |  |
-| PER_018 · Micropsia <!-- k:28274e0cc1 --> | "El paciente refiere experiencia compatible con micropsia." — describir lo que la persona refiere, con sus palabras |  |
-| PER_019 · Palinopsia <!-- k:3dadf7b559 --> | "El paciente refiere experiencia compatible con palinopsia." — describir lo que la persona refiere, con sus palabras |  |
-| PER_023 · Sonorización del pensamiento (Gedankenlautwerden) <!-- k:444186aaa6 --> | "El paciente refiere experiencia compatible con sonorización del pensamiento (gedankenlautwerden)." — describir lo que la persona refiere, con sus palabras |  |
 | THO_002 · Asociación por consonancia (clang) <!-- k:df2857f220 --> | "El paciente refiere experiencia compatible con asociación por consonancia (clang)." — describir lo que la persona refiere, con sus palabras |  |
 | THO_009 · Perseveración <!-- k:d487915b67 --> | "El paciente refiere experiencia compatible con perseveración." — describir lo que la persona refiere, con sus palabras |  |
 
 ## Resueltos
 
+- 2026-11-28 · PER_023 · Sonorización del pensamiento (Gedankenlautwerden): "El paciente refiere experiencia compatible con sonorización del pensamiento (gedankenlautwerden)." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_019 · Palinopsia: "El paciente refiere experiencia compatible con palinopsia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_018 · Micropsia: "El paciente refiere experiencia compatible con micropsia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_017 · Metamorfopsia: "El paciente refiere experiencia compatible con metamorfopsia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_016 · Macropsia: "El paciente refiere experiencia compatible con macropsia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_004 · Alucinaciones cenestésicas: "El paciente refiere experiencia compatible con alucinaciones cenestésicas." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_003 · Alucinaciones auditivas dialogantes: "El paciente refiere experiencia compatible con alucinaciones auditivas dialogantes." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_002 · Alucinaciones auditivas comentadoras: "El paciente refiere experiencia compatible con alucinaciones auditivas comentadoras." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · PER_001 · Acoasmas: "El paciente refiere experiencia compatible con acoasmas." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · MEM_018 · Inatención: "El paciente refiere experiencia compatible con inatención." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · MEM_004 · Amnesia disociativa: "El paciente refiere experiencia compatible con amnesia disociativa." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_031 · Síntomas positivos atenuados: "El paciente refiere experiencia compatible con síntomas positivos atenuados." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_030 · Síndrome de Fregoli: "El paciente refiere experiencia compatible con síndrome de fregoli." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_026 · Revelación delirante (intuición delirante): "El paciente refiere experiencia compatible con revelación delirante (intuición delirante)." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_025 · Perplejidad delirante: "El paciente refiere experiencia compatible con perplejidad delirante." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_024 · Interpretación delirante: "El paciente refiere experiencia compatible con interpretación delirante." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_023 · Intermetamorfosis: "El paciente refiere experiencia compatible con intermetamorfosis." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_021 · Ideas sobrevaloradas: "El paciente refiere experiencia compatible con ideas sobrevaloradas." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_020 · Ideas de referencia: "El paciente refiere experiencia compatible con ideas de referencia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_016 · Erotomanía (Síndrome de Clérambault): "El paciente refiere experiencia compatible con erotomanía (síndrome de clérambault)." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_014 · Delirio somático monotemático: "El paciente refiere experiencia compatible con delirio somático monotemático." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_013 · Delirio referencial: "El paciente refiere experiencia compatible con delirio referencial." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_012 · Delirio querulante: "El paciente refiere experiencia compatible con delirio querulante." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_010 · Delirio primario (Jaspers): "El paciente refiere experiencia compatible con delirio primario (jaspers)." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_008 · Delirio místico-religioso de mandato: "El paciente refiere experiencia compatible con delirio místico-religioso de mandato." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_007 · Delirio grandioso: "El paciente refiere experiencia compatible con delirio grandioso." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_006 · Delirio de ruina/pobreza: "El paciente refiere experiencia compatible con delirio de ruina/pobreza." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
+- 2026-11-28 · DEL_005 · Delirio de infestación (Ekbom): "El paciente refiere experiencia compatible con delirio de infestación (ekbom)." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
 - 2026-11-27 · TALD_018 · Pensamiento Restringido: "Pensamiento Restringido" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento restringido" (2026-11-27)
 - 2026-11-27 · TALD_017 · Pensamiento Inhibido: "Pensamiento Inhibido" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento inhibido" (2026-11-27)
 - 2026-11-27 · TALD_016 · Pensamiento Enlentecido: "Pensamiento Enlentecido" — en español solo la primera palabra — decisión: Normalizado a "Pensamiento enlentecido" (2026-11-27)

@@ -1,6 +1,7 @@
 // Regresión de las herramientas del léxico (parte de npm test). No escribe en el léxico:
 // trabaja sobre copias en un directorio temporal y usa la importación en vista previa.
 import { execFileSync } from "node:child_process";
+import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -68,6 +69,15 @@ const riskDiffs = Object.entries(expectedRisk).filter(([id, w]) => byId[id]?.ris
 check(riskDiffs.length === 0, "recalibración risk_weight de los 15 términos", riskDiffs.join(", "));
 const dist = [0, 1, 2, 3, 4, 5].map(w => bundle.terms.filter(t => t.risk_weight === w).length);
 check(dist.join("/") === "113/112/53/6/3/7", `distribución risk_weight 0..5 = ${dist.join("/")}`, "esperado 113/112/53/6/3/7");
+
+// 5. Snapshot textual de 15 definiciones críticas (evita cambios accidentales en definition_clinical.core).
+const coreSnapshot = {
+  RSK_007: "a097200808f1", RSK_006: "080d09492038", RSK_003: "cd88032a27c4", RSK_008: "e846588367d8", CAT_001: "15642c7c4c33",
+  SNM_001: "21f1b94f408f", SER_001: "b2e858570a77", CNS_002: "88eecd53bdc1", MEM_011: "1933ae85b7a9", DEL_009: "f651dd1fee46",
+  PER_010: "9e2b9795ee8c", AFF_013: "14adb682cea3", AFF_027: "2518d52d4315", THO_006: "14beaf3e4b67", THO_007: "798f124624ae"
+};
+const coreDiffs = Object.entries(coreSnapshot).filter(([id, h]) => crypto.createHash("sha256").update(byId[id]?.definition_clinical?.core || "").digest("hex").slice(0, 12) !== h).map(([id]) => id);
+check(coreDiffs.length === 0, "snapshot de 15 definiciones críticas (definition_clinical.core)", `cambiaron: ${coreDiffs.join(", ")}`);
 
 console.log(failures ? `\nHerramientas del léxico: ${failures} fallo(s)` : "\nHerramientas del léxico: todo OK");
 process.exit(failures ? 1 : 0);
