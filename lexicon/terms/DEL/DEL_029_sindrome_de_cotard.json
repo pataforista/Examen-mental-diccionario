@@ -64,5 +64,12 @@
       "context": "clínico",
       "locale": "es"
     }
-  ]
+  ],
+  "review": {
+    "status": "revisado",
+    "reviewer": "Dr. Cesar Celada",
+    "date": "2026-11-28",
+    "content_hash": "259b19815a3e1fbb",
+    "notes": "Lote 2 emd-y9e (DEL_*): revisados risk_weight, core, exclusions y alerts"
+  }
 }

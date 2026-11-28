@@ -75,5 +75,12 @@
     ]
   },
   "status": "active",
-  "mappings": {}
+  "mappings": {},
+  "review": {
+    "status": "revisado",
+    "reviewer": "Dr. Cesar Celada",
+    "date": "2026-11-28",
+    "content_hash": "a6954f770a0b59e6",
+    "notes": "Lote 2 emd-y9e (DEL_*): revisados risk_weight, core, exclusions y alerts"
+  }
 }
