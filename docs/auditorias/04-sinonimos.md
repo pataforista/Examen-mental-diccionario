@@ -22,16 +22,13 @@ Columna `sinonimos` de la planilla (`npm run lexicon:export`) o `synonyms_and_sl
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (1)
+## Casos pendientes (0)
 
-### Sinónimo que también usa otro término (1)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| MEM_016 · Fuga <!-- k:f61a6aecd0 --> | "fuga disociativa" es el nombre de MEM_017 | Pendiente decisión taxonómica: posible duplicado de MEM_017 (2026-11-27) |
+Ninguno.
 
 ## Resueltos
 
+- 2026-11-28 · MEM_016 · Fuga: "fuga disociativa" es el nombre de MEM_017 — decisión: Fusionado en MEM_017 (retirado a _deprecated/; fusión con colapso síntoma->síndrome) (2026-11-28)
 - 2026-11-27 · MOT_007 · Estereotipia: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: estereotipia motora, movimiento estereotipado (2026-11-27)
 - 2026-11-27 · DEL_029 · Síndrome de Cotard: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: delirio nihilista, delirio de negación (2026-11-27)
 - 2026-11-27 · CNT_002 · Obsesión: agregar cómo lo dicen pacientes o colegas — decisión: Añadidos: pensamiento obsesivo, idea obsesiva intrusiva (2026-11-27)

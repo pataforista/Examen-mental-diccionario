@@ -32,3 +32,8 @@
 | `RSK_006` | Ideación suicida | 3 | **3** | Revisado, se mantiene (riesgo alto / vigilancia prioritaria) |
 | `CAT_002` | Estupor catatónico | 3 | **3** | Revisado, se mantiene (riesgo alto médico/nutricional/trombótico) |
 | `AFF_023` | Ira | 3 | **3** | Revisado, se mantiene; candidato a revisión clínica en `emd-y9e` |
+
+## Notas taxonómicas post-fusión (`emd-zf5`, 2026-11-28)
+
+- **C3 (`MEM_016` → `MEM_017`):** Fusión con colapso `síntoma` → `síndrome`; `MEM_017` mantiene `term_kind: "síndrome"`.
+- **C4 (`TALD_016` → `CNS_006`):** Revisar `term_kind` de `CNS_006` (`signo`) tras absorber `DOM-06 primary_expression` (Pensamiento) en `emd-y9e`.

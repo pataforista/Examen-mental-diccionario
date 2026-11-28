@@ -6,6 +6,11 @@
       "term": "taquilalia",
       "context": "clinical",
       "locale": "es"
+    },
+    {
+      "term": "habla presionada",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "síntoma",
@@ -69,6 +74,11 @@
   "mappings": {
     "cie11": {
       "code": "MB24.Y"
+    },
+    "tald_scale": {
+      "item_number": 9,
+      "type": "objective",
+      "scale_name": "Thought and Language Disturbance Scale"
     }
   }
 }

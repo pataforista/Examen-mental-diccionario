@@ -741,10 +741,6 @@
       "path": "lexicon/terms/MEM/MEM_015_estado_confusional.json"
     },
     {
-      "term_id": "MEM_016",
-      "path": "lexicon/terms/MEM/MEM_016_fuga.json"
-    },
-    {
       "term_id": "MEM_017",
       "path": "lexicon/terms/MEM/MEM_017_fuga_disociativa.json"
     },
@@ -1185,10 +1181,6 @@
       "path": "lexicon/terms/TALD/TALD_009_habla_manierista.json"
     },
     {
-      "term_id": "TALD_010",
-      "path": "lexicon/terms/TALD/TALD_010_habla_presionada.json"
-    },
-    {
       "term_id": "TALD_011",
       "path": "lexicon/terms/TALD/TALD_011_interferencia_del_pensamiento.json"
     },
@@ -1207,10 +1199,6 @@
     {
       "term_id": "TALD_015",
       "path": "lexicon/terms/TALD/TALD_015_parafasia_semantica.json"
-    },
-    {
-      "term_id": "TALD_016",
-      "path": "lexicon/terms/TALD/TALD_016_pensamiento_enlentecido.json"
     },
     {
       "term_id": "TALD_017",

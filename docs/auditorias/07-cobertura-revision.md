@@ -21,7 +21,7 @@ La ficha solo muestra «Revisado clínicamente» cuando la revisión está vigen
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (294)
+## Casos pendientes (291)
 
 ### Riesgo alto (≥3) (16)
 
@@ -44,7 +44,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SER_001 · Síndrome serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 5/5 |  |
 | SNM_001 · Síndrome neuroléptico maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 5/5 |  |
 
-### Resto (278)
+### Resto (275)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -192,7 +192,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MEM_013 · Déjà vu <!-- k:4f77756f74 --> | Sin revisar · riesgo 0/5 |  |
 | MEM_014 · Déjà vu / Jamais vu <!-- k:b86acef2b6 --> | Sin revisar · riesgo 0/5 |  |
 | MEM_015 · Estado confusional <!-- k:a698c23ece --> | Sin revisar · riesgo 1/5 |  |
-| MEM_016 · Fuga <!-- k:09697abee8 --> | Sin revisar · riesgo 2/5 |  |
 | MEM_017 · Fuga disociativa <!-- k:987fe49306 --> | Sin revisar · riesgo 2/5 |  |
 | MEM_018 · Inatención <!-- k:5f26d05bdf --> | Sin revisar · riesgo 0/5 |  |
 | MEM_019 · Jamais vu <!-- k:5d7c21932a --> | Sin revisar · riesgo 0/5 |  |
@@ -292,13 +291,11 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | TALD_007 · Disociación del Pensamiento <!-- k:105adad7be --> | Sin revisar · riesgo 1/5 |  |
 | TALD_008 · Glosomanía / Clanging <!-- k:a38622dd18 --> | Sin revisar · riesgo 1/5 |  |
 | TALD_009 · Habla manierista <!-- k:f0587a3025 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_010 · Habla presionada <!-- k:10ad04f2ef --> | Sin revisar · riesgo 1/5 |  |
 | TALD_011 · Interferencia del Pensamiento <!-- k:42a36f4187 --> | Sin revisar · riesgo 2/5 |  |
 | TALD_012 · Neologismos <!-- k:fcc4f8e080 --> | Sin revisar · riesgo 1/5 |  |
 | TALD_013 · Para-respuesta / Crosstalk <!-- k:fbbec73940 --> | Sin revisar · riesgo 1/5 |  |
 | TALD_014 · Parafasia fonémica <!-- k:377d2dae2b --> | Sin revisar · riesgo 1/5 |  |
 | TALD_015 · Parafasia semántica <!-- k:68471df421 --> | Sin revisar · riesgo 1/5 |  |
-| TALD_016 · Pensamiento enlentecido <!-- k:6ce8f09b25 --> | Sin revisar · riesgo 1/5 |  |
 | TALD_017 · Pensamiento inhibido <!-- k:870019b193 --> | Sin revisar · riesgo 2/5 |  |
 | TALD_018 · Pensamiento restringido <!-- k:d3cf4cb40a --> | Sin revisar · riesgo 1/5 |  |
 | TALD_019 · Pobreza de Contenido del Habla <!-- k:9e0063d86f --> | Sin revisar · riesgo 1/5 |  |
@@ -329,4 +326,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
-Aún ninguno.
+- 2026-11-28 · TALD_016 · Pensamiento enlentecido: Sin revisar · riesgo 1/5
+- 2026-11-28 · TALD_010 · Habla presionada: Sin revisar · riesgo 1/5
+- 2026-11-28 · MEM_016 · Fuga: Sin revisar · riesgo 2/5

@@ -11,6 +11,11 @@
       "term": "inhibición formal del fluir del pensamiento",
       "context": "clínico",
       "locale": "es"
+    },
+    {
+      "term": "pensamiento enlentecido",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "signo",
@@ -26,8 +31,12 @@
     "behavioral_marker": "Aumento dramático de la latencia (retraso en iniciar respuesta a la pregunta del evaluador), pausas muy largas a mitad de sentencia u oraciones infinalizables no por bloqueo o interceptación, sino por enlentecimiento y pérdida de iniciativa secundaria; velocidad verbal física y mímica muy lentas."
   },
   "operationalization": {
-    "detectable_by": [],
-    "time_relation": [],
+    "detectable_by": [
+      "entrevista_clinica"
+    ],
+    "time_relation": [
+      "presente_en_evaluacion"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {
@@ -43,6 +52,11 @@
     ]
   },
   "domain_links": [
+    {
+      "domain_id": "DOM-06",
+      "relation": "primary_expression",
+      "context": "tald_scale"
+    },
     {
       "domain_id": "DOM-10",
       "relation": "secondary_expression",
@@ -65,6 +79,11 @@
     },
     "snomed_ct": {
       "concept_id": "191689004"
+    },
+    "tald_scale": {
+      "item_number": 19,
+      "type": "objective",
+      "scale_name": "Thought and Language Disturbance Scale"
     }
   },
   "version": "1.0.0",

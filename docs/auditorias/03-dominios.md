@@ -22,9 +22,9 @@ Relación del término: `domain_links` en su archivo. Listas: `npm run term:new 
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (202)
+## Casos pendientes (200)
 
-### No figura en las listas de su dominio (Integrador y vista Dominios) (201)
+### No figura en las listas de su dominio (Integrador y vista Dominios) (199)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -67,6 +67,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | CAT_004 · Mutismo catatónico <!-- k:4d9bb9deb5 --> | expresión principal en DOM-04, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | CNS_002 · Coma <!-- k:47522b0de0 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | CNS_003 · Estado crepuscular <!-- k:e1de1947f0 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| CNS_006 · Lentitud del Pensamiento (Bradipsiquia) <!-- k:aa56629e46 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | CNS_007 · Letargo <!-- k:0c242908ef --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | CNS_009 · Síncope <!-- k:f9be0ddd12 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | CNT_001 · Idea sobrevalorada <!-- k:a1d97fc877 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -119,8 +120,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MEM_011 · Delirium <!-- k:1b0ca06891 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_014 · Déjà vu / Jamais vu <!-- k:00018575c9 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_015 · Estado confusional <!-- k:ae19765d04 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| MEM_016 · Fuga <!-- k:f304c510c0 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| MEM_017 · Fuga disociativa <!-- k:7a5077ada9 --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
+| MEM_017 · Fuga disociativa <!-- k:59e9c1dceb --> | expresión principal en DOM-10, DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_018 · Inatención <!-- k:e82a089d9f --> | expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_021 · Obnubilación <!-- k:5d3376e807 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | MEM_022 · Onirismo <!-- k:48a8bb86e1 --> | expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -208,12 +208,10 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | TALD_007 · Disociación del Pensamiento <!-- k:f60b0a6816 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_008 · Glosomanía / Clanging <!-- k:0f41e66f49 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_009 · Habla manierista <!-- k:028d5a164d --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_010 · Habla presionada <!-- k:aa68d28f3c --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_011 · Interferencia del Pensamiento <!-- k:40d38f29cd --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_013 · Para-respuesta / Crosstalk <!-- k:2e32ee478a --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_014 · Parafasia fonémica <!-- k:4886b3fe6e --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_015 · Parafasia semántica <!-- k:acb42489a1 --> | expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| TALD_016 · Pensamiento enlentecido <!-- k:e0436a0663 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_017 · Pensamiento inhibido <!-- k:0d1bb103c5 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_018 · Pensamiento restringido <!-- k:c156dd2140 --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | TALD_019 · Pobreza de Contenido del Habla <!-- k:4eb1809f3c --> | expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -238,6 +236,10 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
+- 2026-11-28 · TALD_016 · Pensamiento enlentecido: expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
+- 2026-11-28 · TALD_010 · Habla presionada: expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
+- 2026-11-28 · MEM_017 · Fuga disociativa: expresión principal en DOM-10, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
+- 2026-11-28 · MEM_016 · Fuga: expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-27 · DOM-15 · Fenomenología histórica y conceptos clásicos: conceptos_arcaicos: "neurosis_histerica" es sinónimo de ARC_009 (Histeria); enlázalo solo si es el mismo concepto — decisión: Enlazado neurosis_histerica -> ARC_009 (histórico en DOM-15) (2026-11-27)
 - 2026-11-27 · DOM-09 · Estado afectivo (ánimo y afecto): afecto_observable: "afecto_labil" es sinónimo de AFF_025 (Labilidad afectiva); enlázalo solo si es el mismo concepto — decisión: Enlazado afecto_labil -> AFF_025 (2026-11-27)
 - 2026-11-27 · DOM-07 · Pensamiento: contenido: ideas_delirantes: "delirio_nihilista" es sinónimo de DEL_029 (Síndrome de Cotard); enlázalo solo si es el mismo concepto — decisión: Enlazado delirio_nihilista -> DEL_029 (2026-11-27)

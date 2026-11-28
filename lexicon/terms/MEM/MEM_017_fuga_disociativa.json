@@ -3,6 +3,11 @@
   "canonical_name": "Fuga disociativa",
   "synonyms_and_slang": [
     {
+      "term": "fuga",
+      "context": "clínico",
+      "locale": "es"
+    },
+    {
       "term": "fuga psicogénica",
       "context": "clínico",
       "locale": "es"
@@ -33,8 +38,13 @@
     "behavioral_marker": "Deambulación geográfica sin explicación; aparente normalidad superficial durante el episodio."
   },
   "operationalization": {
-    "detectable_by": [],
-    "time_relation": [],
+    "detectable_by": [
+      "entrevista_clinica",
+      "historia_colateral"
+    ],
+    "time_relation": [
+      "episodica"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {
@@ -64,13 +74,18 @@
       "domain_id": "DOM-10",
       "relation": "primary_expression",
       "context": ""
+    },
+    {
+      "domain_id": "DOM-11",
+      "relation": "primary_expression",
+      "context": "conciencia_y_identidad"
     }
   ],
   "exclusions": [
     {
-      "term_id": "",
-      "canonical_name": "Amnesia disociativa simple",
-      "reason": "La fuga añade dimensión de viaje físico y nueva identidad."
+      "term_id": "MEM_004",
+      "canonical_name": "Amnesia disociativa",
+      "reason": "La fuga es un sub-especificador de la amnesia disociativa que incluye el desplazamiento físico."
     },
     {
       "term_id": "",
@@ -90,5 +105,14 @@
     }
   },
   "version": "1.0.0",
-  "status": "active"
+  "status": "active",
+  "provenance": {
+    "phenomenology": [
+      "Sims",
+      "Janet"
+    ],
+    "clinical_tradition": [
+      "psicopatologia_clasica"
+    ]
+  }
 }

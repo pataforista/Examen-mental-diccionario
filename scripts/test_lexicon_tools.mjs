@@ -68,7 +68,7 @@ const expectedRisk = {
 const riskDiffs = Object.entries(expectedRisk).filter(([id, w]) => byId[id]?.risk_weight !== w).map(([id, w]) => `${id}=${byId[id]?.risk_weight} (esperado ${w})`);
 check(riskDiffs.length === 0, "recalibración risk_weight de los 15 términos", riskDiffs.join(", "));
 const dist = [0, 1, 2, 3, 4, 5].map(w => bundle.terms.filter(t => t.risk_weight === w).length);
-check(dist.join("/") === "113/112/53/6/3/7", `distribución risk_weight 0..5 = ${dist.join("/")}`, "esperado 113/112/53/6/3/7");
+check(dist.join("/") === "113/110/52/6/3/7", `distribución risk_weight 0..5 = ${dist.join("/")}`, "esperado 113/110/52/6/3/7");
 
 // 5. Snapshot textual de 15 definiciones críticas (evita cambios accidentales en definition_clinical.core).
 const coreSnapshot = {
