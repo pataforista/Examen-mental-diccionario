@@ -1,4 +1,4 @@
-const CACHE_NAME = "em-clinical-pwa-v5.15";
+const CACHE_NAME = "em-clinical-pwa-v5.16";
 // Rutas relativas al propio sw.js, para que funcione en la raíz o bajo una subruta.
 // "index.html" no se precachea: Cloudflare Pages lo redirige (308) a "./", y una
 // respuesta redirigida servida a una navegación deja la página en blanco.
@@ -30,8 +30,8 @@ const ASSETS = [
   "assets/favicon-16-BxOO8r3p.png",
   "assets/favicon-32-DmKxD-PY.png",
   "assets/icon-192-BE24A7Mv.png",
-  "assets/index-BHw4sW-k.css",
-  "assets/index-cfvtWIZj.js",
+  "assets/index-B4q6hiJr.css",
+  "assets/index-DJCaCIus.js",
   "assets/inter-latin-ext-wght-normal-DO1Apj_S.woff2",
   "assets/inter-latin-wght-normal-Dx4kXJAl.woff2",
   "assets/jetbrains-mono-latin-500-normal-BWZEU5yA.woff2",

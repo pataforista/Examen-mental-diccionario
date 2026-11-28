@@ -374,7 +374,7 @@ export const dictionary = {
                     <div class="card card--interactive result-card" role="button" tabindex="0" onclick="App.viewTerm('${r.item.term_id}')" onkeydown="if((event.key==='Enter' || event.key===' ') && event.target === this){event.preventDefault();App.viewTerm('${r.item.term_id}')}">
                         <div class="result-card__head">
                             <span class="result-card__title">${this.utils.sanitizeHTML(r.item.canonical_name)}</span>
-                            <span class="badge ${r.item.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(this.utils.humanize(r.item.term_kind))}</span>
+                            <span class="badge ${this.utils.riskMeta(r.item.risk_weight).badgeClass}">${this.utils.sanitizeHTML(this.utils.humanize(r.item.term_kind))}${r.item.risk_weight >= 5 ? " · Emergencia" : ""}</span>
                         </div>
                         <p class="result-card__def">${this.utils.sanitizeHTML(r.item.definition_clinical?.core || "Sin definición disponible.")}</p>
                     </div>
@@ -417,7 +417,7 @@ export const dictionary = {
                 <span class="totd-ribbon">${getIcon("bulb")} Término del día</span>
                 <div class="totd-content">
                     <h2 class="totd-title">${this.utils.sanitizeHTML(dailyTerm.canonical_name)}</h2>
-                    <span class="badge ${dailyTerm.risk_weight > 1 ? "badge-risk-critical" : ""}">${this.utils.sanitizeHTML(this.utils.humanize(dailyTerm.term_kind))}</span>
+                    <span class="badge ${this.utils.riskMeta(dailyTerm.risk_weight).badgeClass}">${this.utils.sanitizeHTML(this.utils.humanize(dailyTerm.term_kind))}${dailyTerm.risk_weight >= 5 ? " · Emergencia" : ""}</span>
                     <p class="totd-snippet">${this.utils.sanitizeHTML(truncatedDef)}</p>
                     ${tipHtml}
                     <div class="totd-footer">
@@ -495,7 +495,8 @@ export const dictionary = {
       const knownDomainIds = new Set(this.data.domains.map(d => d.domain_id));
       const domainLinks = (term.domain_links || []).filter(l => knownDomainIds.has(l.domain_id));
       const sanitize = v => this.utils.sanitizeHTML(v);
-      const isCritical = term.risk_weight > 1;
+      const risk = this.utils.riskMeta(term.risk_weight);
+      const hasRiskBanner = risk.tier !== "none";
       this.nodes.termView.innerHTML = `
             <div class="view-actions-header">
                 <button class="btn-back" onclick="App.closeTerm()">${getIcon("arrow-left")} Volver</button>
@@ -506,14 +507,14 @@ export const dictionary = {
             </div>
             <div class="card">
                 <div class="term-head">
-                    <span class="badge ${isCritical ? "badge-risk-critical" : ""}">${sanitize(this.utils.humanize(term.term_kind || "término"))}</span>
+                    <span class="badge ${risk.badgeClass}">${sanitize(this.utils.humanize(term.term_kind || "término"))}${risk.badgeLabel ? ` · ${risk.badgeLabel}` : ""}</span>
                 </div>
                 <h2 class="term-title">${sanitize(term.canonical_name)}</h2>
                 ${term.review?.status === "revisado" ? `<p class="term-reviewed">${getIcon("check")} Revisado clínicamente por ${sanitize(term.review.reviewer)} · ${sanitize(this._formatDate(term.review.date))}</p>` : ""}
 
-                ${isCritical ? `
-                    <div class="alert-critical-banner" role="note">
-                        <div class="alert-critical-header">${getIcon("alert")} Alerta de riesgo clínico</div>
+                ${hasRiskBanner ? `
+                    <div class="${risk.bannerClass}" role="note">
+                        <div class="alert-critical-header">${getIcon("alert")} ${risk.bannerTitle}</div>
                         <p class="alert-critical-text">
                             ${sanitize((typeof alerts[0] === "string" ? alerts[0] : alerts[0]?.message) || "Este término implica un riesgo de seguridad o manejo crítico.")}
                         </p>

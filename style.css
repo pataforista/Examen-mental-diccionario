@@ -1180,9 +1180,20 @@ main {
 
 .badge .icon { width: 14px; height: 14px; }
 
+.badge-risk-alert {
+  background: var(--h-warn-bg);
+  color: var(--h-amber-text);
+}
+
 .badge-risk-critical {
   background: color-mix(in srgb, var(--ritual-red) 10%, transparent);
   color: var(--ritual-red);
+}
+
+.badge-risk-emergency {
+  background: color-mix(in srgb, var(--ritual-red) 10%, transparent);
+  color: var(--ritual-red);
+  border: 1px solid var(--ritual-red);
 }
 
 .status-dot {
@@ -1350,6 +1361,20 @@ button.tag:hover { background: var(--bg-hover); }
   background: color-mix(in srgb, var(--ritual-red) 8%, var(--bg-surface));
   border-radius: 16px;
   border-left: 4px solid var(--ritual-red); /* borde izquierdo de alerta: excepción permitida */
+}
+
+.alert-critical-banner--warn {
+  background: var(--h-warn-bg);
+  border-left: 4px solid var(--h-amber); /* borde izquierdo de aviso: excepción permitida */
+}
+
+.alert-critical-banner--warn .alert-critical-header {
+  color: var(--h-amber-text);
+}
+
+.alert-critical-banner--emergency {
+  border: 1px solid var(--ritual-red);
+  border-left: 4px solid var(--ritual-red); /* borde izquierdo de emergencia: excepción permitida */
 }
 
 .alert-critical-header {

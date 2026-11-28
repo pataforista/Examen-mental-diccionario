@@ -139,15 +139,25 @@ export const utils = {
     const nameLines = this.wrapText(ctx, term.canonical_name, 120, 330, 840, 104);
     let y = 330 + nameLines * 104;
     // Tipo de término
-    const kind = this.humanize(term.term_kind || "término");
-    const isCritical = term.risk_weight > 1;
+    const risk = this.riskMeta(term.risk_weight);
+    const kind = `${this.humanize(term.term_kind || "término")}${risk.badgeLabel ? ` · ${risk.badgeLabel}` : ""}`;
     ctx.font = '600 30px "Inter", sans-serif';
     const kindW = ctx.measureText(kind).width + 56;
-    ctx.fillStyle = isCritical ? "rgba(190, 54, 80, 0.10)" : tok("--h-indigo-soft");
+    const pillBg = risk.tier === "emergency" || risk.tier === "high"
+      ? "rgba(190, 54, 80, 0.10)"
+      : risk.tier === "alert"
+        ? (tok("--h-warn-bg") || "#FFF3E6")
+        : tok("--h-indigo-soft");
+    const pillFg = risk.tier === "emergency" || risk.tier === "high"
+      ? raspberry
+      : risk.tier === "alert"
+        ? (tok("--h-amber-text") || "#7A4310")
+        : indigo;
+    ctx.fillStyle = pillBg;
     ctx.beginPath();
     ctx.roundRect(120, y - 10, kindW, 56, 28);
     ctx.fill();
-    ctx.fillStyle = isCritical ? raspberry : indigo;
+    ctx.fillStyle = pillFg;
     ctx.fillText(kind, 148, y + 28);
     y += 120;
     // Definición
@@ -169,5 +179,12 @@ export const utils = {
     return new Promise(resolve => {
       canvas.toBlob(resolve, "image/png");
     });
+  },
+  riskMeta: function (weight) {
+    const w = Number(weight) || 0;
+    if (w >= 5) return { tier: "emergency", badgeClass: "badge-risk-emergency", badgeLabel: "Emergencia", bannerClass: "alert-critical-banner alert-critical-banner--emergency", bannerTitle: "Emergencia clínica vital" };
+    if (w >= 3) return { tier: "high", badgeClass: "badge-risk-critical", badgeLabel: "Riesgo alto", bannerClass: "alert-critical-banner", bannerTitle: "Alerta de riesgo alto" };
+    if (w === 2) return { tier: "alert", badgeClass: "badge-risk-alert", badgeLabel: "Alerta", bannerClass: "alert-critical-banner alert-critical-banner--warn", bannerTitle: "Alerta clínica" };
+    return { tier: "none", badgeClass: "", badgeLabel: "", bannerClass: "", bannerTitle: "" };
   }
 };
