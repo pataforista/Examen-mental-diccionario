@@ -78,5 +78,12 @@
       "psicopatologia_clasica"
     ]
   },
-  "status": "active"
+  "status": "active",
+  "review": {
+    "status": "revisado",
+    "reviewer": "Dr. Cesar Celada",
+    "date": "2026-11-28",
+    "content_hash": "0d869edd3754f524",
+    "notes": "Lote 1 emd-y9e: revisados risk_weight, core, exclusions y alerts"
+  }
 }

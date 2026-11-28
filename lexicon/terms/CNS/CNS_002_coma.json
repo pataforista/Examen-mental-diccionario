@@ -99,5 +99,12 @@
     }
   },
   "version": "1.0.0",
-  "status": "active"
+  "status": "active",
+  "review": {
+    "status": "revisado",
+    "reviewer": "Dr. Cesar Celada",
+    "date": "2026-11-28",
+    "content_hash": "d8f6ea82f5b87494",
+    "notes": "Lote 1 emd-y9e: revisados risk_weight, core, exclusions y alerts"
+  }
 }

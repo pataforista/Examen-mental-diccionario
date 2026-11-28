@@ -12,6 +12,6 @@ Cada auditoría reúne un tipo de hallazgo que necesita **criterio clínico**: e
 | [Sinónimos](04-sinonimos.md) | 0 | 0 | 26 |
 | [Redacción clínica](05-redaccion.md) | 73 | 0 | 57 |
 | [Taxonomía y vocabularios](06-taxonomia.md) | 0 | 0 | 19 |
-| [Cobertura de la revisión clínica](07-cobertura-revision.md) | 291 | 0 | 3 |
+| [Cobertura de la revisión clínica](07-cobertura-revision.md) | 275 | 0 | 19 |
 
 Orden sugerido: exclusiones y codificación primero (son errores de contenido), luego dominios y sinónimos (afectan a la búsqueda y al Integrador), y al final redacción y taxonomía. La cobertura de revisión avanza en paralelo.

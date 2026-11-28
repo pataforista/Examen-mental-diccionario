@@ -111,5 +111,12 @@
     "cie11": {
       "code": "EH60"
     }
+  },
+  "review": {
+    "status": "revisado",
+    "reviewer": "Dr. Cesar Celada",
+    "date": "2026-11-28",
+    "content_hash": "8af196d2694c021e",
+    "notes": "Lote 1 emd-y9e: revisados risk_weight, core, exclusions y alerts"
   }
 }

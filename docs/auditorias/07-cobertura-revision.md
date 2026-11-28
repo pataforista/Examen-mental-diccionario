@@ -21,29 +21,9 @@ La ficha solo muestra «Revisado clínicamente» cuando la revisión está vigen
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (291)
+## Casos pendientes (275)
 
-### Riesgo alto (≥3) (15)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| CAT_001 · Catatonia maligna <!-- k:9b45f2ecd4 --> | Sin revisar · riesgo 5/5 |  |
-| CAT_002 · Estupor catatónico <!-- k:ae1ea488d2 --> | Sin revisar · riesgo 3/5 |  |
-| CNS_002 · Coma <!-- k:ddcdf70003 --> | Sin revisar · riesgo 5/5 |  |
-| MEM_011 · Delirium <!-- k:f1e12d1a15 --> | Sin revisar · riesgo 3/5 |  |
-| MEM_025 · Sopor <!-- k:c0f200c10a --> | Sin revisar · riesgo 4/5 |  |
-| RSK_001 · Riesgo autolítico (general) <!-- k:b567634449 --> | Sin revisar · riesgo 3/5 |  |
-| RSK_002 · Acceso a medios letales <!-- k:a71b61c545 --> | Sin revisar · riesgo 5/5 |  |
-| RSK_003 · Autolesión no suicida (NSSI) <!-- k:b25ca2bbd5 --> | Sin revisar · riesgo 3/5 |  |
-| RSK_004 · Capacidad de colaboración para seguridad <!-- k:b7f501ce19 --> | Sin revisar · riesgo 4/5 |  |
-| RSK_005 · Conducta suicida preparatoria <!-- k:5f4ed4651b --> | Sin revisar · riesgo 4/5 |  |
-| RSK_006 · Ideación suicida <!-- k:77ec02a407 --> | Sin revisar · riesgo 3/5 |  |
-| RSK_007 · Intento suicida <!-- k:d084951355 --> | Sin revisar · riesgo 5/5 |  |
-| RSK_008 · Riesgo de violencia hacia otros <!-- k:a1d329a485 --> | Sin revisar · riesgo 5/5 |  |
-| SER_001 · Síndrome serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 5/5 |  |
-| SNM_001 · Síndrome neuroléptico maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 5/5 |  |
-
-### Resto (276)
+### Resto (275)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -68,7 +48,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | AFF_020 · Hipotimia <!-- k:733ac095b0 --> | Sin revisar · riesgo 1/5 |  |
 | AFF_021 · Incongruencia afectiva <!-- k:1b691a1468 --> | Sin revisar · riesgo 1/5 |  |
 | AFF_022 · Incontinencia afectiva <!-- k:ac1bb7ef65 --> | Sin revisar · riesgo 1/5 |  |
-| AFF_023 · Ira <!-- k:c407e5267b --> | Sin revisar · riesgo 2/5 |  |
 | AFF_024 · Irritabilidad <!-- k:d3d5766b92 --> | Sin revisar · riesgo 1/5 |  |
 | AFF_025 · Labilidad afectiva <!-- k:cb7cd5a08c --> | Sin revisar · riesgo 1/5 |  |
 | AFF_026 · Llaneza afectiva <!-- k:a2634253ee --> | Sin revisar · riesgo 0/5 |  |
@@ -326,6 +305,22 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
+- 2026-11-28 · AFF_023 · Ira: Sin revisar · riesgo 2/5
+- 2026-11-28 · SNM_001 · Síndrome neuroléptico maligno: Sin revisar · riesgo 5/5
+- 2026-11-28 · SER_001 · Síndrome serotoninérgico: Sin revisar · riesgo 5/5
+- 2026-11-28 · RSK_008 · Riesgo de violencia hacia otros: Sin revisar · riesgo 5/5
+- 2026-11-28 · RSK_007 · Intento suicida: Sin revisar · riesgo 5/5
+- 2026-11-28 · RSK_006 · Ideación suicida: Sin revisar · riesgo 3/5
+- 2026-11-28 · RSK_005 · Conducta suicida preparatoria: Sin revisar · riesgo 4/5
+- 2026-11-28 · RSK_004 · Capacidad de colaboración para seguridad: Sin revisar · riesgo 4/5
+- 2026-11-28 · RSK_003 · Autolesión no suicida (NSSI): Sin revisar · riesgo 3/5
+- 2026-11-28 · RSK_002 · Acceso a medios letales: Sin revisar · riesgo 5/5
+- 2026-11-28 · RSK_001 · Riesgo autolítico (general): Sin revisar · riesgo 3/5
+- 2026-11-28 · MEM_025 · Sopor: Sin revisar · riesgo 4/5
+- 2026-11-28 · MEM_011 · Delirium: Sin revisar · riesgo 3/5
+- 2026-11-28 · CNS_002 · Coma: Sin revisar · riesgo 5/5
+- 2026-11-28 · CAT_002 · Estupor catatónico: Sin revisar · riesgo 3/5
+- 2026-11-28 · CAT_001 · Catatonia maligna: Sin revisar · riesgo 5/5
 - 2026-11-28 · TALD_016 · Pensamiento enlentecido: Sin revisar · riesgo 1/5
 - 2026-11-28 · TALD_010 · Habla presionada: Sin revisar · riesgo 1/5
 - 2026-11-28 · MEM_016 · Fuga: Sin revisar · riesgo 2/5

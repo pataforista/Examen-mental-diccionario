@@ -62,5 +62,12 @@
     "Término paraguas que incluye desde ideación suicida pasiva hasta intento suicida. Útil cuando no se puede o no se ha especificado el nivel exacto de riesgo."
   ],
   "cognitive_pitfalls": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "review": {
+    "status": "revisado",
+    "reviewer": "Dr. Cesar Celada",
+    "date": "2026-11-28",
+    "content_hash": "41e8fbbf4627f469",
+    "notes": "Lote 1 emd-y9e: revisados risk_weight, core, exclusions y alerts"
+  }
 }
