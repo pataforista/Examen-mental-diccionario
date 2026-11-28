@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con apraxia ideacional.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con apraxia ideacional en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se observa dificultad para secuenciar pasos de tareas cotidianas con objetos (p. ej., preparar café)."
   },
   "operationalization": {
     "detectable_by": [

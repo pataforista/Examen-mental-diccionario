@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con cristalización delirante.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con cristalización delirante en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se documenta longitudinalmente: paso de incertidumbre inicial a relato delirante estructurado y fijo."
   },
   "operationalization": {
     "detectable_by": [

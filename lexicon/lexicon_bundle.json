@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-28T03:54:33.754Z",
+  "generated_at": "2026-11-28T03:57:47.720Z",
   "total_terms": 294,
   "terms": [
     {
@@ -7098,8 +7098,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con blips.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con blips en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se documenta longitudinalmente: episodios psicóticos breves (<1 semana) autolimitados, con remisión espontánea."
       },
       "operationalization": {
         "detectable_by": [
@@ -7240,8 +7240,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con cristalización delirante.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con cristalización delirante en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se documenta longitudinalmente: paso de incertidumbre inicial a relato delirante estructurado y fijo."
       },
       "operationalization": {
         "detectable_by": [
@@ -10839,8 +10839,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con alteración de conciencia.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con alteración de conciencia en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se explora por nivel de vigilia y orientación; variable desde somnolencia leve hasta ausencia de respuesta."
       },
       "operationalization": {
         "detectable_by": [
@@ -13198,8 +13198,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con apraxia constructiva.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con apraxia constructiva en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se objetiva al solicitar copia de figuras geométricas o construcciones espaciales; el paciente falla en la organización visoespacial aunque el trazo motor sea normal."
       },
       "operationalization": {
         "detectable_by": [
@@ -13277,8 +13277,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con apraxia ideacional.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con apraxia ideacional en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se observa dificultad para secuenciar pasos de tareas cotidianas con objetos (p. ej., preparar café)."
       },
       "operationalization": {
         "detectable_by": [
@@ -13351,8 +13351,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con apraxia ideomotora.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con apraxia ideomotora en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se detecta al pedir gestos simbólicos por orden verbal o imitación, sin déficit motor primario."
       },
       "operationalization": {
         "detectable_by": [
@@ -13797,8 +13797,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con mitgehen.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con mitgehen en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se explora aplicando presión mínima sobre una extremidad; el paciente sigue el movimiento sin resistencia voluntaria."
       },
       "operationalization": {
         "detectable_by": [
@@ -23562,8 +23562,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con asociación por consonancia (clang).",
-        "behavioral_marker": "Se observan signos conductuales coherentes con asociación por consonancia (clang) en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se identifica en el discurso espontáneo por asociaciones guiadas por rima o sonido, ajenas al contenido."
       },
       "operationalization": {
         "detectable_by": [
@@ -24182,8 +24182,8 @@
           "consistencia fenomenológica durante la entrevista",
           "impacto clínico observable o referido"
         ],
-        "subjective_marker": "El paciente refiere experiencia compatible con perseveración.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con perseveración en contexto clínico."
+        "subjective_marker": null,
+        "behavioral_marker": "Se objetiva cuando el paciente repite una respuesta previa ante preguntas o estímulos distintos."
       },
       "operationalization": {
         "detectable_by": [

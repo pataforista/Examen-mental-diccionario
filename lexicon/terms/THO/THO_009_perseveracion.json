@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con perseveración.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con perseveración en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se objetiva cuando el paciente repite una respuesta previa ante preguntas o estímulos distintos."
   },
   "operationalization": {
     "detectable_by": [

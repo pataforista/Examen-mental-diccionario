@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con alteración de conciencia.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con alteración de conciencia en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se explora por nivel de vigilia y orientación; variable desde somnolencia leve hasta ausencia de respuesta."
   },
   "operationalization": {
     "detectable_by": [

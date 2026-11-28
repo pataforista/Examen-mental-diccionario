@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con mitgehen.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con mitgehen en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se explora aplicando presión mínima sobre una extremidad; el paciente sigue el movimiento sin resistencia voluntaria."
   },
   "operationalization": {
     "detectable_by": [

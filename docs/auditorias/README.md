@@ -10,7 +10,7 @@ Cada auditoría reúne un tipo de hallazgo que necesita **criterio clínico**: e
 | [Codificación CIE-11](02-codificacion-cie11.md) | 0 | 0 | 22 |
 | [Dominios y listas del Integrador](03-dominios.md) | 202 | 1 | 12 |
 | [Sinónimos](04-sinonimos.md) | 1 | 1 | 25 |
-| [Redacción clínica](05-redaccion.md) | 82 | 0 | 48 |
+| [Redacción clínica](05-redaccion.md) | 73 | 0 | 57 |
 | [Taxonomía y vocabularios](06-taxonomia.md) | 0 | 0 | 19 |
 | [Cobertura de la revisión clínica](07-cobertura-revision.md) | 294 | 0 | 0 |
 

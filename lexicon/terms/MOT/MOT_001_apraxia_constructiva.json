@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con apraxia constructiva.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con apraxia constructiva en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se objetiva al solicitar copia de figuras geométricas o construcciones espaciales; el paciente falla en la organización visoespacial aunque el trazo motor sea normal."
   },
   "operationalization": {
     "detectable_by": [

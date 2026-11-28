@@ -22,7 +22,7 @@ Planilla (`marcador_subjetivo`, `nombre`, `notas_docentes`) o el archivo del té
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (82)
+## Casos pendientes (73)
 
 ### Sin notas docentes (73)
 
@@ -102,22 +102,17 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | VOL_008 · Impulsividad patológica <!-- k:f1ecf43763 --> | sin teaching_notes |  |
 | VOL_009 · Negativismo <!-- k:f1a8f11620 --> | sin teaching_notes |  |
 
-### Marcador subjetivo genérico (9)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| DEL_002 · BLIPS <!-- k:eeb55c43e0 --> | "El paciente refiere experiencia compatible con blips." — describir lo que la persona refiere, con sus palabras |  |
-| DEL_004 · Cristalización delirante <!-- k:6f902f3163 --> | "El paciente refiere experiencia compatible con cristalización delirante." — describir lo que la persona refiere, con sus palabras |  |
-| MEM_001 · Alteración de conciencia <!-- k:41356ed58f --> | "El paciente refiere experiencia compatible con alteración de conciencia." — describir lo que la persona refiere, con sus palabras |  |
-| MOT_001 · Apraxia constructiva <!-- k:cb5d7d3102 --> | "El paciente refiere experiencia compatible con apraxia constructiva." — describir lo que la persona refiere, con sus palabras |  |
-| MOT_002 · Apraxia ideacional <!-- k:c0c2676b5e --> | "El paciente refiere experiencia compatible con apraxia ideacional." — describir lo que la persona refiere, con sus palabras |  |
-| MOT_003 · Apraxia ideomotora <!-- k:80bb921631 --> | "El paciente refiere experiencia compatible con apraxia ideomotora." — describir lo que la persona refiere, con sus palabras |  |
-| MOT_009 · Mitgehen <!-- k:918124442a --> | "El paciente refiere experiencia compatible con mitgehen." — describir lo que la persona refiere, con sus palabras |  |
-| THO_002 · Asociación por consonancia (clang) <!-- k:df2857f220 --> | "El paciente refiere experiencia compatible con asociación por consonancia (clang)." — describir lo que la persona refiere, con sus palabras |  |
-| THO_009 · Perseveración <!-- k:d487915b67 --> | "El paciente refiere experiencia compatible con perseveración." — describir lo que la persona refiere, con sus palabras |  |
-
 ## Resueltos
 
+- 2026-11-28 · THO_009 · Perseveración: "El paciente refiere experiencia compatible con perseveración." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · THO_002 · Asociación por consonancia (clang): "El paciente refiere experiencia compatible con asociación por consonancia (clang)." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · MOT_009 · Mitgehen: "El paciente refiere experiencia compatible con mitgehen." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · MOT_003 · Apraxia ideomotora: "El paciente refiere experiencia compatible con apraxia ideomotora." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · MOT_002 · Apraxia ideacional: "El paciente refiere experiencia compatible con apraxia ideacional." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · MOT_001 · Apraxia constructiva: "El paciente refiere experiencia compatible con apraxia constructiva." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · MEM_001 · Alteración de conciencia: "El paciente refiere experiencia compatible con alteración de conciencia." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · DEL_004 · Cristalización delirante: "El paciente refiere experiencia compatible con cristalización delirante." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
+- 2026-11-28 · DEL_002 · BLIPS: "El paciente refiere experiencia compatible con blips." — describir lo que la persona refiere, con sus palabras — decisión: Opción A: subjective_marker=null y reescrito en behavioral_marker (ver 05-redaccion-marcadores.md, Commit E2) (2026-11-27)
 - 2026-11-28 · PER_023 · Sonorización del pensamiento (Gedankenlautwerden): "El paciente refiere experiencia compatible con sonorización del pensamiento (gedankenlautwerden)." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
 - 2026-11-28 · PER_019 · Palinopsia: "El paciente refiere experiencia compatible con palinopsia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)
 - 2026-11-28 · PER_018 · Micropsia: "El paciente refiere experiencia compatible con micropsia." — describir lo que la persona refiere, con sus palabras — decisión: Reescrito en 1.ª persona (ver 05-redaccion-marcadores.md, Commit E1) (2026-11-27)

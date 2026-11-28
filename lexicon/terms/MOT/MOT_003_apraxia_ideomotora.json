@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con apraxia ideomotora.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con apraxia ideomotora en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se detecta al pedir gestos simbólicos por orden verbal o imitación, sin déficit motor primario."
   },
   "operationalization": {
     "detectable_by": [

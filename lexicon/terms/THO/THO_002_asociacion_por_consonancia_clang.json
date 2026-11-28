@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con asociación por consonancia (clang).",
-    "behavioral_marker": "Se observan signos conductuales coherentes con asociación por consonancia (clang) en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se identifica en el discurso espontáneo por asociaciones guiadas por rima o sonido, ajenas al contenido."
   },
   "operationalization": {
     "detectable_by": [

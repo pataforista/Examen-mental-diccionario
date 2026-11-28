@@ -18,8 +18,8 @@
       "consistencia fenomenológica durante la entrevista",
       "impacto clínico observable o referido"
     ],
-    "subjective_marker": "El paciente refiere experiencia compatible con blips.",
-    "behavioral_marker": "Se observan signos conductuales coherentes con blips en contexto clínico."
+    "subjective_marker": null,
+    "behavioral_marker": "Se documenta longitudinalmente: episodios psicóticos breves (<1 semana) autolimitados, con remisión espontánea."
   },
   "operationalization": {
     "detectable_by": [
