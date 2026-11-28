@@ -11,7 +11,7 @@
     "behavioral_marker": "Vigilancia excesiva, interrogatorios constantes a la pareja."
   },
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 2,
   "operationalization": {
     "detectable_by": [
       "entrevista_clinica"
@@ -31,8 +31,8 @@
   "exclusions": [],
   "alerts": [
     {
-      "type": "diagnostic_error",
-      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+      "type": "safety_attention",
+      "message": "Evaluar riesgo de violencia hacia la pareja (uxoricida/filicida); no confrontar directamente la creencia."
     }
   ],
   "teaching_notes": [

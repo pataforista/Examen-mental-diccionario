@@ -64,12 +64,12 @@ const expectedRisk = {
   CAT_001: 5, SPE_007: 2, JUD_002: 1, ARC_003: 1, ARC_006: 0,
   ARC_013: 0, SNM_001: 5, SER_001: 5, CNS_002: 5, MEM_011: 3,
   RSK_003: 3, ARC_011: 0, HIS_003: 0, HIS_004: 0, HIS_005: 0,
-  AFF_023: 2
+  AFF_023: 2, DEL_003: 2, DEL_006: 2, DEL_008: 2, DEL_028: 2, DEL_029: 2
 };
 const riskDiffs = Object.entries(expectedRisk).filter(([id, w]) => byId[id]?.risk_weight !== w).map(([id, w]) => `${id}=${byId[id]?.risk_weight} (esperado ${w})`);
-check(riskDiffs.length === 0, "recalibración risk_weight de los 16 términos", riskDiffs.join(", "));
+check(riskDiffs.length === 0, "recalibración risk_weight de los 21 términos", riskDiffs.join(", "));
 const dist = [0, 1, 2, 3, 4, 5].map(w => bundle.terms.filter(t => t.risk_weight === w).length);
-check(dist.join("/") === "113/110/53/5/3/7", `distribución risk_weight 0..5 = ${dist.join("/")}`, "esperado 113/110/53/5/3/7");
+check(dist.join("/") === "106/110/58/5/3/7", `distribución risk_weight 0..5 = ${dist.join("/")}`, "esperado 106/110/58/5/3/7");
 
 // 5. Snapshot textual de 15 definiciones críticas (evita cambios accidentales en definition_clinical.core).
 const coreSnapshot = {

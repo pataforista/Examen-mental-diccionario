@@ -10,7 +10,7 @@
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 2,
   "definition_clinical": {
     "core": "Creencia fija de ruina económica total pese a evidencia en contra.",
     "required_features": [
@@ -40,8 +40,8 @@
   "exclusions": [],
   "alerts": [
     {
-      "type": "diagnostic_error",
-      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+      "type": "suicide_risk",
+      "message": "Evaluar síntomas depresivos psicóticos graves y riesgo suicida asociado."
     }
   ],
   "teaching_notes": [

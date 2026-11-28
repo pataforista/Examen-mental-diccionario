@@ -11,7 +11,7 @@
     "behavioral_marker": "Desconfía de personas cercanas pese a reconocer su apariencia física."
   },
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 2,
   "operationalization": {
     "detectable_by": [
       "entrevista_clinica"
@@ -28,11 +28,22 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "DEL_030",
+      "canonical_name": "Síndrome de Fregoli",
+      "reason": "En Capgras un conocido es reemplazado por un impostor; en Fregoli personas distintas son percibidas como una sola disfrazada."
+    },
+    {
+      "term_id": "DEL_023",
+      "canonical_name": "Intermetamorfosis",
+      "reason": "En la intermetamorfosis hay intercambio de identidades físicas y psicológicas entre personas, no reemplazo por un doble impostor."
+    }
+  ],
   "alerts": [
     {
-      "type": "diagnostic_error",
-      "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+      "type": "safety_attention",
+      "message": "Riesgo documentado de agresión hacia el supuesto impostor; evitar confrontación directa."
     }
   ],
   "teaching_notes": [

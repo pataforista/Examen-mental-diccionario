@@ -11,6 +11,11 @@
       "term": "idea prevalente",
       "context": "clínico",
       "locale": "es"
+    },
+    {
+      "term": "ideas sobrevaloradas",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "síntoma",

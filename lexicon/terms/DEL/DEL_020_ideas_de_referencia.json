@@ -37,7 +37,13 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "DEL_013",
+      "canonical_name": "Delirio referencial",
+      "reason": "El delirio referencial implica convicción fija sin crítica; las ideas de referencia mantienen duda o insight parcial."
+    }
+  ],
   "alerts": [
     {
       "type": "diagnostic_error",

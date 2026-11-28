@@ -6,6 +6,11 @@
       "term": "delirio primario (jaspers)",
       "context": "clínico",
       "locale": "es"
+    },
+    {
+      "term": "delirio primario autóctono",
+      "context": "clínico",
+      "locale": "es"
     }
   ],
   "term_kind": "síntoma",

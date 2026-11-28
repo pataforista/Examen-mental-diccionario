@@ -509,10 +509,6 @@
       "path": "lexicon/terms/DEL/DEL_010_delirio_primario_jaspers.json"
     },
     {
-      "term_id": "DEL_011",
-      "path": "lexicon/terms/DEL/DEL_011_delirio_primario_autoctono.json"
-    },
-    {
       "term_id": "DEL_012",
       "path": "lexicon/terms/DEL/DEL_012_delirio_querulante.json"
     },
@@ -547,10 +543,6 @@
     {
       "term_id": "DEL_020",
       "path": "lexicon/terms/DEL/DEL_020_ideas_de_referencia.json"
-    },
-    {
-      "term_id": "DEL_021",
-      "path": "lexicon/terms/DEL/DEL_021_ideas_sobrevaloradas.json"
     },
     {
       "term_id": "DEL_022",

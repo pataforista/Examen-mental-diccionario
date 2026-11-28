@@ -11,7 +11,7 @@
     "behavioral_marker": "Negativismo grave, rechazo de alimentos por creer ser inmortal o estar muerto."
   },
   "granularity": "atomic",
-  "risk_weight": 0,
+  "risk_weight": 2,
   "operationalization": {
     "detectable_by": [
       "entrevista_clinica"
@@ -29,7 +29,12 @@
     }
   ],
   "exclusions": [],
-  "alerts": [],
+  "alerts": [
+    {
+      "type": "suicide_risk",
+      "message": "Riesgo alto de conducta suicida, autonegligencia extrema e inanición/deshidratación; evaluar seguridad y estado médico."
+    }
+  ],
   "teaching_notes": [],
   "cognitive_pitfalls": [],
   "examples": [

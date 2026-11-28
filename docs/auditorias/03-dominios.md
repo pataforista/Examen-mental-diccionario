@@ -22,9 +22,9 @@ Relación del término: `domain_links` en su archivo. Listas: `npm run term:new 
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (200)
+## Casos pendientes (198)
 
-### No figura en las listas de su dominio (Integrador y vista Dominios) (199)
+### No figura en las listas de su dominio (Integrador y vista Dominios) (197)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -86,7 +86,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | DEL_007 · Delirio grandioso <!-- k:551c0b2aa0 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_008 · Delirio místico-religioso de mandato <!-- k:2fc272335a --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_010 · Delirio primario (Jaspers) <!-- k:7e34932e64 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| DEL_011 · Delirio primario (autóctono) <!-- k:0542a0931f --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_012 · Delirio querulante <!-- k:f85aba087a --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_013 · Delirio referencial <!-- k:4fe0abdbbb --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_014 · Delirio somático monotemático <!-- k:24d0f183a4 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -96,7 +95,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | DEL_018 · Humor delirante (Wahnstimmung) <!-- k:21ba5362ec --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_019 · Idea delirante de culpa <!-- k:3480a59876 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_020 · Ideas de referencia <!-- k:099a08b600 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
-| DEL_021 · Ideas sobrevaloradas <!-- k:278e539114 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_022 · Inserción del pensamiento <!-- k:ce2181ab1a --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_023 · Intermetamorfosis <!-- k:e8a4eabeb0 --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
 | DEL_024 · Interpretación delirante <!-- k:30c5e7bc7e --> | expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio |  |
@@ -236,6 +234,8 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
+- 2026-11-28 · DEL_021 · Ideas sobrevaloradas: expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
+- 2026-11-28 · DEL_011 · Delirio primario (autóctono): expresión principal en DOM-07, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-28 · MEM_025 · Sopor: expresión principal en DOM-11, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-28 · TALD_016 · Pensamiento enlentecido: expresión principal en DOM-06, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio
 - 2026-11-28 · TALD_010 · Habla presionada: expresión principal en DOM-05, sin entrada en sus listas. Para agregarla: npm run term:new … o term_links del dominio

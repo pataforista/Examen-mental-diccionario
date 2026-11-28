@@ -37,7 +37,18 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "DEL_028",
+      "canonical_name": "Síndrome de Capgras",
+      "reason": "En Capgras hay sustitución por un impostor idéntico; en la intermetamorfosis ocurre intercambio físico y psicológico de identidades."
+    },
+    {
+      "term_id": "DEL_030",
+      "canonical_name": "Síndrome de Fregoli",
+      "reason": "En Fregoli una misma persona adopta múltiples apariencias; en la intermetamorfosis las personas intercambian sus identidades."
+    }
+  ],
   "alerts": [
     {
       "type": "diagnostic_error",

@@ -8,7 +8,7 @@
       "locale": "es"
     }
   ],
-  "term_kind": "síntoma",
+  "term_kind": "síndrome",
   "granularity": "atomic",
   "risk_weight": 0,
   "definition_clinical": {
@@ -37,7 +37,18 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "DEL_028",
+      "canonical_name": "Síndrome de Capgras",
+      "reason": "En Fregoli varios desconocidos son una misma persona disfrazada; en Capgras un allegado es sustituido por un impostor idéntico."
+    },
+    {
+      "term_id": "DEL_023",
+      "canonical_name": "Intermetamorfosis",
+      "reason": "En la intermetamorfosis se intercambian identidades entre personas; en Fregoli una sola persona cambia de apariencia."
+    }
+  ],
   "alerts": [
     {
       "type": "diagnostic_error",

@@ -42,3 +42,12 @@
 
 - `AFF_023` Ira bajado de `3 → 2` (distribución final `113/110/53/5/3/7`).
 - `MEM_011` Delirium: exclusiones en texto libre (`Demencia`, `Esquizofrenia`) pendientes de vinculación por `term_id` si se crean esos términos.
+
+## Notas Commit H (previo a firma de Lote 2 `DEL_*`, 2026-11-28)
+
+- Fusiones: `DEL_011 → DEL_010` (paráfrasis duplicada) y `DEL_021 → CNT_001` (ideas sobrevaloradas no son delirios).
+- Recalibración `0 → 2` con alertas específicas: `DEL_003` Celotipia, `DEL_006` Ruina/pobreza, `DEL_008` Místico-religioso de mandato, `DEL_028` Capgras, `DEL_029` Cotard.
+- **`DEL_029` Cotard:** queda en `2` con alerta fuerte; **revisar 2 vs 3 en próxima pasada clínica**.
+- `DEL_030` Fregoli corregido `síntoma → síndrome`.
+- Distribución final: `106/110/58/5/3/7` (289 términos).
+- Pendientes para próxima pasada taxonómica: `term_kind` de `DEL_018` y `DEL_031`, y exclusiones de los 16 `DEL_*` restantes.

@@ -1,7 +1,7 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-28T13:22:57.118Z",
-  "total_terms": 291,
+  "generated_at": "2026-11-28T13:32:06.931Z",
+  "total_terms": 289,
   "terms": [
     {
       "term_id": "AFF_001",
@@ -6502,6 +6502,11 @@
           "term": "idea prevalente",
           "context": "clínico",
           "locale": "es"
+        },
+        {
+          "term": "ideas sobrevaloradas",
+          "context": "clínico",
+          "locale": "es"
         }
       ],
       "term_kind": "síntoma",
@@ -7212,7 +7217,7 @@
         "behavioral_marker": "Vigilancia excesiva, interrogatorios constantes a la pareja."
       },
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 2,
       "operationalization": {
         "detectable_by": [
           "entrevista_clinica"
@@ -7232,8 +7237,8 @@
       "exclusions": [],
       "alerts": [
         {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+          "type": "safety_attention",
+          "message": "Evaluar riesgo de violencia hacia la pareja (uxoricida/filicida); no confrontar directamente la creencia."
         }
       ],
       "teaching_notes": [
@@ -7421,7 +7426,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 2,
       "definition_clinical": {
         "core": "Creencia fija de ruina económica total pese a evidencia en contra.",
         "required_features": [
@@ -7451,8 +7456,8 @@
       "exclusions": [],
       "alerts": [
         {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+          "type": "suicide_risk",
+          "message": "Evaluar síntomas depresivos psicóticos graves y riesgo suicida asociado."
         }
       ],
       "teaching_notes": [
@@ -7577,7 +7582,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 2,
       "definition_clinical": {
         "core": "Creencia delirante religiosa con supuestas instrucciones divinas que dirigen la conducta.",
         "required_features": [
@@ -7607,8 +7612,8 @@
       "exclusions": [],
       "alerts": [
         {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+          "type": "safety_attention",
+          "message": "Evaluar contenido del mandato percibido y riesgo de acto hetero o autoagresivo."
         }
       ],
       "teaching_notes": [
@@ -7748,6 +7753,11 @@
           "term": "delirio primario (jaspers)",
           "context": "clínico",
           "locale": "es"
+        },
+        {
+          "term": "delirio primario autóctono",
+          "context": "clínico",
+          "locale": "es"
         }
       ],
       "term_kind": "síntoma",
@@ -7800,85 +7810,6 @@
           "Sims",
           "Robinson",
           "Mendez"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clasica"
-        ]
-      },
-      "status": "active",
-      "mappings": {}
-    },
-    {
-      "term_id": "DEL_011",
-      "canonical_name": "Delirio primario (autóctono)",
-      "term_kind": "síntoma",
-      "definition_clinical": {
-        "core": "Creencia delirante que surge sin una causa psicológica comprensible y es irreductible a la experiencia previa.",
-        "required_features": [
-          "irrupción súbita",
-          "certeza delirante",
-          "incorregibilidad"
-        ],
-        "subjective_marker": "Refiere una certeza súbita y autoevidente de una nueva creencia.",
-        "behavioral_marker": "Expresa convicción absoluta sin base externa coherente."
-      },
-      "synonyms_and_slang": [
-        {
-          "term": "intuición delirante",
-          "context": "clinical"
-        },
-        {
-          "term": "percepción delirante",
-          "context": "clinical"
-        }
-      ],
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-07",
-          "relation": "primary_expression",
-          "context": "pensamiento_contenido"
-        }
-      ],
-      "exclusions": [],
-      "alerts": [
-        {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
-        }
-      ],
-      "teaching_notes": [
-        "Describir delirio primario (autóctono) con fenomenología y curso temporal.",
-        "Corroborar con entrevista clínica y observación conductual."
-      ],
-      "cognitive_pitfalls": [
-        "Sobregeneralizar el término sin evidencia clínica suficiente.",
-        "No discriminar entre variación normal y hallazgo psicopatológico."
-      ],
-      "examples": [
-        {
-          "type": "patient_quote",
-          "text": "De pronto, al ver ese semáforo en rojo, supe con absoluta certeza que el fin del mundo comienza hoy y yo soy el encargado de avisar a todos."
-        },
-        {
-          "type": "observation",
-          "text": "El paciente describe una intuición súbita, no precedida de dudas o reflexiones, con una convicción total e irreductible que reorganiza su realidad inmediata."
-        }
-      ],
-      "version": "1.0.0",
-      "provenance": {
-        "phenomenology": [
-          "consenso_editorial"
         ],
         "clinical_tradition": [
           "psicopatologia_clasica"
@@ -7994,7 +7925,13 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_020",
+          "canonical_name": "Ideas de referencia",
+          "reason": "En las ideas de referencia se conserva duda o insight parcial; en el delirio referencial la convicción es fija e irreductible."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8141,7 +8078,18 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_022",
+          "canonical_name": "Inserción del pensamiento",
+          "reason": "En la difusión los pensamientos propios se transmiten hacia afuera; en la inserción pensamientos ajenos entran desde el exterior."
+        },
+        {
+          "term_id": "DEL_027",
+          "canonical_name": "Robo del pensamiento",
+          "reason": "En la difusión los pensamientos se irradian o quedan accesibles a otros; en el robo son sustraídos dejando vacío mental."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8509,7 +8457,13 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_013",
+          "canonical_name": "Delirio referencial",
+          "reason": "El delirio referencial implica convicción fija sin crítica; las ideas de referencia mantienen duda o insight parcial."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8518,74 +8472,6 @@
       ],
       "teaching_notes": [
         "Describir ideas de referencia with fenomenología y curso temporal.",
-        "Corroborar con entrevista clínica y observación conductual."
-      ],
-      "cognitive_pitfalls": [
-        "Sobregeneralizar el término sin evidencia clínica suficiente.",
-        "No discriminar entre variación normal y hallazgo psicopatológico."
-      ],
-      "version": "1.0.0",
-      "provenance": {
-        "phenomenology": [
-          "Sims",
-          "Robinson",
-          "Mendez"
-        ],
-        "clinical_tradition": [
-          "psicopatologia_clasica"
-        ]
-      },
-      "status": "active",
-      "mappings": {}
-    },
-    {
-      "term_id": "DEL_021",
-      "canonical_name": "Ideas sobrevaloradas",
-      "synonyms_and_slang": [
-        {
-          "term": "ideas sobrevaloradas",
-          "context": "clínico",
-          "locale": "es"
-        }
-      ],
-      "term_kind": "síntoma",
-      "granularity": "atomic",
-      "risk_weight": 0,
-      "definition_clinical": {
-        "core": "Creencias plausibles sostenidas con convicción y carga afectiva desproporcionadas.",
-        "required_features": [
-          "presencia clínica de ideas sobrevaloradas",
-          "consistencia fenomenológica durante la entrevista",
-          "impacto clínico observable o referido"
-        ],
-        "subjective_marker": "No puedo dejar de pensar en este tema; estoy convencido de que define toda mi vida.",
-        "behavioral_marker": "Se observan signos conductuales coherentes con ideas sobrevaloradas en contexto clínico."
-      },
-      "operationalization": {
-        "detectable_by": [
-          "entrevista_clinica"
-        ],
-        "time_relation": [
-          "actual"
-        ],
-        "pharmacological_link": false
-      },
-      "domain_links": [
-        {
-          "domain_id": "DOM-07",
-          "relation": "primary_expression",
-          "context": "pensamiento_contenido"
-        }
-      ],
-      "exclusions": [],
-      "alerts": [
-        {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
-        }
-      ],
-      "teaching_notes": [
-        "Describir ideas sobrevaloradas with fenomenología y curso temporal.",
         "Corroborar con entrevista clínica y observación conductual."
       ],
       "cognitive_pitfalls": [
@@ -8637,7 +8523,18 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_015",
+          "canonical_name": "Difusión del pensamiento",
+          "reason": "En la inserción se introducen pensamientos ajenos; en la difusión los propios se transmiten al exterior."
+        },
+        {
+          "term_id": "DEL_027",
+          "canonical_name": "Robo del pensamiento",
+          "reason": "En la inserción se añaden pensamientos ajenos; en el robo se extraen pensamientos propios."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8710,7 +8607,18 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_028",
+          "canonical_name": "Síndrome de Capgras",
+          "reason": "En Capgras hay sustitución por un impostor idéntico; en la intermetamorfosis ocurre intercambio físico y psicológico de identidades."
+        },
+        {
+          "term_id": "DEL_030",
+          "canonical_name": "Síndrome de Fregoli",
+          "reason": "En Fregoli una misma persona adopta múltiples apariencias; en la intermetamorfosis las personas intercambian sus identidades."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -8974,7 +8882,18 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_015",
+          "canonical_name": "Difusión del pensamiento",
+          "reason": "En el robo los pensamientos son sustraídos; en la difusión se transmiten o quedan expuestos a otros."
+        },
+        {
+          "term_id": "DEL_022",
+          "canonical_name": "Inserción del pensamiento",
+          "reason": "En el robo se extraen pensamientos propios; en la inserción se introducen pensamientos ajenos."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",
@@ -9021,7 +8940,7 @@
         "behavioral_marker": "Desconfía de personas cercanas pese a reconocer su apariencia física."
       },
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 2,
       "operationalization": {
         "detectable_by": [
           "entrevista_clinica"
@@ -9038,11 +8957,22 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_030",
+          "canonical_name": "Síndrome de Fregoli",
+          "reason": "En Capgras un conocido es reemplazado por un impostor; en Fregoli personas distintas son percibidas como una sola disfrazada."
+        },
+        {
+          "term_id": "DEL_023",
+          "canonical_name": "Intermetamorfosis",
+          "reason": "En la intermetamorfosis hay intercambio de identidades físicas y psicológicas entre personas, no reemplazo por un doble impostor."
+        }
+      ],
       "alerts": [
         {
-          "type": "diagnostic_error",
-          "message": "Interpretar dentro del contexto psicopatológico y con integración sindromática."
+          "type": "safety_attention",
+          "message": "Riesgo documentado de agresión hacia el supuesto impostor; evitar confrontación directa."
         }
       ],
       "teaching_notes": [
@@ -9085,7 +9015,7 @@
         "behavioral_marker": "Negativismo grave, rechazo de alimentos por creer ser inmortal o estar muerto."
       },
       "granularity": "atomic",
-      "risk_weight": 0,
+      "risk_weight": 2,
       "operationalization": {
         "detectable_by": [
           "entrevista_clinica"
@@ -9103,7 +9033,12 @@
         }
       ],
       "exclusions": [],
-      "alerts": [],
+      "alerts": [
+        {
+          "type": "suicide_risk",
+          "message": "Riesgo alto de conducta suicida, autonegligencia extrema e inanición/deshidratación; evaluar seguridad y estado médico."
+        }
+      ],
       "teaching_notes": [],
       "cognitive_pitfalls": [],
       "examples": [
@@ -9145,7 +9080,7 @@
           "locale": "es"
         }
       ],
-      "term_kind": "síntoma",
+      "term_kind": "síndrome",
       "granularity": "atomic",
       "risk_weight": 0,
       "definition_clinical": {
@@ -9174,7 +9109,18 @@
           "context": "pensamiento_contenido"
         }
       ],
-      "exclusions": [],
+      "exclusions": [
+        {
+          "term_id": "DEL_028",
+          "canonical_name": "Síndrome de Capgras",
+          "reason": "En Fregoli varios desconocidos son una misma persona disfrazada; en Capgras un allegado es sustituido por un impostor idéntico."
+        },
+        {
+          "term_id": "DEL_023",
+          "canonical_name": "Intermetamorfosis",
+          "reason": "En la intermetamorfosis se intercambian identidades entre personas; en Fregoli una sola persona cambia de apariencia."
+        }
+      ],
       "alerts": [
         {
           "type": "diagnostic_error",

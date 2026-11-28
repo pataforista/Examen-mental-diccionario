@@ -29,7 +29,18 @@
       "context": "pensamiento_contenido"
     }
   ],
-  "exclusions": [],
+  "exclusions": [
+    {
+      "term_id": "DEL_015",
+      "canonical_name": "Difusión del pensamiento",
+      "reason": "En la inserción se introducen pensamientos ajenos; en la difusión los propios se transmiten al exterior."
+    },
+    {
+      "term_id": "DEL_027",
+      "canonical_name": "Robo del pensamiento",
+      "reason": "En la inserción se añaden pensamientos ajenos; en el robo se extraen pensamientos propios."
+    }
+  ],
   "alerts": [
     {
       "type": "diagnostic_error",

@@ -21,9 +21,9 @@ La ficha solo muestra «Revisado clínicamente» cuando la revisión está vigen
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (275)
+## Casos pendientes (273)
 
-### Resto (275)
+### Resto (273)
 
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
@@ -106,15 +106,14 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | COG_006 · Déficit intelectual <!-- k:b6d5588a70 --> | Sin revisar · riesgo 1/5 |  |
 | DEL_001 · Apofanía <!-- k:5ba319a441 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_002 · BLIPS <!-- k:9b17780fc0 --> | Sin revisar · riesgo 0/5 |  |
-| DEL_003 · Celotipia (Síndrome de Otelo) <!-- k:a53d276f4d --> | Sin revisar · riesgo 0/5 |  |
+| DEL_003 · Celotipia (Síndrome de Otelo) <!-- k:a53d276f4d --> | Sin revisar · riesgo 2/5 |  |
 | DEL_004 · Cristalización delirante <!-- k:0d3197806d --> | Sin revisar · riesgo 0/5 |  |
 | DEL_005 · Delirio de infestación (Ekbom) <!-- k:add282c233 --> | Sin revisar · riesgo 0/5 |  |
-| DEL_006 · Delirio de ruina/pobreza <!-- k:a8be840fa3 --> | Sin revisar · riesgo 0/5 |  |
+| DEL_006 · Delirio de ruina/pobreza <!-- k:a8be840fa3 --> | Sin revisar · riesgo 2/5 |  |
 | DEL_007 · Delirio grandioso <!-- k:367f5ba439 --> | Sin revisar · riesgo 0/5 |  |
-| DEL_008 · Delirio místico-religioso de mandato <!-- k:72c94f6b20 --> | Sin revisar · riesgo 0/5 |  |
+| DEL_008 · Delirio místico-religioso de mandato <!-- k:72c94f6b20 --> | Sin revisar · riesgo 2/5 |  |
 | DEL_009 · Delirio persecutorio <!-- k:de93861a81 --> | Sin revisar · riesgo 2/5 |  |
 | DEL_010 · Delirio primario (Jaspers) <!-- k:85edbe7879 --> | Sin revisar · riesgo 0/5 |  |
-| DEL_011 · Delirio primario (autóctono) <!-- k:8cf3053229 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_012 · Delirio querulante <!-- k:b65a07ffe2 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_013 · Delirio referencial <!-- k:38d9d4af1e --> | Sin revisar · riesgo 0/5 |  |
 | DEL_014 · Delirio somático monotemático <!-- k:153c2e6cd9 --> | Sin revisar · riesgo 0/5 |  |
@@ -124,15 +123,14 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | DEL_018 · Humor delirante (Wahnstimmung) <!-- k:8cf07618a1 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_019 · Idea delirante de culpa <!-- k:82f516f45d --> | Sin revisar · riesgo 2/5 |  |
 | DEL_020 · Ideas de referencia <!-- k:0ac3ccc741 --> | Sin revisar · riesgo 0/5 |  |
-| DEL_021 · Ideas sobrevaloradas <!-- k:aae8dd2ea0 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_022 · Inserción del pensamiento <!-- k:0322708b9d --> | Sin revisar · riesgo 0/5 |  |
 | DEL_023 · Intermetamorfosis <!-- k:4827ce32e0 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_024 · Interpretación delirante <!-- k:7628c2a729 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_025 · Perplejidad delirante <!-- k:3179bdf716 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_026 · Revelación delirante (intuición delirante) <!-- k:f737940119 --> | Sin revisar · riesgo 0/5 |  |
 | DEL_027 · Robo del pensamiento <!-- k:8e6365f76d --> | Sin revisar · riesgo 0/5 |  |
-| DEL_028 · Síndrome de Capgras <!-- k:c7ef0dccbb --> | Sin revisar · riesgo 0/5 |  |
-| DEL_029 · Síndrome de Cotard <!-- k:bcfb46e1ad --> | Sin revisar · riesgo 0/5 |  |
+| DEL_028 · Síndrome de Capgras <!-- k:c7ef0dccbb --> | Sin revisar · riesgo 2/5 |  |
+| DEL_029 · Síndrome de Cotard <!-- k:bcfb46e1ad --> | Sin revisar · riesgo 2/5 |  |
 | DEL_030 · Síndrome de Fregoli <!-- k:3454eb9efc --> | Sin revisar · riesgo 0/5 |  |
 | DEL_031 · Síntomas positivos atenuados <!-- k:d8c249de27 --> | Sin revisar · riesgo 0/5 |  |
 | HIS_001 · Folie à deux <!-- k:f58f21e53c --> | Sin revisar · riesgo 2/5 |  |
@@ -305,6 +303,8 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 
 ## Resueltos
 
+- 2026-11-28 · DEL_021 · Ideas sobrevaloradas: Sin revisar · riesgo 0/5
+- 2026-11-28 · DEL_011 · Delirio primario (autóctono): Sin revisar · riesgo 0/5
 - 2026-11-28 · AFF_023 · Ira: Sin revisar · riesgo 2/5
 - 2026-11-28 · SNM_001 · Síndrome neuroléptico maligno: Sin revisar · riesgo 5/5
 - 2026-11-28 · SER_001 · Síndrome serotoninérgico: Sin revisar · riesgo 5/5
