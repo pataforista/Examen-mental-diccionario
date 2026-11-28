@@ -1,6 +1,6 @@
 # Auditoría: Cobertura de la revisión clínica
 
-> Generado con `npm run lexicon:audit` el 2026-11-27. La tabla se regenera con los datos actuales; **lo que escribas en «Decisión» se conserva**. Al corregirse, un caso pasa a «Resueltos» con su decisión.
+> Generado con `npm run lexicon:audit` el 2026-11-28. La tabla se regenera con los datos actuales; **lo que escribas en «Decisión» se conserva**. Al corregirse, un caso pasa a «Resueltos» con su decisión.
 
 ## Qué revisa
 
@@ -28,21 +28,21 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | Término o campo | Hallazgo | Decisión |
 |---|---|---|
 | AFF_023 · Ira <!-- k:c407e5267b --> | Sin revisar · riesgo 3/5 |  |
-| ARC_003 · Bouffée délirante <!-- k:cc3de57bd7 --> | Sin revisar · riesgo 3/5 |  |
-| ARC_006 · Dementia praecox <!-- k:13e90dfacb --> | Sin revisar · riesgo 3/5 |  |
-| ARC_013 · Lypemanía <!-- k:69d0a0ff4d --> | Sin revisar · riesgo 3/5 |  |
-| CAT_001 · Catatonia maligna <!-- k:9b45f2ecd4 --> | Sin revisar · riesgo 3/5 |  |
+| CAT_001 · Catatonia maligna <!-- k:9b45f2ecd4 --> | Sin revisar · riesgo 5/5 |  |
 | CAT_002 · Estupor catatónico <!-- k:ae1ea488d2 --> | Sin revisar · riesgo 3/5 |  |
-| JUD_002 · Juicio de Realidad <!-- k:1e3e04518e --> | Sin revisar · riesgo 3/5 |  |
+| CNS_002 · Coma <!-- k:ddcdf70003 --> | Sin revisar · riesgo 5/5 |  |
+| MEM_011 · Delirium <!-- k:f1e12d1a15 --> | Sin revisar · riesgo 3/5 |  |
 | MEM_025 · Sopor <!-- k:c0f200c10a --> | Sin revisar · riesgo 4/5 |  |
 | RSK_001 · Riesgo autolítico (general) <!-- k:b567634449 --> | Sin revisar · riesgo 3/5 |  |
 | RSK_002 · Acceso a medios letales <!-- k:a71b61c545 --> | Sin revisar · riesgo 5/5 |  |
+| RSK_003 · Autolesión no suicida (NSSI) <!-- k:b25ca2bbd5 --> | Sin revisar · riesgo 3/5 |  |
 | RSK_004 · Capacidad de colaboración para seguridad <!-- k:b7f501ce19 --> | Sin revisar · riesgo 4/5 |  |
 | RSK_005 · Conducta suicida preparatoria <!-- k:5f4ed4651b --> | Sin revisar · riesgo 4/5 |  |
 | RSK_006 · Ideación suicida <!-- k:77ec02a407 --> | Sin revisar · riesgo 3/5 |  |
 | RSK_007 · Intento suicida <!-- k:d084951355 --> | Sin revisar · riesgo 5/5 |  |
 | RSK_008 · Riesgo de violencia hacia otros <!-- k:a1d329a485 --> | Sin revisar · riesgo 5/5 |  |
-| SPE_007 · Mutismo <!-- k:3bb8f11eb2 --> | Sin revisar · riesgo 3/5 |  |
+| SER_001 · Síndrome serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 5/5 |  |
+| SNM_001 · Síndrome neuroléptico maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 5/5 |  |
 
 ### Resto (278)
 
@@ -88,12 +88,15 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | APP_004 · Facies y mímica <!-- k:8fb0a1565c --> | Sin revisar · riesgo 0/5 |  |
 | ARC_001 · Ambitendencia <!-- k:f53b01f4f4 --> | Sin revisar · riesgo 0/5 |  |
 | ARC_002 · Amentia <!-- k:a208069d37 --> | Sin revisar · riesgo 2/5 |  |
+| ARC_003 · Bouffée délirante <!-- k:cc3de57bd7 --> | Sin revisar · riesgo 1/5 |  |
 | ARC_004 · Degeneracionismo <!-- k:630f6d9cb0 --> | Sin revisar · riesgo 0/5 |  |
+| ARC_006 · Dementia praecox <!-- k:13e90dfacb --> | Sin revisar · riesgo 0/5 |  |
 | ARC_007 · Ecmnesia <!-- k:b161a01ccc --> | Sin revisar · riesgo 1/5 |  |
 | ARC_008 · Hipermnesia <!-- k:3e6de6b64c --> | Sin revisar · riesgo 0/5 |  |
 | ARC_009 · Histeria <!-- k:c2680f7e83 --> | Sin revisar · riesgo 1/5 |  |
-| ARC_011 · Locura circular <!-- k:7c3f239747 --> | Sin revisar · riesgo 2/5 |  |
+| ARC_011 · Locura circular <!-- k:7c3f239747 --> | Sin revisar · riesgo 0/5 |  |
 | ARC_012 · Locura de la duda <!-- k:04b63cf14c --> | Sin revisar · riesgo 1/5 |  |
+| ARC_013 · Lypemanía <!-- k:69d0a0ff4d --> | Sin revisar · riesgo 0/5 |  |
 | ARC_014 · Manía sin delirio <!-- k:7bfbbfc681 --> | Sin revisar · riesgo 2/5 |  |
 | ARC_015 · Monomanía <!-- k:16f6dd668d --> | Sin revisar · riesgo 1/5 |  |
 | ARC_016 · Neurastenia <!-- k:0ead30fec8 --> | Sin revisar · riesgo 0/5 |  |
@@ -106,7 +109,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | CAT_004 · Mutismo catatónico <!-- k:febcb8c9c3 --> | Sin revisar · riesgo 2/5 |  |
 | CAT_005 · Obediencia automática <!-- k:1f5ea09541 --> | Sin revisar · riesgo 2/5 |  |
 | CNS_001 · Anergia <!-- k:3eb6e9d50a --> | Sin revisar · riesgo 1/5 |  |
-| CNS_002 · Coma <!-- k:ddcdf70003 --> | Sin revisar · riesgo 2/5 |  |
 | CNS_003 · Estado crepuscular <!-- k:4c5727ad45 --> | Sin revisar · riesgo 2/5 |  |
 | CNS_004 · Estados oniroides o de trastorno hipnagógico patológico <!-- k:6e74c3e3c3 --> | Sin revisar · riesgo 1/5 |  |
 | CNS_005 · Estupor psiquiátrico <!-- k:37029bfd2a --> | Sin revisar · riesgo 2/5 |  |
@@ -156,9 +158,9 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | DEL_031 · Síntomas positivos atenuados <!-- k:d8c249de27 --> | Sin revisar · riesgo 0/5 |  |
 | HIS_001 · Folie à deux <!-- k:f58f21e53c --> | Sin revisar · riesgo 2/5 |  |
 | HIS_002 · Moral insanity <!-- k:d2c1433289 --> | Sin revisar · riesgo 0/5 |  |
-| HIS_003 · Dipsomanía <!-- k:56811e01b3 --> | Sin revisar · riesgo 1/5 |  |
-| HIS_004 · Poriomanía <!-- k:6b7ec4db2f --> | Sin revisar · riesgo 1/5 |  |
-| HIS_005 · Nimfomanía / Satiriasis <!-- k:7b7c9fb6b8 --> | Sin revisar · riesgo 1/5 |  |
+| HIS_003 · Dipsomanía <!-- k:56811e01b3 --> | Sin revisar · riesgo 0/5 |  |
+| HIS_004 · Poriomanía <!-- k:6b7ec4db2f --> | Sin revisar · riesgo 0/5 |  |
+| HIS_005 · Nimfomanía / Satiriasis <!-- k:7b7c9fb6b8 --> | Sin revisar · riesgo 0/5 |  |
 | HIS_006 · Furor uterino <!-- k:e122135649 --> | Sin revisar · riesgo 0/5 |  |
 | HIS_007 · Locura lúcida <!-- k:c2dfbc2417 --> | Sin revisar · riesgo 0/5 |  |
 | HIS_008 · Esquizofrenia simple (concepto histórico) <!-- k:53b5683438 --> | Sin revisar · riesgo 0/5 |  |
@@ -175,6 +177,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | INS_009 · Insight parcial <!-- k:16cfe36983 --> | Sin revisar · riesgo 1/5 |  |
 | INS_010 · Noesis de recuperación <!-- k:b555051ddb --> | Sin revisar · riesgo 1/5 |  |
 | JUD_001 · Juicio <!-- k:4c0e408d7b --> | Sin revisar · riesgo 1/5 |  |
+| JUD_002 · Juicio de Realidad <!-- k:1e3e04518e --> | Sin revisar · riesgo 1/5 |  |
 | MEM_001 · Alteración de conciencia <!-- k:ebbdf5e318 --> | Sin revisar · riesgo 0/5 |  |
 | MEM_002 · Amnesia anterógrada <!-- k:7dffc13725 --> | Sin revisar · riesgo 1/5 |  |
 | MEM_003 · Amnesia anterógrada disociativa <!-- k:bfd84cf42e --> | Sin revisar · riesgo 1/5 |  |
@@ -185,7 +188,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | MEM_008 · Confabulación espontánea <!-- k:ab18839cdc --> | Sin revisar · riesgo 1/5 |  |
 | MEM_009 · Confabulación provocada <!-- k:014f6b3a8a --> | Sin revisar · riesgo 0/5 |  |
 | MEM_010 · Criptomnesia <!-- k:4144658e5e --> | Sin revisar · riesgo 0/5 |  |
-| MEM_011 · Delirium <!-- k:f1e12d1a15 --> | Sin revisar · riesgo 2/5 |  |
 | MEM_012 · Déjà senti <!-- k:38687148df --> | Sin revisar · riesgo 0/5 |  |
 | MEM_013 · Déjà vu <!-- k:4f77756f74 --> | Sin revisar · riesgo 0/5 |  |
 | MEM_014 · Déjà vu / Jamais vu <!-- k:b86acef2b6 --> | Sin revisar · riesgo 0/5 |  |
@@ -256,7 +258,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | PHM_006 · Alteración de la teoría de la mente <!-- k:27a14c553e --> | Sin revisar · riesgo 1/5 |  |
 | PHM_007 · Interocepción aberrante <!-- k:564b665a47 --> | Sin revisar · riesgo 1/5 |  |
 | PHM_008 · Anomalías del sentido de pertenencia <!-- k:114c194a49 --> | Sin revisar · riesgo 1/5 |  |
-| RSK_003 · Autolesión no suicida (NSSI) <!-- k:b25ca2bbd5 --> | Sin revisar · riesgo 2/5 |  |
 | SELF_001 · Actos impuestos (pasividad volitiva) <!-- k:9a5b3ea532 --> | Sin revisar · riesgo 2/5 |  |
 | SELF_002 · Anosognosia cognitiva <!-- k:1292848f99 --> | Sin revisar · riesgo 1/5 |  |
 | SELF_003 · Anosognosia psicótica <!-- k:34435ac173 --> | Sin revisar · riesgo 2/5 |  |
@@ -268,8 +269,6 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SELF_009 · Impulsos impuestos <!-- k:c8b593303d --> | Sin revisar · riesgo 1/5 |  |
 | SELF_010 · Pérdida de la evidencia natural <!-- k:b1767ead81 --> | Sin revisar · riesgo 0/5 |  |
 | SELF_011 · Transitivismo <!-- k:d455d87df0 --> | Sin revisar · riesgo 1/5 |  |
-| SER_001 · Síndrome serotoninérgico <!-- k:e1e7ce6008 --> | Sin revisar · riesgo 2/5 |  |
-| SNM_001 · Síndrome neuroléptico maligno <!-- k:da9f4c3073 --> | Sin revisar · riesgo 2/5 |  |
 | SOM_001 · Dismorfofobia <!-- k:8f9486d650 --> | Sin revisar · riesgo 2/5 |  |
 | SOM_002 · Hipocondría <!-- k:67f8241850 --> | Sin revisar · riesgo 1/5 |  |
 | SPE_001 · Aprosodia <!-- k:7bad45b75b --> | Sin revisar · riesgo 0/5 |  |
@@ -278,6 +277,7 @@ Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar est
 | SPE_004 · Latencia de respuesta aumentada <!-- k:dece11a8c8 --> | Sin revisar · riesgo 0/5 |  |
 | SPE_005 · Logoclonia <!-- k:1468c6a7af --> | Sin revisar · riesgo 0/5 |  |
 | SPE_006 · Logorrea <!-- k:357ae9366a --> | Sin revisar · riesgo 0/5 |  |
+| SPE_007 · Mutismo <!-- k:3bb8f11eb2 --> | Sin revisar · riesgo 2/5 |  |
 | SPE_008 · Palilalia <!-- k:d82a6491c2 --> | Sin revisar · riesgo 0/5 |  |
 | SPE_009 · Pararrespuestas (Vorbeireden) <!-- k:3eb7f2b23d --> | Sin revisar · riesgo 0/5 |  |
 | SPE_010 · Presión de habla <!-- k:09a9af6779 --> | Sin revisar · riesgo 0/5 |  |

@@ -3,7 +3,7 @@
   "canonical_name": "Catatonia maligna",
   "term_kind": "síndrome",
   "granularity": "atomic",
-  "risk_weight": 3,
+  "risk_weight": 5,
   "definition_clinical": {
     "core": "Forma grave y potencialmente letal de catatonia caracterizada por inestabilidad autonómica, fiebre e intensa rigidez o agitación.",
     "required_features": [

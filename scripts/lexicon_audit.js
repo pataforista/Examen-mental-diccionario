@@ -154,22 +154,17 @@ function taxonomyRows() {
       group: "Tipo de término"
     });
   }
-  // Escala de riesgo: el esquema la define 0–2; los datos y el vocabulario usan 0–5 sin definición escrita.
-  let schemaRisk = null;
-  try {
-    schemaRisk = JSON.parse(fs.readFileSync(path.join(ROOT, "lexicon/lexicon.schema.json"), "utf8")).controlled_vocabularies?.risk_weight;
-  } catch {
-    /* sin esquema */
-  }
+  // Escala de riesgo: los niveles con etiqueta y criterio clínico viven en controlled_vocabularies.json (risk_weight_levels).
+  const definedLevelsObj = lexicon.vocab.risk_weight_levels;
   const used = [...new Set(terms.map(t => t.risk_weight))].filter(v => v !== undefined).sort();
-  const defined = schemaRisk && typeof schemaRisk === "object" && !Array.isArray(schemaRisk) ? Object.keys(schemaRisk).map(Number) : [];
+  const defined = definedLevelsObj && typeof definedLevelsObj === "object" ? Object.keys(definedLevelsObj).map(Number) : [];
   const undefinedLevels = used.filter(v => !defined.includes(v));
   if (undefinedLevels.length) {
     const high = terms.filter(t => undefinedLevels.includes(t.risk_weight)).sort((a, b) => b.risk_weight - a.risk_weight);
     rows.push({
       key: keyOf("tax-risk", used.join(), defined.join()),
       subject: "risk_weight",
-      finding: `El esquema define ${defined.length ? defined.map(v => `${v} = ${schemaRisk[v]}`).join(", ") : "ningún nivel"}; los términos usan ${used.join(", ")}. Sin definición escrita para ${undefinedLevels.join(", ")}. Términos en esos niveles: ${high.map(t => `${t.term_id} ${t.canonical_name} (${t.risk_weight})`).join("; ")}`,
+      finding: `El vocabulario define ${defined.length ? defined.map(v => `${v} = ${definedLevelsObj[v].label}`).join(", ") : "ningún nivel"}; los términos usan ${used.join(", ")}. Sin definición escrita para ${undefinedLevels.join(", ")}. Términos en esos niveles: ${high.map(t => `${t.term_id} ${t.canonical_name} (${t.risk_weight})`).join("; ")}`,
       group: "Escala de riesgo"
     });
   }

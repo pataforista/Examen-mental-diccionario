@@ -15,7 +15,7 @@
   ],
   "term_kind": "signo",
   "granularity": "atomic",
-  "risk_weight": 2,
+  "risk_weight": 5,
   "definition_clinical": {
     "core": "Estado de pérdida profunda y prolongada de la conciencia, del cual el paciente no puede ser despertado mediante ninguna clase de estímulo (ni siquiera doloroso). Hay abolición de la actividad motora voluntaria, el sujeto mantiene los ojos cerrados, no emite respuestas verbales y sus reflejos motores son patológicos o nulos. GCS = 3-8. Etiología metabólica, tóxica o estructural craneal inminente.",
     "required_features": [
@@ -27,8 +27,14 @@
     "behavioral_marker": "Decúbito laxo o adoptando posturas de descerebración/decorticación al estímulo de dolor (ej. compresión esternal); ausencia de apertura ocular espontánea o inducida; nulo contacto comunicativo."
   },
   "operationalization": {
-    "detectable_by": [],
-    "time_relation": [],
+    "detectable_by": [
+      "examen_neurologico",
+      "observacion_clinica"
+    ],
+    "time_relation": [
+      "aguda",
+      "urgencia_medica"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {

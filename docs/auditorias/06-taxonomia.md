@@ -1,6 +1,6 @@
 # Auditoría: Taxonomía y vocabularios
 
-> Generado con `npm run lexicon:audit` el 2026-11-27. La tabla se regenera con los datos actuales; **lo que escribas en «Decisión» se conserva**. Al corregirse, un caso pasa a «Resueltos» con su decisión.
+> Generado con `npm run lexicon:audit` el 2026-11-28. La tabla se regenera con los datos actuales; **lo que escribas en «Decisión» se conserva**. Al corregirse, un caso pasa a «Resueltos» con su decisión.
 
 ## Qué revisa
 
@@ -23,16 +23,13 @@ Una vez decidida la forma canónica, el cambio es mecánico en todos los archivo
 
 Después de corregir: `npm run build:lexicon`, `npm test` y vuelve a generar esta auditoría.
 
-## Casos pendientes (1)
+## Casos pendientes (0)
 
-### Escala de riesgo (1)
-
-| Término o campo | Hallazgo | Decisión |
-|---|---|---|
-| risk_weight <!-- k:20a74dedf9 --> | El esquema define 0 = neutral, 1 = alert, 2 = critical; los términos usan 0, 1, 2, 3, 4, 5. Sin definición escrita para 3, 4, 5. Términos en esos niveles: RSK_002 Acceso a medios letales (5); RSK_007 Intento suicida (5); RSK_008 Riesgo de violencia hacia otros (5); MEM_025 Sopor (4); RSK_004 Capacidad de colaboración para seguridad (4); RSK_005 Conducta suicida preparatoria (4); AFF_023 Ira (3); ARC_003 Bouffée délirante (3); ARC_006 Dementia praecox (3); ARC_013 Lypemanía (3); CAT_001 Catatonia maligna (3); CAT_002 Estupor catatónico (3); JUD_002 Juicio de Realidad (3); RSK_001 Riesgo autolítico (general) (3); RSK_006 Ideación suicida (3); SPE_007 Mutismo (3) |  |
+Ninguno.
 
 ## Resueltos
 
+- 2026-11-28 · risk_weight: El esquema define 0 = neutral, 1 = alert, 2 = critical; los términos usan 0, 1, 2, 3, 4, 5. Sin definición escrita para 3, 4, 5. Términos en esos niveles: RSK_002 Acceso a medios letales (5); RSK_007 Intento suicida (5); RSK_008 Riesgo de violencia hacia otros (5); MEM_025 Sopor (4); RSK_004 Capacidad de colaboración para seguridad (4); RSK_005 Conducta suicida preparatoria (4); AFF_023 Ira (3); ARC_003 Bouffée délirante (3); ARC_006 Dementia praecox (3); ARC_013 Lypemanía (3); CAT_001 Catatonia maligna (3); CAT_002 Estupor catatónico (3); JUD_002 Juicio de Realidad (3); RSK_001 Riesgo autolítico (general) (3); RSK_006 Ideación suicida (3); SPE_007 Mutismo (3) — decisión: Formalizada escala 0–5 en controlled_vocabularies.json (risk_weight_levels), recalibrados 15 términos + 10 confirmados (ver 06-taxonomia-risk-weight.md); UI badges diferenciados en emd-dt0 (2026-11-27)
 - 2026-11-27 · time_relation: Valores en inglés: `current`, `past` — decisión: actual <- current; historico <- past (2026-11-27)
 - 2026-11-27 · time_relation: Variantes del mismo valor: `prodrómica` (6), `prodrómico` (1) — decisión: prodromica <- prodrómica, prodrómico (2026-11-27)
 - 2026-11-27 · time_relation: Variantes del mismo valor: `aguda` (4), `agudo` (1)

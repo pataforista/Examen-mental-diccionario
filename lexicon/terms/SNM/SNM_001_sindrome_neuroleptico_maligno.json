@@ -9,7 +9,7 @@
   ],
   "term_kind": "síndrome",
   "granularity": "atomic",
-  "risk_weight": 2,
+  "risk_weight": 5,
   "definition_clinical": {
     "core": "Reacción adversa grave a antipsicóticos con rigidez intensa, hipertermia e inestabilidad autonómica.",
     "required_features": [

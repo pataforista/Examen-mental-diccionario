@@ -55,5 +55,19 @@ const bad = run(["importar", csv, "--aplicar"]);
 check(bad.code === 1 && /no se escribió nada/.test(bad.out), "un tipo fuera del vocabulario bloquea la importación");
 
 fs.rmSync(dir, { recursive: true, force: true });
+
+// 4. Regresión de recalibración risk_weight (Commit D): 15 términos + distribución 0..5.
+const bundle = JSON.parse(fs.readFileSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../lexicon/lexicon_bundle.json"), "utf8"));
+const byId = Object.fromEntries(bundle.terms.map(t => [t.term_id, t]));
+const expectedRisk = {
+  CAT_001: 5, SPE_007: 2, JUD_002: 1, ARC_003: 1, ARC_006: 0,
+  ARC_013: 0, SNM_001: 5, SER_001: 5, CNS_002: 5, MEM_011: 3,
+  RSK_003: 3, ARC_011: 0, HIS_003: 0, HIS_004: 0, HIS_005: 0
+};
+const riskDiffs = Object.entries(expectedRisk).filter(([id, w]) => byId[id]?.risk_weight !== w).map(([id, w]) => `${id}=${byId[id]?.risk_weight} (esperado ${w})`);
+check(riskDiffs.length === 0, "recalibración risk_weight de los 15 términos", riskDiffs.join(", "));
+const dist = [0, 1, 2, 3, 4, 5].map(w => bundle.terms.filter(t => t.risk_weight === w).length);
+check(dist.join("/") === "113/112/53/6/3/7", `distribución risk_weight 0..5 = ${dist.join("/")}`, "esperado 113/112/53/6/3/7");
+
 console.log(failures ? `\nHerramientas del léxico: ${failures} fallo(s)` : "\nHerramientas del léxico: todo OK");
 process.exit(failures ? 1 : 0);

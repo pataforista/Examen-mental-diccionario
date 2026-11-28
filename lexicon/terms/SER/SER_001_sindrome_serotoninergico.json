@@ -9,7 +9,7 @@
   ],
   "term_kind": "síndrome",
   "granularity": "atomic",
-  "risk_weight": 2,
+  "risk_weight": 5,
   "definition_clinical": {
     "core": "Síndrome tóxico por exceso de serotonina con alteraciones autonómicas, neuromusculares y mentales.",
     "required_features": [

@@ -20,7 +20,7 @@
   ],
   "term_kind": "concepto_historico",
   "granularity": "atomic",
-  "risk_weight": 1,
+  "risk_weight": 0,
   "definition_clinical": {
     "core": "Término usado en el siglo XIX para describir un deseo periódico, irresistible e incontrolable de ingerir bebidas alcohólicas, a menudo asociado a cambios de ánimo o estados mixtos. Diferenciado del alcoholismo crónico por su carácter paroxístico y la ausencia de intoxicación continua.",
     "required_features": [

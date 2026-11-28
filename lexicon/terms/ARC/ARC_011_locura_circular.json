@@ -15,7 +15,7 @@
   ],
   "term_kind": "concepto_historico",
   "granularity": "atomic",
-  "risk_weight": 2,
+  "risk_weight": 0,
   "definition_clinical": {
     "core": "Concepto de Jean-Pierre Falret (1854) para describir una enfermedad mental caracterizada por la sucesión regular y continua de periodos de manía, periodos de melancolía y periodos de relativa lucidez.",
     "required_features": [

@@ -229,7 +229,22 @@ const RULES = [
       const out = [];
       if (t.term_kind && !inVocab(ctx, "term_kind", t.term_kind)) out.push(`term_kind "${t.term_kind}"`);
       if (t.granularity && !inVocab(ctx, "granularity", t.granularity)) out.push(`granularity "${t.granularity}"`);
-      if (t.risk_weight !== undefined && !inVocab(ctx, "risk_weight", t.risk_weight)) out.push(`risk_weight ${t.risk_weight}`);
+      if (t.risk_weight !== undefined) {
+        if (!Number.isInteger(t.risk_weight) || !inVocab(ctx, "risk_weight", t.risk_weight)) {
+          out.push(`risk_weight ${t.risk_weight} (debe ser entero 0–5)`);
+        } else if (ctx.vocab.risk_weight_levels && !ctx.vocab.risk_weight_levels[String(t.risk_weight)]) {
+          out.push(`risk_weight ${t.risk_weight} sin definición en risk_weight_levels`);
+        }
+        if (t.risk_weight > 0 && !list(t.domain_links).length) {
+          out.push(`risk_weight ${t.risk_weight} > 0 sin domain_links`);
+        }
+        if (t.risk_weight >= 3 && !list(t.operationalization?.detectable_by).length) {
+          out.push(`risk_weight ${t.risk_weight} ≥ 3 sin detectable_by`);
+        }
+        if (t.term_kind === "concepto_historico" && t.risk_weight !== 0) {
+          out.push(`concepto_historico debe tener risk_weight 0 (tiene ${t.risk_weight})`);
+        }
+      }
       for (const l of list(t.domain_links)) {
         if (l.relation && !inVocab(ctx, "domain_relation", l.relation)) out.push(`relación de dominio "${l.relation}"`);
       }

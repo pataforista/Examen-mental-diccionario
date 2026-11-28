@@ -15,7 +15,7 @@
   ],
   "term_kind": "estado",
   "granularity": "atomic",
-  "risk_weight": 3,
+  "risk_weight": 1,
   "definition_clinical": {
     "core": "Capacidad psíquica para distinguir entre los estímulos que provienen del mundo externo y los que provienen del mundo interno (pensamientos, fantasías), permitiendo una adaptación adecuada a las normas sociales y la lógica común.",
     "required_features": [

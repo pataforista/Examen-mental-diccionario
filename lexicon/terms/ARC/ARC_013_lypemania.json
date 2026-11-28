@@ -15,7 +15,7 @@
   ],
   "term_kind": "estado",
   "granularity": "atomic",
-  "risk_weight": 3,
+  "risk_weight": 0,
   "definition_clinical": {
     "core": "Término acuñado por Esquirol para definir la enfermedad mental caracterizada por un delirio centrado en un tema triste o deprimente, con predominio de la aflicción y el temor.",
     "required_features": [

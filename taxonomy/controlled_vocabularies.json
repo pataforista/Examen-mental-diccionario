@@ -168,7 +168,33 @@
       "tardio",
       "transitoria",
       "urgencia_medica"
-    ]
+    ],
+    "risk_weight_levels": {
+      "0": {
+        "label": "neutral",
+        "criterion": "Hallazgo basal, descriptivo o concepto histórico sin riesgo agudo propio."
+      },
+      "1": {
+        "label": "attention",
+        "criterion": "Relevancia diagnóstica o diferencial; no implica urgencia por sí solo."
+      },
+      "2": {
+        "label": "alert",
+        "criterion": "Alerta clínica (umbral UI > 1): impacto funcional relevante, psicosis activa o necesidad de vigilancia estrecha."
+      },
+      "3": {
+        "label": "high_risk",
+        "criterion": "Riesgo alto / vigilancia prioritaria (ideación suicida, riesgo autolítico general, NSSI, estupor catatónico, delirium)."
+      },
+      "4": {
+        "label": "imminent",
+        "criterion": "Riesgo inminente / urgencia (conducta suicida preparatoria, compromiso de colaboración para seguridad, sopor)."
+      },
+      "5": {
+        "label": "emergency",
+        "criterion": "Emergencia vital (intento suicida, acceso a medios letales, riesgo de violencia hacia otros, coma, catatonia maligna, SNM, síndrome serotoninérgico)."
+      }
+    }
   },
   "axes": {
     "risk_target": [

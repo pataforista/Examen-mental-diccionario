@@ -15,7 +15,7 @@
   ],
   "term_kind": "estado",
   "granularity": "atomic",
-  "risk_weight": 3,
+  "risk_weight": 1,
   "definition_clinical": {
     "core": "Concepto clásico de la psiquiatría francesa (Magnan) para describir un episodio psicótico agudo de inicio súbito, caracterizado por un delirio polimorfo (cambiante en contenido), labilidad afectiva y ausencia de base orgánica.",
     "required_features": [

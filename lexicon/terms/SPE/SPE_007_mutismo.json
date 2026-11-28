@@ -20,7 +20,7 @@
   ],
   "term_kind": "síntoma",
   "granularity": "atomic",
-  "risk_weight": 3,
+  "risk_weight": 2,
   "definition_clinical": {
     "core": "Ausencia total o casi total de producción verbal en un sujeto con capacidad física de habla y conciencia conservada.",
     "required_features": [

@@ -25,7 +25,7 @@
   ],
   "term_kind": "síndrome",
   "granularity": "cluster",
-  "risk_weight": 2,
+  "risk_weight": 3,
   "definition_clinical": {
     "core": "Síndrome neurocognitivo agudo caracterizado por inatención, alteración del nivel de conciencia, inicio agudo y curso fluctuante. Siempre secundario a causa médica identificable (metabólica, infecciosa, tóxica, etc.). Criterios DSM-5: inatención + alteración de cognición + inicio agudo + fluctuación + causa médica.",
     "required_features": [
@@ -39,8 +39,14 @@
     "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención."
   },
   "operationalization": {
-    "detectable_by": [],
-    "time_relation": [],
+    "detectable_by": [
+      "entrevista_clinica",
+      "observacion_clinica"
+    ],
+    "time_relation": [
+      "aguda",
+      "fluctuante"
+    ],
     "pharmacological_link": false,
     "computable_markers": [
       {

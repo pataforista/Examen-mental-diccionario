@@ -15,7 +15,7 @@
   ],
   "term_kind": "concepto_historico",
   "granularity": "atomic",
-  "risk_weight": 1,
+  "risk_weight": 0,
   "definition_clinical": {
     "core": "Tendencia irresistible y periódica a la fuga o deambulación, a menudo con vagabundeo sin propósito, a veces asociada a amnesia del episodio. Término utilizado por la escuela francesa (Legrand du Saulle, Magnan) para describir una forma de impulsión motora.",
     "required_features": [

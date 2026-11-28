@@ -20,7 +20,7 @@
   ],
   "term_kind": "conducta",
   "granularity": "atomic",
-  "risk_weight": 2,
+  "risk_weight": 3,
   "definition_clinical": {
     "core": "Daño deliberado al cuerpo sin intención suicida, con función de alivio emocional.",
     "required_features": [

@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "generated_at": "2026-11-27T23:57:56.408Z",
+  "generated_at": "2026-11-28T00:41:15.787Z",
   "total_terms": 294,
   "terms": [
     {
@@ -3804,7 +3804,7 @@
       ],
       "term_kind": "estado",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 1,
       "definition_clinical": {
         "core": "Concepto clásico de la psiquiatría francesa (Magnan) para describir un episodio psicótico agudo de inicio súbito, caracterizado por un delirio polimorfo (cambiante en contenido), labilidad afectiva y ausencia de base orgánica.",
         "required_features": [
@@ -3980,7 +3980,7 @@
       ],
       "term_kind": "concepto_historico",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 0,
       "definition_clinical": {
         "core": "Término fundamental de Emil Kraepelin para designar un grupo de enfermedades psiquiátricas que se inician en la juventud y conducen inevitablemente a un deterioro cognitivo y emocional irreversible.",
         "required_features": [
@@ -4326,7 +4326,7 @@
       ],
       "term_kind": "concepto_historico",
       "granularity": "atomic",
-      "risk_weight": 2,
+      "risk_weight": 0,
       "definition_clinical": {
         "core": "Concepto de Jean-Pierre Falret (1854) para describir una enfermedad mental caracterizada por la sucesión regular y continua de periodos de manía, periodos de melancolía y periodos de relativa lucidez.",
         "required_features": [
@@ -4503,7 +4503,7 @@
       ],
       "term_kind": "estado",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 0,
       "definition_clinical": {
         "core": "Término acuñado por Esquirol para definir la enfermedad mental caracterizada por un delirio centrado en un tema triste o deprimente, con predominio de la aflicción y el temor.",
         "required_features": [
@@ -5256,7 +5256,7 @@
       "canonical_name": "Catatonia maligna",
       "term_kind": "síndrome",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 5,
       "definition_clinical": {
         "core": "Forma grave y potencialmente letal de catatonia caracterizada por inestabilidad autonómica, fiebre e intensa rigidez o agitación.",
         "required_features": [
@@ -5760,7 +5760,7 @@
       ],
       "term_kind": "signo",
       "granularity": "atomic",
-      "risk_weight": 2,
+      "risk_weight": 5,
       "definition_clinical": {
         "core": "Estado de pérdida profunda y prolongada de la conciencia, del cual el paciente no puede ser despertado mediante ninguna clase de estímulo (ni siquiera doloroso). Hay abolición de la actividad motora voluntaria, el sujeto mantiene los ojos cerrados, no emite respuestas verbales y sus reflejos motores son patológicos o nulos. GCS = 3-8. Etiología metabólica, tóxica o estructural craneal inminente.",
         "required_features": [
@@ -5772,8 +5772,14 @@
         "behavioral_marker": "Decúbito laxo o adoptando posturas de descerebración/decorticación al estímulo de dolor (ej. compresión esternal); ausencia de apertura ocular espontánea o inducida; nulo contacto comunicativo."
       },
       "operationalization": {
-        "detectable_by": [],
-        "time_relation": [],
+        "detectable_by": [
+          "examen_neurologico",
+          "observacion_clinica"
+        ],
+        "time_relation": [
+          "aguda",
+          "urgencia_medica"
+        ],
         "pharmacological_link": false,
         "computable_markers": [
           {
@@ -9398,7 +9404,7 @@
       ],
       "term_kind": "concepto_historico",
       "granularity": "atomic",
-      "risk_weight": 1,
+      "risk_weight": 0,
       "definition_clinical": {
         "core": "Término usado en el siglo XIX para describir un deseo periódico, irresistible e incontrolable de ingerir bebidas alcohólicas, a menudo asociado a cambios de ánimo o estados mixtos. Diferenciado del alcoholismo crónico por su carácter paroxístico y la ausencia de intoxicación continua.",
         "required_features": [
@@ -9475,7 +9481,7 @@
       ],
       "term_kind": "concepto_historico",
       "granularity": "atomic",
-      "risk_weight": 1,
+      "risk_weight": 0,
       "definition_clinical": {
         "core": "Tendencia irresistible y periódica a la fuga o deambulación, a menudo con vagabundeo sin propósito, a veces asociada a amnesia del episodio. Término utilizado por la escuela francesa (Legrand du Saulle, Magnan) para describir una forma de impulsión motora.",
         "required_features": [
@@ -9557,7 +9563,7 @@
       ],
       "term_kind": "concepto_historico",
       "granularity": "atomic",
-      "risk_weight": 1,
+      "risk_weight": 0,
       "definition_clinical": {
         "core": "Términos históricos (siglos XVIII-XIX) para describir un deseo sexual incontrolable, excesivo y patológico en mujeres (nimfomanía) y hombres (satiriasis). Considerados hoy dentro de los trastornos del control de impulsos o la hipersexualidad (compulsión sexual).",
         "required_features": [
@@ -10749,7 +10755,7 @@
       ],
       "term_kind": "estado",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 1,
       "definition_clinical": {
         "core": "Capacidad psíquica para distinguir entre los estímulos que provienen del mundo externo y los que provienen del mundo interno (pensamientos, fantasías), permitiendo una adaptación adecuada a las normas sociales y la lógica común.",
         "required_features": [
@@ -11662,7 +11668,7 @@
       ],
       "term_kind": "síndrome",
       "granularity": "cluster",
-      "risk_weight": 2,
+      "risk_weight": 3,
       "definition_clinical": {
         "core": "Síndrome neurocognitivo agudo caracterizado por inatención, alteración del nivel de conciencia, inicio agudo y curso fluctuante. Siempre secundario a causa médica identificable (metabólica, infecciosa, tóxica, etc.). Criterios DSM-5: inatención + alteración de cognición + inicio agudo + fluctuación + causa médica.",
         "required_features": [
@@ -11676,8 +11682,14 @@
         "behavioral_marker": "Fluctuación de conciencia, agitación o somnolencia, alucinaciones visuales, desorientación, dificultad para mantener atención."
       },
       "operationalization": {
-        "detectable_by": [],
-        "time_relation": [],
+        "detectable_by": [
+          "entrevista_clinica",
+          "observacion_clinica"
+        ],
+        "time_relation": [
+          "aguda",
+          "fluctuante"
+        ],
         "pharmacological_link": false,
         "computable_markers": [
           {
@@ -18163,7 +18175,7 @@
       ],
       "term_kind": "conducta",
       "granularity": "atomic",
-      "risk_weight": 2,
+      "risk_weight": 3,
       "definition_clinical": {
         "core": "Daño deliberado al cuerpo sin intención suicida, con función de alivio emocional.",
         "required_features": [
@@ -20103,7 +20115,7 @@
       ],
       "term_kind": "síndrome",
       "granularity": "atomic",
-      "risk_weight": 2,
+      "risk_weight": 5,
       "definition_clinical": {
         "core": "Síndrome tóxico por exceso de serotonina con alteraciones autonómicas, neuromusculares y mentales.",
         "required_features": [
@@ -20218,7 +20230,7 @@
       ],
       "term_kind": "síndrome",
       "granularity": "atomic",
-      "risk_weight": 2,
+      "risk_weight": 5,
       "definition_clinical": {
         "core": "Reacción adversa grave a antipsicóticos con rigidez intensa, hipertermia e inestabilidad autonómica.",
         "required_features": [
@@ -21117,7 +21129,7 @@
       ],
       "term_kind": "síntoma",
       "granularity": "atomic",
-      "risk_weight": 3,
+      "risk_weight": 2,
       "definition_clinical": {
         "core": "Ausencia total o casi total de producción verbal en un sujeto con capacidad física de habla y conciencia conservada.",
         "required_features": [

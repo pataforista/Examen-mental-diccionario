@@ -24,9 +24,9 @@
       "composite"
     ],
     "risk_weight": {
-      "0": "neutral",
-      "1": "alert",
-      "2": "critical"
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
     },
     "alert_type": [
       "safety_critical",
